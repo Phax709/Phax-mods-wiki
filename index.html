@@ -61,12 +61,20 @@
 
 
 
-  <!-- Bandeau principal -->
-  <div class="bandeau">
+ <!-- Bandeau principal -->
+<div class="bandeau">
   <span class="bandeau-title">
     <img src="images/ui/Phax mods detail.png" alt="Logo Mod" class="logo">
     Wiki des Mods de Phax709
   </span>
+
+  <!-- 🔽 Bouton hamburger mobile (à ajouter) -->
+  <button id="mobileMenuBtn"
+          class="mobile-menu-btn"
+          aria-controls="mobileDrawer"
+          aria-expanded="false"
+          aria-label="Menu">☰</button>
+
   <nav>
     <ul>
       <li><a href="#" onclick="showPage('accueil')" id="nav-accueil" class="active" data-translate="accueil">Accueil</a></li>
@@ -77,6 +85,7 @@
   </nav>
 </div>
 
+
   <main>
     <section id="accueil" class="page">
   <h2 data-translate="home_welcome_title">Bienvenue</h2>
@@ -85,6 +94,8 @@
   <p data-translate="home_welcome_p2">Sélectionnez un mod dans le menu en haut pour en savoir plus !</p>
 
   <div class="cards-container">
+    <!-- 🔽 Nouveau wrapper pour empiler sur mobile -->
+  <div id="accueilCards" class="mods-grid">
     <div class="presentation-card">
       <h3>Acatar by Phax709</h3>
       <img src="https://media.forgecdn.net/attachments/1001/494/new_logo_acatar.png" alt="Logo Acatar" class="presentation-image">
@@ -104,7 +115,8 @@
         <a href="#" class="card-btn wiki" onclick="showPage('mod2')">Wiki</a>
       </div>
     </div>
-    <div style="flex-basis: 100%; height: 0;"></div>
+  </div>
+  <!-- 🔼 Fin du wrapper -->
     <div class="presentation-card help-card">
       <h3 data-translate="help_title">Nous aider</h3>
         <p data-translate="help_desc">
@@ -253,5 +265,61 @@
     <p>&copy; 2025 Wiki des Mods de Phax709</p>
   </footer>
   <script src="script.js" defer></script>
+<!-- Drawer mobile -->
+<div id="mobileDrawer" class="drawer" aria-hidden="true">
+  <div class="drawer-backdrop" data-close></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <header class="drawer-header">
+      <span class="drawer-title">Menu</span>
+      <button class="drawer-close" aria-label="Fermer" data-close>×</button>
+    </header>
+
+    <nav class="drawer-nav">
+      <a href="#" class="drawer-link" onclick="openPageFromDrawer('accueil')"    data-translate="accueil">Accueil</a>
+      <a href="#" class="drawer-link" onclick="openPageFromDrawer('mod1')"       data-translate="acatar">Acatar</a>
+      <a href="#" class="drawer-link" onclick="openPageFromDrawer('mod2')"       data-translate="chaosium">Chaosium</a>
+      <a href="#" class="drawer-link" onclick="openPageFromDrawer('patchnotes')" data-translate="patchnotes">Patch Notes</a>
+    </nav>
+
+    <hr class="drawer-sep">
+
+    <!-- Langue -->
+    <div class="drawer-section">
+      <div class="drawer-label" data-translate="language">Langue</div>
+      <div class="drawer-lang">
+        <button type="button" class="drawer-lang-btn" onclick="setLanguage('fr'); closeDrawer();">
+          <img src="images/flag-fr.png" alt="FR">
+          <span data-translate="langue_fr">Français</span>
+        </button>
+        <button type="button" class="drawer-lang-btn" onclick="setLanguage('en'); closeDrawer();">
+          <img src="images/flag-gb.png" alt="EN">
+          <span data-translate="langue_en">English</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Paramètres (intégrés) -->
+    <div class="drawer-section">
+      <div class="drawer-label" data-translate="settings">Paramètres</div>
+
+      <div class="drawer-row">
+        <div class="drawer-sub" data-translate="theme_label">Thème :</div>
+        <div class="drawer-opts">
+          <button type="button" class="opt-btn" onclick="setThemeFromDrawer('theme-sombre')" data-translate="dark">Sombre</button>
+          <button type="button" class="opt-btn" onclick="setThemeFromDrawer('theme-clair')"  data-translate="light">Clair</button>
+        </div>
+      </div>
+
+      <div class="drawer-row">
+        <div class="drawer-sub" data-translate="font_label">Taille du texte :</div>
+        <div class="drawer-opts">
+          <button type="button" class="opt-btn" onclick="setFontFromDrawer('font-normal')"     data-translate="font_normal">Normale</button>
+          <button type="button" class="opt-btn" onclick="setFontFromDrawer('font-grand')"      data-translate="font_large">Grand</button>
+          <button type="button" class="opt-btn" onclick="setFontFromDrawer('font-tres-grand')" data-translate="font_xlarge">Très grand</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
 </body>
 </html>

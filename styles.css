@@ -1094,167 +1094,304 @@ body.theme-sombre #mod2 .cards-grid::-webkit-scrollbar-thumb {
 .features-wrap h4 { margin: 10px 0 6px 0; font-size: 1rem; }
 .features { margin: 0; padding-left: 18px; }
 
-/* =========================
-   PACK RESPONSIVE MOBILE
-   (à coller en bas de styles.css)
-   ========================= */
+/* ==========================================================================
+   SECTION MOBILE & TABLETTE — VERSION NETTOYÉE
+   Place this at the very bottom of styles.css
+   ========================================================================== */
 
-/* Tablettes (<= 992px) */
-@media (max-width: 992px) {
-  /* Header + nav défilable si ça déborde */
-  .bandeau { position: sticky; top: 0; z-index: 1000; }
-  .bandeau .bandeau-title { gap: .6rem; font-size: 1.05rem; }
-  .bandeau nav {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 6px;
-  }
-  .bandeau nav a { flex: 0 0 auto; }
+/* ---------- Variables ---------- */
+:root { --accent: var(--c-accent, #0ea5e9); }
 
-  /* Grilles de cartes : 2 colonnes */
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
+/* ---------- Drawer (base, hors media query) ---------- */
+.drawer{ position:fixed; inset:0; z-index:1200; pointer-events:none; }
+.drawer[aria-hidden="true"]{ display:block; }
+.drawer-backdrop{
+  position:absolute; inset:0; background:rgba(0,0,0,.45); opacity:0; transition:opacity .2s;
+}
+.drawer-panel{
+  position:absolute; top:0; right:0; width:min(86vw, 360px); height:100%;
+  background:#111827; color:#e5e7eb;
+  box-shadow:-8px 0 24px rgba(0,0,0,.4);
+  transform:translateX(100%); transition:transform .25s;
+  display:flex; flex-direction:column; gap:12px; padding-bottom:12px;
+}
+.drawer.open{ pointer-events:auto; }
+.drawer.open .drawer-backdrop{ opacity:1; }
+.drawer.open .drawer-panel{ transform:none; }
 
-  /* Panneaux (statut / détail) : marges un peu plus serrées */
-  .card-detail,
-  .update-panel { margin-top: 12px; }
+.theme-clair .drawer-panel{ background:#f8fafc; color:#0f172a; }
+
+.drawer-header{ display:flex; align-items:center; justify-content:space-between; padding:12px 14px; }
+.drawer-title{ font-weight:700; font-size:1.05rem; }
+.drawer-close{ border:0; background:transparent; color:inherit; font-size:1.4rem; cursor:pointer; }
+.drawer-sep{ height:1px; border:0; background:rgba(255,255,255,.12); margin:6px 0; }
+.theme-clair .drawer-sep{ background:rgba(15,23,42,.12); }
+
+.drawer-nav{ display:flex; flex-direction:column; padding:0 14px; gap:8px; }
+.drawer-link{
+  padding:12px 14px; min-height:42px; display:flex; align-items:center;
+  border-radius:12px; text-decoration:none;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.08); color:#f3f4f6;
+  transition:background .15s, border-color .15s, transform .05s;
+}
+.drawer-link:hover{ background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.22); }
+.drawer-link:active{ transform:translateY(1px); }
+.theme-clair .drawer-link{
+  background:rgba(15,23,42,.06); border-color:rgba(15,23,42,.12); color:#0f172a;
+}
+.theme-clair .drawer-link:hover{ background:rgba(15,23,42,.1); border-color:rgba(15,23,42,.18); }
+
+.drawer-section{ padding:6px 14px 12px; }
+.drawer-label{ opacity:.9; font-size:.9rem; margin:6px 0 8px; }
+.drawer-row{ display:grid; grid-template-columns:1fr; gap:8px; margin:10px 0; }
+.drawer-sub{ opacity:.9; font-size:.9rem; }
+.drawer-opts{ display:flex; gap:10px; flex-wrap:wrap; }
+
+.drawer-lang{ display:flex; gap:10px; flex-wrap:wrap; }
+.drawer-lang-btn,
+.drawer-opts .opt-btn,
+.drawer-action{
+  padding:8px 12px; min-height:40px;
+  border-radius:12px; border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06); color:#e5e7eb;
+  cursor:pointer;
+  transition:background .15s, border-color .15s, transform .05s, box-shadow .15s;
+}
+.drawer-lang-btn:hover,
+.drawer-opts .opt-btn:hover,
+.drawer-action:hover{ background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.24); }
+.drawer-lang-btn:active,
+.drawer-opts .opt-btn:active,
+.drawer-action:active{ transform:translateY(1px); }
+.drawer-lang-btn:focus-visible,
+.drawer-opts .opt-btn:focus-visible,
+.drawer-action:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+.drawer-lang-btn img{ width:18px; height:18px; border-radius:3px; }
+
+.theme-clair .drawer-lang-btn,
+.theme-clair .drawer-opts .opt-btn,
+.theme-clair .drawer-action{
+  background:rgba(15,23,42,.04); border-color:rgba(15,23,42,.14); color:#0f172a;
+}
+.theme-clair .drawer-lang-btn:hover,
+.theme-clair .drawer-opts .opt-btn:hover,
+.theme-clair .drawer-action:hover{
+  background:rgba(15,23,42,.08); border-color:rgba(15,23,42,.22);
 }
 
-/* Téléphones (<= 640px) */
-@media (max-width: 640px) {
-  /* Logo + titre un peu plus petits */
+/* Bouton hamburger (mobile visible) */
+.mobile-menu-btn{
+  display:none; margin-left:auto; border:1px solid rgba(255,255,255,.24);
+  border-radius:10px; padding:8px 10px; font-size:1.2rem;
+  background:rgba(255,255,255,.14); color:#fff; cursor:pointer;
+}
+.mobile-menu-btn:hover{ background:rgba(255,255,255,.22); }
+.theme-clair .mobile-menu-btn{
+  background:rgba(15,23,42,.06); border-color:rgba(15,23,42,.14); color:#0f172a;
+}
+.theme-clair .mobile-menu-btn:hover{ background:rgba(15,23,42,.12); }
+
+/* ---------- Desktop overrides (assure 2 colonnes sur l'accueil) ---------- */
+@media (min-width: 769px){
+  #accueil .mods-grid { display: contents !important; }
+}
+
+/* ---------- Tablettes (<= 992px) ---------- */
+@media (max-width: 992px){
+  /* grilles cartes : 2 colonnes */
+  .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .card-detail, .update-panel { margin-top: 12px; }
+}
+
+/* ---------- Mobile (<= 768px) ---------- */
+@media (max-width: 768px){
+  /* entête + nav */
+  .bandeau { position: sticky; top: 0; z-index: 1000; }
+  .bandeau .bandeau-title { font-size: 1rem; gap: .5rem; }
   .bandeau .bandeau-title .logo { height: 40px; }
-  .bandeau .bandeau-title { font-size: 1rem; }
+  .mobile-menu-btn{ display:inline-flex; align-items:center; justify-content:center; }
+  .bandeau nav { display: none; } /* on utilise le drawer en mobile */
 
-  /* Liens du header plus compacts */
-  .bandeau nav a { padding: 8px 10px; font-size: .95rem; }
+  /* page padding */
+  .page { padding: 12px; }
 
-  /* Conteneurs principaux */
-  .page { padding: 10px 12px; }
+  /* accueil : cartes mods en colonne */
+  #accueil .mods-grid{
+    display:grid; grid-template-columns:1fr; gap:12px;
+  }
+  #accueil .mods-grid img{
+    width:100%; height:auto; max-height:180px; object-fit:cover; border-radius:10px;
+  }
 
-  /* Menu latéral des mods -> barre horizontale défilable */
-  .side-menu { margin-bottom: 10px; }
-  .side-buttons {
+  /* menus latéraux des pages mod : barre horizontale défilable */
+  .side-buttons{
+    display:flex; gap:8px; overflow-x:auto; white-space:nowrap; padding:8px 0;
+  }
+  .side-buttons .card-btn{ flex:0 0 auto; }
+
+  /* barres de recherche */
+  .search-bar{ width:100%; box-sizing:border-box; }
+
+  /* grille des cartes : 1 colonne */
+  .cards-grid{ grid-template-columns:1fr; gap:10px; }
+
+  /* patchnotes : liste en colonne */
+  #patchnotes .patch-list{ flex-direction:column; gap:10px; }
+
+  /* images fluides dans détails/statut */
+  .card-detail img, .update-panel img { max-width:100%; height:auto; display:block; }
+}
+
+/* =========================
+   Pages MOD : layout desktop/mobile (baseline simple)
+   ========================= */
+
+/* Desktop : 2 colonnes (menu à gauche + contenu) */
+@media (min-width: 769px){
+  #mod1 .page-layout,
+  #mod2 .page-layout{
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+}
+
+/* Mobile : empilement simple */
+@media (max-width: 768px){
+  /* on empile le menu et le contenu */
+  #mod1 .page-layout,
+  #mod2 .page-layout{
+    display: block;
+  }
+
+  /* menu au-dessus, marge dessous */
+  #mod1 .side-menu,
+  #mod2 .side-menu{
+    margin: 0 0 12px 0;
+    width: 100%;
+  }
+
+  /* recherche pleine largeur */
+  #mod1 .side-menu .search-bar,
+  #mod2 .side-menu .search-bar{
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* catégories : défilement horizontal (pratique si ça déborde) */
+  #mod1 .side-buttons,
+  #mod2 .side-buttons{
     display: flex;
     gap: 8px;
     overflow-x: auto;
     white-space: nowrap;
     padding: 8px 0;
   }
-  .side-buttons .card-btn { flex: 0 0 auto; }
+  #mod1 .side-buttons .card-btn,
+  #mod2 .side-buttons .card-btn{
+    flex: 0 0 auto;
+  }
 
-  /* Barre de recherche pleine largeur */
-  .search-bar { width: 100%; box-sizing: border-box; }
-
-  /* Grille des cartes : 1 colonne */
-  .cards-grid {
+  /* grille : 1 colonne en mobile */
+  #mod1 .cards-grid,
+  #mod2 .cards-grid{
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  /* Miniatures : éviter qu’elles ne prennent trop de hauteur */
-  .small-card .thumb { max-height: 140px; width: 100%; object-fit: cover; }
+  /* détails/statut : images fluides */
+  #mod1 .card-detail img, #mod2 .card-detail img,
+  #mod1 .update-panel img, #mod2 .update-panel img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
 
-  /* Patchnotes : liste en colonne */
-  #patchnotes .patch-list {
+/* =========================
+   PATCH NOTES — desktop / mobile
+   ========================= */
+
+/* Desktop : 2 colonnes (menu à gauche + contenu) */
+@media (min-width: 769px){
+  #patchnotes .page-layout{
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+}
+
+/* Mobile : menu au-dessus, filtres full-width, liste en colonne */
+@media (max-width: 768px){
+  /* Empilement simple */
+  #patchnotes .page-layout{ display: block; }
+
+  /* Menu latéral compact au-dessus */
+  #patchnotes .side-menu{
+    margin: 0 0 12px 0;
+    width: 100%;
+    background: rgba(0,0,0,.18);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    padding: 10px;
+    backdrop-filter: blur(6px);
+  }
+  .theme-clair #patchnotes .side-menu{
+    background: rgba(15,23,42,.06);
+    border-color: rgba(15,23,42,.12);
+  }
+  /* (option) cacher le titre du panneau pour gagner de la place */
+  #patchnotes .side-menu h3{ display:none; }
+
+  /* Boutons : défilement horizontal si ça déborde */
+  #patchnotes .side-buttons{
+    display:flex; gap:8px; overflow-x:auto; white-space:nowrap; padding:6px 2px;
+    scrollbar-width:none; -ms-overflow-style:none;
+  }
+  #patchnotes .side-buttons::-webkit-scrollbar{ display:none; }
+  #patchnotes .side-buttons .card-btn{ flex:0 0 auto; }
+
+  /* Filtres à droite (search + 2 selects) → full width en colonne */
+  /* on couvre plusieurs noms de classes possibles */
+  #patchnotes .patch-filters,
+  #patchnotes .filters,
+  #patchnotes .filters-row{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  /* Search full width */
+  #patchnotes input[type="search"],
+  #patchnotes input[type="text"].search-bar,
+  #patchnotes .search-bar{
+    width: 100%; box-sizing: border-box;
+    height: 38px; border-radius: 10px;
+  }
+
+  /* Les 2 <select> (versions + tri) full width */
+  #patchnotes select{
+    width: 100%; height: 38px; border-radius: 10px;
+  }
+
+  /* Liste : une carte par ligne */
+  #patchnotes .patch-list{
+    display: flex;
     flex-direction: column;
     gap: 10px;
   }
-
-  /* Image "hero" si tu l’utilises */
-  .site-hero { margin: 8px auto 14px; max-height: 260px; overflow: hidden; }
-  .site-hero img { width: 100%; height: 100%; object-fit: cover; }
-}
-
-/* Très petits écrans (<= 360px) */
-@media (max-width: 360px) {
-  .bandeau .bandeau-title .logo { height: 34px; }
-  .bandeau nav a { padding: 7px 9px; font-size: .9rem; }
-}
-
-/* Images dans les panneaux : toujours responsive */
-.card-detail img,
-.update-panel img { max-width: 100%; height: auto; display: block; }
-
-/* =========================
-   Mobile polish (<= 640px)
-   ========================= */
-@media (max-width: 640px) {
-  /* Bandeau + nav */
-  .bandeau { position: sticky; top: 0; z-index: 1000; }
-  .bandeau .bandeau-title { font-size: 1rem; gap: .5rem; }
-  .bandeau nav {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 6px 0 8px;
-  }
-  .bandeau nav a { flex: 0 0 auto; padding: 8px 10px; font-size: .95rem; }
-
-  /* Page padding plus serré */
-  .page { padding: 12px; }
-
-  /* ===== Accueil : empiler les 2 cartes mod ===== */
-  /* Essaye de cibler des containers courants; si un seul matche, ça suffit */
-  #accueil .mods-grid,
-  #accueil .cards-row,
-  #accueil .grid-2,
-  #accueil .home-cards {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  /* Cartes d'accueil : image responsive et marge */
-  #accueil .mod-card,
-  #accueil .home-card {
-    overflow: hidden;
-    border-radius: 12px;
-  }
-
-  #accueil .mod-card img,
-  #accueil .home-card img {
+  /* (si la carte a une classe .patch ou .pn-card) */
+  #patchnotes .patch-list .patch,
+  #patchnotes .patch-list .pn-card{
     width: 100%;
-    height: auto;
-    max-height: 180px;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
   }
 
-  /* Boutons des cartes d'accueil */
-  #accueil .mod-card .actions,
-  #accueil .home-card .actions {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
-
-  /* Menus latéraux (dans pages mod) -> barre horizontale défilable */
-  .side-buttons {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 8px 0;
-  }
-  .side-buttons .card-btn { flex: 0 0 auto; }
-
-  /* Grilles de cartes (pages mod) -> 1 colonne */
-  .cards-grid { grid-template-columns: 1fr; gap: 10px; }
-
-  /* Panneaux (statut/détail) : marges serrées + images fluides */
-  .card-detail, .update-panel { margin-top: 12px; }
-  .card-detail img, .update-panel img { max-width: 100%; height: auto; }
-}
-
-/* Tablettes (<= 992px) : 2 colonnes pour les grilles */
-@media (max-width: 992px) {
-  .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  /* Détail & bouton retour : marges + images fluides */
+  #patchnotes .card-detail{ margin-top: 12px; }
+  #patchnotes .card-detail img{ max-width:100%; height:auto; display:block; }
+  #patchnotes .back-btn{ width: 100%; max-width: 280px; }
 }

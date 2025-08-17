@@ -2,6 +2,7 @@
 const translations = {
   fr: {
     accueil: "Accueil",
+    language: "Langue",
     site_title: "Wiki des Mods de Phax709",
     acatar: "Acatar",
     chaosium: "Chaosium",
@@ -54,6 +55,7 @@ const translations = {
   },
   en: {
     accueil: "Home",
+    language: "Language",
     site_title: "Phax709 Mods Wiki",
     acatar: "Acatar",
     chaosium: "Chaosium",
@@ -1278,3 +1280,93 @@ window.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav-' + id);
   if (nav) nav.classList.add('active');
 });
+
+// Drawer mobile
+(function wireMobileDrawer(){
+  const drawer = document.getElementById('mobileDrawer');
+  const btn    = document.getElementById('mobileMenuBtn');
+  if (!drawer || !btn) return;
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+  window.openPageFromDrawer = function(pageId){
+    showPage(pageId);
+    closeDrawer();
+  };
+
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });
+  drawer.addEventListener('click', (e)=>{ if (e.target.matches('[data-close], .drawer-backdrop')) closeDrawer(); });
+  document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') closeDrawer(); });
+})();
+
+// Ouvre le panneau Paramètres depuis le drawer
+function openSettingsPanel() {
+  const settingsMenu   = document.getElementById('settingsMenu');   // wrapper du bouton ⚙ + panneau
+  const settingsPanel  = document.getElementById('settingsPanel');  // le panneau
+  const langSelector   = document.querySelector('.lang-selector');  // le menu langue (à fermer)
+
+  if (!settingsMenu || !settingsPanel) return;
+
+  // Fermer la langue si ouverte
+  if (langSelector) langSelector.classList.remove('open');
+
+  // Ouvrir le panneau paramètres (compat .open ET .panel-open)
+  settingsMenu.classList.add('open');
+  settingsMenu.classList.add('panel-open');
+
+  // Ceinture + bretelles si une règle CSS met display:none
+  settingsPanel.style.display = 'block';
+
+  // ARIA (facultatif)
+  const toggle = document.getElementById('settingsToggle');
+  if (toggle) toggle.setAttribute('aria-expanded', 'true');
+}
+
+// Ouvrir le panneau Paramètres depuis le drawer (en différé pour éviter le close global)
+function openSettingsFromDrawer(e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  // ferme le drawer d'abord
+  if (typeof closeDrawer === 'function') closeDrawer();
+  // puis ouvre les paramètres après la fin de ce clic
+  setTimeout(() => {
+    const btn = document.getElementById('settingsToggle');
+    if (btn) btn.click(); // utilise ta logique existante d'ouverture
+  }, 80);
+  return false;
+}
+
+function setThemeFromDrawer(cls) {
+  ETAT.theme = cls;
+  localStorage.setItem('siteTheme', cls);
+  if (typeof appliquerThemeEtPolice === 'function') {
+    appliquerThemeEtPolice();
+  } else if (typeof applyThemeAndFont === 'function') {
+    applyThemeAndFont();
+  } else {
+    const root = document.documentElement;
+    root.classList.remove('theme-sombre','theme-clair');
+    root.classList.add(cls);
+  }
+}
+
+function setFontFromDrawer(cls) {
+  ETAT.fontSize = cls;
+  localStorage.setItem('siteFont', cls);
+  if (typeof appliquerThemeEtPolice === 'function') {
+    appliquerThemeEtPolice();
+  } else if (typeof applyThemeAndFont === 'function') {
+    applyThemeAndFont();
+  } else {
+    const root = document.documentElement;
+    root.classList.remove('font-normal','font-grand','font-tres-grand');
+    root.classList.add(cls);
+  }
+}
