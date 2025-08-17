@@ -53,7 +53,7 @@
   },
   {
   "id": "multicolor_ore",
-  "type": "bloc",
+  "type": "minerai",
   "image": "../images/mod1/Multicoloringot.png",
   "thumb_height": 75,
   "image_full": false,
@@ -251,6 +251,5 @@
 }
 
 ]
-
 
 
