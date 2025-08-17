@@ -36,20 +36,20 @@
 
     <!-- Panneau Paramètres (déplacé ICI, dans settingsMenu) -->
     <div class="settings-panel" id="settingsPanel">
-      <h3>Paramètres</h3>
+      <h3 data-translate="settings">Paramètres</h3>
       <div>
-        <label>Thème :</label>
+        <label><span data-translate="theme_label">Thème :</span></label>
         <div class="theme-btns">
-          <button type="button" id="themeSombre" class="theme-btn">Sombre</button>
-          <button type="button" id="themeClair" class="theme-btn">Clair</button>
+          <button type="button" id="themeSombre" class="theme-btn" data-translate="dark">Sombre</button>
+          <button type="button" id="themeClair" class="theme-btn" data-translate="light">Clair</button>
         </div>
       </div>
       <div>
-        <label>Taille du texte :</label>
+        <label><span data-translate="font_label">Taille du texte :</span></label>
         <div class="font-btns">
-          <button type="button" id="fontNormal" class="font-btn">Normal</button>
-          <button type="button" id="fontGrand" class="font-btn">Grand</button>
-          <button type="button" id="fontTresGrand" class="font-btn">Très grand</button>
+          <button type="button" id="fontNormal" class="font-btn" data-translate="font_normal">Normal</button>
+          <button type="button" id="fontGrand" class="font-btn" data-translate="font_large">Grand</button>
+          <button type="button" id="fontTresGrand" class="font-btn" data-translate="font_xlarge">Très grand</button>
         </div>
       </div>
     </div>
@@ -75,9 +75,10 @@
 
   <main>
     <section id="accueil" class="page">
-  <h2>Bienvenue</h2>
-  <p>Bienvenue sur le wiki des mods Minecraft créé par <span class="underline">Phax709</span>.</p> 
-  <p>Sélectionnez un mod dans le menu en haut pour en savoir plus !</p>
+  <h2 data-translate="home_welcome_title">Bienvenue</h2>
+  <p><span data-translate="home_welcome_p1_a">Bienvenue sur le wiki des mods Minecraft créé par</span>
+  <span class="underline">Phax709</span>.</p> 
+  <p data-translate="home_welcome_p2">Sélectionnez un mod dans le menu en haut pour en savoir plus !</p>
 
   <div class="cards-container">
     <div class="presentation-card">
@@ -126,14 +127,19 @@
       <h3>Acatar - Menu</h3>
 
       <!-- Barre de recherche -->
-      <input type="text" class="search-bar" placeholder="Rechercher..." oninput="searchCards('mod1', this.value)">
+      <input id="search-mod1" class="search-bar" type="text"
+       placeholder="Rechercher…"
+       data-translate-placeholder="search_placeholder">
 
       <div class="side-buttons">
-        <button class="card-btn wiki" onclick="filterCategory('mod1','all')" data-translate="tout">Tout</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','bloc')" data-translate="blocs">Blocs</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','item')" data-translate="items">Items</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','mob')" data-translate="mobs">Mobs</button>
-        <button class="card-btn wiki" onclick="showStatus('mod1')" data-translate="status">Statut</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod1','all')"      data-translate="tout">Tout</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod1','bloc')"     data-translate="blocs">Blocs</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod1','minerai')"  data-translate="minerai">Minerais</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod1','item')"     data-translate="items">Items</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod1','nature')"   data-translate="nature">Nature</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod1','structure')"data-translate="structure">Structures</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod1','mob')"      data-translate="creatures">Créatures</button>
+        <button class="card-btn wiki" onclick="showStatus('mod1')"                data-translate="statut">Statut</button>
       </div>
     </aside>
     <div class="page-content">
@@ -144,7 +150,9 @@
 
       <!-- Vue détail -->
       <div class="card-detail" style="display:none;">
-        <button class="card-btn wiki" onclick="hideCardDetail('mod1')">← Retour</button>
+        <button class="card-btn wiki" onclick="hideCardDetail('mod1')">
+          ← <span data-translate="back">Retour</span>
+        </button>
         <div class="detail-content"></div>
       </div>
     </div>
@@ -156,14 +164,19 @@
       <h3>Chaosium - Menu</h3>
 
       <!-- Barre de recherche -->
-      <input type="text" class="search-bar" placeholder="Rechercher..." oninput="searchCards('mod2', this.value)">
+      <input id="search-mod2" class="search-bar" type="text"
+       placeholder="Rechercher…"
+       data-translate-placeholder="search_placeholder">
 
       <div class="side-buttons">
-        <button class="card-btn wiki" onclick="filterCategory('mod2', 'all')" data-translate="tout">Tout</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2', 'bloc')" data-translate="blocs">Blocs</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2', 'item')" data-translate="items">Items</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2', 'mob')" data-translate="mobs">Mobs</button>
-        <button class="card-btn wiki" onclick="showStatus('mod2')" data-translate="status">Statut</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod2','all')"      data-translate="tout">Tout</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod2','bloc')"     data-translate="blocs">Blocs</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod2','minerai')"  data-translate="minerai">Minerais</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod2','item')"     data-translate="items">Items</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod2','nature')"   data-translate="nature">Nature</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod2','structure')"data-translate="structure">Structures</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod2','mob')"      data-translate="creatures">Créatures</button>
+        <button class="card-btn wiki" onclick="showStatus('mod2')"                data-translate="statut">Statut</button>
       </div>
     </aside>
 
@@ -175,7 +188,9 @@
 
       <!-- Vue détail -->
       <div class="card-detail" style="display:none;">
-        <button class="card-btn wiki" onclick="hideCardDetail('mod2')">← Retour</button>
+        <button class="card-btn wiki" onclick="hideCardDetail('mod2')">
+          ← <span data-translate="back">Retour</span>
+        </button>
         <div class="detail-content"></div>
       </div>
     </div>
@@ -195,13 +210,18 @@
     <div class="page-content">
   <h2 data-translate="patch_history">Historique des mises à jour</h2>
 <div class="patch-toolbar">
-  <input id="patchSearch" type="search" placeholder="Rechercher…">
+    <!-- recherche -->
+  <input id="patchSearch" type="search"
+       placeholder="Rechercher…"
+       data-translate-placeholder="search_placeholder">
+    <!-- filtre versions -->
   <select id="patchVersionFilter">
-    <option value="">Toutes versions Minecraft</option>
+    <option value="" data-translate="all_mc_versions">Toutes versions Minecraft</option>
   </select>
+    <!-- tri dates -->
   <select id="patchDateSort">
-    <option value="desc">Plus récent → plus ancien</option>
-    <option value="asc">Plus ancien → plus récent</option>
+    <option value="desc" data-translate="sort_new_to_old">Plus récent → plus ancien</option>
+    <option value="asc"  data-translate="sort_old_to_new">Plus ancien → plus récent</option>
   </select>
 </div>
 
@@ -211,7 +231,7 @@
       <!-- Vue détail -->
       <div class="card-detail" style="display:none;">
         <a href="#" class="card-btn wiki back-btn" onclick="hideCardDetail('patchnotes')">
-  ← <span data-translate="retour">Retour</span>
+  ← <span data-translate="back">Retour</span>
 </a>
         <div class="detail-content"></div>
       </div>

@@ -206,7 +206,7 @@ footer {
 /* Tailles de police */
 body.font-normal { font-size: 1em; }
 body.font-grand { font-size: 1.2em; }
-body.font-tresgrand { font-size: 1.4em; }
+body.font-tres-grand { font-size: 1.4em; }
 
 .theme-btns, .font-btns {
   display: flex;

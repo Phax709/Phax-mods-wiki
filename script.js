@@ -7,10 +7,29 @@ const translations = {
     patchnotes: "Patch Notes",
     settings: "Paramètres",
     credits: "Crédits",
+    back: "Retour",
+    theme_label: "Thème :",
+    font_label: "Taille du texte :",
+    dark: "Sombre",
+    light: "Clair",
+    font_normal: "Normale",
+    font_large: "Grand",
+    font_xlarge: "Très grand",
+    search_placeholder: "Rechercher…",
+    home_welcome_title: "Bienvenue",
+    home_welcome_p1_a: "Bienvenue sur le wiki des mods Minecraft créé par",
+    home_welcome_p2: "Sélectionnez un mod dans le menu en haut pour en savoir plus !",
+    all_mc_versions: "Toutes les versions Minecraft",
+    sort_new_to_old: "Plus récent → plus ancien",
+    sort_old_to_new: "Plus ancien → plus récent",
     tout: "Tout",
     blocs: "Blocs",
     items: "Objets",
     mobs: "Mobs",
+    nature: "Nature",
+    structure: "Structures",
+    minerai: "Minerais",
+    craft: "Craft", //à choisir mais je peux aussi mettre Recette
     patch_acatar: "Patchnotes Acatar",
     patch_chaosium: "Patchnotes Chaosium",
     patch_history: "Historique des mises à jour",
@@ -37,10 +56,29 @@ const translations = {
     patchnotes: "Patch Notes",
     settings: "Settings",
     credits: "Credits",
+    back: "Back",
+    theme_label: "Theme:",
+    font_label: "Text size:",
+    dark: "Dark",
+    light: "Light",
+    font_normal: "Normal",
+    font_large: "Large",
+    font_xlarge: "Very large",
+    search_placeholder: "Search…",
+    home_welcome_title: "Welcome",
+    home_welcome_p1_a: "Welcome to the wiki for Minecraft mods created by",
+    home_welcome_p2: "Pick a mod from the top menu to learn more!",
+    all_mc_versions: "All Minecraft versions",
+    sort_new_to_old: "Newest → oldest",
+    sort_old_to_new: "Oldest → newest",
     tout: "All",
     blocs: "Blocks",
     items: "Items",
     mobs: "Mobs",
+    nature: "Nature",
+    structure: "Structures",
+    minerai: "Ores",
+    craft: "Craft",
     patch_acatar: "Acatar Patch Notes",
     patch_chaosium: "Chaosium Patch Notes",
     patch_history: "Patch History",
@@ -149,6 +187,16 @@ function applyTranslations(lang) {
   if (frLbl) frLbl.textContent = dict.langue_fr;
   const enLbl = document.querySelector('.lang-option[data-lang="en"] .lbl');
   if (enLbl) enLbl.textContent = dict.langue_en;
+
+  document.querySelectorAll('[data-translate-placeholder]').forEach(el=>{
+  const k = el.getAttribute('data-translate-placeholder'); 
+  if (translations[lang]?.[k]) el.placeholder = translations[lang][k];
+});
+document.querySelectorAll('[data-translate-title]').forEach(el=>{
+  const k = el.getAttribute('data-translate-title'); 
+  if (translations[lang]?.[k]) el.title = translations[lang][k];
+});
+
 }
 
 function setLanguage(lang) {
@@ -438,12 +486,11 @@ let _patchSort   = "desc";  // "asc" | "desc"
 // Remplit le <select> des versions MC à partir du JSON
 function populateVersionFilter(data) {
   const f = document.getElementById('patchVersionFilter');
-  if (!f) return; // aucun select dans le HTML → on sort sans casser
-
+  if (!f) return;
   const set = new Set((data || []).map(n => n.mc).filter(Boolean));
   const versions = Array.from(set).sort((a,b) => a.localeCompare(b, undefined, { numeric:true }));
-
-  f.innerHTML = `<option value="">Toutes versions Minecraft</option>` +
+  // ⬇️ change UNIQUEMENT cette ligne :
+  f.innerHTML = `<option value="">${t('all_mc_versions')}</option>` +
                 versions.map(v => `<option value="${v}">MC ${v}</option>`).join('');
 }
 
