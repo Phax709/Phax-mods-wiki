@@ -2,8 +2,11 @@
 const translations = {
   fr: {
     accueil: "Accueil",
+    site_title: "Wiki des Mods de Phax709",
     acatar: "Acatar",
     chaosium: "Chaosium",
+    home_acatar_desc: "Un mod qui facilite les nouveaux joueurs dans Minecraft ainsi pour les joueurs avec plus d'expérience des fonctionnalités nouvelles.",
+    home_chaosium_desc: "Un mod fait pour les joueurs très expérimentés et qui veulent du challenge et de la difficulté ! D'où sont nom !",
     patchnotes: "Patch Notes",
     settings: "Paramètres",
     credits: "Crédits",
@@ -51,8 +54,11 @@ const translations = {
   },
   en: {
     accueil: "Home",
+    site_title: "Phax709 Mods Wiki",
     acatar: "Acatar",
     chaosium: "Chaosium",
+    home_acatar_desc: "A mod that facilitates new players in Minecraft as well as for players with more experience of the new features.",
+    home_chaosium_desc: "A mod made for very experienced players who want challenge and difficulty! Hence the name!",
     patchnotes: "Patch Notes",
     settings: "Settings",
     credits: "Credits",
@@ -161,6 +167,22 @@ function hasClass(el, c) { return !!(el && el.classList.contains(c)); }
 /********************
  * I18N — applique les traductions SANS casser les menus
  ********************/
+function setPageTitle(lang) {
+  const wanted = (translations?.[lang]?.site_title) || translations.fr.site_title || '';
+
+  // cible prioritairement <title id="siteTitle">
+  let titleEl = document.getElementById('siteTitle') || document.querySelector('head > title');
+  if (!titleEl) {
+    titleEl = document.createElement('title');
+    titleEl.id = 'siteTitle';
+    document.head.appendChild(titleEl);
+  }
+  titleEl.textContent = wanted;
+
+  // synchronise l’API document.title (barre d’onglet)
+  document.title = wanted;
+}
+
 function applyTranslations(lang) {
   const dict = (translations && translations[lang]) ? translations[lang] : translations.fr;
 
@@ -201,32 +223,24 @@ document.querySelectorAll('[data-translate-title]').forEach(el=>{
 
 function setLanguage(lang) {
   const chosen = lang || 'fr';
-  ETAT.langue = chosen; // ✅ update l'état en mémoire
+  ETAT.langue = chosen;
   localStorage.setItem('siteLanguage', chosen);
 
-  // Drapeau (ne modifie pas la structure du menu)
   const flag = document.querySelector('#currentLangFlag');
   if (flag) flag.src = (chosen === 'en') ? 'images/flag-gb.png' : 'images/flag-fr.png';
 
-  // Appliquer les traductions
   applyTranslations(chosen);
+  setPageTitle(chosen); // <= ajoute cette ligne
 
-  // Re-render de ce qui dépend de la langue (si visible)
-  if (document.getElementById('patchnotes')?.style.display !== 'none') {
-    renderPatchList();
-  }
-  // ✅ on appelle désormais ensureCards(...)
+  if (document.getElementById('patchnotes')?.style.display !== 'none') renderPatchList();
   if (document.getElementById('mod1')?.style.display !== 'none') ensureCards('mod1');
   if (document.getElementById('mod2')?.style.display !== 'none') ensureCards('mod2');
 
-  // Panneau statut déjà ouvert → on le réactualise
   const st1 = document.querySelector('#mod1 .update-panel');
   if (st1 && st1.style.display !== 'none') showStatus('mod1', true);
   const st2 = document.querySelector('#mod2 .update-panel');
   if (st2 && st2.style.display !== 'none') showStatus('mod2', true);
 }
-
-
 
 
 
@@ -386,6 +400,7 @@ function showPage(pageId) {
 
   // 5) remonter
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  setPageTitle(ETAT.langue);
 }
 
 

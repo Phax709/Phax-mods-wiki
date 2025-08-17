@@ -1093,3 +1093,89 @@ body.theme-sombre #mod2 .cards-grid::-webkit-scrollbar-thumb {
 
 .features-wrap h4 { margin: 10px 0 6px 0; font-size: 1rem; }
 .features { margin: 0; padding-left: 18px; }
+
+/* =========================
+   PACK RESPONSIVE MOBILE
+   (à coller en bas de styles.css)
+   ========================= */
+
+/* Tablettes (<= 992px) */
+@media (max-width: 992px) {
+  /* Header + nav défilable si ça déborde */
+  .bandeau { position: sticky; top: 0; z-index: 1000; }
+  .bandeau .bandeau-title { gap: .6rem; font-size: 1.05rem; }
+  .bandeau nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 6px;
+  }
+  .bandeau nav a { flex: 0 0 auto; }
+
+  /* Grilles de cartes : 2 colonnes */
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  /* Panneaux (statut / détail) : marges un peu plus serrées */
+  .card-detail,
+  .update-panel { margin-top: 12px; }
+}
+
+/* Téléphones (<= 640px) */
+@media (max-width: 640px) {
+  /* Logo + titre un peu plus petits */
+  .bandeau .bandeau-title .logo { height: 40px; }
+  .bandeau .bandeau-title { font-size: 1rem; }
+
+  /* Liens du header plus compacts */
+  .bandeau nav a { padding: 8px 10px; font-size: .95rem; }
+
+  /* Conteneurs principaux */
+  .page { padding: 10px 12px; }
+
+  /* Menu latéral des mods -> barre horizontale défilable */
+  .side-menu { margin-bottom: 10px; }
+  .side-buttons {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 0;
+  }
+  .side-buttons .card-btn { flex: 0 0 auto; }
+
+  /* Barre de recherche pleine largeur */
+  .search-bar { width: 100%; box-sizing: border-box; }
+
+  /* Grille des cartes : 1 colonne */
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Miniatures : éviter qu’elles ne prennent trop de hauteur */
+  .small-card .thumb { max-height: 140px; width: 100%; object-fit: cover; }
+
+  /* Patchnotes : liste en colonne */
+  #patchnotes .patch-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Image "hero" si tu l’utilises */
+  .site-hero { margin: 8px auto 14px; max-height: 260px; overflow: hidden; }
+  .site-hero img { width: 100%; height: 100%; object-fit: cover; }
+}
+
+/* Très petits écrans (<= 360px) */
+@media (max-width: 360px) {
+  .bandeau .bandeau-title .logo { height: 34px; }
+  .bandeau nav a { padding: 7px 9px; font-size: .9rem; }
+}
+
+/* Images dans les panneaux : toujours responsive */
+.card-detail img,
+.update-panel img { max-width: 100%; height: auto; display: block; }
