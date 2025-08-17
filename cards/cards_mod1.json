@@ -54,7 +54,7 @@
   {
   "id": "multicolor_ore",
   "type": "bloc",
-  "image": "../images/mod1/multicoloringot.png",
+  "image": "../images/mod1/Multicoloringot.png",
   "thumb_height": 75,
   "image_full": false,
   "image_pixelated": true,
@@ -251,5 +251,6 @@
 }
 
 ]
+
 
 
