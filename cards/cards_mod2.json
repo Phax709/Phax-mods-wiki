@@ -1,0 +1,102 @@
+[
+  {
+    "id": "c_bloc1",
+    "type": "bloc",
+    "image": "",
+    "title_fr": "Bloc Maudit",
+    "title_en": "Cursed Block",
+    "description_fr": "Bloc maudit contenant une énergie instable.",
+    "description_en": "Cursed block containing unstable energy.",
+    "details": {}
+  },
+  {
+    "id": "c_item1",
+    "type": "item",
+    "image": "",
+    "title_fr": "Dague du Chaos",
+    "title_en": "Chaos Dagger",
+    "description_fr": "Une dague forgée dans les flammes du chaos.",
+    "description_en": "A dagger forged in the flames of chaos.",
+    "details": {}
+  },
+  {
+    "id": "c_mob1",
+    "type": "mob",
+    "image": "",
+    "title_fr": "Mob du Chaos",
+    "title_en": "Chaos Mob",
+    "description_fr": "Un mob redoutable évoluant dans le chaos.",
+    "description_en": "A fearsome mob dwelling in chaos.",
+    "details": {}
+  },
+  {
+    "id": "c_bloc2",
+    "type": "bloc",
+    "image": "",
+    "title_fr": "Dague du Chaos",
+    "title_en": "Chaos Dagger",
+    "description_fr": "Une dague forgée dans les flammes du chaos.",
+    "description_en": "A dagger forged in the flames of chaos.",
+    "details": {}
+  },
+  {
+    "id": "c_item2",
+    "type": "item",
+    "image": "",
+    "title_fr": "Dague du Chaos",
+    "title_en": "Chaos Dagger",
+    "description_fr": "Une dague forgée dans les flammes du chaos.",
+    "description_en": "A dagger forged in the flames of chaos.",
+    "details": {}
+  },
+  {
+    "id": "c_bloc3",
+    "type": "bloc",
+    "image": "",
+    "title_fr": "Dague du Chaos",
+    "title_en": "Chaos Dagger",
+    "description_fr": "Une dague forgée dans les flammes du chaos.",
+    "description_en": "A dagger forged in the flames of chaos.",
+    "details": {}
+  },
+  {
+    "id": "c_item3",
+    "type": "item",
+    "image": "",
+    "title_fr": "Dague du Chaos",
+    "title_en": "Chaos Dagger",
+    "description_fr": "Une dague forgée dans les flammes du chaos.",
+    "description_en": "A dagger forged in the flames of chaos.",
+    "details": {}
+  },
+  {
+    "id": "c_mob2",
+    "type": "mob",
+    "image": "",
+    "title_fr": "Mob du Chaos",
+    "title_en": "Chaos Mob",
+    "description_fr": "Un mob redoutable évoluant dans le chaos.",
+    "description_en": "A fearsome mob dwelling in chaos.",
+    "details": {}
+  },
+  {
+    "id": "c_item4",
+    "type": "item",
+    "image": "",
+    "title_fr": "Dague du Chaos",
+    "title_en": "Chaos Dagger",
+    "description_fr": "Une dague forgée dans les flammes du chaos.",
+    "description_en": "A dagger forged in the flames of chaos.",
+    "details": {}
+  },
+  {
+    "id": "c_bloc4",
+    "type": "bloc",
+    "image": "",
+    "title_fr": "Dague du Chaos",
+    "title_en": "Chaos Dagger",
+    "description_fr": "Une dague forgée dans les flammes du chaos.",
+    "description_en": "A dagger forged in the flames of chaos.",
+    "details": {}
+  }
+]

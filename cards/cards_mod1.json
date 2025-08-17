@@ -1,0 +1,255 @@
+[
+  {
+    "id": "bloc1",
+    "type": "bloc",
+    "title_fr": "Bloc Radioactif",
+    "title_en": "Radioactive Block",
+    "description_fr": "Un bloc dangereux...",
+    "description_en": "A dangerous block...",
+    "details": {}
+  },
+  {
+    "id": "igniera_ore",
+    "type": "bloc",
+    "image": "",
+    "title_fr": "Minerai d’igniera",
+    "title_en": "Igniera ore",
+    "description_fr": "Minerai rare et instable.",
+    "description_en": "A rare, unstable ore.",
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai d’igniera",
+          "title_en": "Characteristics of igniera ore",
+          "items_fr": ["Dureté : 25", "Résistance : 4", "Niveau d’extraction : 5 = pioche multicolore"],
+          "items_en": ["Hardness: 25", "Resistance: 4", "Harvest level: 5 = multicolor pickaxe"]
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "items_fr": ["Forme : Uniforme", "Hauteur : Min 0 ; Max 64", "Biome restreint : Non"],
+          "items_en": ["Shape: Uniform", "Height: Min 0; Max 64", "Biome restriction: No"]
+        },
+        {
+          "title_fr": "Cuisson / craft",
+          "title_en": "Craft or smelting",
+          "items_fr": ["Type de recette : Fonderie (blasting)", "XP : 1", "Temps de cuisson : 100 tics (≈5 s)"],
+          "items_en": ["Recipe type: blasting", "XP reward: 1", "Cooking time: 100 ticks (≈5s)"]
+        },
+        {
+          "title_fr": "Armure / outils",
+          "title_en": "Armor / tools",
+          "items_fr": ["Le lingot d’igniera ne permet ni outils ni armures."],
+          "items_en": ["Igniera ingot cannot be used for tools or armor."]
+        },
+        {
+          "title_fr": "Autres usages",
+          "title_en": "Other use",
+          "items_fr": ["Le lingot d’igniera sert à crafter un spawner."],
+          "items_en": ["The igniera ingot can be used to craft a mob spawner."]
+        }
+      ]
+    }
+  },
+  {
+  "id": "multicolor_ore",
+  "type": "bloc",
+  "image": "../images/mod1/multicoloringot.png",
+  "thumb_height": 75,
+  "image_full": false,
+  "image_pixelated": true,
+  "title_fr": "Minerai multicolore",
+  "title_en": "Multicolor ore",
+  "description_fr": "Ressource sans bloc de minerai.",
+  "description_en": "Resource with no ore block.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du minerai multicolore",
+        "title_en": "Characteristics of multicolor ore",
+        "items_fr": [
+          "Dureté : 0",
+          "Résistance : 0",
+          "Niveau d’extraction : 0",
+          "",
+          "Le multicolore n’a pas de bloc de minerai"
+        ],
+        "items_en": [
+          "Hardness: 0",
+          "Resistance: 0",
+          "Harvest level: 0",
+          "",
+          "Multicolor has no ore block"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Forme : aucune",
+          "Hauteur : Min 0 ; Max 0",
+          "Biome restreint : Non"
+        ],
+        "items_en": [
+          "Generation shape: NO generation shape",
+          "Generation height: Min 0; Max 0",
+          "Restriction biome: NO"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette : crafting",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: crafting",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ],
+        "images_en": [
+          "../images/mod1/multicolor_recipe.png",
+          "../images/mod1/multicolor_recipe_2.png"
+        ],
+        "captions_en": [
+          "The arcane shards can be found by breaking spawners",
+          ""
+        ],
+        "images_fr": [
+          "../images/mod1/multicolor_recipe.png",
+          "../images/mod1/multicolor_recipe_2.png"
+        ],
+        "captions_fr": [
+          "Les fragments arcaniques se trouvent en cassant des spawners",
+          ""
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Objet de réparation : lingot multicolore"],
+        "items_en": ["Repair item: multicolor ingot"]
+      },
+      {
+        "title_fr": "Outils",
+        "title_en": "Tools",
+        "items_fr": [
+          "Épée :",
+          "• Niveau d’extraction : 1",
+          "• Efficacité : 4",
+          "• Enchantabilité : 22",
+          "• Dégâts d’attaque : 42",
+          "• Vitesse d’attaque : 2",
+          "• Durabilité : 3000",
+          "",
+          "Hache :",
+          "• Niveau d’extraction : 1",
+          "• Efficacité : 4",
+          "• Enchantabilité : 22",
+          "• Dégâts d’attaque : 20",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 3000",
+          "",
+          "Pioche / pelle / houe :",
+          "• Niveau d’extraction : 5",
+          "• Efficacité : 20",
+          "• Enchantabilité : 22",
+          "• Dégâts d’attaque : 4",
+          "• Vitesse d’attaque : 2",
+          "• Durabilité : 3000",
+          "",
+          "Marteau :",
+          "• Niveau d’extraction : 5",
+          "• Efficacité : 12",
+          "• Enchantabilité : 22",
+          "• Dégâts d’attaque : 4",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 2000"
+        ],
+        "items_en": [
+          "Sword:",
+          "• Harvest level: 1",
+          "• Efficiency: 4",
+          "• Enchantability: 22",
+          "• Attack damage: 42",
+          "• Attack speed: 2",
+          "• Uses / durability: 3000",
+          "",
+          "Axe:",
+          "• Harvest level: 1",
+          "• Efficiency: 4",
+          "• Enchantability: 22",
+          "• Attack damage: 20",
+          "• Attack speed: 1",
+          "• Uses / durability: 3000",
+          "",
+          "Pickaxe, shovel, hoe:",
+          "• Harvest level: 5",
+          "• Efficiency: 20",
+          "• Enchantability: 22",
+          "• Attack damage: 4",
+          "• Attack speed: 2",
+          "• Uses / durability: 3000",
+          "",
+          "Hammer:",
+          "• Harvest level: 5",
+          "• Efficiency: 12",
+          "• Enchantability: 22",
+          "• Attack damage: 4",
+          "• Attack speed: 1",
+          "• Uses / durability: 2000"
+        ]
+      },
+      {
+        "title_fr": "Armure",
+        "title_en": "Armor",
+        "items_fr": [
+          "Absorption maximale des dégâts : 100",
+          "Valeurs d’armure (Casque, Plastron, Jambières, Bottes) : 10 ; 25 ; 20 ; 10",
+          "Enchantabilité : 22",
+          "Résistance : 3",
+          "Résistance au recul : 0.5"
+        ],
+        "items_en": [
+          "Maximal damage that armor absorbs: 100",
+          "Damage values (Helmet, Chestplate, Leggings, Boots): 10; 25; 20; 10",
+          "Enchantability: 22",
+          "Toughness: 3",
+          "Knockback resistance: 0.5"
+        ],
+        "images_en": ["images/mod1/multicolor_hammer_recipe.png"],
+        "captions_en": ["Craft of multicolor hammer"],
+        "images_fr": ["images/mod1/multicolor_hammer_recipe.png"],
+        "captions_fr": ["Craft du marteau multicolore"]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le lingot multicolore permet de crafter la pomme multicolore dans la table de craft.",
+          "Le multicolore permet de crafter une lumière prismatique avec du sculk."
+        ],
+        "items_en": [
+          "The multicolor ingot can be used to craft multicolor apple in the crafting table.",
+          "Multicolor can be used to craft a prismatic light with sculk."
+        ],
+        "images_en": [
+          "images/mod1/multicolor_apple.png",
+          "images/mod1/prismatic_light.png"
+        ],
+        "captions_en": ["", ""],
+        "images_fr": [
+          "images/mod1/multicolor_apple.png",
+          "images/mod1/prismatic_light.png"
+        ],
+        "captions_fr": ["", ""]
+      }
+    ]
+  }
+}
+
+]
+
+
