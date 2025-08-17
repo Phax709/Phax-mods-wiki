@@ -1455,3 +1455,11 @@ html, body { max-width: 100%; overflow-x: hidden; }
     margin: 0 0 12px 0;                  /* espace entre les cartes */
   }
 }
+
+@media (max-width: 768px){
+  .drawer-lang-btn img { width: 22px; height: 22px; } /* tu peux mettre 20–24px */
+}
+
+/* taille standard côté desktop */
+.lang-button img,
+.lang-option img { width: 18px; height: 18px; }

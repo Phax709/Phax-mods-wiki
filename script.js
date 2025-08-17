@@ -50,8 +50,8 @@ const translations = {
     report_bug: "Signaler un bug",
     suggest_idea: "Proposer une suggestion",
     satisfaction_survey: "Enquête de satisfaction",
-    langue_fr: "🇫🇷 Français",
-    langue_en: "🇬🇧 English"
+    langue_fr: "Français",
+    langue_en: "English"
   },
   en: {
     accueil: "Home",
@@ -103,8 +103,8 @@ const translations = {
     report_bug: "Report a bug",
     suggest_idea: "Suggest an idea",
     satisfaction_survey: "Satisfaction survey",
-    langue_fr: "🇫🇷 French",
-    langue_en: "🇬🇧 English"
+    langue_fr: "French",
+    langue_en: "English"
   }
 };
 
