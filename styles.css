@@ -1179,3 +1179,82 @@ body.theme-sombre #mod2 .cards-grid::-webkit-scrollbar-thumb {
 /* Images dans les panneaux : toujours responsive */
 .card-detail img,
 .update-panel img { max-width: 100%; height: auto; display: block; }
+
+/* =========================
+   Mobile polish (<= 640px)
+   ========================= */
+@media (max-width: 640px) {
+  /* Bandeau + nav */
+  .bandeau { position: sticky; top: 0; z-index: 1000; }
+  .bandeau .bandeau-title { font-size: 1rem; gap: .5rem; }
+  .bandeau nav {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 6px 0 8px;
+  }
+  .bandeau nav a { flex: 0 0 auto; padding: 8px 10px; font-size: .95rem; }
+
+  /* Page padding plus serré */
+  .page { padding: 12px; }
+
+  /* ===== Accueil : empiler les 2 cartes mod ===== */
+  /* Essaye de cibler des containers courants; si un seul matche, ça suffit */
+  #accueil .mods-grid,
+  #accueil .cards-row,
+  #accueil .grid-2,
+  #accueil .home-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Cartes d'accueil : image responsive et marge */
+  #accueil .mod-card,
+  #accueil .home-card {
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  #accueil .mod-card img,
+  #accueil .home-card img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+  }
+
+  /* Boutons des cartes d'accueil */
+  #accueil .mod-card .actions,
+  #accueil .home-card .actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  /* Menus latéraux (dans pages mod) -> barre horizontale défilable */
+  .side-buttons {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 0;
+  }
+  .side-buttons .card-btn { flex: 0 0 auto; }
+
+  /* Grilles de cartes (pages mod) -> 1 colonne */
+  .cards-grid { grid-template-columns: 1fr; gap: 10px; }
+
+  /* Panneaux (statut/détail) : marges serrées + images fluides */
+  .card-detail, .update-panel { margin-top: 12px; }
+  .card-detail img, .update-panel img { max-width: 100%; height: auto; }
+}
+
+/* Tablettes (<= 992px) : 2 colonnes pour les grilles */
+@media (max-width: 992px) {
+  .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+}
