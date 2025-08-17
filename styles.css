@@ -1,0 +1,1095 @@
+body.theme-sombre {
+  --main-bg: #181c1f;
+  --bandeau-bg: linear-gradient(90deg, #23272b 0%, #1976d2 100%);
+  --accent: #168beb;
+  --accent-hover: #1976d2;
+  --card-bg: #23272bcc;
+  --text: #f4f4f4;
+  --shadow: 0 4px 24px rgba(0,0,0,0.2);
+  background: var(--main-bg);
+  color: var(--text);
+  --lang-dropdown-bg: #1f2937;   /* fond 100% opaque, sombre */
+  --lang-dropdown-text: #f4f4f4;
+  --lang-dropdown-border: #374151;
+  --lang-dropdown-hover: #4b5563;
+}
+
+body.theme-clair {
+  --main-bg: #e3f2fd;
+  --bandeau-bg: linear-gradient(90deg, #4fc3f7 0%, #1976d2 100%);
+  --accent: #2989e9;
+  --accent-hover: #1565c0;
+  --card-bg: #ffffffee;
+  --text: #222;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  background: var(--main-bg);
+  color: var(--text);
+  --lang-dropdown-bg: #ffffff;   /* fond 100% opaque */
+  --lang-dropdown-text: #222222; /* couleur texte */
+  --lang-dropdown-border: #c7c7c7;
+  --lang-dropdown-hover: #e5e7eb;
+}
+
+:root {
+  --main-bg: #e3f2fd;
+  --bandeau-bg: linear-gradient(90deg, #4fc3f7 0%, #1976d2 100%);
+  --accent: #1976d2;
+  --accent-hover: #1565c0;
+  --card-bg: #ffffffee;
+  --text: #222;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'Segoe UI',Arial, sans-serif;
+  margin: 0;
+  background: var(--main-bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bandeau {
+  width: 100%;
+  background: var(--bandeau-bg);
+  color: #fff;
+  padding: 1.2em 0 0.5em 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.bandeau-title {
+  font-size: 2.1em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  margin-bottom: 0.5em;
+}
+
+.bandeau .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px #0006;
+}
+
+/* Logo + anneau de contraste dans le header */
+.bandeau .bandeau-title .logo{
+  height: 56px;            /* ajuste la taille si besoin */
+  width: auto;
+  padding: 4px;            /* espace pour que le badge soit visible */
+  border-radius: 10px;     /* coins arrondis (ou 50% si tu veux rond) */
+  background: rgb(233, 249, 250);     /* halo sombre */
+  outline: 1px solid rgba(193, 233, 252, 0.5);    /* liseré clair */
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);       /* ombre douce */
+  image-rendering: auto;    /* mets pixelated si pixel-art */
+}
+@media (max-width:640px){
+  .bandeau .bandeau-title .logo{ height: 44px; }
+}
+
+.bandeau nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.bandeau nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+  padding: 0.5em 1.2em;
+  border-radius: 25px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.bandeau nav a.active,
+.bandeau nav a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+main {
+  flex: 1;
+  display: block;
+  padding: 2em 1em;
+  background: none;
+}
+
+.page {
+  background: var(--card-bg);
+  color: var(--text);
+  padding: 2em 2.5em;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  min-width: 320px;
+  max-width: 900px; /* plus large qu'avant */
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+footer {
+  background: var(--accent);
+  color: #222;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 0.95em;
+  margin-top: 2em;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
+  font-weight: bold;
+}
+
+/* Menu paramètres en haut à gauche */
+.settings-menu {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  left: auto;
+  z-index: 100;
+}
+
+.settings-toggle {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.6em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0004;
+  transition: background 0.2s;
+}
+
+.settings-toggle:hover {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+.settings-panel {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: auto;
+  right: 0;
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 1.2em 1.5em 1em 1.5em;
+  min-width: 220px;
+  font-size: 1em;
+}
+
+.settings-menu.open .settings-panel {
+  display: block;
+}
+
+/* Tailles de police */
+body.font-normal { font-size: 1em; }
+body.font-grand { font-size: 1.2em; }
+body.font-tresgrand { font-size: 1.4em; }
+
+.theme-btns, .font-btns {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+.theme-btn, .font-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4em 1em;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s, color 0.2s;
+}
+.theme-btn.active, .font-btn.active,
+.theme-btn:hover, .font-btn:hover {
+  background: var(--accent-hover);
+  color: #fff;
+  font-weight: bold;
+  outline: 2px solid var(--accent-hover);
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #5699d1; /* couleur par défaut */
+}
+
+/* Couleur soulignement pour le thème sombre */
+body.theme-sombre .underline {
+  text-decoration-color: #69b5d8; /* bleu clair pour sombre */
+}
+
+.presentation-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 1.5em 2em;
+  margin: 2em 0 1.5em 0;
+  text-align: left;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 0.7s;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* ✅ autorise le retour à la ligne */
+  gap: 1px 20px; /* si tu veux garder un espacement */
+}
+
+.cards-container .presentation-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px; /* limite de largeur */
+}
+
+.presentation-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+}
+
+.presentation-card p {
+  margin-bottom: 1.2em;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.card-btn,
+button.card-btn {
+  display: inline-block;
+  padding: 0.65em 1.4em; /* taille intermédiaire */
+  font-size: 1.05em;     /* texte légèrement plus grand */
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0002;
+}
+
+/* Bouton actif (filtre sélectionné) */
+button.card-btn.active,
+.card-btn.active {
+  background: #1565c0; /* bleu plus foncé */
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.card-btn:hover,
+button.card-btn:hover {
+  background: var(--accent-hover);
+}
+
+.card-btn.curseforge {
+  background: #f16436;
+}
+.card-btn.curseforge:hover {
+  background: #d44a1e;
+}
+
+.card-btn.wiki {
+  background: var(--accent);
+}
+.card-btn.wiki:hover {
+  background: var(--accent-hover);
+}
+/* Couleur soulignement pour le thème clair */
+body.theme-clair .underline {
+  text-decoration-color: #0b4177; /* bleu foncé pour clair */
+}
+
+.presentation-card img {
+  max-width: 200px; /* Largeur maximale */
+  height: auto;     /* Garde les proportions */
+  display: block;   /* Évite l'alignement bizarre avec le texte */
+  margin: 0 auto 1em auto; /* Centrage + espace en bas */
+}
+
+.page-layout {
+  display: flex;
+  gap: 2em;
+}
+
+.side-menu {
+  width: 200px;
+  background: var(--card-bg);
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.side-menu h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  margin-bottom: 0.5em;
+}
+
+.side-menu a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.side-menu a:hover {
+  color: var(--accent-hover);
+}
+
+.page-content {
+  flex: 1;
+}
+
+.side-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.side-buttons .card-btn {
+  color: #fff !important; /* texte toujours blanc */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* petite ombre pour lisibilité */
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1em;
+}
+
+.small-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 1em;
+  animation: fadeIn 0.4s;
+}
+
+.small-card h4 {
+  margin: 0 0 0.5em 0;
+}
+
+.small-card p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.search-bar {
+  width: calc(100% - 1em); /* empêche le dépassement */
+  padding: 0.5em;
+  margin: 0 0 1em 0; /* marge en bas seulement */
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  font-size: 1em;
+  background: var(--card-bg);
+  color: var(--text-color);
+  transition: all 0.2s ease;
+  box-sizing: border-box; /* compte le padding dans la largeur */
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 8px var(--accent-hover);
+}
+
+.card-detail {
+  background: var(--card-bg);
+  padding: 1.5em;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.3s;
+}
+
+.card-detail h3 {
+  margin-top: 0;
+}
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.top-nav a {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+}
+
+.top-nav a:hover {
+  background: var(--accent-hover);
+}
+
+.patch-card {
+  background: var(--card-bg);
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.patch-card h3 {
+  margin: 0;
+}
+.patch-detail {
+  margin-top: 0.5em;
+}
+
+.discord-logo {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.discord-logo a {
+  display: inline-block;
+  background-color: rgb(238, 238, 238);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.discord-logo img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.patch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em; /* espace vertical entre chaque patch note */
+}
+
+.patch-entry {
+  background: var(--card-bg);
+  padding: 0.8em;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.patch-entry:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.patch-item {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.patch-item h3 {
+  margin: 0;
+}
+
+.patch-detail {
+  display: none;
+  margin-top: 0.5em;
+}
+
+.settings-section {
+  margin-top: 1em;
+}
+
+.settings-section label {
+  display: block;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+}
+
+.settings-section select {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  appearance: none; /* enlève le style natif */
+}
+
+.settings-section select:focus {
+  outline: none;
+  background: var(--accent-hover);
+}
+
+.dev-status {
+  background: var(--card-bg);
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1em; /* espace sous la barre */
+}
+
+.progress-bar {
+  background: #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 20px;
+  width: 100%; /* pleine largeur */
+}
+
+.progress-fill {
+  background: var(--accent);
+  height: 100%;
+  width: 0;
+  transition: width 0.4s ease;
+}
+
+
+.dev-status-percent {
+  margin-top: 0.5em;
+}
+
+.update-panel {
+  background: var(--card-bg);
+  padding: 1.2em;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1em;
+}
+.update-panel h3 {
+  margin-top: 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.status-badge.alpha { background-color: #e67e22; }
+.status-badge.beta { background-color: #f1c40f; color: black; }
+.status-badge.stable { background-color: #2ecc71; }
+
+.progress-bar {
+  background-color: #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  background-color: var(--accent-color);
+  height: 100%;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+}
+
+/* Panneau Statut */
+.update-panel {
+  background: var(--card-bg);
+  padding: 1.2em;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1em;
+}
+
+/* Badges d'état */
+.status-badge {
+  display: inline-block;
+  padding: 0.35em 0.75em;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.8em;
+}
+.status-badge.stable { background: #2e7d32; } /* vert */
+.status-badge.beta   { background: #ef6c00; } /* orange */
+.status-badge.dev    { background: #c62828; } /* rouge */
+
+/* Mini barre de progression dans le panneau */
+.status-progress {
+  background: #d9d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 18px;
+  margin: 0.5em 0 0.8em 0;
+}
+.status-progress .fill {
+  background: var(--accent);
+  height: 100%;
+  width: 0;
+  transition: width 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+.update-panel h3 {
+  margin: 0 0 0.4em 0;
+}
+.update-panel ul {
+  margin: 0.4em 0 0 1.2em;
+}
+
+.status-updated {
+    margin-top: 12px;
+    font-size: 0.9em;
+    color: #bbb;
+    font-style: italic;
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-updated-inline {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Carte “Nous aider” en pleine largeur dans la grille de l’accueil */
+#accueil .cards-container .help-card {
+  grid-column: 1 / -1;  /* pleine largeur, bien alignée */
+  margin: 0;            /* pas de marge parasite */
+}
+
+
+/* Alignement des deux boutons de la carte */
+.help-card .help-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+/* Optionnel : un soupçon de présence visuelle */
+.help-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 1em;
+  animation: fadeIn 0.4s;
+}
+
+.full-width-card {
+    grid-column: 1 / -1; /* prend toute la largeur */
+    margin-top: 10px; /* espace réduit au-dessus */
+    margin-bottom: 10px; /* pas d’espace en trop en dessous */
+}
+
+.full-width-card {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    margin-bottom: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#accueil .cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px; /* même espacement horizontal/vertical */
+}
+
+#accueil .cards-container .presentation-card {
+  width: auto;      /* important si une width/flex existait */
+  max-width: 100%;
+}
+
+.card-btn.btn-orange {
+  background-color: rgb(243, 167, 69) !important;
+  color: white !important;
+}
+
+.card-btn.btn-vert {
+  background-color: rgb(40, 145, 40) !important;
+  color: white !important;
+}
+
+.card-btn.btn-rouge {
+  background-color: rgb(209, 50, 50) !important;
+  color: white !important;
+}
+
+#langSelect option {
+  font-size: 14px; /* taille générale du texte */
+}
+
+#langSelect option::first-letter {
+  font-size: 16px; /* la taille de l'emoji */
+}
+
+#langSelect {
+  font-size: 14px; /* taille du texte global */
+  padding: 4px;
+}
+
+.lang-menu {
+  display: inline-block;
+  position: relative;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.4em;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.lang-dropdown div {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.lang-dropdown div:hover {
+  background: var(--hover-bg);
+}
+
+.flag-icon {
+  width: 16px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Liste Patch Notes : vertical, espacement léger */
+#patchnotes .patch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  /* Liste déroulante dès le départ */
+  max-height: 320px; /* correspond à environ 4 patchnotes */
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* (optionnel) Scrollbar discrète + thème */
+#patchnotes .patch-list::-webkit-scrollbar { width: 8px; }
+#patchnotes .patch-list::-webkit-scrollbar-track { background: transparent; }
+body.theme-clair #patchnotes .patch-list::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.3); border-radius: 4px; }
+body.theme-sombre #patchnotes .patch-list::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.3); border-radius: 4px; }
+
+#patchnotes .patch-list::-webkit-scrollbar {
+  width: 8px;
+}
+#patchnotes .patch-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* Chaque entrée : carte compacte cliquable */
+#patchnotes .patch-entry {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* titre à gauche, date à droite (si présente) */
+}
+
+/* Titre (mod + version) */
+#patchnotes .patch-entry .pe-title {
+  font-weight: 700;
+}
+
+/* Date optionnelle, plus discrète */
+#patchnotes .patch-entry .pe-date {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* Bouton retour en style carte */
+#patchnotes .card-detail .back-btn {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/* ===== Langue (bouton + dropdown) ===== */
+.lang-selector { position: relative; display: inline-block; }
+
+.lang-button {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--border-color, #2989e9);
+  border-radius: 8px;
+  background: var(--button-bg, #2989e9);
+  color: var(--text-color, #111);
+  box-shadow: var(--shadow, 0 1px 2px rgba(0,0,0,0.08));
+  cursor: pointer;
+}
+.lang-button:hover { background: var(--button-hover-bg, #1976d2); }
+.lang-button img { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; }
+.lang-button .caret {
+  width: 0; height: 0;
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 6px solid currentColor;
+}
+
+/* Dropdown propre, sous le bouton */
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;             /* ✅ aligne le menu sur le bord droit du bouton */
+  left: auto;           /* ✅ évite de l’aligner sur la page */
+  min-width: 200px;
+  background: var(--lang-dropdown-bg);   /* ✅ fond OPAQUE défini plus haut */
+  color: var(--lang-dropdown-text);
+  border: 1px solid var(--lang-dropdown-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow, 0 8px 24px rgba(0,0,0,0.12));
+  padding: 6px;
+  display: none;
+  z-index: 1000;
+}
+.lang-selector.open .lang-dropdown { display: block; }
+
+.lang-dropdown .lang-option {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 10px 12px;
+  background: transparent; border: 0; color: inherit; text-align: left;
+  border-radius: 8px; cursor: pointer;
+}
+.lang-dropdown .lang-option:hover {
+  background: var(--lang-dropdown-hover);
+}
+.lang-dropdown .lang-option img { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; }
+
+/* Harmoniser la couleur du menu Paramètres avec celle du menu Langue */
+body.theme-clair .settings-panel {
+  background: var(--lang-dropdown-bg);
+  color: var(--lang-dropdown-text);
+  border: 1px solid var(--lang-dropdown-border);
+}
+
+body.theme-sombre .settings-panel {
+  background: var(--lang-dropdown-bg);
+  color: var(--lang-dropdown-text);
+  border: 1px solid var(--lang-dropdown-border);
+}
+
+.mc-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-left: 6px;
+  font-size: 0.85em;
+  border-radius: 999px;
+  background: rgba(25, 118, 210, 0.12);
+  color: var(--text);
+  border: 1px solid rgba(25,118,210,0.35);
+  vertical-align: baseline;
+}
+body.theme-sombre .mc-badge {
+  background: rgba(40, 150, 255, 0.18);
+  border-color: rgba(40,150,255,0.45);
+}
+
+/* barre outils */
+.patch-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.patch-toolbar input[type="search"],
+.patch-toolbar select {
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--lang-dropdown-border, #c7c7c7);
+  border-radius: 8px;
+  padding: 8px 10px;
+  box-shadow: var(--shadow, 0 1px 2px rgba(0,0,0,0.06));
+}
+.patch-toolbar input[type="search"] { flex: 1 1 220px; min-width: 180px; }
+
+.patch-see-more {
+  margin: 10px auto 0 auto;
+  display: block;
+  padding: 0.5em 1.2em;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+  transition: background 0.2s;
+}
+.patch-see-more:hover {
+  background: var(--accent-hover);
+}
+
+/* Applique un contour bleu (comme la barre de recherche des mods) */
+/* Patchnotes: champs de la barre outils */
+#patchnotes #patchSearch,
+#patchnotes #patchVersionFilter,
+#patchnotes #patchDateSort {
+  border: 2px solid var(--accent);
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 10px;
+  box-shadow: var(--shadow, 0 1px 2px rgba(0,0,0,0.06));
+  outline: none;
+}
+
+/* Focus = bleu un peu plus fort, comme sur les mods */
+#patchnotes #patchSearch:focus,
+#patchnotes #patchVersionFilter:focus,
+#patchnotes #patchDateSort:focus {
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+/* Harmonise le select (évite le look système trop brut) */
+#patchnotes #patchVersionFilter,
+#patchnotes #patchDateSort {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text) 50%),
+    linear-gradient(135deg, var(--text) 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px),
+    calc(100% - 2.2em) 50%;
+  background-size: 6px 6px, 6px 6px, 1px 2.4em;
+  background-repeat: no-repeat;
+  padding-right: 2.4em; /* place pour la flèche */
+}
+
+/* Placeholder un peu adouci */
+#patchnotes #patchSearch::placeholder {
+  color: color-mix(in srgb, var(--text) 60%, transparent);
+  opacity: 1;
+}
+
+/* Grille des cartes défilante pour chaque mod */
+#mod1 .cards-grid,
+#mod2 .cards-grid {
+  max-height: 420px;       /* ≈ 2 à 3 rangées selon la taille des cartes */
+  overflow-y: auto;        /* molette active */
+  padding-right: 6px;      /* petit espace pour la scrollbar */
+}
+
+/* Scrollbar discrète, adaptative au thème */
+#mod1 .cards-grid::-webkit-scrollbar,
+#mod2 .cards-grid::-webkit-scrollbar {
+  width: 8px;
+}
+#mod1 .cards-grid::-webkit-scrollbar-track,
+#mod2 .cards-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+body.theme-clair #mod1 .cards-grid::-webkit-scrollbar-thumb,
+body.theme-clair #mod2 .cards-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+body.theme-sombre #mod1 .cards-grid::-webkit-scrollbar-thumb,
+body.theme-sombre #mod2 .cards-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 4px;
+}
+
+/* (Optionnel) hauteur un peu plus faible sur mobile */
+@media (max-width: 700px) {
+  #mod1 .cards-grid,
+  #mod2 .cards-grid {
+    max-height: 320px;
+  }
+}
+
+/* ===== Statut (mod1/mod2) ===== */
+.update-panel {
+  display: none;
+  background: var(--card-bg, rgba(0,0,0,0.06));
+  border: 1px solid var(--lang-dropdown-border, #374151);
+  border-radius: 12px;
+  padding: 14px;
+  margin: 12px 0;
+}
+
+.status-header {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
+  font-size: 1rem; margin-bottom: 8px;
+}
+.status-header .status-updated {
+  opacity: 0.8; font-size: 0.92em;
+}
+
+.status-desc { margin: 6px 0 12px 0; }
+
+.progress-wrap { margin: 10px 0 12px 0; }
+.progress-label { margin-bottom: 6px; }
+
+.progress-bar {
+  width: 100%; height: 10px; border-radius: 999px;
+  background: rgba(25,118,210,0.15);
+  overflow: hidden;
+  border: 1px solid rgba(25,118,210,0.35);
+}
+.progress-bar > span {
+  display: block; height: 100%;
+  width: 0%;
+  background: var(--accent, #1976d2);
+  transition: width 300ms ease;
+}
+
+.features-wrap h4 { margin: 10px 0 6px 0; font-size: 1rem; }
+.features { margin: 0; padding-left: 18px; }

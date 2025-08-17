@@ -1,0 +1,1931 @@
+[
+  {
+    "id": "acatar-1.0.0-mc1.19.4",
+    "mod": "acatar",
+    "version": "1.0.0",
+    "mc": "1.19.4",
+    "date": "2023-07-21",
+    "title_fr": "Acatar - v1.0",
+    "title_en": "Acatar - v1.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du blocs de multicolore"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Refonte des textures pour tout les éléments en Multicolore"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Adding the blocks of multicolor"
+    ]},
+    { "title": "FIXES", "items": [
+      "Redesigning textures for all multicolor elements"
+    ]}
+  ]
+},
+  {
+    "id": "chaosium-1.1.0-mc1.20.1",
+    "mod": "chaosium",
+    "version": "1.1.0",
+    "mc": "1.20.1",
+    "date": "2024-08-22",
+    "title_fr": "Chaosium - v1.1.0",
+    "title_en": "Chaosium - v1.1.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'une armure de dragon",
+      "Ajout de nouvelle créature :",
+      "Squelette",
+      "Zombie",
+      "Warden",
+      "Enderman",
+      "Creeper"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Pas de résolution"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added a dragon armor",
+        "Added new creatures:",
+        "Skeleton",
+        "Zombie",
+        "Warden",
+        "Enderman",
+        "Creeper"
+    ]},
+    { "title": "FIXES", "items": [
+        "No fixes"
+    ]}
+  ]
+},
+  {
+    "id": "acatar-1.15.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.15.0",
+    "mc": "1.20.1",
+    "date": "2024-09-27",
+    "title_fr": "Acatar - v1.15",
+    "title_en": "Acatar - v1.15",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout de l'œil de révélation — stack 6",
+      "Ajout de la perle ténébreuse — stack 12",
+      "Info : ces deux items ont une fonctionnalité particulière",
+      "Ajout de la roche volcanique (craft magma + glace) et apparition dans le Nether",
+      "Ajout du creeper céruléen (plaines, forêts)",
+      "Ajout du bâton & de la poudre de creeper céruléen"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Suppression du slot de collier supplémentaire",
+      "Léger changement texture du bloc multicolor",
+      "Changement texture du lingot de dioptasium",
+      "Nouvelle texture de la boule anti-dégâts",
+      "Les noyés ne dropent plus d’Aquatique Slime",
+      "Les ondegels n’apparaissent plus dans le Nether",
+      "Dégâts ondegel : 13 → 7",
+      "Corrections FR/EN du disque « Sunchine voyage »"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added Eye of Revelation — stack 6",
+      "Added Dark Pearl — stack 12",
+      "Info: both items have unique behavior",
+      "Added Volcanic Rock (Magma + Ice) and spawns in the Nether",
+      "Added Cerulean Creeper (plains, forests)",
+      "Added Cerulean Creeper Rod & Powder"
+    ]},
+    { "title": "FIXES", "items": [
+      "Removed extra necklace slot",
+      "Slight texture tweak for multicolor block",
+      "Changed texture for Dioptasium Ingot",
+      "New texture for Anti-Damage Ball",
+      "Drowned no longer drop Aquatic Slime",
+      "Wavegels no longer spawn in the Nether",
+      "Wavegel damage: 13 → 7",
+      "FR/EN fixes for \"Sunchine voyage\" music disc"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.0.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.0.0",
+    "mc": "1.20.1",
+    "date": "2023-08-31",
+    "title_fr": "Acatar - v1.0",
+    "title_en": "Acatar - v1.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'un nouveau type d'arbre",
+      "Ajout d'un nouveau minerai, le \"Carmeltazite\"",
+      "Nouvel item",
+      "Nouveaux blocs craftables",
+      "Nouvelle achievement",
+      "Ajout d'un craft pour la selle",
+      "Ajout du blocs de multicolore"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "correction sur certain minerai de la couche d'apparition par chunk et de sa forme d'apparition"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added a new type of tree",
+      "Added a new ore, \"Carmeltazite\"",
+      "New item",
+      "New craftable blocks",
+      "New achievement",
+      "Added a craft for the saddle",
+      "Added multicolor blocks"
+    ]},
+    { "title": "FIXES", "items": [
+      "Fixed certain ore generation by chunk and its appearance shape"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.1.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.1.0",
+    "mc": "1.20.1",
+    "date": "2023-09-16",
+    "title_fr": "Acatar - v1.1",
+    "title_en": "Acatar - v1.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout de 2 nouveaux biome : la foret de redwood et la terre de volcan",
+      "Ajout de 2 blocs de sable",
+      "Ajout de blocs décoratifs : le Gilbre",
+      "Ajout de 6 nouveaux avancements",
+      "Ajout de 2 nouvelles fleurs : la fleur du ciel et la fleur des volcans"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Réorganisation de l'inventaire créatif",
+      "Modification de la texture du cave bloc et des blocs en redwood",
+      "Changement du nom se Sayabiome a Saya forest",
+      "Résolution de duplication avec les crafts sur le nickel",
+      "Modification du nombre d'apparition d'abeille dans la foret de saya"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Addition of 2 new biome: the redwood forest and the volcano earth",
+      "Addition of 2 sand blocks",
+      "Adding decorative blocks: the Gilbre",
+      "Addition of 6 new advancements",
+      "Addition of 2 new flowers: the sky flower and the volcano flower"
+    ]},
+    { "title": "FIXES", "items": [
+      "Reorganization of the creative inventory",
+      "Modification of the texture of the cave block and redwood blocks",
+      "Change of the name from Sayabiome to Saya forest",
+      "Resolution of duplication with crafts on nickel",
+      "Modification of the number of bee spawns in the Saya forest"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.1.1-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.1.1",
+    "mc": "1.20.1",
+    "date": "2023-09-18",
+    "title_fr": "Acatar - v1.1.1",
+    "title_en": "Acatar - v1.1.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'un craft du blocs de red vers 9 lingot de red",
+      "Ajout d'un avancement lorsque l'on obtient un fleur de feu"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Correction d'une faute d'orthographe dans l'un des avancements",
+      "Traduction non effectuer sur l'un des avancements est désormais fixée pour la version française",
+      "Changement du titre de l'avancement de \"une plante dans les terres de volcans\" modifiée en \"une plante résistante à la lave\""
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Addition of a craft from the red blocks to 9 lingots of red",
+      "Addition of an advancement when obtaining a fire flower"
+    ]},
+    { "title": "FIXES", "items": [
+      "Correction of a spelling mistake in one of the advancements",
+      "Translation not performed on one of the advancements is now fixed for the French version",
+      "Change of the title from \"a plant in the volcano lands\" to \"a plant resistant to lava\""
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.2.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.2.0",
+    "mc": "1.20.1",
+    "date": "2023-09-18",
+    "title_fr": "Acatar - v1.2.0",
+    "title_en": "Acatar - v1.2.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'un disque de musique",
+      "Ajout d'un avancement avec le sable orange",
+      "Ajout d'un champignon fluorescent",
+      "Ajout de 3 craft a base des colorants de fleur : 1.firedye > red dye, 2.skydye > light blue dye, 3.volcano > orange dye",
+      "Ajout des dérivés des blocs de gilbre (escalier, dalle et muret )",
+      "Ajout de la porte en redwood"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Changement des textures des blocs de \"gilbre\""
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added a music disc",
+      "Added an advancement with orange sand",
+      "Added a fluorescent mushroom",
+      "Added 3 crafts based on flower dyes: 1.firedye > red dye, 2.skydye > light blue dye, 3.volcano > orange dye",
+      "Added derivatives of Gilbre blocks (stairs, slabs, and walls)",
+      "Added Redwood door"
+    ]},
+    { "title": "FIXES", "items": [
+      "Changed the textures of the \"Gilbre\" blocks"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.3.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.3.0",
+    "mc": "1.20.1",
+    "date": "2023-11-11",
+    "title_fr": "Acatar - v1.3.0",
+    "title_en": "Acatar - v1.3.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout de l'armure de l'espace",
+      "Ajout des blocs de béton de couleurs pour les escaliers et les dalles",
+      "Ajout d'un biome de grotte de glace",
+      "Ajout du minerai de Chrome",
+      "Ajout de la fleur de l'espace",
+      "Ajout des blocs de palmier"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Correction du champignon fluorescent où les effets escompté n'apparaissait pas.",
+      "Ajustement des dégâts pour l'épée en multicolor qui passe de 38 point d'attaque à 44."
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added space armor",
+      "Added colored concrete blocks for stairs and slabs",
+      "Added an ice cave biome",
+      "Added Chrome ore",
+      "Added space flower",
+      "Added palm tree blocks"
+    ]},
+    { "title": "FIXES", "items": [
+      "Fixed the fluorescent mushroom where the expected effects did not appear.",
+      "Adjusted damage for the multicolor sword from 38 attack points to 44."
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.4.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.4.0",
+    "mc": "1.20.1",
+    "date": "2023-12-31",
+    "title_fr": "Acatar - v1.4.0",
+    "title_en": "Acatar - v1.4.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout des éléments en amazonite",
+      "Ajout du craft de la amaapple",
+      "Ajout du purifieur et de la table de craft avancé",
+      "Ajout de 2 nouveaux type de villageois le \"Mineur\" et le \"Customer\"",
+      "INFO : les tables d'artisanats pour les villageois sont : le mineur > purifieur, le customer > table de craft avancé",
+      "Ajout d'un biome plage avec palmiers",
+      "Ajout de la potion anti dégâts",
+      "Ajout d'un avancement \"Plage paradisiaque\""
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Texture des feuilles de redwood refaite",
+      "Arbre de palmier maintenant disponible avec les pousse de palmier",
+      "ATTENTION: il y a divers problème avec la génération du palmier et de son biome et la potion est actuellement en phase de test ."
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added Amazonite items",
+        "Added Amaapple craft",
+        "Added Purifier and Advanced Crafting Table",
+        "Added 2 new villager types: \"Miner\" and \"Customer\"",
+        "INFO: Crafting tables for villagers are: Miner > Purifier, Customer > Advanced Crafting Table",
+        "Added a beach biome with palm trees",
+        "Added Anti-Damage Potion",
+        "Added advancement \"Paradisiacal Beach\""
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed the texture of Redwood leaves",
+        "Palm tree now available with palm tree saplings",
+        "WARNING: There are various issues with the generation of the palm tree and its biome, and the potion is currently in testing phase."
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.4.1-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.4.1",
+    "mc": "1.20.1",
+    "date": "2024-01-03",
+    "title_fr": "Acatar - v1.4.1",
+    "title_en": "Acatar - v1.4.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du Acatar book"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Correction de l'apparition du biome plage avec palmiers et de l'arbre"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added Acatar book"
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed the appearance of the beach biome with palm trees and the tree"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.5.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.5.0",
+    "mc": "1.20.1",
+    "date": "2024-02-24",
+    "title_fr": "Acatar - v1.5.0",
+    "title_en": "Acatar - v1.5.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "4 nouveaux types de bois : Silverwood, Etycola, Phylotas, Gyro",
+      "2 nouvelles types de roches : Phoriste, Azure cristal bricks",
+      "2 nouvelles plantes : Indigloria, Cyanelie",
+      "Nouvelle créature : Colossum",
+      "Nouveau minerai : le xenite"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Pas de resolution"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added 4 new wood types: Silverwood, Etycola, Phylotas, Gyro",
+        "Added 2 new rock types: Phoriste, Azure crystal bricks",
+        "Added 2 new plants: Indigloria, Cyanelie",
+        "Added new creature: Colossum",
+        "Added new ore: Xenite"
+    ]},
+    { "title": "FIXES", "items": [
+        "No fixes"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.6.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.6.0",
+    "mc": "1.20.1",
+    "date": "2024-03-04",
+    "title_fr": "Acatar - v1.6.0",
+    "title_en": "Acatar - v1.6.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout de 4 nouveaux types de bois : Enderwood, Yophylys, Luminapin, Noctacacia",
+      "Ajout de 3 types de coffres : Xenite, Paladium, Multicolore",
+      "Nouvelle roche disponible dans l'end : Interstellar rock",
+      "Possibilité de cuire 500 objets avec le fragment de xenite",
+      "Ajout d'une nouvelle profession de villageois : le forestier avec un bloc de scierie",
+      "Nouveau bloc de profession : la scierie",
+      "Ajout du craft de fragment de xenite dans un haut fourneau",
+      "Ajout d'une alarme",
+      "Ajout d'une fonctionnalité de vol avec l'armure de l'espace",
+      "Ajout du modele de l'armure spatial"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Correction de faute d'orthographe dans des avancements : \"an incredible music disk !\" Disc > Disk",
+      "dans la creation du lingot de multicolore Multicolored > Multicolor",
+      "Suppression de tout les biomes crées jusque là et de leurs avancements",
+      "Suppression du craft de la potion anti dégâts et du spawner de colossum"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added 4 new wood types: Enderwood, Yophylys, Luminapin, Noctacacia",
+        "Added 3 types of chests: Xenite, Paladium, Multicolor",
+        "New rock available in the End: Interstellar rock",
+        "Ability to smelt 500 items with Xenite fragment",
+        "Added a new villager profession: Forester with a sawmill block",
+        "New profession block: Sawmill",
+        "Added Xenite fragment craft in a blast furnace",
+        "Added an alarm",
+        "Added flight capability with space armor",
+        "Added space armor model"
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed spelling mistakes in advancements: \"an incredible music disk !\" Disc > Disk",
+        "In the creation of Multicolored ingot, changed Multicolored > Multicolor",
+        "Removed all biomes created so far and their advancements",
+        "Removed Anti-Damage Potion craft and Colossum spawner"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.7.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.7.0",
+    "mc": "1.20.1",
+    "date": "2024-04-17",
+    "title_fr": "Acatar - v1.7.0",
+    "title_en": "Acatar - v1.7.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du crystal rouge, du bloc de crystal rouge et de l'amas de crystal rouge.",
+      "Nouveau bloc de culture : fertile soil",
+      "Ajout du bloc de sel obtenable dans les océans couche 0 à 64.",
+      "Ajout du bloc de bouton en roche interstellaire",
+      "Ajout des recettes pour les blocs de mur, dalle, escalirer en roche interstellaire",
+      "Les blocs de minerai peuvent être utilisé pour la base de beacon (Paladium, red, multicolor, carmeltazite, fluorite, chrome, amazonite, xenite,nickel)"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Refonte du systeme pour la blue sea weed qui devient une culture comme le blé la \"blue sea wheat\".",
+      "Les outils en amazonite ont maintenant leurs fonctionnalités respectives",
+      "Chrononimbus peut être utilisé en créatif sans à avoir de la poudre de redstone dans son inventaire"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added red crystal, red crystal block, and red crystal cluster.",
+      "New crop block: fertile soil",
+      "Added salt block obtainable in oceans layer 0 to 64.",
+      "Added button block made of interstellar rock",
+      "Added recipes for wall, slab, stair blocks made of interstellar rock",
+      "Ore blocks can be used for beacon base (Paladium, red, multicolor, carmeltazite, fluorite, chrome, amazonite, xenite, nickel)"
+    ]},
+    { "title": "FIXES", "items": [
+        "Redesigned the system for blue sea weed, now a crop like wheat called \"blue sea wheat\".",
+        "Amazonite tools now have their respective functionalities",
+        "Chrononimbus can be used in creative mode without needing redstone powder in inventory"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.7.1-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.7.1",
+    "mc": "1.20.1",
+    "date": "2024-04-21",
+    "title_fr": "Acatar - v1.7.1",
+    "title_en": "Acatar - v1.7.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout de la fleur de la mer et du craft pour le colorant de la mer",
+      "Ajout d'une nouvelle culture de la \"nether star flower\"",
+      "Ajout d'un second craft pour la graine de blé marin",
+      "Ajout de la structure du premier boss Colossum"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Diminution de la protection de l'armure en red",
+      "Ajout de la traduction en francais sur la derniere mise à jour."
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added sea flower and craft for sea dye",
+        "Added a new crop: \"nether star flower\"",
+        "Added a second craft for sea wheat seed",
+        "Added structure for the first boss Colossum"
+    ]},
+    { "title": "FIXES", "items": [
+        "Reduced protection of red armor",
+        "Added French translation for the latest update."
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.8.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.8.0",
+    "mc": "1.20.1",
+    "date": "2024-05-03",
+    "title_fr": "Acatar - v1.8.0",
+    "title_en": "Acatar - v1.8.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'un nouveau type de minerai le \"Dioptasium\" dont les outils ont un niveau de 4",
+      "Ajout d'un champignon explosif ",
+      "Ajout d'un nouvel onglet créatif avec tout les minerais et outils",
+      "Ajout d'un nouveau liquide \"eau empoisonnée\"",
+      "Ajout d'informations sur les minerai, pioche et outil grâce à Jei",
+      "Ajout de l'apparition du champignon fluorescent dans les biomes marais et mangroves en plus des lush caves",
+      "Ajout des escalier, dalle et muret de crystal d'azur et phoriste"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Changement de la texture de l'épée en paladium",
+      "Correction du hammer en amazonite dont lequel il ne minai pas en 3*3 comme les autres hammer",
+      "Correction du hammer en amazonite qui avait un niveau de minage de 3 au lieu de 2",
+      "Ajustement du spawn du champignons fluorescent",
+      "Correction du temps de minage du minerai d'amazonite"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added a new ore type: \"Dioptasium\" with tools having a level of 4",
+      "Added an explosive mushroom",
+      "Added a new creative tab with all ores and tools",
+      "Added a new liquid: \"poisoned water\"",
+      "Added information about ores, pickaxes, and tools using Jei",
+      "Added the appearance of the fluorescent mushroom in swamp and mangrove biomes in addition to lush caves",
+      "Added stairs, slabs, and walls made of azure crystal and phorite"
+    ]},
+    { "title": "FIXES", "items": [
+        "Changed the texture of the Paladium sword",
+        "Fixed the Amazonite hammer which did not mine in 3*3 like other hammers",
+        "Fixed the Amazonite hammer which had a mining level of 3 instead of 2",
+        "Adjusted the spawn of the fluorescent mushroom",
+        "Fixed the mining time for Amazonite ore"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.9.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.9.0",
+    "mc": "1.20.1",
+    "date": "2024-05-17",
+    "title_fr": "Acatar - v1.9.0",
+    "title_en": "Acatar - v1.9.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du grain de sable",
+      "Ajout du forge élément",
+      "Ajout des craft de chaque model d’armure ( armor trims)",
+      "Ajout du craft du gilded blackstone",
+      "Ajout d’une nouvelle culture « graine de netherite » craftable dans le feu de camp avec une fire flower ou une graine de torche-fleur entouré de netherrack",
+      "Ajout de la poudre de netherite permet de crafter avec 9 poudre un fragment de netherite",
+      "Ajout de la boule de slime aquatique obtenable sur les noyés"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Changement de la texture du lingot en paladium et de la pioche",
+      "Changement de la texture du sable orange ( moins agressif )"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added sand grain",
+      "Added elemental forge",
+      "Added crafting for each armor trim model",
+      "Added crafting for gilded blackstone",
+      "Added a new crop: \"netherite seed\" craftable in the campfire with a fire flower or a torch flower seed surrounded by netherrack",
+      "Added netherite powder allows crafting with 9 powder into a netherite fragment",
+      "Added aquatic slime ball obtainable from drowned"
+    ]},
+    { "title": "FIXES", "items": [
+        "Changed the texture of Paladium ingot and pickaxe",
+        "Changed the texture of orange sand (less aggressive)"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.9.1-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.9.1",
+    "mc": "1.20.1",
+    "date": "2024-05-20",
+    "title_fr": "Acatar - v1.9.1",
+    "title_en": "Acatar - v1.9.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "la graine de fleur de netherite et de netherstar peut désormais être composté avec une chance de 85%",
+      "La graine de blé marine peut également être composté avec une chance de 50%"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Changement de la texture du lingot de fluorite et du block de fluorite",
+      "Reduction des drops de poudre de netherite et de la graine de netherite",
+      "La graine de netherite et la poudre de netherite ne sont plus affecté par l'enchantement fortune",
+      "Changement de la texture de l’épee et de la hache red"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "the netherite flower and nether star seeds can now be composted with an 85% chance",
+      "the marine wheat seed can also be composted with a 50% chance"
+    ]},
+    { "title": "FIXES", "items": [
+        "Changed the texture of fluorite ingot and fluorite block",
+        "Reduced drops of netherite powder and netherite seed",
+        "Netherite seed and netherite powder are no longer affected by the fortune enchantment",
+        "Changed the texture of red sword and axe"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.9.2-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.9.2",
+    "mc": "1.20.1",
+    "date": "2024-06-08",
+    "title_fr": "Acatar - v1.9.2",
+    "title_en": "Acatar - v1.9.2",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du craft de chaque armure de cheval (or,diamant, fer et cuir )",
+      "Ajout du craft de la ficelle a partir de toile d’araignée",
+      "Ajout du craft du colorant vert dans le fourneau",
+      "Ajout de la fleur «lightos» et du colorant désormais craftable",
+      "Ajout du craft de la glowstone avec 2 grain de sable et 2 colorant de lumières.",
+      "Ajout de 16 couleur de lampe à partir du block de Minecraft [ bulb ]",
+      "Ajout de nombreux avancements",
+      "Ajout d’un avancements pour rejoindre notre serveur discord."
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Changement léger de la texture du hammer en dioptasium",
+      "Changement également de la texture du block de chrome"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added crafting for each horse armor (gold, diamond, iron, and leather)",
+      "Added crafting for string from spider web",
+      "Added crafting for green dye in the furnace",
+      "Added the \"lightos\" flower and the dye is now craftable",
+      "Added crafting for glowstone with 2 sand grains and 2 light dyes.",
+      "Added 16 lamp colors from the Minecraft [bulb] block",
+      "Added many advancements",
+      "Added an advancement to join our Discord server."
+    ]},
+    { "title": "FIXES", "items": [
+      "Changed the texture of hammer in dioptasium",
+      "Changed the texture of chrome block"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.10.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.10.0",
+    "mc": "1.20.1",
+    "date": "2024-06-16",
+    "title_fr": "Acatar - v1.10.0",
+    "title_en": "Acatar - v1.10.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout de la noix de coco",
+      "Ajout de la demi noix de coco",
+      "Ajout du lait de coco",
+      "Ajout d’un couteau de cuisine",
+      "Ajout d’une lumière spectrale",
+      "Ajout de 3 blocs venant d’un autre mod «Blockus» par brandcraft sur fabric ( avec credit sur le bloc )",
+      "Ajout d’un nouveau liquide «L’elixir de vie»"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Correction des traductions de l’ancienne version",
+      "Changement de nom pour la version française de la fleur d’eau en Aqualo, de la fleur du ciel en Cielyna et de la fleur de lumière en Lumieros",
+      "Correction de la traduction du sel en francais qui affichait «Salt»",
+      "Diminution des drops lâchés lorsque qu’un bloc de palmier est cassé",
+      "Changement léger de la texture de la bûche de bois prismatique"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added coconut",
+      "Added half coconut",
+      "Added coconut milk",
+      "Added a kitchen knife",
+      "Added a spectral light",
+      "Added 3 blocks from another mod \"Blockus\" by brandcraft on fabric (with credit on the block)",
+      "Added a new liquid \"The Elixir of Life\""
+    ]},
+    { "title": "FIXES", "items": [
+        "Correction of the translations of the old version",
+        "Changed the name for the French version of the water flower to Aqualo, the sky flower to Cielyna, and the light flower to Lumieros",
+        "Correction of the translation of salt in French which displayed \"Salt\"",
+        "Reduction of drops when a palm block is broken",
+        "Slight change in the texture of the prismatic wood log"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.0.0-mc1.20.4",
+    "mod": "acatar",
+    "version": "1.0.0",
+    "mc": "1.20.4",
+    "date": "2024-06-18",
+    "title_fr": "Acatar - v1.0.0",
+    "title_en": "Acatar - v1.0.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du support de la 1.20.4 "
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Pas de résolution"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added support for 1.20.4"
+    ]},
+    { "title": "FIXES", "items": [
+        "No fixes"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.0.0-mc1.20.6",
+    "mod": "acatar",
+    "version": "1.0.0",
+    "mc": "1.20.6",
+    "date": "2024-08-06",
+    "title_fr": "Acatar - v1.0.0",
+    "title_en": "Acatar - v1.0.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du support de la 1.20.6"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Pas de résolution"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added support for 1.20.6"
+    ]},
+    { "title": "FIXES", "items": [
+        "No fixes"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.11.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.11.0",
+    "mc": "1.20.1",
+    "date": "2024-08-06",
+    "title_fr": "Acatar - v1.11.0",
+    "title_en": "Acatar - v1.11.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Nouveau type d'arbres : Sakura avec son arbre et la pousse pour le faire grandir",
+      "Nouveau biome : Forêt de sakura",
+      "Ajout du lac d'elixir de vie dans le biome de sakura dans le nether souvent caché",
+      "Nouveau bloc de barrier en fer et porte en verre",
+      "Nouveau minerai : igniera ( aucune utilisation pour le moment, c'est pour bientôt)",
+      "Ajout du craft du cobweb avec 5 ficelles",
+      "Ajout d'une recette de la deepslate à partir de cobbled deepslate dans le haut fourneau (Blast furnace)"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Refonte de la texture du lingot et du bloc red"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "New tree type: Sakura with its tree and sapling to grow it",
+      "New biome: Sakura forest",
+      "Added the lake of elixir of life in the sakura biome in the nether often hidden",
+      "New iron barrier block and glass door",
+      "New ore: igniera (no use for now, it's coming soon)",
+      "Added crafting of cobweb with 5 strings",
+      "Added a recipe for deepslate from cobbled deepslate in the blast furnace"
+    ]},
+    { "title": "FIXES", "items": [
+        "Redesign of the texture of the red ingot and block of red"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.1.1-mc1.20.6",
+    "mod": "acatar",
+    "version": "1.11.1",
+    "mc": "1.20.6",
+    "date": "2024-08-12",
+    "title_fr": "Acatar - v1.11.1",
+    "title_en": "Acatar - v1.11.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Nouveau type d'arbres : Sakura avec son arbre et la pousse pour le faire grandir",
+      "Nouveau biome : Forêt de sakura",
+      "Ajout du lac d'elixir de vie dans le biome de sakura dans le nether souvent caché",
+      "Nouveau bloc de barrier en fer et porte en verre",
+      "Nouveau minerai : igniera ( aucune utilisation pour le moment, c'est pour bientôt)",
+      "Ajout du craft du cobweb avec 5 ficelles",
+      "Ajout d'une recette de la deepslate à partir de cobbled deepslate dans le haut fourneau (Blast furnace)"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Refonte de la texture du lingot et du bloc red"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "New tree type: Sakura with its tree and sapling to grow it",
+      "New biome: Sakura forest",
+      "Added the lake of elixir of life in the sakura biome in the nether often hidden",
+      "New iron barrier block and glass door",
+      "New ore: igniera (no use for now, it's coming soon)",
+      "Added crafting of cobweb with 5 strings",
+      "Added a recipe for deepslate from cobbled deepslate in the blast furnace"
+    ]},
+    { "title": "FIXES", "items": [
+        "Redesign of the texture of the red ingot and block of red"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.12.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.12.0",
+    "mc": "1.20.1",
+    "date": "2024-08-17",
+    "title_fr": "Acatar - v1.12.0",
+    "title_en": "Acatar - v1.12.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout des 9 autres arbres",
+      "Ajout des pousses dans les échanges du forestier ( metier de villageois forestier)",
+      "Ajout du craft de sable  avec 4 grain de sable et du craft du gravier avec 4 poudre a canon"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Ajout de la traduction du minerai igniera",
+        "La pomme red drop désormais sur les feuilles de redwood",
+        "Refonte de la texture du lingot red",
+        "Refonte de la texture du bois redwood"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added the 9 other trees",
+      "Added saplings in the forester trades (forester villager profession)",
+      "Added crafting of sand with 4 sand grains and crafting of gravel with 4 gunpowder"
+    ]},
+    { "title": "FIXES", "items": [
+        "Added translation for igniera ore",
+        "Red apple now drops from redwood leaves",
+        "Red ingot texture redesign",
+        "Redwood wood texture redesign"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.2.0-mc1.20.6",
+    "mod": "acatar",
+    "version": "1.2.0",
+    "mc": "1.20.6",
+    "date": "2024-08-17",
+    "title_fr": "Acatar - v1.2.0",
+    "title_en": "Acatar - v1.2.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout des 9 autres arbres",
+      "Ajout des pousses dans les échanges du forestier ( metier de villageois forestier)",
+      "Ajout du craft de sable  avec 4 grain de sable et du craft du gravier avec 4 poudre a canon"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Ajout de la traduction du minerai igniera",
+        "La pomme red drop désormais sur les feuilles de redwood",
+        "Refonte de la texture du lingot red",
+        "Refonte de la texture du bois redwood"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added the 9 other trees",
+      "Added saplings in the forester trades (forester villager profession)",
+      "Added crafting of sand with 4 sand grains and crafting of gravel with 4 gunpowder"
+    ]},
+    { "title": "FIXES", "items": [
+        "Added translation for igniera ore",
+        "Red apple now drops from redwood leaves",
+        "Red ingot texture redesign",
+        "Redwood wood texture redesign"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.13.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.13.0",
+    "mc": "1.20.1",
+    "date": "2024-08-23",
+    "title_fr": "Acatar - v1.13.0",
+    "title_en": "Acatar - v1.13.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du craft du mob spawner",
+      "Ajout de la recette de chaque œuf sauf Sniffer, poule chevauché, le cavalier squelette, l'araignée cheavauchée, le vex, le zoglin, le breeze, le bogged(l'embourbé)",
+      "Ajout du disque de musique avec la musique de C418 sweden",
+      "Ajout d'un nouveau boss \"Extermate\" ( warden ) et d'un avancement",
+      "Ajout également de la structure pour aller battre le boss extermate dans le biome sakura, Crimson, warped et soul sand valley"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Ajout de l'effet regeneration, instant healt, resistance, et healt boost lorsque la pomme multicolor est utilisé",
+        "Diminution des loot des agricultures (nether star et netherite)",
+        "Mise à jour des traduction françaises",
+        "Mise à jour de la traduction du liquide \"elixir of life\" en français",
+        "Ajout d'un affichage du prix pour modifier le temps et la météo dans le chrononimbus",
+        "Ajout d'un son lorsque l'armure en amazonite et space est équipée",
+        "Modification du son lorsque l'armure est équipée",
+        "paladium : fer à la place du diamant, red : or à la place du diamant, dioptasium : netherite à la place du diamant",
+        "Modification de la texture de l'armure en amazonite",
+        "Modification de la texture du lingot et du bloc en chrome",
+        "Modification de la durablité des outils passant de 700 à 1700 et de 1000 à 1400 pour le Hammer en dioptasium",
+        "Modification de la texture du lingot et du bloc de chrome",
+        "Modification de la durabilité de l'armure en amazonite, en dioptasium, en multicolor, et en space",
+        "Correctif basé sur le plastron : Amazonite : 30  -> 100, Dioptasium: 15  -> 150, Multicolor: 100 -> 187, Space : 25  -> 34"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added crafting for mob spawner",
+        "Added recipe for each egg except Sniffer, chicken rider, skeleton rider, spider rider, vex, zoglin, breeze, bogged (the bogged)",
+        "Added music disc with C418's Sweden music",
+        "Added a new boss \"Extermate\" (warden) and an advancement",
+        "Also added the structure to fight the Extermate boss in the sakura, crimson, warped, and soul sand valley biomes"
+    ]},
+    { "title": "FIXES", "items": [
+        "Added regeneration, instant health, resistance, and health boost effects when using the multicolor apple",
+        "Reduced loot from crops (nether star and netherite)",
+        "Updated French translations",
+        "Updated translation of the liquid \"elixir of life\" in French",
+        "Added a price display for changing time and weather in the chrononimbus",
+        "Added a sound when wearing Amazonite and Space armor",
+        "Modified the sound when the armor is equipped",
+        "Paladium: iron instead of diamond, red: gold instead of diamond, dioptasium: netherite instead of diamond",
+        "Modified the texture of Amazonite armor",
+        "Modified the texture of chrome ingot and block",
+        "Modified tool durability from 700 to 1700 and from 1000 to 1400 for Dioptasium hammer",
+        "Modified the texture of chrome ingot and block",
+        "Modified durability of Amazonite, Dioptasium, Multicolor, and Space armor",
+        "Fix based on chestplate: Amazonite: 30 -> 100, Dioptasium: 15 -> 150, Multicolor: 100 -> 187, Space: 25 -> 34"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.3.0-mc1.20.6",
+    "mod": "acatar",
+    "version": "1.3.0",
+    "mc": "1.20.6",
+    "date": "2024-08-23",
+    "title_fr": "Acatar - v1.3.0",
+    "title_en": "Acatar - v1.3.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du craft du mob spawner",
+      "Ajout de la recette de chaque œuf sauf Sniffer, poule chevauché, le cavalier squelette, l'araignée cheavauchée, le vex, le zoglin, le breeze, le bogged(l'embourbé)",
+      "Ajout du disque de musique avec la musique de C418 sweden",
+      "Ajout d'un nouveau boss \"Extermate\" ( warden ) et d'un avancement",
+      "Ajout également de la structure pour aller battre le boss extermate dans le biome sakura, Crimson, warped et soul sand valley"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Ajout de l'effet regeneration, instant healt, resistance, et healt boost lorsque la pomme multicolor est utilisé",
+        "Diminution des loot des agricultures (nether star et netherite)",
+        "Mise à jour des traduction françaises",
+        "Mise à jour de la traduction du liquide \"elixir of life\" en français",
+        "Ajout d'un affichage du prix pour modifier le temps et la météo dans le chrononimbus",
+        "Ajout d'un son lorsque l'armure en amazonite et space est équipée",
+        "Modification du son lorsque l'armure est équipée",
+        "paladium : fer à la place du diamant, red : or à la place du diamant, dioptasium : netherite à la place du diamant",
+        "Modification de la texture de l'armure en amazonite",
+        "Modification de la texture du lingot et du bloc en chrome",
+        "Modification de la durablité des outils passant de 700 à 1700 et de 1000 à 1400 pour le Hammer en dioptasium",
+        "Modification de la texture du lingot et du bloc de chrome",
+        "Modification de la durabilité de l'armure en amazonite, en dioptasium, en multicolor, et en space",
+        "Correctif basé sur le plastron : Amazonite : 30  -> 100, Dioptasium: 15  -> 150, Multicolor: 100 -> 187, Space : 25  -> 34"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added crafting for mob spawner",
+        "Added recipe for each egg except Sniffer, chicken rider, skeleton rider, spider rider, vex, zoglin, breeze, bogged (the bogged)",
+        "Added music disc with C418's Sweden music",
+        "Added a new boss \"Extermate\" (warden) and an advancement",
+        "Also added the structure to fight the Extermate boss in the sakura, crimson, warped, and soul sand valley biomes"
+    ]},
+    { "title": "FIXES", "items": [
+        "Added regeneration, instant health, resistance, and health boost effects when using the multicolor apple",
+        "Reduced loot from crops (nether star and netherite)",
+        "Updated French translations",
+        "Updated translation of the liquid \"elixir of life\" in French",
+        "Added a price display for changing time and weather in the chrononimbus",
+        "Added a sound when wearing Amazonite and Space armor",
+        "Modified the sound when the armor is equipped",
+        "Paladium: iron instead of diamond, red: gold instead of diamond, dioptasium: netherite instead of diamond",
+        "Modified the texture of Amazonite armor",
+        "Modified the texture of chrome ingot and block",
+        "Modified tool durability from 700 to 1700 and from 1000 to 1400 for Dioptasium hammer",
+        "Modified the texture of chrome ingot and block",
+        "Modified durability of Amazonite, Dioptasium, Multicolor, and Space armor",
+        "Fix based on chestplate: Amazonite: 30 -> 100, Dioptasium: 15 -> 150, Multicolor: 100 -> 187, Space: 25 -> 34"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.13.1-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.13.1",
+    "mc": "1.20.1",
+    "date": "2024-08-23",
+    "title_fr": "Acatar - v1.13.1",
+    "title_en": "Acatar - v1.13.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Pas d'ajout"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Correction de certaine traduction qui n'était pas présente en Français",
+        "Texture du disque \"Sweden\" modifié",
+        "Le sable noir se génère désormais naturellement entre la couche 0 et -64",
+        "Modification du craft du purifier",
+        "Suppression des biomes de restrictions pour le spawn du minerai d'amazonite",
+        "Les efficacités des pioches en paladium, red, multicolor, amazonite, dioptasium ont été modifié passant de :",
+        "Paladium   : 8  -> 8  ( aucun changement )",
+        "Multicolor : 20 -> 20 ( aucun changement )",
+        "Red        : 8  -> 9  ( Augmentation )",
+        "Amazonite  : 7  -> 12 ( Augmentation )",
+        "Dioptasium : 6  -> 16 ( Augmentation )",
+        "La durabilité des outils ( hors Hammer ) ont été revus :",
+        "Paladium   : 1200 -> 900  ( Réduction )",
+        "Multicolor : 3000 -> 3000 ( aucun changement )",
+        "Red        : 1800 -> 1200 ( Réduction )",
+        "Amazonite  : 1400 -> 1800 ( Augmentation )",
+        "Dioptasium : 1700 -> 2400 ( Augmentation )"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "No additions"
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed certain translations that were not present in French",
+        "Modified texture of the \"Sweden\" disc",
+        "Black sand now generates naturally between layers 0 and -64",
+        "Modified crafting of the purifier",
+        "Removed biome restrictions for Amazonite ore spawn",
+        "The efficiencies of Paladium, Red, Multicolor, Amazonite, and Dioptasium pickaxes have been modified as follows:",
+        "Paladium   : 8  -> 8  (no change)",
+        "Multicolor : 20 -> 20 (no change)",
+        "Red        : 8  -> 9  (increase)",
+        "Amazonite  : 7  -> 12 (increase)",
+        "Dioptasium : 6  -> 16 (increase)",
+        "The durability of tools (excluding Hammer) has been revised:",
+        "Paladium   : 1200 -> 900  (reduction)",
+        "Multicolor : 3000 -> 3000 (no change)",
+        "Red        : 1800 -> 1200 (reduction)",
+        "Amazonite  : 1400 -> 1800 (increase)",
+        "Dioptasium : 1700 -> 2400 (increase)"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.3.1-mc1.20.6",
+    "mod": "acatar",
+    "version": "1.3.1",
+    "mc": "1.20.6",
+    "date": "2024-08-23",
+    "title_fr": "Acatar - v1.3.1",
+    "title_en": "Acatar - v1.3.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Pas d'ajout"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Correction de certaine traduction qui n'était pas présente en Français",
+        "Texture du disque \"Sweden\" modifié",
+        "Le sable noir se génère désormais naturellement entre la couche 0 et -64",
+        "Modification du craft du purifier",
+        "Suppression des biomes de restrictions pour le spawn du minerai d'amazonite",
+        "Les efficacités des pioches en paladium, red, multicolor, amazonite, dioptasium ont été modifié passant de :",
+        "Paladium   : 8  -> 8  ( aucun changement )",
+        "Multicolor : 20 -> 20 ( aucun changement )",
+        "Red        : 8  -> 9  ( Augmentation )",
+        "Amazonite  : 7  -> 12 ( Augmentation )",
+        "Dioptasium : 6  -> 16 ( Augmentation )",
+        "La durabilité des outils ( hors Hammer ) ont été revus :",
+        "Paladium   : 1200 -> 900  ( Réduction )",
+        "Multicolor : 3000 -> 3000 ( aucun changement )",
+        "Red        : 1800 -> 1200 ( Réduction )",
+        "Amazonite  : 1400 -> 1800 ( Augmentation )",
+        "Dioptasium : 1700 -> 2400 ( Augmentation )"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "No additions"
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed certain translations that were not present in French",
+        "Modified texture of the \"Sweden\" disc",
+        "Black sand now generates naturally between layers 0 and -64",
+        "Modified crafting of the purifier",
+        "Removed biome restrictions for Amazonite ore spawn",
+        "The efficiencies of Paladium, Red, Multicolor, Amazonite, and Dioptasium pickaxes have been modified as follows:",
+        "Paladium   : 8  -> 8  (no change)",
+        "Multicolor : 20 -> 20 (no change)",
+        "Red        : 8  -> 9  (increase)",
+        "Amazonite  : 7  -> 12 (increase)",
+        "Dioptasium : 6  -> 16 (increase)",
+        "The durability of tools (excluding Hammer) has been revised:",
+        "Paladium   : 1200 -> 900  (reduction)",
+        "Multicolor : 3000 -> 3000 (no change)",
+        "Red        : 1800 -> 1200 (reduction)",
+        "Amazonite  : 1400 -> 1800 (increase)",
+        "Dioptasium : 1700 -> 2400 (increase)"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.4.0-mc1.20.6",
+    "mod": "acatar",
+    "version": "1.4.0",
+    "mc": "1.20.6",
+    "date": "2024-09-11",
+    "title_fr": "Acatar - v1.4.0",
+    "title_en": "Acatar - v1.4.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout des colliers de régénération, vision nocturne et fire resistance et une base de collier (à mettre dans le slot collier)",
+      "Ajout du ondegel (Wavegel)",
+      "Ajout d'un craft pour les fioles de fire resistance avec le colorant de feu",
+      "Ajout de la possibilité d'utiliser les minerais de mod avec les trim de Minecraft (paladium, red, amazonite, dioptasium, chrome, fluorite, xenite, igniera)",
+      "Ajout du lingot de xenite et de la recette",
+      "Ajout d'un slot supplémentaire de collier si curios est installé",
+      "Ajout d'un craft pour le totem d'immortalité",
+      "Ajout d'une recette pour chaque froglight"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Mise à jour de la texture du minerai de paladium",
+        "Modification du nom de la space armor trim en space armor upgrade",
+        "Le block de xenite se craft désormais avec des lingot de xenite ",
+        "Modification des valeurs d'attaque des outils en amazonite",
+        "L'aquatic slime ne drop désormais plus dans le sable, elle drop désormais sur les ondegel (wavegel)"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added regeneration, night vision, and fire resistance necklaces, as well as a necklace base (to be placed in the necklace slot)",
+        "Added wavegel",
+        "Added a crafting recipe for fire resistance potions using fire dye",
+        "Added the ability to use mod ores with Minecraft trims (paladium, red, amazonite, dioptasium, chrome, fluorite, xenite, igniera)",
+        "Added xenite ingot and its recipe",
+        "Added an additional necklace slot if Curios is installed",
+        "Added a crafting recipe for the immortality totem",
+        "Added a recipe for each froglight"
+    ]},
+    { "title": "FIXES", "items": [
+        "Updated the texture of paladium ore",
+        "Changed the name of space armor trim to space armor upgrade",
+        "Xenite block is now crafted with xenite ingots",
+        "Modified attack values of amazonite tools",
+        "Aquatic slime no longer drops in sand, it now drops on wavegel"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.14.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.14.0",
+    "mc": "1.20.1",
+    "date": "2024-09-11",
+    "title_fr": "Acatar - v1.14.0",
+    "title_en": "Acatar - v1.14.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout des colliers de régénération, vision nocturne et fire resistance et une base de collier (à mettre dans le slot collier)",
+      "Ajout du ondegel (Wavegel)",
+      "Ajout d'un craft pour les fioles de fire resistance avec le colorant de feu",
+      "Ajout de la possibilité d'utiliser les minerais de mod avec les trim de Minecraft (paladium, red, amazonite, dioptasium, chrome, fluorite, xenite, igniera)",
+      "Ajout du lingot de xenite et de la recette",
+      "Ajout d'un slot supplémentaire de collier si curios est installé",
+      "Ajout d'un craft pour le totem d'immortalité",
+      "Ajout d'une recette pour chaque froglight"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Mise à jour de la texture du minerai de paladium",
+        "Modification du nom de la space armor trim en space armor upgrade",
+        "Le block de xenite se craft désormais avec des lingot de xenite ",
+        "Modification des valeurs d'attaque des outils en amazonite",
+        "L'aquatic slime ne drop désormais plus dans le sable, elle drop désormais sur les ondegel (wavegel)"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added regeneration, night vision, and fire resistance necklaces, as well as a necklace base (to be placed in the necklace slot)",
+        "Added wavegel",
+        "Added a crafting recipe for fire resistance potions using fire dye",
+        "Added the ability to use mod ores with Minecraft trims (paladium, red, amazonite, dioptasium, chrome, fluorite, xenite, igniera)",
+        "Added xenite ingot and its recipe",
+        "Added an additional necklace slot if Curios is installed",
+        "Added a crafting recipe for the immortality totem",
+        "Added a recipe for each froglight"
+    ]},
+    { "title": "FIXES", "items": [
+        "Updated the texture of paladium ore",
+        "Changed the name of space armor trim to space armor upgrade",
+        "Xenite block is now crafted with xenite ingots",
+        "Modified attack values of amazonite tools",
+        "Aquatic slime no longer drops in sand, it now drops on wavegel"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.5.0-mc1.20.6",
+    "mod": "acatar",
+    "version": "1.5.0",
+    "mc": "1.20.6",
+    "date": "2024-09-27",
+    "title_fr": "Acatar - v1.5.0",
+    "title_en": "Acatar - v1.5.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout de l'œil de révélation — stack 6",
+      "Ajout de la perle ténébreuse — stack 12",
+      "Info : ces deux items ont une fonctionnalité particulière",
+      "Ajout de la roche volcanique (craft magma + glace) et apparition dans le Nether",
+      "Ajout du creeper céruléen (plaines, forêts)",
+      "Ajout du bâton & de la poudre de creeper céruléen"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+      "Suppression du slot de collier supplémentaire",
+      "Léger changement texture du bloc multicolor",
+      "Changement texture du lingot de dioptasium",
+      "Nouvelle texture de la boule anti-dégâts",
+      "Les noyés ne dropent plus d’Aquatique Slime",
+      "Les ondegels n’apparaissent plus dans le Nether",
+      "Dégâts ondegel : 13 → 7",
+      "Corrections FR/EN du disque « Sunchine voyage »"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added Eye of Revelation — stack 6",
+      "Added Dark Pearl — stack 12",
+      "Info: both items have unique behavior",
+      "Added Volcanic Rock (Magma + Ice) and spawns in the Nether",
+      "Added Cerulean Creeper (plains, forests)",
+      "Added Cerulean Creeper Rod & Powder"
+    ]},
+    { "title": "FIXES", "items": [
+      "Removed extra necklace slot",
+      "Slight texture tweak for multicolor block",
+      "Changed texture for Dioptasium Ingot",
+      "New texture for Anti-Damage Ball",
+      "Drowned no longer drop Aquatic Slime",
+      "Wavegels no longer spawn in the Nether",
+      "Wavegel damage: 13 → 7",
+      "FR/EN fixes for \"Sunchine voyage\" music disc"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.16.0-mc1.20.1",
+    "mod": "acatar",
+    "version": "1.16.0",
+    "mc": "1.20.1",
+    "date": "2024-12-20",
+    "title_fr": "Acatar - v1.16.0",
+    "title_en": "Acatar - v1.16.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'un nouveau type de bois le \"Opaline\"",
+      "Ajout du craft de l'œufs du creeper curuléen et du ondegel",
+      "Ajout d'un craft pour l'éponge",
+      "Ajout de l'armure hazmat (expérimentale)",
+      "Ajouts de 4 blocs de brique de glace et ces dérivées",
+      "Ajout de la potion qui permet d'avoir le succès \"Mélanges dangereux\" avec une poudre du creeper céruléen"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Correction d'une erreur de traduction sur l'épée en multicolor",
+        "Refonte des textures de tout le pack d'armure en red",
+        "Refonte des textures de tout le pack d'armure en paladium",
+        "Le bloc de multicolor ne fait désormais plus de lumière",
+        "Changement de texture du lingot de dioptasium",
+        "Changement de la langue sur l'œil de révélation et de la perle ténébreuse",
+        "Changement au niveau du ondegel:",
+        "Reduction de la vitesse 0,3 -> 0,25",
+        "Reduction de la plage de suivie  16 -> 8",
+        "Reduction de la force d'attaque   7 -> 4"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added new wood type \"Opaline\"",
+      "Added crafting for Cerulean Creeper egg and Wavegel",
+      "Added crafting for sponge",
+      "Added experimental Hazmat armor",
+      "Added 4 ice brick blocks and their derivatives",
+      "Added potion that grants the \"Dangerous Mixtures\" achievement with Cerulean Creeper powder"
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed translation error on multicolor sword",
+        "Redesigned textures for the entire red armor pack",
+        "Redesigned textures for the entire paladium armor pack",
+        "Multicolor block no longer emits light",
+        "Changed texture for Dioptasium Ingot",
+        "Changed language for Eye of Revelation and Dark Pearl",
+        "Changes to Wavegel:",
+        "Reduced speed 0.3 -> 0.25",
+        "Reduced tracking range 16 -> 8",
+        "Reduced attack strength 7 -> 4"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.0.0-mc1.21.1",
+    "mod": "acatar",
+    "version": "1.0.0",
+    "mc": "1.21.1",
+    "date": "2025-01-03",
+    "title_fr": "Acatar - v1.0.0",
+    "title_en": "Acatar - v1.0.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Support de la version 1.21.1",
+      "Ajout du craft de l'œuf du breeze, de l'embourbé (bogged) et du tatou",
+      "Ajout des armors trims tourbillon et des boulons au Customer",
+      "Ajout d'un brouillard dans l'élixir de vie et dans l'eau empoisonnée"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Modification de la potion de l'être suprême (potion of blueness of the supreme being) pour avoir les nouveaux effets de la 1.21.1",
+        "La porte en verre ignore désormais les pistons",
+        "Réduction des prix du Customer pour être plus raisonnable",
+        "Augmentation de l'xp donné lors d'un échange avec le Customer"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Support for version 1.21.1",
+        "Added crafting for Breeze, Bogged, and Armadillo eggs",
+        "Added armor trims Whirlwind and Bolts to the Customer",
+        "Added fog effect in Elixir of Life and Poisoned Water"
+    ]},
+    { "title": "FIXES", "items": [
+        "Modified Supreme Being potion to include new effects from 1.21.1",
+        "Glass door now ignores pistons",
+        "Reduced Customer prices for more reasonable costs",
+        "Increased XP gained from trading with the Customer"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.1.0-mc1.21.1",
+    "mod": "acatar",
+    "version": "1.1.0",
+    "mc": "1.21.1",
+    "date": "2025-02-14",
+    "title_fr": "Acatar - v1.1.0",
+    "title_en": "Acatar - v1.1.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du craft de 6 armors trims (bolt, flow, host, shaper, raiser, wayfinder)",
+      "Ajout du craft du heavy core",
+      "Ajout d'un nouveau minerai présent dans l'end la \"nyxite\"",
+      "Ajout d'un nouveau type d'armure et d'outils en nyxite",
+      "Ajout d'un bâton en auriacier (aurasteel) (alliage cuivre et nickel)",
+      "Ajout de l'avancement \"Jusqu'à la fin\""
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Modification de l'avancement \"Découvertes géologiques\" pour integrer le nyxite",
+        "Changement de la recette du lingot en multicolor : remplacement du lingot en netherite pour celui de nyxite",
+        "Désormais le ondegel prendra feu lorsqu'il fera jour (même sous un blocs)",
+        "Changement du niveau d'outils pour récolter le minerai de paladium qui passe du fer à la pierre",
+        "Changement du niveau d'outils pour récolter le minerai de red et du minerai de red du nether qui passe du diamant au fer",
+        "Changement des vitesses d'attaques des épées :",
+        "épée en paladium : aucun changement ( 1,7 )",
+        "épée en red              : 1,7 -> 1,9",
+        "épée en amazonite : 4   -> 2,2",
+        "épée en dioptasium : 2   -> 3,5",
+        "épée en multicolor : 2   -> 7",
+        "Changement des dégâts d'attaques des épées :",
+        "épée en paladium : pas de changement",
+        "épée en red : 8  -> 9",
+        "épée en amazonite : 15 -> 12",
+        "épée en dioptasium  : 16 -> 16",
+        " épée en multicolor    : 42 -> 42",
+        "Changement des vitesses d'attaque et des dégâts d'attaque des haches :",
+        "hache en paladium : 1 10 -> 1 7",
+        " hache en red : 1 9  -> 1 9",
+        "hache en amazonite : 4 16 -> 1 10",
+        "hache en dioptasium : 1 9  -> 1 12",
+        "hache en multicolor : 1 20 -> 1 20",
+        "Changement des vitesses d'attaques et des dégâts d'attaques des pioches :",
+        "pioche en paladium : 1 2 -> 1,2 2",
+        "pioche en red : 1 5 -> 1,2 3",
+        "pioche en amazonite : 4 6 -> 1,2 4",
+        "pioche en dioptasium : 1 4 -> 1,2 5",
+        "pioche en multicolor : 2 4 -> 1,2 7",
+        "Changement des vitesses d'attaques et des degats d'attaques des houes :",
+        "houe en paladium : 1 2 -> 1 1",
+        "houe en red : 1 5 -> 2 1",
+        "houe en amazonite : 4 4 -> 3 1",
+        "houe en dioptasium : 1 4 -> 4 1",
+        "houe en multicolor : 4 1 -> 6 1",
+        "Changement des vitesses d'attaques et des degats d'attaques des pelles :",
+        "pelle en paladium : 1 2 -> 1 3,5",
+        "pelle en red : 1 5 -> 1 4,5",
+        "pelle en amazonite : 4 4 -> 1 5,5",
+        "pelle en dioptasium : 1 4 -> 1 6,5",
+        "pelle en multicolor : 1 3,25 -> 1 8,5",
+        "Changement des vitesses d'attaques et des degats d'attaques des Hammer :",
+        "Hammer en paladium : 1 0 -> 1 1",
+        "Hammer en red : 1 2 -> 1 1",
+        "Hammer en amazonite : 4 4 -> 1 1",
+        "Hammer en dioptasium : 1 1 -> 1 1",
+        "Hammer en multicolor : 1 4 -> 1 1"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added crafting for 6 armor trims (bolt, flow, host, shaper, raiser, wayfinder)",
+        "Added crafting for the heavy core",
+        "Added a new ore found in the end called \"nyxite\"",
+        "Added a new type of armor and tools made from nyxite",
+        "Added a staff made of auriacier (aurasteel) (copper and nickel alloy)",
+        "Added the advancement \"Until the End\""
+    ]},
+    { "title": "FIXES", "items": [
+        "Modified the advancement \"Geological Discoveries\" to include nyxite",
+        "Changed the recipe for multicolor ingot: replaced netherite ingot with nyxite ingot",
+        "Wavegel now catches fire during the day (even under blocks)",
+        "Changed the tool level required to mine paladium ore from iron to stone",
+        "Changed the tool level required to mine red ore and nether red ore from diamond to iron",
+        "Changed attack speeds of swords:",
+        "Paladium sword: no change (1.7)",
+        "Red sword: 1.7 -> 1.9",
+        "Amazonite sword: 4 -> 2.2",
+        "Dioptasium sword: 2 -> 3.5",
+        "Multicolor sword: 2 -> 7",
+        "Changed attack damage of swords:",
+        "Paladium sword: no change",
+        "Red sword: 8 -> 9",
+        "Amazonite sword: 15 -> 12",
+        "Dioptasium sword: 16 -> 16",
+        "Multicolor sword: 42 -> 42",
+        "Changed attack speeds and damage of axes:",
+        "Paladium axe: 1 10 -> 1 7",
+        "Red axe: 1 9 -> 1 9",
+        "Amazonite axe: 4 16 -> 1 10",
+        "Dioptasium axe: 1 9 -> 1 12",
+        "Multicolor axe: 1 20 -> 1 20",
+        "Changed attack speeds and damage of pickaxes:",
+        "Paladium pickaxe: 1 2 -> 1.2 2",
+        "Red pickaxe: 1 5 -> 1.2 3",
+        "Amazonite pickaxe: 4 6 -> 1,2 4",
+        "Dioptasium pickaxe: 1 4 -> 1,2 5",
+        "Multicolor pickaxe: 2 4 -> 1,2 7",
+        "Changed attack speeds and damage of hoes:",
+        "Paladium hoe: 1 2 -> 1 1",
+        "Red hoe: 1 5 -> 2 1",
+        "Amazonite hoe: 4 4 -> 3 1",
+        "Dioptasium hoe: 1 4 -> 4 1",
+        "Multicolor hoe: 4 1 -> 6 1",
+        "Changed attack speeds and damage of shovels:",
+        "Paladium shovel: 1 2 -> 1 3,5",
+        "Red shovel: 1 5 ->  1 4,5",
+        "Amazonite shovel: 4 4 -> 1 5,5",
+        "Dioptasium shovel: 1 4 ->  1 6,5",
+        "Multicolor shovel: 1 3,25 -> 1 8,5",
+        "Changed attack speeds and damage of hammers:",
+        "Paladium hammer: 1 0 -> 1 1",
+        "Red hammer: 1 2 -> 1 1",
+        "Amazonite hammer: 4 4 -> 1 1",
+        "Dioptasium hammer: 1 1 -> 1 1",
+        "Multicolor hammer: 1 4 -> 1 1"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.1.1-mc1.21.1",
+    "mod": "acatar",
+    "version": "1.1.1",
+    "mc": "1.21.1",
+    "date": "2025-03-08",
+    "title_fr": "Acatar - v1.1.1",
+    "title_en": "Acatar - v1.1.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'une rune des éléments",
+      "Ajout du casque de vision nocturne",
+      "Ajout du casque de regeneration [in the smithing]"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Correction des dégâts d'attaques de l'épée en dioptasium qui était trop faible",
+        "Correction de la langue en anglais de l'armure en paladium, multicolor, space"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added an elemental rune",
+        "Added a night vision helmet",
+        "Added a regeneration helmet [in the smithing]"
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed the attack damage of the dioptasium sword which was too low",
+        "Fixed the English language of the paladium, multicolor, space armor"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.2.0-mc1.21.1",
+    "mod": "acatar",
+    "version": "1.2.0",
+    "mc": "1.21.1",
+    "date": "2025-04-08",
+    "title_fr": "Acatar - v1.2.0",
+    "title_en": "Acatar - v1.2.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'un craft pour le motif de bannière :Globe, piglin(groin), tourbillon et rafaleur.",
+      "Ajout d'un craft pour le trident",
+      "Ajout d'un craft pour la tête de dragon",
+      "Ajout du craft pour l'œuf du creaking (impossible to have it in survival and creative for 1.21.1)",
+      "Ajout de la cuisson de la cobblestone dans le haut fourneau(2s)",
+      "Ajout d'un craft pour la netherite upgrade (netherrack + diamond )",
+      "Ajout d'une croix sur l'interface du spawner de collosum",
+      "Ajout d'une porte en résine (impossible to have it in survival for 1.21.1)",
+      "Ajout d'une fleur (Ecliptia) (in mushroom fields)"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Suppression du support du mod avec Jei",
+        "Suppression du support des modèles de forge avec les armures",
+        "Changement de \"Purifieur\" en \"purificateur\" dans la version française",
+        "Restructuration de la langue française"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added a banner pattern craft: Globe, piglin (snout), whirlwind, and blaster.",
+        "Added a trident craft",
+        "Added a dragon head craft",
+        "Added a craft for the creaking egg (impossible to have it in survival and creative for 1.21.1)",
+        "Added cobblestone smelting in the blast furnace (2s)",
+        "Added a craft for the netherite upgrade (netherrack + diamond)",
+        "Added a cross on the collosum spawner interface",
+        "Added a resin door (impossible to have it in survival for 1.21.1)",
+        "Added a flower (Ecliptia) (in mushroom fields)"
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed the mod support with Jei",
+        "Fixed the forge model support with the armors",
+        "Changed \"Purifieur\" to \"purificateur\" in the French version",
+        "Restructured the French language"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.0.0-mc1.21.4",
+    "mod": "acatar",
+    "version": "1.0.0",
+    "mc": "1.21.4",
+    "date": "2025-04-08",
+    "title_fr": "Acatar - v1.0.0",
+    "title_en": "Acatar - v1.0.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'un craft pour le motif de bannière :Globe, piglin(groin), tourbillon et rafaleur.",
+      "Ajout d'un craft pour le trident",
+      "Ajout d'un craft pour la tête de dragon",
+      "Ajout du craft pour l'œuf du creaking (impossible to have it in survival and creative for 1.21.1)",
+      "Ajout de la cuisson de la cobblestone dans le haut fourneau(2s)",
+      "Ajout d'un craft pour la netherite upgrade (netherrack + diamond )",
+      "Ajout d'une croix sur l'interface du spawner de collosum",
+      "Ajout d'une porte en résine (impossible to have it in survival for 1.21.1)",
+      "Ajout d'une fleur (Ecliptia) (in mushroom fields)"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Suppression du support du mod avec Jei",
+        "Suppression du support des modèles de forge avec les armures",
+        "Changement de \"Purifieur\" en \"purificateur\" dans la version française",
+        "Restructuration de la langue française"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added a banner pattern craft: Globe, piglin (snout), whirlwind, and blaster.",
+        "Added a trident craft",
+        "Added a dragon head craft",
+        "Added a craft for the creaking egg (impossible to have it in survival and creative for 1.21.1)",
+        "Added cobblestone smelting in the blast furnace (2s)",
+        "Added a craft for the netherite upgrade (netherrack + diamond)",
+        "Added a cross on the collosum spawner interface",
+        "Added a resin door (impossible to have it in survival for 1.21.1)",
+        "Added a flower (Ecliptia) (in mushroom fields)"
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed the mod support with Jei",
+        "Fixed the forge model support with the armors",
+        "Changed \"Purifieur\" to \"purificateur\" in the French version",
+        "Restructured the French language"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.2.1-mc1.21.1",
+    "mod": "acatar",
+    "version": "1.2.1",
+    "mc": "1.21.1",
+    "date": "2024-04-14",
+    "title_fr": "Acatar - v1.2.1",
+    "title_en": "Acatar - v1.2.1",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du lingot de scarlet (peut être crafter avec 9 lingots du mod)"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Le casque de vision nocturne et de régénération peuvent être réparer avec le lingot de scarlet",
+        "L'echange de tete de wither contre deux etoiles du nether est désormais au niveau master du miner",
+        "Correction où le baton du creeper céruléen ne dropait pas"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added scarlet ingot (can be crafted with 9 ingots from the mod)"
+    ]},
+    { "title": "FIXES", "items": [
+        "Night vision and regeneration helmets can now be repaired with scarlet ingot",
+        "The wither head exchange for two nether stars is now at the master level of the miner",
+        "Fixed issue where the cerulean creeper rod was not dropping"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.1.0-mc1.21.4",
+    "mod": "acatar",
+    "version": "1.1.0",
+    "mc": "1.21.4",
+    "date": "2024-04-14",
+    "title_fr": "Acatar - v1.1.0",
+    "title_en": "Acatar - v1.1.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du lingot de scarlet (peut être crafter avec 9 lingots du mod)"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Le casque de vision nocturne et de régénération peuvent être réparer avec le lingot de scarlet",
+        "L'echange de tete de wither contre deux etoiles du nether est désormais au niveau master du miner",
+        "Correction où le baton du creeper céruléen ne dropait pas"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added scarlet ingot (can be crafted with 9 ingots from the mod)"
+    ]},
+    { "title": "FIXES", "items": [
+        "Night vision and regeneration helmets can now be repaired with scarlet ingot",
+        "The wither head exchange for two nether stars is now at the master level of the miner",
+        "Fixed issue where the cerulean creeper rod was not dropping"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.3.0-mc1.21.1",
+    "mod": "acatar",
+    "version": "1.3.0",
+    "mc": "1.21.1",
+    "date": "2024-07-30",
+    "title_fr": "Acatar - v1.3.0",
+    "title_en": "Acatar - v1.3.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'une bouteille d'xp condensée",
+      "Ajout du noyau d'expérience",
+      "Ajout du générateur d'xp",
+      "Ajout du Sapling upgrade",
+      "Nouvelle fonctionnalité pour le bloc de scierie (en test)",
+      "Ajout d'une bombe nucleaire (en test)",
+      "Ajout de variante de l'obsidienne en brique et en version normale",
+      "Ajout de l'apparition du piglin, du piglin zombifié et du hoglin dans le biome de sakura"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Les coffres dans l'arene d'Extermate donnera plus qu'un seul item",
+        "Modification du nombre d'arbre de sakura dans la nether",
+        "L'arene d'Extermate peut désormais apparaitre dans les terres désolées du nether",
+        "L'apparition de l'arene d'Extermate apparait désormais plus souvent (demande plus de verifiaction, si vous voulez participer n'hésitez pas)"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added condensed XP bottle",
+        "Added experience core",
+        "Added XP generator",
+        "Added Sapling upgrade",
+        "New feature for the sawmill block (in testing)",
+        "Added nuclear bomb (in testing)",
+        "Added variant of obsidian in brick and normal version",
+        "Added appearance of piglin, zombified piglin, and hoglin in the sakura biome"
+    ]},
+    { "title": "FIXES", "items": [
+        "Chests in the Extermate arena now drop more than one item",
+        "Modified the number of sakura trees in the nether",
+        "The Extermate arena can now appear in the desolate lands of the nether",
+        "The appearance of the Extermate arena now occurs more frequently (requires further verification, if you want to participate don't hesitate)"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.2.0-mc1.21.4",
+    "mod": "acatar",
+    "version": "1.2.0",
+    "mc": "1.21.4",
+    "date": "2024-07-30",
+    "title_fr": "Acatar - v1.2.0",
+    "title_en": "Acatar - v1.2.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout d'une bouteille d'xp condensée",
+      "Ajout du noyau d'expérience",
+      "Ajout du générateur d'xp",
+      "Ajout du Sapling upgrade",
+      "Nouvelle fonctionnalité pour le bloc de scierie (en test)",
+      "Ajout d'une bombe nucleaire (en test)",
+      "Ajout de variante de l'obsidienne en brique et en version normale",
+      "Ajout de l'apparition du piglin, du piglin zombifié et du hoglin dans le biome de sakura"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Les coffres dans l'arene d'Extermate donnera plus qu'un seul item",
+        "Modification du nombre d'arbre de sakura dans la nether",
+        "L'arene d'Extermate peut désormais apparaitre dans les terres désolées du nether",
+        "L'apparition de l'arene d'Extermate apparait désormais plus souvent (demande plus de verifiaction, si vous voulez participer n'hésitez pas)"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added condensed XP bottle",
+        "Added experience core",
+        "Added XP generator",
+        "Added Sapling upgrade",
+        "New feature for the sawmill block (in testing)",
+        "Added nuclear bomb (in testing)",
+        "Added variant of obsidian in brick and normal version",
+        "Added appearance of piglin, zombified piglin, and hoglin in the sakura biome"
+    ]},
+    { "title": "FIXES", "items": [
+        "Chests in the Extermate arena now drop more than one item",
+        "Modified the number of sakura trees in the nether",
+        "The Extermate arena can now appear in the desolate lands of the nether",
+        "The appearance of the Extermate arena now occurs more frequently (requires further verification, if you want to participate don't hesitate)"
+    ]}
+  ]
+},
+{
+    "id": "chaosium-1.1.1-mc1.20.1",
+    "mod": "chaosium",
+    "version": "1.1.0",
+    "mc": "1.20.1",
+    "date": "2024-08-26",
+    "title_fr": "Chaosium - v1.1.0",
+    "title_en": "Chaosium - v1.1.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du Withers skeleton",
+      "Ajout du début du craft du jaspe:"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Correction bug concernant le lazurite sur son spawn",
+        "Correction du bug sur la récolte du pyronis"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added a dragon armor",
+        "Added new creatures:",
+        "Skeleton",
+        "Zombie",
+        "Warden",
+        "Enderman",
+        "Creeper"
+    ]},
+    { "title": "FIXES", "items": [
+        "Fixed bug regarding lazurite spawn",
+        "Fixed bug regarding pyronis harvesting"
+    ]}
+  ]
+},
+{
+    "id": "chaosium-1.2.0-mc1.20.1",
+    "mod": "chaosium",
+    "version": "1.2.0",
+    "mc": "1.20.1",
+    "date": "2024-10-23",
+    "title_fr": "Chaosium - v1.2.0",
+    "title_en": "Chaosium - v1.2.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout des éléments en jaspe",
+      "Ajout des éléments en warden",
+      "Ajout de l'enderman stick",
+      "Ajout de l'os chaos",
+      "Ajout de la boule de slime chaos",
+      "Ajout de la larme chaos",
+      "Ajout de la poudre chaos",
+      "Ajout du bloc de laine chaos",
+      "Ajout de 9 créature :",
+      "axolotl chaos, poulet chaos, vache chaos,araignée chaos, cochon chaos, slime chaos, ghast chaos, poisson d'argent chaos, mouton chaos"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Reduction des dégâts du warden boss",
+        "Ajout d'un son lorsque l'armure en dragon est équipée",
+        "Ajout du support de la langue française"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added jasper items",
+      "Added warden items",
+      "Added enderman stick",
+      "Added chaos bone",
+      "Added chaos slimeball",
+      "Added chaos tear",
+      "Added chaos powder",
+      "Added chaos wool block",
+      "Added 9 creatures:",
+      "chaos axolotl, chaos chicken, chaos cow, chaos spider, chaos pig, chaos slime, chaos ghast, chaos silverfish, chaos sheep"
+    ]},
+    { "title": "FIXES", "items": [
+        "Reduced damage of the warden boss",
+        "Added sound when dragon armor is equipped",
+        "Added support for French language"
+    ]}
+  ]
+},
+{
+    "id": "chaosium-1.0.0-mc1.20.6",
+    "mod": "chaosium",
+    "version": "1.0.0",
+    "mc": "1.20.6",
+    "date": "2024-10-23",
+    "title_fr": "Chaosium - v1.0.0",
+    "title_en": "Chaosium - v1.0.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout des éléments en jaspe",
+      "Ajout des éléments en warden",
+      "Ajout de l'enderman stick",
+      "Ajout de l'os chaos",
+      "Ajout de la boule de slime chaos",
+      "Ajout de la larme chaos",
+      "Ajout de la poudre chaos",
+      "Ajout du bloc de laine chaos",
+      "Ajout de 9 créature :",
+      "axolotl chaos, poulet chaos, vache chaos,araignée chaos, cochon chaos, slime chaos, ghast chaos, poisson d'argent chaos, mouton chaos"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Reduction des dégâts du warden boss",
+        "Ajout d'un son lorsque l'armure en dragon est équipée",
+        "Ajout du support de la langue française"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+      "Added jasper items",
+      "Added warden items",
+      "Added enderman stick",
+      "Added chaos bone",
+      "Added chaos slimeball",
+      "Added chaos tear",
+      "Added chaos powder",
+      "Added chaos wool block",
+      "Added 9 creatures:",
+      "chaos axolotl, chaos chicken, chaos cow, chaos spider, chaos pig, chaos slime, chaos ghast, chaos silverfish, chaos sheep"
+    ]},
+    { "title": "FIXES", "items": [
+        "Reduced damage of the warden boss",
+        "Added sound when dragon armor is equipped",
+        "Added support for French language"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.0.0-mc1.21.1",
+    "mod": "acatar",
+    "version": "1.0.0",
+    "mc": "1.21.1",
+    "date": "2024-10-25",
+    "title_fr": "Acatar - v1.0.0",
+    "title_en": "Acatar - v1.0.0",
+    "sections_fr": [
+    { "title": "AJOUT", "items": [
+      "Ajout du support de la 1.21.1"
+    ]},
+    { "title": "RÉSOLUTION", "items": [
+        "Pas de résolution"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "ADD", "items": [
+        "Added support for 1.21.1"
+    ]},
+    { "title": "FIXES", "items": [
+        "No fixes"
+    ]}
+  ]
+}
+]
