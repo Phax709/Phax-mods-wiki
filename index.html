@@ -287,11 +287,11 @@
     <div class="drawer-section">
       <div class="drawer-label" data-translate="language">Langue</div>
       <div class="drawer-lang">
-        <button type="button" class="drawer-lang-btn" onclick="setLanguage('fr'); closeDrawer();">
+        <button type="button" class="drawer-lang-btn" data-lang="fr" onclick="setLanguage('fr'); closeDrawer();">
           <img src="images/flag-fr.png" alt="FR">
           <span data-translate="langue_fr">Français</span>
         </button>
-        <button type="button" class="drawer-lang-btn" onclick="setLanguage('en'); closeDrawer();">
+        <button type="button" class="drawer-lang-btn" data-lang="en" onclick="setLanguage('en'); closeDrawer();">
           <img src="images/flag-gb.png" alt="EN">
           <span data-translate="langue_en">English</span>
         </button>
@@ -305,17 +305,17 @@
       <div class="drawer-row">
         <div class="drawer-sub" data-translate="theme_label">Thème :</div>
         <div class="drawer-opts">
-          <button type="button" class="opt-btn" onclick="setThemeFromDrawer('theme-sombre')" data-translate="dark">Sombre</button>
-          <button type="button" class="opt-btn" onclick="setThemeFromDrawer('theme-clair')"  data-translate="light">Clair</button>
+          <button type="button" class="opt-btn" data-theme="theme-sombre" onclick="setThemeFromDrawer('theme-sombre')" data-translate="dark">Sombre</button>
+          <button type="button" class="opt-btn" data-theme="theme-clair" onclick="setThemeFromDrawer('theme-clair')"  data-translate="light">Clair</button>
         </div>
       </div>
 
       <div class="drawer-row">
         <div class="drawer-sub" data-translate="font_label">Taille du texte :</div>
         <div class="drawer-opts">
-          <button type="button" class="opt-btn" onclick="setFontFromDrawer('font-normal')"     data-translate="font_normal">Normale</button>
-          <button type="button" class="opt-btn" onclick="setFontFromDrawer('font-grand')"      data-translate="font_large">Grand</button>
-          <button type="button" class="opt-btn" onclick="setFontFromDrawer('font-tres-grand')" data-translate="font_xlarge">Très grand</button>
+          <button type="button" class="opt-btn" data-font="font-normal" onclick="setFontFromDrawer('font-normal')"     data-translate="font_normal">Normale</button>
+          <button type="button" class="opt-btn" data-font="font-grand" onclick="setFontFromDrawer('font-grand')"      data-translate="font_large">Grand</button>
+          <button type="button" class="opt-btn" data-font="font-tres-grand" onclick="setFontFromDrawer('font-tres-grand')" data-translate="font_xlarge">Très grand</button>
         </div>
       </div>
     </div>

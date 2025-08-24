@@ -1463,3 +1463,197 @@ html, body { max-width: 100%; overflow-x: hidden; }
 /* taille standard côté desktop */
 .lang-button img,
 .lang-option img { width: 18px; height: 18px; }
+
+/* ====== Mobile: état ACTIF visible dans le drawer (taille, langue, etc.) ====== */
+@media (max-width: 768px){
+  /* Boutons d’options (ex: Taille : Normale/Grande/Très grande) */
+  .drawer-opts .opt-btn.active,
+  .drawer-opts .opt-btn[aria-pressed="true"]{
+    background: var(--accent);
+    color: #fff;
+    border-color: color-mix(in srgb, var(--accent) 80%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent) inset;
+    font-weight: 700;
+  }
+
+  /* Boutons de langue (FR/EN) */
+  .drawer-lang .drawer-lang-btn.active,
+  .drawer-lang .drawer-lang-btn[aria-pressed="true"]{
+    background: var(--accent);
+    color: #fff;
+    border-color: color-mix(in srgb, var(--accent) 80%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent) inset;
+    font-weight: 700;
+  }
+}
+
+/* ===== Drawer: état sélectionné (sans JS supplémentaire) ===== */
+
+/* 1) Sélection par ARIA (si tes boutons ont aria-pressed="true") */
+.drawer-lang-btn[aria-pressed="true"],
+.drawer-opts .opt-btn[aria-pressed="true"]{
+  background: var(--accent, #0ea5e9);
+  color: #fff;
+  border-color: rgba(0,0,0,.2);
+  box-shadow: 0 0 0 2px rgba(14,165,233,.25) inset;
+}
+
+/* 2) Sélection par classe .active (si tu l’emploies déjà) */
+.drawer-lang-btn.active,
+.drawer-opts .opt-btn.active{
+  background: var(--accent, #0ea5e9);
+  color: #fff;
+  border-color: rgba(0,0,0,.2);
+  box-shadow: 0 0 0 2px rgba(14,165,233,.25) inset;
+}
+
+/* 3) Auto-mise en surbrillance via les classes sur <html> (pas de JS de plus) */
+/* Donne simplement un attribut data-* aux boutons. */
+.theme-sombre  [data-theme="theme-sombre"],
+.theme-clair   [data-theme="theme-clair"]{
+  background: var(--accent, #0ea5e9);
+  color:#fff;
+  border-color: rgba(0,0,0,.2);
+  box-shadow: 0 0 0 2px rgba(14,165,233,.25) inset;
+}
+
+.font-normal      [data-font="font-normal"],
+.font-grand       [data-font="font-grand"],
+.font-tres-grand  [data-font="font-tres-grand"]{
+  background: var(--accent, #0ea5e9);
+  color:#fff;
+  border-color: rgba(0,0,0,.2);
+  box-shadow: 0 0 0 2px rgba(14,165,233,.25) inset;
+}
+
+/* Légère variation au survol de l’option déjà sélectionnée (facultatif) */
+.drawer-lang-btn.active:hover,
+.drawer-opts .opt-btn.active:hover,
+.drawer-lang-btn[aria-pressed="true"]:hover,
+.drawer-opts .opt-btn[aria-pressed="true"]:hover{
+  filter: brightness(0.98);
+}
+
+/* ===== Drawer: mettre en évidence l'option sélectionnée (mobile + desktop) ===== */
+
+/* Langue : basé sur <html lang="..."> */
+html[lang="fr"]  .drawer-lang-btn[data-lang="fr"],
+html[lang="en"]  .drawer-lang-btn[data-lang="en"]{
+  background: var(--accent, #0ea5e9);
+  color: #fff;
+  border-color: rgba(0,0,0,.2);
+  box-shadow: 0 0 0 2px rgba(14,165,233,.25) inset;
+  font-weight: 700;
+}
+
+/* Thème : basé sur la classe globale appliquée par ton JS */
+.theme-sombre .drawer-opts .opt-btn[data-theme="theme-sombre"],
+.theme-clair  .drawer-opts .opt-btn[data-theme="theme-clair"]{
+  background: var(--accent, #0ea5e9);
+  color: #fff;
+  border-color: rgba(0,0,0,.2);
+  box-shadow: 0 0 0 2px rgba(14,165,233,.25) inset;
+  font-weight: 700;
+}
+
+/* Taille du texte : basé sur les classes globales font-... */
+.font-normal     .drawer-opts .opt-btn[data-font="font-normal"],
+.font-grand      .drawer-opts .opt-btn[data-font="font-grand"],
+.font-tres-grand .drawer-opts .opt-btn[data-font="font-tres-grand"]{
+  background: var(--accent, #0ea5e9);
+  color: #fff;
+  border-color: rgba(0,0,0,.2);
+  box-shadow: 0 0 0 2px rgba(14,165,233,.25) inset;
+  font-weight: 700;
+}
+
+/* ===== Cartes Wiki — réglages MOBILE (≤480px) ===== */
+:root{
+  /* Tu peux ajuster ces 3 variables si besoin */
+  --thumb-h-mobile: 88px;     /* hauteur des vignettes en carte */
+  --left-scale: .85;          /* gauche un peu plus petite (images) */
+  --left-sprite-scale: .85;   /* gauche un peu plus petite (sprites) */
+  --right-sprite-scale: 1;    /* droite taille normale (sprites) */
+}
+
+@media (max-width: 480px){
+  /* Conteneur des deux images (bloc+ingot) : centre + spacing un poil réduit */
+  .small-card .thumb-pair{
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Cartes avec UNE seule image (pas de paire) */
+  .small-card img.thumb{
+    height: var(--thumb-h-mobile) !important;
+    max-height: var(--thumb-h-mobile) !important;
+    width: auto !important;
+    display: block;
+    margin: 0 auto 8px !important;
+  }
+
+  /* Paires d'IMAGES : gauche plus petite que droite */
+  .small-card .thumb-left{
+    height: calc(var(--thumb-h-mobile) * var(--left-scale)) !important;
+    max-height: calc(var(--thumb-h-mobile) * var(--left-scale)) !important;
+    width: auto !important;
+  }
+  .small-card .thumb-right{
+    height: var(--thumb-h-mobile) !important;
+    max-height: var(--thumb-h-mobile) !important;
+    width: auto !important;
+  }
+
+  /* Paires de SPRITES : on ne change pas leur width/height (pour ne pas casser l’anim),
+     on ajuste visuellement avec un scale. */
+  .small-card [data-sprite="1"].sprite-L{
+    transform: scale(var(--left-sprite-scale));
+    transform-origin: center;
+  }
+  .small-card [data-sprite="1"].sprite-R,
+  .small-card [data-sprite="1"].sprite-Rsolo{
+    transform: scale(var(--right-sprite-scale));
+    transform-origin: center;
+  }
+}
+
+/* ===== DÉTAIL DES CARTES — RÉGLAGES MOBILE ===== */
+:root{
+  /* ajuste ces valeurs si besoin */
+  --detail-img-mobile: 140px;     /* hauteur des <img> dans le détail */
+  --detail-sprite-scale: 0.8;     /* échelle visuelle des sprites animés */
+}
+
+@media (max-width: 480px){
+  /* 1) Les deux visuels passent en colonne et restent centrés */
+  .detail-pair{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* 2) Images classiques <img> : on réduit la hauteur (override l'inline via !important) */
+  .detail-pair img{
+    height: var(--detail-img-mobile) !important;
+    max-height: var(--detail-img-mobile) !important;
+    width: auto !important;
+  }
+
+  /* 3) Sprites animés (div[data-sprite="1"]) :
+        on NE change pas width/height (sinon frames décalées),
+        on réduit visuellement par transform. */
+  .detail-pair [data-sprite="1"]{
+    transform: scale(var(--detail-sprite-scale));
+    transform-origin: center top;
+    display: inline-block; /* sécurise le centrage */
+  }
+}
+
+/* Option : encore plus compact sur très petits écrans */
+@media (max-width: 360px){
+  :root{
+    --detail-img-mobile: 120px;
+    --detail-sprite-scale: 0.72;
+  }
+}

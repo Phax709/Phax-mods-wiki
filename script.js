@@ -228,6 +228,8 @@ function setLanguage(lang) {
   ETAT.langue = chosen;
   localStorage.setItem('siteLanguage', chosen);
 
+  document.documentElement.setAttribute('lang', chosen);
+
   const flag = document.querySelector('#currentLangFlag');
   if (flag) flag.src = (chosen === 'en') ? 'images/flag-gb.png' : 'images/flag-fr.png';
 
@@ -953,66 +955,281 @@ function renderCards(modId, cards) {
 
   const lang = ETAT.langue || 'fr';
 
-  grid.innerHTML = cards.map(c => {
-    const title = lang === 'en' ? (c.title_en || c.title_fr || '') : (c.title_fr || c.title_en || '');
-    const desc  = lang === 'en' ? (c.description_en || c.description_fr || '') : (c.description_fr || c.description_en || '');
+  // --- UL "riche" : *Sous-titre, lignes vides = espace
+  const renderRichList = (arr) => {
+    const lines = Array.isArray(arr) ? arr : [];
+    if (!lines.length) return '';
+    return `<ul>${
+      lines.map(raw => {
+        const txt = (raw ?? '').toString();
+        if (!txt.trim()) return `<li class="spacer" style="list-style:none;height:.35rem;"></li>`;
+        if (/^\s*\*/.test(txt)) {
+          const label = txt.replace(/^\s*\*\s*/, '');
+          return `<li class="subhead" style="list-style:none;margin:8px 0 4px;text-indent:-1.15em;padding-left:1.15em;"><strong>${label}</strong></li>`;
+        }
+        return `<li>${txt}</li>`;
+      }).join('')
+    }</ul>`;
+  };
+
+  // --- SPRITE helper (animation frame par frame, style Minecraft)
+  const makeSprite = (sideKey, cfg, targetH, pixelated = true, maxW = null, extraCSS = '') => {
+    if (!cfg || !cfg.src) return '';
+    // accepter frame_width|height ET frameWidth|Height
+    cfg.frame_width  = cfg.frame_width  ?? cfg.frameWidth;
+    cfg.frame_height = cfg.frame_height ?? cfg.frameHeight;
+    if (!cfg.frames || !cfg.frame_width || !cfg.frame_height) return '';
+
+    const frames = Math.max(1, cfg.frames|0);
+    const dir    = (cfg.direction === 'horizontal') ? 'horizontal' : 'vertical';
+    const fps    = (cfg.fps && cfg.fps > 0) ? cfg.fps : 6;
+
+    // Taille d'affichage (on garde le ratio d'une frame)
+    const dispH  = Math.max(1, targetH|0);
+    const ratio  = cfg.frame_width / cfg.frame_height;
+    const dispW  = Math.round(dispH * ratio);
+
+    // 1 frame visible = dispW x dispH
+    const bgSize = (dir === 'horizontal')
+      ? `${dispW * frames}px ${dispH}px`
+      : `${dispW}px ${dispH * frames}px`;
+
+    const order     = Array.isArray(cfg.order) ? cfg.order : null;         // ex [0,1,2,3,2,1]
+    const durations = Array.isArray(cfg.durations) ? cfg.durations : null; // en ms
+
+    const pxCSS   = pixelated ? 'image-rendering:pixelated;' : 'image-rendering:auto;';
+    const maxWcss = (maxW && maxW > 0) ? `max-width:${maxW}px;` : '';
+
+    return `
+      <div class="sprite-${sideKey}" data-sprite="1"
+           data-frames="${frames}" data-fps="${fps}"
+           data-dir="${dir}" data-fw="${cfg.frame_width}" data-fh="${cfg.frame_height}"
+           ${order ? `data-order="${order.join(',')}"` : ''}
+           ${durations ? `data-durations="${durations.join(',')}"` : ''}
+           style="
+             width:${dispW}px;height:${dispH}px;
+             background-image:url('${resolveAsset(modId, cfg.src)}');
+             background-repeat:no-repeat;
+             background-position:0 0;
+             background-size:${bgSize};
+             ${pxCSS}${maxWcss}
+             border-radius:8px;
+             ${extraCSS}
+           "></div>`;
+  };
+
+  grid.innerHTML = (cards || []).map(c => {
+    const title = (lang === 'en') ? (c.title_en || c.title_fr || '') : (c.title_fr || c.title_en || '');
+    const desc  = (lang === 'en') ? (c.description_en || c.description_fr || '') : (c.description_fr || c.description_en || '');
+
+    // ---------- SOURCES d'images : gauche/droite + pools ----------
+    // GAUCHE
+    const leftPool = Array.isArray(c.image_left_pool) ? c.image_left_pool : [];
+    const leftCandidates = leftPool.length ? leftPool : (c.image_left ? [c.image_left] : []);
+    let leftIdx = 0;
+    if (leftCandidates.length > 1) {
+      const mode = c.left_select || 'sticky'; // 'sticky' | 'daily' | 'random'
+      if (mode === 'daily') {
+        const day = Math.floor(Date.now() / 86400000);
+        leftIdx = day % leftCandidates.length;
+      } else if (mode === 'random') {
+        leftIdx = Math.floor(Math.random() * leftCandidates.length);
+      } else {
+        const key = 'leftChoice:' + (c.id || 'card');
+        const saved = localStorage.getItem(key);
+        if (saved !== null && !isNaN(+saved)) leftIdx = (+saved) % leftCandidates.length;
+        else { leftIdx = Math.floor(Math.random() * leftCandidates.length); try{localStorage.setItem(key, String(leftIdx));}catch(_){} }
+      }
+    }
+    const leftUrls = leftCandidates.map(raw => resolveAsset(modId, raw));
+    const leftSrc  = leftUrls[leftIdx] || '';
+
+    // DROITE
+    const rightPool = Array.isArray(c.image_right_pool) ? c.image_right_pool
+                    : (Array.isArray(c.image_pool) ? c.image_pool : []); // alias optionnel
+    const rightCandidates = rightPool.length ? rightPool : (c.image ? [c.image] : []);
+    let rightIdx = 0;
+    if (rightCandidates.length > 1) {
+      const mode = c.right_select || 'sticky';
+      if (mode === 'daily') {
+        const day = Math.floor(Date.now() / 86400000);
+        rightIdx = day % rightCandidates.length;
+      } else if (mode === 'random') {
+        rightIdx = Math.floor(Math.random() * rightCandidates.length);
+      } else {
+        const key = 'rightChoice:' + (c.id || 'card');
+        const saved = localStorage.getItem(key);
+        if (saved !== null && !isNaN(+saved)) rightIdx = (+saved) % rightCandidates.length;
+        else { rightIdx = Math.floor(Math.random() * rightCandidates.length); try{localStorage.setItem(key, String(rightIdx));}catch(_){} }
+      }
+    }
+    const rightUrls = rightCandidates.map(raw => resolveAsset(modId, raw));
+    const rightSrc  = rightUrls[rightIdx] || '';
+
+    // Intervalles d’alternance auto (0 = off)
+    const leftRotateMs =
+      (typeof c.left_rotate_ms === 'number' && c.left_rotate_ms > 0) ? Math.round(c.left_rotate_ms)
+      : (typeof c.left_rotate_seconds === 'number' && c.left_rotate_seconds > 0) ? Math.round(c.left_rotate_seconds*1000)
+      : 0;
+    const rightRotateMs =
+      (typeof c.right_rotate_ms === 'number' && c.right_rotate_ms > 0) ? Math.round(c.right_rotate_ms)
+      : (typeof c.right_rotate_seconds === 'number' && c.right_rotate_seconds > 0) ? Math.round(c.right_rotate_seconds*1000)
+      : 0;
+
+    // Sprites animés (optionnels)
+    const leftSprite  = c.left_sprite  || c.image_left_sprite  || null;
+    const rightSprite = c.right_sprite || c.image_right_sprite || null;
 
     // ---------- Image miniature (GRILLE) ----------
-    const thumbSrc = c.image ? resolveAsset(modId, c.image) : '';
-    const thumbStyles = [
-      'display:block',
-      'width:100%',                 // prend toute la largeur de la carte
+    const leftPixel  = (typeof c.image_left_pixelated === 'boolean') ? c.image_left_pixelated : (c.image_pixelated === true);
+    const rightPixel = (c.image_pixelated === true);
+
+    const thumbStylesSolo = [
+      'display:block','width:100%',
       (c.thumb_cover ? 'object-fit:cover' : 'object-fit:contain'),
-      'border-radius:8px',
-      'margin-bottom:8px'
+      'border-radius:8px','margin-bottom:8px'
     ];
-    if (typeof c.thumb_height === 'number' && c.thumb_height > 0) {
-      thumbStyles.push(`height:${c.thumb_height}px`);
+    if (typeof c.thumb_height === 'number' && c.thumb_height > 0) thumbStylesSolo.push(`height:${c.thumb_height}px`);
+    else thumbStylesSolo.push('max-height:140px');
+    if (rightPixel) thumbStylesSolo.push('image-rendering:pixelated');
+
+    let thumbImg = '';
+    if ((leftSrc || leftSprite) && (rightSrc || rightSprite)) {
+      // DUO (gauche + droite) — hauteur commune en carte
+      const pairH =
+        (typeof c.thumb_pair_height === 'number' && c.thumb_pair_height > 0) ? c.thumb_pair_height :
+        (typeof c.thumb_right_height === 'number' && c.thumb_right_height > 0) ? c.thumb_right_height :
+        (typeof c.thumb_height === 'number' && c.thumb_height > 0) ? c.thumb_height : 110;
+
+      // GAUCHE
+      let leftNode = '';
+      if (leftSprite) {
+        const leftH = (typeof c.thumb_left_height === 'number' && c.thumb_left_height > 0) ? c.thumb_left_height : pairH;
+        leftNode = makeSprite('L', leftSprite, leftH, leftPixel);
+      } else {
+        const leftSizeStyle = (typeof c.thumb_left_width === 'number' && c.thumb_left_width > 0)
+          ? `width:${c.thumb_left_width}px;height:${pairH}px;`
+          : `height:${(typeof c.thumb_left_height === 'number' && c.thumb_left_height > 0) ? c.thumb_left_height : pairH}px;max-width:${pairH}px;`;
+        const rotateAttrs = (leftUrls.length > 1 && leftRotateMs > 0)
+          ? ` data-rotate="left" data-urls="${leftUrls.map(u=>encodeURIComponent(u)).join(',')}" data-ms="${leftRotateMs}" data-idx="${leftIdx}" data-ts="${Date.now()}"`
+          : '';
+        leftNode = `
+          <img class="thumb-left" src="${leftSrc}" alt="block"
+               onerror="this.style.display='none'"
+               ${rotateAttrs}
+               style="${leftSizeStyle}object-fit:contain;${leftPixel?'image-rendering:pixelated;':'image-rendering:auto;'}border-radius:8px;">`;
+      }
+
+      // DROITE
+      let rightNode = '';
+      if (rightSprite) {
+        rightNode = makeSprite('R', rightSprite, pairH, rightPixel);
+      } else {
+        const rotateAttrs = (rightUrls.length > 1 && rightRotateMs > 0)
+          ? ` data-rotate="right" data-urls="${rightUrls.map(u=>encodeURIComponent(u)).join(',')}" data-ms="${rightRotateMs}" data-idx="${rightIdx}" data-ts="${Date.now()}"`
+          : '';
+        rightNode = `
+          <img class="thumb-right" src="${rightSrc}" alt="${(title||'').replace(/"/g,'&quot;')}"
+               onerror="this.style.display='none'"
+               ${rotateAttrs}
+               style="height:${pairH}px;width:auto;object-fit:contain;${rightPixel?'image-rendering:pixelated;':'image-rendering:auto;'}border-radius:8px;margin-bottom:8px;flex:0 0 auto;">`;
+      }
+
+      thumbImg = `
+        <div class="thumb-pair" style="display:flex;align-items:center;justify-content:center;gap:12px;">
+          ${leftNode}
+          ${rightNode}
+        </div>`;
     } else {
-      thumbStyles.push('max-height:140px'); // taille par défaut de la miniature
+      // UNE SEULE IMAGE / SPRITE à droite → centré
+      if (rightSrc) {
+        thumbImg = `<img class="thumb" src="${rightSrc}" alt="${(title||'').replace(/"/g,'&quot;')}"
+                 onerror="this.style.display='none'"
+                 style="display:block;margin:0 auto 8px;${thumbStylesSolo.join(';')}">`;
+      } else if (rightSprite) {
+        const h = (typeof c.thumb_height === 'number' && c.thumb_height > 0) ? c.thumb_height : 110;
+        thumbImg = makeSprite('Rsolo', rightSprite, h, rightPixel, null, 'display:block;margin:0 auto 8px;');
+      } else {
+        thumbImg = '';
+      }
     }
-    if (c.image_pixelated === true) thumbStyles.push('image-rendering:pixelated');
-    const thumbImg = thumbSrc
-      ? `<img class="thumb" src="${thumbSrc}" alt="${(title||'').replace(/"/g,'&quot;')}"
-              onerror="this.style.display='none'" style="${thumbStyles.join(';')}">`
-      : '';
 
-    // ---------- Image "preview" (DÉTAIL) — plus petite par défaut ----------
-const previewSrc = c.image ? resolveAsset(modId, c.image) : '';
-const detailImgStyles = ['border-radius:8px','display:block','margin:8px auto 12px'];
-if (typeof c.image_width === 'number' && c.image_width > 0) {
-  // taille au cas par cas via JSON
-  detailImgStyles.push(`width:${c.image_width}px`, 'max-width:100%');
-} else if (c.image_full === true) {
-  // pleine largeur si explicitement demandé
-  detailImgStyles.push('width:100%');
-} else {
-  // ✅ défaut : limité à ~440px et centré (plus petit qu’avant)
-  detailImgStyles.push('max-width:440px','width:100%');
-}
-if (c.image_pixelated === true) detailImgStyles.push('image-rendering:pixelated');
+    // ---------- Image "preview" (DÉTAIL) ----------
+    const previewSrc = rightSrc;
+    let detailImg = '';
+    if ((previewSrc || rightSprite) && (leftSrc || leftSprite) && c.detail_pair !== false) {
+      // Duo en détail : hauteurs indépendantes possibles
+      const baseH = (typeof c.detail_pair_height === 'number' && c.detail_pair_height > 0) ? c.detail_pair_height : 180;
+      const leftH  = (typeof c.detail_left_height  === 'number' && c.detail_left_height  > 0) ? c.detail_left_height  : baseH;
+      const rightH = (typeof c.detail_right_height === 'number' && c.detail_right_height > 0)
+                   ? c.detail_right_height
+                   : (typeof c.detail_right_scale === 'number' && c.detail_right_scale > 0
+                      ? Math.round(baseH * c.detail_right_scale)
+                      : baseH);
+      const rightMaxW = (typeof c.detail_right_max_width === 'number' && c.detail_right_max_width > 0) ? c.detail_right_max_width : 440;
 
-const detailImg = previewSrc
-  ? `<img src="${previewSrc}" alt="${(title||'').replace(/"/g,'&quot;')}"
-          onerror="this.style.display='none'" style="${detailImgStyles.join(';')}">`
-  : '';
+      // GAUCHE
+      let leftDetailNode = '';
+      if (leftSprite) {
+        leftDetailNode = makeSprite('Ldet', leftSprite, leftH, leftPixel);
+      } else {
+        const rotateAttrs = (leftUrls.length > 1 && leftRotateMs > 0)
+          ? ` data-rotate="left" data-urls="${leftUrls.map(u=>encodeURIComponent(u)).join(',')}" data-ms="${leftRotateMs}" data-idx="${leftIdx}" data-ts="${Date.now()}"`
+          : '';
+        leftDetailNode = `
+          <img src="${leftSrc}" alt="block"
+               onerror="this.style.display='none'"
+               ${rotateAttrs}
+               style="height:${leftH}px;width:auto;${leftPixel?'image-rendering:pixelated;':'image-rendering:auto;'}border-radius:8px;">`;
+      }
 
+      // DROITE
+      let rightDetailNode = '';
+      if (rightSprite) {
+        rightDetailNode = makeSprite('Rdet', rightSprite, rightH, rightPixel, rightMaxW);
+      } else {
+        const rotateAttrs = (rightUrls.length > 1 && rightRotateMs > 0)
+          ? ` data-rotate="right" data-urls="${rightUrls.map(u=>encodeURIComponent(u)).join(',')}" data-ms="${rightRotateMs}" data-idx="${rightIdx}" data-ts="${Date.now()}"` : '';
+        rightDetailNode = `
+          <img src="${previewSrc}" alt="${(title||'').replace(/"/g,'&quot;')}"
+               onerror="this.style.display='none'"
+               ${rotateAttrs}
+               style="height:${rightH}px;max-width:${rightMaxW}px;width:auto;${rightPixel?'image-rendering:pixelated;':'image-rendering:auto;'}border-radius:8px;flex:0 0 auto;">`;
+      }
 
+      detailImg = `
+        <div class="detail-pair" style="display:flex;align-items:flex-start;justify-content:center;gap:12px;margin:8px 0 12px;">
+          ${leftDetailNode}
+          ${rightDetailNode}
+        </div>`;
+    } else {
+      // Sprite/IMG seule à droite → centré
+      const detailImgStylesSolo = ['border-radius:8px','display:block','margin:8px auto 12px','max-width:440px','width:100%'];
+      if (rightPixel) detailImgStylesSolo.push('image-rendering:pixelated');
 
-    // ---------- Sections libres (multi-langue) ----------
+      if (previewSrc) {
+        detailImg = `<img src="${previewSrc}" alt="${(title||'').replace(/"/g,'&quot;')}"
+                    onerror="this.style.display='none'" style="${detailImgStylesSolo.join(';')}">`;
+      } else if (rightSprite) {
+        const baseH =
+          (typeof c.detail_right_height === 'number' && c.detail_right_height > 0) ? c.detail_right_height :
+          (typeof c.detail_pair_height === 'number' && c.detail_pair_height > 0) ? c.detail_pair_height : 180;
+        const maxW = (typeof c.detail_right_max_width === 'number' && c.detail_right_max_width > 0) ? c.detail_right_max_width : 440;
+        detailImg = makeSprite('RsoloDet', rightSprite, baseH, rightPixel, maxW, 'display:block;margin:8px auto 12px;');
+      } else {
+        detailImg = '';
+      }
+    }
+
+    // ---------- Sections libres & extras ----------
     const details  = c.details || {};
     const sections = Array.isArray(details.sections) ? details.sections : [];
     const sectionsHtml = sections.map(sec => {
       const stitle = (lang === 'en') ? (sec.title_en || sec.title_fr || '') : (sec.title_fr || sec.title_en || '');
       const sitems = (lang === 'en') ? (sec.items_en || sec.items_fr || []) : (sec.items_fr || sec.items_en || []);
 
-      // images par section : images_<lang> | images (fallback)
-      const imgs = (lang === 'en')
-        ? (sec.images_en || sec.images || [])
-        : (sec.images_fr || sec.images_en || sec.images || []);
-      const caps = (lang === 'en')
-        ? (sec.captions_en || sec.captions || [])
-        : (sec.captions_fr || sec.captions_en || sec.captions || []);
+      const imgs = (lang === 'en') ? (sec.images_en || sec.images || []) : (sec.images_fr || sec.images_en || sec.images || []);
+      const caps = (lang === 'en') ? (sec.captions_en || sec.captions || []) : (sec.captions_fr || sec.captions_en || sec.captions || []);
 
       const imgsHtml = imgs.length
         ? `<div class="section-images" style="display:flex;flex-wrap:wrap;gap:10px;margin:8px 0;">
@@ -1025,27 +1242,35 @@ const detailImg = previewSrc
                         onerror="this.style.display='none'"
                         style="max-width:220px;border-radius:8px;">
                    ${cap ? `<figcaption style="opacity:.7;font-size:.9em;margin-top:4px;">${cap}</figcaption>` : ''}
-                 </figure>
-               `;
+                 </figure>`;
              }).join('')}
-           </div>`
-        : '';
+           </div>` : '';
 
-      const listHtml = sitems.length ? `<ul>${sitems.map(it => `<li>${it}</li>`).join('')}</ul>` : '';
+      const listHtml = sitems.length ? `<ul style="padding-left:1.15em;">${
+        sitems.map(it => {
+          const txt = (it ?? '').toString();
+          if (!txt.trim()) return `<li class="spacer" style="list-style:none;height:.35rem;"></li>`;
+          if (/^\s*\*/.test(txt)) {
+            const label = txt.replace(/^\s*\*\s*/, '');
+            return `<li class="subhead" style="list-style:none;margin:8px 0 4px;text-indent:-1.15em;padding-left:1.15em;"><strong>${label}</strong></li>`;
+          }
+          return `<li>${txt}</li>`;
+        }).join('')
+      }</ul>` : '';
+
       return `${stitle ? `<h4 class="underline">${stitle}</h4>` : ''}${listHtml}${imgsHtml}`;
     }).join('');
 
-    // ---------- Extras (craft / usage / drops) ----------
     const craft = details[lang === 'en' ? 'craft_en' : 'craft_fr'] || [];
     const usage = details[lang === 'en' ? 'usage_en' : 'usage_fr'] || [];
     const drops = details[lang === 'en' ? 'drops_en' : 'drops_fr'] || [];
     const extrasHtml = `
-      ${craft.length ? `<h4 class="underline">${(translations?.[lang]?.craft)||'Craft'}</h4><ul>${craft.map(x=>`<li>${x}</li>`).join('')}</ul>` : ''}
-      ${usage.length ? `<h4 class="underline">${(translations?.[lang]?.usage)||'Usage'}</h4><ul>${usage.map(x=>`<li>${x}</li>`).join('')}</ul>` : ''}
-      ${drops.length ? `<h4 class="underline">${(translations?.[lang]?.drops)||'Drops'}</h4><ul>${drops.map(x=>`<li>${x}</li>`).join('')}</ul>` : ''}
+      ${craft.length ? `<h4 class="underline">${(translations?.[lang]?.craft)||'Craft'}</h4>${renderRichList(craft)}` : ''}
+      ${usage.length ? `<h4 class="underline">${(translations?.[lang]?.usage)||'Usage'}</h4>${renderRichList(usage)}` : ''}
+      ${drops.length ? `<h4 class="underline">${(translations?.[lang]?.drops)||'Drops'}</h4>${renderRichList(drops)}` : ''}
     `;
 
-    // ---------- Contenu affiché dans le DÉTAIL ----------
+    // ---------- Contenu détail dans data-attr ----------
     const detailHtml = `
       ${detailImg}
       ${desc ? `<p>${desc}</p>` : ''}
@@ -1053,7 +1278,7 @@ const detailImg = previewSrc
       ${extrasHtml}
     `.trim().replace(/"/g, '&quot;');
 
-    // ---------- Carte (GRILLE) ----------
+    // ---------- Render de la carte ----------
     return `
       <div class="small-card ${c.type || ''}"
            data-id="${c.id || ''}"
@@ -1062,11 +1287,10 @@ const detailImg = previewSrc
         ${thumbImg}
         <h4>${title}</h4>
         ${desc ? `<p>${desc}</p>` : ''}
-      </div>
-    `;
+      </div>`;
   }).join('');
 
-  // Re-applique le filtre latéral actif après re-render
+  // Réapplique le filtre latéral actif
   const page = grid.closest('.page');
   const activeBtn = page?.querySelector('.side-buttons .card-btn.active');
   const type = activeBtn?.getAttribute('data-type') || 'all';
@@ -1075,9 +1299,104 @@ const detailImg = previewSrc
       card.style.display = card.classList.contains(type) ? 'block' : 'none';
     });
   }
+
+  // Ticker global pour l'alternance d'images (non-sprite)
+  if (!window.__rotateTicker) {
+    window.__rotateTicker = setInterval(() => {
+      const now = Date.now();
+      document.querySelectorAll('img[data-rotate]').forEach(img => {
+        const ms = parseInt(img.getAttribute('data-ms'), 10) || 3000;
+        const ts = parseInt(img.getAttribute('data-ts'), 10) || 0;
+        if (now - ts < ms) return;
+        let urls = img.__urls;
+        if (!urls) {
+          const raw = img.getAttribute('data-urls') || '';
+          urls = raw.split(',').map(s => decodeURIComponent(s)).filter(Boolean);
+          img.__urls = urls;
+        }
+        if (urls.length < 2) return;
+        let idx = parseInt(img.getAttribute('data-idx'), 10) || 0;
+        idx = (idx + 1) % urls.length;
+        img.src = urls[idx];
+        img.setAttribute('data-idx', String(idx));
+        img.setAttribute('data-ts', String(now));
+      });
+    }, 500);
+  }
+
+  // Lancer/assurer l'animateur de sprites (frame par frame)
+  if (typeof ensureSpriteAnimator === 'function') ensureSpriteAnimator();
 }
 
 
+function ensureSpriteAnimator() {
+  if (window.__spriteAnim) return;
+
+  function initNewSprites() {
+    document.querySelectorAll('[data-sprite="1"]').forEach(el => {
+      if (el.__spr) return;
+
+      const frames = parseInt(el.dataset.frames, 10) || 1;
+      const fps    = parseFloat(el.dataset.fps) || 6;
+      const dir    = el.dataset.dir === 'horizontal' ? 'horizontal' : 'vertical';
+
+      // ordre & durées personnalisés (ms), façon .mcmeta
+      const order = (el.dataset.order || '')
+        .split(',').map(x => parseInt(x,10))
+        .filter(n => !isNaN(n) && n >= 0 && n < frames);
+      const durations = (el.dataset.durations || '')
+        .split(',').map(x => parseInt(x,10)).filter(n => !isNaN(n) && n > 0);
+
+      const dispW = el.clientWidth  || parseInt(getComputedStyle(el).width, 10);
+      const dispH = el.clientHeight || parseInt(getComputedStyle(el).height, 10);
+
+      el.__spr = {
+        frames, fps, dir, dispW, dispH,
+        idx: 0,
+        order: order.length ? order : null,
+        durations: durations.length ? durations : null,
+        next: performance.now() + (durations.length ? durations[0] : 1000 / fps)
+      };
+    });
+  }
+
+  function step(t) {
+    document.querySelectorAll('[data-sprite="1"]').forEach(el => {
+      const s = el.__spr; if (!s) return;
+
+      if (t >= s.next) {
+        // avance l’index (ordre custom si présent)
+        if (s.order) {
+          const pos = s.order.indexOf(s.idx);
+          const nextPos = (pos + 1) % s.order.length;
+          s.idx = s.order[nextPos];
+        } else {
+          s.idx = (s.idx + 1) % s.frames;
+        }
+
+        // déplacement EXACT d'une frame à l'autre
+        const offX = (s.dir === 'horizontal') ? -(s.dispW * s.idx) : 0;
+        const offY = (s.dir === 'vertical')   ? -(s.dispH * s.idx) : 0;
+        el.style.backgroundPosition = `${offX}px ${offY}px`;
+
+        // prochaine échéance (durations[] sinon 1000/fps)
+        const base = s.durations
+          ? s.durations[(s.order ? s.order.indexOf(s.idx) : s.idx) % s.durations.length]
+          : (1000 / s.fps);
+        s.next = t + base;
+      }
+    });
+    requestAnimationFrame(step);
+  }
+
+  // Observe les ajouts de nœuds (ex : ouverture d’un détail)
+  const mo = new MutationObserver(initNewSprites);
+  mo.observe(document.body, { childList: true, subtree: true });
+
+  initNewSprites();
+  requestAnimationFrame(step);
+  window.__spriteAnim = true;
+}
 
 
 
