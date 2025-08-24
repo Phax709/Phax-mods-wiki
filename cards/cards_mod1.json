@@ -10,8 +10,14 @@
   },
   {
     "id": "igniera_ore",
-    "type": "bloc",
-    "image": "",
+    "type": "minerai",
+    "image_left": "../images/mod1/Ignieraore.png",
+    "image_left_pixelated": true,
+    "image": "../images/mod1/Ignieraingot.png",
+    "image_full": false,
+    "image_pixelated": true,
+    "thumb_pair_height": 90,
+    "detail_pair_height": 230,
     "title_fr": "Minerai d’igniera",
     "title_en": "Igniera ore",
     "description_fr": "Minerai rare et instable.",
@@ -54,12 +60,20 @@
   {
   "id": "multicolor_ore",
   "type": "minerai",
-  "image": "../images/mod1/Multicoloringot.png",
-  "thumb_height": 75,
+  "right_sprite": {
+    "src": "../images/mod1/multicolor_ingot.png",
+    "frames": 8,
+    "fps": 0.5,
+    "frame_width": 16,
+    "frame_height": 16,
+    "direction": "vertical"
+  },
+  "thumb_height": 90,
+  "detail_right_height": 200,
   "image_full": false,
   "image_pixelated": true,
-  "title_fr": "Minerai multicolore",
-  "title_en": "Multicolor ore",
+  "title_fr": "Lingot de Multicolor",
+  "title_en": "Multicolor ingot",
   "description_fr": "Ressource sans bloc de minerai.",
   "description_en": "Resource with no ore block.",
   "details": {
@@ -160,7 +174,7 @@
           "• Vitesse d’attaque : 2",
           "• Durabilité : 3000",
           "",
-          "Marteau :",
+          "Marteau ou hammer :",
           "• Niveau d’extraction : 5",
           "• Efficacité : 12",
           "• Enchantabilité : 22",
@@ -219,9 +233,9 @@
           "Toughness: 3",
           "Knockback resistance: 0.5"
         ],
-        "images_en": ["images/mod1/multicolor_hammer_recipe.png"],
+        "images_en": ["../images/mod1/hammer_multicolor_recipe.png"],
         "captions_en": ["Craft of multicolor hammer"],
-        "images_fr": ["images/mod1/multicolor_hammer_recipe.png"],
+        "images_fr": ["../images/mod1/hammer_multicolor_recipe.png"],
         "captions_fr": ["Craft du marteau multicolore"]
       },
       {
@@ -236,13 +250,961 @@
           "Multicolor can be used to craft a prismatic light with sculk."
         ],
         "images_en": [
-          "images/mod1/multicolor_apple.png",
-          "images/mod1/prismatic_light.png"
+          "../images/mod1/multicolor_apple_recipe.png",
+          "../images/mod1/light_prism_recipe.png"
         ],
         "captions_en": ["", ""],
         "images_fr": [
-          "images/mod1/multicolor_apple.png",
-          "images/mod1/prismatic_light.png"
+          "../images/mod1/multicolor_apple_recipe.png",
+          "../images/mod1/light_prism_recipe.png"
+        ],
+        "captions_fr": ["", ""]
+      }
+    ]
+  }
+},
+
+{
+  "id": "paladium_ore",
+  "type": "minerai",
+  "image_left": "../images/mod1/Paladiumore.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/Paladiumingot.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Minerai de paladium",
+  "title_en": "Paladium ore",
+  "description_fr": "Premiere ressource disponible en grande quantité.",
+  "description_en": "First resource available in large quantities.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du minerai de paladium",
+        "title_en": "Characteristics of paladium ore",
+        "items_fr": [
+          "Dureté : 1",
+          "Résistance : 10",
+          "Niveau d’extraction : 2 = Pioche en fer"
+        ],
+        "items_en": [
+          "Hardness: 1",
+          "Resistance: 10",
+          "Harvest level: 2 = Iron pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Forme : Uniforme",
+          "Hauteur : Min 10 ; Max 50",
+          "Biome restreint : Non"
+        ],
+        "items_en": [
+          "Generation shape: Uniform",
+          "Generation height: Min 10; Max 50",
+          "Restriction biome: NO"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette : cuisson",
+          "XP : 1",
+          "Temps de cuisson : 6 = 0,3s"
+        ],
+        "items_en": [
+          "Recipe type: smelting",
+          "Xp reward: 1",
+          "Cooking time: 6 = 0.3s"
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Objet de réparation : lingot de paladium"],
+        "items_en": ["Repair item: paladium ingot"]
+      },
+      {
+        "title_fr": "Outils",
+        "title_en": "Tools",
+        "items_fr": [
+          "Épée :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 8",
+          "• Enchantabilité : 12",
+          "• Dégâts d’attaque : 7",
+          "• Vitesse d’attaque : 1,7",
+          "• Durabilité : 1200",
+          "",
+          "Hache :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 8",
+          "• Enchantabilité : 12",
+          "• Dégâts d’attaque : 10",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 1200",
+          "",
+          "Pioche / pelle / houe :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 8",
+          "• Enchantabilité : 12",
+          "• Dégâts d’attaque : 2",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 1200",
+          "",
+          "Marteau ou hammer :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 8",
+          "• Enchantabilité : 12",
+          "• Dégâts d’attaque : 0",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 250"
+        ],
+        "items_en": [
+          "Sword:",
+          "• Harvest level: 3",
+          "• Efficiency: 8",
+          "• Enchantability: 12",
+          "• Attack damage: 7",
+          "• Attack speed: 1.7",
+          "• Uses / durability: 1200",
+          "",
+          "Axe:",
+          "• Harvest level: 3",
+          "• Efficiency: 8",
+          "• Enchantability: 12",
+          "• Attack damage: 10",
+          "• Attack speed: 1",
+          "• Uses / durability: 1200",
+          "",
+          "Pickaxe, shovel, hoe:",
+          "• Harvest level: 3",
+          "• Efficiency: 8",
+          "• Enchantability: 12",
+          "• Attack damage: 2",
+          "• Attack speed: 1",
+          "• Uses / durability: 1200",
+          "",
+          "Hammer:",
+          "• Harvest level: 3",
+          "• Efficiency: 8",
+          "• Enchantability: 12",
+          "• Attack damage: 0",
+          "• Attack speed: 1",
+          "• Uses / durability: 250"
+        ]
+      },
+      {
+        "title_fr": "Armure",
+        "title_en": "Armor",
+        "items_fr": [
+          "Absorption maximale des dégâts : 25",
+          "Valeurs d’armure (Casque, Plastron, Jambières, Bottes) : 2 ; 6 ; 6 ; 2",
+          "Enchantabilité : 12",
+          "Résistance : 2",
+          "Résistance au recul : 0"
+        ],
+        "items_en": [
+          "Maximal damage that armor absorbs: 25",
+          "Damage values (Helmet, Chestplate, Leggings, Boots): 2 ; 6 ; 6 ; 2",
+          "Enchantability: 12",
+          "Toughness: 2",
+          "Knockback resistance: 0"
+        ],
+        "images_en": ["../images/mod1/hammer_paladium_recipe.png"],
+        "captions_en": ["Craft of paladium hammer"],
+        "images_fr": ["../images/mod1/hammer_paladium_recipe.png"],
+        "captions_fr": ["Craft du hammer en paladium"]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le lingot de paladium permet de crafter la pomme en paladium dans la table de craft."
+        ],
+        "items_en": [
+          "The paladium ingot can be used to craft palaapple in the crafting table."
+        ],
+        "images_en": [
+          "../images/mod1/palaapple_recipe.png"
+        ],
+        "captions_en": ["", ""],
+        "images_fr": [
+          "../images/mod1/palaapple_recipe.png"
+        ],
+        "captions_fr": ["", ""]
+      }
+    ]
+  }
+},
+
+{
+  "id": "red_ore",
+  "type": "minerai",
+  "image_left_pool": [
+    "../images/mod1/Redore.png",
+    "../images/mod1/Rednetherore.png"
+  ],
+  "left_rotate_seconds": 1,
+  "image_left_pixelated": true,
+  "image": "../images/mod1/Redingot.png",
+  "thumb_height": 75,
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Minerai de red",
+  "title_en": "Red ore",
+  "description_fr": "deuxieme ressource disponible dans le mod.",
+  "description_en": "Second resource available in the mod.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du minerai de red",
+        "title_en": "Characteristics of red ore",
+        "items_fr": [
+          "Dureté : 1",
+          "Résistance : 10",
+          "Niveau d’extraction : 3 = Pioche en diamant"
+        ],
+        "items_en": [
+          "Hardness: 1",
+          "Resistance: 10",
+          "Harvest level: 3 = Diamond pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "S'applique également au minerai red du nether",
+          "Forme : Uniforme",
+          "Hauteur : Min 0 ; Max 64",
+          "Biome restreint : Non"
+        ],
+        "items_en": [
+          "Also applies to nether red ore",
+          "Generation shape: Uniform",
+          "Generation height: Min 0; Max 64",
+          "Restriction biome: NO"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "*Minerai de red :",
+          "Type de recette : cuisson",
+          "XP : 50",
+          "Temps de cuisson : 200 = 10s",
+          "*Minerai de red du nether :",
+          "Type de recette : fonderie (haut fourneau)",
+          "XP : 25",
+          "Temps de cuisson : 100 = 5s"
+        ],
+        "items_en": [
+          "*Red ore :",
+          "Recipe type: smelting",
+          "Xp reward: 16",
+          "Cooking time: 240 = 12s",
+          "",
+          "*Nether red ore :",
+          "Recipe type : blasting",
+          "XP : 50",
+          "Cooking time : 120 = 6s"
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Objet de réparation : lingot de red"],
+        "items_en": ["Repair item: red ingot"]
+      },
+      {
+        "title_fr": "Outils",
+        "title_en": "Tools",
+        "items_fr": [
+          "Épée :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 8",
+          "• Enchantabilité : 10",
+          "• Dégâts d’attaque : 8",
+          "• Vitesse d’attaque : 1,7",
+          "• Durabilité : 1800",
+          "",
+          "Hache :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 8",
+          "• Enchantabilité : 10",
+          "• Dégâts d’attaque : 9",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 1800",
+          "",
+          "Pioche / pelle / houe :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 8",
+          "• Enchantabilité : 10",
+          "• Dégâts d’attaque : 5",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 1800",
+          "",
+          "Marteau ou hammer :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 8",
+          "• Enchantabilité : 10",
+          "• Dégâts d’attaque : 2",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 500"
+        ],
+        "items_en": [
+          "Sword:",
+          "• Harvest level: 3",
+          "• Efficiency: 8",
+          "• Enchantability: 10",
+          "• Attack damage: 8",
+          "• Attack speed: 1.7",
+          "• Uses / durability: 1800",
+          "",
+          "Axe:",
+          "• Harvest level: 3",
+          "• Efficiency: 8",
+          "• Enchantability: 10",
+          "• Attack damage: 9",
+          "• Attack speed: 1",
+          "• Uses / durability: 1800",
+          "",
+          "Pickaxe, shovel, hoe:",
+          "• Harvest level: 3",
+          "• Efficiency: 8",
+          "• Enchantability: 10",
+          "• Attack damage: 5",
+          "• Attack speed: 1",
+          "• Uses / durability: 1800",
+          "",
+          "Hammer:",
+          "• Harvest level: 3",
+          "• Efficiency: 8",
+          "• Enchantability: 10",
+          "• Attack damage: 2",
+          "• Attack speed: 1",
+          "• Uses / durability: 500"
+        ]
+      },
+      {
+        "title_fr": "Armure",
+        "title_en": "Armor",
+        "items_fr": [
+          "Absorption maximale des dégâts : 50",
+          "Valeurs d’armure (Casque, Plastron, Jambières, Bottes) : 5 ; 14 ; 10 ; 7",
+          "Enchantabilité : 45",
+          "Résistance : 2",
+          "Résistance au recul : 0"
+        ],
+        "items_en": [
+          "Maximal damage that armor absorbs: 50",
+          "Damage values (Helmet, Chestplate, Leggings, Boots): 5 ; 14 ; 10 ; 7",
+          "Enchantability: 45",
+          "Toughness: 2",
+          "Knockback resistance: 0"
+        ],
+        "images_en": ["../images/mod1/red_hammer_recipe.png"],
+        "captions_en": ["Craft of red hammer"],
+        "images_fr": ["../images/mod1/red_hammer_recipe.png"],
+        "captions_fr": ["Craft du hammer en red"]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le lingot de red permet de crafter la pomme red dans la table de craft."
+        ],
+        "items_en": [
+          "The red ingot can be used to craft red apple in the crafting table."
+        ],
+        "images_en": [
+          "../images/mod1/redapple_recipe.png"
+        ],
+        "captions_en": ["", ""],
+        "images_fr": [
+          "../images/mod1/redapple_recipe.png"
+        ],
+        "captions_fr": ["", ""]
+      }
+    ]
+  }
+},
+
+{
+  "id": "amazonite_ore",
+  "type": "minerai",
+  "image_left": "../images/mod1/Amazoniteore.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/Amazoniteingot.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Minerai d'amazonite",
+  "title_en": "Amazonite ore",
+  "description_fr": "Troisième ressource plus rare mais meilleur que le red.",
+  "description_en": "Third rarest resource but better than red.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du minerai d'amazonite",
+        "title_en": "Characteristics of amazonite ore",
+        "items_fr": [
+          "Dureté : 3",
+          "Résistance : 5",
+          "Niveau d’extraction : 2 = Pioche en fer"
+        ],
+        "items_en": [
+          "Hardness: 3",
+          "Resistance: 5",
+          "Harvest level: 2 = Iron pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Forme : Uniforme",
+          "Hauteur : Min 0 ; Max 256",
+          "Biome restreint : Oui",
+          "*Badland, Désert, Jungle, Bosquet de cerisier"
+        ],
+        "items_en": [
+          "Generation shape: Uniform",
+          "Generation height: Min 0; Max 256",
+          "Restriction biome: YES",
+          "*Badland, Desert, Jungle, Cherry Grove"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette : fonderie (haut fourneau)",
+          "XP : 1",
+          "Temps de cuisson : 80 = 4s"
+        ],
+        "items_en": [
+          "Recipe type: blasting",
+          "Xp reward: 1",
+          "Cooking time: 80 = 4s"
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Objet de réparation : lingot d'amazonite"],
+        "items_en": ["Repair item: Amazonite ingot"]
+      },
+      {
+        "title_fr": "Outils",
+        "title_en": "Tools",
+        "items_fr": [
+          "Épée :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 7",
+          "• Enchantabilité : 18",
+          "• Dégâts d’attaque : 15",
+          "• Vitesse d’attaque : 4",
+          "• Durabilité : 1250",
+          "",
+          "Hache :",
+          "• Niveau d’extraction : 3",
+          "• Efficacité : 7",
+          "• Enchantabilité : 15",
+          "• Dégâts d’attaque : 22",
+          "• Vitesse d’attaque : 4",
+          "• Durabilité : 1250",
+          "",
+          "Pioche / pelle / houe :",
+          "• Niveau d’extraction : 2",
+          "• Efficacité : 7",
+          "• Enchantabilité : 15",
+          "• Dégâts d’attaque : 22",
+          "• Vitesse d’attaque : 4",
+          "• Durabilité : 1250",
+          "",
+          "Marteau ou hammer :",
+          "• Niveau d’extraction : 2",
+          "• Efficacité : 7",
+          "• Enchantabilité : 15",
+          "• Dégâts d’attaque : 22",
+          "• Vitesse d’attaque : 4",
+          "• Durabilité : 750"
+        ],
+        "items_en": [
+          "Sword:",
+          "• Harvest level: 3",
+          "• Efficiency: 7",
+          "• Enchantability: 18",
+          "• Attack damage: 15",
+          "• Attack speed: 4",
+          "• Uses / durability: 1250",
+          "",
+          "Axe:",
+          "• Harvest level: 3",
+          "• Efficiency: 7",
+          "• Enchantability: 15",
+          "• Attack damage: 22",
+          "• Attack speed: 4",
+          "• Uses / durability: 1250",
+          "",
+          "Pickaxe, shovel, hoe:",
+          "• Harvest level: 2",
+          "• Efficiency: 7",
+          "• Enchantability: 15",
+          "• Attack damage: 22",
+          "• Attack speed: 4",
+          "• Uses / durability: 1250",
+          "",
+          "Hammer:",
+          "• Harvest level: 2",
+          "• Efficiency: 7",
+          "• Enchantability: 15",
+          "• Attack damage: 22",
+          "• Attack speed: 4",
+          "• Uses / durability: 750"
+        ]
+      },
+      {
+        "title_fr": "Armure",
+        "title_en": "Armor",
+        "items_fr": [
+          "Absorption maximale des dégâts : 30",
+          "Valeurs d’armure (Casque, Plastron, Jambières, Bottes) : 4 ; 10 ; 12 ; 4",
+          "Enchantabilité : 18",
+          "Résistance : 1",
+          "Résistance au recul : 0"
+        ],
+        "items_en": [
+          "Maximal damage that armor absorbs: 30",
+          "Damage values (Helmet, Chestplate, Leggings, Boots): 4 ; 10 ; 12 ; 4",
+          "Enchantability: 18",
+          "Toughness: 1",
+          "Knockback resistance: 0"
+        ],
+        "images_en": ["../images/mod1/amazonite_hammer_recipe.png"],
+        "captions_en": ["Craft of amazonite hammer"],
+        "images_fr": ["../images/mod1/amazonite_hammer_recipe.png"],
+        "captions_fr": ["Craft du hammer en amazonite"]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le lingot d'amazonite permet de crafter la pomme en amazonite dans la table de craft."
+        ],
+        "items_en": [
+          "The amazonite ingot can be use to craft amazonite apple in the crafting table."
+        ],
+        "images_en": [
+          "../images/mod1/amazonite_aple_recipe.png"
+        ],
+        "captions_en": ["", ""],
+        "images_fr": [
+          "../images/mod1/amazonite_aple_recipe.png"
+        ],
+        "captions_fr": ["", ""]
+      }
+    ]
+  }
+},
+
+{
+  "id": "dioptasium_ore",
+  "type": "minerai",
+  "image_left": "../images/mod1/DioptasiumOre.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/DioptasiumIngot.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Minerai de dioptasium",
+  "title_en": "Dioptasium ore",
+  "description_fr": "Quatrième ressource plus rare avant de rentrer dans le dur.",
+  "description_en": "Fourth rarest resource before getting into the hard stuff.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du minerai de dioptasium",
+        "title_en": "Characteristics of dioptasium ore",
+        "items_fr": [
+          "Dureté : 3",
+          "Résistance : 5",
+          "Niveau d’extraction : 3 = Pioche en diamant"
+        ],
+        "items_en": [
+          "Hardness: 3",
+          "Resistance: 5",
+          "Harvest level: 3 = Diamond pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Forme : Uniforme",
+          "Hauteur : Min 1 ; Max 63",
+          "Biome restreint : NON"
+        ],
+        "items_en": [
+          "Generation shape: Uniform",
+          "Generation height: Min 1; Max 63",
+          "Restriction biome: NO"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: cuisson",
+          "XP : 0.7",
+          "Temps de cuisson : 200 = 10s",
+          "",
+          "Type de recette : fonderie (haut fourneau)",
+          "XP : 0.7",
+          "Temps de cuisson : 200 = 10s"
+        ],
+        "items_en": [
+          "Recipe type: smelting",
+          "Xp reward: 0.7",
+          "Cooking time: 200 = 10s",
+          "",
+          "Recipe type: blasting",
+          "Xp reward: 0.7",
+          "Cooking time: 100 = 5s"
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Objet de réparation : lingot de dioptasium"],
+        "items_en": ["Repair item: Dioptasium ingot"]
+      },
+      {
+        "title_fr": "Outils",
+        "title_en": "Tools",
+        "items_fr": [
+          "Épée :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 6",
+          "• Enchantabilité : 14",
+          "• Dégâts d’attaque : 6",
+          "• Vitesse d’attaque : 3.5",
+          "• Durabilité : 1400",
+          "",
+          "Hache :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 6",
+          "• Enchantabilité : 14",
+          "• Dégâts d’attaque : 12",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 2400",
+          "",
+          "Pioche / pelle / houe :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 16",
+          "• Enchantabilité : 14",
+          "• Dégâts d’attaque : 5",
+          "• Vitesse d’attaque : 1.2",
+          "• Durabilité : 2400",
+          "",
+          "Marteau ou hammer :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 6",
+          "• Enchantabilité : 14",
+          "• Dégâts d’attaque : 1",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 1400"
+        ],
+        "items_en": [
+          "Sword:",
+          "• Harvest level: 4",
+          "• Efficiency: 6",
+          "• Enchantability: 14",
+          "• Attack damage: 6",
+          "• Attack speed: 3.5",
+          "• Uses / durability: 1400",
+          "",
+          "Axe:",
+          "• Harvest level: 4",
+          "• Efficiency: 6",
+          "• Enchantability: 14",
+          "• Attack damage: 12",
+          "• Attack speed: 1",
+          "• Uses / durability: 2400",
+          "",
+          "Pickaxe, shovel, hoe:",
+          "• Harvest level: 4",
+          "• Efficiency: 16",
+          "• Enchantability: 14",
+          "• Attack damage: 5",
+          "• Attack speed: 1.2",
+          "• Uses / durability: 2400",
+          "",
+          "Hammer:",
+          "• Harvest level: 4",
+          "• Efficiency: 6",
+          "• Enchantability: 14",
+          "• Attack damage: 1",
+          "• Attack speed: 1",
+          "• Uses / durability: 1400"
+        ]
+      },
+      {
+        "title_fr": "Armure",
+        "title_en": "Armor",
+        "items_fr": [
+          "Absorption maximale des dégâts : 15",
+          "Valeurs d’armure (Casque, Plastron, Jambières, Bottes) : 2 ; 6 ; 5 ; 2",
+          "Enchantabilité : 9",
+          "Résistance : 0",
+          "Résistance au recul : 0"
+        ],
+        "items_en": [
+          "Maximal damage that armor absorbs: 15",
+          "Damage values (Helmet, Chestplate, Leggings, Boots): 2 ; 6 ; 5 ; 2",
+          "Enchantability: 9",
+          "Toughness: 0",
+          "Knockback resistance: 0"
+        ],
+        "images_en": ["../images/mod1/hammer_dioptasium_recipe.png"],
+        "captions_en": ["Craft of dioptasium hammer"],
+        "images_fr": ["../images/mod1/hammer_dioptasium_recipe.png"],
+        "captions_fr": ["Craft du hammer en dioptasium"]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Il n'a pas d'autre usage pour le moment."
+        ],
+        "items_en": [
+          "It has no other use for now."
+        ]
+      }
+    ]
+  }
+},
+
+{
+  "id": "nyxite_ore",
+  "type": "minerai",
+  "image_left": "../images/mod1/NyxiteOre.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/NyxiteIngot.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Minerai de nyxite",
+  "title_en": "Nyxite ore",
+  "description_fr": "Avant dernière ressource qui ne semble pas etre dans l'overworld et le nether.",
+  "description_en": "Penultimate resource that does not seem to be in the overworld and the nether.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du minerai de nyxite",
+        "title_en": "Characteristics of nyxite ore",
+        "items_fr": [
+          "Dureté : 5",
+          "Résistance : 5",
+          "Niveau d’extraction : 3 = Pioche en diamant"
+        ],
+        "items_en": [
+          "Hardness: 5",
+          "Resistance: 5",
+          "Harvest level: 3 = Diamond pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Forme : Uniforme",
+          "Hauteur : Min -63 ; Max 63",
+          "Biome restreint : NON",
+          "Monde restreint : OUI",
+          "*L'End"
+        ],
+        "items_en": [
+          "Generation shape: Uniform",
+          "Generation height: Min -63; Max 63",
+          "Restriction biome: NO",
+          "Restriction world: YES",
+          "*The End"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: cuisson",
+          "XP : 0.7",
+          "Temps de cuisson : 100 = 5s"
+        ],
+        "items_en": [
+          "Recipe type: smelting",
+          "Xp reward: 0.7",
+          "Cooking time: 100 = 5s"
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Objet de réparation : lingot de nyxite"],
+        "items_en": ["Repair item: Nyxite ingot"]
+      },
+      {
+        "title_fr": "Outils",
+        "title_en": "Tools",
+        "items_fr": [
+          "Épée :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 5",
+          "• Enchantabilité : 17",
+          "• Dégâts d’attaque : 25",
+          "• Vitesse d’attaque : 4.5",
+          "• Durabilité : 2750",
+          "",
+          "Hache :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 5",
+          "• Enchantabilité : 17",
+          "• Dégâts d’attaque : 16",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 2750",
+          "",
+          "Pioche :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 5",
+          "• Enchantabilité : 17",
+          "• Dégâts d’attaque : 6",
+          "• Vitesse d’attaque : 1.2",
+          "• Durabilité : 2750",
+          "",
+          "Pelle :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 5",
+          "• Enchantabilité : 17",
+          "• Dégâts d’attaque : 7.5",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 2750",
+          "",
+          "Houe :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 5",
+          "• Enchantabilité : 17",
+          "• Dégâts d’attaque : 1",
+          "• Vitesse d’attaque : 5",
+          "• Durabilité : 2750",
+          "",
+          "Marteau ou hammer :",
+          "• Niveau d’extraction : 4",
+          "• Efficacité : 5",
+          "• Enchantabilité : 17",
+          "• Dégâts d’attaque : 1",
+          "• Vitesse d’attaque : 1",
+          "• Durabilité : 1700"
+        ],
+        "items_en": [
+          "Sword :",
+          "• Harvest level: 4",
+          "• Efficiency: 5",
+          "• Enchantability: 17",
+          "• Attack damage: 25",
+          "• Attack speed: 4.5",
+          "• Uses / durability: 2750",
+          "",
+          "Axe :",
+          "• Harvest level: 4",
+          "• Efficiency: 5",
+          "• Enchantability: 17",
+          "• Attack damage: 16",
+          "• Attack speed: 1",
+          "• Uses / durability: 2750",
+          "",
+          "Pickaxe :",
+          "• Harvest level: 4",
+          "• Efficiency: 5",
+          "• Enchantability: 17",
+          "• Attack damage: 6",
+          "• Attack speed: 1.2",
+          "• Uses / durability: 2750",
+          "",
+          "Shovel :",
+          "• Harvest level: 4",
+          "• Efficiency: 5",
+          "• Enchantability: 17",
+          "• Attack damage: 7.5",
+          "• Attack speed: 1",
+          "• Uses / durability: 2750",
+          "",
+          "Hoe :",
+          "• Harvest level: 4",
+          "• Efficiency: 5",
+          "• Enchantability: 17",
+          "• Attack damage: 1",
+          "• Attack speed: 5",
+          "• Uses / durability: 2750",
+          "",
+          "Hammer :",
+          "• Harvest level: 4",
+          "• Efficiency: 5",
+          "• Enchantability: 17",
+          "• Attack damage: 1",
+          "• Attack speed: 1",
+          "• Uses / durability: 1700"
+        ]
+      },
+      {
+        "images_en": ["../images/mod1/nyxite_hammer_recipe.png"],
+        "captions_en": ["Craft of nyxite hammer"],
+        "images_fr": ["../images/mod1/nyxite_hammer_recipe.png"],
+        "captions_fr": ["Craft du hammer en nyxite"]
+      },
+      {
+        "title_fr": "Armure",
+        "title_en": "Armor",
+        "items_fr": [
+          "Absorption maximale des dégâts : 15",
+          "Valeurs d’armure (Casque, Plastron, Jambières, Bottes) : 2 ; 6 ; 5 ; 2",
+          "Enchantabilité : 9",
+          "Résistance : 0",
+          "Résistance au recul : 0"
+        ],
+        "items_en": [
+          "Maximal damage that armor absorbs: 15",
+          "Damage values (Helmet, Chestplate, Leggings, Boots): 2 ; 6 ; 5 ; 2",
+          "Enchantability: 9",
+          "Toughness: 0",
+          "Knockback resistance: 0"
+        ]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le lingot de nyxite permet de crafter la pomme en nyxite dans la table de craft."
+        ],
+        "items_en": [
+          "The nyxite ingot can be use to craft nyxite apple in the crafting table."
+        ],
+        "images_en": [
+          "../images/mod1/nyxite_apple_recipe.png"
+        ],
+        "captions_en": ["", ""],
+        "images_fr": [
+          "../images/mod1/nyxite_apple_recipe.png"
         ],
         "captions_fr": ["", ""]
       }
