@@ -1219,7 +1219,7 @@
 {
   "id": "stickofaurasteel",
   "type": "item",
-  "image": "../images/mod1/stickofaurasteel.png",
+  "image": "../images/mod1/Stickofaurasteel.png",
   "image_full": false,
   "image_pixelated": true,
   "thumb_height": 80,
@@ -1272,5 +1272,6 @@
   }
 }
 ]
+
 
 
