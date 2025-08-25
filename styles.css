@@ -1657,3 +1657,55 @@ html[lang="en"]  .drawer-lang-btn[data-lang="en"]{
     --detail-sprite-scale: 0.72;
   }
 }
+
+/* Drawer: lien actif */
+.drawer-link.active{
+  background: var(--c-accent, #0ea5e9);
+  color:#fff;
+  border-color: transparent;
+}
+.theme-clair .drawer-link.active{
+  color:#fff;
+}
+
+/* Lien carte → carte : juste du bleu propre */
+.card-detail a[data-card-id]{
+  display: inline;                 /* pas de bloc spécial */
+  padding-top: 0;                  /* retire l'espace qu'on avait ajouté */
+  color: var(--c-accent, #0ea5e9);
+  font-weight: 600;
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+}
+/* annule la barre si l'ancien patch est encore là */
+.card-detail a[data-card-id]::before{ content: none !important; }
+.card-detail a[data-card-id]:hover{ opacity: .9; }
+
+/* Patchnotes : header de détail + badges */
+.pn-head{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:6px 0 10px; }
+.pn-head h3{ margin:0; }
+.pn-badges{ display:flex; gap:8px; align-items:center; }
+
+/* Style commun aux badges */
+.pn-badge{
+  display:inline-flex; align-items:center;
+  padding:2px 10px; border-radius:999px; font-weight:600;
+  font-size:.85rem; line-height:1.3; border:1px solid transparent;
+}
+
+/* MC = pilule bleue (version finale) */
+.pn-badge.mc{
+  background: rgba(14,165,233,.18);  /* bleu léger */
+  border-color: #0ea5e9;              /* contour bleu */
+  color: #ffffff;                     /* texte blanc */
+}
+.theme-clair .pn-badge.mc{
+  background:#0ea5e9;                 /* plein bleu */
+  border-color:#0284c7;
+  color:#ffffff;
+}
+
+/* Beta */
+.pn-badge.beta{ background:#f59e0b; color:#fff; }
+.theme-clair .pn-badge.beta{ background:#f59e0b; color:#fff; }
+

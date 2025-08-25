@@ -378,25 +378,46 @@ function showPage(pageId) {
   const nav = document.getElementById('nav-' + pageId);
   if (nav) nav.classList.add('active');
 
+  // Activer aussi le lien du drawer (mobile)
+  document.querySelectorAll('#mobileDrawer .drawer-link').forEach(a => a.classList.remove('active'));
+  const dl = document.querySelector(`#mobileDrawer .drawer-link[data-page="${pageId}"]`);
+  if (dl) dl.classList.add('active');
+
+  // 3bis) mémoriser la dernière page
+  try { localStorage.setItem('lastPage', pageId); } catch {}
+
   // 4) état par page
   const grid   = page?.querySelector('.cards-grid');
   const list   = page?.querySelector('.patch-list');
   const detail = page?.querySelector('.card-detail');
   const status = page?.querySelector('.update-panel');
 
-  // on ferme les panneaux contextuels
+  // fermer les panneaux contextuels
   if (status) status.style.display = 'none';
   if (detail) detail.style.display = 'none';
 
+  // Pages de mods : ré-affiche la grille & recharge les cartes
   if (pageId === 'mod1' || pageId === 'mod2') {
-  if (grid) grid.style.display = 'grid';
-  if (pageId === 'mod1' && typeof ensureCards === 'function') ensureCards('mod1', {force:true}); // <-- force
-  if (pageId === 'mod2' && typeof ensureCards === 'function') ensureCards('mod2', {force:true}); // <-- force
-}
+    if (grid) grid.style.display = 'grid';
+    if (pageId === 'mod1' && typeof ensureCards === 'function') ensureCards('mod1', {force:true});
+    if (pageId === 'mod2' && typeof ensureCards === 'function') ensureCards('mod2', {force:true});
 
+    // Restaurer l’état mémorisé : Statut ou Grille (+ type filtré)
+    const lastView = localStorage.getItem(`${pageId}:lastView`);
+    if (lastView === 'status') {
+      showStatus(pageId); // cache la grille et ouvre "Statut"
+    } else {
+      const savedType = localStorage.getItem(`${pageId}:lastType`) || 'all';
+      const btn = page.querySelector(`.side-buttons .card-btn[data-type="${savedType}"]`);
+      if (btn) btn.click(); // applique le filtre et active le bouton
+      else {
+        // si pas de bouton trouvé, on mémorise au moins la vue "grid"
+        try { localStorage.setItem(`${pageId}:lastView`, 'grid'); } catch {}
+      }
+    }
+  }
 
   if (pageId === 'patchnotes') {
-    // liste visible, détail caché + (re)rendu
     if (list)   list.style.display = 'flex';
     if (detail) detail.style.display = 'none';
     renderPatchList();
@@ -406,9 +427,6 @@ function showPage(pageId) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   setPageTitle(ETAT.langue);
 }
-
-
-
 
 /********************
  * FILTRE & RECHERCHE — version qui ferme Statut et ré-affiche la grille
@@ -451,6 +469,12 @@ function filterCategory(pageId, category) {
                 group.querySelector(`.card-btn[onclick*="'${pageId}','${category}'"]`);
     if (btn) btn.classList.add('active');
   }
+  // mémoriser l’état choisi (utile si les boutons appellent filterCategory via onclick)
+  try {
+    localStorage.setItem('lastPage', pageId);
+    localStorage.setItem(`${pageId}:lastView`, 'grid');
+    localStorage.setItem(`${pageId}:lastType`, category || 'all');
+  } catch {}
 }
 
 
@@ -568,6 +592,16 @@ async function renderPatchList() {
     initPatchToolbar();
   }
 
+  // Helpers
+  const getMc = (n) => {
+    const raw = n.mc || n.minecraft_version || n.minecraftVersion || n.minecraft || n.mc_version || n.mcVersion || "";
+    return raw ? String(raw).replace(/^MC\s*/i, "") : "";
+  };
+  const isBeta = (n) => !!(
+    n.beta === true || n.is_beta === true ||
+    /beta/i.test([n.channel, n.stage, n.tag, n.version, n.title].filter(Boolean).join(' '))
+  );
+
   // 2) Catégorie active (menu gauche) : all | acatar | chaosium
   const activeBtn = document.querySelector('#patchnotes .side-buttons .card-btn.active');
   const cat = activeBtn ? (activeBtn.getAttribute('data-cat') || 'all') : 'all';
@@ -575,8 +609,8 @@ async function renderPatchList() {
   // 3) Source + filtre catégorie via "mod"
   let notes = data.filter(n => (cat === 'all' ? true : (n.mod || '').toLowerCase() === cat));
 
-  // 4) Filtre version Minecraft
-  if (_patchMc) notes = notes.filter(n => (n.mc || '') === _patchMc);
+  // 4) Filtre version Minecraft (utilise tous les alias)
+  if (_patchMc) notes = notes.filter(n => getMc(n) === _patchMc);
 
   // 5) Recherche (titre + sections)
   if (_patchSearch) {
@@ -596,22 +630,29 @@ async function renderPatchList() {
     return (_patchSort === 'asc') ? da.localeCompare(db) : db.localeCompare(da);
   });
 
-  // 7) Rendu : 2 colonnes flex (gauche = titre+badge, droite = date)
+  // 7) Rendu : gauche = titre + badges, droite = date
   list.innerHTML = '';
   notes.forEach(n => {
     const modKey = (n.mod || '').toLowerCase();
-    const MOD_LABEL = { acatar:{fr:'Acatar',en:'Acatar'}, chaosium:{fr:'Chaosium',en:'Chaosium'} };
-    const modName = (MOD_LABEL[modKey]?.[lang]) || n.mod || '';
-    const title   = `${modName} - v${n.version}`;
-    const mcBadge = n.mc ? `<span class="mc-badge">MC ${n.mc}</span>` : '';
-    const dateHtml= n.date ? `<span class="pe-date">${n.date}</span>` : '';
+    const modName = (modKey === 'chaosium')
+      ? (translations?.[lang]?.chaosium || 'Chaosium')
+      : (translations?.[lang]?.acatar   || 'Acatar');
+
+    const title    = `${modName}${n.version ? ` - v${n.version}` : ''}`;
+    const mc       = getMc(n);
+    const beta     = isBeta(n);
+
+    const mcBadge   = mc   ? `<span class="pn-badge mc">MC ${mc}</span>` : '';
+    const betaBadge = beta ? `<span class="pn-badge beta">Beta</span>`   : '';
+    const dateHtml  = n.date ? `<span class="pe-date">${n.date}</span>` : '';
 
     const div = document.createElement('div');
-    div.className = `patch-entry ${modKey}`; // utile pour filterCategory
+    div.className = `patch-entry ${modKey}`;
     div.dataset.id = n.id;
-    // pe-title (avec badge MC dedans) + date à droite
+
+    // pe-title (avec badges dedans) + date à droite
     div.innerHTML = `
-      <span class="pe-title">${title}${mcBadge ? ` ${mcBadge}` : ''}</span>
+      <span class="pe-title"><strong>${title}</strong> ${mcBadge} ${betaBadge}</span>
       ${dateHtml}
     `;
     div.addEventListener('click', () => showPatchDetail(n.id));
@@ -621,12 +662,14 @@ async function renderPatchList() {
   // 8) Assure la bonne vue
   const detail = document.querySelector('#patchnotes .card-detail');
   if (detail) detail.style.display = 'none';
-  list.style.display = 'flex'; // cohérent avec ton CSS
+  list.style.display = 'flex';
 }
+
 
 /********************
  * PATCHNOTES — détail & retour
  ********************/
+// === DÉTAIL PATCHNOTE : titre + badges (MC + Beta)
 async function showPatchDetail(patchId) {
   const list    = document.querySelector('#patchnotes .patch-list');
   const detail  = document.querySelector('#patchnotes .card-detail');
@@ -640,12 +683,24 @@ async function showPatchDetail(patchId) {
 
   // Libellés mod
   const modKey  = (n.mod || '').toLowerCase();
-  const modName = modKey === 'chaosium'
+  const modName = (modKey === 'chaosium')
     ? (translations?.[lang]?.chaosium || 'Chaosium')
     : (translations?.[lang]?.acatar   || 'Acatar');
 
-  const title   = `${modName}${n.version ? ` - v${n.version}` : ''}`;
+  const title    = `${modName}${n.version ? ` - v${n.version}` : ''}`;
   const dateHtml = n.date ? `<div class="patch-meta">${n.date}</div>` : '';
+
+  // --- Version Minecraft (fallback sur plusieurs clés)
+  const mcRaw =
+    n.minecraft_version || n.minecraftVersion || n.minecraft ||
+    n.mc_version || n.mcVersion || n.mc || "";
+  const mc = mcRaw ? String(mcRaw).replace(/^MC\s*/i, "") : "";
+
+  // --- Détection Beta (booléen ou mot-clé)
+  const isBeta = !!(
+    n.beta === true || n.is_beta === true ||
+    /beta/i.test([n.channel, n.stage, n.tag, n.version, n.title].filter(Boolean).join(' '))
+  );
 
   // Sections FR/EN
   const sections = (lang === 'en') ? (n.sections_en || []) : (n.sections_fr || []);
@@ -668,7 +723,13 @@ async function showPatchDetail(patchId) {
 
   // 💡 On n’injecte PAS de bouton “retour” ici (le bleu existe déjà dans le HTML)
   content.innerHTML = `
-    <h3>${title}</h3>
+    <div class="pn-head">
+      <h3>${title}</h3>
+      <div class="pn-badges">
+        ${mc ? `<span class="pn-badge mc">MC ${mc}</span>` : ''}
+        ${isBeta ? `<span class="pn-badge beta">Beta</span>` : ''}
+      </div>
+    </div>
     ${dateHtml}
     ${sectionsHTML}
     ${linksHTML}
@@ -787,22 +848,31 @@ async function showStatus(modId) {
     ? (s === 'stable' ? 'Stable' : s === 'beta' ? 'Bêta' : 'En développement')
     : (s === 'stable' ? 'Stable' : s === 'beta' ? 'Beta' : 'In development');
 
-  // ===== Date à côté du badge (gérée par CSS, sans inline)
+// ===== Date à côté du badge (gérée par CSS, sans inline)
+// On lit d'abord une date de mise à jour PRÉVUE (next_update) si présente,
+// sinon on retombe sur updated_at pour ne rien casser.
 let dateLabel = "";
 let isIndet = false;
-const raw = (info.updated_at || '').toString().trim();
-if (raw) {
-  const low = raw.toLowerCase();
+const rawPlan = (info.next_update || info.updated_at || '').toString().trim();
+
+if (rawPlan) {
+  const low = rawPlan.toLowerCase();
   isIndet = ['indeterminee','indéterminée','indetermine','indeterminate','unknown','n/a','-','—','?'].includes(low);
+
   if (isIndet) {
+    // Cas “date indéterminée”
     dateLabel = (lang === 'fr') ? "Date indéterminée" : "Date indeterminate";
   } else {
-    const d = new Date(raw);
-    dateLabel = isNaN(d)
-      ? raw
-      : d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    // Date valide → on formate puis on préfixe avec la clé de traduction “planned_update”
+    const d = new Date(rawPlan);
+    const human = isNaN(d)
+      ? rawPlan
+      : d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { year:'numeric', month:'long', day:'numeric' });
+    // "Mise à jour prévue pour le " (FR) / "Update planned for " (EN)
+    dateLabel = (translations[lang].planned_update || '') + human;
   }
 }
+
 
 // ===== Description + Features (FR/EN)
 const desc  = (lang === 'fr') ? (info.description_fr || '') : (info.description_en || '');
@@ -835,6 +905,12 @@ panel.innerHTML = `
   ${featsHtml}
 `;
 
+
+// ⬇️ mémoriser que l’on est en vue "status"
+try {
+  localStorage.setItem('lastPage', modId);
+  localStorage.setItem(`${modId}:lastView`, 'status');
+} catch {}
   panel.style.display = 'block';
 
   // Activer visuellement le bouton “Statut” (menu gauche)
@@ -914,13 +990,38 @@ function initUI() {
   }, /* useCapture */ true);
 })();
 
+// Mémoriser la catégorie sélectionnée dans mod1/mod2 (sans changer ton filtrage)
+(function rememberModFiltersOnce(){
+  if (window.__rememberModFilters) return;
+  window.__rememberModFilters = true;
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('#mod1 .side-buttons .card-btn[data-type], #mod2 .side-buttons .card-btn[data-type]');
+    if (!btn) return;
+
+    const page = btn.closest('.page');        // 'mod1' ou 'mod2'
+    const mod  = page ? page.id : null;
+    if (!mod) return;
+
+    const type = btn.getAttribute('data-type') || 'all';
+    try {
+      localStorage.setItem('lastPage', mod);               // la page (mod1/mod2)
+      localStorage.setItem(`${mod}:lastView`, 'grid');     // on est en "grille"
+      localStorage.setItem(`${mod}:lastType`, type);       // la catégorie cliquée
+    } catch {}
+  }, true);
+})();
+
+
 window.addEventListener('DOMContentLoaded', () => {
   console.log('[INIT] prêt');
   // Applique langue / drapeau dès le départ
   setLanguage(ETAT.langue);
 
   initUI();
-  showPage('accueil'); // page par défaut
+  const saved = localStorage.getItem('lastPage');
+  const startPage = (saved && document.getElementById(saved)) ? saved : 'accueil';
+  showPage(startPage);
 });
 
 /********************
@@ -1689,3 +1790,113 @@ function setFontFromDrawer(cls) {
     root.classList.add(cls);
   }
 }
+
+// ---------- Liens entre cartes (ex: <a data-card-id="baton_forge">Bâton forgé</a>)
+function gotoCard(modId, cardId) {
+  // revenir sur la grille si un panneau est ouvert
+  if (typeof showCards === 'function') showCards(modId);
+
+  const gridSel = (modId === 'mod1') ? SELECTEURS.mod1Grid : SELECTEURS.mod2Grid;
+  const grid = document.querySelector(gridSel);
+  if (!grid) return;
+
+  // essaie d'ouvrir tout de suite
+  let el = grid.querySelector(`.small-card[data-id="${cardId}"]`);
+  if (el) {
+    showCardDetail(modId, el);
+    try { el.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(_){}
+    return;
+  }
+
+  // si la carte n'est pas encore rendue, (re)charge et réessaie
+  if (typeof ensureCards === 'function') ensureCards(modId);
+  setTimeout(() => {
+    el = grid.querySelector(`.small-card[data-id="${cardId}"]`);
+    if (el) showCardDetail(modId, el);
+  }, 120);
+}
+
+// capture les clics sur <a data-card-id="...">
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[data-card-id]');
+  if (!link) return;
+
+  e.preventDefault();
+  // déduire le mod depuis la page courante
+  const page = link.closest('.page');
+  const modId =
+    page?.id ||
+    (document.getElementById('mod1')?.style.display !== 'none' ? 'mod1' : 'mod2');
+
+  const targetId = link.getAttribute('data-card-id');
+  if (targetId) gotoCard(modId, targetId);
+}, true);
+
+/********************
+ * NAVIGATION ENTRE CARTES (pile d'historique sans double push)
+ ********************/
+(function wireCardHistory() {
+  if (window.__cardHistoryWired) return;
+  window.__cardHistoryWired = true;
+
+  const HISTORY = { mod1: [], mod2: [], backNav: false };
+
+  const getDetailEl  = (m) => document.querySelector(`#${m} .card-detail`);
+  const getCurrentId = (m) => getDetailEl(m)?.getAttribute('data-current-card-id') || null;
+  const setCurrentId = (m, id) => { const d = getDetailEl(m); if (d) d.setAttribute('data-current-card-id', id || ''); };
+  const gridSel      = (m) => (m === 'mod1' ? SELECTEURS.mod1Grid : SELECTEURS.mod2Grid);
+
+  // --- showCardDetail : push l'ancienne carte (sauf pendant un "retour")
+  const origShow = window.showCardDetail;
+  if (typeof origShow === 'function') {
+    window.showCardDetail = function(modId, el, ...rest) {
+      try {
+        const curr = getCurrentId(modId);
+        const next = el?.getAttribute('data-id');
+        if (!HISTORY.backNav && curr && next && curr !== next) {
+          (HISTORY[modId] ||= []).push(curr);
+        }
+      } catch (_) {}
+      const res = origShow.apply(this, [modId, el, ...rest]);
+      try { setCurrentId(modId, el?.getAttribute('data-id') || null); } catch (_) {}
+      HISTORY.backNav = false; // fin du mode retour
+      return res;
+    };
+  }
+
+  // --- hideCardDetail : revenir d'abord à la carte précédente, sinon à la grille
+  const origHide = window.hideCardDetail;
+  if (typeof origHide === 'function') {
+    window.hideCardDetail = function(modId, ...rest) {
+      const prev = (HISTORY[modId] || []).pop();
+      if (prev) {
+        const grid = document.querySelector(gridSel(modId));
+        const el = grid?.querySelector(`.small-card[data-id="${prev}"]`);
+        if (el) {
+          HISTORY.backNav = true;                 // empêche tout "re-push"
+          return window.showCardDetail(modId, el);
+        }
+      }
+      setCurrentId(modId, null);
+      return origHide.apply(this, [modId, ...rest]);
+    };
+  }
+
+  // --- gotoCard : NE PUSH PLUS (c'est showCardDetail qui s'en charge)
+  const origGoto = window.gotoCard;
+  if (typeof origGoto === 'function') {
+    window.gotoCard = function(modId, cardId) {
+      HISTORY.backNav = false;
+      return origGoto.apply(this, arguments);
+    };
+  }
+
+  // --- change de page : purge la pile
+  const origShowPage = window.showPage;
+  if (typeof origShowPage === 'function') {
+    window.showPage = function(pageId) {
+      HISTORY.mod1 = []; HISTORY.mod2 = []; HISTORY.backNav = false;
+      return origShowPage.apply(this, arguments);
+    };
+  }
+})();

@@ -1,15 +1,21 @@
 {
   "mod1": {
-    "status": "stable",
+    "status": "dev",
     "updated_at": "indeterminee",
-    "description_fr": "Aucune mise à jour en cours de développement.",
-    "description_en": "No updates in development.",
-    "progress": 100,
+    "description_fr": "Mise à jour en cours de développement.",
+    "description_en": "Updates in development.",
+    "progress": 0,
     "features_fr": [
-        "Aucune"
+        "Ajout d'une pomme en dioptasium",
+        "Ajout d'un craft pour la potion de mauvais présage",
+        "Corriger la traduction francaise de la porte en résine et du générateur d'xp, bombe nucléaire et les objets en obsidienne",
+        "Ajouter de la vegetation dans le biome sakura"
     ],
     "features_en": [
-        "No features"
+        "Addition of a dioptasium apple",
+        "Addition of a craft for the bad omen potion",
+        "Fix the French translation of the resin door and the XP generator, nuclear bomb, and obsidian items",
+        "Add vegetation to the sakura biome"
     ]
   },
   "mod2": {
