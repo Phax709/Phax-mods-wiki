@@ -961,6 +961,12 @@
         ]
       },
       {
+        "images_en": ["../images/mod1/hammer_dioptasium_recipe.png"],
+        "captions_en": ["Craft of dioptasium hammer"],
+        "images_fr": ["../images/mod1/hammer_dioptasium_recipe.png"],
+        "captions_fr": ["Craft du hammer en dioptasium"]
+      },
+      {
         "title_fr": "Armure",
         "title_en": "Armor",
         "items_fr": [
@@ -976,11 +982,7 @@
           "Enchantability: 9",
           "Toughness: 0",
           "Knockback resistance: 0"
-        ],
-        "images_en": ["../images/mod1/hammer_dioptasium_recipe.png"],
-        "captions_en": ["Craft of dioptasium hammer"],
-        "images_fr": ["../images/mod1/hammer_dioptasium_recipe.png"],
-        "captions_fr": ["Craft du hammer en dioptasium"]
+        ]
       },
       {
         "title_fr": "Autres usages",
@@ -1061,8 +1063,10 @@
       {
         "title_fr": "Armure / outils",
         "title_en": "Armor / tools",
-        "items_fr": ["Objet de réparation : lingot de nyxite"],
-        "items_en": ["Repair item: Nyxite ingot"]
+        "items_fr": ["Objet de réparation : lingot de nyxite",
+        "Nécessite un <a data-card-id=\"stickofaurasteel\">Bâton d'auriacier</a>."],
+        "items_en": ["Repair item: Nyxite ingot",
+        "Requires a <a data-card-id=\"stickofaurasteel\">Stick of aurasteel</a>."]
       },
       {
         "title_fr": "Outils",
@@ -1210,8 +1214,63 @@
       }
     ]
   }
-}
+},
 
+{
+  "id": "stickofaurasteel",
+  "type": "item",
+  "image": "../images/mod1/stickofaurasteel.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_height": 80,
+  "detail_height": 200,
+  "title_fr": "Bâton d'auriacier",
+  "title_en": "Stick of aurasteel",
+  "description_fr": "Bâton supérieur au bois",
+  "description_en": "Superior stick to wood",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du bâton d'auriacier ",
+        "title_en": "Characteristics of stick of aurasteel",
+        "items_fr": [
+          "Le bâton d'auriacier est un bâton supérieur à celui de base craftez à base de bois, servant notamment dans le craft des outils en nyxite."
+        ],
+        "items_en": [
+          "The stick of aurasteel is a superior stick to the basic one crafted from wood, especially used in the crafting of nyxite tools."
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "Peut être crafter à partir d'un lingot de cuivre et d'un lingot de nickel."
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Can be crafted from a copper ingot and a nickel ingot."
+        ]
+      },
+      {
+        "images_en": ["../images/mod1/stickofaurasteel_recipe.png"],
+        "captions_en": ["Craft of stick of aurasteel"],
+        "images_fr": ["../images/mod1/stickofaurasteel_recipe.png"],
+        "captions_fr": ["Craft du bâton d'auriacier"]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Il n'as pas d'autre usage que celui dans le craft des outils en nyxite."
+        ],
+        "items_en": [
+          "It has no other use than that in the crafting of nyxite tools."
+        ]
+      }
+    ]
+  }
+}
 ]
 
 
