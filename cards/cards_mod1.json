@@ -1270,8 +1270,388 @@
       }
     ]
   }
+},
+
+{
+  "id": "scarletingot",
+  "type": "minerai",
+  "right_sprite": {
+    "src": "../images/mod1/Scarlet_Ingot.png",
+    "frames": 15,
+    "fps": 0.8,
+    "frame_width": 16,
+    "frame_height": 16,
+    "direction": "vertical"
+  },
+  "thumb_height": 90,
+  "detail_right_height": 200,
+  "image_full": false,
+  "image_pixelated": true,
+  "title_fr": "Lingot de scarlet",
+  "title_en": "Scarlet ingot",
+  "description_fr": "Lingot de scarlet",
+  "description_en": "Scarlet ingot",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du lingot de scarlet",
+        "title_en": "Characteristics of scarlet ingot",
+        "items_fr": [
+          "Le lingot de scarlet permet de crafter certains items spécifiques au mod."
+        ],
+        "items_en": [
+          "The scarlet ingot allows you to craft certain items specific to the mod."
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "Peut être crafter à partir de 9 lingots du mod.",
+          "*Paladium, Red, Amazonite, dioptasium, Nyxite, Multicolor"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Can be crafted from 9 ingots of the mod.",
+          "*Paladium, Red, Amazonite, dioptasium, Nyxite, Multicolor"
+        ]
+      },
+      {
+        "images_en": ["../images/mod1/scarlet_ingot_recipe.png"],
+        "captions_en": ["Craft of scarlet ingot"],
+        "images_fr": ["../images/mod1/scarlet_ingot_recipe.png"],
+        "captions_fr": ["Craft du lingot de scarlet"]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Il peut être utilisé pour réparer le casque de vision nocturne et le casque de régénération."
+        ],
+        "items_en": [
+          "It can be used to repair the night vision helmet and the regeneration helmet."
+        ]
+      }
+    ]
+  }
+},
+{
+  "id": "fluoriteingot",
+  "type": "minerai",
+  "image_left": "../images/mod1/Fluoriteore.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/Fluoriteingot.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Lingot de fluorite",
+  "title_en": "Fluorite ingot",
+  "description_fr": "Lingot de fluorite",
+  "description_en": "Fluorite ingot",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du lingot de fluorite",
+        "title_en": "Characteristics of fluorite ingot",
+        "items_fr": [
+          "Dureté : 3",
+          "Résistance : 5",
+          "Niveau d'extraction : 2 = pioche en fer"
+        ],
+        "items_en": [
+          "Hardness: 3",
+          "Resistance: 5",
+          "Harvest level : 2 = iron pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Forme : Uniforme",
+          "Hauteur : Min 0 ; Max 64",
+          "Biome restreint : NON"
+        ],
+        "items_en": [
+          "Generation shape: Uniform",
+          "Generation height: Min 0; Max 64",
+          "Restriction biome: NO"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette : fonderie (haut fourneau)",
+          "XP : 1",
+          "Temps de cuisson : 100 = 5s"
+        ],
+        "items_en": [
+          "Recipe type: blasting (blast furnace)",
+          "XP: 1",
+          "Cooking time: 100 = 5s"
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Le lingot de fluorite ne peut pas être utilisé crafter des outils et armure."],
+        "items_en": ["The fluorite ingot cannot be used to craft tools and armor."]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le lingot de fluorite peut être utilisé pour crafter la boule de dégât."
+        ],
+        "items_en": [
+          "The fluorite ingot can be used to craft the damage ball."
+        ]
+      }
+    ]
+  }
+},
+{
+  "id": "xeniteingot",
+  "type": "minerai",
+  "image_left": "../images/mod1/Xenitedebris.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/Xeniteingot.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Lingot de xénite",
+  "title_en": "Xenite ingot",
+  "description_fr": "Lingot avec une extrême résistance.",
+  "description_en": "Ingot with extreme resistance.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du lingot de xénite",
+        "title_en": "Characteristics of xenite ingot",
+        "items_fr": [
+          "Dureté : 30",
+          "Résistance : 1200",
+          "Niveau d'extraction : 3 = pioche en paladium ou en diamant"
+        ],
+        "items_en": [
+          "Hardness: 30",
+          "Resistance: 1200",
+          "Harvest level : 3 = paladium or diamond pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Apparaît uniquement dans le nether.",
+          "Forme : Uniforme",
+          "Hauteur : Min 0 ; Max 80",
+          "Biome restreint : OUI",
+          "*Forêt biscornue, Deltas de basalte, Forêt carmin, Vallée des âmes, Terres désolées du Nether."
+        ],
+        "items_en": [
+          "Appears only in the nether.",
+          "Generation shape: Uniform",
+          "Generation height: Min 0; Max 80",
+          "Restriction biome: YES",
+          "*Warped Forest, Basalt Deltas, Crimson Forest, Soul Valley, Nether Wastes."
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette : fonderie (haut fourneau)",
+          "XP : 2",
+          "Temps de cuisson : 360 = 18s",
+          "Le débris de xenite donne des fragments de xenite lorsqu'il est miné."
+        ],
+        "items_en": [
+          "Recipe type: blasting (blast furnace)",
+          "XP: 2",
+          "Cooking time: 360 = 18s",
+          "Xenite debris gives xenite scrap when mined."
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Le lingot de xenite ne peut pas être utilisé crafter des outils et armure."],
+        "items_en": ["The xenite ingot cannot be used to craft tools and armor."]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le lingot de xenite peut être utilisé pour cuire 500 items/objets."
+        ],
+        "items_en": [
+          "The xenite ingot can be used to smelt 500 items."
+        ]
+      }
+    ]
+  }
+},
+{
+  "id": "uraniumingot",
+  "type": "minerai",
+  "image_left": "../images/mod1/Uraniumore.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/Uraniumingot.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Lingot d'uranium",
+  "title_en": "Uranium ingot",
+  "description_fr": "Lingot d'uranium",
+  "description_en": "Uranium ingot",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du lingot d'uranium",
+        "title_en": "Characteristics of uranium ingot",
+        "items_fr": [
+          "Dureté : 1",
+          "Résistance : 10",
+          "Niveau d'extraction : 4 = pioche en netherite ou en dioptasium"
+        ],
+        "items_en": [
+          "Hardness: 1",
+          "Resistance: 10",
+          "Harvest level : 4 = netherite or dioptasium pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Forme : Triangle",
+          "Hauteur : Min 0 ; Max 25",
+          "Biome restreint : OUI",
+          "*Desert, Plaines enneigées, Plage enneigée, Taiga enneigée"
+        ],
+        "items_en": [
+          "Generation shape: Triangle",
+          "Generation height: Min 0; Max 25",
+          "Restriction biome: YES",
+          "*Desert, Snowy Plains, Snowy Beach, Snowy Taiga"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette : fonderie (haut fourneau)",
+          "XP : 10",
+          "Temps de cuisson : 2500 = 125s = 2m05s"
+        ],
+        "items_en": [
+          "Recipe type: blasting (blast furnace)",
+          "XP: 10",
+          "Cooking time: 2500 = 125s = 2m05s"
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Le lingot d'uranium ne peut pas être utilisé crafter des outils et armure."],
+        "items_en": ["The uranium ingot cannot be used to craft tools and armor."]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le lingot d'uranium peut être utilisé pour cuire 2000 items/objets."
+        ],
+        "items_en": [
+          "The uranium ingot can be used to smelt 2000 items."
+        ]
+      }
+    ]
+  }
+},
+{
+  "id": "chromeingot",
+  "type": "minerai",
+  "image_left": "../images/mod1/Chromeore.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/Chromeingot.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Lingot de chrome",
+  "title_en": "Chrome ingot",
+  "description_fr": "Lingot de chrome",
+  "description_en": "Chrome ingot",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du lingot de chrome",
+        "title_en": "Characteristics of chrome ingot",
+        "items_fr": [
+          "Dureté : 1",
+          "Résistance : 10",
+          "Niveau d'extraction : 5 = pioche en multicolor"
+        ],
+        "items_en": [
+          "Hardness: 1",
+          "Resistance: 10",
+          "Harvest level : 5 = multicolor pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Forme : Triangle",
+          "Hauteur : Min 0 ; Max 64",
+          "Biome restreint : NON"
+        ],
+        "items_en": [
+          "Generation shape: Triangle",
+          "Generation height: Min 0; Max 64",
+          "Restriction biome: NO"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette : fonderie (haut fourneau)",
+          "XP : 180",
+          "Temps de cuisson : 100 = 5s"
+        ],
+        "items_en": [
+          "Recipe type: blasting (blast furnace)",
+          "XP: 180",
+          "Cooking time: 100 = 5s"
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Le lingot de chrome ne peut pas être utilisé crafter des outils et armure."],
+        "items_en": ["The chrome ingot cannot be used to craft tools and armor."]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le lingot de chrome peut être utilisé pour crafter l'armure de l'espace et le modele d'armure spatial."
+        ],
+        "items_en": [
+          "The chrome ingot can be used to craft space armor and the space armor trims."
+        ]
+      }
+    ]
+  }
 }
 ]
-
 
 
