@@ -1,14 +1,5 @@
 [
   {
-    "id": "bloc1",
-    "type": "bloc",
-    "title_fr": "Bloc Radioactif",
-    "title_en": "Radioactive Block",
-    "description_fr": "Un bloc dangereux...",
-    "description_en": "A dangerous block...",
-    "details": {}
-  },
-  {
     "id": "igniera_ore",
     "type": "minerai",
     "image_left": "../images/mod1/Ignieraore.png",
@@ -1064,9 +1055,9 @@
         "title_fr": "Armure / outils",
         "title_en": "Armor / tools",
         "items_fr": ["Objet de réparation : lingot de nyxite",
-        "Nécessite un <a data-card-id=\"stickofaurasteel\">Bâton d'auriacier</a>."],
+        "Nécessite un <a data-card-id=\"stickofaurasteel\">Bâton d'auriacier</a> pour le craft des outils."],
         "items_en": ["Repair item: Nyxite ingot",
-        "Requires a <a data-card-id=\"stickofaurasteel\">Stick of aurasteel</a>."]
+        "Requires a <a data-card-id=\"stickofaurasteel\">Stick of aurasteel</a> for tool crafting."]
       },
       {
         "title_fr": "Outils",
@@ -1309,12 +1300,12 @@
         "items_fr": [
           "Type de recette: craft",
           "Peut être crafter à partir de 9 lingots du mod.",
-          "*Paladium, Red, Amazonite, dioptasium, Nyxite, Multicolor"
+          "*<a data-card-id=\"paladium_ore\">Paladium</a>,<a data-card-id=\"red_ore\">Red</a>,<a data-card-id=\"amazonite_ore\">Amazonite</a>,<a data-card-id=\"dioptasium_ore\">Dioptasium</a>,<a data-card-id=\"nyxite_ore\">Nyxite</a>,<a data-card-id=\"multicolor_ore\">Multicolor</a>"
         ],
         "items_en": [
           "Recipe type: craft",
           "Can be crafted from 9 ingots of the mod.",
-          "*Paladium, Red, Amazonite, dioptasium, Nyxite, Multicolor"
+          "*<a data-card-id=\"paladium_ore\">Paladium</a>,<a data-card-id=\"red_ore\">Red</a>,<a data-card-id=\"amazonite_ore\">Amazonite</a>,<a data-card-id=\"dioptasium_ore\">Dioptasium</a>,<a data-card-id=\"nyxite_ore\">Nyxite</a>,<a data-card-id=\"multicolor_ore\">Multicolor</a>"
         ]
       },
       {
@@ -1404,7 +1395,7 @@
         "title_fr": "Autres usages",
         "title_en": "Other use",
         "items_fr": [
-          "Le lingot de fluorite peut être utilisé pour crafter la boule de dégât."
+          "Le lingot de fluorite peut être utilisé pour crafter la boule de dégâts."
         ],
         "items_en": [
           "The fluorite ingot can be used to craft the damage ball."
@@ -1647,6 +1638,316 @@
         ],
         "items_en": [
           "The chrome ingot can be used to craft space armor and the space armor trims."
+        ]
+      }
+    ]
+  }
+},
+{
+    "id": "nickel_ore",
+    "type": "minerai",
+    "image_left": "../images/mod1/Nickelore.png",
+    "image_left_pixelated": true,
+    "image": "../images/mod1/Nickelingot.png",
+    "image_full": false,
+    "image_pixelated": true,
+    "thumb_pair_height": 90,
+    "detail_pair_height": 230,
+    "title_fr": "Minerai de nickel",
+    "title_en": "Nickel ore",
+    "description_fr": "Minerai rare et solide.",
+    "description_en": "A rare, solid ore.",
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de nickel",
+          "title_en": "Characteristics of nickel ore",
+          "items_fr": [
+            "Dureté : 1",
+            "Résistance : 10",
+            "Niveau d’extraction : 4 = pioche en netherite ou en dioptasium"
+          ],
+          "items_en": [
+            "Hardness: 1",
+            "Resistance: 10",
+            "Harvest level: 4 = netherite or dioptasium pickaxe"
+          ]
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "items_fr": [
+            "Forme : Triangle", 
+            "Hauteur : Min -64 ; Max -36", 
+            "Biome restreint : NON"
+          ],
+          "items_en": [
+            "Shape: Triangle", 
+            "Height: Min -64; Max -36", 
+            "Biome restriction: NO"
+          ]
+        },
+        {
+          "title_fr": "Cuisson / craft",
+          "title_en": "Craft or smelting",
+          "items_fr": [
+            "Type de recette : Fonderie (haut fourneau)", 
+            "XP : 1", 
+            "Temps de cuisson : 100 tics = 5s"
+          ],
+          "items_en": [
+            "Recipe type: blasting", 
+            "XP reward: 1", 
+            "Cooking time: 100 ticks = 5s"
+          ]
+        },
+        {
+          "title_fr": "Armure / outils",
+          "title_en": "Armor / tools",
+          "items_fr": ["Le lingot de nickel ne permet ni outils ni armures."],
+          "items_en": ["Nickel ingot cannot be used for tools or armor."]
+        },
+        {
+          "title_fr": "Autres usages",
+          "title_en": "Other use",
+          "items_fr": ["Le lingot de nickel sert à crafter la boule de dégâts et le générateur d'xp."],
+          "items_en": ["The nickel ingot can be used to craft a damage ball and an XP generator."]
+        }
+      ]
+    }
+  },
+  {
+  "id": "carmeltazite_ore",
+  "type": "minerai",
+  "image_left": "../images/mod1/Carmeltaziteore.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/fragmentofcarmeltazite.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Minerai de carmeltazite",
+  "title_en": "Carmeltazite ore",
+  "description_fr": "Ressource étrange.",
+  "description_en": "Strange resource.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du minerai de carmeltazite",
+        "title_en": "Characteristics of carmeltazite ore",
+        "items_fr": [
+          "Dureté : 1",
+          "Résistance : 10",
+          "Niveau d’extraction : 4 = Pioche en netherite ou en dioptasium"
+        ],
+        "items_en": [
+          "Hardness: 1",
+          "Resistance: 10",
+          "Harvest level: 4 = Netherite or dioptasium pickaxe"
+        ]
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "items_fr": [
+          "Forme : Triangle",
+          "Hauteur : Min 0 ; Max 64",
+          "Biome restreint : NON"
+        ],
+        "items_en": [
+          "Generation shape: Triangle",
+          "Generation height: Min 0; Max 64",
+          "Restriction biome: NO"
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: Drop",
+          "XP : 0",
+          "Temps de cuisson : 0",
+          "Le minerai de carmeltazite donne des fragments de carmeltazite lorsqu'il est miné."
+        ],
+        "items_en": [
+          "Recipe type: Drop",
+          "Xp reward: 0",
+          "Cooking time: 0",
+          "Carmeltazite ore gives fragments of carmeltazite when mined."
+        ]
+      },
+      {
+        "title_fr": "Armure / outils",
+        "title_en": "Armor / tools",
+        "items_fr": ["Le fragment de carmeltazite ne peut pas être utilisé pour crafter des outils ou des armures."],
+        "items_en": ["Carmeltazite fragment cannot be used to craft tools or armor."]
+      },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le fragment de carmeltazite permet de crafter le bloc de camanite."
+        ],
+        "items_en": [
+          "The carmeltazite fragment can be used to craft the camanite block."
+        ],
+        "images_en": [
+          "../images/mod1/camanite_recipe.png"
+        ],
+        "captions_en": ["", ""],
+        "images_fr": [
+          "../images/mod1/camanite_recipe.png"
+        ],
+        "captions_fr": ["", ""]
+      }
+    ]
+  }
+},
+{
+  "id": "crystal_azure_crystal",
+  "type": "minerai",
+  "image_left": "../images/mod1/Cristal.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/Azurecrystal.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Crystal et Crystal d'azure",
+  "title_en": "Crystal and Azure Crystal",
+  "description_fr": "Ces crystaux sont des dérivés du quartz.",
+  "description_en": "These crystals are derivatives of quartz.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft du crystal :", ""],
+          "images_fr": [
+            "../images/mod1/crystal_recipe.png"
+          ]
+        },
+        {
+          "captions_fr": ["Craft du crystal d'azure : Peut être crafter avec un colorant du ciel en haut et un colorant cyan en bas", ""],
+          "images_fr": [
+            "../images/mod1/azure_crystal_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of crystal :", ""],
+          "images_en": [
+           "../images/mod1/crystal_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of azure crystal : Can be craft with a sky dye on top and a cyan dye on bottom", ""],
+          "images_en": [
+            "../images/mod1/azure_crystal_recipe.png"
+          ]
+        },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le crystal d'azure permet de craft la boule de dégâts."
+        ],
+        "items_en": [
+          "The azure crystal can be used to craft the damage ball."
+        ]
+      }
+    ]
+  }
+},
+{
+  "id": "redcrystal",
+  "type": "minerai",
+  "image_left": "../images/mod1/Redcrystal.png",
+  "image_left_pixelated": true,
+  "image": "../images/mod1/Redcrystalblock.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_pair_height": 90,
+  "detail_pair_height": 230,
+  "title_fr": "Crystal rouge",
+  "title_en": "Red Crystal",
+  "description_fr": "Ce crystal a un petit truc en plus.",
+  "description_en": "This crystal has a little something extra.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft du crystal rouge :", ""],
+          "images_fr": [
+            "../images/mod1/red_crystal_recipe.png"
+          ]
+        },
+        {
+          "captions_fr": ["Craft du bloc de crystal rouge : 2 variantes possibles", ""],
+          "images_fr": [
+            "../images/mod1/red_crystal_block1_recipe.png",
+            "../images/mod1/red_crystal_recipe2.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of red crystal :", ""],
+          "images_en": [
+           "../images/mod1/red_crystal_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of red crystal block : 2 possibles variants", ""],
+          "images_en": [
+            "../images/mod1/red_crystal_block1_recipe.png",
+            "../images/mod1/red_crystal_recipe2.png"
+          ]
+        },
+      {
+        "title_fr": "Autres usages",
+        "title_en": "Other use",
+        "items_fr": [
+          "Le crystal rouge peut être utilisé sur toute l'agriculture du mod pour les faires pousser au dernier stage (fleur d'étoile du Nether, blé de mer bleu, fleur de Netherite).",
+          "Le crystal rouge peut être utilisé aussi pour le craft de la terre fertile."
+        ],
+        "items_en": [
+          "The red crystal can be used on all mod crops to make them grow to the last stage (nether star flower, blue sea wheat, netherite flower).",
+          "The red crystal can also be used to craft fertile soil."
+        ]
+      },
+      {
+        "captions_fr": ["Craft de la terre fertile :", ""],
+        "images_fr": [
+          "../images/mod1/fertile_soil_recipe2.png"
+        ]
+      },
+      {
+        "captions_fr": ["Craft of fertile soil :", ""],
+        "images_fr": [
+          "../images/mod1/fertile_soil_recipe2.png"
         ]
       }
     ]
