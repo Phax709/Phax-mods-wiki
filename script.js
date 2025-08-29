@@ -51,7 +51,28 @@ const translations = {
     suggest_idea: "Proposer une suggestion",
     satisfaction_survey: "Enquête de satisfaction",
     langue_fr: "Français",
-    langue_en: "English"
+    langue_en: "English",
+    credits_title: "Crédits",
+    credits_intro: "Cette page liste les droits d’auteur et les attributions des éléments utilisés dans ce wiki.",
+    assets_mojang_title: "Attribution — Mojang / Minecraft",
+    assets_mojang_text: "Minecraft est une marque déposée de Mojang AB. Certaines textures (ex. lingots, blocs) utilisées sur ce site et/ou dans les mods sont des dérivés des textures de Minecraft (recolorations/variantes). Ce site et ces mods ne sont ni affiliés, ni approuvés par Mojang AB. Aucun fichier de jeu original n’est redistribué.",
+    your_textures_title: "Textures & images originales",
+    your_textures_text: "Certaines textures et images de ce wiki et/ou de mes mods sont des créations originales de Phax709. Toute réutilisation, redistribution ou intégration dans un autre projet (site, mod, resource pack, vidéo, etc.) nécessite mon autorisation préalable. Merci de me contacter sur Discord (lien en bas de page) pour obtenir l’accord.",
+    third_party_title: "Éléments tiers",
+    third_party_discord: "Logo Discord © Discord",
+    site_stack_title: "Stack du site",
+    site_stack_host: "Hébergement : GitHub Pages",
+    site_stack_code: "Code front : HTML / CSS / JavaScript (vanilla) / JSON",
+    credits_contact: "Attribution manquante ou question d’utilisation ? Contactez-moi sur le serveur Discord (lien en bas de page).",
+    mods_credits_title: "Crédits liés aux mods",
+    mods_credits_text: "Sauf mention contraire, le code des mods, les assets non issus de Minecraft (textures, logos, images) et la documentation sont créés par Phax709. Les éléments dérivés de Minecraft appartiennent à Mojang AB (voir l’attribution ci-dessus).",
+    license_title: "Licence",
+    license_intro: "Sauf mention contraire, le contenu de ce site (texte, mises en page, images originales) est sous licence CC BY-NC-ND 4.0 — © 2025 Phax709.",
+    license_point_1: "Redistribution non commerciale autorisée avec crédit “Phax709” et lien vers ce site.",
+    license_point_2: "Aucune modification ni re-upload des fichiers.",
+    license_point_3: "Vidéos YouTube / streams Twitch monétisés autorisés : crédit + lien, sans héberger les fichiers.",
+    license_point_4: "Modpacks / rehosts interdits sans autorisation écrite."
+
   },
   en: {
     accueil: "Home",
@@ -104,7 +125,28 @@ const translations = {
     suggest_idea: "Suggest an idea",
     satisfaction_survey: "Satisfaction survey",
     langue_fr: "French",
-    langue_en: "English"
+    langue_en: "English",
+    credits_title: "Credits",
+    credits_intro: "This page lists copyrights and attributions for the assets used on this wiki.",
+    assets_mojang_title: "Attribution — Mojang / Minecraft",
+    assets_mojang_text: "Minecraft is a trademark of Mojang AB. Some textures (e.g., ingots, blocks) used on this site and/or in the mods are derivatives of Minecraft textures (recolors/variants). This site and these mods are not affiliated with or endorsed by Mojang AB. No original game files are redistributed.",
+    your_textures_title: "Original textures & images",
+    your_textures_text: "Some textures and images on this wiki and/or in my mods are original creations by Phax709. Any reuse, redistribution, or inclusion in another project (website, mod, resource pack, video, etc.) requires my prior permission. Please contact me on Discord (link in the footer) to request approval.",
+    third_party_title: "Third-party elements",
+    third_party_discord: "Discord logo © Discord",
+    site_stack_title: "Site stack",
+    site_stack_host: "Hosting: GitHub Pages",
+    site_stack_code: "Frontend: HTML / CSS / JavaScript (vanilla) / JSON",
+    credits_contact: "Missing attribution or usage question? Ping me on the Discord server (link in the footer).",
+    mods_credits_title: "Mod credits",
+    mods_credits_text: "Unless stated otherwise, the mod code, non-Minecraft assets (textures, logos, images), and documentation are created by Phax709. Derivative elements of Minecraft remain the property of Mojang AB (see attribution above).",
+    license_title: "License",
+    license_intro: "Unless stated otherwise, the content of this site (text, layouts, original images) is licensed under CC BY-NC-ND 4.0 — © 2025 Phax709.",
+    license_point_1: "Non-commercial redistribution allowed with credit “Phax709” and a link to this site.",
+    license_point_2: "No file modifications or re-uploads.",
+    license_point_3: "Monetized YouTube/Twitch allowed for showcasing: credit + link, no file hosting.",
+    license_point_4: "Modpacks / rehosts forbidden without written permission."
+
   }
 };
 
@@ -373,10 +415,12 @@ function showPage(pageId) {
   const page = document.getElementById(pageId);
   if (page) page.style.display = 'block';
 
-  // 3) nav actif (header)
+  // nav actif (header)
   document.querySelectorAll('.bandeau nav a').forEach(a => a.classList.remove('active'));
-  const nav = document.getElementById('nav-' + pageId);
+  const headerNavId = (pageId === 'credits') ? 'nav-accueil' : ('nav-' + pageId);
+  const nav = document.getElementById(headerNavId);
   if (nav) nav.classList.add('active');
+
 
   // Activer aussi le lien du drawer (mobile)
   document.querySelectorAll('#mobileDrawer .drawer-link').forEach(a => a.classList.remove('active'));
@@ -1322,54 +1366,70 @@ function renderCards(modId, cards) {
       }
     }
 
-    // ---------- Sections libres & extras ----------
-    const details  = c.details || {};
-    const sections = Array.isArray(details.sections) ? details.sections : [];
-    const sectionsHtml = sections.map(sec => {
-      const stitle = (lang === 'en') ? (sec.title_en || sec.title_fr || '') : (sec.title_fr || sec.title_en || '');
-      const sitems = (lang === 'en') ? (sec.items_en || sec.items_fr || []) : (sec.items_fr || sec.items_en || []);
+// ---------- Sections libres & extras ----------
+const details  = c.details || {};
+const sections = Array.isArray(details.sections) ? details.sections : [];
 
-      const imgs = (lang === 'en') ? (sec.images_en || sec.images || []) : (sec.images_fr || sec.images_en || sec.images || []);
-      const caps = (lang === 'en') ? (sec.captions_en || sec.captions || []) : (sec.captions_fr || sec.captions_en || sec.captions || []);
+const sectionsHtml = sections.map(sec => {
+  // ❌ plus de fallback vers l'autre langue
+  const stitle = (lang === 'en') ? (sec.title_en  || '') : (sec.title_fr  || '');
+  const sitems = (lang === 'en') ? (sec.items_en  || []) : (sec.items_fr  || []);
 
-      const imgsHtml = imgs.length
-        ? `<div class="section-images" style="display:flex;flex-wrap:wrap;gap:10px;margin:8px 0;">
-             ${imgs.map((raw, i) => {
-               const src = resolveAsset(modId, raw);
-               const cap = caps[i] || '';
-               return `
-                 <figure style="margin:0;">
-                   <img src="${src}" alt="${(stitle||title||'').replace(/"/g,'&quot;')}"
-                        onerror="this.style.display='none'"
-                        style="max-width:220px;border-radius:8px;">
-                   ${cap ? `<figcaption style="opacity:.7;font-size:.9em;margin-top:4px;">${cap}</figcaption>` : ''}
-                 </figure>`;
-             }).join('')}
-           </div>` : '';
+  // ✅ on n'accepte que la langue courante, avec fallback éventuel vers un champ neutre "images"/"captions"
+  const imgs = (lang === 'en')
+    ? (sec.images_en   || sec.images || [])
+    : (sec.images_fr   || sec.images || []);
 
-      const listHtml = sitems.length ? `<ul style="padding-left:1.15em;">${
-        sitems.map(it => {
-          const txt = (it ?? '').toString();
-          if (!txt.trim()) return `<li class="spacer" style="list-style:none;height:.35rem;"></li>`;
-          if (/^\s*\*/.test(txt)) {
-            const label = txt.replace(/^\s*\*\s*/, '');
-            return `<li class="subhead" style="list-style:none;margin:8px 0 4px;text-indent:-1.15em;padding-left:1.15em;"><strong>${label}</strong></li>`;
-          }
-          return `<li>${txt}</li>`;
-        }).join('')
-      }</ul>` : '';
+  const caps = (lang === 'en')
+    ? (sec.captions_en || sec.captions || [])
+    : (sec.captions_fr || sec.captions || []);
 
-      return `${stitle ? `<h4 class="underline">${stitle}</h4>` : ''}${listHtml}${imgsHtml}`;
-    }).join('');
+  // ⛔ ignorer la section si elle n'a rien pour cette langue
+  const hasContent = (stitle && stitle.trim()) || sitems.length || imgs.length;
+  if (!hasContent) return '';
 
-    const craft = details[lang === 'en' ? 'craft_en' : 'craft_fr'] || [];
-    const usage = details[lang === 'en' ? 'usage_en' : 'usage_fr'] || [];
-    const drops = details[lang === 'en' ? 'drops_en' : 'drops_fr'] || [];
-    const extrasHtml = `
-      ${craft.length ? `<h4 class="underline">${(translations?.[lang]?.craft)||'Craft'}</h4>${renderRichList(craft)}` : ''}
-      ${usage.length ? `<h4 class="underline">${(translations?.[lang]?.usage)||'Usage'}</h4>${renderRichList(usage)}` : ''}
-      ${drops.length ? `<h4 class="underline">${(translations?.[lang]?.drops)||'Drops'}</h4>${renderRichList(drops)}` : ''}
-    `;
+  const imgsHtml = imgs.length
+  ? `<div class="section-images">
+       ${imgs.map((raw, i) => {
+         const src = resolveAsset(modId, raw);
+         const cap = (caps[i] || '').trim();
+         return `
+           <figure class="sec-figure">
+             ${cap ? `<figcaption class="sec-figcap">${cap}</figcaption>` : ''}
+             <img class="sec-img"
+                  src="${src}"
+                  alt="${(stitle||title||'').replace(/"/g,'&quot;')}"
+                  onerror="this.style.display='none'">
+           </figure>`;
+       }).join('')}
+     </div>`
+  : '';
+
+
+  const listHtml = sitems.length ? `<ul style="padding-left:1.15em;">${
+    sitems.map(it => {
+      const txt = (it ?? '').toString();
+      if (!txt.trim()) return `<li class="spacer" style="list-style:none;height:.35rem;"></li>`;
+      if (/^\s*\*/.test(txt)) {
+        const label = txt.replace(/^\s*\*\s*/, '');
+        return `<li class="subhead" style="list-style:none;margin:8px 0 4px;text-indent:-1.15em;padding-left:1.15em;"><strong>${label}</strong></li>`;
+      }
+      return `<li>${txt}</li>`;
+    }).join('')
+  }</ul>` : '';
+
+  return `${stitle ? `<h4 class="underline">${stitle}</h4>` : ''}${listHtml}${imgsHtml}`;
+}).join('');
+
+const craft = details[lang === 'en' ? 'craft_en' : 'craft_fr'] || [];
+const usage = details[lang === 'en' ? 'usage_en' : 'usage_fr'] || [];
+const drops = details[lang === 'en' ? 'drops_en' : 'drops_fr'] || [];
+const extrasHtml = `
+  ${craft.length ? `<h4 class="underline">${(translations?.[lang]?.craft)||'Craft'}</h4>${renderRichList(craft)}` : ''}
+  ${usage.length ? `<h4 class="underline">${(translations?.[lang]?.usage)||'Usage'}</h4>${renderRichList(usage)}` : ''}
+  ${drops.length ? `<h4 class="underline">${(translations?.[lang]?.drops)||'Drops'}</h4>${renderRichList(drops)}` : ''}
+`;
+
 
     // ---------- Contenu détail dans data-attr ----------
     const detailHtml = `

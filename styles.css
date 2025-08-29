@@ -1709,3 +1709,41 @@ html[lang="en"]  .drawer-lang-btn[data-lang="en"]{
 .pn-badge.beta{ background:#f59e0b; color:#fff; }
 .theme-clair .pn-badge.beta{ background:#f59e0b; color:#fff; }
 
+/* Images dans les sections des cartes */
+.section-images .sec-figure{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.section-images .sec-figure img{
+  max-width: 220px;
+  border-radius: 8px;
+}
+
+/* Légende au-dessus de l'image */
+.section-images .sec-figcap{
+  font-weight: 600;         /* style “titre court” */
+  font-size: .95rem;
+  opacity: .9;
+  margin: 0;
+}
+
+.section-images{ display:flex; flex-direction:column; gap:12px; margin:8px 0; }
+.section-images .sec-figure{ margin:0; display:flex; flex-direction:column; gap:6px; }
+.section-images .sec-img{ max-width:220px; border-radius:8px; }
+.section-images .sec-figcap{ font-weight:600; font-size:.95rem; opacity:.9; margin:0; }
+
+footer .footer-credits{
+  color:#222;        /* lisible sur le bleu du footer */
+  text-decoration:none;
+  margin-left:.25rem;
+  border-bottom:1px solid rgb(3, 9, 61);
+}
+footer .footer-credits:hover{
+  border-bottom-color:#fff;
+}
+.theme-clair footer .footer-credits{
+  color:#fff;           /* footer est bleu aussi en clair chez toi */
+}
