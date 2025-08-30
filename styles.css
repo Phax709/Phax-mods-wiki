@@ -975,8 +975,17 @@ body.theme-sombre .mc-badge {
 /* Applique un contour bleu (comme la barre de recherche des mods) */
 /* Patchnotes: champs de la barre outils */
 #patchnotes #patchSearch,
-#patchnotes #patchVersionFilter,
-#patchnotes #patchDateSort {
+
+#patchnotes #patchStageFilter:focus{
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+/* Focus = bleu un peu plus fort, comme sur les mods */
+#patchnotes #patchSearch:focus
+/* Patchnotes — champs de la toolbar : style commun */
+#patchnotes .patch-toolbar input[type="search"],
+#patchnotes .patch-toolbar select {
   border: 2px solid var(--accent);
   background: var(--card-bg);
   color: var(--text);
@@ -986,20 +995,9 @@ body.theme-sombre .mc-badge {
   outline: none;
 }
 
-/* Focus = bleu un peu plus fort, comme sur les mods */
-#patchnotes #patchSearch:focus,
-#patchnotes #patchVersionFilter:focus,
-#patchnotes #patchDateSort:focus {
-  border-color: var(--accent-hover);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
-}
-
-/* Harmonise le select (évite le look système trop brut) */
-#patchnotes #patchVersionFilter,
-#patchnotes #patchDateSort {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+/* Flèche custom + même espacement pour TOUTES les <select> */
+#patchnotes .patch-toolbar select {
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
   background-image:
     linear-gradient(45deg, transparent 50%, var(--text) 50%),
     linear-gradient(135deg, var(--text) 50%, transparent 50%),
@@ -1011,6 +1009,13 @@ body.theme-sombre .mc-badge {
   background-size: 6px 6px, 6px 6px, 1px 2.4em;
   background-repeat: no-repeat;
   padding-right: 2.4em; /* place pour la flèche */
+}
+
+/* Effet focus identique */
+#patchnotes .patch-toolbar input[type="search"]:focus,
+#patchnotes .patch-toolbar select:focus {
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 /* Placeholder un peu adouci */
@@ -1746,4 +1751,38 @@ footer .footer-credits:hover{
 }
 .theme-clair footer .footer-credits{
   color:#fff;           /* footer est bleu aussi en clair chez toi */
+}
+
+/* Badges de type de build */
+.pn-badge.release{ 
+  background:#16a34a; 
+  border-color:#15803d; 
+  color:#fff; 
+}
+.theme-clair .pn-badge.release{ 
+  background:#22c55e; 
+  border-color:#16a34a; 
+  color:#fff; 
+}
+
+.pn-badge.beta{ 
+  background:#f59e0b; 
+  border-color:#d97706; 
+  color:#fff; 
+}
+.theme-clair .pn-badge.beta{ 
+  background:#f59e0b; 
+  border-color:#d97706; 
+  color:#fff; 
+}
+
+.pn-badge.alpha{ 
+  background:#ee2929; 
+  border-color:#801818; 
+  color:#fff; 
+}
+.theme-clair .pn-badge.alpha{ 
+  background:#ee2929; 
+  border-color:#801818; 
+  color:#0f172a; 
 }

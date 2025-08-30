@@ -37,6 +37,11 @@ const translations = {
     patch_acatar: "Patchnotes Acatar",
     patch_chaosium: "Patchnotes Chaosium",
     patch_history: "Historique des mises à jour",
+    build_label: "Type",
+    build_all: "Tous",
+    build_release: "Release",
+    build_beta: "Beta",
+    build_alpha: "Alpha",
     prochaine_maj: "Prochaine mise à jour",
     pourcentage_complete: "{percent}% complété",
     next_update: "Prochaine mise à jour",
@@ -111,6 +116,11 @@ const translations = {
     patch_acatar: "Acatar Patch Notes",
     patch_chaosium: "Chaosium Patch Notes",
     patch_history: "Patch History",
+    build_label: "Type",
+    build_all: "All",
+    build_release: "Release",
+    build_beta: "Beta",
+    build_alpha: "Alpha",
     prochaine_maj: "Next Update",
     pourcentage_complete: "{percent}% complete",
     next_update: "Next Update",
@@ -569,6 +579,7 @@ let _patchToolbarInited = false;
 let _patchMc     = "";      // filtre version MC
 let _patchSearch = "";      // recherche texte
 let _patchSort   = "desc";  // "asc" | "desc"
+let _patchStage = 'all'; // "all" | "release" | "beta" | "alpha"
 
 // Remplit le <select> des versions MC à partir du JSON
 function populateVersionFilter(data) {
@@ -595,6 +606,14 @@ function initPatchToolbar() {
   if (s) s.addEventListener('change', () => { _patchSort = s.value || 'desc'; renderPatchList(); });
 
   _patchToolbarInited = true;
+  const buildSel = document.getElementById('filter-build');
+  if (buildSel) {
+    buildSel.value = _patchStage;
+    buildSel.addEventListener('change', () => {
+      _patchStage = (buildSel.value || 'all').toLowerCase();
+      renderPatchList();
+    });
+  }
 }
 
 
@@ -636,15 +655,26 @@ async function renderPatchList() {
     initPatchToolbar();
   }
 
-  // Helpers
+  // ===== Helpers =====
   const getMc = (n) => {
     const raw = n.mc || n.minecraft_version || n.minecraftVersion || n.minecraft || n.mc_version || n.mcVersion || "";
     return raw ? String(raw).replace(/^MC\s*/i, "") : "";
   };
+
   const isBeta = (n) => !!(
     n.beta === true || n.is_beta === true ||
     /beta/i.test([n.channel, n.stage, n.tag, n.version, n.title].filter(Boolean).join(' '))
   );
+
+  // "release" | "beta" | "alpha" (fallback: release)
+  const getStage = (n) => {
+    const s = (n.stage || '').toString().toLowerCase();
+    if (s === 'release' || s === 'beta' || s === 'alpha') return s;
+    const hay = [n.channel, n.tag, n.version, n.title].filter(Boolean).join(' ').toLowerCase();
+    if (isBeta(n)) return 'beta';
+    if (/\balpha\b/.test(hay)) return 'alpha';
+    return 'release';
+  };
 
   // 2) Catégorie active (menu gauche) : all | acatar | chaosium
   const activeBtn = document.querySelector('#patchnotes .side-buttons .card-btn.active');
@@ -653,8 +683,14 @@ async function renderPatchList() {
   // 3) Source + filtre catégorie via "mod"
   let notes = data.filter(n => (cat === 'all' ? true : (n.mod || '').toLowerCase() === cat));
 
-  // 4) Filtre version Minecraft (utilise tous les alias)
+  // 4) Filtre version Minecraft
   if (_patchMc) notes = notes.filter(n => getMc(n) === _patchMc);
+
+  // 4bis) Filtre type de build (release/beta/alpha)
+  const stageFilter = (typeof _patchStage !== 'undefined' ? _patchStage : 'all');
+  if (stageFilter && stageFilter !== 'all') {
+    notes = notes.filter(n => getStage(n) === stageFilter);
+  }
 
   // 5) Recherche (titre + sections)
   if (_patchSearch) {
@@ -682,21 +718,26 @@ async function renderPatchList() {
       ? (translations?.[lang]?.chaosium || 'Chaosium')
       : (translations?.[lang]?.acatar   || 'Acatar');
 
-    const title    = `${modName}${n.version ? ` - v${n.version}` : ''}`;
-    const mc       = getMc(n);
-    const beta     = isBeta(n);
+    const title   = `${modName}${n.version ? ` - v${n.version}` : ''}`;
+    const mc      = getMc(n);
+    const stage   = getStage(n);
 
-    const mcBadge   = mc   ? `<span class="pn-badge mc">MC ${mc}</span>` : '';
-    const betaBadge = beta ? `<span class="pn-badge beta">Beta</span>`   : '';
-    const dateHtml  = n.date ? `<span class="pe-date">${n.date}</span>` : '';
+    const mcBadge    = mc    ? `<span class="pn-badge mc">MC ${mc}</span>` : '';
+    const labelStage =
+      stage === 'release' ? (translations?.[lang]?.build_release || 'Release') :
+      stage === 'alpha'   ? (translations?.[lang]?.build_alpha   || 'Alpha')   :
+                            (translations?.[lang]?.build_beta    || 'Beta');
+    const stageBadge  = stage ? `<span class="pn-badge ${stage}">${labelStage}</span>` : '';
+
+    const dateHtml = n.date ? `<span class="pe-date">${n.date}</span>` : '';
 
     const div = document.createElement('div');
     div.className = `patch-entry ${modKey}`;
     div.dataset.id = n.id;
 
-    // pe-title (avec badges dedans) + date à droite
+    // pe-title (avec badges) + date à droite
     div.innerHTML = `
-      <span class="pe-title"><strong>${title}</strong> ${mcBadge} ${betaBadge}</span>
+      <span class="pe-title"><strong>${title}</strong> ${mcBadge} ${stageBadge}</span>
       ${dateHtml}
     `;
     div.addEventListener('click', () => showPatchDetail(n.id));
@@ -709,7 +750,6 @@ async function renderPatchList() {
   list.style.display = 'flex';
 }
 
-
 /********************
  * PATCHNOTES — détail & retour
  ********************/
@@ -721,30 +761,47 @@ async function showPatchDetail(patchId) {
   if (!list || !detail || !content) return;
 
   const lang = localStorage.getItem('siteLanguage') || 'fr';
-  const data = await loadPatchData(); // <- nécessite async
+  const data = await loadPatchData();
   const n = (data || []).find(x => String(x.id) === String(patchId));
   if (!n) return;
 
-  // Libellés mod
-  const modKey  = (n.mod || '').toLowerCase();
-  const modName = (modKey === 'chaosium')
-    ? (translations?.[lang]?.chaosium || 'Chaosium')
-    : (translations?.[lang]?.acatar   || 'Acatar');
-
-  const title    = `${modName}${n.version ? ` - v${n.version}` : ''}`;
-  const dateHtml = n.date ? `<div class="patch-meta">${n.date}</div>` : '';
-
-  // --- Version Minecraft (fallback sur plusieurs clés)
-  const mcRaw =
-    n.minecraft_version || n.minecraftVersion || n.minecraft ||
-    n.mc_version || n.mcVersion || n.mc || "";
-  const mc = mcRaw ? String(mcRaw).replace(/^MC\s*/i, "") : "";
-
-  // --- Détection Beta (booléen ou mot-clé)
-  const isBeta = !!(
+  // Helpers locaux (mêmes règles que la liste)
+  const getMc = (n) => {
+    const raw = n.mc || n.minecraft_version || n.minecraftVersion || n.minecraft || n.mc_version || n.mcVersion || "";
+    return raw ? String(raw).replace(/^MC\s*/i, "") : "";
+  };
+  const isBeta = (n) => !!(
     n.beta === true || n.is_beta === true ||
     /beta/i.test([n.channel, n.stage, n.tag, n.version, n.title].filter(Boolean).join(' '))
   );
+  const getStage = (n) => {
+    const s = (n.stage || '').toString().toLowerCase();
+    if (s === 'release' || s === 'beta' || s === 'alpha') return s;
+    const hay = [n.channel, n.tag, n.version, n.title].filter(Boolean).join(' ').toLowerCase();
+    if (isBeta(n)) return 'beta';
+    if (/\balpha\b/.test(hay)) return 'alpha';
+    return 'release';
+  };
+
+  // Libellés mod
+  const modKey  = (n.mod || '').toLowerCase();
+  const modName = modKey === 'chaosium'
+    ? (translations?.[lang]?.chaosium || 'Chaosium')
+    : (translations?.[lang]?.acatar   || 'Acatar');
+
+  const title = `${modName}${n.version ? ` - v${n.version}` : ''}`;
+  const dateHtml = n.date ? `<div class="patch-meta">${n.date}</div>` : '';
+
+  // Badges
+  const mc = getMc(n);
+  const mcBadge = mc ? `<span class="pn-badge mc">MC ${mc}</span>` : '';
+
+  const stage = getStage(n);
+  const labelStage =
+    stage === 'release' ? (translations?.[lang]?.build_release || 'Release') :
+    stage === 'alpha'   ? (translations?.[lang]?.build_alpha   || 'Alpha')   :
+                          (translations?.[lang]?.build_beta    || 'Beta');
+  const stageBadge = stage ? `<span class="pn-badge ${stage}">${labelStage}</span>` : '';
 
   // Sections FR/EN
   const sections = (lang === 'en') ? (n.sections_en || []) : (n.sections_fr || []);
@@ -765,19 +822,19 @@ async function showPatchDetail(patchId) {
       }).join(' ')}
     </div>` : '';
 
-  // 💡 On n’injecte PAS de bouton “retour” ici (le bleu existe déjà dans le HTML)
+  // Rendu
   content.innerHTML = `
-    <div class="pn-head">
-      <h3>${title}</h3>
-      <div class="pn-badges">
-        ${mc ? `<span class="pn-badge mc">MC ${mc}</span>` : ''}
-        ${isBeta ? `<span class="pn-badge beta">Beta</span>` : ''}
-      </div>
+  <div class="pn-head">
+    <h3>${title}</h3>
+    <div class="pn-badges">
+      ${mcBadge}
+      ${stageBadge}
     </div>
-    ${dateHtml}
-    ${sectionsHTML}
-    ${linksHTML}
-  `;
+  </div>
+  ${dateHtml}
+  ${sectionsHTML}
+  ${linksHTML}
+`;
 
   // bascule list/détail
   list.style.display   = 'none';

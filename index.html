@@ -152,6 +152,7 @@
         <button class="card-btn wiki" onclick="filterCategory('mod1','bloc')"     data-translate="blocs">Blocs</button>
         <button class="card-btn wiki" onclick="filterCategory('mod1','minerai')"  data-translate="minerai">Minerais</button>
         <button class="card-btn wiki" onclick="filterCategory('mod1','item')"     data-translate="items">Items</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod1','craft')"    data-translate="craft">Craft</button>
         <button class="card-btn wiki" onclick="filterCategory('mod1','nature')"   data-translate="nature">Nature</button>
         <button class="card-btn wiki" onclick="filterCategory('mod1','structure')"data-translate="structure">Structures</button>
         <button class="card-btn wiki" onclick="filterCategory('mod1','mob')"      data-translate="creatures">Créatures</button>
@@ -189,6 +190,7 @@
         <button class="card-btn wiki" onclick="filterCategory('mod2','bloc')"     data-translate="blocs">Blocs</button>
         <button class="card-btn wiki" onclick="filterCategory('mod2','minerai')"  data-translate="minerai">Minerais</button>
         <button class="card-btn wiki" onclick="filterCategory('mod2','item')"     data-translate="items">Items</button>
+        <button class="card-btn wiki" onclick="filterCategory('mod2','craft')"    data-translate="craft">Craft</button>
         <button class="card-btn wiki" onclick="filterCategory('mod2','nature')"   data-translate="nature">Nature</button>
         <button class="card-btn wiki" onclick="filterCategory('mod2','structure')"data-translate="structure">Structures</button>
         <button class="card-btn wiki" onclick="filterCategory('mod2','mob')"      data-translate="creatures">Créatures</button>
@@ -233,6 +235,13 @@
     <!-- filtre versions -->
   <select id="patchVersionFilter">
     <option value="" data-translate="all_mc_versions">Toutes versions Minecraft</option>
+  </select>
+   <!-- filtre type build -->
+  <select id="filter-build">
+    <option value="all"     data-translate="build_all">Tous</option>
+    <option value="release" data-translate="build_release">Release</option>
+    <option value="beta"    data-translate="build_beta">Beta</option>
+    <option value="alpha"   data-translate="build_alpha">Alpha</option>
   </select>
     <!-- tri dates -->
   <select id="patchDateSort">

@@ -9,13 +9,15 @@
         "Ajout d'une pomme en dioptasium",
         "Ajout d'un craft pour la potion de mauvais présage",
         "Corriger la traduction francaise de la porte en résine et du générateur d'xp, bombe nucléaire et les objets en obsidienne",
-        "Ajouter de la vegetation dans le biome sakura"
+        "Ajouter de la vegetation dans le biome sakura",
+        "Ajouter la radioactivité sur l'uranium"
     ],
     "features_en": [
         "Addition of a dioptasium apple",
         "Addition of a craft for the bad omen potion",
         "Fix the French translation of the resin door and the XP generator, nuclear bomb, and obsidian items",
-        "Add vegetation to the sakura biome"
+        "Add vegetation to the sakura biome",
+        "Add radioactivity on uranium"
     ]
   },
   "mod2": {
