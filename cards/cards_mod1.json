@@ -1721,7 +1721,7 @@
   "type": "minerai",
   "image_left": "../images/mod1/Carmeltaziteore.png",
   "image_left_pixelated": true,
-  "image": "../images/mod1/fragmentofcarmeltazite.png",
+  "image": "../images/mod1/Fragmentofcarmeltazite.png",
   "image_full": false,
   "image_pixelated": true,
   "thumb_pair_height": 90,
@@ -1954,5 +1954,6 @@
   }
 }
 ]
+
 
 
