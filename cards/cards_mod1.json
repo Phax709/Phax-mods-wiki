@@ -1236,11 +1236,11 @@
         "title_en": "Craft or smelting",
         "items_fr": [
           "Type de recette: craft",
-          "Peut être crafter à partir d'un lingot de cuivre et d'un lingot de nickel."
+          "Peut être crafter à partir d'un lingot de cuivre et d'un <a data-card-id=\"nickel_ore\">Lingot de nickel</a>."
         ],
         "items_en": [
           "Recipe type: craft",
-          "Can be crafted from a copper ingot and a nickel ingot."
+          "Can be crafted from a copper ingot and a <a data-card-id=\"nickel_ore\">nickel ingot</a>."
         ]
       },
       {
@@ -1395,10 +1395,10 @@
         "title_fr": "Autres usages",
         "title_en": "Other use",
         "items_fr": [
-          "Le lingot de fluorite peut être utilisé pour crafter la boule de dégâts."
+          "Le lingot de fluorite peut être utilisé pour crafter la <a data-card-id=\"damageball\">boule de dégâts</a>."
         ],
         "items_en": [
-          "The fluorite ingot can be used to craft the damage ball."
+          "The fluorite ingot can be used to craft the <a data-card-id=\"damageball\">damage ball</a>."
         ]
       }
     ]
@@ -1710,8 +1710,8 @@
         {
           "title_fr": "Autres usages",
           "title_en": "Other use",
-          "items_fr": ["Le lingot de nickel sert à crafter la boule de dégâts et le générateur d'xp."],
-          "items_en": ["The nickel ingot can be used to craft a damage ball and an XP generator."]
+          "items_fr": ["Le lingot de nickel sert à crafter la <a data-card-id=\"damageball\">boule de dégâts</a> et le générateur d'xp."],
+          "items_en": ["The nickel ingot can be used to craft a <a data-card-id=\"damageball\">damage ball</a> and an XP generator."]
         }
       ]
     }
@@ -1952,8 +1952,98 @@
       }
     ]
   }
+},
+{
+  "id": "damageball",
+  "type": "item",
+  "image": "../images/mod1/Damageball.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_height": 90,
+  "detail_right_height": 200,
+  "title_fr": "Boule de dégâts",
+  "title_en": "Damage Ball",
+  "description_fr": "Cette boule peut potentiellement infliger des dégâts.",
+  "description_en": "This ball can potentially inflict damage.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Information",
+        "title_en": "Information",
+        "items_fr": [
+          "La boule de dégât peut être utilisée pour crafter le block de camanite."
+        ],
+        "items_en": [
+          "The damage ball can be used to craft the camanite block."
+        ]
+      },
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft de la boule de dégâts : Nécessite 1 boule de neige, 2 <a data-card-id=\"nickel_ore\">Lingots de nickel</a>, 1 boule de slime, 1 <a data-card-id=\"crystal_azure_crystal\">Crystal d'azure</a>, 1 crème de magma, 1 <a data-card-id=\"fluoriteingot\">Lingot de fluorite</a>, 1 papier marin bleu et 1 aileron de requin.", ""],
+          "images_fr": [
+            "../images/mod1/damage_ball_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of damage ball : Requires 1 snowball, 2 <a data-card-id=\"nickel_ore\">Nickel Ingots</a>, 1 slimeball, 1 <a data-card-id=\"crystal_azure_crystal\">Azure Crystal</a>, 1 magma cream, 1 <a data-card-id=\"fluoriteingot\">Fluorite Ingot</a>, 1 blue sea paper and 1 shark fin.", ""],
+          "images_en": [
+           "../images/mod1/damage_ball_recipe.png"
+          ]
+        }
+    ]
+  }
+},
+{
+  "id": "totemcraft",
+  "type": "craft",
+  "title_fr": "Totem d'immortalité - craft",
+  "title_en": "Totem of Undying - craft",
+  "description_fr": "Ce totem donne la vie apres la mort.",
+  "description_en": "This totem gives life after death.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft du totem d'immortalité : Textures © Mojang AB — image de recette à titre illustratif", ""],
+          "images_fr": [
+            "../images/mod1/totem_of_undying_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of totem of undying : Textures © Mojang AB — recipe image shown for illustration only.", ""],
+          "images_en": [
+           "../images/mod1/totem_of_undying_recipe.png"
+          ]
+        }
+    ]
+  }
 }
 ]
-
 
 
