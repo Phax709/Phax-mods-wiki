@@ -1,4 +1,3 @@
-
 const translations = {
   fr: {
     accueil: "Accueil",
@@ -20,6 +19,9 @@ const translations = {
     font_large: "Grand",
     font_xlarge: "Très grand",
     search_placeholder: "Rechercher…",
+    layout_label: "Affichage",
+    layout_2x3: "2 colonnes × 3 rangées",
+    layout_3x2: "3 colonnes × 2 rangées",
     home_welcome_title: "Bienvenue",
     home_welcome_p1_a: "Bienvenue sur le wiki des mods Minecraft créé par",
     home_welcome_p2: "Sélectionnez un mod dans le menu en haut pour en savoir plus !",
@@ -99,6 +101,9 @@ const translations = {
     font_large: "Large",
     font_xlarge: "Very large",
     search_placeholder: "Search…",
+    layout_label: "Layout",
+    layout_2x3: "2 columns × 3 rows",
+    layout_3x2: "3 columns × 2 rows",
     home_welcome_title: "Welcome",
     home_welcome_p1_a: "Welcome to the wiki for Minecraft mods created by",
     home_welcome_p2: "Pick a mod from the top menu to learn more!",
@@ -548,14 +553,15 @@ function searchCards(modId, query) {
   if (detail) detail.style.display = 'none';
   if (grid)   grid.style.display   = 'grid';
 
-  // filtrer par titre + description
-  const q = (query || '').trim().toLowerCase();
+  // filtrer par titre + description (accent-insensible)
+  const qn = normalizeText(query || '');
   if (!grid) return;
   grid.querySelectorAll('.small-card').forEach(card => {
-    const t = (card.querySelector('h4')?.textContent || '').toLowerCase();
-    const d = (card.querySelector('p')?.textContent  || '').toLowerCase();
-    card.style.display = (!q || t.includes(q) || d.includes(q)) ? 'block' : 'none';
+    const t = normalizeText(card.querySelector('h4')?.textContent || '');
+    const d = normalizeText(card.querySelector('p')?.textContent  || '');
+    card.style.display = (!qn || t.includes(qn) || d.includes(qn)) ? 'block' : 'none';
   });
+
 }
 
 
@@ -692,16 +698,17 @@ async function renderPatchList() {
     notes = notes.filter(n => getStage(n) === stageFilter);
   }
 
-  // 5) Recherche (titre + sections)
+  // 5) Recherche (titre + sections) — accent-insensible
   if (_patchSearch) {
-    const q = _patchSearch;
+    const qn = normalizeText(_patchSearch);
     notes = notes.filter(n => {
       const title = (lang === 'fr' ? (n.title_fr || n.title_en) : (n.title_en || n.title_fr)) || '';
       const secs  = (lang === 'fr' ? (n.sections_fr || []) : (n.sections_en || []));
-      const hay   = (title + ' ' + secs.map(s => [s.title, ...(s.items||[])] .flat().join(' ')).join(' ')).toLowerCase();
-      return hay.includes(q);
+      const hay   = normalizeText(title + ' ' + secs.map(s => [s.title, ...(s.items||[])] .flat().join(' ')).join(' '));
+      return hay.includes(qn);
     });
   }
+
 
   // 6) Tri date (ISO yyyy-mm-dd)
   notes.sort((a,b) => {
@@ -759,11 +766,15 @@ async function showPatchDetail(patchId) {
   const detail  = document.querySelector('#patchnotes .card-detail');
   const content = detail?.querySelector('.detail-content');
   if (!list || !detail || !content) return;
+  detail.setAttribute('data-current-patch-id', String(patchId));
 
   const lang = localStorage.getItem('siteLanguage') || 'fr';
   const data = await loadPatchData();
   const n = (data || []).find(x => String(x.id) === String(patchId));
   if (!n) return;
+  try {
+  detail.setAttribute('data-current-patch-id', String(patchId));
+} catch {}
 
   // Helpers locaux (mêmes règles que la liste)
   const getMc = (n) => {
@@ -864,6 +875,7 @@ function showCardDetail(modId, el) {
   liste.style.display = 'none';
   vue.style.display   = 'block';
   zone.innerHTML      = el.getAttribute('data-description') || '';
+  try { page.querySelector('.card-detail')?.setAttribute('data-current-card-id', el.getAttribute('data-id') || ''); } catch(_){}
 }
 
 function hideCardDetail(modId) {
@@ -884,6 +896,19 @@ function t(key) {
   const lang = localStorage.getItem('siteLanguage') || 'fr';
   return (translations?.[lang]?.[key]) ?? key;
 }
+
+// --- Normalise une chaîne (minuscule, sans accents/diacritiques)
+function normalizeText(s) {
+  s = (s || '').toString().toLowerCase();
+  try {
+    // Navigateurs modernes
+    return s.normalize('NFD').replace(/\p{Diacritic}+/gu, '');
+  } catch (_) {
+    // Fallback
+    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+}
+
 
 let _lastStatusOpen = null;
 
@@ -1038,6 +1063,7 @@ function initUI() {
   // Menus header
   initMenuLangue();
   initMenuParametres();
+  initCardsLayout();
 }
 
 // Délégation unique pour les menus Langue & Paramètres (robuste même si le DOM est remplacé)
@@ -1112,6 +1138,39 @@ function initUI() {
     } catch {}
   }, true);
 })();
+
+/********************
+ * Disposition des cartes (2×3 / 3×2)
+ ********************/
+function getSavedCardsLayout() {
+  try {
+    return localStorage.getItem('cardsLayout') || '3x2'; // défaut: 3 colonnes × 2 rangées
+  } catch { return '3x2'; }
+}
+
+function applyCardsLayout(layout) {
+  const ids = ['mod1', 'mod2'];
+  ids.forEach(id => {
+    const sec = document.getElementById(id);
+    if (!sec) return;
+    sec.classList.remove('layout-2x3', 'layout-3x2');
+    sec.classList.add('layout-' + layout);
+  });
+  // UI du toggle
+  document.querySelectorAll('.layout-toggle .layout-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-layout') === layout);
+  });
+}
+
+function setCardsLayout(layout) {
+  try { localStorage.setItem('cardsLayout', layout); } catch {}
+  applyCardsLayout(layout);
+}
+
+// Appelé au boot
+function initCardsLayout() {
+  applyCardsLayout(getSavedCardsLayout());
+}
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -1732,24 +1791,13 @@ function showCards(modId) {
     }
   }
 
-  // Recherche (input.search-bar) par page mod
-  document.addEventListener('input', async (e) => {
-    const input = e.target.closest('.search-bar');
-    if (!input) return;
+// Frappe dans la recherche : suggestions UNIQUEMENT (la grille ne bouge pas)
+document.addEventListener('input', (e) => {
+  const input = e.target.closest('.search-bar');
+  if (!input) return;
+  showSuggestions(input); // ta fonction de suggestions
+}, true);
 
-    await ensureGridVisibleFrom(input);
-
-    const page = input.closest('.page');
-    const grid = page?.querySelector('.cards-grid');
-    if (!grid) return;
-
-    const q = (input.value || '').trim().toLowerCase();
-    grid.querySelectorAll('.small-card').forEach(card => {
-      const t = (card.querySelector('h4')?.textContent || '').toLowerCase();
-      const d = (card.querySelector('p')?.textContent || '').toLowerCase();
-      card.style.display = (!q || t.includes(q) || d.includes(q)) ? 'block' : 'none';
-    });
-  }, true);
 
   // Filtres side-menu : <button class="card-btn" data-type="bloc|item|mob|all">
   document.addEventListener('click', async (e) => {
@@ -1773,7 +1821,187 @@ function showCards(modId) {
       card.style.display = (type === 'all' || card.classList.contains(type)) ? 'block' : 'none';
     });
   }, true);
+
+  // === Suggestions de recherche (titres uniquement)
+function ensureWrap(input){
+  if (input.parentElement && input.parentElement.classList.contains('search-wrap')) return input.parentElement;
+  const wrap = document.createElement('div');
+  wrap.className = 'search-wrap';
+  input.parentNode.insertBefore(wrap, input);
+  wrap.appendChild(input);
+  return wrap;
+}
+function ensureSuggestBox(wrap){
+  let box = wrap.querySelector('.search-suggest');
+  if (!box) {
+    box = document.createElement('div');
+    box.className = 'search-suggest';
+    wrap.appendChild(box);
+  }
+  return box;
+}
+function buildSuggestions(input){
+  const page = input.closest('.page');
+  const grid = page?.querySelector('.cards-grid');
+  if (!grid) return [];
+
+  const qn = normalizeText(input.value || '');
+  if (qn.length < 2) return [];
+
+  const seen = new Set();
+  const out = [];
+  grid.querySelectorAll('.small-card').forEach(card => {
+    const id = card.getAttribute('data-id') || '';
+    const title = (card.querySelector('h4')?.textContent || '').trim();
+    const tn = normalizeText(title);
+    if (title && tn.includes(qn) && !seen.has(id)) {
+      seen.add(id);
+      out.push({ id, title, el: card });
+    }
+  });
+  return out.slice(0, 8);
+}
+function showSuggestions(input){
+  const wrap = ensureWrap(input);
+  const box  = ensureSuggestBox(wrap);
+  const sugs = buildSuggestions(input);
+
+  if (!sugs.length) { box.classList.remove('open'); box.innerHTML = ''; return; }
+
+  box.innerHTML = sugs.map((s,i) =>
+    `<button type="button" data-id="${s.id}" ${i===0?'aria-selected="true"':''}>${s.title}</button>`
+  ).join('');
+  box.classList.add('open');
+
+  // clic = ouvrir la carte (ou juste filtrer)
+  box.onclick = (e) => {
+    const btn = e.target.closest('button[data-id]');
+    if (!btn) return;
+    const page = input.closest('.page');
+    const modId = page?.id || 'mod1';
+    // Ouvre le détail de la carte :
+    const gridSel = (modId === 'mod1') ? SELECTEURS.mod1Grid : SELECTEURS.mod2Grid;
+    const card = document.querySelector(`${gridSel} .small-card[data-id="${btn.dataset.id}"]`);
+    if (card) showCardDetail(modId, card);
+    box.classList.remove('open');
+  };
+}
+
+// input/focus => MAJ suggestions
+document.addEventListener('input', (e) => {
+  const input = e.target.closest('.search-bar');
+  if (!input) return;
+  showSuggestions(input);
+}, true);
+document.addEventListener('focusin', (e) => {
+  const input = e.target.closest('.search-bar');
+  if (!input) return;
+  showSuggestions(input);
+}, true);
+
+// navigation clavier
+document.addEventListener('keydown', (e) => {
+  const input = e.target.closest('.search-bar');
+  if (!input) return;
+  const box = input.parentElement?.querySelector('.search-suggest.open');
+  if (!box) return;
+
+  const items = Array.from(box.querySelectorAll('button[data-id]'));
+  if (!items.length) return;
+
+  const idx = Math.max(0, items.findIndex(b => b.getAttribute('aria-selected') === 'true'));
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    const next = (e.key === 'ArrowDown') ? Math.min(items.length-1, idx+1) : Math.max(0, idx-1);
+    items.forEach(b => b.removeAttribute('aria-selected'));
+    items[next].setAttribute('aria-selected', 'true');
+    items[next].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    items[idx].click();
+  } else if (e.key === 'Escape') {
+    box.classList.remove('open');
+  }
+});
+
+// Entrée quand la dropdown n'est PAS ouverte => appliquer la recherche (filtrer la grille)
+document.addEventListener('keydown', (e) => {
+  const input = e.target.closest('.search-bar');
+  if (!input) return;
+
+  // Si la dropdown est ouverte, on ne fait rien ici (la navigation au-dessus gère Enter)
+  const box = input.parentElement?.querySelector('.search-suggest.open');
+  if (box) return;
+
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    const page = input.closest('.page');
+    const modId = page?.id; // "mod1" ou "mod2"
+    if (modId && typeof searchCards === 'function') {
+      searchCards(modId, input.value || '');
+    }
+    // (Optionnel) si tu utilises mon module d'URL (#p=...&q=...), mets à jour le hash ici :
+    if (typeof setParams === 'function') {
+      setParams({ p: modId, q: input.value || '' }, true);
+    }
+  }
+}, true);
+
+// clic ailleurs => ferme
+document.addEventListener('click', (e) => {
+  const open = document.querySelector('.search-suggest.open');
+  if (!open) return;
+  if (!e.target.closest('.search-wrap')) open.classList.remove('open');
+}, true);
+
 })();
+
+function notifyCopied(ok){
+  const lang = localStorage.getItem('siteLanguage') || 'fr';
+  const msg  = ok ? (lang === 'en' ? 'Link copied!' : 'Lien copié !')
+                  : (lang === 'en' ? 'Copy failed'  : 'Échec de la copie');
+  try { 
+    // simple toast via alert pour rester vanilla
+    alert(msg);
+  } catch(_) {}
+}
+
+// Délégation de clic sur tous les boutons .link-copy-btn
+(function wireCopyLinkOnce(){
+  if (window.__copyLinkWired) return;
+  window.__copyLinkWired = true;
+
+  document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.link-copy-btn');
+  if (!btn) return;
+  e.preventDefault();
+
+  const ctx = btn.getAttribute('data-context') || btn.closest('.page')?.id || '';
+  const url = (typeof buildDeepLink === 'function') ? buildDeepLink(ctx) : (location.origin + location.pathname + (location.hash || ''));
+
+  let copied = false;
+  try {
+    await navigator.clipboard.writeText(url);
+    copied = true;
+  } catch {
+    // Fallback si le navigateur bloque la copie
+    try { window.prompt('Copie manuelle :', url); } catch {}
+  }
+
+  // Petit feedback visuel
+  const old = btn.textContent;
+  btn.textContent = copied ? '✅ Lien copié' : '📋 Copier le lien';
+  setTimeout(()=> btn.textContent = old, 1200);
+
+  // 👇 Nouveau : proposer d'ouvrir le lien tout de suite dans un nouvel onglet
+  const lang = (localStorage.getItem('siteLanguage') || 'fr');
+  const ask  = (lang === 'en') ? 'Open this link now?' : 'Ouvrir ce lien maintenant ?';
+  if (window.confirm(ask)) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+}, true);
+})();
+
 
 /********************
  * INIT — Bandeau : lien actif
@@ -2016,4 +2244,165 @@ document.addEventListener('click', (e) => {
       return origShowPage.apply(this, arguments);
     };
   }
+})();
+
+// === URL State: #p=page&type=...&q=...&card=...&pn=...
+(function wireUrlState(){
+  if (window.__urlStateWired) return;
+  window.__urlStateWired = true;
+
+  const getParams = () => new URLSearchParams((location.hash || '').replace(/^#/, ''));
+  function setParams(upd, replace=true){
+    const sp = getParams();
+    Object.entries(upd || {}).forEach(([k,v]) => {
+      if (v === null || v === undefined || v === '') sp.delete(k); else sp.set(k, v);
+    });
+    const h = '#' + sp.toString();
+    if (replace) history.replaceState(null, '', h); else location.hash = h;
+  }
+
+  // Applique le hash (au changement ET au chargement)
+  async function applyFromHash(){
+    const sp = getParams();
+    const p  = sp.get('p') || localStorage.getItem('lastPage') || 'accueil';
+    if (typeof showPage === 'function') showPage(p);
+
+    // MOD pages : filtre/recherche/carte
+    if (p === 'mod1' || p === 'mod2') {
+      // filtre
+      const type = sp.get('type');
+      if (type) {
+        const btn = document.querySelector(`#${p} .side-buttons .card-btn[data-type="${type}"]`);
+        if (btn) btn.click();
+      }
+      // recherche
+      const q = sp.get('q') || '';
+      const input = document.querySelector(`#${p} .search-bar`);
+      if (input) {
+        input.value = q;
+        // déclenche la recherche existante
+        const ev = new Event('input', { bubbles:true });
+        input.dispatchEvent(ev);
+      }
+      // carte ouverte
+      const card = sp.get('card');
+      if (card) {
+        if (typeof gotoCard === 'function') gotoCard(p, card);
+      }
+    }
+
+    // Patchnotes : détail
+    if (p === 'patchnotes') {
+      const pn = sp.get('pn');
+      if (pn && typeof showPatchDetail === 'function') {
+        try { await showPatchDetail(pn); } catch(_){}
+      } else {
+        if (typeof showPatchList === 'function') showPatchList();
+      }
+    }
+  }
+
+  // 1) Binder les interactions → MAJ du hash
+  // page
+  const origShowPage = window.showPage;
+  if (typeof origShowPage === 'function') {
+    window.showPage = function(pageId) {
+      setParams({ p: pageId }, true);
+      return origShowPage.apply(this, arguments);
+    };
+  }
+
+  // filtre (boutons latéraux)
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('#mod1 .side-buttons .card-btn[data-type], #mod2 .side-buttons .card-btn[data-type]');
+    if (!btn) return;
+    const page = btn.closest('.page')?.id;
+    if (!page) return;
+    setParams({ p: page, type: btn.getAttribute('data-type') || 'all' }, true);
+  }, true);
+
+  // recherche : n’écrit q= dans le hash QUE à la validation (Enter)
+  document.addEventListener('keydown', (e) => {
+    const input = e.target.closest('#mod1 .search-bar, #mod2 .search-bar');
+    if (!input || e.key !== 'Enter') return;
+    const page = input.closest('.page')?.id;
+    if (!page) return;
+    setParams({ p: page, q: input.value || '' }, true);
+  }, true);
+
+  // détail carte
+  const origShow = window.showCardDetail;
+  if (typeof origShow === 'function') {
+    window.showCardDetail = function(modId, el) {
+      const id = el?.getAttribute('data-id') || '';
+      setParams({ p: modId, card: id }, true);
+      return origShow.apply(this, arguments);
+    };
+  }
+  const origHide = window.hideCardDetail;
+  if (typeof origHide === 'function') {
+    window.hideCardDetail = function(modId) {
+      setParams({ card: null }, true);
+      return origHide.apply(this, arguments);
+    };
+  }
+
+  // détail patchnote
+  const origPN = window.showPatchDetail;
+  if (typeof origPN === 'function') {
+    window.showPatchDetail = function(id) {
+      setParams({ p:'patchnotes', pn: id }, true);
+      return origPN.apply(this, arguments);
+    };
+  }
+  const origPNList = window.showPatchList;
+  if (typeof origPNList === 'function') {
+    window.showPatchList = function() {
+      setParams({ pn: null }, true);
+      return origPNList.apply(this, arguments);
+    };
+  }
+
+  // 2) Suivre les changements d’URL + au chargement
+  window.addEventListener('hashchange', applyFromHash);
+  window.addEventListener('DOMContentLoaded', applyFromHash);
+})();
+
+// ===== Copier le lien du détail courant (cartes / patchnotes)
+(function wireCopyLinkOnce(){
+  if (window.__copyLinkWired) return;
+  window.__copyLinkWired = true;
+
+  function buildDeepLink(ctx){
+    const base = location.origin + location.pathname;
+    if (ctx === 'patchnotes') {
+      const id = document.querySelector('#patchnotes .card-detail')?.getAttribute('data-current-patch-id');
+      return base + (id ? `#p=patchnotes&pn=${encodeURIComponent(id)}` : '#p=patchnotes');
+    }
+    if (ctx === 'mod1' || ctx === 'mod2') {
+      const id = document.querySelector(`#${ctx} .card-detail`)?.getAttribute('data-current-card-id');
+      return base + (id ? `#p=${ctx}&card=${encodeURIComponent(id)}` : `#p=${ctx}`);
+    }
+    return base + (location.hash || '');
+  }
+
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.link-copy-btn');
+    if (!btn) return;
+    e.preventDefault();
+
+    const ctx = btn.getAttribute('data-context') || btn.closest('.page')?.id || '';
+    const url = buildDeepLink(ctx);
+
+    try {
+      await navigator.clipboard.writeText(url);
+      // petit feedback visuel
+      const old = btn.textContent;
+      btn.textContent = '✅ Lien copié';
+      setTimeout(()=> btn.textContent = old, 1200);
+    } catch {
+      // Fallback si le navigateur bloque le presse-papiers (HTTP, file://, etc.)
+      try { window.prompt('Copie manuelle :', url); } catch {}
+    }
+  }, true);
 })();

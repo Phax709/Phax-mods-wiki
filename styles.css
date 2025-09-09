@@ -135,7 +135,7 @@ main {
   border-radius: 18px;
   box-shadow: var(--shadow);
   min-width: 320px;
-  max-width: 900px; /* plus large qu'avant */
+  max-width: 1140px; /* plus large qu'avant */
   width: 100%;
   margin: 0 auto;
   animation: fadeIn 0.5s;
@@ -158,12 +158,15 @@ footer {
 }
 
 /* Menu paramètres en haut à gauche */
-.settings-menu {
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  left: auto;
-  z-index: 100;
+/* Le bloc “langue + ⚙” est désormais ANCRÉ dans le bandeau, à droite */
+.settings-menu{
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);   /* centre vertical */
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .settings-toggle {
@@ -187,7 +190,7 @@ footer {
 .settings-panel {
   display: none;
   position: absolute;
-  top: 60px;
+  top: calc(100% + 8px);
   left: auto;
   right: 0;
   background: #fff;
@@ -424,6 +427,27 @@ body.theme-clair .underline {
   color: var(--text-color);
   transition: all 0.2s ease;
   box-sizing: border-box; /* compte le padding dans la largeur */
+}
+
+/* Wrapper + dropdown de suggestions pour la recherche */
+.search-wrap { position: relative; }
+.search-suggest{
+  position: absolute;
+  left: 0; right: 0; top: calc(100% + 4px);
+  background: var(--card-bg);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-height: 260px; overflow: auto; z-index: 5;
+  display: none;
+}
+.search-suggest.open{ display:block; }
+.search-suggest button{
+  display:block; width:100%; text-align:left;
+  padding: 8px 10px; border:0; background:transparent; cursor:pointer;
+}
+.search-suggest button:hover, .search-suggest button[aria-selected="true"]{
+  background: var(--accent); color: #fff;
 }
 
 .search-bar:focus {
@@ -1785,4 +1809,107 @@ footer .footer-credits:hover{
   background:#ee2929; 
   border-color:#801818; 
   color:#0f172a; 
+}
+
+/* ===== Disposition des cartes (toggle 2×3 / 3×2) ===== */
+.layout-toggle {
+  margin: 0 0 1em 0;
+  display: flex;
+  align-items: center;
+  gap: .6em;
+}
+.layout-toggle .layout-label {
+  font-size: .9em;
+  opacity: .8;
+}
+.layout-toggle .layout-buttons {
+  display: flex;
+  gap: .5em;
+}
+.layout-toggle .layout-btn {
+  padding: .35em .6em;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+.layout-toggle .layout-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Masqué sur mobile (≤768px), visible tablette & desktop */
+@media (max-width: 768px) {
+  .layout-toggle { display: none; }
+}
+
+/* Tablette (769–992 px) : 2 colonnes fixées par le CSS existant → on joue seulement sur la hauteur visible */
+@media (min-width: 769px) and (max-width: 992px) {
+  /* ~3 rangées visibles */
+  #mod1.layout-2x3 .cards-grid,
+  #mod2.layout-2x3 .cards-grid {
+    max-height: 660px;  /* ajuste à 620–680 px si besoin selon tes cartes */
+  }
+
+  /* ~2 rangées visibles */
+  #mod1.layout-3x2 .cards-grid,
+  #mod2.layout-3x2 .cards-grid {
+    max-height: 440px;  /* ajuste à 400–460 px si besoin */
+  }
+}
+
+/* Forçage des colonnes + hauteur visible sur desktop seulement */
+@media (min-width: 993px) {
+  /* 2 colonnes × ~3 rangées */
+  #mod1.layout-2x3 .cards-grid,
+  #mod2.layout-2x3 .cards-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    max-height: 660px;          /* ≈ 3 rangées visibles, ajuste si besoin */
+  }
+
+  /* 3 colonnes × ~2 rangées */
+  #mod1.layout-3x2 .cards-grid,
+  #mod2.layout-3x2 .cards-grid {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    max-height: 440px;          /* ≈ 2 rangées visibles, ajuste si besoin */
+  }
+}
+
+.detail-actions{
+  display:flex; gap:8px; flex-wrap:wrap; margin: 8px 0 12px;
+}
+.detail-actions .btn{
+  border:1px solid rgba(0,0,0,.08); border-radius:8px; padding:6px 10px; cursor:pointer;
+  background: var(--card-bg);
+}
+.detail-actions .btn:hover{ background: var(--accent); color:#fff; }
+
+/* Barre d’actions du panneau détail (Retour + Copier le lien) */
+.detail-toolbar{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+}
+
+/* Le bouton "Copier le lien" va à droite */
+.detail-toolbar .link-copy-btn{
+  margin-left:auto;
+}
+
+/* Style plus visible pour le bouton "Copier le lien" */
+.link-copy-btn{
+  border:1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+}
+.link-copy-btn:hover{
+  background: var(--accent);
+  color:#fff;
 }

@@ -17,7 +17,30 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Menu paramètres + langue en haut à droite -->
+ <!-- Bandeau principal -->
+<div class="bandeau">
+  <span class="bandeau-title">
+    <img src="images/ui/Phax mods detail.png" alt="Logo Mod" class="logo">
+    Wiki des Mods de Phax709
+  </span>
+
+  <!-- 🔽 Bouton hamburger mobile (à ajouter) -->
+  <button id="mobileMenuBtn"
+          class="mobile-menu-btn"
+          aria-controls="mobileDrawer"
+          aria-expanded="false"
+          aria-label="Menu">☰</button>
+
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showPage('accueil')" id="nav-accueil" class="active" data-translate="accueil">Accueil</a></li>
+      <li><a href="#" onclick="showPage('mod1')" id="nav-mod1" data-translate="acatar">Acatar</a></li>
+      <li><a href="#" onclick="showPage('mod2')" id="nav-mod2" data-translate="chaosium">Chaosium</a></li>
+      <li><a href="#" onclick="showPage('patchnotes')" id="nav-patchnotes" data-translate="patchnotes">Patch Notes</a></li>
+    </ul>
+  </nav>
+
+    <!-- Menu paramètres + langue en haut à droite -->
   <div class="settings-menu" id="settingsMenu">
     <!-- Langue -->
     <div class="lang-selector">
@@ -58,33 +81,7 @@
       </div>
     </div>
   </div>
-
-
-
- <!-- Bandeau principal -->
-<div class="bandeau">
-  <span class="bandeau-title">
-    <img src="images/ui/Phax mods detail.png" alt="Logo Mod" class="logo">
-    Wiki des Mods de Phax709
-  </span>
-
-  <!-- 🔽 Bouton hamburger mobile (à ajouter) -->
-  <button id="mobileMenuBtn"
-          class="mobile-menu-btn"
-          aria-controls="mobileDrawer"
-          aria-expanded="false"
-          aria-label="Menu">☰</button>
-
-  <nav>
-    <ul>
-      <li><a href="#" onclick="showPage('accueil')" id="nav-accueil" class="active" data-translate="accueil">Accueil</a></li>
-      <li><a href="#" onclick="showPage('mod1')" id="nav-mod1" data-translate="acatar">Acatar</a></li>
-      <li><a href="#" onclick="showPage('mod2')" id="nav-mod2" data-translate="chaosium">Chaosium</a></li>
-      <li><a href="#" onclick="showPage('patchnotes')" id="nav-patchnotes" data-translate="patchnotes">Patch Notes</a></li>
-    </ul>
-  </nav>
 </div>
-
 
   <main>
     <section id="accueil" class="page">
@@ -147,6 +144,14 @@
        placeholder="Rechercher…"
        data-translate-placeholder="search_placeholder">
 
+       <!-- Choix d’affichage (desktop) -->
+      <div class="layout-toggle" data-mod="mod1">
+        <span class="layout-label" data-translate="layout_label">Affichage</span>
+        <div class="layout-buttons" role="group" aria-label="Disposition des cartes">
+          <button type="button" class="layout-btn" data-layout="2x3" onclick="setCardsLayout('2x3')" aria-label="2 colonnes × 3 rangées">2×3</button>
+          <button type="button" class="layout-btn" data-layout="3x2" onclick="setCardsLayout('3x2')" aria-label="3 colonnes × 2 rangées">3×2</button>
+        </div>
+      </div>
       <div class="side-buttons">
         <button class="card-btn wiki" onclick="filterCategory('mod1','all')"      data-translate="tout">Tout</button>
         <button class="card-btn wiki" onclick="filterCategory('mod1','bloc')"     data-translate="blocs">Blocs</button>
@@ -167,13 +172,15 @@
 
       <!-- Vue détail -->
       <div class="card-detail" style="display:none;">
-        <button class="card-btn wiki" onclick="hideCardDetail('mod1')">
-          ← <span data-translate="back">Retour</span>
-        </button>
+        <div class="detail-toolbar">
+          <a href="#" class="card-btn wiki back-btn" onclick="hideCardDetail('mod1')">
+            ← <span data-translate="back">Retour</span>
+          </a>
+          <button type="button" class="card-btn link-copy-btn" data-context="mod1" title="Copier le lien">🔗 Copier le lien</button>
+        </div>
         <div class="detail-content"></div>
       </div>
     </div>
-  </div>
 </section>
     <section id="mod2" class="page" style="display:none;">
   <div class="page-layout">
@@ -184,6 +191,15 @@
       <input id="search-mod2" class="search-bar" type="text"
        placeholder="Rechercher…"
        data-translate-placeholder="search_placeholder">
+
+      <!-- Choix d’affichage (desktop) -->
+      <div class="layout-toggle" data-mod="mod1">
+        <span class="layout-label" data-translate="layout_label">Affichage</span>
+        <div class="layout-buttons" role="group" aria-label="Disposition des cartes">
+          <button type="button" class="layout-btn" data-layout="2x3" onclick="setCardsLayout('2x3')" aria-label="2 colonnes × 3 rangées">2×3</button>
+          <button type="button" class="layout-btn" data-layout="3x2" onclick="setCardsLayout('3x2')" aria-label="3 colonnes × 2 rangées">3×2</button>
+        </div>
+      </div>
 
       <div class="side-buttons">
         <button class="card-btn wiki" onclick="filterCategory('mod2','all')"      data-translate="tout">Tout</button>
@@ -206,11 +222,13 @@
 
       <!-- Vue détail -->
       <div class="card-detail" style="display:none;">
-        <button class="card-btn wiki" onclick="hideCardDetail('mod2')">
-          ← <span data-translate="back">Retour</span>
-        </button>
-        <div class="detail-content"></div>
+        <div class="detail-toolbar">
+          <a href="#" class="card-btn wiki back-btn" onclick="hideCardDetail('mod2')">
+            ← <span data-translate="back">Retour</span>
+          </a>
+        <button type="button" class="card-btn link-copy-btn" data-context="mod2" title="Copier le lien">🔗 Copier le lien</button>
       </div>
+      <div class="detail-content"></div>
     </div>
   </div>
 </section>
@@ -253,14 +271,20 @@
   <!-- Liste remplie via JSON -->
   <div class="patch-list"></div>
 
-      <!-- Vue détail -->
-      <div class="card-detail" style="display:none;">
-        <a href="#" class="card-btn wiki back-btn" onclick="hideCardDetail('patchnotes')">
-  ← <span data-translate="back">Retour</span>
-</a>
-        <div class="detail-content"></div>
-      </div>
+  <!-- Vue détail -->
+  <div class="card-detail" style="display:none;">
+    <div class="detail-toolbar">
+      <a href="#" class="card-btn wiki back-btn" onclick="hideCardDetail('patchnotes')">
+        ← <span data-translate="back">Retour</span>
+      </a>
+
+      <button type="button"
+              class="card-btn link-copy-btn"
+              data-context="patchnotes"
+              title="Copier le lien">🔗 Copier le lien</button>
     </div>
+
+    <div class="detail-content"></div>
   </div>
 </section>
 
