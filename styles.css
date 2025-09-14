@@ -1,6 +1,8 @@
 body.theme-sombre {
   --main-bg: #181c1f;
   --bandeau-bg: linear-gradient(90deg, #23272b 0%, #1976d2 100%);
+  --footer-bg: var(--bandeau-bg);
+  --footer-fg: #fff;
   --accent: #168beb;
   --accent-hover: #1976d2;
   --card-bg: #23272bcc;
@@ -12,6 +14,12 @@ body.theme-sombre {
   --lang-dropdown-text: #f4f4f4;
   --lang-dropdown-border: #374151;
   --lang-dropdown-hover: #4b5563;
+  /* Footer + chip (sombre) */
+  --footer-bg: var(--bandeau-bg);
+  --footer-fg: #fff;
+  --footer-chip-bg: rgba(13, 27, 53, .50);    /* bleu marine translucide */
+  --footer-chip-fg: #eaf2ff;                  /* texte clair */
+  --footer-chip-border: rgba(255,255,255,.22);
 }
 
 body.theme-clair {
@@ -28,7 +36,67 @@ body.theme-clair {
   --lang-dropdown-text: #222222; /* couleur texte */
   --lang-dropdown-border: #c7c7c7;
   --lang-dropdown-hover: #e5e7eb;
+  /* Footer + chip (clair) */
+  --footer-bg: var(--bandeau-bg);
+  --footer-fg: #fff;
+  --footer-chip-bg: rgba(255,255,255,.92);    /* clair mais pas 100% */
+  --footer-chip-fg: #0d2545;                  /* texte foncé lisible */
+  --footer-chip-border: rgba(0,0,0,.12);
 }
+
+/* ===== Thème BLEU ===== */
+body.theme-bleu {
+  /* variables “globales” (mêmes noms que tes autres thèmes) */
+  --main-bg: #0b1220; /* fond page */
+  --bandeau-bg: linear-gradient(90deg, #0e1a2b 0%, #1976d2 100%);
+  --footer-bg: var(--bandeau-bg);
+  --footer-fg: #fff;
+  --accent: #4aa3ff;        /* bleu principal (boutons, liens) */
+  --accent-hover: #1f6fe0;  /* survol/actif */
+  --card-bg: #101a33cc;     /* cartes */
+  --text: #e7f0ff;          /* texte principal */
+  --shadow: 0 4px 24px rgba(0,0,0,0.35);
+
+  /* menus langue/param (tu les utilises déjà) */
+  --lang-dropdown-bg: #0f1830;
+  --lang-dropdown-text: #e7f0ff;
+  --lang-dropdown-border: #20314e;
+  --lang-dropdown-hover: #1a2a4a;
+
+  background: var(--main-bg);
+  color: var(--text);
+  /* Footer + chip (bleu) */
+  --footer-bg: var(--bandeau-bg);
+  --footer-fg: #fff;
+  --footer-chip-bg: rgba(11, 24, 45, .50);    /* ton bleu nuit */
+  --footer-chip-fg: #e7f0ff;
+  --footer-chip-border: rgba(255,255,255,.22);
+}
+
+/* Mise en évidence d’option active (cohérente avec tes règles existantes) */
+.theme-bleu .drawer-opts .opt-btn[data-theme="theme-bleu"]{
+  background: var(--accent);
+  color:#fff;
+  border-color: rgba(0,0,0,0.2);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent) inset;
+  font-weight: 700;
+}
+/* Harmoniser la couleur du menu Paramètres avec celle du menu Langue — Thème BLEU */
+body.theme-bleu .settings-panel{
+  background: var(--lang-dropdown-bg);
+  color: var(--lang-dropdown-text);
+  border: 1px solid var(--lang-dropdown-border);
+}
+/* (optionnel) si tu veux forcer aussi le menu Langue sous thème bleu */
+body.theme-bleu .lang-dropdown{
+  background: var(--lang-dropdown-bg);
+  color: var(--lang-dropdown-text);
+  border-color: var(--lang-dropdown-border);
+}
+body.theme-bleu .lang-dropdown .lang-option:hover{
+  background: var(--lang-dropdown-hover);
+}
+
 
 :root {
   --main-bg: #e3f2fd;
@@ -147,8 +215,8 @@ main {
 }
 
 footer {
-  background: var(--accent);
-  color: #222;
+  background: var(--footer-bg, var(--bandeau-bg));
+  color: var(--footer-fg, #fff);
   text-align: center;
   padding: 1em 0;
   font-size: 0.95em;
@@ -1764,17 +1832,75 @@ html[lang="en"]  .drawer-lang-btn[data-lang="en"]{
 .section-images .sec-img{ max-width:220px; border-radius:8px; }
 .section-images .sec-figcap{ font-weight:600; font-size:.95rem; opacity:.9; margin:0; }
 
+/* Lien "Crédits" en pastille très visible */
 footer .footer-credits{
-  color:#222;        /* lisible sur le bleu du footer */
-  text-decoration:none;
-  margin-left:.25rem;
-  border-bottom:1px solid rgb(3, 9, 61);
+  display: inline-block;
+  padding: .45em .9em;
+  margin-left: .5em;
+  border-radius: 999px;
+  background: #fff;                 /* max contraste sur le dégradé */
+  color: #0c2038;                   /* texte très lisible */
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,.12);
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  transition: transform .15s ease, filter .15s ease;
 }
 footer .footer-credits:hover{
-  border-bottom-color:#fff;
+  transform: translateY(-1px);
+  filter: brightness(1.04) saturate(1.05);
 }
-.theme-clair footer .footer-credits{
-  color:#fff;           /* footer est bleu aussi en clair chez toi */
+footer .footer-credits:focus-visible{
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Lien "Crédits" — version compacte */
+/* Lien "Crédits" — chip compact, cohérent avec le thème */
+footer a.footer-credits,
+footer a.footer-credits:visited{
+  display:inline-block;
+  line-height:1;
+  padding:.25em .6em;
+  margin-left:.45em;
+  border-radius:12px;
+  background: var(--footer-chip-bg, rgba(255,255,255,.9));
+  color: var(--footer-chip-fg, #0d2545);
+  font-weight:700;
+  font-size:.95em;
+  text-decoration:none;
+  border:1px solid var(--footer-chip-border, rgba(0,0,0,.14));
+  box-shadow:0 1px 6px rgba(0,0,0,.12);
+  vertical-align:baseline;
+  /* effet “verre” discret si dispo, sans casser ailleurs */
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  backdrop-filter: saturate(140%) blur(6px);
+  transition:transform .12s ease, filter .12s ease;
+}
+footer a.footer-credits:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.03) saturate(1.03);
+}
+footer a.footer-credits:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:2px;
+}
+
+@media (max-width:480px){
+  footer a.footer-credits{
+    font-size:.9em;
+    padding:.22em .5em;
+    border-radius:10px;
+  }
+}
+
+/* encore un poil plus petit sur très petit écran */
+@media (max-width:480px){
+  footer a.footer-credits{
+    font-size:.9em;
+    padding:.22em .5em;
+    border-radius:10px;
+  }
 }
 
 /* Badges de type de build */

@@ -15,6 +15,7 @@ const translations = {
     font_label: "Taille du texte :",
     dark: "Sombre",
     light: "Clair",
+    blue: "Bleu",
     font_normal: "Normale",
     font_large: "Grand",
     font_xlarge: "Très grand",
@@ -97,6 +98,7 @@ const translations = {
     font_label: "Text size:",
     dark: "Dark",
     light: "Light",
+    blue: "Blue",
     font_normal: "Normal",
     font_large: "Large",
     font_xlarge: "Very large",
@@ -309,7 +311,7 @@ function setLanguage(lang) {
  * THÈME & TAILLE DE POLICE
  ********************/
 function appliquerThemeEtPolice() {
-  document.body.classList.remove('theme-clair', 'theme-sombre', 'font-normal', 'font-grand', 'font-tres-grand');
+  document.body.classList.remove('theme-clair', 'theme-sombre', 'theme-bleu', 'font-normal', 'font-grand', 'font-tres-grand');
   document.body.classList.add(ETAT.theme, ETAT.fontSize);
 }
 
@@ -320,6 +322,7 @@ function initThemeEtPolice() {
   // Boutons (optionnels si présents dans ton HTML)
   const btnSombre = document.getElementById('themeSombre');
   const btnClair = document.getElementById('themeClair');
+  const btnBleu = document.getElementById('themeBleu');
   const fontNormal = document.getElementById('fontNormal');
   const fontGrand = document.getElementById('fontGrand');
   const fontTresGrand = document.getElementById('fontTresGrand');
@@ -334,6 +337,12 @@ function initThemeEtPolice() {
     localStorage.setItem('siteTheme', ETAT.theme);
     appliquerThemeEtPolice();
   });
+  if (btnBleu) btnBleu.addEventListener('click', () => {
+    ETAT.theme = 'theme-bleu';
+    localStorage.setItem('siteTheme', ETAT.theme);
+    appliquerThemeEtPolice();
+  });
+
 
   if (fontNormal) fontNormal.addEventListener('click', () => {
     ETAT.fontSize = 'font-normal';
@@ -2117,7 +2126,7 @@ function setThemeFromDrawer(cls) {
     applyThemeAndFont();
   } else {
     const root = document.documentElement;
-    root.classList.remove('theme-sombre','theme-clair');
+    root.classList.remove('theme-sombre','theme-clair', 'theme-bleu');
     root.classList.add(cls);
   }
 }
