@@ -10,10 +10,10 @@ body.theme-sombre {
   --shadow: 0 4px 24px rgba(0,0,0,0.2);
   background: var(--main-bg);
   color: var(--text);
-  --lang-dropdown-bg: #1f2937;   /* fond 100% opaque, sombre */
-  --lang-dropdown-text: #f4f4f4;
-  --lang-dropdown-border: #374151;
-  --lang-dropdown-hover: #4b5563;
+  --lang-dropdown-bg: #23272b;   /* fond 100% opaque, sombre */
+  --lang-dropdown-text: #e7f0ff;
+  --lang-dropdown-border: #23272b;
+  --lang-dropdown-hover: #23272b;
   /* Footer + chip (sombre) */
   --footer-bg: var(--bandeau-bg);
   --footer-fg: #fff;
@@ -690,19 +690,6 @@ body.theme-clair .underline {
 .update-panel h3 {
   margin-top: 0;
 }
-
-.status-badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: white;
-}
-
-.status-badge.alpha { background-color: #e67e22; }
-.status-badge.beta { background-color: #f1c40f; color: black; }
-.status-badge.stable { background-color: #2ecc71; }
 
 .progress-bar {
   background-color: #ccc;
@@ -2039,3 +2026,327 @@ footer a.footer-credits:focus-visible{
   background: var(--accent);
   color:#fff;
 }
+
+/* Uniformiser le fond du menu mobile (drawer) */
+body.theme-sombre .drawer-panel{
+  background: #23272b;   /* même ton que --main-bg du thème sombre */
+  color: #f4f4f4;
+  border-left: 1px solid #23272b;
+}
+
+body.theme-bleu .drawer-panel{
+  background: #0b1220;   /* même ton que --main-bg du thème bleu */
+  color: #e7f0ff;
+  border-left: 1px solid #20314e;
+}
+/* (la version claire est déjà bonne : .theme-clair .drawer-panel {...}) */
+
+/* ===== Chips de statut sous le header (Accueil) =====
+   Bloc unique, propre et 100% thémable.
+   Remplace tout ce qu’il y avait après ce commentaire.
+   --------------------------------------------------- */
+
+/* ---------- Variables par défaut (fallback) ---------- */
+:root{
+  /* Boîte autour des statuts (#home-status) */
+  --status-wrap-bg:       #0f1830;     /* fond opaque */
+  --status-wrap-fg:       #e7f0ff;     /* couleur du texte "Acatar :" */
+  --status-wrap-border:   #20314e;     /* liseré */
+  --status-wrap-shadow:   0 8px 20px rgba(0,0,0,.18);
+
+  /* Espacements / arrondi */
+  --status-gap:           1.1rem;
+  --status-pad-y:         .50rem;
+  --status-pad-x:         .95rem;
+  --status-radius:        14px;
+
+  /* Badges (couleurs) */
+  --status-stable-bg:     #22c55e;  --status-stable-fg: #ffffff;
+  --status-beta-bg:       #f59e0b;  --status-beta-fg:   #ffffff;
+  --status-dev-bg:        #ee2929;  --status-dev-fg:    #ffffff;
+
+  /* Sizing des pastilles */
+  --badge-pad-y:          .28rem;
+  --badge-pad-x:          .70rem;
+  --badge-radius:         999px;
+  --badge-font-weight:    800;
+}
+
+/* ---------- Overrides par thème (adapte ici) ---------- */
+body.theme-clair{
+  --status-wrap-bg:       #f7f8fa;
+  --status-wrap-fg:       #000000;
+  --status-wrap-border:   #e9ecf1;
+  --status-wrap-shadow:   0 6px 16px rgba(0,0,0,.08);
+
+  /* Exemple si tu veux des badges plus “clairs” :
+     --status-beta-bg: #f59e0b; --status-beta-fg: #111; */
+}
+
+body.theme-sombre{
+  --status-wrap-bg:       #2f32352d;
+  --status-wrap-fg:       #ffffff;
+  --status-wrap-border:   #222324;
+  --status-wrap-shadow:   0 8px 22px rgba(0,0,0,.22);
+}
+
+body.theme-bleu{
+  /* Exemple d’un autre thème */
+  --status-wrap-bg:       #0f1638;
+  --status-wrap-fg:       #e6efff;
+  --status-wrap-border:   #070f27;
+  --status-wrap-shadow:   0 8px 20px rgba(0,0,0,.18);
+}
+
+/* ---------- Rectangle autour des statuts ---------- */
+#home-status{
+  /* affiché/masqué par le JS sur Accueil */
+  display: none;
+  align-items: center;
+  gap: var(--status-gap);
+
+  /* le rectangle épouse le contenu et reste centré */
+  width: fit-content;
+  margin: .6rem auto 0;
+  padding: var(--status-pad-y) var(--status-pad-x);
+  border-radius: var(--status-radius);
+
+  background: var(--status-wrap-bg) !important;
+  color: var(--status-wrap-fg);
+  border: 1px solid var(--status-wrap-border);
+  box-shadow: var(--status-wrap-shadow);
+}
+
+/* ---------- Reset local des chips ---------- */
+#home-status .status-chip{
+  appearance: none;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0 .10rem;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem; /* espace entre "Nom :" et la pastille */
+}
+#home-status .status-chip .mod-name{ font-weight: 600; opacity: .95; }
+#home-status .status-chip:hover .mod-name{ text-decoration: underline; }
+#home-status .status-chip:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ---------- Pastille à droite du libellé ---------- */
+#home-status .status-pill{
+  display: inline-block;
+  padding: var(--badge-pad-y) var(--badge-pad-x);
+  border-radius: var(--badge-radius);
+  font-weight: var(--badge-font-weight);
+  line-height: 1;
+  margin-left: .35rem; /* après ":" */
+}
+
+/* ---------- Badges de couleur (communs)
+   S’appliquent aux pastilles d’accueil (.status-pill)
+   ET aux badges des panneaux (.status-badge)           */
+.status-pill.stable, .status-badge.stable{ background: var(--status-stable-bg); color: var(--status-stable-fg); }
+.status-pill.beta,   .status-badge.beta  { background: var(--status-beta-bg);   color: var(--status-beta-fg);   }
+.status-pill.dev,    .status-badge.dev   { background: var(--status-dev-bg);    color: var(--status-dev-fg);    }
+
+/* ---------- Sécurité : couper toute ancienne “bande” ---------- */
+.status-rail{ display: none !important; }
+
+/* === Hover ultra fluide : petit lift vers le haut, sans lueur ============ */
+:root{
+  /* timings & easing séparés pour l'entrée/sortie */
+  --status-anim-in-dur:   220ms; /* hover-in un peu plus rapide */
+  --status-anim-out-dur:  260ms; /* hover-out un peu plus long (plus doux) */
+  --status-anim-in-ease:  cubic-bezier(.16,1,.3,1);   /* springy, “pop” clean */
+  --status-anim-out-ease: cubic-bezier(.2,.8,.2,1);   /* ease-out smooth */
+}
+
+/* La chip se soulève légèrement (GPU-friendly) */
+#home-status .status-chip{
+  transform: translate3d(0,0,0);              /* état repos */
+  transition: transform var(--status-anim-out-dur) var(--status-anim-out-ease);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+#home-status .status-chip:hover{
+  transform: translate3d(0,-3px,0);           /* petit lift */
+  transition: transform var(--status-anim-in-dur) var(--status-anim-in-ease);
+}
+#home-status .status-chip:active{
+  transform: translate3d(0,-2px,0);           /* feedback clic léger */
+}
+
+/* La pastille suit très légèrement (adds finesse).
+   NB: la transformation se cumule avec celle de la chip par héritage */
+#home-status .status-pill{
+  transform: translate3d(0,0,0);
+  transition: transform var(--status-anim-out-dur) var(--status-anim-out-ease);
+  will-change: transform;
+  box-shadow: none !important;                 /* on s'assure: aucune lueur */
+}
+#home-status .status-chip:hover .status-pill{
+  transform: translate3d(0,-1px,0);            /* +1px par rapport à la chip */
+  transition: transform var(--status-anim-in-dur) var(--status-anim-in-ease);
+}
+
+/* Focus clavier = même feedback que hover (sans lueur) */
+#home-status .status-chip:focus-visible{
+  transform: translate3d(0,-3px,0);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Accessibilité : réduit le mouvement si demandé par l’utilisateur */
+@media (prefers-reduced-motion: reduce){
+  #home-status .status-chip,
+  #home-status .status-pill{
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* === Interactivité : seule la PASTILLE est cliquable + animée ============ */
+/* La chip (nom du mod) n'est pas interactive */
+#home-status .status-chip{
+  cursor: default;
+  transition: none !important;
+  transform: none !important;
+}
+#home-status .status-chip:hover .mod-name{
+  text-decoration: none; /* on enlève l'effet hover sur le nom */
+}
+
+/* === Pastille : lift + pop BIEN MARQUÉ (sans rotation, sans lueur) ======= */
+:root{
+  /* intensité : ajuste librement ces 2 valeurs */
+  --status-lift-y:     -20px;   /* hauteur du saut au hover (ex: -14px / -18px) */
+  --status-scale:      1.26;    /* grossissement au hover (ex: 1.18 / 1.26) */
+
+  /* timings/courbes (entrée punchy, sortie douce) */
+  --status-anim-in-dur:   300ms;
+  --status-anim-out-dur:  420ms;
+  --status-anim-in-ease:  cubic-bezier(.2,1.25,.24,1);
+  --status-anim-out-ease: cubic-bezier(.2,.8,.2,1);
+}
+
+/* Le nom du mod (chip) n'est pas interactif */
+#home-status .status-chip{
+  cursor: default;
+  transition: none !important;
+  transform: none !important;
+}
+#home-status .status-chip:hover .mod-name{ text-decoration: none; }
+
+/* === SEULE la pastille est interactive === */
+#home-status .status-pill{
+  position: relative;
+  cursor: pointer;
+
+  /* état repos */
+  transform: translate3d(0,0,0) scale(1);
+  transform-origin: center;
+
+  /* on coupe toute ancienne anim (keyframes) si elle existe */
+  animation: none !important;
+
+  /* transitions lisses */
+  transition:
+    transform var(--status-anim-out-dur) var(--status-anim-out-ease),
+    filter   140ms linear;
+  will-change: transform;
+  box-shadow: none !important; /* jamais de lueur */
+}
+
+/* Ombre au sol (neutre) pour renforcer la hauteur */
+#home-status .status-pill::after{
+  content:"";
+  position:absolute;
+  left:10%; right:10%; bottom:-4px; height:6px;
+  background: rgba(0,0,0,.35);
+  filter: blur(6px);
+  opacity: 0;
+  transform: translateY(0) scaleX(.6);
+  transition:
+    opacity  var(--status-anim-in-dur) var(--status-anim-in-ease),
+    transform var(--status-anim-in-dur) var(--status-anim-in-ease);
+  pointer-events:none;
+}
+
+/* Hover : LIFT + POP (sans rotation) */
+#home-status .status-pill:hover{
+  animation: none !important; /* au cas où */
+  transform: translate3d(0,var(--status-lift-y),0) scale(var(--status-scale));
+  transition: transform var(--status-anim-in-dur) var(--status-anim-in-ease);
+  filter: brightness(1.06) contrast(1.03); /* lisibilité subtile */
+}
+#home-status .status-pill:hover::after{
+  opacity: .9;
+  transform: translateY(3px) scaleX(1.35);
+}
+
+/* Press (mousedown) : retombée contrôlée */
+#home-status .status-pill:active{
+  transform: translate3d(0, calc(var(--status-lift-y) / 2), 0) scale(1.10);
+}
+
+/* Focus clavier = même feedback que hover (sans rotation) */
+#home-status .status-pill:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+  animation: none !important;
+  transform: translate3d(0,var(--status-lift-y),0) scale(var(--status-scale));
+}
+
+/* Accessibilité : moins de mouvement si demandé */
+@media (prefers-reduced-motion: reduce){
+  #home-status .status-pill{ transition:none !important; transform:none !important; }
+  #home-status .status-pill::after{ opacity:0 !important; }
+}
+
+/* ===== Mobile : empiler les statuts (un par ligne) ====================== */
+@media (max-width: 640px){
+  /* le rectangle prend la largeur, avec marge intérieure + extérieure */
+  #home-status{
+    flex-direction: column;
+    align-items: stretch;          /* étire chaque ligne */
+    gap: .55rem;
+
+    width: auto;                   /* au lieu de fit-content */
+    max-width: none;
+    margin: .6rem 12px 0;          /* un peu d’air sur les côtés */
+    padding: .55rem .75rem;
+  }
+
+  /* chaque statut = une ligne */
+  #home-status .status-chip{
+    display: flex;
+    justify-content: space-between;/* nom à gauche, pastille à droite */
+    align-items: center;
+    width: 100%;
+    padding: .15rem .10rem !important; /* neutralise d’éventuels anciens padding */
+  }
+
+  /* évite que la pastille passe à la ligne */
+  #home-status .status-pill{
+    margin-left: .75rem;
+    white-space: nowrap;
+    padding: .32rem .80rem;        /* cible tactile un peu plus grande */
+  }
+}
+
+/* Bonus : très petits écrans */
+@media (max-width: 380px){
+  #home-status{ font-size: .95rem; }   /* réduit un chouïa la taille du texte */
+}
+

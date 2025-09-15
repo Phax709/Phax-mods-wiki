@@ -303,6 +303,7 @@ function setLanguage(lang) {
   if (st1 && st1.style.display !== 'none') showStatus('mod1', true);
   const st2 = document.querySelector('#mod2 .update-panel');
   if (st2 && st2.style.display !== 'none') showStatus('mod2', true);
+  if (window.__refreshHomeChips) window.__refreshHomeChips();
 }
 
 
@@ -491,9 +492,20 @@ function showPage(pageId) {
     renderPatchList();
   }
 
+  // 👉 rafraîchir les chips à chaque retour sur Accueil
+  if (pageId === 'accueil' && window.__refreshHomeChips) {
+    window.__refreshHomeChips();
+  }
+  // Affiche la barre des chips seulement sur Accueil
+  const bar = document.getElementById('home-status');
+  if (bar) bar.style.display = (pageId === 'accueil' ? 'flex' : 'none');
+  const rail = document.getElementById('statusRail');
+  if (rail) rail.style.display = (pageId === 'accueil' ? 'block' : 'none');
+
   // 5) remonter
   window.scrollTo({ top: 0, behavior: 'smooth' });
   setPageTitle(ETAT.langue);
+
 }
 
 /********************
@@ -918,6 +930,23 @@ function normalizeText(s) {
   }
 }
 
+// Mappe ce qui vient de status.json vers une classe CSS connue
+function normalizeStatus(s) {
+  const t = (s || '').toLowerCase().trim();
+  if (t === 'release') return 'stable'; // "release" = stable (classe verte)
+  if (t === 'developpement' || t === 'en développement' || t === 'development' || t === 'in development')
+    return 'dev';
+  return t; // stable | beta | dev
+}
+
+// Libellé affiché (FR/EN) à partir de la valeur BRUTE du JSON
+function statusLabel(raw, lang) {
+  const t = (raw || '').toLowerCase().trim();
+  if (t === 'release' || t === 'stable') return (lang === 'en') ? 'Stable' : 'Stable';
+  if (t === 'beta')                         return (lang === 'en') ? 'Beta'   : 'Bêta';
+  return (lang === 'en') ? 'In development' : 'En développement';
+}
+
 
 let _lastStatusOpen = null;
 
@@ -977,11 +1006,10 @@ async function showStatus(modId) {
     return;
   }
 
-  // ===== Badge texte (comme l'ancien script)
-  const s = (info.status || 'dev').toLowerCase(); // dev | beta | stable
-  const statusLabel = (lang === 'fr')
-    ? (s === 'stable' ? 'Stable' : s === 'beta' ? 'Bêta' : 'En développement')
-    : (s === 'stable' ? 'Stable' : s === 'beta' ? 'Beta' : 'In development');
+  // ===== Badge texte — normalisé
+const stRaw = (info.status || 'dev');     // ex: "release"
+const s     = normalizeStatus(stRaw);     // -> "stable"
+const statusLabelText = statusLabel(stRaw, lang); // -> "Stable"
 
 // ===== Date à côté du badge (gérée par CSS, sans inline)
 // On lit d'abord une date de mise à jour PRÉVUE (next_update) si présente,
@@ -1031,7 +1059,7 @@ const progressHtml = (progress !== null && s !== 'stable')
 const title = translations[lang].mod_status_title;
 panel.innerHTML = `
   <div class="status-header">
-    <div class="status-badge ${s}">${statusLabel}</div>
+    <div class="status-badge ${s}">${statusLabelText}</div>
     ${dateLabel ? `<span class="status-updated-inline${isIndet ? ' is-indet' : ''}">${dateLabel}</span>` : ""}
   </div>
   <h3>${title}</h3>
@@ -2011,6 +2039,29 @@ function notifyCopied(ok){
 }, true);
 })();
 
+// Clic sur la PASTILLE de statut uniquement (pas le nom)
+document.addEventListener('click', (e)=>{
+  const pill = e.target.closest('#home-status .status-pill');
+  if (!pill) return;
+  e.preventDefault();
+
+  const chip = pill.closest('.status-chip');
+  const mod  = chip && chip.getAttribute('data-mod'); // "mod1" | "mod2"
+  if (!mod) return;
+
+  if (typeof setParams === 'function') setParams({ p: mod, view: 'status' }, true);
+  if (typeof showPage === 'function') showPage(mod);
+  if (typeof showStatus === 'function') showStatus(mod);
+}, true);
+
+// Clavier : Enter/espace sur la pastille = clic
+document.addEventListener('keydown', (e)=>{
+  const pill = e.target.closest('#home-status .status-pill');
+  if (!pill) return;
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  e.preventDefault();
+  pill.click();
+});
 
 /********************
  * INIT — Bandeau : lien actif
@@ -2043,6 +2094,75 @@ function notifyCopied(ok){
 
   // expose une fonction globale pour l’utiliser depuis showPage(id)
   window.__setActiveNavById = setActiveNavById;
+})();
+
+// ==== INIT: Chips de statut sous le header (Accueil) ====
+(function initHomeStatusOnce(){
+  if (window.__homeStatusInit) return; window.__homeStatusInit = true;
+
+  async function loadStatus(){
+    try{
+      const res = await fetch('status.json?t=' + Date.now(), { cache:'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return await res.json();
+    }catch(_){ return {}; }
+  }
+  function labelFor(s, lang){
+    const st = (s||'').toLowerCase();
+    if (lang==='en') return st==='stable'?'Stable': st==='beta'?'Beta':'In development';
+    return st==='stable'?'Stable': st==='beta'?'Bêta':'En développement';
+  }
+
+  function classFor(s){
+    const st = (s||'').toLowerCase();
+    return st==='stable'?'is-stable': st==='beta'?'is-beta':'is-dev';
+  }
+
+  // Mappe ce qui vient de status.json vers une classe CSS connue
+ function normalizeStatus(s) {
+   const t = (s || '').toLowerCase().trim();
+   if (t === 'release') return 'stable'; // <= ici on force "release" à devenir "stable"
+   if (t === 'developpement' || t === 'en développement' || t === 'development' || t === 'in development')
+     return 'dev';
+   return t; // stable | beta | dev | (autres inchangés)
+ }
+
+ // Libellé à afficher (FR/EN) à partir de la valeur brute du JSON
+ function statusLabel(raw, lang) {
+   const t = (raw || '').toLowerCase().trim();
+   if (t === 'release' || t === 'stable') return (lang === 'en') ? 'Stable' : 'Stable';
+   if (t === 'beta')                         return (lang === 'en') ? 'Beta'   : 'Bêta';
+   // tout le reste (dev, in development, etc.)
+   return (lang === 'en') ? 'In development' : 'En développement';
+}
+
+
+  function paint(map){
+  const lang = localStorage.getItem('siteLanguage') || 'fr';
+  document.querySelectorAll('#home-status .status-chip').forEach(btn=>{
+    const mod    = btn.getAttribute('data-mod');            // "mod1" | "mod2"
+    const name   = (mod==='mod1' ? 'Acatar' : mod==='mod2' ? 'Chaosium' : (mod||''));
+    const stRaw  = map?.[mod]?.status || '';                // ex: "release"
+    const stNorm = normalizeStatus(stRaw);                  // -> "stable"
+    const label  = statusLabel(stRaw, lang);                // -> "Stable"
+
+    // "Nom : [pastille]"
+    btn.innerHTML =
+      `<span class="mod-name">${name}</span><span class="sep" aria-hidden="true">:</span>
+      <span class="status-pill ${stNorm || ''}" tabindex="0" role="button"
+            aria-label="${(lang==='en'?'Open status: ':'Ouvrir le statut : ')+name}">
+        ${label}
+      </span>`;
+    if (stNorm) btn.setAttribute('data-status', stNorm);
+  });
+  }
+
+
+  // 👇 expose un refresh global (utile quand on change la langue)
+  window.__refreshHomeChips = () => loadStatus().then(paint);
+
+  // premier rendu
+  window.__refreshHomeChips();
 })();
 
 // S’assure que le bon lien est actif après recharge
