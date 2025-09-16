@@ -2272,7 +2272,7 @@ body.theme-bleu{
   content:"";
   position:absolute;
   left:10%; right:10%; bottom:-4px; height:6px;
-  background: rgba(0,0,0,.35);
+  background: rgba(0,0,0,0.35);
   filter: blur(6px);
   opacity: 0;
   transform: translateY(0) scaleX(.6);
@@ -2348,5 +2348,100 @@ body.theme-bleu{
 /* Bonus : très petits écrans */
 @media (max-width: 380px){
   #home-status{ font-size: .95rem; }   /* réduit un chouïa la taille du texte */
+}
+
+/* --- Titre "Statut :" devant les puces ---------------------------------- */
+#home-status .status-title{
+  font-weight: 600;
+  opacity: .9;
+  margin-right: .6rem;
+  pointer-events: none;   /* jamais cliquable */
+  white-space: nowrap;
+  color: inherit;
+}
+
+/* Mobile : le titre passe au-dessus et centré */
+@media (max-width: 640px){
+  #home-status .status-title{
+    display: block;
+    margin: 0 0 .35rem 0;
+    text-align: center;
+  }
+}
+
+/* Bouton "Haut de page" */
+.back-to-top{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent, #3b82f6);
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  display: none;                 /* caché par défaut */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  cursor: pointer;
+  z-index: 1000;
+}
+.back-to-top.show{ display: flex; }  /* montré après le seuil sur pages autorisées */
+.back-to-top:focus-visible{ outline: 2px solid #fff; outline-offset: 2px; }
+
+@media (max-width: 640px){
+  .back-to-top{ right: 12px; bottom: 12px; width: 48px; height: 48px; font-size: 20px; }
+}
+
+/* ===== Bouton "Haut de page" (thémé, léger transparent) ===== */
+.back-to-top{
+  position: fixed;            /* on le place par JS au milieu du conteneur */
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.15);
+  background: rgba(255,255,255,.85);   /* clair par défaut */
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  color: #111;
+  font-size: 20px;
+  line-height: 1;
+  display: none;              /* caché sans .show */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: opacity .25s ease, transform .25s ease;
+  opacity: 0;
+  transform: translateY(8px);
+  backdrop-filter: blur(6px);
+}
+
+.back-to-top.show{
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:active{ transform: scale(.98); }
+
+/* Thèmes */
+body.theme-sombre .back-to-top{
+  background: rgba(27, 28, 31, 0.65);
+  border-color: rgba(255,255,255,.12);
+  color: #fff;
+}
+
+body.theme-bleu .back-to-top{
+  background: rgba(16,24,48,.70);
+  border-color: rgba(96,132,255,.35);
+  color: #e7f0ff;
+}
+
+/* Mobile : un poil plus gros */
+@media (max-width: 640px){
+  .back-to-top{ width: 48px; height: 48px; font-size: 22px; }
 }
 

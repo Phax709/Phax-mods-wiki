@@ -304,6 +304,7 @@ function setLanguage(lang) {
   const st2 = document.querySelector('#mod2 .update-panel');
   if (st2 && st2.style.display !== 'none') showStatus('mod2', true);
   if (window.__refreshHomeChips) window.__refreshHomeChips();
+  ensureStatusTitle();
 }
 
 
@@ -501,11 +502,13 @@ function showPage(pageId) {
   if (bar) bar.style.display = (pageId === 'accueil' ? 'flex' : 'none');
   const rail = document.getElementById('statusRail');
   if (rail) rail.style.display = (pageId === 'accueil' ? 'block' : 'none');
+  if (pageId === 'accueil') ensureStatusTitle();
 
   // 5) remonter
   window.scrollTo({ top: 0, behavior: 'smooth' });
   setPageTitle(ETAT.langue);
 
+  updateBackToTop(pageId);
 }
 
 /********************
@@ -1209,6 +1212,113 @@ function initCardsLayout() {
   applyCardsLayout(getSavedCardsLayout());
 }
 
+// --- Back to top (Patch Notes + pages de mods) --------------------------------
+let _btt = null;
+let _bttScrollHandler = null;
+let _bttScrollTarget = null;
+let _bttResizeHandler = null;
+
+// pages autorisées (ajoute ici si tu renomme)
+const BTT_ALLOWED = new Set(['patchnotes', 'mod1', 'mod2', 'acatar', 'chaosium']);
+const BTT_THRESHOLD = 600;   // si c'est la fenêtre qui scrolle
+const BTT_INNER_THRESHOLD = 140; // si c'est un conteneur interne
+
+function setupBackToTop(){
+  if (_btt) return;
+  const btn = document.createElement('button');
+  btn.className = 'back-to-top';
+  btn.type = 'button';
+  btn.setAttribute('aria-label', 'Haut de page');
+  btn.textContent = '↑';
+  document.body.appendChild(btn);
+  _btt = btn;
+}
+
+function getScrollTarget(pageId){
+  if (pageId === 'patchnotes') return document.querySelector('#patchnotes .patch-list');
+  if (pageId === 'mod1')       return document.querySelector('#mod1 .cards-grid');
+  if (pageId === 'mod2')       return document.querySelector('#mod2 .cards-grid');
+  return window;
+}
+
+function positionBackToTop(target){
+  if (!_btt) return;
+  const btn = _btt;
+  const padX = 12;                 // marge mini vs bords de l’écran
+  const offsetTop = (window.innerWidth <= 640) ? 6 : 18; // plus près du haut en mobile
+
+  // cadre visible du scroller (viewport de la grille/liste)
+  const rect = (target === window)
+    ? { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }
+    : (target?.getBoundingClientRect?.() || { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight });
+
+  // position : HAUT + CENTRE du viewport du scroller
+  const left = Math.min(
+    Math.max(rect.left + rect.width / 2 - btn.offsetWidth / 2, padX),
+    window.innerWidth - padX - btn.offsetWidth
+  );
+  const top = Math.min(
+    rect.top + offsetTop,
+    window.innerHeight - btn.offsetHeight - offsetTop
+  );
+
+  btn.style.left = left + 'px';
+  btn.style.top  = top  + 'px';
+}
+
+function updateBackToTop(pageId){
+  setupBackToTop();
+  const btn = _btt;
+
+  // nettoie anciens listeners
+  if (_bttScrollHandler && _bttScrollTarget){
+    const old = (_bttScrollTarget === window) ? window : _bttScrollTarget;
+    old.removeEventListener('scroll', _bttScrollHandler);
+  }
+  if (_bttResizeHandler){
+    window.removeEventListener('resize', _bttResizeHandler);
+    _bttResizeHandler = null;
+  }
+  _bttScrollHandler = null;
+  _bttScrollTarget  = null;
+
+  // page non autorisée -> bouton totalement caché
+  if (!BTT_ALLOWED.has(pageId)){
+    btn.classList.remove('show');
+    btn.style.display = 'none';
+    return;
+  }
+
+  // cible de scroll
+  const target = getScrollTarget(pageId) || window;
+  _bttScrollTarget = target;
+
+  // click : remonter la cible (fenêtre OU conteneur interne)
+  btn.onclick = () => {
+    if (target === window) window.scrollTo({ top: 0, behavior: 'smooth' });
+    else target.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // gestion de l'apparition + positionnement
+  const toggle = () => {
+    const isWindow = (target === window);
+    const pos = isWindow ? window.scrollY : target.scrollTop;
+    const limit = isWindow ? BTT_THRESHOLD : BTT_INNER_THRESHOLD;
+    if (pos > limit) btn.classList.add('show'); else btn.classList.remove('show');
+    positionBackToTop(target);
+  };
+
+  // (ré)abonne
+  const el = (target === window) ? window : target;
+  el.addEventListener('scroll', toggle, { passive: true });
+  _bttScrollHandler = toggle;
+
+  // visible et positionné (la CSS décide de display initial)
+  btn.style.display = '';
+  toggle();
+  _bttResizeHandler = () => positionBackToTop(target);
+  window.addEventListener('resize', _bttResizeHandler, { passive: true });
+}
 
 window.addEventListener('DOMContentLoaded', () => {
   console.log('[INIT] prêt');
@@ -1219,6 +1329,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('lastPage');
   const startPage = (saved && document.getElementById(saved)) ? saved : 'accueil';
   showPage(startPage);
+  updateBackToTop(startPage);
 });
 
 /********************
@@ -2165,6 +2276,23 @@ document.addEventListener('keydown', (e)=>{
   window.__refreshHomeChips();
 })();
 
+// Ajoute/actualise le petit titre "Statut :" dans #home-status
+function ensureStatusTitle(){
+  const bar = document.getElementById('home-status');
+  if (!bar) return;
+
+  // crée le titre s'il n'existe pas
+  let title = bar.querySelector('.status-title');
+  if (!title) {
+    title = document.createElement('span');
+    title.className = 'status-title';
+    title.setAttribute('aria-hidden', 'true'); // non interactif
+    bar.prepend(title);
+  }
+  const lang = (localStorage.getItem('siteLanguage') || 'fr');
+  title.textContent = (lang === 'en') ? 'Status:' : 'Statut :';
+}
+
 // S’assure que le bon lien est actif après recharge
 window.addEventListener('DOMContentLoaded', () => {
   const visible = Array.from(document.querySelectorAll('.page'))
@@ -2535,3 +2663,4 @@ document.addEventListener('click', (e) => {
     }
   }, true);
 })();
+
