@@ -786,6 +786,7 @@ async function renderPatchList() {
  ********************/
 // === DÉTAIL PATCHNOTE : titre + badges (MC + Beta)
 async function showPatchDetail(patchId) {
+  if (typeof hideBackToTop === 'function') hideBackToTop();
   const list    = document.querySelector('#patchnotes .patch-list');
   const detail  = document.querySelector('#patchnotes .card-detail');
   const content = detail?.querySelector('.detail-content');
@@ -874,6 +875,11 @@ async function showPatchDetail(patchId) {
   // bascule list/détail
   list.style.display   = 'none';
   detail.style.display = 'block';
+  // Rebranche le back-to-top sur la liste Patchnotes et réévalue l'état
+  updateBackToTop('patchnotes');
+  const listEl = document.querySelector('#patchnotes .patch-list');
+  if (listEl) setTimeout(() => listEl.dispatchEvent(new Event('scroll')), 0);
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -883,12 +889,17 @@ function showPatchList() {
   if (!list || !detail) return;
   detail.style.display = 'none';
   list.style.display = 'flex'; // ta liste est en flex dans le CSS “comme avant”
+  // Ré-attache le back-to-top sur la liste Patchnotes et force l'état
+  updateBackToTop('patchnotes');
+  const listEl = document.querySelector('#patchnotes .patch-list');
+  if (listEl) { requestAnimationFrame(() => listEl.dispatchEvent(new Event('scroll'))); }
 }
 
 /********************
  * DÉTAIL CARTES
  ********************/
 function showCardDetail(modId, el) {
+  if (typeof hideBackToTop === 'function') hideBackToTop();
   const page = document.getElementById(modId);
   if (!page) return;
   const liste = page.querySelector('.cards-grid');
@@ -1217,11 +1228,19 @@ let _btt = null;
 let _bttScrollHandler = null;
 let _bttScrollTarget = null;
 let _bttResizeHandler = null;
+let _bttClickHandler = null;
 
 // pages autorisées (ajoute ici si tu renomme)
 const BTT_ALLOWED = new Set(['patchnotes', 'mod1', 'mod2', 'acatar', 'chaosium']);
 const BTT_THRESHOLD = 600;   // si c'est la fenêtre qui scrolle
 const BTT_INNER_THRESHOLD = 140; // si c'est un conteneur interne
+
+function hideBackToTop(){
+  if (_btt){
+    _btt.classList.remove('show');
+    _btt.style.display = 'none';
+  }
+}
 
 function setupBackToTop(){
   if (_btt) return;
@@ -1279,7 +1298,16 @@ function updateBackToTop(pageId){
     window.removeEventListener('resize', _bttResizeHandler);
     _bttResizeHandler = null;
   }
+  if (_bttScrollHandler && _bttScrollTarget){
+  const old = (_bttScrollTarget === window) ? window : _bttScrollTarget;
+  old.removeEventListener('scroll', _bttScrollHandler);
+  if (_bttClickHandler){
+    old.removeEventListener('click', _bttClickHandler, true);
+  }
+}
+
   _bttScrollHandler = null;
+  _bttClickHandler  = null;
   _bttScrollTarget  = null;
 
   // page non autorisée -> bouton totalement caché
@@ -1311,11 +1339,23 @@ function updateBackToTop(pageId){
   // (ré)abonne
   const el = (target === window) ? window : target;
   el.addEventListener('scroll', toggle, { passive: true });
+  // ... après el.addEventListener('scroll', toggle, { passive: true });
+
+const clickDismiss = (e) => {
+  // Si on clique une carte ou un lien dans la zone qui défile, on cache le bouton
+  if (e.target.closest('.cards-grid .small-card, .cards-grid a, .patch-list .patch-entry, .patch-list a')) {
+    hideBackToTop();
+  }
+};
+el.addEventListener('click', clickDismiss, true); // capture = true pour capter même si navigation
+  _bttClickHandler = clickDismiss;
   _bttScrollHandler = toggle;
 
   // visible et positionné (la CSS décide de display initial)
   btn.style.display = '';
-  toggle();
+  // forcer l’état immédiatement au prochain paint, sans attendre un scroll
+  requestAnimationFrame(toggle);
+  setTimeout(toggle, 0);
   _bttResizeHandler = () => positionBackToTop(target);
   window.addEventListener('resize', _bttResizeHandler, { passive: true });
 }
