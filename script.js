@@ -36,7 +36,7 @@ const translations = {
     nature: "Nature",
     structure: "Structures",
     minerai: "Minerais",
-    craft: "Craft", //à choisir mais je peux aussi mettre Recette
+    craft: "Craft / Recette", //à choisir mais je peux aussi mettre Recette
     patch_acatar: "Patchnotes Acatar",
     patch_chaosium: "Patchnotes Chaosium",
     patch_history: "Historique des mises à jour",
@@ -63,7 +63,7 @@ const translations = {
     credits_title: "Crédits",
     credits_intro: "Cette page liste les droits d’auteur et les attributions des éléments utilisés dans ce wiki.",
     assets_mojang_title: "Attribution — Mojang / Minecraft",
-    assets_mojang_text: "Minecraft est une marque déposée de Mojang AB. Certaines textures (ex. lingots, blocs) utilisées sur ce site et/ou dans les mods sont des dérivés des textures de Minecraft (recolorations/variantes). Ce site et ces mods ne sont ni affiliés, ni approuvés par Mojang AB. Aucun fichier de jeu original n’est redistribué.",
+    assets_mojang_text: "Minecraft est une marque déposée de Mojang AB. Certaines textures (ex. lingots, blocs) utilisées sur ce site et/ou dans les mods sont des dérivés des textures de Minecraft (recolorations/variantes). Ce site et ces mods ne sont ni affiliés, ni approuvés par Mojang AB. Aucun fichier de jeu original n’est redistribué. ⚠️ Cette attribution s’applique à toutes les images du wiki qui intègrent des textures dérivées ou historiques de Minecraft, y compris les captures de recettes, les aperçus de blocs et autres illustrations. Ces visuels sont présentés à titre d’exemple uniquement.",
     your_textures_title: "Textures & images originales",
     your_textures_text: "Certaines textures et images de ce wiki et/ou de mes mods sont des créations originales de Phax709. Toute réutilisation, redistribution ou intégration dans un autre projet (site, mod, resource pack, vidéo, etc.) nécessite mon autorisation préalable. Merci de me contacter sur Discord (lien en bas de page) pour obtenir l’accord.",
     third_party_title: "Éléments tiers",
@@ -119,7 +119,7 @@ const translations = {
     nature: "Nature",
     structure: "Structures",
     minerai: "Ores",
-    craft: "Craft",
+    craft: "Craft / Recipe", //à choisir mais je peux aussi mettre Recette
     patch_acatar: "Acatar Patch Notes",
     patch_chaosium: "Chaosium Patch Notes",
     patch_history: "Patch History",
@@ -146,7 +146,7 @@ const translations = {
     credits_title: "Credits",
     credits_intro: "This page lists copyrights and attributions for the assets used on this wiki.",
     assets_mojang_title: "Attribution — Mojang / Minecraft",
-    assets_mojang_text: "Minecraft is a trademark of Mojang AB. Some textures (e.g., ingots, blocks) used on this site and/or in the mods are derivatives of Minecraft textures (recolors/variants). This site and these mods are not affiliated with or endorsed by Mojang AB. No original game files are redistributed.",
+    assets_mojang_text: "Minecraft is a trademark of Mojang AB. Some textures (e.g., ingots, blocks) used on this site and/or in the mods are derived from Minecraft textures (recolorations/variants). This site and these mods are neither affiliated with nor approved by Mojang AB. No original game files are redistributed. ⚠️ This attribution applies to all images on the wiki that include derived or legacy Minecraft textures, including recipe screenshots, block previews, and other illustrations. Such visuals are provided for illustrative purposes only.",
     your_textures_title: "Original textures & images",
     your_textures_text: "Some textures and images on this wiki and/or in my mods are original creations by Phax709. Any reuse, redistribution, or inclusion in another project (website, mod, resource pack, video, etc.) requires my prior permission. Please contact me on Discord (link in the footer) to request approval.",
     third_party_title: "Third-party elements",
