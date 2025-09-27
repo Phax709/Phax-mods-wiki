@@ -2009,8 +2009,8 @@
 {
   "id": "totemcraft",
   "type": "craft",
-  "title_fr": "Totem d'immortalité - craft",
-  "title_en": "Totem of Undying - craft",
+  "title_fr": "Totem d'immortalité - Craft",
+  "title_en": "Totem of Undying - Craft",
   "description_fr": "Ce totem donne la vie apres la mort.",
   "description_en": "This totem gives life after death.",
   "details": {
@@ -2030,20 +2030,296 @@
         ]
       },
         {
-          "captions_fr": ["Craft du totem d'immortalité : Textures © Mojang AB — image de recette à titre illustratif", ""],
+          "captions_fr": ["Craft du totem d'immortalité :", ""],
           "images_fr": [
             "../images/mod1/totem_of_undying_recipe.png"
           ]
         },
         {
-          "captions_en": ["Craft of totem of undying : Textures © Mojang AB — recipe image shown for illustration only.", ""],
+          "captions_en": ["Craft of totem of undying :", ""],
           "images_en": [
            "../images/mod1/totem_of_undying_recipe.png"
           ]
         }
     ]
   }
+},
+{
+  "id": "mobspawner",
+  "type": "craft",
+  "title_fr": "Générateur de mobs - Craft",
+  "title_en": "Mob Spawner - Craft",
+  "description_fr": "Ce bloc génère des créatures.",
+  "description_en": "This block spawns mobs.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft du générateur de créature :", ""],
+          "images_fr": [
+            "../images/mod1/mob_spawner_recipe.png"
+          ]
+        },
+        {
+          "title_fr": "Notes",
+          "items_fr": [
+            "Peut être crafté avec 4 blocs de fer et 4 <a data-card-id=\"igniera_ore\">lingots d'igniera</a>."
+          ]
+        },
+        {
+          "captions_en": ["Craft of mob spawner :", ""],
+          "images_en": [
+           "../images/mod1/mob_spawner_recipe.png"
+          ]
+        },
+        {
+          "title_en": "Notes",
+          "items_en": [
+            "May be crafted with 4 iron blocks and 4 <a data-card-id=\"igniera_ore\">Igniera ingots</a>."
+          ]
+        }
+    ]
+  }
+},
+{
+  "id": "froglight_recipe",
+  "type": "craft",
+  "title_fr": "Grelampe - Craft",
+  "title_en": "Froglight - Craft",
+  "description_fr": "Cette lumière est tombée par les grenouilles.",
+  "description_en": "This light is dropped by frogs.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft de la grelampe nacrée :", ""],
+          "images_fr": [
+            "../images/mod1/pearlescent_froglight_recipe.png"
+          ]
+        },
+        {
+          "captions_fr": ["Craft de la grelampe ochrée :", ""],
+          "images_fr": [
+            "../images/mod1/ochre_froglight_recipe.png"
+          ]
+        },
+        {
+          "captions_fr": ["Craft de la grelampe verdoyante :", ""],
+          "images_fr": [
+            "../images/mod1/verdent_froglight_recipe.png"
+          ]
+        },
+        {
+          "title_fr": "Notes",
+          "items_fr": [
+            "La grelampe nacrée peut être crafté avec 1 colorant rose, 1 baie lumineuse, 1 colorant de lumière et 1 essence de grenouille.",
+            "La grelampe ochrée peut être crafté avec 1 colorant jaune, 1 baie lumineuse, 1 colorant de lumière et 1 essence de grenouille.",
+            "La grelampe ochrée peut être crafté avec 1 colorant vert, 1 baie lumineuse, 1 colorant de lumière et 1 essence de grenouille."
+          ]
+        },
+        {
+          "captions_en": ["Craft of pearlescent froglight :", ""],
+          "images_en": [
+           "../images/mod1/pearlescent_froglight_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of ochre froglight :", ""],
+          "images_en": [
+           "../images/mod1/ochre_froglight_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of verdant froglight :", ""],
+          "images_en": [
+           "../images/mod1/verdent_froglight_recipe.png"
+          ]
+        },
+        {
+          "title_en": "Notes",
+          "items_en": [
+            "The pearlescent froglight can be crafted with 1 pink dye, 1 glow berry, 1 light dye and 1 frog essence.",
+            "The ochre froglight can be crafted with 1 yellow dye, 1 glow berry, 1 light dye and 1 frog essence.",
+            "The verdant froglight can be crafted with 1 green dye, 1 glow berry, 1 light dye and 1 frog essence."
+          ]
+        }
+    ]
+  }
+},
+{
+  "id": "cobweb_and_string",
+  "type": "craft",
+  "title_fr": "Toile d'araignée et fil - Craft",
+  "title_en": "Cobweb and String - Craft",
+  "description_fr": "Ce craft permet de créer de la toile d'araignée et du fil à partir de celle-ci.",
+  "description_en": "This craft allows you to create cobweb and string from it.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft du fil:", ""],
+          "images_fr": [
+            "../images/mod1/string_recipe.png"
+          ]
+        },
+        {
+          "captions_fr": ["Craft de la toile d'araignée:", ""],
+          "images_fr": [
+            "../images/mod1/cobweb by string_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of string :", ""],
+          "images_en": [
+            "../images/mod1/string_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of cobweb :", ""],
+          "images_en": [
+            "../images/mod1/cobweb by string_recipe.png"
+          ]
+        }
+    ]
+  }
+},
+{
+  "id": "sponge",
+  "type": "craft",
+  "title_fr": "Éponge - Craft",
+  "title_en": "Sponge - Craft",
+  "description_fr": "Ce bloc absorbe l'eau.",
+  "description_en": "This block absorbs water.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft de l'éponge :", ""],
+          "images_fr": [
+            "../images/mod1/sponge_recipe.png"
+          ]
+        },
+        {
+          "title_fr": "Notes",
+          "items_fr": [
+            "Peut être crafté avec 1 bloc de sable, 4 herbes aquatiques et 4 poissons-globes."
+          ]
+        },
+        {
+          "captions_en": ["Craft of sponge :", ""],
+          "images_en": [
+            "../images/mod1/sponge_recipe.png"
+          ]
+        },
+        {
+          "title_en": "Notes",
+          "items_en": [
+            "May be crafted with 1 sand block, 4 sea grasses and 4 pufferfish."
+          ]
+        }
+    ]
+  }
+},
+{
+  "id": "heavycore",
+  "type": "craft",
+  "title_fr": "Noyau lourd - Craft",
+  "title_en": "Heavy Core - Craft",
+  "description_fr": "Cet item est utilisé pour créer une arme.",
+  "description_en": "This item is used to craft weapons.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft du noyau lourd :", ""],
+          "images_fr": [
+            "../images/mod1/heavy_core_recipe.png"
+          ]
+        },
+        {
+          "title_fr": "Notes",
+          "items_fr": [
+            "Peut être crafté avec 1 bloc de fer, 4 lingots de fer et 4 quartz."
+          ]
+        },
+        {
+          "captions_en": ["Craft of heavy core :", ""],
+          "images_en": [
+            "../images/mod1/heavy_core_recipe.png"
+          ]
+        },
+        {
+          "title_en": "Notes",
+          "items_en": [
+            "May be crafted with 1 iron block, 4 iron ingots and 4 quartz."
+          ]
+        }
+    ]
+  }
 }
 ]
-
-
