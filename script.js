@@ -1948,6 +1948,28 @@ function showCards(modId) {
   }, true);
 })();
 
+// INIT — Bouton "← Retour" (Cartes des mods)
+(function wireCardBackOnce(){
+  if (window.__cardBackWired) return;
+  window.__cardBackWired = true;
+
+  document.addEventListener('click', (e) => {
+    const back = e.target.closest('#mod1 .card-detail .back-btn, #mod2 .card-detail .back-btn');
+    if (!back) return;
+    e.preventDefault();
+
+    // 1) Si l’URL contient déjà une carte (…#p=modX&card=...), on remonte l'historique navigateur
+    const sp = new URLSearchParams((location.hash || '').slice(1));
+    if (sp.get('card')) { history.back(); return; }
+
+    // 2) Sinon on ferme simplement le détail pour revenir à la grille
+    const page = back.closest('.page');
+    if (page && typeof hideCardDetail === 'function') {
+      hideCardDetail(page.id); // "mod1" | "mod2"
+    }
+  }, true);
+})();
+
 /********************
  * INIT — Recherche & filtres des cartes (délégation, fix)
  ********************/
@@ -2632,15 +2654,14 @@ document.addEventListener('click', (e) => {
   if (typeof origShow === 'function') {
     window.showCardDetail = function(modId, el) {
       const id = el?.getAttribute('data-id') || '';
-      setParams({ p: modId, card: id }, true);
+      const sp = new URLSearchParams((location.hash || '').replace(/^#/, ''));
+      const alreadyOnCard = !!sp.get('card');
+
+      // Si on vient déjà d'une carte -> pushState (replace = false) pour permettre "retour" vers la carte précédente
+      // Si on vient de la grille -> replaceState (replace = true) pour éviter d'empiler des états inutiles
+      setParams({ p: modId, card: id }, false);
+
       return origShow.apply(this, arguments);
-    };
-  }
-  const origHide = window.hideCardDetail;
-  if (typeof origHide === 'function') {
-    window.hideCardDetail = function(modId) {
-      setParams({ card: null }, true);
-      return origHide.apply(this, arguments);
     };
   }
 
