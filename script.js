@@ -545,8 +545,18 @@ function showPage(pageId) {
   if (pageId === 'patchnotes') {
     if (list)   list.style.display = 'flex';
     if (detail) detail.style.display = 'none';
-    if (typeof renderPatchList === 'function') renderPatchList();
+
+    const side = document.querySelector('#patchnotes .side-buttons');
+    if (side) {
+      const saved = localStorage.getItem('patchnotes:cat') || 'all';
+      side.querySelectorAll('.card-btn').forEach(b => b.classList.remove('active'));
+      (side.querySelector(`.card-btn[data-cat="${saved}"]`) ||
+      side.querySelector(`.card-btn[data-cat="all"]`))?.classList.add('active');
+    }
+
+    renderPatchList();
   }
+
 
   // 8) accueil : barre de statuts
   const bar  = document.getElementById('home-status');
@@ -1491,6 +1501,25 @@ window.addEventListener('DOMContentLoaded', () => {
   const startPage = (saved && document.getElementById(saved)) ? saved : 'accueil';
   showPage(startPage);
   updateBackToTop(startPage);
+});
+
+// Gestion des filtres Patch Notes
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('#patchnotes .side-buttons .card-btn[data-cat]');
+  if (!btn) return;
+
+  e.preventDefault();
+
+  // retirer .active partout, l'ajouter sur le bouton cliqué
+  const group = btn.closest('.side-buttons');
+  if (group) group.querySelectorAll('.card-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // sauvegarder le choix
+  try { localStorage.setItem('patchnotes:cat', btn.dataset.cat); } catch {}
+
+  // relancer le rendu de la liste filtrée
+  renderPatchList();
 });
 
 /********************
