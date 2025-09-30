@@ -2009,6 +2009,11 @@
 {
   "id": "totemcraft",
   "type": "craft",
+  "image": "../images/mod1/totem_of_undying.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_height": 90,
+  "detail_right_height": 200,
   "title_fr": "Totem d'immortalité - Craft",
   "title_en": "Totem of Undying - Craft",
   "description_fr": "Ce totem donne la vie apres la mort.",
@@ -2047,6 +2052,11 @@
 {
   "id": "mobspawner",
   "type": "craft",
+  "image": "../images/mod1/mob_spawner.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_height": 90,
+  "detail_right_height": 200,
   "title_fr": "Générateur de mobs - Craft",
   "title_en": "Mob Spawner - Craft",
   "description_fr": "Ce bloc génère des créatures.",
@@ -2225,6 +2235,11 @@
 {
   "id": "sponge",
   "type": "craft",
+  "image": "../images/mod1/sponge.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_height": 90,
+  "detail_right_height": 200,
   "title_fr": "Éponge - Craft",
   "title_en": "Sponge - Craft",
   "description_fr": "Ce bloc absorbe l'eau.",
@@ -2275,6 +2290,11 @@
 {
   "id": "heavycore",
   "type": "craft",
+  "image": "../images/mod1/heavy_core.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_height": 90,
+  "detail_right_height": 200,
   "title_fr": "Noyau lourd - Craft",
   "title_en": "Heavy Core - Craft",
   "description_fr": "Cet item est utilisé pour créer une arme.",
@@ -2317,6 +2337,199 @@
           "title_en": "Notes",
           "items_en": [
             "May be crafted with 1 iron block, 4 iron ingots and 4 quartz."
+          ]
+        }
+    ]
+  }
+},
+{
+  "id": "elytra",
+  "type": "craft",
+  "image": "../images/mod1/elytra.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_height": 90,
+  "detail_right_height": 200,
+  "title_fr": "Élytre - Craft",
+  "title_en": "Elytra - Craft",
+  "description_fr": "Cet item permet de planer dans les airs.",
+  "description_en": "This item allows you to glide through the air.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft de l'élytre :", ""],
+          "images_fr": [
+            "../images/mod1/elytra_recipe.png"
+          ]
+        },
+        {
+          "title_fr": "Notes",
+          "items_fr": [
+            "Peut être crafté avec 1 colorant du ciel, 4 membranes de phantom et 1 cuir renforcé."
+          ]
+        },
+        {
+          "captions_en": ["Craft of elytra :", ""],
+          "images_en": [
+            "../images/mod1/elytra_recipe.png"
+          ]
+        },
+        {
+          "title_en": "Notes",
+          "items_en": [
+            "May be crafted with 1 sky dye, 4 phantom membranes and 1 reinforced leather."
+          ]
+        }
+    ]
+  }
+},
+{
+  "id": "suspicious_sand_and_gravel",
+  "type": "craft",
+  "image_left": "../images/mod1/suspicious_gravel.webp",
+    "image_left_pixelated": true,
+    "image": "../images/mod1/suspisious_sand.webp",
+    "image_full": false,
+    "image_pixelated": true,
+    "thumb_pair_height": 90,
+    "detail_pair_height": 230,
+  "title_fr": "Sable et gravier suspects - Craft",
+  "title_en": "Suspicious Sand and Gravel - Craft",
+  "description_fr": "Ce bloc permet en tant normal d'obtenir des items.",
+  "description_en": "This block normally allows you to obtain items.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft du sable suspect :", ""],
+          "images_fr": [
+            "../images/mod1/suspicious_sand_recipe.png"
+          ]
+        },
+        {
+          "captions_fr": ["Craft du gravier suspect :", ""],
+          "images_fr": [
+            "../images/mod1/suspicious_gravel_recipe.png"
+          ]
+        },
+        {
+          "title_fr": "Notes",
+          "items_fr": [
+            "Se craft avec 9 grain de sable",
+            "Se craft avec 9 poudre a canon"
+          ]
+        },
+        {
+          "title_fr": "Attention",
+          "items_fr": [
+            "Vous n'avez pas les différents loots que vous pouvez avoir dans le bloc qui se génère naturellement !"
+          ]
+        },
+        {
+          "captions_en": ["Craft of suspicious sand :", ""],
+          "images_en": [
+            "../images/mod1/suspicious_sand_recipe.png"
+          ]
+        },
+        {
+          "captions_en": ["Craft of suspicious gravel :", ""],
+          "images_en": [
+            "../images/mod1/suspicious_gravel_recipe.png"
+          ]
+        },
+        {
+          "title_en": "Notes",
+          "items_en": [
+            "Can be crafted with 9 sand grains",
+            "Can be crafted with 9 gunpowder"
+          ]
+        },
+        {
+          "title_en": "Attention",
+          "items_en": [
+            "You don’t have the different loot you can have in the block that generates naturally !"
+          ]
+        }
+    ]
+  }
+},
+{
+  "id": "saddle",
+  "type": "craft",
+  "image": "../images/mod1/saddle.png",
+  "image_full": false,
+  "image_pixelated": true,
+  "thumb_height": 90,
+  "detail_right_height": 200,
+  "title_fr": "Selle - Craft",
+  "title_en": "Saddle - Craft",
+  "description_fr": "Cet item permet de monter sur des chevaux, cochons, ânes, mules, etc.",
+  "description_en": "This item allows you to ride horses, pigs, donkeys, mules, etc.",
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Cuisson / craft",
+        "title_en": "Craft or smelting",
+        "items_fr": [
+          "Type de recette: craft",
+          "XP : 0",
+          "Temps de cuisson : 0"
+        ],
+        "items_en": [
+          "Recipe type: craft",
+          "Xp reward: 0",
+          "Cooking time: 0"
+        ]
+      },
+        {
+          "captions_fr": ["Craft de la selle :", ""],
+          "images_fr": [
+            "../images/mod1/saddle_recipe.png"
+          ]
+        },
+        {
+          "title_fr": "Notes",
+          "items_fr": [
+            "Se craft evidemment avec 5 cuir."
+          ]
+        },
+        {
+          "captions_en": ["Craft of saddle :", ""],
+          "images_en": [
+            "../images/mod1/saddle_recipe.png"
+          ]
+        },
+        {
+          "title_en": "Notes",
+          "items_en": [
+            "Obviously can be crafted with 5 leather."
           ]
         }
     ]
