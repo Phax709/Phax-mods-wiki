@@ -220,6 +220,68 @@ function hide(el) { if (el) el.style.display = 'none'; }
 function addClass(el, c) { if (el) el.classList.add(c); }
 function remClass(el, c) { if (el) el.classList.remove(c); }
 function hasClass(el, c) { return !!(el && el.classList.contains(c)); }
+// --- URL helper (hash) : écrit p / type / card / q...
+function setParams(obj, replace = false) {
+  const sp = new URLSearchParams((location.hash || '').slice(1));
+  Object.entries(obj || {}).forEach(([k, v]) => {
+    if (v == null || v === '') sp.delete(k); else sp.set(k, v);
+  });
+  const next = '#' + sp.toString();
+  if (replace) history.replaceState(null, '', next);
+  else         history.pushState(null, '', next);
+}
+
+function syncFilterActive(modId){
+  const page  = document.getElementById(modId);
+  if (!page) return;
+  const type  = localStorage.getItem(`${modId}:lastType`) || 'all';
+  const group = page.querySelector('.side-buttons');
+  if (!group) return;
+
+  group.querySelectorAll('.card-btn').forEach(b => b.classList.remove('active'));
+  (group.querySelector(`.card-btn[data-type="${type}"]`)
+    || group.querySelector(`.card-btn[data-type="all"]`)
+  )?.classList.add('active');
+}
+
+function markFilterActive(modId, type){
+  const page  = document.getElementById(modId);
+  if (!page) return;
+  const group = page.querySelector('.side-buttons');
+  if (!group) return;
+
+  // clé finale (par défaut 'all')
+  const key = (type && type !== 'all') ? type : 'all';
+
+  // reset
+  group.querySelectorAll('.card-btn').forEach(btn => {
+    btn.classList.remove('active');
+    btn.removeAttribute('aria-pressed');
+  });
+
+  // cible
+  const target =
+    group.querySelector(`.card-btn[data-type="${key}"]`)
+    || group.querySelector(`.card-btn[data-type="all"]`);
+
+  if (target){
+    target.classList.add('active');
+    target.setAttribute('aria-pressed', 'true');
+  }
+}
+
+function getCardsForPage(page){
+  if (!page) return [];
+  if (!page._cards) {
+    const grid = page.querySelector('.cards-grid');
+    page._cards = grid ? Array.from(grid.querySelectorAll('.small-card')) : [];
+  }
+  return page._cards;
+}
+
+function debounce(fn, delay=120){
+  let to; return (...args)=>{ clearTimeout(to); to=setTimeout(()=>fn(...args), delay); };
+}
 
 
 /********************
@@ -434,81 +496,82 @@ function initMenuParametres() {
  * NAVIGATION PAGES
  ********************/
 function showPage(pageId) {
-  // 1) cacher toutes les pages
-  document.querySelectorAll('.page').forEach(p => (p.style.display = 'none'));
+  // 1) masquer toutes les pages
+  document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
 
   // 2) afficher la page demandée
   const page = document.getElementById(pageId);
   if (page) page.style.display = 'block';
 
-  // nav actif (header)
+  // 3) nav actif (header + drawer mobile)
   document.querySelectorAll('.bandeau nav a').forEach(a => a.classList.remove('active'));
   const headerNavId = (pageId === 'credits') ? 'nav-accueil' : ('nav-' + pageId);
-  const nav = document.getElementById(headerNavId);
-  if (nav) nav.classList.add('active');
+  document.getElementById(headerNavId)?.classList.add('active');
 
-
-  // Activer aussi le lien du drawer (mobile)
   document.querySelectorAll('#mobileDrawer .drawer-link').forEach(a => a.classList.remove('active'));
-  const dl = document.querySelector(`#mobileDrawer .drawer-link[data-page="${pageId}"]`);
-  if (dl) dl.classList.add('active');
+  document.querySelector(`#mobileDrawer .drawer-link[data-page="${pageId}"]`)?.classList.add('active');
 
-  // 3bis) mémoriser la dernière page
+  // 4) état mémorisé
   try { localStorage.setItem('lastPage', pageId); } catch {}
 
-  // 4) état par page
+  // 5) éléments contextuels
   const grid   = page?.querySelector('.cards-grid');
   const list   = page?.querySelector('.patch-list');
   const detail = page?.querySelector('.card-detail');
   const status = page?.querySelector('.update-panel');
-
-  // fermer les panneaux contextuels
   if (status) status.style.display = 'none';
   if (detail) detail.style.display = 'none';
 
-  // Pages de mods : ré-affiche la grille & recharge les cartes
+  // 6) pages de mods : charger au besoin + restaurer vue & filtre
   if (pageId === 'mod1' || pageId === 'mod2') {
     if (grid) grid.style.display = 'grid';
-    if (pageId === 'mod1' && typeof ensureCards === 'function') ensureCards('mod1', {force:true});
-    if (pageId === 'mod2' && typeof ensureCards === 'function') ensureCards('mod2', {force:true});
 
-    // Restaurer l’état mémorisé : Statut ou Grille (+ type filtré)
-    const lastView = localStorage.getItem(`${pageId}:lastView`);
+    // charge les cartes si pas encore en cache (pas de re-render forcé)
+    if (pageId === 'mod1' && typeof ensureCards === 'function') ensureCards('mod1');
+    if (pageId === 'mod2' && typeof ensureCards === 'function') ensureCards('mod2');
+
+    const lastView  = localStorage.getItem(`${pageId}:lastView`);
+    const savedType = localStorage.getItem(`${pageId}:lastType`) || 'all';
+
     if (lastView === 'status') {
-      showStatus(pageId); // cache la grille et ouvre "Statut"
+      if (typeof showStatus === 'function') showStatus(pageId);
     } else {
-      const savedType = localStorage.getItem(`${pageId}:lastType`) || 'all';
-      const btn = page.querySelector(`.side-buttons .card-btn[data-type="${savedType}"]`);
-      if (btn) btn.click(); // applique le filtre et active le bouton
-      else {
-        // si pas de bouton trouvé, on mémorise au moins la vue "grid"
-        try { localStorage.setItem(`${pageId}:lastView`, 'grid'); } catch {}
-      }
+      if (typeof filterCategory === 'function') filterCategory(pageId, savedType);
+      if (typeof markFilterActive === 'function') markFilterActive(pageId, savedType);
     }
   }
 
+  // 7) patch notes
   if (pageId === 'patchnotes') {
     if (list)   list.style.display = 'flex';
     if (detail) detail.style.display = 'none';
-    renderPatchList();
+    if (typeof renderPatchList === 'function') renderPatchList();
   }
 
-  // 👉 rafraîchir les chips à chaque retour sur Accueil
-  if (pageId === 'accueil' && window.__refreshHomeChips) {
-    window.__refreshHomeChips();
-  }
-  // Affiche la barre des chips seulement sur Accueil
-  const bar = document.getElementById('home-status');
-  if (bar) bar.style.display = (pageId === 'accueil' ? 'flex' : 'none');
+  // 8) accueil : barre de statuts
+  const bar  = document.getElementById('home-status');
   const rail = document.getElementById('statusRail');
+  if (bar)  bar.style.display  = (pageId === 'accueil' ? 'flex'  : 'none');
   if (rail) rail.style.display = (pageId === 'accueil' ? 'block' : 'none');
-  if (pageId === 'accueil') ensureStatusTitle();
+  if (pageId === 'accueil') {
+    if (typeof ensureStatusTitle === 'function') ensureStatusTitle();
+    if (window.__refreshHomeChips) window.__refreshHomeChips();
+  }
 
-  // 5) remonter
+  // 9) UX : remonter, titre, back-to-top
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  setPageTitle(ETAT.langue);
+  if (typeof setPageTitle === 'function') setPageTitle(ETAT.langue);
+  if (typeof updateBackToTop === 'function') updateBackToTop(pageId);
 
-  updateBackToTop(pageId);
+  // 10) URL : p + filtre mémorisé (si ≠ all), sans empiler l’historique
+  if (typeof setParams === 'function') {
+    let t = undefined;
+    try {
+      const saved = localStorage.getItem(`${pageId}:lastType`);
+      if (saved && saved !== 'all') t = saved;
+    } catch {}
+    setParams({ p: pageId, type: t, card: undefined }, true);
+  }
 }
 
 /********************
@@ -523,43 +586,39 @@ function filterCategory(pageId, category) {
   const detail = page.querySelector('.card-detail');
   const status = page.querySelector('.update-panel');
 
-  // fermer Statut + Détail, rouvrir la vue liste/grille
   if (status) status.style.display = 'none';
   if (detail) detail.style.display = 'none';
   if (grid)   grid.style.display   = 'grid';
   if (list)   list.style.display   = 'flex';
 
-  // appliquer le filtre aux cartes
-  if (grid) {
-    grid.querySelectorAll('.small-card').forEach(card => {
-      card.style.display = (category === 'all' || card.classList.contains(category)) ? 'block' : 'none';
-    });
-  }
+  const key = (category && category !== 'all') ? category : 'all';
 
-  // appliquer le filtre aux patch entries (si tu utilises encore les classes)
-  if (list) {
-    list.querySelectorAll('.patch-entry').forEach(entry => {
-      entry.style.display = (category === 'all' || entry.classList.contains(category)) ? 'flex' : 'none';
-    });
-  }
+  // 🔸 On réutilise la NodeList mise en cache
+  const cards = getCardsForPage(page);
+  cards.forEach(card => {
+    const show = (key === 'all') || card.classList.contains(key);
+    // IMPORTANT : '' (pas 'block') pour laisser la grid gérer l’affichage
+    card.style.display = show ? '' : 'none';
+  });
 
-  // bouton actif (menu gauche)
+  // État UI + mémorisation + URL (une seule fois)
   const group = page.querySelector('.side-buttons');
   if (group) {
     group.querySelectorAll('.card-btn').forEach(b => b.classList.remove('active'));
-    const btn = group.querySelector(`.card-btn[data-type="${category}"]`) ||
-                group.querySelector(`.card-btn[onclick*="'${pageId}', '${category}'"]`) ||
-                group.querySelector(`.card-btn[onclick*="'${pageId}','${category}'"]`);
-    if (btn) btn.classList.add('active');
+    (group.querySelector(`.card-btn[data-type="${key}"]`) ||
+     group.querySelector(`.card-btn[data-type="all"]`))?.classList.add('active');
   }
-  // mémoriser l’état choisi (utile si les boutons appellent filterCategory via onclick)
+
   try {
     localStorage.setItem('lastPage', pageId);
     localStorage.setItem(`${pageId}:lastView`, 'grid');
-    localStorage.setItem(`${pageId}:lastType`, category || 'all');
+    localStorage.setItem(`${pageId}:lastType`, key);
   } catch {}
-}
 
+  if (typeof setParams === 'function') {
+    setParams({ p: pageId, type: (key !== 'all') ? key : undefined, card: undefined }, true);
+  }
+}
 
 /********************
  * RECHERCHE (cartes) — corrige l’erreur "pageId" et force le retour à la grille
@@ -572,25 +631,19 @@ function searchCards(modId, query) {
   const detail = page.querySelector('.card-detail');
   const status = page.querySelector('.update-panel');
 
-  // fermer Statut + Détail et revenir sur la grille
   if (status) status.style.display = 'none';
   if (detail) detail.style.display = 'none';
   if (grid)   grid.style.display   = 'grid';
 
-  // filtrer par titre + description (accent-insensible)
   const qn = normalizeText(query || '');
-  if (!grid) return;
-  grid.querySelectorAll('.small-card').forEach(card => {
+  const cards = getCardsForPage(page);
+  cards.forEach(card => {
     const t = normalizeText(card.querySelector('h4')?.textContent || '');
     const d = normalizeText(card.querySelector('p')?.textContent  || '');
-    card.style.display = (!qn || t.includes(qn) || d.includes(qn)) ? 'block' : 'none';
+    // 🔸 '' (pas 'block') pour ne pas casser la grille
+    card.style.display = (!qn || t.includes(qn) || d.includes(qn)) ? '' : 'none';
   });
-
 }
-
-
-
-
 
 /********************
  * PATCHNOTES
@@ -913,13 +966,81 @@ function showCardDetail(modId, el) {
   try { page.querySelector('.card-detail')?.setAttribute('data-current-card-id', el.getAttribute('data-id') || ''); } catch(_){}
 }
 
+// Conserver le filtre dans l'URL quand on ouvre une carte (pour que Retour garde la liste filtrée)
+(function patchShowCardDetail(){
+  if (window.__patchShowCardDetail) return;
+  window.__patchShowCardDetail = true;
+
+  const orig = window.showCardDetail;
+  if (typeof orig !== 'function') return;
+
+  window.showCardDetail = function(modId, el){
+    const id = el?.getAttribute('data-id') || '';
+
+    // filtre "source de vérité" = ce qu'on a mémorisé
+    let type = 'all';
+    try { type = localStorage.getItem(`${modId}:lastType`) || 'all'; } catch {}
+
+    setParams({
+      p: modId,
+      card: id,
+      type: (type && type !== 'all') ? type : undefined
+    }, false); // PUSH (pour que le bouton Retour revienne d'abord ici)
+
+    return orig.apply(this, arguments);
+  };
+})();
+
+// Récupère la clé de filtre active pour une page de mod
+function __getActiveFilter(modId){
+  // 1) ce qu'on a mémorisé (source de vérité)
+  try {
+    const saved = localStorage.getItem(`${modId}:lastType`);
+    if (saved) return saved;
+  } catch {}
+
+  // 2) bouton actif dans l'UI (secours)
+  const btnActive = document.querySelector(`#${modId} .side-buttons .card-btn.active`);
+  if (btnActive) return btnActive.getAttribute('data-type') || 'all';
+
+  // 3) URL (secours)
+  const sp = new URLSearchParams((location.hash || '').slice(1));
+  return sp.get('type') || 'all';
+}
+
 function hideCardDetail(modId) {
-  const page = document.getElementById(modId);
+  const page  = document.getElementById(modId);
   if (!page) return;
-  const liste = page.querySelector('.cards-grid');
-  const vue   = page.querySelector('.card-detail');
-  if (liste) liste.style.display = 'grid';
-  if (vue)   vue.style.display   = 'none';
+
+  const grid  = page.querySelector('.cards-grid');
+  const view  = page.querySelector('.card-detail');
+
+  if (grid) grid.style.display = 'grid';
+  if (view) view.style.display = 'none';
+
+  // Filtre mémorisé
+  let type = 'all';
+  try { type = localStorage.getItem(`${modId}:lastType`) || 'all'; } catch {}
+
+  // Réapplique le filtre (ne pas forcer display:block — on laisse '' pour la grid)
+  if (typeof filterCategory === 'function') filterCategory(modId, type);
+
+  // URL : on enlève la carte, on garde le filtre si ≠ all (REPLACE)
+  if (typeof setParams === 'function') {
+    setParams({
+      p: modId,
+      card: undefined,
+      type: (type && type !== 'all') ? type : undefined
+    }, true);
+  }
+
+  // Back-to-top
+  if (typeof updateBackToTop === 'function') updateBackToTop(modId);
+  if (grid) requestAnimationFrame(() => grid.dispatchEvent(new Event('scroll')));
+
+  filterCategory(modId, type);
+  syncFilterActive(modId);
+  markFilterActive(modId, type);
 }
 
 /********************
@@ -1903,9 +2024,11 @@ async function ensureCards(modId, opts = {}) {
       console.warn('[cards]', modId, e);
     }
   }
+
+  grid.querySelectorAll('img').forEach(img => {
+    if (!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+  });
 }
-
-
 
 /********************
  * CARTES — forcer l'affichage de la grille
@@ -2649,18 +2772,14 @@ document.addEventListener('click', (e) => {
     setParams({ p: page, q: input.value || '' }, true);
   }, true);
 
-  // détail carte
+  // détail carte → garde le type courant dans l’URL
   const origShow = window.showCardDetail;
   if (typeof origShow === 'function') {
     window.showCardDetail = function(modId, el) {
       const id = el?.getAttribute('data-id') || '';
       const sp = new URLSearchParams((location.hash || '').replace(/^#/, ''));
-      const alreadyOnCard = !!sp.get('card');
-
-      // Si on vient déjà d'une carte -> pushState (replace = false) pour permettre "retour" vers la carte précédente
-      // Si on vient de la grille -> replaceState (replace = true) pour éviter d'empiler des états inutiles
-      setParams({ p: modId, card: id }, false);
-
+      const type = sp.get('type') || null;
+      setParams({ p: modId, card: id, type: type || undefined }, false);
       return origShow.apply(this, arguments);
     };
   }

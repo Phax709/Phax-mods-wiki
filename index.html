@@ -138,7 +138,23 @@
         Enquête de satisfaction
       </a>
     </div>
+    <hr class="help-sep">
+
+  <h4 class="help-subtitle" data-translate="help_site_title">Améliorer le site</h4>
+  <p class="help-text" data-translate="help_site_desc">
+    Donnez votre avis sur l’ergonomie, la vitesse, les contenus, les couleurs, et autre sur le site.
+  </p>
+
+  <div class="help-actions">
+    <!-- Lien direct vers le Google Forms de satisfaction du site -->
+    <a class="card-btn wiki btn-violet"
+      href="https://forms.gle/FxZn4JaycRJdJZht5"
+      target="_blank" rel="noopener"
+      data-translate="site_survey_btn">
+      Enquête de satisfaction et de retour sur le site
+    </a>
   </div>
+</div>
 </section>
     
     <section id="mod1" class="page" style="display:none;">
@@ -160,15 +176,15 @@
         </div>
       </div>
       <div class="side-buttons">
-        <button class="card-btn wiki" onclick="filterCategory('mod1','all')"      data-translate="tout">Tout</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','bloc')"     data-translate="blocs">Blocs</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','minerai')"  data-translate="minerai">Minerais</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','item')"     data-translate="items">Items</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','craft')"    data-translate="craft">Craft</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','nature')"   data-translate="nature">Nature</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','structure')"data-translate="structure">Structures</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod1','mob')"      data-translate="creatures">Créatures</button>
-        <button class="card-btn wiki" onclick="showStatus('mod1')"                data-translate="statut">Statut</button>
+        <button class="card-btn wiki" data-type="all"       onclick="filterCategory('mod1','all')"        data-translate="tout">Tout</button>
+        <button class="card-btn wiki" data-type="bloc"      onclick="filterCategory('mod1','bloc')"       data-translate="blocs">Blocs</button>
+        <button class="card-btn wiki" data-type="minerai"   onclick="filterCategory('mod1','minerai')"    data-translate="minerai">Minerais</button>
+        <button class="card-btn wiki" data-type="item"      onclick="filterCategory('mod1','item')"       data-translate="items">Items</button>
+        <button class="card-btn wiki" data-type="craft"     onclick="filterCategory('mod1','craft')"      data-translate="craft">Craft</button>
+        <button class="card-btn wiki" data-type="nature"    onclick="filterCategory('mod1','nature')"     data-translate="nature">Nature</button>
+        <button class="card-btn wiki" data-type="structure" onclick="filterCategory('mod1','structure')"  data-translate="structure">Structures</button>
+        <button class="card-btn wiki" data-type="mob"       onclick="filterCategory('mod1','mob')"        data-translate="creatures">Créatures</button>
+        <button class="card-btn wiki update-btn"            onclick="showStatus('mod1')"                  data-translate="statut">Statut</button>
       </div>
     </aside>
     <div class="page-content">
@@ -209,15 +225,15 @@
       </div>
 
       <div class="side-buttons">
-        <button class="card-btn wiki" onclick="filterCategory('mod2','all')"      data-translate="tout">Tout</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2','bloc')"     data-translate="blocs">Blocs</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2','minerai')"  data-translate="minerai">Minerais</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2','item')"     data-translate="items">Items</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2','craft')"    data-translate="craft">Craft</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2','nature')"   data-translate="nature">Nature</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2','structure')"data-translate="structure">Structures</button>
-        <button class="card-btn wiki" onclick="filterCategory('mod2','mob')"      data-translate="creatures">Créatures</button>
-        <button class="card-btn wiki" onclick="showStatus('mod2')"                data-translate="statut">Statut</button>
+        <button class="card-btn wiki" data-type="all"       onclick="filterCategory('mod2','all')"        data-translate="tout">Tout</button>
+        <button class="card-btn wiki" data-type="bloc"      onclick="filterCategory('mod2','bloc')"       data-translate="blocs">Blocs</button>
+        <button class="card-btn wiki" data-type="minerai"   onclick="filterCategory('mod2','minerai')"    data-translate="minerai">Minerais</button>
+        <button class="card-btn wiki" data-type="item"      onclick="filterCategory('mod2','item')"       data-translate="items">Items</button>
+        <button class="card-btn wiki" data-type="craft"     onclick="filterCategory('mod2','craft')"      data-translate="craft">Craft</button>
+        <button class="card-btn wiki" data-type="nature"    onclick="filterCategory('mod2','nature')"     data-translate="nature">Nature</button>
+        <button class="card-btn wiki" data-type="structure" onclick="filterCategory('mod2','structure')"  data-translate="structure">Structures</button>
+        <button class="card-btn wiki" data-type="mob"       onclick="filterCategory('mod2','mob')"        data-translate="creatures">Créatures</button>
+        <button class="card-btn wiki update-btn"            onclick="showStatus('mod2')"                  data-translate="statut">Statut</button>
       </div>
     </aside>
 

@@ -2445,3 +2445,50 @@ body.theme-bleu .back-to-top{
   .back-to-top{ width: 48px; height: 48px; font-size: 22px; }
 }
 
+/* Filtre ACTIF (uniquement les boutons de filtre avec data-type) */
+#mod1 .side-buttons .card-btn[data-type].active,
+#mod2 .side-buttons .card-btn[data-type].active{
+  background: var(--accent, #2f7ef7) !important; /* bleu du thème */
+  color: #fff !important;
+  font-weight: 700;                               /* tu peux enlever si tu veux plus de gras */
+  border-color: color-mix(in srgb, var(--accent, #2f7ef7) 75%, transparent);
+}
+
+/* Ne pas perdre la couleur au survol */
+#mod1 .side-buttons .card-btn[data-type].active:hover,
+#mod2 .side-buttons .card-btn[data-type].active:hover{
+  background: var(--accent, #2f7ef7) !important;
+  color: #fff !important;
+}
+
+/* force l’état visuel du filtre actif dans les menus latéraux */
+.side-buttons .card-btn.active{
+  background: var(--accent-strong, #1565c0) !important;
+  color: #fff !important;
+}
+
+/* Forcer la couleur du FILTRE ACTIF (écrase .card-btn.wiki) */
+#mod1 .side-buttons .card-btn.wiki.active,
+#mod2 .side-buttons .card-btn.wiki.active,
+#mod1 .side-buttons .card-btn[data-type].active,
+#mod2 .side-buttons .card-btn[data-type].active{
+  background: var(--accent-hover) !important; /* bleu plus foncé du thème */
+  color: #fff !important;
+  font-weight: 700;
+}
+
+/* Optimisation de rendu des cartes */
+.small-card {
+  content-visibility: auto;
+  contain-intrinsic-size: 240px 160px; /* taille estimée pour éviter les sauts de layout */
+}
+
+/* Bouton violet pour l'enquête "site" */
+.card-btn.btn-violet {
+  background-color: #7c4dff;   /* violet principal */
+  color: #fff;
+}
+.card-btn.btn-violet:hover {
+  background-color: #5e35b1;   /* violet foncé au survol */
+  color: #fff;
+}
