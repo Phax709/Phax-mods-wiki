@@ -21,16 +21,26 @@
     ]
   },
   "mod2": {
-    "status": "beta",
+    "status": "dev",
     "updated_at": "indeterminee",
     "description_fr": "Aucune mise à jour en cours de développement.",
     "description_en": "No updates in development.",
     "progress": 5,
     "features_fr": [
-        "Aucune"
+        "Mettre tous les mobs",
+        "Régler les ailes du poulets",
+        "Ajout de nouveaux biomes",
+        "Ajout de nouvelles armes",
+        "Ajout d'un nouveau minerai",
+        "Ajout de nouveaux crafts"
     ],
     "features_en": [
-        "No features"
+        "Add all mobs",
+        "Fix the chicken wings",
+        "Add new biomes",
+        "Add new weapons",
+        "Add a new ore",
+        "Add new crafts"
     ]
   }
 }
