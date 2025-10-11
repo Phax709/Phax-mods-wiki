@@ -522,18 +522,28 @@ function showPage(pageId) {
   if (status) status.style.display = 'none';
   if (detail) detail.style.display = 'none';
 
+  // --- lecture des paramètres URL (ex: #p=mod1&type=minerai)
+  const sp = new URLSearchParams((location.hash || '').slice(1));
+  const urlType = sp.get('type'); // null, 'all' ou une catégorie
+
   // 6) pages de mods : charger au besoin + restaurer vue & filtre
   if (pageId === 'mod1' || pageId === 'mod2') {
     if (grid) grid.style.display = 'grid';
-
-    // charge les cartes si pas encore en cache (pas de re-render forcé)
     if (pageId === 'mod1' && typeof ensureCards === 'function') ensureCards('mod1');
     if (pageId === 'mod2' && typeof ensureCards === 'function') ensureCards('mod2');
 
-    const lastView  = localStorage.getItem(`${pageId}:lastView`);
     const savedType = localStorage.getItem(`${pageId}:lastType`) || 'all';
+    const lastView  = localStorage.getItem(`${pageId}:lastView`) || 'grid';
 
-    if (lastView === 'status') {
+    // Priorité au filtre (URL ou mémorisé ≠ all) → on force la grille
+    const effectiveType = (urlType !== null ? urlType : savedType);
+    const forceGrid = (urlType !== null) || (effectiveType && effectiveType !== 'all');
+
+    if (forceGrid) {
+      try { localStorage.setItem(`${pageId}:lastView`, 'grid'); } catch {}
+      if (typeof filterCategory === 'function') filterCategory(pageId, effectiveType || 'all');
+      if (typeof markFilterActive === 'function') markFilterActive(pageId, effectiveType || 'all');
+    } else if (lastView === 'status') {
       if (typeof showStatus === 'function') showStatus(pageId);
     } else {
       if (typeof filterCategory === 'function') filterCategory(pageId, savedType);
@@ -545,18 +555,8 @@ function showPage(pageId) {
   if (pageId === 'patchnotes') {
     if (list)   list.style.display = 'flex';
     if (detail) detail.style.display = 'none';
-
-    const side = document.querySelector('#patchnotes .side-buttons');
-    if (side) {
-      const saved = localStorage.getItem('patchnotes:cat') || 'all';
-      side.querySelectorAll('.card-btn').forEach(b => b.classList.remove('active'));
-      (side.querySelector(`.card-btn[data-cat="${saved}"]`) ||
-      side.querySelector(`.card-btn[data-cat="all"]`))?.classList.add('active');
-    }
-
-    renderPatchList();
+    if (typeof renderPatchList === 'function') renderPatchList();
   }
-
 
   // 8) accueil : barre de statuts
   const bar  = document.getElementById('home-status');
@@ -573,12 +573,12 @@ function showPage(pageId) {
   if (typeof setPageTitle === 'function') setPageTitle(ETAT.langue);
   if (typeof updateBackToTop === 'function') updateBackToTop(pageId);
 
-  // 10) URL : p + filtre mémorisé (si ≠ all), sans empiler l’historique
+  // 10) URL : p + filtre effectif (si ≠ all), sans empiler l’historique
   if (typeof setParams === 'function') {
     let t = undefined;
     try {
-      const saved = localStorage.getItem(`${pageId}:lastType`);
-      if (saved && saved !== 'all') t = saved;
+      const eff = (urlType !== null ? urlType : (localStorage.getItem(`${pageId}:lastType`) || 'all'));
+      if (eff && eff !== 'all') t = eff;
     } catch {}
     setParams({ p: pageId, type: t, card: undefined }, true);
   }
@@ -1092,24 +1092,35 @@ function statusLabel(raw, lang) {
   return (lang === 'en') ? 'In development' : 'En développement';
 }
 
-
+// ——— Statut (status.json) ———
 let _lastStatusOpen = null;
 
+// Récupère une valeur localisée depuis info[base]
+// - supporte base_lang (ex: next_update_fr), ou objet { fr, en }, ou string simple
+function pickLocalized(info, base, lang) {
+  if (!info) return "";
+  const direct = info[`${base}_${lang}`];
+  if (typeof direct === 'string' && direct.trim()) return direct.trim();
+
+  const node = info[base];
+  if (node && typeof node === 'object') {
+    const v = node[lang];
+    if (typeof v === 'string' && v.trim()) return v.trim();
+  }
+  if (typeof node === 'string' && node.trim()) return node.trim();
+  return "";
+}
+
 async function showStatus(modId) {
-  // Supporte l'ancien id "status-mod1"/"status-mod2" ET le nouveau ".update-panel"
   const panel = document.getElementById(`status-${modId}`) || document.querySelector(`#${modId} .update-panel`);
   if (!panel) return;
 
-  // Masquer cartes + détail (comme avant)
   const grid   = document.querySelector(`#${modId} .cards-grid`);
   const detail = document.querySelector(`#${modId} .card-detail`);
   if (grid)   grid.style.display = 'none';
   if (detail) detail.style.display = 'none';
-
-  // Pas de bordure (garde l’ombre douce)
   panel.style.border = 'none';
 
-  // Cas file:// (fetch bloqué)
   if (location.protocol === 'file:') {
     panel.innerHTML = `
       <p style="color:#c62828">
@@ -1121,7 +1132,6 @@ async function showStatus(modId) {
     return;
   }
 
-  // URL robuste
   const STATUS_URL = new URL('status.json', document.baseURI).toString();
 
   let data;
@@ -1151,77 +1161,77 @@ async function showStatus(modId) {
     return;
   }
 
-  // ===== Badge texte — normalisé
-const stRaw = (info.status || 'dev');     // ex: "release"
-const s     = normalizeStatus(stRaw);     // -> "stable"
-const statusLabelText = statusLabel(stRaw, lang); // -> "Stable"
+  // — Badge texte — normalisé
+  const stRaw = (info.status || 'dev');
+  const s     = normalizeStatus(stRaw);
+  const statusLabelText = statusLabel(stRaw, lang);
 
-// ===== Date à côté du badge (gérée par CSS, sans inline)
-// On lit d'abord une date de mise à jour PRÉVUE (next_update) si présente,
-// sinon on retombe sur updated_at pour ne rien casser.
-let dateLabel = "";
-let isIndet = false;
-const rawPlan = (info.next_update || info.updated_at || '').toString().trim();
+  // — Date / libellé localisé à côté du badge
+  // Essaie d'abord next_update (FR/EN/objet), sinon updated_at
+  let dateLabel = "";
+  let isIndet = false;
+  const rawPlan = (
+    pickLocalized(info, 'next_update', lang) ||
+    pickLocalized(info, 'updated_at', lang) ||
+    ''
+  ).toString().trim();
 
-if (rawPlan) {
-  const low = rawPlan.toLowerCase();
-  isIndet = ['indeterminee','indéterminée','indetermine','indeterminate','unknown','n/a','-','—','?'].includes(low);
+  if (rawPlan) {
+    const low = rawPlan.toLowerCase();
+    isIndet = ['indeterminee','indéterminée','indetermine','indeterminate','unknown','n/a','-','—','?'].includes(low);
 
-  if (isIndet) {
-    // Cas “date indéterminée”
-    dateLabel = (lang === 'fr') ? "Date indéterminée" : "Date indeterminate";
-  } else {
-    // Date valide → on formate puis on préfixe avec la clé de traduction “planned_update”
-    const d = new Date(rawPlan);
-    const human = isNaN(d)
-      ? rawPlan
-      : d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { year:'numeric', month:'long', day:'numeric' });
-    // "Mise à jour prévue pour le " (FR) / "Update planned for " (EN)
-    dateLabel = (translations[lang].planned_update || '') + human;
+    if (isIndet) {
+      dateLabel = (lang === 'fr') ? "Date indéterminée" : "Date indeterminate";
+    } else {
+      const d = new Date(rawPlan);
+      if (isNaN(d)) {
+        // 🔸 Texte libre localisé → tel quel (PAS de préfixe)
+        dateLabel = rawPlan;
+      } else {
+        // 🔸 Vraie date → format + préfixe i18n
+        const human = d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { year:'numeric', month:'long', day:'numeric' });
+        dateLabel = (translations[lang].planned_update || '') + human;
+      }
+    }
   }
-}
 
+  // — Description + fonctionnalités (déjà bi-langue dans ton JSON)
+  const desc  = (lang === 'fr') ? (info.description_fr || '') : (info.description_en || '');
+  const feats = (lang === 'fr') ? (info.features_fr || [])    : (info.features_en || []);
+  const featsHtml = feats.length
+    ? `<h3 data-translate="planned_features">${translations[lang].planned_features}</h3>
+       <ul>${feats.map(li => `<li>${li}</li>`).join('')}</ul>`
+    : '';
 
-// ===== Description + Features (FR/EN)
-const desc  = (lang === 'fr') ? (info.description_fr || '') : (info.description_en || '');
-const feats = (lang === 'fr') ? (info.features_fr || [])    : (info.features_en || []);
-const featsHtml = feats.length
-  ? `<h3 data-translate="planned_features">${translations[lang].planned_features}</h3>
-     <ul>${feats.map(li => `<li>${li}</li>`).join('')}</ul>`
-  : '';
+  // — Progression (seulement si pas stable)
+  const progress = (typeof info.progress === 'number') ? Math.max(0, Math.min(100, info.progress)) : null;
+  const progressHtml = (progress !== null && s !== 'stable')
+    ? `
+      <h3 data-translate="progress_label">${translations[lang].progress_label}</h3>
+      <div class="status-progress">
+        <div class="fill" style="width:${progress}%">${progress}%</div>
+      </div>`
+    : '';
 
-// ===== Progression (seulement si pas stable)
-const progress = (typeof info.progress === 'number') ? Math.max(0, Math.min(100, info.progress)) : null;
-const progressHtml = (progress !== null && s !== 'stable')
-  ? `
-    <h3 data-translate="progress_label">${translations[lang].progress_label}</h3>
-    <div class="status-progress">
-      <div class="fill" style="width:${progress}%">${progress}%</div>
-    </div>`
-  : '';
+  // — Rendu final
+  const title = translations[lang].mod_status_title;
+  panel.innerHTML = `
+    <div class="status-header">
+      <div class="status-badge ${s}">${statusLabelText}</div>
+      ${dateLabel ? `<span class="status-updated-inline${isIndet ? ' is-indet' : ''}">${dateLabel}</span>` : ""}
+    </div>
+    <h3>${title}</h3>
+    <p>${desc}</p>
+    ${progressHtml}
+    ${featsHtml}
+  `;
 
-// ===== Rendu final (markup identique à l’ancien)
-const title = translations[lang].mod_status_title;
-panel.innerHTML = `
-  <div class="status-header">
-    <div class="status-badge ${s}">${statusLabelText}</div>
-    ${dateLabel ? `<span class="status-updated-inline${isIndet ? ' is-indet' : ''}">${dateLabel}</span>` : ""}
-  </div>
-  <h3>${title}</h3>
-  <p>${desc}</p>
-  ${progressHtml}
-  ${featsHtml}
-`;
-
-
-// ⬇️ mémoriser que l’on est en vue "status"
-try {
-  localStorage.setItem('lastPage', modId);
-  localStorage.setItem(`${modId}:lastView`, 'status');
-} catch {}
+  try {
+    localStorage.setItem('lastPage', modId);
+    localStorage.setItem(`${modId}:lastView`, 'status');
+  } catch {}
   panel.style.display = 'block';
 
-  // Activer visuellement le bouton “Statut” (menu gauche)
   const buttons = document.querySelectorAll(`#${modId} .side-buttons .card-btn`);
   buttons.forEach(b => b.classList.remove('active'));
   const statusBtn = Array.from(buttons).find(
@@ -1233,7 +1243,6 @@ try {
 
   _lastStatusOpen = modId;
 }
-
 
 /********************
  * INIT

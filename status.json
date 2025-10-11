@@ -2,27 +2,33 @@
   "mod1": {
     "status": "dev",
     "updated_at": "indeterminee",
+    "next_update_fr": "Pendant les vacances de la Toussaint",
+    "next_update_en": "During the All Saints' Day French vacation",
     "description_fr": "Mise à jour en cours de développement.",
     "description_en": "Updates in development.",
-    "progress": 0,
+    "progress": 70,
     "features_fr": [
         "Ajout d'une pomme en dioptasium",
         "Ajout d'un craft pour la potion de mauvais présage",
         "Corriger la traduction francaise de la porte en résine et du générateur d'xp, bombe nucléaire et les objets en obsidienne",
         "Ajouter de la vegetation dans le biome sakura",
-        "Ajouter la radioactivité sur l'uranium"
+        "Ajouter la radioactivité sur l'uranium",
+        "Plus des nouveautés à venir"
     ],
     "features_en": [
         "Addition of a dioptasium apple",
         "Addition of a craft for the bad omen potion",
         "Fix the French translation of the resin door and the XP generator, nuclear bomb, and obsidian items",
         "Add vegetation to the sakura biome",
-        "Add radioactivity on uranium"
+        "Add radioactivity on uranium",
+        "More new features to come"
     ]
   },
   "mod2": {
     "status": "dev",
     "updated_at": "indeterminee",
+    "next_update_fr":"",
+    "next_update_en":"",
     "description_fr": "Aucune mise à jour en cours de développement.",
     "description_en": "No updates in development.",
     "progress": 5,
