@@ -2492,3 +2492,165 @@ body.theme-bleu .back-to-top{
   background-color: #5e35b1;   /* violet foncé au survol */
   color: #fff;
 }
+
+/* Carrousel occupe toute la rangée dans la grille flex de l'accueil */
+.cards-container .news-featured { flex: 1 1 100%; max-width: 100%; }
+
+/* Sur mobile, le slide passe en 1 colonne (image au-dessus, texte dessous)
+   — si tu as déjà la media query 900px dans le bloc carrousel, c’est ok. */
+@media (max-width: 900px) {
+  .news-featured .slide { grid-template-columns: 1fr; }
+}
+
+/* ——— News / Carrousel ——— */
+
+/* conteneur principal */
+.news-featured { position: relative; }
+
+/* zone de défilement */
+.news-featured .news-viewport {
+  position: relative;                 /* sert de repère aux flèches */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* panneau de contenu */
+.news-featured .news-detail {
+  flex: 1;
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  min-height: 200px;
+  color: #fff;                         /* texte blanc comme Patch Notes */
+}
+.news-featured .news-detail .title { color:#fff; font-weight:800; }
+.news-featured .news-detail .summary { color:#e6eef9; }
+.news-featured .news-meta { opacity:.85; }
+
+/* mise en page : image à gauche, contenu à droite */
+.news-featured .detail-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.news-featured .detail-body.has-visual { grid-template-columns: 260px 1fr; }
+
+.news-featured .visual {
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;             /* plus de carré noir */
+  box-shadow: none;
+  max-width: 220px;
+}
+.news-featured .visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.news-featured .body-col {             /* pour coller le bouton en bas */
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+}
+.news-featured .actions { margin-top: auto; }
+
+/* petite liste de features */
+.news-featured .news-features { margin-top: .6rem; padding-left: 1.1rem; }
+.news-featured .news-features li { color:#e6eef9; margin: .2rem 0; }
+
+/* pastilles d’état */
+.stage-badge {
+  color:#fff !important;               /* texte toujours blanc */
+  font-weight: 700;
+  font-size: 13px;                     /* taille compacte */
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  line-height: 1;
+}
+.stage-badge.release { background:#22c55e; }  /* vert lisible */
+.stage-badge.beta    { background:#f59e0b; }  /* orange      */
+.stage-badge.dev     { background:#ee2929; }  /* rouge       */
+
+/* flèches latérales, centrées verticalement */
+.news-featured .news-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  border: none;
+  cursor: pointer;
+  width: 42px; height: 42px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.55);
+  color: #eaf2ff;
+  font-size: 20px;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+.news-featured .news-nav:hover { background: rgba(0,0,0,0.7); }
+.news-featured .news-nav.prev { left: -6px; }
+.news-featured .news-nav.next { right: -6px; }
+
+/* puces de pagination */
+.news-featured .news-dots {
+  display: flex;
+  gap: .4rem;
+  margin-top: .5rem;
+  justify-content: flex-end;
+}
+.news-featured .news-dots .dot {
+  width: 10px; height: 10px;
+  border-radius: 999px;
+  background: #2a3b57;
+  opacity: .6;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.news-featured .news-dots .dot.active {
+  opacity: 1;
+  background: #6cb4ff;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .news-featured .detail-body.has-visual { grid-template-columns: 1fr; }
+  .news-featured .news-nav { width: 36px; height: 36px; font-size: 18px; }
+  .news-featured .news-nav.prev { left: 6px; }
+  .news-featured .news-nav.next { right: 6px; }
+}
+
+.news-featured .news-head{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:.6rem;
+}
+.news-featured .news-head .news-title{
+  margin:0; 
+  font-size: 1.35rem;   /* plus gros que h3 par défaut */; 
+  font-weight:800; 
+  color:#fff;
+}
+
+/* Titre "mod + version" plus gros */
+.news-featured .modver{
+  margin:.25rem 0 .15rem 0;
+  font-size: 1.35rem;      /* plus gros que .title */
+  font-weight: 800;
+  color: #fff;
+}
+.news-featured .modver .ver{
+  font-weight: 800;
+  opacity: .95;
+}
+
+/* Le titre normal (ex: "Acatar - v1.1.0") peut rester plus petit */
+.news-featured .title{
+  font-size: 1.05rem;
+  font-weight: 700;
+  opacity: .95;
+}
