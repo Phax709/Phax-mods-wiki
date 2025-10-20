@@ -1,27 +1,17 @@
 {
   "mod1": {
-    "status": "dev",
-    "updated_at": "indeterminee",
-    "next_update_fr": "Pendant les vacances de la Toussaint",
-    "next_update_en": "During the All Saints' Day French vacation",
-    "description_fr": "Mise à jour en cours de développement.",
-    "description_en": "Updates in development.",
-    "progress": 70,
+    "status": "release",
+    "updated_at": "2025-10-21",
+    "next_update_fr": "",
+    "next_update_en": "",
+    "description_fr": "Explorez la sérénité du Sakura et la puissance du Lyvora, dans une mise à jour où la vie et la lumière s’épanouissent jusque dans le Nether. ⚙️ Certaines fonctionnalités sont encore en phase de test — vos retours aideront à les peaufiner !",
+    "description_en": "Explore the serenity of Sakura and the power of Lyvora, in an update where life and light flourish even in the Nether. ⚙️ Some features are still in testing — your feedback will help refine them!",
+    "progress": 100,
     "features_fr": [
-        "Ajout d'une pomme en dioptasium",
-        "Ajout d'un craft pour la potion de mauvais présage",
-        "Corriger la traduction francaise de la porte en résine et du générateur d'xp, bombe nucléaire et les objets en obsidienne",
-        "Ajouter de la vegetation dans le biome sakura",
-        "Ajouter la radioactivité sur l'uranium",
-        "Plus des nouveautés à venir"
+        "les fonctionnalités principales de la mise à jour sont terminées et disponibles"
     ],
     "features_en": [
-        "Addition of a dioptasium apple",
-        "Addition of a craft for the bad omen potion",
-        "Fix the French translation of the resin door and the XP generator, nuclear bomb, and obsidian items",
-        "Add vegetation to the sakura biome",
-        "Add radioactivity on uranium",
-        "More new features to come"
+        "the main features of the update are complete and are available"
     ]
   },
   "mod2": {

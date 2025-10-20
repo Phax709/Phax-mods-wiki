@@ -1945,5 +1945,159 @@
         "Added support for French language"
     ]}
   ]
+},
+{
+    "id": "acatar-1.3.0-mc1.21.4",
+    "mod": "acatar",
+    "version": "1.3.0 - The Sakura Spirit Update",
+    "mc": "1.21.4",
+    "stage": "release",
+    "date": "2025-10-21",
+    "title_fr": "Acatar - v1.3.0 - L’Esprit du Sakura",
+    "title_en": "Acatar - v1.3.0 - The Sakura Spirit Update",
+    "image": "images/ui/the_sakura_spirit_update_400_400.png",
+    "sections_fr": [
+    { "title": "🪄AJOUT", "items": [
+      "Les armures du mod (sauf l’armure de l’espace) peuvent désormais avoir un modèle de forge (disponible uniquement avec les matériaux vanilla : diamant, émeraude, fer, or, redstone, etc.)",
+      "Ajout de 2 crafts pour la potion de Mauvais Présage : un dans la table de craft (9 ingrédients) et un dans l’alambic 🧪",
+      "Ajout de la pomme en dioptasium 🍏",
+      "Ajout du soufre, craftable avec de la poudre de blaze 🔥",
+      "Nouveau minerai : le plomb ⛏️",
+      "Nouveau lingot : le Hazmium, obtenu avec du soufre, du plomb, de la poudre lumineuse et de l’or — utilisé pour l’armure Hazmat ⚗️",
+      "L’armure Hazmat est désormais disponible en survie 🧍‍♂️",
+      "Nouvel enchantement : Protection des radiations ☢️",
+      "Ajout de 2 nouveaux avancements 🏆",
+      "Ajout des racines sakura 🌸",
+      "Ajout du tapis de mousse sakura 🌿",
+      "Le champignon sakura apparaît désormais naturellement dans la forêt de sakura 🍄",
+      "Nouvelle fleur mystique : Anthéria 🌺",
+      "Nouvelle créature : le Loup Lyvora 🐺",
+      "Nouvelle nourriture : la Baie Lyvorienne 🍇"
+    ]},
+    { "title": "🧩RÉSOLUTION ET MODIFICATIONS", "items": [
+      "💡 Légère réduction de la luminosité du lingot d’uranium",
+      "☠️ Le minerai d’uranium applique désormais l’effet de poison si vous ne portez pas l’armure Hazmat ou une armure avec “Protection des radiations” (⚠️ cette fonction est encore instable — privilégiez l’armure Hazmat pour le moment)",
+      "🔢 Changement de numéro dans les avancements 5 et 6, devenus 7 et 8",
+      "🧱 Changement de l’icône de l’avancement “Qu’est-ce que c’est ?” (Carmeltazite)",
+      "💣 [⚠️] La bombe nucléaire est toujours en phase de test",
+      "🌾 Le champignon explosif peut désormais être placé sur la terre",
+      "🐗 Réduction du taux d’apparition des Piglins, Hoglins et cochons-zombies dans le biome Sakura",
+      "🌸 [⚠️] Le champignon Sakura ne pousse désormais qu’avec un cristal rouge ou de la poudre d’os",
+      "🈁 Correction : “Sakura Wart Block” devient “Bloc de verrue Sakura”",
+      "🌱 Le Nylium Sakura se propage désormais comme le Nylium carmin lorsqu’il est stimulé à la poudre d’os",
+      "🔥 Le biome Sakura peut désormais générer des portails en ruine naturellement",
+      "👁️ Augmentation de la portée de détection de l’Œil de Révélation"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "🪄ADD", "items": [
+        "All armor sets (except the Space Armor) can now have Smithing Templates (only available with vanilla materials like diamond, emerald, iron, gold, redstone, etc.)",
+        "Added 2 crafting recipes for the Bad Omen potion: one in the crafting table (9 ingredients) and one in the brewing stand 🧪",
+        "Added the Dioptasium Apple 🍏",
+        "Added Sulfur, crafted with blaze powder 🔥",
+        "New ore: Lead ⛏️",
+        "New ingot: Hazmium, crafted with sulfur, lead, glowstone dust, and gold — used for the Hazmat armor ⚗️",
+        "The Hazmat Armor is now available in survival 🧍‍♂️",
+        "New enchantment: Radiation Protection ☢️",
+        "Added 2 new advancements 🏆",
+        "Added Sakura Roots 🌸",
+        "Added Sakura Moss Carpet 🌿",
+        "The Sakura Mushroom now spawns naturally in the Sakura Forest 🍄",
+        "New flower: Anthéria 🌺",
+        "New creature: Lyvora Wolf 🐺",
+        "New food: Lyvorian Berry 🍇"
+    ]},
+    { "title": "🧩FIXES AND MODIFICATIONS", "items": [
+        "💡 Slightly reduced the brightness of the Uranium Ingot",
+        "☠️ Uranium Ore now applies Poison if you’re not wearing the Hazmat Armor or an armor with “Radiation Protection” (⚠️ this feature is still unstable — prefer Hazmat Armor for now)",
+        "🔢 Changed advancement numbers: 5 & 6 → 7 & 8",
+        "🧱 Updated icon for the “What Is This?” advancement (Carmeltazite)",
+        "💣 [⚠️] The Nuclear Bomb is still in testing phase",
+        "🌾 The Explosive Mushroom can now be placed on dirt",
+        "🐗 Reduced Piglin, Hoglin, and Zombified Piglin spawn rates in the Sakura biome",
+        "🌸 [⚠️] The Sakura Mushroom can now only grow with a Red Crystal or Bone Meal",
+        "🈁 Fixed translation: “Sakura Wart Block” → “Bloc de verrue Sakura”",
+        "🌱 Sakura Nylium now spreads like Crimson Nylium when using Bone Meal",
+        "🔥 The Sakura Biome can now naturally generate Ruined Portals",
+        "👁️ Increased detection range of the Eye of Revelation"
+    ]}
+  ]
+},
+{
+    "id": "acatar-1.4.0-mc1.21.1",
+    "mod": "acatar",
+    "version": "1.4.0 - The Sakura Spirit Update",
+    "mc": "1.21.1",
+    "stage": "release",
+    "date": "2025-10-21",
+    "title_fr": "Acatar - v1.4.0 - L’Esprit du Sakura",
+    "title_en": "Acatar - v1.4.0 - The Sakura Spirit Update",
+    "image": "images/ui/the_sakura_spirit_update_400_400.png",
+    "sections_fr": [
+    { "title": "🪄AJOUT", "items": [
+      "Les armures du mod (sauf l’armure de l’espace) peuvent désormais avoir un modèle de forge (disponible uniquement avec les matériaux vanilla : diamant, émeraude, fer, or, redstone, etc.)",
+      "Ajout de 2 crafts pour la potion de Mauvais Présage : un dans la table de craft (9 ingrédients) et un dans l’alambic 🧪",
+      "Ajout de la pomme en dioptasium 🍏",
+      "Ajout du soufre, craftable avec de la poudre de blaze 🔥",
+      "Nouveau minerai : le plomb ⛏️",
+      "Nouveau lingot : le Hazmium, obtenu avec du soufre, du plomb, de la poudre lumineuse et de l’or — utilisé pour l’armure Hazmat ⚗️",
+      "L’armure Hazmat est désormais disponible en survie 🧍‍♂️",
+      "Nouvel enchantement : Protection des radiations ☢️",
+      "Ajout de 2 nouveaux avancements 🏆",
+      "Ajout des racines sakura 🌸",
+      "Ajout du tapis de mousse sakura 🌿",
+      "Le champignon sakura apparaît désormais naturellement dans la forêt de sakura 🍄",
+      "Nouvelle fleur mystique : Anthéria 🌺",
+      "Nouvelle créature : le Loup Lyvora 🐺",
+      "Nouvelle nourriture : la Baie Lyvorienne 🍇"
+    ]},
+    { "title": "🧩RÉSOLUTION ET MODIFICATIONS", "items": [
+      "💡 Légère réduction de la luminosité du lingot d’uranium",
+      "☠️ Le minerai d’uranium applique désormais l’effet de poison si vous ne portez pas l’armure Hazmat ou une armure avec “Protection des radiations” (⚠️ cette fonction est encore instable — privilégiez l’armure Hazmat pour le moment)",
+      "🔢 Changement de numéro dans les avancements 5 et 6, devenus 7 et 8",
+      "🧱 Changement de l’icône de l’avancement “Qu’est-ce que c’est ?” (Carmeltazite)",
+      "💣 [⚠️] La bombe nucléaire est toujours en phase de test",
+      "🌾 Le champignon explosif peut désormais être placé sur la terre",
+      "🐗 Réduction du taux d’apparition des Piglins, Hoglins et cochons-zombies dans le biome Sakura",
+      "🌸 [⚠️] Le champignon Sakura ne pousse désormais qu’avec un cristal rouge ou de la poudre d’os",
+      "🈁 Correction : “Sakura Wart Block” devient “Bloc de verrue Sakura”",
+      "🌱 Le Nylium Sakura se propage désormais comme le Nylium carmin lorsqu’il est stimulé à la poudre d’os",
+      "🔥 Le biome Sakura peut désormais générer des portails en ruine naturellement",
+      "👁️ Augmentation de la portée de détection de l’Œil de Révélation"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "🪄ADD", "items": [
+        "All armor sets (except the Space Armor) can now have Smithing Templates (only available with vanilla materials like diamond, emerald, iron, gold, redstone, etc.)",
+        "Added 2 crafting recipes for the Bad Omen potion: one in the crafting table (9 ingredients) and one in the brewing stand 🧪",
+        "Added the Dioptasium Apple 🍏",
+        "Added Sulfur, crafted with blaze powder 🔥",
+        "New ore: Lead ⛏️",
+        "New ingot: Hazmium, crafted with sulfur, lead, glowstone dust, and gold — used for the Hazmat armor ⚗️",
+        "The Hazmat Armor is now available in survival 🧍‍♂️",
+        "New enchantment: Radiation Protection ☢️",
+        "Added 2 new advancements 🏆",
+        "Added Sakura Roots 🌸",
+        "Added Sakura Moss Carpet 🌿",
+        "The Sakura Mushroom now spawns naturally in the Sakura Forest 🍄",
+        "New flower: Anthéria 🌺",
+        "New creature: Lyvora Wolf 🐺",
+        "New food: Lyvorian Berry 🍇"
+    ]},
+    { "title": "🧩FIXES AND MODIFICATIONS", "items": [
+        "💡 Slightly reduced the brightness of the Uranium Ingot",
+        "☠️ Uranium Ore now applies Poison if you’re not wearing the Hazmat Armor or an armor with “Radiation Protection” (⚠️ this feature is still unstable — prefer Hazmat Armor for now)",
+        "🔢 Changed advancement numbers: 5 & 6 → 7 & 8",
+        "🧱 Updated icon for the “What Is This?” advancement (Carmeltazite)",
+        "💣 [⚠️] The Nuclear Bomb is still in testing phase",
+        "🌾 The Explosive Mushroom can now be placed on dirt",
+        "🐗 Reduced Piglin, Hoglin, and Zombified Piglin spawn rates in the Sakura biome",
+        "🌸 [⚠️] The Sakura Mushroom can now only grow with a Red Crystal or Bone Meal",
+        "🈁 Fixed translation: “Sakura Wart Block” → “Bloc de verrue Sakura”",
+        "🌱 Sakura Nylium now spreads like Crimson Nylium when using Bone Meal",
+        "🔥 The Sakura Biome can now naturally generate Ruined Portals",
+        "👁️ Increased detection range of the Eye of Revelation"
+    ]}
+  ]
 }
 ]

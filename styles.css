@@ -2649,8 +2649,19 @@ body.theme-bleu .back-to-top{
 }
 
 /* Le titre normal (ex: "Acatar - v1.1.0") peut rester plus petit */
-.news-featured .title{
-  font-size: 1.05rem;
-  font-weight: 700;
-  opacity: .95;
+.news-featured .title {
+  font-size: 1.3rem;     /* taille du texte */
+  font-weight: 900;      /* bien gras */
+  color: #ffffff;        /* blanc pur pour ressortir */
+  opacity: 1;            /* pleine opacité */
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px; /* légère aération */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* effet léger lisible */
+}
+
+@media (max-width: 900px) {
+  .news-featured .title {
+    font-size: 1.3rem;
+  }
 }

@@ -3053,7 +3053,7 @@ function fromPatch(p, pinned){
     const tL = title.toLowerCase();
     const hasModInTitle = modLabel ? tL.includes(modLabel.toLowerCase()) : false;
     const hasVerInTitle = version ? tL.includes(version.toLowerCase().replace(/^v/,'v')) : false;
-    const showTitle = !(hasModInTitle || hasVerInTitle); // -> masque le titre s'il fait doublon
+    const showTitle = !!title; // -> masque le titre s'il fait doublon
 
     const metaParts = [];
     if (modLabel) metaParts.push('<span class="news-meta">'+modLabel+'</span>');
@@ -3078,7 +3078,7 @@ function fromPatch(p, pinned){
 
     return ''
       + (badge || meta ? '<div>'+badge+(meta ? ' <span style="opacity:.85">'+meta+'</span>' : '')+'</div>' : '')
-      + (modLabel || version ? '<div class="modver">'+(modLabel||'')+(version ? ' — <span class="ver">'+version+'</span>' : '')+'</div>' : '')
+      /*+ (modLabel || version ? '<div class="modver">'+(modLabel||'')+(version ? ' — <span class="ver">'+version+'</span>' : '')+'</div>' : '')*/
       + (showTitle && title ? '<div class="title">'+title+'</div>' : '')
       + '<div class="detail-body'+(hasImg?' has-visual':'')+'">'
       +    (hasImg ? visual : '')
