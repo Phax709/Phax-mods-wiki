@@ -2992,6 +2992,7 @@ function fromPatch(p, pinned){
     if (n.custom) {
       const modKeyRaw = String(n.mod || '').toLowerCase();
       const isMaint   = (n.type === 'maintenance') || (modKeyRaw === 'maintenance');
+      const isAnnouncement = (n.type === 'announcement');
 
       // image: priorité à n.image, sinon fallback maintenance, sinon fallback par mod
       const img =
@@ -3000,7 +3001,10 @@ function fromPatch(p, pinned){
         (MOD_IMAGES[modKeyRaw] || '');
 
       // ⚠️ maintenance → PAS DE BOUTON (on vide le lien)
-      const link = isMaint ? '' : (n.link || '');
+      const link =
+        (isMaint || isAnnouncement) ? '' : (n.link || '');
+      
+      const stageVal = isAnnouncement ? '' : (n.stage || 'dev');
 
       resolved.push({
         custom: true,
@@ -3010,11 +3014,18 @@ function fromPatch(p, pinned){
         title_en: n.title_en || '',
         summary_fr: n.summary_fr || '',
         summary_en: n.summary_en || '',
-        stage: n.stage || 'dev',
+        stage: stageVal,
+        type: n.type || '',   // 👈 on garde le type pour l'affichage
         patch_id: '',
-        link,                                  // ← vide si maintenance → pas de bouton
+        link: link,           // ← vide si maintenance → pas de bouton
         mod: isMaint ? 'maintenance' : modKeyRaw,
-        image: img
+        image: img,
+
+        // Ajout pour le bouton perso (Modrinth)
+        cta_link: n.cta_link || '',
+        cta_label_fr: n.cta_label_fr || '',
+        cta_label_en: n.cta_label_en || ''
+      
       });
       return;
     }
@@ -3027,65 +3038,123 @@ function fromPatch(p, pinned){
 
   function buildDetailHTML(it, lang){
     function defaultHint(l){
-      return (l==='en')
+      return (l === 'en')
         ? 'Some highlights — press “Learn more” to see details.'
         : 'Quelques nouveautés — appuyez sur « En savoir plus » pour voir le détail.';
     }
 
-    const titleRaw = (lang==='fr' ? (it.title_fr||it.title_en) : (it.title_en||it.title_fr)) || '';
-    const title    = String(titleRaw).trim();
+    const isAnnouncement = (it.type === 'announcement');
+    // si c'est une annonce, on ajoute une petite icône 📢
+    const iconAnnouncement = isAnnouncement
+      ? '<span class="news-icon" title="Annonce">📢</span>'
+      : '';
 
-    const summary  = ((lang==='fr' ? (it.summary_fr||it.summary_en) : (it.summary_en||it.summary_fr)) || '').trim();
-    const summaryToShow = summary || defaultHint(lang);
+    // titre FR/EN
+    const titleRaw = (lang === 'fr'
+      ? (it.title_fr || it.title_en)
+      : (it.title_en || it.title_fr)
+    ) || '';
+    const title = String(titleRaw).trim();
 
-    const modLabel = it.mod==='chaosium' ? (translations?.[lang]?.chaosium || 'Chaosium')
-                  : it.mod==='acatar'   ? (translations?.[lang]?.acatar   || 'Acatar')
-                  : (it.mod==='maintenance' ? (lang==='fr'?'Maintenance':'Maintenance') : '');
+    // résumé FR/EN
+    const summaryTxt = ((lang === 'fr'
+      ? (it.summary_fr || it.summary_en)
+      : (it.summary_en || it.summary_fr)
+    ) || '').trim();
 
-    // version : prend it.version si dispo, sinon essaie depuis le titre
+    // pour les annonces : on affiche juste ton texte
+    // sinon : on peut retomber sur le texte par défaut
+    const summaryToShow = isAnnouncement
+      ? summaryTxt
+      : (summaryTxt || defaultHint(lang));
+
+    // label du mod (Acatar / Chaosium / Maintenance)
+    const modLabel =
+      it.mod === 'chaosium' ? (translations?.[lang]?.chaosium || 'Chaosium') :
+      it.mod === 'acatar'   ? (translations?.[lang]?.acatar   || 'Acatar')   :
+      (it.mod === 'maintenance'
+        ? (lang === 'fr' ? 'Maintenance' : 'Maintenance')
+        : '');
+
+    // version (si dispo, sinon tentative à partir du titre)
     let version = it.version ? String(it.version) : '';
     if (!version) {
       const m = /\bv?(\d+(?:\.\d+){0,3})\b/i.exec(title);
       if (m) version = 'v' + m[1];
     }
 
-    // si le titre contient déjà le mod et/ou la version, on le cache pour éviter le doublon
     const tL = title.toLowerCase();
     const hasModInTitle = modLabel ? tL.includes(modLabel.toLowerCase()) : false;
     const hasVerInTitle = version ? tL.includes(version.toLowerCase().replace(/^v/,'v')) : false;
-    const showTitle = !!title; // -> masque le titre s'il fait doublon
+    const showTitle = !!title;
 
+    // méta (ex: "Acatar · 2025-10-21")
     const metaParts = [];
     if (modLabel) metaParts.push('<span class="news-meta">'+modLabel+'</span>');
     if (it.date)   metaParts.push('<span class="news-meta">'+it.date+'</span>');
     const meta = metaParts.join(' ');
 
-    const badge = it.stage ? '<span class="stage-badge '+clsStage(it.stage)+'">'+String(it.stage).toUpperCase()+'</span>' : '';
-
-    const hasImg = !!it.image;
-    const visual = hasImg ? '<div class="visual"><img src="'+it.image+'" alt=""></div>' : '';
-
-    const feats = pickFeatures(it, lang).slice(0, 5);
-    const featsHTML = feats.length ? '<ul class="news-features">' + feats.map(li => '<li>'+li+'</li>').join('') + '</ul>' : '';
-
-    const isMaintenance =
-      it.mod === 'maintenance' || it.type === 'maintenance' || /maintenance/i.test(title);
-
-    const moreLbl = (lang==='fr' ? 'En savoir plus' : 'Learn more');
-    const btnHTML = (!isMaintenance && it.link)
-      ? '<a href="'+it.link+'" class="card-btn wiki news-open">'+moreLbl+'</a>'
+    // badge (DEV/BETA/STABLE)
+    // pour les annonces (isAnnouncement) → rien
+    const badge = (!isAnnouncement && it.stage)
+      ? '<span class="stage-badge '+clsStage(it.stage)+'">'+String(it.stage).toUpperCase()+'</span>'
       : '';
 
+    // image à gauche (facultative)
+    const hasImg = !!it.image;
+    const visual = hasImg
+      ? '<div class="visual"><img src="'+it.image+'" alt=""></div>'
+      : '';
+
+    // features / liste de points → seulement pour les patchnotes
+    const feats = pickFeatures(it, lang).slice(0, 5);
+    const featsHTML = (!isAnnouncement && feats.length)
+      ? '<ul class="news-features">' + feats.map(li => '<li>'+li+'</li>').join('') + '</ul>'
+      : '';
+
+    // maintenance ?
+    const isMaintenance =
+      it.mod === 'maintenance' ||
+      it.type === 'maintenance' ||
+      /maintenance/i.test(title);
+
+    // bouton :
+    // - si c'est une annonce → on regarde cta_link / cta_label
+    // - sinon si c'est un patchnote → bouton En savoir plus
+    let btnHTML = '';
+
+    if (isAnnouncement && it.cta_link) {
+      const ctaLabel = (lang === 'fr'
+        ? (it.cta_label_fr || it.cta_label_en || 'Lien')
+        : (it.cta_label_en || it.cta_label_fr || 'Link')
+      );
+      btnHTML =
+        '<a href="'+it.cta_link+'" target="_blank" rel="noopener" class="card-btn wiki news-open">'
+        + ctaLabel +
+        '</a>';
+    } else if (!isMaintenance && it.link) {
+      const moreLbl = (lang === 'fr' ? 'En savoir plus' : 'Learn more');
+      btnHTML =
+        '<a href="'+it.link+'" class="card-btn wiki news-open">'
+        + moreLbl +
+        '</a>';
+    }
+
     return ''
-      + (badge || meta ? '<div>'+badge+(meta ? ' <span style="opacity:.85">'+meta+'</span>' : '')+'</div>' : '')
-      /*+ (modLabel || version ? '<div class="modver">'+(modLabel||'')+(version ? ' — <span class="ver">'+version+'</span>' : '')+'</div>' : '')*/
-      + (showTitle && title ? '<div class="title">'+title+'</div>' : '')
+      + (badge || meta
+          ? '<div>'+badge+(meta ? ' <span style="opacity:.85">'+meta+'</span>' : '')+'</div>'
+          : '')
+      + (showTitle && title
+          ? '<div class="title">'+iconAnnouncement+' '+title+'</div>'
+          : '')
       + '<div class="detail-body'+(hasImg?' has-visual':'')+'">'
       +    (hasImg ? visual : '')
       +    '<div class="body-col"'+(isMaintenance?' data-maint="1"':'')+'>'
       +       (summaryToShow ? '<div class="summary">'+summaryToShow+'</div>' : '')
       +       featsHTML
-      +       (btnHTML ? '<div class="actions">'+btnHTML+'</div>' : '')
+      +       (btnHTML
+              ? '<div class="actions">'+btnHTML+'</div>'
+              : '')
       +    '</div>'
       + '</div>';
   }

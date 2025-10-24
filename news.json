@@ -1,5 +1,19 @@
 [
-  { "id": "acatar-1.3.0-mc1.21.4", "pinned": true },
+  {
+  "custom": true,
+  "type": "announcement",
+  "mod": "acatar",
+  "date": "2025-10-21",
+  "title_fr": "Acatar est désormais disponible sur Modrinth !",
+  "title_en": "Acatar is now available on Modrinth!",
+  "summary_fr": "Après une longue période exclusive sur CurseForge, le mod <strong>Acatar</strong> rejoint désormais <strong>Modrinth</strong> pour offrir une meilleure visibilité et faciliter les téléchargements !",
+  "summary_en": "After a long time exclusively on CurseForge, <strong>Acatar</strong> is now also available on <strong>Modrinth</strong>, offering better visibility and easier downloads!",
+  "cta_link": "https://modrinth.com/mod/acatar",
+  "cta_label_fr": "Voir sur Modrinth",
+  "cta_label_en": "View on Modrinth"
+},
+
+  { "id": "acatar-1.3.0-mc1.21.4", "pinned": false },
 
   { "id": "chaosium-1.0.0-mc1.20.6", "pinned": false }
 ]

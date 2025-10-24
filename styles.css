@@ -382,6 +382,7 @@ button.card-btn:hover {
   background: var(--accent-hover);
 }
 
+/* --- Bouton CurseForge --- */
 .card-btn.curseforge {
   background: #f16436;
 }
@@ -389,6 +390,15 @@ button.card-btn:hover {
   background: #d44a1e;
 }
 
+/* --- Bouton Modrinth --- */
+.card-btn.modrinth {
+  background: #1cce69; /* vert vif Modrinth */
+}
+.card-btn.modrinth:hover {
+  background: #16af56; /* un peu plus foncé au survol */
+}
+
+/* --- Bouton Wiki --- */
 .card-btn.wiki {
   background: var(--accent);
 }
@@ -2518,14 +2528,20 @@ body.theme-bleu .back-to-top{
 /* panneau de contenu */
 .news-featured .news-detail {
   flex: 1;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255, 255, 255, 0.02);
   border-radius: 12px;
   padding: 1rem 1.25rem;
   min-height: 200px;
   color: #fff;                         /* texte blanc comme Patch Notes */
 }
-.news-featured .news-detail .title { color:#fff; font-weight:800; }
-.news-featured .news-detail .summary { color:#e6eef9; }
+.news-featured .news-detail .title { 
+  color:var(--text); /*couleur du titre de la carte de nouveauté*/
+  font-weight:800;
+}
+.news-featured .news-detail .summary { 
+  color:var(--text); /*couleur de la phrase pour en savoir plus avant le detail*/
+}
+
 .news-featured .news-meta { opacity:.85; }
 
 /* mise en page : image à gauche, contenu à droite */
@@ -2560,11 +2576,14 @@ body.theme-bleu .back-to-top{
 
 /* petite liste de features */
 .news-featured .news-features { margin-top: .6rem; padding-left: 1.1rem; }
-.news-featured .news-features li { color:#e6eef9; margin: .2rem 0; }
+.news-featured .news-features li { 
+  color:var(--text); /*couleur du texte de l'onglets nouveauté*/
+  margin: .2rem 0; 
+}
 
 /* pastilles d’état */
 .stage-badge {
-  color:#fff !important;               /* texte toujours blanc */
+  color:#ffffff !important;      /* texte toujours blanc */
   font-weight: 700;
   font-size: 13px;                     /* taille compacte */
   padding: 3px 8px;
@@ -2610,7 +2629,7 @@ body.theme-bleu .back-to-top{
   background: #2a3b57;
   opacity: .6;
   cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 0, 0, 0.12);
 }
 .news-featured .news-dots .dot.active {
   opacity: 1;
@@ -2633,7 +2652,7 @@ body.theme-bleu .back-to-top{
   margin:0; 
   font-size: 1.35rem;   /* plus gros que h3 par défaut */; 
   font-weight:800; 
-  color:#fff;
+  color:var(--text);
 }
 
 /* Titre "mod + version" plus gros */
@@ -2665,3 +2684,34 @@ body.theme-bleu .back-to-top{
     font-size: 1.3rem;
   }
 }
+
+/* --- Bouton des annonces Modrinth --- */
+.card-btn.news-open[href*="modrinth.com"] {
+  background-color: #17be5d; /* vert doux Modrinth */
+}
+
+.card-btn.news-open[href*="modrinth.com"]:hover {
+  background-color: #13a853;
+}
+
+/* --- Bouton "En savoir plus" par défaut (patchnotes, wiki, etc.) --- */
+.card-btn.news-open:not([href*="modrinth.com"]) {
+  background-color: #3b82f6; /* bleu standard */
+}
+
+.card-btn.news-open:not([href*="modrinth.com"]):hover {
+  background-color: #2563eb; /* bleu plus foncé au survol */
+}
+
+/* --- Icône spéciale pour les annonces dans les news --- */
+.news-icon {
+  font-size: 1.1em;
+  margin-right: 6px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));
+}
+
+[data-theme="dark"] .news-icon {
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.2));
+}
+
