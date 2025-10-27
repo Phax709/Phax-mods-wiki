@@ -368,6 +368,21 @@ button.card-btn {
   box-shadow: 0 2px 8px #0002;
 }
 
+/* ✅ Répare le débordement des boutons sur mobile */
+@media (max-width: 600px) {
+  .card-buttons {
+    flex-wrap: wrap;              /* autorise le retour à la ligne */
+    justify-content: center;      /* centre les boutons sur mobile */
+    gap: 0.6em;                   /* espace cohérent entre eux */
+  }
+
+  .card-buttons .card-btn {
+    flex: 1 1 100%;               /* chaque bouton prend toute la largeur */
+    text-align: center;           /* texte centré */
+  }
+}
+
+
 /* Bouton actif (filtre sélectionné) */
 button.card-btn.active,
 .card-btn.active {
