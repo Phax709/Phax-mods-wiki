@@ -2730,3 +2730,36 @@ body.theme-bleu .back-to-top{
   filter: drop-shadow(0 0 2px rgba(255,255,255,0.2));
 }
 
+/* --- Mise en page adaptative pour les boutons de la section "Nous aider" --- */
+
+/* 🖥️ Version PC : aligné à gauche, espacés horizontalement */
+@media (min-width: 769px) {
+  .help-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Alignement à gauche */
+    gap: 1em; /* Espacement horizontal entre les boutons */
+    flex-wrap: wrap; /* Permet de passer à la ligne si trop de boutons */
+  }
+
+  .help-actions .card-btn {
+    width: auto;
+    min-width: 180px;
+    text-align: center;
+  }
+}
+
+/* 📱 Version mobile : empilés verticalement */
+@media (max-width: 768px) {
+  .help-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8em;
+  }
+
+  .help-actions .card-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
