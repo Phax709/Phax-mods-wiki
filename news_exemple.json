@@ -9,7 +9,8 @@
     "until": "2025-10-21T23:00:00Z",       
     "stage": "dev",                         
     "link": "#accueil",
-    "image": "images/ui/maintenance_warning.jpg",                    
+    "image": "images/ui/maintenance_warning.jpg",
+    "credit_link": "URL_DE_LA_PAGE_FREEPIK",            
     "pinned": true,
     
     "show_after": "2025-11-07T00:35:00+01:00",

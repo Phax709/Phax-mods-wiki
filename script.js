@@ -69,6 +69,8 @@ const translations = {
     your_textures_text: "Certaines textures et images de ce wiki et/ou de mes mods sont des créations originales de Phax709. Toute réutilisation, redistribution ou intégration dans un autre projet (site, mod, resource pack, vidéo, etc.) nécessite mon autorisation préalable. Merci de me contacter sur Discord (lien en bas de page) pour obtenir l’accord.",
     third_party_title: "Éléments tiers",
     third_party_discord: "Logo Discord © Discord",
+    credit_freepik_urgent: "Illustration utilisée pour les messages urgents —",
+    credit_freepik_maintenance: "Illustration utilisée pour la maintenance et les alertes —",
     site_stack_title: "Stack du site",
     site_stack_host: "Hébergement : GitHub Pages",
     site_stack_code: "Code front : HTML / CSS / JavaScript (vanilla) / JSON",
@@ -153,6 +155,8 @@ const translations = {
     your_textures_text: "Some textures and images on this wiki and/or in my mods are original creations by Phax709. Any reuse, redistribution, or inclusion in another project (website, mod, resource pack, video, etc.) requires my prior permission. Please contact me on Discord (link in the footer) to request approval.",
     third_party_title: "Third-party elements",
     third_party_discord: "Discord logo © Discord",
+    credit_freepik_urgent: "Illustration used for urgent messages —",
+    credit_freepik_maintenance: "Illustration used for maintenance and warnings —",
     site_stack_title: "Site stack",
     site_stack_host: "Hosting: GitHub Pages",
     site_stack_code: "Frontend: HTML / CSS / JavaScript (vanilla) / JSON",
@@ -3047,6 +3051,9 @@ document.addEventListener('click', (e) => {
           cta_link: n.cta_link || '',
           cta_label_fr: n.cta_label_fr || '',
           cta_label_en: n.cta_label_en || '',
+          credit_link: n.credit_link || '',
+          credit_label_fr: n.credit_label_fr || '',
+          credit_label_en: n.credit_label_en || '',
           // planification
           show_after: n.show_after || null,
           hide_after: n.hide_after || null
@@ -3149,6 +3156,15 @@ document.addEventListener('click', (e) => {
       ? '<ul class="news-features">' + feats.map(function(li){ return '<li>'+li+'</li>'; }).join('') + '</ul>'
       : '';
 
+    var creditHTML = "";
+    if (it.credit_link) {
+      var creditLabel = (lang === 'fr') ? "Source de l’illustration" : "Image source";
+      creditHTML =
+        '<p class="news-credit">'
+        + '<a href="'+it.credit_link+'" target="_blank" rel="noopener">'+creditLabel+'</a>'
+        + '</p>';
+    }
+
     var isMaintenance = (it.mod === 'maintenance') || (it.type === 'maintenance') || /maintenance/i.test(title);
 
     var btnHTML = '';
@@ -3170,6 +3186,7 @@ document.addEventListener('click', (e) => {
       +    '<div class="body-col"'+(isMaintenance?' data-maint="1"':'')+'>'
       +       (summaryToShow ? '<div class="summary">'+summaryToShow+'</div>' : '')
       +       featsHTML
+      +       creditHTML
       +       (btnHTML ? '<div class="actions">'+btnHTML+'</div>' : '')
       +    '</div>'
       + '</div>';

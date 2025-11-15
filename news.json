@@ -22,6 +22,7 @@
   "custom": true,
   "type": "urgent",
   "mod": "acatar",
+  "image": "images/ui/22776454_Urgent.jpg",
   "date": "2025-11-15",
 
   "title_fr": "⚠ Important : bug critique dans la version 1.4 d’Acatar (Minecraft 1.21.1)",
@@ -43,6 +44,7 @@
     "Only testers wishing to assist with debugging should use it."
   ],
 
+  "credit_link": "https://fr.freepik.com/vecteurs-libre/texte-grunge-urgent_22776454.htm#fromView=keyword&page=1&position=1&uuid=3af4cea4-69ef-47ee-9f35-6d22c6c7369d&query=Urgent",
   "link": "",
   "cta_link": "",
   "stage": ""
