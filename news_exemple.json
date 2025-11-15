@@ -1,0 +1,17 @@
+{
+    "custom": true,
+    "type": "announcement, maintenance, urgent, ou rien",
+    "date": "2025-10-20",
+    "title_fr": "Maintenance du wiki",
+    "title_en": "Wiki maintenance",
+    "summary_fr": "Petite maintenance ce soir. Le site peut être indisponible 10–15 min.",
+    "summary_en": "Short maintenance tonight. Website might be down 10–15 min.",
+    "until": "2025-10-21T23:00:00Z",       
+    "stage": "dev",                         
+    "link": "#accueil",
+    "image": "images/ui/maintenance_warning.jpg",                    
+    "pinned": true,
+    
+    "show_after": "2025-11-07T00:35:00+01:00",
+    "hide_after": "2025-11-07T00:37:00+01:00"
+  }
