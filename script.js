@@ -2885,82 +2885,83 @@ document.addEventListener('click', (e) => {
   }, true);
 })();
 
-// ——— Module Nouveautés / Carrousel auto (avec flèches) ———
+// ——— Module Nouveautés / Carrousel auto (clean + planification) ———
 (function () {
   var MAX_SLIDES  = 10;
   var AUTOPLAY_MS = 4000;
 
   // Images par défaut par mod (laisse "" si tu n’en veux pas)
   var MOD_IMAGES = {
-    acatar:   "images/ui/new_logo_acatar.png",   // ex: "assets/mods/acatar.png"
-    chaosium: "images/ui/chaosium_image.png",    // ex: "assets/mods/chaosium.png"
-    maintenance: "images/ui/maintenance_warning.jpg" // ⬅ ton image de maintenance
+    acatar:   "images/ui/new_logo_acatar.png",
+    chaosium: "images/ui/chaosium_image.png",
+    maintenance: "images/ui/maintenance_warning.jpg"
   };
 
-  var STATE = { items: [], idx: 0, timer: null };
+  var STATE = { items: [], idx: 0, timer: null, _newsTimer: null };
 
-  function clsStage(s){ s=String(s||'').toLowerCase(); if(s==='release')return'release'; if(s==='beta')return'beta'; return'dev'; }
+  // —— utils
+  function clsStage(s){ s=String(s||'').toLowerCase(); if(s==='release')return'release'; if(s==='beta')return'beta'; if(s==='alpha')return'alpha'; return'dev'; }
   function t(lang,key,def){ try{var pack=window.translations&&window.translations[lang]; return (pack&&pack[key])||def;}catch{return def;} }
   function pickLoc(it,lang){
     var title=(lang==='fr'?(it.title_fr||it.title_en):(it.title_en||it.title_fr))||"";
     var summary=(lang==='fr'?(it.summary_fr||it.summary_en):(it.summary_en||it.summary_fr))||"";
     return { title:String(title), summary:String(summary) };
   }
-  function shouldHide(it){ if(!it||!it.until)return false; var d=Date.parse(it.until); return !isNaN(d)&&d<Date.now(); }
 
-  // ——— remplace TOUTE la fonction fromPatch du module "Nouveautés / Carrousel" ———
-function fromPatch(p, pinned){
-  var mod = String(p.mod || '').toLowerCase();
+  // ——— patchnotes → card
+  function fromPatch(p, pinned){
+    var mod = String(p.mod || '').toLowerCase();
 
-  // Stage calculé : priorité aux flags beta/alpha, sinon stage|type, sinon "dev"
-  function stageFromPatch(pp){
-    if (pp && pp.beta === true)  return 'beta';
-    if (pp && pp.alpha === true) return 'alpha';
-    var s = String(pp && (pp.stage || pp.type) || '').toLowerCase();
-    if (s === 'beta' || s === 'bêta')   return 'beta';
-    if (s === 'alpha')                  return 'alpha';
-    if (s === 'release' || s === 'stable' || s === 'final') return 'release';
-    return 'dev';
+    function stageFromPatch(pp){
+      if (pp && pp.beta === true)  return 'beta';
+      if (pp && pp.alpha === true) return 'alpha';
+      var s = String(pp && (pp.stage || pp.type) || '').toLowerCase();
+      if (s === 'beta' || s === 'bêta')   return 'beta';
+      if (s === 'alpha')                  return 'alpha';
+      if (s === 'release' || s === 'stable' || s === 'final') return 'release';
+      return 'dev';
+    }
+
+    function extract(lang){
+      var key  = (lang === 'fr') ? 'sections_fr' : 'sections_en';
+      var secs = Array.isArray(p[key]) ? p[key] : [];
+      if (!secs.length) return [];
+      var prefIdx = secs.findIndex(s =>
+        String(s.title || '').toUpperCase().startsWith(lang === 'fr' ? 'AJOUT' : 'ADD')
+      );
+      var s = secs[prefIdx >= 0 ? prefIdx : secs.findIndex(x => Array.isArray(x.items) && x.items.length)];
+      s = s || secs[0];
+      var items = Array.isArray(s?.items) ? s.items : [];
+      return items
+        .filter(v => typeof v === 'string')
+        .map(v => v.trim())
+        .filter(Boolean)
+        .slice(0, 5);
+    }
+
+    return {
+      custom:     false,
+      pinned:     !!pinned,
+      date:       p.date || '',
+      title_fr:   p.title_fr || p.title || '',
+      title_en:   p.title_en || p.title || '',
+      summary_fr: p.summary_fr || p.summary || '',
+      summary_en: p.summary_en || p.summary || '',
+      stage:      stageFromPatch(p),
+      patch_id:   String(p.id || ''),
+      link:       '#p=patchnotes&pn=' + encodeURIComponent(p.id || ''),
+      mod:        mod,
+      image:      p.image || MOD_IMAGES[mod] || '',
+      features_fr: extract('fr'),
+      features_en: extract('en'),
+
+      // pas de planification sur patchnotes par défaut
+      show_after: null,
+      hide_after: null,
+      type: ''
+    };
   }
 
-  // — extraire des features depuis sections_fr/en —
-  function extract(lang){
-    var key  = (lang === 'fr') ? 'sections_fr' : 'sections_en';
-    var secs = Array.isArray(p[key]) ? p[key] : [];
-    if (!secs.length) return [];
-    // priorité à AJOUT/ADD sinon 1ère section avec items
-    var prefIdx = secs.findIndex(s =>
-      String(s.title || '').toUpperCase().startsWith(lang === 'fr' ? 'AJOUT' : 'ADD')
-    );
-    var s = secs[prefIdx >= 0 ? prefIdx : secs.findIndex(x => Array.isArray(x.items) && x.items.length)];
-    s = s || secs[0];
-    var items = Array.isArray(s?.items) ? s.items : [];
-    return items
-      .filter(v => typeof v === 'string')
-      .map(v => v.trim())
-      .filter(Boolean)
-      .slice(0, 5);
-  }
-
-  return {
-    custom:     false,
-    pinned:     !!pinned,
-    date:       p.date || '',
-    title_fr:   p.title_fr || p.title || '',
-    title_en:   p.title_en || p.title || '',
-    summary_fr: p.summary_fr || p.summary || '',
-    summary_en: p.summary_en || p.summary || '',
-    stage:      stageFromPatch(p),                           // ← badge correct (DEV/BETA/ALPHA/RELEASE)
-    patch_id:   String(p.id || ''),
-    link:       '#p=patchnotes&pn=' + encodeURIComponent(p.id || ''),
-    mod:        mod,
-    image:      p.image || MOD_IMAGES[mod] || '',           // image mod si dispo
-    features_fr: extract('fr'),
-    features_en: extract('en')
-  };
-}
-
-  // remplace l'ancienne version
   function pickFeatures(it, lang){
     var arr = (lang === 'fr') ? it.features_fr : it.features_en;
     return Array.isArray(arr) ? arr.filter(Boolean) : [];
@@ -2969,73 +2970,127 @@ function fromPatch(p, pinned){
   function sortNews(arr){
     return (arr||[]).slice().sort(function(a,b){
       var ap=a&&a.pinned?1:0, bp=b&&b.pinned?1:0; if(ap!==bp)return bp-ap;
-      return (b.date||'').localeCompare(a.date||'');
+      // tri desc sur show_after/date si dispo
+      var ad = Date.parse(a.show_after||a.date||'') || 0;
+      var bd = Date.parse(b.show_after||b.date||'') || 0;
+      return bd - ad;
     }).slice(0,MAX_SLIDES);
   }
 
+  // ——— planification (show_after/hide_after)
+  function _parseISO(s){ if(!s) return null; var d=new Date(s); return isNaN(d)?null:d; }
+  function _isLive(it, now){
+    var show=_parseISO(it.show_after || it.date);
+    var hide=_parseISO(it.hide_after);
+    if (show && now < show) return false;
+    if (hide && now >= hide) return false;
+    return true;
+  }
+  function _nextChangeMs(it, now){
+    var ms=Infinity;
+    var show=_parseISO(it.show_after || it.date);
+    var hide=_parseISO(it.hide_after);
+    if (show && now < show) ms=Math.min(ms, show-now);
+    if (hide && now < hide) ms=Math.min(ms, hide-now);
+    return ms;
+  }
+
   async function loadAll(){
-    var NEWS_URL=new URL('news.json',document.baseURI).toString();
-    var PATCH_URL=new URL('patchnotes.json',document.baseURI).toString();
     function bust(u){return u+(u.indexOf('?')>=0?'&':'?')+'t='+Date.now();}
+    var NEWS_URL  = new URL('news.json', document.baseURI).toString();
+    var PATCH_URL = new URL('patchnotes.json', document.baseURI).toString();
 
     var rawNews=[];
     try{ var rN=await fetch(bust(NEWS_URL),{cache:'no-store'}); if(!rN.ok)throw 0; rawNews=await rN.json(); }catch{ rawNews=[]; }
 
     var patchMap=new Map();
-    try{ var rP=await fetch(bust(PATCH_URL),{cache:'no-store'}); if(rP.ok){ var arr=await rP.json(); (Array.isArray(arr)?arr:[]).forEach(function(p){ if(p&&p.id)patchMap.set(String(p.id),p); }); } }catch{}
+    try{
+      var rP=await fetch(bust(PATCH_URL),{cache:'no-store'});
+      if(rP.ok){ var arr=await rP.json(); (Array.isArray(arr)?arr:[]).forEach(function(p){ if(p&&p.id)patchMap.set(String(p.id),p); }); }
+    }catch{}
 
     var resolved=[];
     (Array.isArray(rawNews)?rawNews:[]).forEach(function(n){
-      if(!n)return;
-      // — custom —
-    // — custom —
-    if (n.custom) {
-      const modKeyRaw = String(n.mod || '').toLowerCase();
-      const isMaint   = (n.type === 'maintenance') || (modKeyRaw === 'maintenance');
-      const isAnnouncement = (n.type === 'announcement');
+      if(!n) return;
 
-      // image: priorité à n.image, sinon fallback maintenance, sinon fallback par mod
-      const img =
-        n.image ||
-        (isMaint ? (MOD_IMAGES.maintenance || '') : '') ||
-        (MOD_IMAGES[modKeyRaw] || '');
+      // — CUSTOM NEWS —
+      if (n.custom) {
+        var modKeyRaw = String(n.mod || '').toLowerCase();
+        var isMaint   = (n.type === 'maintenance') || (modKeyRaw === 'maintenance');
+        var isAnnouncement = (n.type === 'announcement');
 
-      // ⚠️ maintenance → PAS DE BOUTON (on vide le lien)
-      const link =
-        (isMaint || isAnnouncement) ? '' : (n.link || '');
-      
-      const stageVal = isAnnouncement ? '' : (n.stage || 'dev');
+        var img =
+          n.image ||
+          (isMaint ? (MOD_IMAGES.maintenance || '') : '') ||
+          (MOD_IMAGES[modKeyRaw] || '');
 
-      resolved.push({
-        custom: true,
-        pinned: !!n.pinned,
-        date: n.date || '',
-        title_fr: n.title_fr || '',
-        title_en: n.title_en || '',
-        summary_fr: n.summary_fr || '',
-        summary_en: n.summary_en || '',
-        stage: stageVal,
-        type: n.type || '',   // 👈 on garde le type pour l'affichage
-        patch_id: '',
-        link: link,           // ← vide si maintenance → pas de bouton
-        mod: isMaint ? 'maintenance' : modKeyRaw,
-        image: img,
+        var link = (isMaint || isAnnouncement) ? '' : (n.link || n.cta_link || '');
 
-        // Ajout pour le bouton perso (Modrinth)
-        cta_link: n.cta_link || '',
-        cta_label_fr: n.cta_label_fr || '',
-        cta_label_en: n.cta_label_en || ''
-      
-      });
-      return;
-    }
-      var p=n.id?patchMap.get(String(n.id)):null;
-      if(p) resolved.push(fromPatch(p,!!n.pinned));
+        var stageVal = isAnnouncement ? '' : (n.stage || 'dev');
+
+        resolved.push({
+          custom: true,
+          pinned: !!n.pinned,
+          date: n.date || '',
+          title_fr: n.title_fr || '',
+          title_en: n.title_en || '',
+          summary_fr: n.summary_fr || '',
+          summary_en: n.summary_en || '',
+          features_fr: Array.isArray(n.features_fr) ? n.features_fr : [],
+          features_en: Array.isArray(n.features_en) ? n.features_en : [],
+          stage: stageVal,
+          type: n.type || '',
+          patch_id: '',
+          link: link,
+          mod: isMaint ? 'maintenance' : modKeyRaw,
+          image: img,
+          cta_link: n.cta_link || '',
+          cta_label_fr: n.cta_label_fr || '',
+          cta_label_en: n.cta_label_en || '',
+          // planification
+          show_after: n.show_after || null,
+          hide_after: n.hide_after || null
+        });
+        return;
+      }
+
+      // — PATCHNOTE RÉFÉRENCÉE —
+      var p = n.id ? patchMap.get(String(n.id)) : null;
+      if (p) {
+        // On génère la carte à partir du patch
+        var card = fromPatch(p, !!n.pinned);
+
+        // Surcharges optionnelles venant de news.json
+        if (n.show_after) card.show_after = n.show_after;
+        if (n.hide_after) card.hide_after = n.hide_after;
+
+        // Si tu veux pouvoir changer le type (par ex. "urgent" plus tard)
+        if (n.type) card.type = n.type;
+
+        // (optionnel) au cas où tu veuilles forcer un mod différent
+        // if (n.mod) card.mod = String(n.mod).toLowerCase();
+
+        resolved.push(card);
+      }
     });
 
-    STATE.items=sortNews(resolved);
+    // —— Filtrage + réveil
+    var now = new Date();
+    var visible = (resolved||[]).filter(function(n){ return _isLive(n, now); });
+    STATE.items = sortNews(visible);
+
+    if (STATE._newsTimer){ clearTimeout(STATE._newsTimer); STATE._newsTimer=null; }
+    var allNext = (resolved||[]).map(function(n){ return _nextChangeMs(n, now); }).filter(Number.isFinite);
+    if (allNext.length){
+      var wait = Math.min.apply(Math, allNext); // équiv. à Math.min(...allNext)
+      STATE._newsTimer = setTimeout(async function(){
+        try{ await loadAll(); }catch(e){ console.warn(e); }
+        if (window.__refreshNewsLang) window.__refreshNewsLang();
+      }, Math.min(Math.max(wait, 1000), 24*60*60*1000));
+    }
   }
 
+  // ——— rendu
   function buildDetailHTML(it, lang){
     function defaultHint(l){
       return (l === 'en')
@@ -3043,118 +3098,79 @@ function fromPatch(p, pinned){
         : 'Quelques nouveautés — appuyez sur « En savoir plus » pour voir le détail.';
     }
 
-    const isAnnouncement = (it.type === 'announcement');
-    // si c'est une annonce, on ajoute une petite icône 📢
-    const iconAnnouncement = isAnnouncement
-      ? '<span class="news-icon" title="Annonce">📢</span>'
-      : '';
+    var isAnnouncement = (it.type === 'announcement');
+    var iconAnnouncement = isAnnouncement ? '<span class="news-icon" title="Annonce">📢</span>' : '';
+    var isUrgent = (it.type === 'urgent');
 
-    // titre FR/EN
-    const titleRaw = (lang === 'fr'
-      ? (it.title_fr || it.title_en)
-      : (it.title_en || it.title_fr)
-    ) || '';
-    const title = String(titleRaw).trim();
 
-    // résumé FR/EN
-    const summaryTxt = ((lang === 'fr'
-      ? (it.summary_fr || it.summary_en)
-      : (it.summary_en || it.summary_fr)
-    ) || '').trim();
+    var titleRaw = (lang === 'fr' ? (it.title_fr || it.title_en) : (it.title_en || it.title_fr)) || '';
+    var title = String(titleRaw).trim();
 
-    // pour les annonces : on affiche juste ton texte
-    // sinon : on peut retomber sur le texte par défaut
-    const summaryToShow = isAnnouncement
-      ? summaryTxt
-      : (summaryTxt || defaultHint(lang));
+    var summaryTxt = ((lang === 'fr' ? (it.summary_fr || it.summary_en) : (it.summary_en || it.summary_fr)) || '').trim();
+    var summaryToShow = isAnnouncement ? summaryTxt : (summaryTxt || defaultHint(lang));
 
-    // label du mod (Acatar / Chaosium / Maintenance)
-    const modLabel =
+    var modLabel =
       it.mod === 'chaosium' ? (translations?.[lang]?.chaosium || 'Chaosium') :
       it.mod === 'acatar'   ? (translations?.[lang]?.acatar   || 'Acatar')   :
-      (it.mod === 'maintenance'
-        ? (lang === 'fr' ? 'Maintenance' : 'Maintenance')
-        : '');
+      (it.mod === 'maintenance' ? (lang === 'fr' ? 'Maintenance' : 'Maintenance') : '');
 
-    // version (si dispo, sinon tentative à partir du titre)
-    let version = it.version ? String(it.version) : '';
+    var version = it.version ? String(it.version) : '';
     if (!version) {
-      const m = /\bv?(\d+(?:\.\d+){0,3})\b/i.exec(title);
+      var m = /\bv?(\d+(?:\.\d+){0,3})\b/i.exec(title);
       if (m) version = 'v' + m[1];
     }
 
-    const tL = title.toLowerCase();
-    const hasModInTitle = modLabel ? tL.includes(modLabel.toLowerCase()) : false;
-    const hasVerInTitle = version ? tL.includes(version.toLowerCase().replace(/^v/,'v')) : false;
-    const showTitle = !!title;
-
-    // méta (ex: "Acatar · 2025-10-21")
-    const metaParts = [];
+    var metaParts = [];
     if (modLabel) metaParts.push('<span class="news-meta">'+modLabel+'</span>');
     if (it.date)   metaParts.push('<span class="news-meta">'+it.date+'</span>');
-    const meta = metaParts.join(' ');
+    var meta = metaParts.join(' ');
 
-    // badge (DEV/BETA/STABLE)
-    // pour les annonces (isAnnouncement) → rien
-    const badge = (!isAnnouncement && it.stage)
-      ? '<span class="stage-badge '+clsStage(it.stage)+'">'+String(it.stage).toUpperCase()+'</span>'
+    var badge = '';
+
+    // 1) URGENT : toujours prioritaire
+    if (isUrgent) {
+      badge = '<span class="stage-badge stage-urgent">URGENT</span>';
+    }
+    // 2) Annonce : badge NEWS bleu
+    else if (isAnnouncement) {
+      var newsLabel = (lang === 'fr' ? 'NEWS' : 'NEWS');
+      badge = '<span class="stage-badge stage-news">'+newsLabel+'</span>';
+    }
+    // 3) Cas normal : dev / beta / stable comme avant
+    else if (it.stage) {
+      badge = '<span class="stage-badge '+clsStage(it.stage)+'">'+String(it.stage).toUpperCase()+'</span>';
+    }
+
+    var hasImg = !!it.image;
+    var visual = hasImg ? '<div class="visual"><img src="'+it.image+'" alt=""></div>' : '';
+
+    var feats = pickFeatures(it, lang).slice(0, 5);
+    var featsHTML = (!isAnnouncement && feats.length)
+      ? '<ul class="news-features">' + feats.map(function(li){ return '<li>'+li+'</li>'; }).join('') + '</ul>'
       : '';
 
-    // image à gauche (facultative)
-    const hasImg = !!it.image;
-    const visual = hasImg
-      ? '<div class="visual"><img src="'+it.image+'" alt=""></div>'
-      : '';
+    var isMaintenance = (it.mod === 'maintenance') || (it.type === 'maintenance') || /maintenance/i.test(title);
 
-    // features / liste de points → seulement pour les patchnotes
-    const feats = pickFeatures(it, lang).slice(0, 5);
-    const featsHTML = (!isAnnouncement && feats.length)
-      ? '<ul class="news-features">' + feats.map(li => '<li>'+li+'</li>').join('') + '</ul>'
-      : '';
-
-    // maintenance ?
-    const isMaintenance =
-      it.mod === 'maintenance' ||
-      it.type === 'maintenance' ||
-      /maintenance/i.test(title);
-
-    // bouton :
-    // - si c'est une annonce → on regarde cta_link / cta_label
-    // - sinon si c'est un patchnote → bouton En savoir plus
-    let btnHTML = '';
-
+    var btnHTML = '';
     if (isAnnouncement && it.cta_link) {
-      const ctaLabel = (lang === 'fr'
-        ? (it.cta_label_fr || it.cta_label_en || 'Lien')
-        : (it.cta_label_en || it.cta_label_fr || 'Link')
-      );
+      var ctaLabel = (lang === 'fr' ? (it.cta_label_fr || it.cta_label_en || 'Lien') : (it.cta_label_en || it.cta_label_fr || 'Link'));
       btnHTML =
-        '<a href="'+it.cta_link+'" target="_blank" rel="noopener" class="card-btn wiki news-open">'
-        + ctaLabel +
-        '</a>';
-    } else if (!isMaintenance && it.link) {
-      const moreLbl = (lang === 'fr' ? 'En savoir plus' : 'Learn more');
+        '<a href="'+it.cta_link+'" target="_blank" rel="noopener" class="card-btn wiki news-open">'+ctaLabel+'</a>';
+    } else if (!isMaintenance && !isUrgent && it.link) {
+      var moreLbl = (lang === 'fr' ? 'En savoir plus' : 'Learn more');
       btnHTML =
-        '<a href="'+it.link+'" class="card-btn wiki news-open">'
-        + moreLbl +
-        '</a>';
+        '<a href="'+it.link+'" class="card-btn wiki news-open">'+moreLbl+'</a>';
     }
 
     return ''
-      + (badge || meta
-          ? '<div>'+badge+(meta ? ' <span style="opacity:.85">'+meta+'</span>' : '')+'</div>'
-          : '')
-      + (showTitle && title
-          ? '<div class="title">'+iconAnnouncement+' '+title+'</div>'
-          : '')
+      + (badge || meta ? '<div>'+badge+(meta ? ' <span style="opacity:.85">'+meta+'</span>' : '')+'</div>' : '')
+      + (title ? '<div class="title">'+iconAnnouncement+' '+title+'</div>' : '')
       + '<div class="detail-body'+(hasImg?' has-visual':'')+'">'
       +    (hasImg ? visual : '')
       +    '<div class="body-col"'+(isMaintenance?' data-maint="1"':'')+'>'
       +       (summaryToShow ? '<div class="summary">'+summaryToShow+'</div>' : '')
       +       featsHTML
-      +       (btnHTML
-              ? '<div class="actions">'+btnHTML+'</div>'
-              : '')
+      +       (btnHTML ? '<div class="actions">'+btnHTML+'</div>' : '')
       +    '</div>'
       + '</div>';
   }
@@ -3166,20 +3182,11 @@ function fromPatch(p, pinned){
   }
 
   function renderDetail(root){
-    var lang=localStorage.getItem('siteLanguage')||'fr';
+    var lang=localStorage.getItem('siteLanguage')||ETAT?.langue||'fr';
     var it=STATE.items[STATE.idx];
     var box=root.querySelector('.news-detail'); if(!box)return;
     box.innerHTML=it?buildDetailHTML(it,lang):'';
-    // déclenche la transition (reset + reflow + ajout de classe)
-    box.classList.remove('fade-in');
-    void box.offsetWidth; // force le reflow
-    box.classList.add('fade-in');
-
-    // deep-link : #p=patchnotes&pn=<id> → ton routeur doit ouvrir le patch
-    var btn=box.querySelector('.news-open');
-    if(btn && it && it.patch_id){
-      // rien à faire : on laisse le hash faire (applyFromHash/showPage côté app)
-    }
+    box.classList.remove('fade-in'); void box.offsetWidth; box.classList.add('fade-in');
   }
 
   function goTo(root, idx){
@@ -3196,12 +3203,11 @@ function fromPatch(p, pinned){
   }
   function stopAutoplay(){ if(STATE.timer){ clearInterval(STATE.timer); STATE.timer=null; } }
 
-    // Remplacer TOUTE la fonction init() par celle-ci
   async function init() {
     const root = document.getElementById('home-featured');
     if (!root) return;
 
-    // entête + flèches
+    // squelette
     root.innerHTML = `
       <div class="news-head">
         <h3 class="news-title"></h3>
@@ -3215,26 +3221,22 @@ function fromPatch(p, pinned){
     `;
     root.style.display = '';
 
-    // fonction utilisée lors d’un changement de langue
+    // i18n hook pour ton setLanguage()
     window.__refreshNewsLang = function(){
-      const lang = ETAT.langue || 'fr';
-      const h = root.querySelector('.news-title');
+      var lang = ETAT?.langue || localStorage.getItem('siteLanguage') || 'fr';
+      var h = root.querySelector('.news-title');
       if (h) h.textContent = (translations?.[lang]?.news_title) || (lang==='en' ? "What's new" : 'Nouveautés');
-      // re-render le slide courant avec le bon texte
-      renderDetail(root);
-      renderDots(root);
-      // accessibilité
       root.querySelector('.news-nav.prev')?.setAttribute('aria-label', lang==='fr'?'Précédent':'Previous');
       root.querySelector('.news-nav.next')?.setAttribute('aria-label', lang==='fr'?'Suivant':'Next');
+      renderDetail(root); renderDots(root);
     };
 
     try { await loadAll(); } catch(e){ console.warn(e); }
 
-    // premier rendu (met aussi le titre)
     window.__refreshNewsLang();
 
     if (!STATE.items.length) {
-      const lang = ETAT.langue || 'fr';
+      var lang = ETAT?.langue || 'fr';
       root.querySelector('.news-detail').innerHTML =
         `<div class="summary" style="opacity:.9">${lang==='fr'?'Aucune nouveauté pour le moment.':'No news for now.'}</div>`;
       renderDots(root);
@@ -3245,18 +3247,17 @@ function fromPatch(p, pinned){
     startAutoplay(root);
 
     // interactions
-    root.addEventListener('click', (e) => {
-      const dot  = e.target.closest?.('.dot');
-      const prev = e.target.closest?.('.news-nav.prev');
-      const next = e.target.closest?.('.news-nav.next');
+    root.addEventListener('click', function(e){
+      var dot  = e.target.closest && e.target.closest('.dot');
+      var prev = e.target.closest && e.target.closest('.news-nav.prev');
+      var next = e.target.closest && e.target.closest('.news-nav.next');
       if (dot){ e.preventDefault(); stopAutoplay(); goTo(root, +dot.dataset.idx||0); startAutoplay(root); }
       if (prev){ e.preventDefault(); stopAutoplay(); goTo(root, STATE.idx-1); startAutoplay(root); }
       if (next){ e.preventDefault(); stopAutoplay(); goTo(root, STATE.idx+1); startAutoplay(root); }
     });
-    root.addEventListener('mouseenter', () => stopAutoplay());
-    root.addEventListener('mouseleave', () => startAutoplay(root));
+    root.addEventListener('mouseenter', function(){ stopAutoplay(); });
+    root.addEventListener('mouseleave', function(){ startAutoplay(root); });
   }
 
   document.addEventListener('DOMContentLoaded', init);
 })();
-

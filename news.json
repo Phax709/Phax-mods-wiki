@@ -10,11 +10,58 @@
   "summary_en": "After a long time exclusively on CurseForge, <strong>Acatar</strong> is now also available on <strong>Modrinth</strong>, offering better visibility and easier downloads!",
   "cta_link": "https://modrinth.com/mod/acatar",
   "cta_label_fr": "Voir sur Modrinth",
-  "cta_label_en": "View on Modrinth"
-},
+  "cta_label_en": "View on Modrinth",
+  "hide_after": "2025-11-30T23:59:59+01:00"
+  },
 
-  { "id": "acatar-1.3.0-mc1.21.4", "pinned": false },
+  { "id": "acatar-1.3.0-mc1.21.4", "pinned": false, "hide_after": "2025-11-21T23:59:59+01:00" },
 
-  { "id": "chaosium-1.0.0-mc1.20.6", "pinned": false }
+  { "id": "chaosium-1.0.0-mc1.20.6", "pinned": false, "hide_after": "2025-11-21T23:59:59+01:00" },
+
+  {
+  "custom": true,
+  "type": "urgent",
+  "mod": "acatar",
+  "date": "2025-11-15",
+
+  "title_fr": "⚠ Important : bug critique dans la version 1.4 d’Acatar (Minecraft 1.21.1)",
+  "title_en": "⚠ Important: Critical bug in Acatar version 1.4 (Minecraft 1.21.1)",
+
+  "summary_fr": "La version 1.4 d’Acatar pour Minecraft 1.21.1 contient un problème majeur pouvant provoquer des erreurs et des comportements instables. Merci de NE PAS télécharger cette version pour le moment.",
+  "summary_en": "Acatar version 1.4 for Minecraft 1.21.1 contains a major issue that may cause errors and unstable behavior. Please DO NOT download this version for now.",
+
+  "features_fr": [
+    "Concerné : Acatar 1.4 sur Minecraft 1.21.1.",
+    "Le fichier est temporairement désactivé sur CurseForge.",
+    "Le téléchargement est fortement déconseillé et est passé de Stable à Alpha sur Modrinth.",
+    "Seuls les utilisateurs voulant aider au débogage peuvent l’utiliser."
+  ],
+  "features_en": [
+    "Affected: Acatar 1.4 on Minecraft 1.21.1.",
+    "The file has been temporarily disabled on CurseForge.",
+    "Downloading from Modrinth is strongly discouraged and has been changed from Stable to Alpha.",
+    "Only testers wishing to assist with debugging should use it."
+  ],
+
+  "link": "",
+  "cta_link": "",
+  "stage": ""
+  },
+
+  {
+  "custom": true,
+  "type": "announcement",
+  "mod": "chaosium",
+  "date": "2025-10-21",
+  "title_fr": "Chaosium est désormais disponible sur Modrinth !",
+  "title_en": "Chaosium is now available on Modrinth!",
+  "summary_fr": "Après une longue période exclusive sur CurseForge, le mod <strong>Chaosium</strong> rejoint désormais <strong>Modrinth</strong> pour offrir une meilleure visibilité et faciliter les téléchargements !",
+  "summary_en": "After a long time exclusively on CurseForge, <strong>Chaosium</strong> is now also available on <strong>Modrinth</strong>, offering better visibility and easier downloads!",
+  "cta_link": "https://modrinth.com/mod/chaosium",
+  "cta_label_fr": "Voir sur Modrinth",
+  "cta_label_en": "View on Modrinth",
+  "hide_after": "2025-12-14T23:59:59+01:00"
+  }
+
 ]
 

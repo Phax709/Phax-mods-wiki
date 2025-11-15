@@ -2763,3 +2763,25 @@ body.theme-bleu .back-to-top{
     text-align: center;
   }
 }
+
+.stage-badge.stage-urgent {
+  background-color: #d32f2f; /* rouge vif */
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+.stage-badge.stage-news {
+  background-color: #2563eb; /* bleu vif cohérent avec le site */
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
