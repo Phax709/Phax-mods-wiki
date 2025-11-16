@@ -192,24 +192,57 @@
        placeholder="Rechercher…"
        data-translate-placeholder="search_placeholder">
 
-       <!-- Choix d’affichage (desktop) -->
+      <!-- Choix d’affichage (desktop) -->
       <div class="layout-toggle" data-mod="mod1">
         <span class="layout-label" data-translate="layout_label">Affichage</span>
         <div class="layout-buttons" role="group" aria-label="Disposition des cartes">
-          <button type="button" class="layout-btn" data-layout="2x3" onclick="setCardsLayout('2x3')" aria-label="2 colonnes × 3 rangées">2×3</button>
-          <button type="button" class="layout-btn" data-layout="3x2" onclick="setCardsLayout('3x2')" aria-label="3 colonnes × 2 rangées">3×2</button>
+          <button type="button" class="layout-btn" data-layout="2x3"
+                  onclick="setCardsLayout('2x3')" aria-label="2 colonnes × 3 rangées">2×3</button>
+          <button type="button" class="layout-btn" data-layout="3x2"
+                  onclick="setCardsLayout('3x2')" aria-label="3 colonnes × 2 rangées">3×2</button>
         </div>
       </div>
-      <div class="side-buttons">
-        <button class="card-btn wiki" data-type="all"       onclick="filterCategory('mod1','all')"        data-translate="tout">Tout</button>
-        <button class="card-btn wiki" data-type="bloc"      onclick="filterCategory('mod1','bloc')"       data-translate="blocs">Blocs</button>
-        <button class="card-btn wiki" data-type="minerai"   onclick="filterCategory('mod1','minerai')"    data-translate="minerai">Minerais</button>
-        <button class="card-btn wiki" data-type="item"      onclick="filterCategory('mod1','item')"       data-translate="items">Items</button>
-        <button class="card-btn wiki" data-type="craft"     onclick="filterCategory('mod1','craft')"      data-translate="craft">Craft</button>
-        <button class="card-btn wiki" data-type="nature"    onclick="filterCategory('mod1','nature')"     data-translate="nature">Nature</button>
-        <button class="card-btn wiki" data-type="structure" onclick="filterCategory('mod1','structure')"  data-translate="structure">Structures</button>
-        <button class="card-btn wiki" data-type="mob"       onclick="filterCategory('mod1','mob')"        data-translate="creatures">Créatures</button>
-        <button class="card-btn wiki update-btn"            onclick="showStatus('mod1')"                  data-translate="statut">Statut</button>
+
+      <!-- Filtres catégories + statut -->
+      <div class="filter-wrapper" data-mod="mod1">
+        <!-- Mobile : dropdown -->
+        <div class="filter-dropdown">
+          <label for="filter-select-mod1" data-translate="filter_label">Filtrer :</label>
+          <select id="filter-select-mod1" onchange="filterCategory('mod1', this.value)">
+            <option value="all"       data-translate="tout">Tout</option>
+            <option value="bloc"      data-translate="blocs">Blocs</option>
+            <option value="minerai"   data-translate="minerai">Minerais</option>
+            <option value="item"      data-translate="items">Items</option>
+            <option value="craft"     data-translate="craft">Craft</option>
+            <option value="nature"    data-translate="nature">Nature</option>
+            <option value="structure" data-translate="structure">Structures</option>
+            <option value="mob"       data-translate="creatures">Créatures</option>
+          </select>
+        </div>
+
+        <!-- Desktop : boutons classiques -->
+        <div class="side-buttons">
+          <button class="card-btn wiki" data-type="all"
+                  onclick="filterCategory('mod1','all')" data-translate="tout">Tout</button>
+          <button class="card-btn wiki" data-type="bloc"
+                  onclick="filterCategory('mod1','bloc')" data-translate="blocs">Blocs</button>
+          <button class="card-btn wiki" data-type="minerai"
+                  onclick="filterCategory('mod1','minerai')" data-translate="minerai">Minerais</button>
+          <button class="card-btn wiki" data-type="item"
+                  onclick="filterCategory('mod1','item')" data-translate="items">Items</button>
+          <button class="card-btn wiki" data-type="craft"
+                  onclick="filterCategory('mod1','craft')" data-translate="craft">Craft</button>
+          <button class="card-btn wiki" data-type="nature"
+                  onclick="filterCategory('mod1','nature')" data-translate="nature">Nature</button>
+          <button class="card-btn wiki" data-type="structure"
+                  onclick="filterCategory('mod1','structure')" data-translate="structure">Structures</button>
+          <button class="card-btn wiki" data-type="mob"
+                  onclick="filterCategory('mod1','mob')" data-translate="creatures">Créatures</button>
+        </div>
+
+        <!-- Bouton Statut (visible aussi en mobile) -->
+        <button class="card-btn wiki update-btn"
+                onclick="showStatus('mod1')" data-translate="statut">Statut</button>
       </div>
     </aside>
     <div class="page-content">
@@ -241,24 +274,56 @@
        data-translate-placeholder="search_placeholder">
 
       <!-- Choix d’affichage (desktop) -->
-      <div class="layout-toggle" data-mod="mod1">
+      <div class="layout-toggle" data-mod="mod2">
         <span class="layout-label" data-translate="layout_label">Affichage</span>
         <div class="layout-buttons" role="group" aria-label="Disposition des cartes">
-          <button type="button" class="layout-btn" data-layout="2x3" onclick="setCardsLayout('2x3')" aria-label="2 colonnes × 3 rangées">2×3</button>
-          <button type="button" class="layout-btn" data-layout="3x2" onclick="setCardsLayout('3x2')" aria-label="3 colonnes × 2 rangées">3×2</button>
+          <button type="button" class="layout-btn" data-layout="2x3"
+                  onclick="setCardsLayout('2x3')" aria-label="2 colonnes × 3 rangées">2×3</button>
+          <button type="button" class="layout-btn" data-layout="3x2"
+                  onclick="setCardsLayout('3x2')" aria-label="3 colonnes × 2 rangées">3×2</button>
         </div>
       </div>
 
-      <div class="side-buttons">
-        <button class="card-btn wiki" data-type="all"       onclick="filterCategory('mod2','all')"        data-translate="tout">Tout</button>
-        <button class="card-btn wiki" data-type="bloc"      onclick="filterCategory('mod2','bloc')"       data-translate="blocs">Blocs</button>
-        <button class="card-btn wiki" data-type="minerai"   onclick="filterCategory('mod2','minerai')"    data-translate="minerai">Minerais</button>
-        <button class="card-btn wiki" data-type="item"      onclick="filterCategory('mod2','item')"       data-translate="items">Items</button>
-        <button class="card-btn wiki" data-type="craft"     onclick="filterCategory('mod2','craft')"      data-translate="craft">Craft</button>
-        <button class="card-btn wiki" data-type="nature"    onclick="filterCategory('mod2','nature')"     data-translate="nature">Nature</button>
-        <button class="card-btn wiki" data-type="structure" onclick="filterCategory('mod2','structure')"  data-translate="structure">Structures</button>
-        <button class="card-btn wiki" data-type="mob"       onclick="filterCategory('mod2','mob')"        data-translate="creatures">Créatures</button>
-        <button class="card-btn wiki update-btn"            onclick="showStatus('mod2')"                  data-translate="statut">Statut</button>
+      <!-- Filtres catégories + statut -->
+      <div class="filter-wrapper" data-mod="mod2">
+        <!-- Mobile : dropdown -->
+        <div class="filter-dropdown">
+          <label for="filter-select-mod2" data-translate="filter_label">Filtrer :</label>
+          <select id="filter-select-mod2" onchange="filterCategory('mod2', this.value)">
+            <option value="all"       data-translate="tout">Tout</option>
+            <option value="bloc"      data-translate="blocs">Blocs</option>
+            <option value="minerai"   data-translate="minerai">Minerais</option>
+            <option value="item"      data-translate="items">Items</option>
+            <option value="craft"     data-translate="craft">Craft</option>
+            <option value="nature"    data-translate="nature">Nature</option>
+            <option value="structure" data-translate="structure">Structures</option>
+            <option value="mob"       data-translate="creatures">Créatures</option>
+          </select>
+        </div>
+
+        <!-- Desktop : boutons classiques -->
+        <div class="side-buttons">
+          <button class="card-btn wiki" data-type="all"
+                  onclick="filterCategory('mod2','all')" data-translate="tout">Tout</button>
+          <button class="card-btn wiki" data-type="bloc"
+                  onclick="filterCategory('mod2','bloc')" data-translate="blocs">Blocs</button>
+          <button class="card-btn wiki" data-type="minerai"
+                  onclick="filterCategory('mod2','minerai')" data-translate="minerai">Minerais</button>
+          <button class="card-btn wiki" data-type="item"
+                  onclick="filterCategory('mod2','item')" data-translate="items">Items</button>
+          <button class="card-btn wiki" data-type="craft"
+                  onclick="filterCategory('mod2','craft')" data-translate="craft">Craft</button>
+          <button class="card-btn wiki" data-type="nature"
+                  onclick="filterCategory('mod2','nature')" data-translate="nature">Nature</button>
+          <button class="card-btn wiki" data-type="structure"
+                  onclick="filterCategory('mod2','structure')" data-translate="structure">Structures</button>
+          <button class="card-btn wiki" data-type="mob"
+                  onclick="filterCategory('mod2','mob')" data-translate="creatures">Créatures</button>
+        </div>
+
+        <!-- Bouton Statut (visible aussi en mobile) -->
+        <button class="card-btn wiki update-btn"
+                onclick="showStatus('mod2')" data-translate="statut">Statut</button>
       </div>
     </aside>
 

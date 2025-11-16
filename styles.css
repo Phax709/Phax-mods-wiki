@@ -549,6 +549,58 @@ body.theme-clair .underline {
   box-shadow: 0 0 8px var(--accent-hover);
 }
 
+/* ===== Filtres : dropdown mobile (structure de base) ===== */
+.filter-wrapper {
+  margin-top: 0.75em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.filter-dropdown {
+  display: none; /* caché par défaut (desktop) */
+}
+
+.filter-dropdown label {
+  display: block;
+  margin-bottom: 0.35em;
+  font-weight: 600;
+  font-size: 0.95em;
+  color: var(--text);
+}
+
+.filter-dropdown select {
+  width: 100%;
+  padding: 0.6em 0.9em;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.95em;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+
+  /* Flèche custom */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text) 50%),
+    linear-gradient(135deg, var(--text) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2.4em;
+}
+
+.filter-dropdown select:focus {
+  outline: none;
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
 .card-detail {
   background: var(--card-bg);
   padding: 1.5em;
@@ -1387,6 +1439,20 @@ body.theme-sombre #mod2 .cards-grid::-webkit-scrollbar-thumb {
   #mod2 .side-menu .search-bar{
     width: 100%;
     box-sizing: border-box;
+  }
+
+    /* Mobile : on affiche le dropdown, on masque les gros boutons de catégories */
+  #mod1 .filter-dropdown,
+  #mod2 .filter-dropdown {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  /* On cache seulement les boutons de catégorie, pas le bouton Statut */
+  #mod1 .side-buttons .card-btn[data-type],
+  #mod2 .side-buttons .card-btn[data-type] {
+    display: none;
   }
 
   /* catégories : défilement horizontal (pratique si ça déborde) */

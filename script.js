@@ -38,6 +38,7 @@ const translations = {
     structure: "Structures",
     minerai: "Minerais",
     craft: "Craft / Recette", //à choisir mais je peux aussi mettre Recette
+    filter_label: "Filtrer :",
     patch_acatar: "Patchnotes Acatar",
     patch_chaosium: "Patchnotes Chaosium",
     patch_history: "Historique des mises à jour",
@@ -59,6 +60,9 @@ const translations = {
     report_bug: "Signaler un bug",
     suggest_idea: "Proposer une suggestion",
     satisfaction_survey: "Enquête de satisfaction",
+    help_site_title: "Améliorer le site",
+    help_site_desc: "Donnez votre avis sur l’ergonomie, la vitesse, les contenus, les couleurs, et plus encore.",
+    site_survey_btn: "Enquête de satisfaction du site",
     langue_fr: "Français",
     langue_en: "English",
     credits_title: "Crédits",
@@ -124,6 +128,7 @@ const translations = {
     structure: "Structures",
     minerai: "Ores",
     craft: "Craft / Recipe", //à choisir mais je peux aussi mettre Recette
+    filter_label: "Filter:",
     patch_acatar: "Acatar Patch Notes",
     patch_chaosium: "Chaosium Patch Notes",
     patch_history: "Patch History",
@@ -145,6 +150,9 @@ const translations = {
     report_bug: "Report a bug",
     suggest_idea: "Suggest an idea",
     satisfaction_survey: "Satisfaction survey",
+    help_site_title: "Improve the site",
+    help_site_desc: "Give your opinion about the interface, speed, content, colors, and more.",
+    site_survey_btn: "Site feedback & satisfaction survey",
     langue_fr: "French",
     langue_en: "English",
     credits_title: "Credits",
@@ -278,11 +286,9 @@ function markFilterActive(modId, type){
 
 function getCardsForPage(page){
   if (!page) return [];
-  if (!page._cards) {
-    const grid = page.querySelector('.cards-grid');
-    page._cards = grid ? Array.from(grid.querySelectorAll('.small-card')) : [];
-  }
-  return page._cards;
+  const grid = page.querySelector('.cards-grid');
+  // On RE-LIT toujours la liste des cartes pour éviter le bug avec le chargement async
+  return grid ? Array.from(grid.querySelectorAll('.small-card')) : [];
 }
 
 function debounce(fn, delay=120){
@@ -624,6 +630,12 @@ function filterCategory(pageId, category) {
     group.querySelectorAll('.card-btn').forEach(b => b.classList.remove('active'));
     (group.querySelector(`.card-btn[data-type="${key}"]`) ||
      group.querySelector(`.card-btn[data-type="all"]`))?.classList.add('active');
+  }
+
+    // Synchronise aussi le dropdown mobile, s'il existe
+  const dropdown = page.querySelector('.filter-dropdown select');
+  if (dropdown) {
+    dropdown.value = key;
   }
 
   try {
@@ -2182,22 +2194,19 @@ document.addEventListener('input', (e) => {
     const btn = e.target.closest('.side-buttons .card-btn[data-type]');
     if (!btn) return;
 
+    // On ferme le statut / détail + on affiche la grille si besoin
     await ensureGridVisibleFrom(btn);
 
     const page = btn.closest('.page');
-    const grid = page?.querySelector('.cards-grid');
-    if (!grid) return;
+    const pageId = page?.id;
+    if (!pageId) return;
 
-    // activer visuellement
-    const group = btn.parentElement;
-    if (group) group.querySelectorAll('.card-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    // appliquer le filtre
     const type = btn.getAttribute('data-type') || 'all';
-    grid.querySelectorAll('.small-card').forEach(card => {
-      card.style.display = (type === 'all' || card.classList.contains(type)) ? 'block' : 'none';
-    });
+
+    // On passe par la fonction centrale de filtre
+    if (typeof filterCategory === 'function') {
+      filterCategory(pageId, type);
+    }
   }, true);
 
   // === Suggestions de recherche (titres uniquement)
