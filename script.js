@@ -10,6 +10,7 @@ const translations = {
     home_acatar_desc: "Un mod qui facilite les nouveaux joueurs dans Minecraft ainsi pour les joueurs avec plus d'expérience des fonctionnalités nouvelles.",
     home_chaosium_desc: "Un mod fait pour les joueurs très expérimentés et qui veulent du challenge et de la difficulté ! D'où sont nom !",
     home_phaxsirens_desc: "Un mod de sirènes et de lampes configurables avec plusieurs couleurs et effets.",
+    home_comingsoon_desc: "Un nouveau mod est actuellement en préparation. Plus d’informations seront partagées prochainement.",
     patchnotes: "Patch Notes",
     settings: "Paramètres",
     credits: "Crédits",
@@ -88,7 +89,8 @@ const translations = {
     license_point_1: "Redistribution non commerciale autorisée avec crédit “Phax709” et lien vers ce site.",
     license_point_2: "Aucune modification ni re-upload des fichiers.",
     license_point_3: "Vidéos YouTube / streams Twitch monétisés autorisés : crédit + lien, sans héberger les fichiers.",
-    license_point_4: "Modpacks / rehosts interdits sans autorisation écrite."
+    license_point_4: "Modpacks / rehosts interdits sans autorisation écrite.",
+    home_coming_soon_button: "🚧 En développement"
 
   },
   en: {
@@ -102,6 +104,7 @@ const translations = {
     home_acatar_desc: "A mod that facilitates new players in Minecraft as well as for players with more experience of the new features.",
     home_chaosium_desc: "A mod made for very experienced players who want challenge and difficulty! Hence the name!",
     home_phaxsirens_desc: "A mod that adds configurable sirens and lights with multiple colors and effects.",
+    home_comingsoon_desc: "A new mod is currently in preparation. More information will be shared soon.",
     patchnotes: "Patch Notes",
     settings: "Settings",
     credits: "Credits",
@@ -180,7 +183,8 @@ const translations = {
     license_point_1: "Non-commercial redistribution allowed with credit “Phax709” and a link to this site.",
     license_point_2: "No file modifications or re-uploads.",
     license_point_3: "Monetized YouTube/Twitch allowed for showcasing: credit + link, no file hosting.",
-    license_point_4: "Modpacks / rehosts forbidden without written permission."
+    license_point_4: "Modpacks / rehosts forbidden without written permission.",
+    home_coming_soon_button: "🚧 in development"
 
   }
 };
