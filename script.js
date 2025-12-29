@@ -831,9 +831,10 @@ async function renderPatchList() {
   list.innerHTML = '';
   notes.forEach(n => {
     const modKey = (n.mod || '').toLowerCase();
-    const modName = (modKey === 'chaosium')
-      ? (translations?.[lang]?.chaosium || 'Chaosium')
-      : (translations?.[lang]?.acatar   || 'Acatar');
+    const modName =
+    (modKey === 'chaosium') ? (translations?.[lang]?.chaosium || 'Chaosium') :
+    (modKey === 'sirens')   ? (translations?.[lang]?.sirens   || 'Phax Sirens') :
+                              (translations?.[lang]?.acatar   || 'Acatar');
 
     const title   = `${modName}${n.version ? ` - v${n.version}` : ''}`;
     const mc      = getMc(n);

@@ -2028,12 +2028,17 @@
     "mod": "acatar",
     "version": "1.4.0 - The Sakura Spirit Update",
     "mc": "1.21.1",
-    "stage": "release",
+    "stage": "alpha",
     "date": "2025-10-21",
-    "title_fr": "Acatar - v1.4.0 - L’Esprit du Sakura",
-    "title_en": "Acatar - v1.4.0 - The Sakura Spirit Update",
+    "title_fr": "[OBSOLÈTE] Acatar - v1.4.0 - L’Esprit du Sakura",
+    "title_en": "[DEPRECATED] Acatar - v1.4.0 - The Sakura Spirit Update",
     "image": "images/ui/the_sakura_spirit_update_400_400.png",
     "sections_fr": [
+    {"title": "⚠️ Informations importantes", "items": [
+      "Cette version n’est plus maintenue.",
+      "Elle peut contenir des bugs et peut nécessiter des dépendances supplémentaires (comme Curios).",
+      "Veuillez utiliser Acatar 1.4.1 ou une version plus récente."
+    ]},
     { "title": "🪄AJOUT", "items": [
       "Les armures du mod (sauf l’armure de l’espace) peuvent désormais avoir un modèle de forge (disponible uniquement avec les matériaux vanilla : diamant, émeraude, fer, or, redstone, etc.)",
       "Ajout de 2 crafts pour la potion de Mauvais Présage : un dans la table de craft (9 ingrédients) et un dans l’alambic 🧪",
@@ -2067,6 +2072,11 @@
     ]}
   ],
   "sections_en": [
+    {"title": "⚠️ Important information", "items": [
+      "This version is no longer maintained.",
+      "It may contain bugs and may require additional dependencies (such as Curios).",
+      "Please use Acatar 1.4.1 or a newer version."
+    ]},
     { "title": "🪄ADD", "items": [
         "All armor sets (except the Space Armor) can now have Smithing Templates (only available with vanilla materials like diamond, emerald, iron, gold, redstone, etc.)",
         "Added 2 crafting recipes for the Bad Omen potion: one in the crafting table (9 ingredients) and one in the brewing stand 🧪",
@@ -2098,6 +2108,105 @@
         "🔥 The Sakura Biome can now naturally generate Ruined Portals",
         "👁️ Increased detection range of the Eye of Revelation"
     ]}
+  ]
+},
+{
+    "id": "acatar-1.4.1-mc1.21.1",
+    "mod": "acatar",
+    "version": "1.4.1",
+    "mc": "1.21.1",
+    "date": "2025-12-29",
+    "title_fr": "Acatar - v1.4.1",
+    "title_en": "Acatar - v1.4.1",
+    "sections_fr": [
+    { "title": "🧩RÉSOLUTION", "items": [
+        "Correction des tags invalides et des références cassées",
+        "Suppression des entrées héritées non prises en charge",
+        "Correction et suppression des recettes invalides",
+        "Suppression des recettes utilisant des éléments exclusifs à Minecraft 1.21.4",
+        "Suppression de la dépendance Curios",
+        "Amélioration de la stabilité sur Minecraft 1.21.1"
+    ]}
+  ],
+  "sections_en": [
+    { "title": "🧩FIXES", "items": [
+        "Fixed invalid tags and broken references",
+        "Removed unsupported legacy entries",
+        "Fixed and removed invalid recipes",
+        "Removed recipes using Minecraft 1.21.4-only elements",
+        "Removed the Curios dependency",
+        "Improved stability on Minecraft 1.21.1"
+    ]}
+  ]
+},
+{
+    "id": "sirens-1.0.0-mc1.20.1",
+    "mod": "sirens",
+    "version": "1.0.0",
+    "mc": "1.20.1",
+    "date": "2025-12-26",
+    "title_fr": "Sirens - v1.0.0",
+    "title_en": "Sirens - v1.0.0",
+    "sections_fr": [
+    { "title": "🪄AJOUT", "items": [
+      "Sirènes & lampes configurables : blocs entièrement configurables.",
+      "Volume du son réglable.",
+      "Rayon du son réglable.",
+      "Boucle sonore optionnelle.",
+      "Modes de lumière : Allumé / Clignotant.",
+      "Vitesse de clignotement réglable.",
+      "Intensité lumineuse réglable (0–15).",
+      "Variantes de couleurs : plusieurs sirènes et lampes colorées.",
+      "Chaque couleur possède son propre bloc et sa propre texture.",
+      "Recettes utilisant du verre coloré correspondant.",
+      "Configuration en jeu via une interface (GUI) simple.",
+      "Les réglages sont sauvegardés par bloc.",
+      "Retour visuel et sonore instantané lors des changements."
+    ]}
+  ],
+  "sections_en": [
+    { "title": "🪄ADD", "items": [
+      "Configurable sirens & lamps: fully configurable blocks.",
+      "Adjustable sound volume.",
+      "Adjustable sound radius.",
+      "Optional sound loop.",
+      "Light modes: On / Blinking.",
+      "Adjustable blink speed.",
+      "Adjustable light intensity (0–15).",
+      "Multiple color variants: colored sirens and lamps.",
+      "Each color has its own block and texture.",
+      "Recipes use matching colored glass.",
+      "In-game configuration via an easy-to-use GUI.",
+      "Settings are saved per block.",
+      "Instant visual and sound feedback when changing values."
+    ]}
+  ]
+},
+{
+  "id": "sirens-1.0.1-mc1.20.1",
+  "mod": "sirens",
+  "version": "1.0.1",
+  "mc": "1.20.1",
+  "date": "2025-12-27",
+  "title_fr": "Phax Sirens - v1.0.1",
+  "title_en": "Phax Sirens - v1.0.1",
+  "sections_fr": [
+    {
+      "title": "🧩RÉSOLUTION",
+      "items": [
+        "Correction d’un crash critique au démarrage (Minecraft 1.20.1).",
+        "Amélioration de la compatibilité et de la stabilité du mod."
+      ]
+    }
+  ],
+  "sections_en": [
+    {
+      "title": "🧩FIXES",
+      "items": [
+        "Fixed a critical crash on startup (Minecraft 1.20.1).",
+        "Improved mod compatibility and stability."
+      ]
+    }
   ]
 }
 ]
