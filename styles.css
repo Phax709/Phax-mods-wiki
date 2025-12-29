@@ -2775,12 +2775,21 @@ body.theme-bleu .back-to-top{
   background-color: #13a853;
 }
 
+/* --- Bouton des annonces CurseForge --- */
+.card-btn.news-open[href*="curseforge.com"] {
+  background-color: #f16436; /* orange CurseForge */
+}
+
+.card-btn.news-open[href*="curseforge.com"]:hover {
+  background-color: #d94f27;
+}
+
 /* --- Bouton "En savoir plus" par défaut (patchnotes, wiki, etc.) --- */
-.card-btn.news-open:not([href*="modrinth.com"]) {
+.card-btn.news-open:not([href*="modrinth.com"]):not([href*="curseforge.com"]) {
   background-color: #3b82f6; /* bleu standard */
 }
 
-.card-btn.news-open:not([href*="modrinth.com"]):hover {
+.card-btn.news-open:not([href*="modrinth.com"]):not([href*="curseforge.com"]):hover {
   background-color: #2563eb; /* bleu plus foncé au survol */
 }
 
@@ -2869,4 +2878,28 @@ body.theme-bleu .back-to-top{
 .news-credit a:hover {
   color: var(--accent-hover);
   border-bottom-style: solid;
+}
+
+/* Carte Mod futur */
+.presentation-card.upcoming-mod {
+  opacity: 0.85;
+}
+
+/* Badge "En développement" */
+.presentation-card.upcoming-mod .disabled {
+  background-color: #6b7280;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+/* Bouton Crédit image */
+.card-btn.credit {
+  background: transparent;
+  color: var(--accent);
+  border: 1px dashed var(--accent);
+  font-size: 0.9em;
+}
+
+.card-btn.credit:hover {
+  background-color: rgba(25, 118, 210, 0.1);
 }

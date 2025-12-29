@@ -6,8 +6,10 @@ const translations = {
     site_title: "Wiki des Mods de Phax709",
     acatar: "Acatar",
     chaosium: "Chaosium",
+    sirens: "Phax Sirens",
     home_acatar_desc: "Un mod qui facilite les nouveaux joueurs dans Minecraft ainsi pour les joueurs avec plus d'expérience des fonctionnalités nouvelles.",
     home_chaosium_desc: "Un mod fait pour les joueurs très expérimentés et qui veulent du challenge et de la difficulté ! D'où sont nom !",
+    home_phaxsirens_desc: "Un mod de sirènes et de lampes configurables avec plusieurs couleurs et effets.",
     patchnotes: "Patch Notes",
     settings: "Paramètres",
     credits: "Crédits",
@@ -96,8 +98,10 @@ const translations = {
     site_title: "Phax709 Mods Wiki",
     acatar: "Acatar",
     chaosium: "Chaosium",
+    sirens: "Phax Sirens",
     home_acatar_desc: "A mod that facilitates new players in Minecraft as well as for players with more experience of the new features.",
     home_chaosium_desc: "A mod made for very experienced players who want challenge and difficulty! Hence the name!",
+    home_phaxsirens_desc: "A mod that adds configurable sirens and lights with multiple colors and effects.",
     patchnotes: "Patch Notes",
     settings: "Settings",
     credits: "Credits",
@@ -2907,7 +2911,8 @@ document.addEventListener('click', (e) => {
   var MOD_IMAGES = {
     acatar:   "images/ui/new_logo_acatar.png",
     chaosium: "images/ui/chaosium_image.png",
-    maintenance: "images/ui/maintenance_warning.jpg"
+    maintenance: "images/ui/maintenance_warning.jpg",
+    sirens: "images/ui/phax_sirens_image.png",
   };
 
   var STATE = { items: [], idx: 0, timer: null, _newsTimer: null };
@@ -3128,6 +3133,7 @@ document.addEventListener('click', (e) => {
     var modLabel =
       it.mod === 'chaosium' ? (translations?.[lang]?.chaosium || 'Chaosium') :
       it.mod === 'acatar'   ? (translations?.[lang]?.acatar   || 'Acatar')   :
+      it.mod === 'sirens'   ? (translations?.[lang]?.sirens   || 'Phax Sirens')   :
       (it.mod === 'maintenance' ? (lang === 'fr' ? 'Maintenance' : 'Maintenance') : '');
 
     var version = it.version ? String(it.version) : '';
@@ -3177,10 +3183,21 @@ document.addEventListener('click', (e) => {
     var isMaintenance = (it.mod === 'maintenance') || (it.type === 'maintenance') || /maintenance/i.test(title);
 
     var btnHTML = '';
+
+    function ctaBtnClass(url){
+      url = String(url || '').toLowerCase();
+      if (url.includes('curseforge.com')) return 'card-btn curseforge news-open';
+      if (url.includes('modrinth.com'))   return 'card-btn modrinth news-open';
+      return 'card-btn wiki news-open';
+    }
+
     if (isAnnouncement && it.cta_link) {
-      var ctaLabel = (lang === 'fr' ? (it.cta_label_fr || it.cta_label_en || 'Lien') : (it.cta_label_en || it.cta_label_fr || 'Link'));
+      var ctaLabel = (lang === 'fr'
+        ? (it.cta_label_fr || it.cta_label_en || 'Lien')
+        : (it.cta_label_en || it.cta_label_fr || 'Link')
+      );
       btnHTML =
-        '<a href="'+it.cta_link+'" target="_blank" rel="noopener" class="card-btn wiki news-open">'+ctaLabel+'</a>';
+        '<a href="'+it.cta_link+'" target="_blank" rel="noopener" class="'+ctaBtnClass(it.cta_link)+'">'+ctaLabel+'</a>';
     } else if (!isMaintenance && !isUrgent && it.link) {
       var moreLbl = (lang === 'fr' ? 'En savoir plus' : 'Learn more');
       btnHTML =
