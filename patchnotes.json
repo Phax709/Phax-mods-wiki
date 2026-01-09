@@ -2143,7 +2143,7 @@
     "id": "sirens-1.0.0-mc1.20.1",
     "mod": "sirens",
     "version": "1.0.0",
-    "mc": "1.21.1",
+    "mc": "1.20.1",
     "date": "2025-12-26",
     "title_fr": "Sirens - v1.0.0",
     "title_en": "Sirens - v1.0.0",
@@ -2186,7 +2186,7 @@
   "id": "sirens-1.0.1-mc1.20.1",
   "mod": "sirens",
   "version": "1.0.1",
-  "mc": "1.21.1",
+  "mc": "1.20.1",
   "date": "2025-12-27",
   "title_fr": "Phax Sirens - v1.0.1",
   "title_en": "Phax Sirens - v1.0.1",
@@ -2208,6 +2208,30 @@
       ]
     }
   ]
+},
+{
+  "id": "sirens-1.0.2-mc1.20.1",
+  "mod": "sirens",
+  "version": "1.0.2",
+  "mc": "1.20.1",
+  "date": "2025-12-27",
+  "title_fr": "Phax Sirens - v1.0.2",
+  "title_en": "Phax Sirens - v1.0.2",
+  "sections_fr": [
+    {
+      "title": "🧩RÉSOLUTION",
+      "items": [
+        "Correction de la texture magenta de la sirène “éteinte” qui ne s’affichait pas correctement."
+      ]
+    }
+  ],
+  "sections_en": [
+    {
+      "title": "🧩FIXES",
+      "items": [
+        "Fixed the magenta siren “off” texture not displaying correctly."
+      ]
+    }
+  ]
 }
-
 ]

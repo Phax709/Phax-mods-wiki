@@ -3,15 +3,15 @@
   "custom": true,
   "type": "announcement",
   "mod": "sirens",
-  "date": "2025-12-29",
-  "title_fr": "🚨 Phax Sirens est désormais disponible sur CurseForge !",
-  "title_en": "🚨 Phax Sirens is now available on CurseForge!",
-  "summary_fr": "Le mod <strong>Phax Sirens</strong> est désormais disponible sur <strong>CurseForge</strong>. Profitez de sirènes et de lampes configurables avec plusieurs couleurs et effets.",
-  "summary_en": "The <strong>Phax Sirens</strong> mod is now available on <strong>CurseForge</strong>. Enjoy configurable sirens and lights with multiple colors and effects.",
+  "date": "2026-01-09",
+  "title_fr": "🚨 Phax Sirens est désormais disponible !",
+  "title_en": "🚨 Phax Sirens is now available!",
+  "summary_fr": "Le mod <strong>Phax Sirens</strong> est désormais disponible sur <strong>CurseForge</strong>. Profitez de sirènes et de lampes entièrement configurables, alimentées par redstone, avec plusieurs couleurs et effets lumineux. Si vous préférez <strong>Modrinth</strong>, vous pouvez retrouver le mod via la <strong>carte Phax Sirens plus bas</strong> sur cette page.",
+  "summary_en": "The <strong>Phax Sirens</strong> mod is now available on <strong>CurseForge</strong>. Enjoy fully configurable, redstone-powered sirens and lights with multiple colors and lighting effects. If you prefer <strong>Modrinth</strong>, you can find the mod via the <strong>Phax Sirens card below</strong> on this page.",
   "cta_link": "https://www.curseforge.com/minecraft/mc-mods/phax-sirens",
   "cta_label_fr": "Voir sur CurseForge",
   "cta_label_en": "View on CurseForge",
-  "hide_after": "2026-01-31T23:59:59+01:00"
+  "hide_after": "2026-02-07T23:59:59+01:00"
   },
 
   {
