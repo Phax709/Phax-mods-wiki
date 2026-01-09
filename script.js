@@ -42,8 +42,9 @@ const translations = {
     minerai: "Minerais",
     craft: "Craft / Recette", //à choisir mais je peux aussi mettre Recette
     filter_label: "Filtrer :",
-    patch_acatar: "Patchnotes Acatar",
-    patch_chaosium: "Patchnotes Chaosium",
+    patch_acatar: "Acatar",
+    patch_chaosium: "Chaosium",
+    patch_sirens: "Phax Sirens",
     patch_history: "Historique des mises à jour",
     build_label: "Type",
     build_all: "Tous",
@@ -136,8 +137,9 @@ const translations = {
     minerai: "Ores",
     craft: "Craft / Recipe", //à choisir mais je peux aussi mettre Recette
     filter_label: "Filter:",
-    patch_acatar: "Acatar Patch Notes",
-    patch_chaosium: "Chaosium Patch Notes",
+    patch_acatar: "Acatar",
+    patch_chaosium: "Chaosium",
+    patch_sirens: "Phax Sirens",
     patch_history: "Patch History",
     build_label: "Type",
     build_all: "All",
@@ -912,9 +914,10 @@ async function showPatchDetail(patchId) {
 
   // Libellés mod
   const modKey  = (n.mod || '').toLowerCase();
-  const modName = modKey === 'chaosium'
-    ? (translations?.[lang]?.chaosium || 'Chaosium')
-    : (translations?.[lang]?.acatar   || 'Acatar');
+  const modName =
+  modKey === 'chaosium' ? (translations?.[lang]?.chaosium || 'Chaosium') :
+  modKey === 'sirens'   ? (translations?.[lang]?.sirens   || 'Phax Sirens') :
+                          (translations?.[lang]?.acatar   || 'Acatar');
 
   const title = `${modName}${n.version ? ` - v${n.version}` : ''}`;
   const dateHtml = n.date ? `<div class="patch-meta">${n.date}</div>` : '';
