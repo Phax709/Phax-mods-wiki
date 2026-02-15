@@ -473,6 +473,8 @@ body.theme-clair .underline {
 
 .page-content {
   flex: 1;
+  position: relative;
+  min-height: 400px;
 }
 
 .side-buttons {
@@ -607,11 +609,23 @@ body.theme-clair .underline {
   border-radius: 12px;
   box-shadow: var(--shadow);
   animation: fadeIn 0.3s;
+  position: relative !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  min-height: 100px !important;
 }
 
 .card-detail h3 {
   margin-top: 0;
 }
+
+.detail-content {
+  position: relative;
+  z-index: 10;
+  min-height: 50px;
+  width: 100%;
+}
+
 .top-nav {
   display: flex;
   justify-content: center;
@@ -2558,14 +2572,23 @@ body.theme-bleu .back-to-top{
   color: #fff !important;
 }
 
-/* Forcer la couleur du FILTRE ACTIF (écrase .card-btn.wiki) */
+/* Forcer la couleur du FILTRE ACTIF - bleu plus foncé simple */
 #mod1 .side-buttons .card-btn.wiki.active,
 #mod2 .side-buttons .card-btn.wiki.active,
 #mod1 .side-buttons .card-btn[data-type].active,
 #mod2 .side-buttons .card-btn[data-type].active{
-  background: var(--accent-hover) !important; /* bleu plus foncé du thème */
+  background: #1565c0 !important;
   color: #fff !important;
-  font-weight: 700;
+  font-weight: bold !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25) !important;
+}
+
+/* Ne pas perdre la couleur au survol */
+#mod1 .side-buttons .card-btn[data-type].active:hover,
+#mod2 .side-buttons .card-btn[data-type].active:hover,
+#mod1 .side-buttons .card-btn.wiki.active:hover,
+#mod2 .side-buttons .card-btn.wiki.active:hover {
+  background: #1565c0 !important;
 }
 
 /* Optimisation de rendu des cartes */
@@ -2902,4 +2925,26 @@ body.theme-bleu .back-to-top{
 
 .card-btn.credit:hover {
   background-color: rgba(25, 118, 210, 0.1);
+}
+
+/* ========== STYLE FINAL FILTRES ACTIFS (bleu foncé) ========== */
+/* Règle avec spécificité maximale pour écraser toutes les autres */
+#mod1 .side-buttons .card-btn.active[data-type],
+#mod2 .side-buttons .card-btn.active[data-type],
+#mod1 .side-buttons .card-btn.active.wiki,
+#mod2 .side-buttons .card-btn.active.wiki,
+.side-buttons .card-btn.active {
+  background: #1565c0 !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25) !important;
+}
+
+#mod1 .side-buttons .card-btn.active[data-type]:hover,
+#mod2 .side-buttons .card-btn.active[data-type]:hover,
+#mod1 .side-buttons .card-btn.active.wiki:hover,
+#mod2 .side-buttons .card-btn.active.wiki:hover,
+.side-buttons .card-btn.active:hover {
+  background: #1565c0 !important;
+  color: #fff !important;
 }

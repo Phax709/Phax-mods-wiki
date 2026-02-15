@@ -8,7 +8,7 @@ const translations = {
     chaosium: "Chaosium",
     sirens: "Phax Sirens",
     home_acatar_desc: "Un mod qui facilite les nouveaux joueurs dans Minecraft ainsi pour les joueurs avec plus d'expérience des fonctionnalités nouvelles.",
-    home_chaosium_desc: "Un mod fait pour les joueurs très expérimentés et qui veulent du challenge et de la difficulté ! D'où sont nom !",
+    home_chaosium_desc: "Un mod fait pour les joueurs très expérimentés et qui veulent du challenge et de la difficulté ! D'où son nom !",
     home_phaxsirens_desc: "Un mod de sirènes et de lampes configurables avec plusieurs couleurs et effets.",
     home_comingsoon_desc: "Un nouveau mod est actuellement en préparation. Plus d’informations seront partagées prochainement.",
     patchnotes: "Patch Notes",
@@ -42,9 +42,8 @@ const translations = {
     minerai: "Minerais",
     craft: "Craft / Recette", //à choisir mais je peux aussi mettre Recette
     filter_label: "Filtrer :",
-    patch_acatar: "Acatar",
-    patch_chaosium: "Chaosium",
-    patch_sirens: "Phax Sirens",
+    patch_acatar: "Patchnotes Acatar",
+    patch_chaosium: "Patchnotes Chaosium",
     patch_history: "Historique des mises à jour",
     build_label: "Type",
     build_all: "Tous",
@@ -79,6 +78,7 @@ const translations = {
     third_party_discord: "Logo Discord © Discord",
     credit_freepik_urgent: "Illustration utilisée pour les messages urgents —",
     credit_freepik_maintenance: "Illustration utilisée pour la maintenance et les alertes —",
+    credit_freepik_comingsoon: "Illustration utilisée pour le mod en préparation —",
     site_stack_title: "Stack du site",
     site_stack_host: "Hébergement : GitHub Pages",
     site_stack_code: "Code front : HTML / CSS / JavaScript (vanilla) / JSON",
@@ -86,7 +86,7 @@ const translations = {
     mods_credits_title: "Crédits liés aux mods",
     mods_credits_text: "Sauf mention contraire, le code des mods, les assets non issus de Minecraft (textures, logos, images) et la documentation sont créés par Phax709. Les éléments dérivés de Minecraft appartiennent à Mojang AB (voir l’attribution ci-dessus).",
     license_title: "Licence",
-    license_intro: "Sauf mention contraire, le contenu de ce site (texte, mises en page, images originales) est sous licence CC BY-NC-ND 4.0 — © 2025 Phax709.",
+    license_intro: "Sauf mention contraire, le contenu de ce site (texte, mises en page, images originales) est sous licence CC BY-NC-ND 4.0 — © 2025-2026 Phax709.",
     license_point_1: "Redistribution non commerciale autorisée avec crédit “Phax709” et lien vers ce site.",
     license_point_2: "Aucune modification ni re-upload des fichiers.",
     license_point_3: "Vidéos YouTube / streams Twitch monétisés autorisés : crédit + lien, sans héberger les fichiers.",
@@ -137,9 +137,8 @@ const translations = {
     minerai: "Ores",
     craft: "Craft / Recipe", //à choisir mais je peux aussi mettre Recette
     filter_label: "Filter:",
-    patch_acatar: "Acatar",
-    patch_chaosium: "Chaosium",
-    patch_sirens: "Phax Sirens",
+    patch_acatar: "Acatar Patch Notes",
+    patch_chaosium: "Chaosium Patch Notes",
     patch_history: "Patch History",
     build_label: "Type",
     build_all: "All",
@@ -173,6 +172,7 @@ const translations = {
     third_party_title: "Third-party elements",
     third_party_discord: "Discord logo © Discord",
     credit_freepik_urgent: "Illustration used for urgent messages —",
+    credit_freepik_comingsoon: "Illustration used for the upcoming mod —",
     credit_freepik_maintenance: "Illustration used for maintenance and warnings —",
     site_stack_title: "Site stack",
     site_stack_host: "Hosting: GitHub Pages",
@@ -181,7 +181,7 @@ const translations = {
     mods_credits_title: "Mod credits",
     mods_credits_text: "Unless stated otherwise, the mod code, non-Minecraft assets (textures, logos, images), and documentation are created by Phax709. Derivative elements of Minecraft remain the property of Mojang AB (see attribution above).",
     license_title: "License",
-    license_intro: "Unless stated otherwise, the content of this site (text, layouts, original images) is licensed under CC BY-NC-ND 4.0 — © 2025 Phax709.",
+    license_intro: "Unless stated otherwise, the content of this site (text, layouts, original images) is licensed under CC BY-NC-ND 4.0 — © 2025-2026 Phax709.",
     license_point_1: "Non-commercial redistribution allowed with credit “Phax709” and a link to this site.",
     license_point_2: "No file modifications or re-uploads.",
     license_point_3: "Monetized YouTube/Twitch allowed for showcasing: credit + link, no file hosting.",
@@ -390,6 +390,19 @@ function setLanguage(lang) {
   if (window.__refreshHomeChips) window.__refreshHomeChips();
   ensureStatusTitle();
   if (window.__refreshNewsLang) window.__refreshNewsLang();
+
+  // Re-rendre le détail de carte si une est actuellement affichée
+  ['mod1', 'mod2'].forEach(modId => {
+    const page = document.getElementById(modId);
+    if (page) {
+      const detail = page.querySelector('.card-detail');
+      const zone = page.querySelector('.detail-content');
+      const cardId = detail?.getAttribute('data-current-card-id');
+      if (detail && zone && cardId && detail.style.display !== 'none') {
+        zone.innerHTML = renderCardDetailContent(modId, cardId, chosen);
+      }
+    }
+  });
 }
 
 
@@ -518,7 +531,7 @@ function initMenuParametres() {
 /********************
  * NAVIGATION PAGES
  ********************/
-function showPage(pageId) {
+async function showPage(pageId) {
   // 1) masquer toutes les pages
   document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
 
@@ -537,6 +550,16 @@ function showPage(pageId) {
   // 4) état mémorisé
   try { localStorage.setItem('lastPage', pageId); } catch {}
 
+  // Gérer la barre de statuts (visible uniquement sur accueil)
+  const bar  = document.getElementById('home-status');
+  const rail = document.getElementById('statusRail');
+  if (bar)  bar.style.display  = (pageId === 'accueil' ? 'flex'  : 'none');
+  if (rail) rail.style.display = (pageId === 'accueil' ? 'block' : 'none');
+  if (pageId === 'accueil') {
+    if (typeof ensureStatusTitle === 'function') ensureStatusTitle();
+    if (window.__refreshHomeChips) window.__refreshHomeChips();
+  }
+
   // 5) éléments contextuels
   const grid   = page?.querySelector('.cards-grid');
   const list   = page?.querySelector('.patch-list');
@@ -548,12 +571,23 @@ function showPage(pageId) {
   // --- lecture des paramètres URL (ex: #p=mod1&type=minerai)
   const sp = new URLSearchParams((location.hash || '').slice(1));
   const urlType = sp.get('type'); // null, 'all' ou une catégorie
+  const urlView = sp.get('view'); // 'status' ou null
 
   // 6) pages de mods : charger au besoin + restaurer vue & filtre
   if (pageId === 'mod1' || pageId === 'mod2') {
+    // Si l'URL demande la vue "status", ne pas afficher la grille
+    if (urlView === 'status') {
+      if (grid) grid.style.setProperty('display', 'none', 'important');
+      if (typeof showStatus === 'function') await showStatus(pageId);
+      try { localStorage.setItem(`${pageId}:lastView`, 'status'); } catch {}
+      return; // Sortir de la fonction, pas besoin de charger les cartes
+    }
+
     if (grid) grid.style.display = 'grid';
-    if (pageId === 'mod1' && typeof ensureCards === 'function') ensureCards('mod1');
-    if (pageId === 'mod2' && typeof ensureCards === 'function') ensureCards('mod2');
+    
+    // ✅ ATTENDRE que les cartes soient chargées avant de filtrer
+    if (pageId === 'mod1' && typeof ensureCards === 'function') await ensureCards('mod1');
+    if (pageId === 'mod2' && typeof ensureCards === 'function') await ensureCards('mod2');
 
     const savedType = localStorage.getItem(`${pageId}:lastType`) || 'all';
     const lastView  = localStorage.getItem(`${pageId}:lastView`) || 'grid';
@@ -567,7 +601,7 @@ function showPage(pageId) {
       if (typeof filterCategory === 'function') filterCategory(pageId, effectiveType || 'all');
       if (typeof markFilterActive === 'function') markFilterActive(pageId, effectiveType || 'all');
     } else if (lastView === 'status') {
-      if (typeof showStatus === 'function') showStatus(pageId);
+      if (typeof showStatus === 'function') await showStatus(pageId);
     } else {
       if (typeof filterCategory === 'function') filterCategory(pageId, savedType);
       if (typeof markFilterActive === 'function') markFilterActive(pageId, savedType);
@@ -581,11 +615,7 @@ function showPage(pageId) {
     if (typeof renderPatchList === 'function') renderPatchList();
   }
 
-  // 8) accueil : barre de statuts
-  const bar  = document.getElementById('home-status');
-  const rail = document.getElementById('statusRail');
-  if (bar)  bar.style.display  = (pageId === 'accueil' ? 'flex'  : 'none');
-  if (rail) rail.style.display = (pageId === 'accueil' ? 'block' : 'none');
+  // 8) Accueil : rafraîchir les chips de statut
   if (pageId === 'accueil') {
     if (typeof ensureStatusTitle === 'function') ensureStatusTitle();
     if (window.__refreshHomeChips) window.__refreshHomeChips();
@@ -619,10 +649,18 @@ function filterCategory(pageId, category) {
   const detail = page.querySelector('.card-detail');
   const status = page.querySelector('.update-panel');
 
-  if (status) status.style.display = 'none';
-  if (detail) detail.style.display = 'none';
-  if (grid)   grid.style.display   = 'grid';
+  if (status) status.style.setProperty('display', 'none', 'important');
+  if (detail) detail.style.setProperty('display', 'none', 'important');
+  if (grid)   grid.style.setProperty('display', 'grid', 'important');
   if (list)   list.style.display   = 'flex';
+
+  // Retirer les styles inline du bouton Statut
+  const statusBtn = page.querySelector('.side-buttons .update-btn');
+  if (statusBtn) {
+    statusBtn.style.background = '';
+    statusBtn.style.color = '';
+    statusBtn.style.fontWeight = '';
+  }
 
   const key = (category && category !== 'all') ? category : 'all';
 
@@ -914,10 +952,9 @@ async function showPatchDetail(patchId) {
 
   // Libellés mod
   const modKey  = (n.mod || '').toLowerCase();
-  const modName =
-  modKey === 'chaosium' ? (translations?.[lang]?.chaosium || 'Chaosium') :
-  modKey === 'sirens'   ? (translations?.[lang]?.sirens   || 'Phax Sirens') :
-                          (translations?.[lang]?.acatar   || 'Acatar');
+  const modName = modKey === 'chaosium'
+    ? (translations?.[lang]?.chaosium || 'Chaosium')
+    : (translations?.[lang]?.acatar   || 'Acatar');
 
   const title = `${modName}${n.version ? ` - v${n.version}` : ''}`;
   const dateHtml = n.date ? `<div class="patch-meta">${n.date}</div>` : '';
@@ -992,19 +1029,280 @@ function showPatchList() {
 /********************
  * DÉTAIL CARTES
  ********************/
+// Helper : génère un sprite animé (utilisé par thumb ET détail)
+function makeSpriteHTML(sideKey, cfg, targetH, pixelated = true, maxW = null, extraCSS = '') {
+  if (!cfg || !cfg.src) return '';
+  cfg.frame_width  = cfg.frame_width  ?? cfg.frameWidth;
+  cfg.frame_height = cfg.frame_height ?? cfg.frameHeight;
+  if (!cfg.frames || !cfg.frame_width || !cfg.frame_height) return '';
+
+  const frames = Math.max(1, cfg.frames|0);
+  const dir    = (cfg.direction === 'horizontal') ? 'horizontal' : 'vertical';
+  const fps    = (cfg.fps && cfg.fps > 0) ? cfg.fps : 6;
+
+  const dispH  = Math.max(1, targetH|0);
+  const ratio  = cfg.frame_width / cfg.frame_height;
+  const dispW  = Math.round(dispH * ratio);
+
+  const bgSize = (dir === 'horizontal')
+    ? `${dispW * frames}px ${dispH}px`
+    : `${dispW}px ${dispH * frames}px`;
+
+  const order     = Array.isArray(cfg.order) ? cfg.order : null;
+  const durations = Array.isArray(cfg.durations) ? cfg.durations : null;
+
+  const pxCSS   = pixelated ? 'image-rendering:pixelated;' : 'image-rendering:auto;';
+  const maxWcss = (maxW && maxW > 0) ? `max-width:${maxW}px;` : '';
+
+  // Note: on ne peut pas mettre resolveAsset ici car on n'a pas modId, donc on le fait avant d'appeler
+  return `
+    <div class="sprite-${sideKey}" data-sprite="1"
+         data-frames="${frames}" data-fps="${fps}"
+         data-dir="${dir}" data-fw="${cfg.frame_width}" data-fh="${cfg.frame_height}"
+         ${order ? `data-order="${order.join(',')}"` : ''}
+         ${durations ? `data-durations="${durations.join(',')}"` : ''}
+         style="
+           width:${dispW}px;height:${dispH}px;
+           background-image:url('${cfg.src}');
+           background-repeat:no-repeat;
+           background-position:0 0;
+           background-size:${bgSize};
+           ${pxCSS}${maxWcss}
+           border-radius:8px;
+           ${extraCSS}
+         "></div>`;
+}
+
+// Rend le contenu détail d'une carte à partir de son ID et du modId
+function renderCardDetailContent(modId, cardId, lang) {
+  const cardsData = _cache.cartes[modId] || [];
+  const c = cardsData.find(card => card.id === cardId);
+  
+  if (!c) {
+    console.warn(`[renderCardDetailContent] Carte "${cardId}" non trouvée dans le cache ${modId}`, {
+      cacheSize: cardsData.length,
+      availableIds: cardsData.slice(0, 5).map(card => card.id)
+    });
+    return '<p style="color:#c62828;">❌ Carte non trouvée. Essayez de recharger la page.</p>';
+  }
+
+  lang = lang || ETAT.langue || 'fr';
+
+  // --- Helpers
+  const renderRichList = (arr) => {
+    const lines = Array.isArray(arr) ? arr : [];
+    if (!lines.length) return '';
+    return `<ul>${
+      lines.map(raw => {
+        const txt = (raw ?? '').toString();
+        if (!txt.trim()) return `<li class="spacer" style="list-style:none;height:.35rem;"></li>`;
+        if (/^\s*\*/.test(txt)) {
+          const label = txt.replace(/^\s*\*\s*/, '');
+          return `<li class="subhead" style="list-style:none;margin:8px 0 4px;text-indent:-1.15em;padding-left:1.15em;"><strong>${label}</strong></li>`;
+        }
+        return `<li>${txt}</li>`;
+      }).join('')
+    }</ul>`;
+  };
+
+  const title = (lang === 'en') ? (c.title_en || c.title_fr || '') : (c.title_fr || c.title_en || '');
+  const desc  = (lang === 'en') ? (c.description_en || c.description_fr || '') : (c.description_fr || c.description_en || '');
+
+  // ---------- SOURCES d'images gauche/droite (comme dans renderCards) ----------
+  // GAUCHE
+  const leftPool = Array.isArray(c.image_left_pool) ? c.image_left_pool : [];
+  const leftCandidates = leftPool.length ? leftPool : (c.image_left ? [c.image_left] : []);
+  let leftIdx = 0;
+  if (leftCandidates.length > 1) {
+    const mode = c.left_select || 'sticky';
+    if (mode === 'daily') {
+      const day = Math.floor(Date.now() / 86400000);
+      leftIdx = day % leftCandidates.length;
+    } else if (mode === 'random') {
+      leftIdx = Math.floor(Math.random() * leftCandidates.length);
+    } else {
+      const key = 'leftChoice:' + (c.id || 'card');
+      const saved = localStorage.getItem(key);
+      if (saved !== null && !isNaN(+saved)) leftIdx = (+saved) % leftCandidates.length;
+      else { leftIdx = Math.floor(Math.random() * leftCandidates.length); try{localStorage.setItem(key, String(leftIdx));}catch(_){} }
+    }
+  }
+  const leftUrls = leftCandidates.map(raw => resolveAsset(modId, raw));
+  const leftSrc  = leftUrls[leftIdx] || '';
+
+  // DROITE
+  const rightPool = Array.isArray(c.image_right_pool) ? c.image_right_pool : (Array.isArray(c.image_pool) ? c.image_pool : []);
+  const rightCandidates = rightPool.length ? rightPool : (c.image ? [c.image] : []);
+  let rightIdx = 0;
+  if (rightCandidates.length > 1) {
+    const mode = c.right_select || 'sticky';
+    if (mode === 'daily') {
+      const day = Math.floor(Date.now() / 86400000);
+      rightIdx = day % rightCandidates.length;
+    } else if (mode === 'random') {
+      rightIdx = Math.floor(Math.random() * rightCandidates.length);
+    } else {
+      const key = 'rightChoice:' + (c.id || 'card');
+      const saved = localStorage.getItem(key);
+      if (saved !== null && !isNaN(+saved)) rightIdx = (+saved) % rightCandidates.length;
+      else { rightIdx = Math.floor(Math.random() * rightCandidates.length); try{localStorage.setItem(key, String(rightIdx));}catch(_){} }
+    }
+  }
+  const rightUrls = rightCandidates.map(raw => resolveAsset(modId, raw));
+  const rightSrc  = rightUrls[rightIdx] || '';
+
+  const leftRotateMs =
+    (typeof c.left_rotate_ms === 'number' && c.left_rotate_ms > 0) ? Math.round(c.left_rotate_ms)
+    : (typeof c.left_rotate_seconds === 'number' && c.left_rotate_seconds > 0) ? Math.round(c.left_rotate_seconds*1000)
+    : 0;
+  const rightRotateMs =
+    (typeof c.right_rotate_ms === 'number' && c.right_rotate_ms > 0) ? Math.round(c.right_rotate_ms)
+    : (typeof c.right_rotate_seconds === 'number' && c.right_rotate_seconds > 0) ? Math.round(c.right_rotate_seconds*1000)
+    : 0;
+
+  const leftSprite  = c.left_sprite  || c.image_left_sprite  || null;
+  const rightSprite = c.right_sprite || c.image_right_sprite || null;
+
+  // ---------- Image détail ----------
+  const leftPixel  = (typeof c.image_left_pixelated === 'boolean') ? c.image_left_pixelated : (c.image_pixelated === true);
+  const rightPixel = (c.image_pixelated === true);
+
+  let detailImg = '';
+  const previewSrc = rightSrc;
+
+  if ((leftSrc || leftSprite) && (previewSrc || rightSprite) && c.detail_pair !== false) {
+    const baseH  = (typeof c.detail_pair_height === 'number' && c.detail_pair_height > 0) ? c.detail_pair_height : 180;
+    const leftH  = (typeof c.detail_left_height  === 'number' && c.detail_left_height  > 0) ? c.detail_left_height  : baseH;
+    const rightH = (typeof c.detail_right_height === 'number' && c.detail_right_height > 0)
+                 ? c.detail_right_height
+                 : (typeof c.detail_right_scale === 'number' && c.detail_right_scale > 0
+                    ? Math.round(baseH * c.detail_right_scale) : baseH);
+    const rightMaxW = (typeof c.detail_right_max_width === 'number' && c.detail_right_max_width > 0) ? c.detail_right_max_width : 440;
+
+    let leftDetailNode = '';
+    if (leftSprite) {
+      const cfg = { ...leftSprite, src: resolveAsset(modId, leftSprite.src) };
+      leftDetailNode = makeSpriteHTML('Ldet', cfg, leftH, leftPixel);
+    } else {
+      const rotateAttrs = (leftUrls.length > 1 && leftRotateMs > 0)
+        ? ` data-rotate="left" data-urls="${leftUrls.map(u=>encodeURIComponent(u)).join(',')}" data-ms="${leftRotateMs}" data-idx="${leftIdx}" data-ts="${Date.now()}"`
+        : '';
+      leftDetailNode = `<img src="${leftSrc}" alt="block" onerror="this.style.display='none'" ${rotateAttrs} style="height:${leftH}px;width:auto;${leftPixel?'image-rendering:pixelated;':'image-rendering:auto;'}border-radius:8px;">`;
+    }
+
+    let rightDetailNode = '';
+    if (rightSprite) {
+      const cfg = { ...rightSprite, src: resolveAsset(modId, rightSprite.src) };
+      rightDetailNode = makeSpriteHTML('Rdet', cfg, rightH, rightPixel, rightMaxW);
+    } else {
+      const rotateAttrs = (rightUrls.length > 1 && rightRotateMs > 0)
+        ? ` data-rotate="right" data-urls="${rightUrls.map(u=>encodeURIComponent(u)).join(',')}" data-ms="${rightRotateMs}" data-idx="${rightIdx}" data-ts="${Date.now()}"` : '';
+      rightDetailNode = `<img src="${previewSrc}" alt="${(title||'').replace(/"/g,'&quot;')}" onerror="this.style.display='none'" ${rotateAttrs} style="height:${rightH}px;max-width:${rightMaxW}px;width:auto;${rightPixel?'image-rendering:pixelated;':'image-rendering:auto;'}border-radius:8px;flex:0 0 auto;">`;
+    }
+
+    detailImg = `<div class="detail-pair" style="display:flex;align-items:flex-start;justify-content:center;gap:12px;margin:8px 0 12px;">${leftDetailNode}${rightDetailNode}</div>`;
+  } else {
+    if (previewSrc) {
+      detailImg = `<img src="${previewSrc}" alt="${(title||'').replace(/"/g,'&quot;')}" onerror="this.style.display='none'" style="border-radius:8px;display:block;margin:8px auto 12px;max-width:440px;width:100%;${rightPixel?'image-rendering:pixelated;':'image-rendering:auto;'}">`;
+    } else if (rightSprite) {
+      const baseH = (typeof c.detail_right_height === 'number' && c.detail_right_height > 0) ? c.detail_right_height : (typeof c.detail_pair_height === 'number' && c.detail_pair_height > 0) ? c.detail_pair_height : 180;
+      const maxW = (typeof c.detail_right_max_width === 'number' && c.detail_right_max_width > 0) ? c.detail_right_max_width : 440;
+      const cfg = { ...rightSprite, src: resolveAsset(modId, rightSprite.src) };
+      detailImg = makeSpriteHTML('RsoloDet', cfg, baseH, rightPixel, maxW, 'display:block;margin:8px auto 12px;');
+    } else {
+      detailImg = '';
+    }
+  }
+
+  // --- Sections
+  const details  = c.details || {};
+  const sections = Array.isArray(details.sections) ? details.sections : [];
+
+  const sectionsHtml = sections.map(sec => {
+    const stitle = (lang === 'en') ? (sec.title_en || '') : (sec.title_fr || '');
+    const sitems = (lang === 'en') ? (sec.items_en || []) : (sec.items_fr || []);
+    const imgs = (lang === 'en') ? (sec.images_en || sec.images || []) : (sec.images_fr || sec.images || []);
+    const caps = (lang === 'en') ? (sec.captions_en || sec.captions || []) : (sec.captions_fr || sec.captions || []);
+
+    const hasContent = (stitle && stitle.trim()) || sitems.length || imgs.length;
+    if (!hasContent) return '';
+
+    const imgsHtml = imgs.length
+    ? `<div class="section-images">
+       ${imgs.map((raw, i) => {
+         const src = resolveAsset(modId, raw);
+         const cap = (caps[i] || '').trim();
+         return `<figure class="sec-figure">${cap ? `<figcaption class="sec-figcap">${cap}</figcaption>` : ''}<img class="sec-img" src="${src}" alt="${(stitle||title||'').replace(/"/g,'&quot;')}" onerror="this.style.display='none'"></figure>`;
+       }).join('')}
+     </div>` : '';
+
+    const listHtml = sitems.length ? `<ul style="padding-left:1.15em;">${
+      sitems.map(it => {
+        const txt = (it ?? '').toString();
+        if (!txt.trim()) return `<li class="spacer" style="list-style:none;height:.35rem;"></li>`;
+        if (/^\s*\*/.test(txt)) {
+          const label = txt.replace(/^\s*\*\s*/, '');
+          return `<li class="subhead" style="list-style:none;margin:8px 0 4px;text-indent:-1.15em;padding-left:1.15em;"><strong>${label}</strong></li>`;
+        }
+        return `<li>${txt}</li>`;
+      }).join('')
+    }</ul>` : '';
+
+    return `${stitle ? `<h4 class="underline">${stitle}</h4>` : ''}${listHtml}${imgsHtml}`;
+  }).join('');
+
+  const craft = details[lang === 'en' ? 'craft_en' : 'craft_fr'] || [];
+  const usage = details[lang === 'en' ? 'usage_en' : 'usage_fr'] || [];
+  const drops = details[lang === 'en' ? 'drops_en' : 'drops_fr'] || [];
+  const extrasHtml = `
+    ${craft.length ? `<h4 class="underline">${(translations?.[lang]?.craft)||'Craft'}</h4>${renderRichList(craft)}` : ''}
+    ${usage.length ? `<h4 class="underline">${(translations?.[lang]?.usage)||'Usage'}</h4>${renderRichList(usage)}` : ''}
+    ${drops.length ? `<h4 class="underline">${(translations?.[lang]?.drops)||'Drops'}</h4>${renderRichList(drops)}` : ''}
+  `;
+
+  // Relancer l'animateur de sprites après le rendu
+  setTimeout(() => { if (typeof ensureSpriteAnimator === 'function') ensureSpriteAnimator(); }, 50);
+
+  return `${detailImg}${desc ? `<p>${desc}</p>` : ''}${sectionsHtml}${extrasHtml}`;
+}
+
 function showCardDetail(modId, el) {
   if (typeof hideBackToTop === 'function') hideBackToTop();
+  
   const page = document.getElementById(modId);
   if (!page) return;
+  
   const liste = page.querySelector('.cards-grid');
   const vue   = page.querySelector('.card-detail');
   const zone  = page.querySelector('.detail-content');
+  
   if (!liste || !vue || !zone) return;
 
-  liste.style.display = 'none';
-  vue.style.display   = 'block';
-  zone.innerHTML      = el.getAttribute('data-description') || '';
-  try { page.querySelector('.card-detail')?.setAttribute('data-current-card-id', el.getAttribute('data-id') || ''); } catch(_){}
+  const cardId = el.getAttribute('data-id') || '';
+  if (!cardId) return;
+  
+  // Force le masquage de la grille
+  liste.style.setProperty('display', 'none', 'important');
+  
+  // Force l'affichage de la vue détail
+  vue.style.setProperty('display', 'block', 'important');
+  vue.style.setProperty('visibility', 'visible', 'important');
+  vue.style.setProperty('opacity', '1', 'important');
+  
+  // Indicateur de chargement temporaire
+  zone.innerHTML = '<p style="text-align:center;padding:2rem;opacity:0.7;">⏳ Chargement...</p>';
+  
+  // Rend le contenu détail après un micro-délai
+  requestAnimationFrame(() => {
+    try {
+      zone.innerHTML = renderCardDetailContent(modId, cardId, ETAT.langue);
+    } catch (e) {
+      console.error('[showCardDetail] Erreur:', e);
+      zone.innerHTML = `<p style="color:#c62828;">❌ Erreur lors du chargement de la carte.</p>`;
+    }
+  });
+  
+  try { page.querySelector('.card-detail')?.setAttribute('data-current-card-id', cardId); } catch(_){}
 }
 
 // Conserver le filtre dans l'URL quand on ouvre une carte (pour que Retour garde la liste filtrée)
@@ -1056,15 +1354,12 @@ function hideCardDetail(modId) {
   const grid  = page.querySelector('.cards-grid');
   const view  = page.querySelector('.card-detail');
 
-  if (grid) grid.style.display = 'grid';
-  if (view) view.style.display = 'none';
+  if (grid) grid.style.setProperty('display', 'grid', 'important');
+  if (view) view.style.setProperty('display', 'none', 'important');
 
   // Filtre mémorisé
   let type = 'all';
   try { type = localStorage.getItem(`${modId}:lastType`) || 'all'; } catch {}
-
-  // Réapplique le filtre (ne pas forcer display:block — on laisse '' pour la grid)
-  if (typeof filterCategory === 'function') filterCategory(modId, type);
 
   // URL : on enlève la carte, on garde le filtre si ≠ all (REPLACE)
   if (typeof setParams === 'function') {
@@ -1075,13 +1370,14 @@ function hideCardDetail(modId) {
     }, true);
   }
 
+  // Réapplique le filtre (une seule fois)
+  if (typeof filterCategory === 'function') filterCategory(modId, type);
+  if (typeof syncFilterActive === 'function') syncFilterActive(modId);
+  if (typeof markFilterActive === 'function') markFilterActive(modId, type);
+
   // Back-to-top
   if (typeof updateBackToTop === 'function') updateBackToTop(modId);
   if (grid) requestAnimationFrame(() => grid.dispatchEvent(new Event('scroll')));
-
-  filterCategory(modId, type);
-  syncFilterActive(modId);
-  markFilterActive(modId, type);
 }
 
 /********************
@@ -1148,8 +1444,8 @@ async function showStatus(modId) {
 
   const grid   = document.querySelector(`#${modId} .cards-grid`);
   const detail = document.querySelector(`#${modId} .card-detail`);
-  if (grid)   grid.style.display = 'none';
-  if (detail) detail.style.display = 'none';
+  if (grid)   grid.style.setProperty('display', 'none', 'important');
+  if (detail) detail.style.setProperty('display', 'none', 'important');
   panel.style.border = 'none';
 
   if (location.protocol === 'file:') {
@@ -1263,14 +1559,39 @@ async function showStatus(modId) {
   } catch {}
   panel.style.display = 'block';
 
-  const buttons = document.querySelectorAll(`#${modId} .side-buttons .card-btn`);
-  buttons.forEach(b => b.classList.remove('active'));
-  const statusBtn = Array.from(buttons).find(
-    b => b.getAttribute('data-translate') === 'status' ||
-         (b.textContent || '').trim().toLowerCase().includes('statut') ||
-         (b.textContent || '').trim().toLowerCase().includes('status')
-  );
-  if (statusBtn) statusBtn.classList.add('active');
+  // Marquer le bouton "Statut" comme actif (avec petit délai pour être sûr que le DOM est prêt)
+  requestAnimationFrame(() => {
+    const sideButtons = document.querySelector(`#${modId} .side-buttons`);
+    if (sideButtons) {
+      // Retirer .active de tous les boutons de filtre ET retirer les styles inline
+      sideButtons.querySelectorAll('.card-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.removeAttribute('aria-pressed');
+        // Retirer le style inline seulement si ce n'est pas le bouton statut
+        if (!btn.classList.contains('update-btn')) {
+          btn.style.background = '';
+        }
+      });
+      
+      // Chercher le bouton Statut avec plusieurs méthodes
+      let statusBtn = sideButtons.querySelector('.update-btn');
+      if (!statusBtn) {
+        statusBtn = sideButtons.querySelector('[onclick*="showStatus"]');
+      }
+      if (!statusBtn) {
+        statusBtn = sideButtons.querySelector('[data-translate="statut"]');
+      }
+      
+      if (statusBtn) {
+        statusBtn.classList.add('active');
+        statusBtn.setAttribute('aria-pressed', 'true');
+        // Forcer le style inline pour être absolument sûr
+        statusBtn.style.setProperty('background', '#1565c0', 'important');
+        statusBtn.style.setProperty('color', '#fff', 'important');
+        statusBtn.style.setProperty('font-weight', 'bold', 'important');
+      }
+    }
+  });
 
   _lastStatusOpen = modId;
 }
@@ -1361,9 +1682,30 @@ function initUI() {
   }, true);
 })();
 
+// ✅ Event delegation pour les clics sur les CARTES (mod1/mod2)
+(function wireCardClicksOnce(){
+  if (window.__cardClicksWired) return;
+  window.__cardClicksWired = true;
+
+  document.addEventListener('click', (e) => {
+    // Cherche la carte parente
+    const card = e.target.closest('.small-card[data-id][data-mod]');
+    if (!card) return;
+    
+    const modId = card.getAttribute('data-mod');
+    const cardId = card.getAttribute('data-id');
+    
+    if (modId && cardId && typeof showCardDetail === 'function') {
+      e.preventDefault();
+      e.stopPropagation();
+      showCardDetail(modId, card);
+    }
+  }, false);
+})();
+
 /********************
  * Disposition des cartes (2×3 / 3×2)
- ********************/
+ *********************/
 function getSavedCardsLayout() {
   try {
     return localStorage.getItem('cardsLayout') || '3x2'; // défaut: 3 colonnes × 2 rangées
@@ -1925,20 +2267,14 @@ const extrasHtml = `
 `;
 
 
-    // ---------- Contenu détail dans data-attr ----------
-    const detailHtml = `
-      ${detailImg}
-      ${desc ? `<p>${desc}</p>` : ''}
-      ${sectionsHtml}
-      ${extrasHtml}
-    `.trim().replace(/"/g, '&quot;');
+    // ---------- Contenu détail : rendu dynamiquement (plus d'attribut data-description) ----------
+    // Le contenu sera rendu à la demande dans showCardDetail via renderCardDetailContent
 
-    // ---------- Render de la carte ----------
+    // ---------- Render de la carte (SANS onclick inline, on utilise event delegation) ----------
     return `
       <div class="small-card ${c.type || ''}"
            data-id="${c.id || ''}"
-           data-description="${detailHtml}"
-           onclick="showCardDetail('${modId}', this)">
+           data-mod="${modId}">
         ${thumbImg}
         <h4>${title}</h4>
         ${desc ? `<p>${desc}</p>` : ''}
@@ -1951,7 +2287,8 @@ const extrasHtml = `
   const type = activeBtn?.getAttribute('data-type') || 'all';
   if (type !== 'all') {
     grid.querySelectorAll('.small-card').forEach(card => {
-      card.style.display = card.classList.contains(type) ? 'block' : 'none';
+      // ✅ Utilise '' au lieu de 'block' pour laisser la grille CSS gérer l'affichage
+      card.style.display = card.classList.contains(type) ? '' : 'none';
     });
   }
 
@@ -2060,6 +2397,11 @@ async function ensureCards(modId, opts = {}) {
   const grid = document.querySelector(gridSel);
   if (!grid) return;
 
+  // Afficher un loader pendant le chargement
+  if (!grid.querySelector('.small-card') || opts.force) {
+    grid.innerHTML = '<p style="text-align:center;padding:2rem;opacity:0.7;">⏳ Chargement des cartes...</p>';
+  }
+
   // option pour forcer le rechargement (clear cache)
   if (opts.force && _cache?.cartes) {
     _cache.cartes[modId] = null;
@@ -2076,7 +2418,8 @@ async function ensureCards(modId, opts = {}) {
       const type = activeBtn?.getAttribute('data-type') || 'all';
       if (type !== 'all') {
         grid.querySelectorAll('.small-card').forEach(card => {
-          card.style.display = card.classList.contains(type) ? 'block' : 'none';
+          // ✅ Utilise '' au lieu de 'block' pour laisser la grille CSS gérer l'affichage
+          card.style.display = card.classList.contains(type) ? '' : 'none';
         });
       }
     } else {
@@ -2149,10 +2492,12 @@ function showCards(modId) {
     const back = e.target.closest('#mod1 .card-detail .back-btn, #mod2 .card-detail .back-btn');
     if (!back) return;
     e.preventDefault();
+    e.stopPropagation();
 
     // 1) Si l’URL contient déjà une carte (…#p=modX&card=...), on remonte l'historique navigateur
     const sp = new URLSearchParams((location.hash || '').slice(1));
-    if (sp.get('card')) { history.back(); return; }
+    // DÉSACTIVÉ : history.back() causait des boucles
+    // if (sp.get('card')) { history.back(); return; }
 
     // 2) Sinon on ferme simplement le détail pour revenir à la grille
     const page = back.closest('.page');
@@ -2203,9 +2548,12 @@ document.addEventListener('input', (e) => {
 
   // Filtres side-menu : <button class="card-btn" data-type="bloc|item|mob|all">
   document.addEventListener('click', async (e) => {
+    // ⛔ NE PAS intercepter les clics sur les CARTES
+    if (e.target.closest('.small-card[data-id]')) return;
+    
     const btn = e.target.closest('.side-buttons .card-btn[data-type]');
     if (!btn) return;
-
+    
     // On ferme le statut / détail + on affiche la grille si besoin
     await ensureGridVisibleFrom(btn);
 
@@ -2645,13 +2993,19 @@ function setFontFromDrawer(cls) {
 }
 
 // ---------- Liens entre cartes (ex: <a data-card-id="baton_forge">Bâton forgé</a>)
-function gotoCard(modId, cardId) {
+async function gotoCard(modId, cardId) {
+  const page = document.getElementById(modId);
+  if (!page) return;
+  
   // revenir sur la grille si un panneau est ouvert
   if (typeof showCards === 'function') showCards(modId);
 
   const gridSel = (modId === 'mod1') ? SELECTEURS.mod1Grid : SELECTEURS.mod2Grid;
   const grid = document.querySelector(gridSel);
   if (!grid) return;
+
+  // Attendre un petit délai pour que les cartes soient rendues
+  await new Promise(resolve => setTimeout(resolve, 100));
 
   // essaie d'ouvrir tout de suite
   let el = grid.querySelector(`.small-card[data-id="${cardId}"]`);
@@ -2662,11 +3016,16 @@ function gotoCard(modId, cardId) {
   }
 
   // si la carte n'est pas encore rendue, (re)charge et réessaie
-  if (typeof ensureCards === 'function') ensureCards(modId);
-  setTimeout(() => {
+  if (typeof ensureCards === 'function') {
+    await ensureCards(modId);
+    // Attendre un peu après le chargement
+    await new Promise(resolve => setTimeout(resolve, 100));
     el = grid.querySelector(`.small-card[data-id="${cardId}"]`);
-    if (el) showCardDetail(modId, el);
-  }, 120);
+    if (el) {
+      showCardDetail(modId, el);
+      try { el.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(_){}
+    }
+  }
 }
 
 // capture les clics sur <a data-card-id="...">
@@ -2773,7 +3132,9 @@ document.addEventListener('click', (e) => {
   async function applyFromHash(){
     const sp = getParams();
     const p  = sp.get('p') || localStorage.getItem('lastPage') || 'accueil';
-    if (typeof showPage === 'function') showPage(p);
+    
+    // ✅ Attendre que la page soit chargée avant d'appliquer filtres/recherche/carte
+    if (typeof showPage === 'function') await showPage(p);
 
     // MOD pages : filtre/recherche/carte
     if (p === 'mod1' || p === 'mod2') {
@@ -2781,7 +3142,11 @@ document.addEventListener('click', (e) => {
       const type = sp.get('type');
       if (type) {
         const btn = document.querySelector(`#${p} .side-buttons .card-btn[data-type="${type}"]`);
-        if (btn) btn.click();
+        if (btn) {
+          btn.click();
+          // Attendre que le filtre soit appliqué avant d'ouvrir la carte
+          await new Promise(resolve => setTimeout(resolve, 100));
+        }
       }
       // recherche
       const q = sp.get('q') || '';
@@ -2792,10 +3157,10 @@ document.addEventListener('click', (e) => {
         const ev = new Event('input', { bubbles:true });
         input.dispatchEvent(ev);
       }
-      // carte ouverte
+      // carte ouverte (après le filtre pour qu'elle soit visible)
       const card = sp.get('card');
       if (card) {
-        if (typeof gotoCard === 'function') gotoCard(p, card);
+        if (typeof gotoCard === 'function') await gotoCard(p, card);
       }
     }
 
@@ -2845,7 +3210,7 @@ document.addEventListener('click', (e) => {
       const id = el?.getAttribute('data-id') || '';
       const sp = new URLSearchParams((location.hash || '').replace(/^#/, ''));
       const type = sp.get('type') || null;
-      setParams({ p: modId, card: id, type: type || undefined }, false);
+      setParams({ p: modId, card: id, type: type || undefined }, true);
       return origShow.apply(this, arguments);
     };
   }
@@ -2884,7 +3249,18 @@ document.addEventListener('click', (e) => {
     }
     if (ctx === 'mod1' || ctx === 'mod2') {
       const id = document.querySelector(`#${ctx} .card-detail`)?.getAttribute('data-current-card-id');
-      return base + (id ? `#p=${ctx}&card=${encodeURIComponent(id)}` : `#p=${ctx}`);
+      // Récupérer le filtre actif
+      let activeType = 'all';
+      try {
+        activeType = localStorage.getItem(`${ctx}:lastType`) || 'all';
+      } catch {}
+      
+      // Construire l'URL avec le filtre si différent de "all"
+      if (id) {
+        const typeParam = (activeType && activeType !== 'all') ? `&type=${activeType}` : '';
+        return base + `#p=${ctx}${typeParam}&card=${encodeURIComponent(id)}`;
+      }
+      return base + `#p=${ctx}`;
     }
     return base + (location.hash || '');
   }
