@@ -1909,7 +1909,7 @@
         {
           "captions_fr": ["Craft du bloc de crystal rouge : 2 variantes possibles", ""],
           "images_fr": [
-            "../images/mod1/red_crystal_block1_recipe.png",
+            "../images/mod1/red_crystal_block_recipe1.png",
             "../images/mod1/red_crystal_recipe2.png"
           ]
         },
@@ -1922,7 +1922,7 @@
         {
           "captions_en": ["Craft of red crystal block : 2 possibles variants", ""],
           "images_en": [
-            "../images/mod1/red_crystal_block1_recipe.png",
+            "../images/mod1/red_crystal_block_recipe1.png",
             "../images/mod1/red_crystal_recipe2.png"
           ]
         },
