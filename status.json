@@ -1,7 +1,7 @@
 {
   "mod1": {
     "status": "release",
-    "updated_at": "2025-10-21",
+    "updated_at": "",
     "next_update_fr": "",
     "next_update_en": "",
     "description_fr": "Explorez la sérénité du Sakura et la puissance du Lyvora, dans une mise à jour où la vie et la lumière s’épanouissent jusque dans le Nether. ⚙️ Certaines fonctionnalités sont encore en phase de test — vos retours aideront à les peaufiner !",
@@ -19,16 +19,17 @@
     "updated_at": "indeterminee",
     "next_update_fr":"",
     "next_update_en":"",
-    "description_fr": "Aucune mise à jour en cours de développement.",
-    "description_en": "No updates in development.",
-    "progress": 5,
+    "description_fr": "Mise à jour en cours de développement.",
+    "description_en": "Update in development.",
+    "progress": 5.2,
     "features_fr": [
         "Mettre tous les mobs",
         "Régler les ailes du poulets",
         "Ajout de nouveaux biomes",
         "Ajout de nouvelles armes",
         "Ajout d'un nouveau minerai",
-        "Ajout de nouveaux crafts"
+        "Ajout de nouveaux crafts",
+        "Correction de divers problèmes"
     ],
     "features_en": [
         "Add all mobs",
@@ -36,7 +37,8 @@
         "Add new biomes",
         "Add new weapons",
         "Add a new ore",
-        "Add new crafts"
+        "Add new crafts",
+        "Fix various issues"
     ]
   }
 }
