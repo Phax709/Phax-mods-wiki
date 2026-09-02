@@ -1,5 +1,22 @@
 [
   {
+    "custom": true,
+    "type": "announcement",
+    "date": "2026-09-02",
+    "title_fr": "Du nouveau à l'horizon...",
+    "title_en": "Something new on the horizon...",
+    "summary_fr": "Le site fait peau neuve ! Nous travaillons en coulisses sur une toute nouvelle interface plus moderne et ergonomique. Les travaux touchent à leur fin, rendez-vous très bientôt pour découvrir le nouveau site !",
+    "summary_en": "The site is getting a makeover! We are working behind the scenes on a brand new, more modern and user-friendly interface. The work is nearing completion, so stay tuned to discover the new site very soon!",                                
+    "image": "images/ui/comming_soon 400.jpg",
+    "cta_link":"https://www.magnific.com/fr/vecteurs-libre/resume-venir-bientot-conception-fond-style-demi-teinte_10016647.htm#fromView=search&page=1&position=0&uuid=969f46ef-a7f2-4ca3-b077-b88b19ce6c04&track=ais_hybrid&query=coming+soon",
+    "cta_label_en":"Credit Image",
+    "cta_label_fr":"Crédit Image",
+
+    "show_after": "2026-09-02T17:00:00+01:00",
+    "hide_after": "2026-12-31T23:59:59+01:00"
+  },
+
+  {
   "custom": true,
   "type": "announcement",
   "mod": "sirens",
@@ -42,7 +59,7 @@
   "link": "",
   "cta_link": "",
   "stage": "",
-  "hide_after": "2026-04-31T23:59:59+01:00"
+  "hide_after": "2026-01-31T23:59:59+01:00"
   }
 ]
 
