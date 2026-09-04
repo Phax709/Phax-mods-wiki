@@ -1188,6 +1188,64 @@ body.theme-sombre .mc-badge {
   padding-right: 6px;      /* petit espace pour la scrollbar */
 }
 
+/* Etat teaser temporaire des pages de mods */
+.teaser-page .cards-grid,
+.teaser-page .update-panel {
+  display: none !important;
+}
+
+.teaser-page .page-content {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.teaser-page .side-menu {
+  display: none;
+}
+
+.teaser-page .page-layout {
+  display: block !important;
+}
+
+.teaser-page .page-content {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.teaser-page .mod-teaser {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center !important;
+}
+
+.teaser-page .page-content > h2 {
+  width: 100%;
+  text-align: center !important;
+}
+
+.teaser-page .mod-teaser h3 {
+  margin: 0 0 .75rem;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.teaser-page .mod-teaser p {
+  margin: 0;
+  opacity: .82;
+  font-size: 1.05rem;
+}
+
 /* Scrollbar discrète, adaptative au thème */
 #mod1 .cards-grid::-webkit-scrollbar,
 #mod2 .cards-grid::-webkit-scrollbar {

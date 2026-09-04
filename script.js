@@ -91,7 +91,9 @@ const translations = {
     license_point_2: "Aucune modification ni re-upload des fichiers.",
     license_point_3: "Vidéos YouTube / streams Twitch monétisés autorisés : crédit + lien, sans héberger les fichiers.",
     license_point_4: "Modpacks / rehosts interdits sans autorisation écrite.",
-    home_coming_soon_button: "🚧 En développement"
+    home_coming_soon_button: "🚧 En développement",
+    mod_teaser_title: "👀 Désolé, il semblerait que quelque chose se trame...",
+    mod_teaser_text: "Restez à l'affût, je vous montrerai bientôt la suite."
 
   },
   en: {
@@ -186,7 +188,9 @@ const translations = {
     license_point_2: "No file modifications or re-uploads.",
     license_point_3: "Monetized YouTube/Twitch allowed for showcasing: credit + link, no file hosting.",
     license_point_4: "Modpacks / rehosts forbidden without written permission.",
-    home_coming_soon_button: "🚧 in development"
+    home_coming_soon_button: "🚧 in development",
+    mod_teaser_title: "👀 Sorry, it looks like something is brewing...",
+    mod_teaser_text: "Stay tuned, I will show you more soon."
 
   }
 };
@@ -551,6 +555,11 @@ function showPage(pageId) {
 
   // 6) pages de mods : charger au besoin + restaurer vue & filtre
   if (pageId === 'mod1' || pageId === 'mod2') {
+    if (page?.classList.contains('teaser-page')) {
+      if (grid) grid.style.display = 'none';
+      if (status) status.style.display = 'none';
+      if (detail) detail.style.display = 'none';
+    } else {
     if (grid) grid.style.display = 'grid';
     if (pageId === 'mod1' && typeof ensureCards === 'function') ensureCards('mod1');
     if (pageId === 'mod2' && typeof ensureCards === 'function') ensureCards('mod2');
@@ -571,6 +580,7 @@ function showPage(pageId) {
     } else {
       if (typeof filterCategory === 'function') filterCategory(pageId, savedType);
       if (typeof markFilterActive === 'function') markFilterActive(pageId, savedType);
+    }
     }
   }
 
@@ -606,6 +616,9 @@ function showPage(pageId) {
     setParams({ p: pageId, type: t, card: undefined }, true);
   }
 }
+
+// Les liens de navigation de index.html utilisent des attributs onclick.
+window.showPage = showPage;
 
 /********************
  * FILTRE & RECHERCHE — version qui ferme Statut et ré-affiche la grille
@@ -658,6 +671,8 @@ function filterCategory(pageId, category) {
     setParams({ p: pageId, type: (key !== 'all') ? key : undefined, card: undefined }, true);
   }
 }
+
+window.filterCategory = filterCategory;
 
 /********************
  * RECHERCHE (cartes) — corrige l’erreur "pageId" et force le retour à la grille

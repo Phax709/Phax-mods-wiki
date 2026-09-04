@@ -14,6 +14,7 @@
   <!-- iOS / PWA -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/ui/apple-touch-icon.png?v=1">
 
+  <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -137,7 +138,7 @@
     <div class="presentation-card">
       <h3>Chaosium</h3>
       <img src="https://media.forgecdn.net/attachments/1001/490/chaosium_image.png" alt="Logo Chaosium" class="presentation-image">
-      <p data-translate="home_chaosium_desc">Un mod fait pour les joueurs très expérimentés et qui veulent du challenge et de la difficulté ! D'où son nom !</p>
+      <p data-translate="home_chaosium_desc">Un mod fait pour les joueurs très expérimentés et qui veulent du challenge et de la difficulté ! D'où sont nom !</p>
       <div class="card-buttons">
         <a href="https://www.curseforge.com/minecraft/mc-mods/chaosium" target="_blank" class="card-btn curseforge">CurseForge</a>
         <a href="https://modrinth.com/mod/chaosium" target="_blank" class="card-btn modrinth">Modrinth</a>
@@ -151,6 +152,7 @@
       <p data-translate="home_phaxsirens_desc">Un mod de sirènes et de lampes configurables avec plusieurs couleurs et effets.</p>
       <div class="card-buttons">
         <a href="https://www.curseforge.com/minecraft/mc-mods/phax-sirens" target="_blank" class="card-btn curseforge">CurseForge</a>
+        <a href="https://modrinth.com/mod/phax-sirens" target="_blank" class="card-btn modrinth">Modrinth</a>
       </div>
     </div>
 
@@ -208,7 +210,7 @@
 </div>
 </section>
     
-    <section id="mod1" class="page" style="display:none;">
+    <section id="mod1" class="page teaser-page" style="display:none;">
   <div class="page-layout">
     <aside class="side-menu">
       <h3>Acatar - Menu</h3>
@@ -273,6 +275,10 @@
     </aside>
     <div class="page-content">
       <h2>Acatar</h2>
+      <div class="mod-teaser" role="status">
+        <h3 data-translate="mod_teaser_title">👀 Désolé, il semblerait que quelque chose se trame...</h3>
+        <p data-translate="mod_teaser_text">Restez à l'affût, je vous montrerai bientôt la suite.</p>
+      </div>
       <div id="status-mod1" class="update-panel" style="display:none;"></div>
       <!-- Grille des cartes -->
       <div class="cards-grid"></div>
@@ -280,7 +286,7 @@
       <!-- Vue détail -->
       <div class="card-detail" style="display:none;">
         <div class="detail-toolbar">
-          <a href="#" class="card-btn wiki back-btn">
+          <a href="#" class="card-btn wiki back-btn" onclick="hideCardDetail('mod1')">
             ← <span data-translate="back">Retour</span>
           </a>
           <button type="button" class="card-btn link-copy-btn" data-context="mod1" title="Copier le lien">🔗 Copier le lien</button>
@@ -289,7 +295,7 @@
       </div>
     </div>
 </section>
-    <section id="mod2" class="page" style="display:none;">
+    <section id="mod2" class="page teaser-page" style="display:none;">
   <div class="page-layout">
     <aside class="side-menu">
       <h3>Chaosium - Menu</h3>
@@ -355,6 +361,10 @@
 
     <div class="page-content">
       <h2>Chaosium</h2>
+      <div class="mod-teaser" role="status">
+        <h3 data-translate="mod_teaser_title">👀 Désolé, il semblerait que quelque chose se trame...</h3>
+        <p data-translate="mod_teaser_text">Restez à l'affût, je vous montrerai bientôt la suite.</p>
+      </div>
       <div id="status-mod2" class="update-panel" style="display:none;"></div>
       <!-- Grille de cartes -->
       <div class="cards-grid"></div>
@@ -362,7 +372,7 @@
       <!-- Vue détail -->
       <div class="card-detail" style="display:none;">
         <div class="detail-toolbar">
-          <a href="#" class="card-btn wiki back-btn">
+          <a href="#" class="card-btn wiki back-btn" onclick="hideCardDetail('mod2')">
             ← <span data-translate="back">Retour</span>
           </a>
         <button type="button" class="card-btn link-copy-btn" data-context="mod2" title="Copier le lien">🔗 Copier le lien</button>
@@ -377,9 +387,9 @@
       <h3>Patch Notes</h3>
       <div class="side-buttons">
         <button class="card-btn wiki" data-cat="all" data-translate="tout">Tout</button>
-        <button class="card-btn wiki" data-cat="acatar" data-translate="patch_acatar">Patchnotes Acatar</button>
-        <button class="card-btn wiki" data-cat="chaosium" data-translate="patch_chaosium">Patchnotes Chaosium</button>
-        <button class="card-btn wiki" data-cat="sirens">Phax Sirens</button>
+        <button class="card-btn wiki" data-cat="acatar" data-translate="patch_acatar">Acatar</button>
+        <button class="card-btn wiki" data-cat="chaosium" data-translate="patch_chaosium">Chaosium</button>
+        <button class="card-btn wiki" data-cat="sirens" data-translate="patch_sirens">Phax Sirens</button>
       </div>
     </aside>
 
@@ -457,7 +467,7 @@
   </p>
 
     <h3 data-translate="license_title">Licence</h3>
-<p><span data-translate="license_intro">Sauf mention contraire, le contenu de ce site (texte, mises en page, images originales) est sous licence CC BY-NC-ND 4.0 — © 2025-2026 Phax709.</span></p>
+<p><span data-translate="license_intro">Sauf mention contraire, le contenu de ce site (texte, mises en page, images originales) est sous licence CC BY-NC-ND 4.0 — © 2025 Phax709.</span></p>
 <ul>
   <li data-translate="license_point_1">Redistribution non commerciale autorisée avec crédit “Phax709” et lien vers ce site.</li>
   <li data-translate="license_point_2">Aucune modification ni re-upload des fichiers.</li>
@@ -492,18 +502,6 @@
         Image by Freepik
       </a>
     </li>
-
-    <li>
-      <span data-translate="credit_freepik_comingsoon">
-        Illustration utilisée pour le mod en préparation —
-      </span>
-      <a
-        href="https://fr.freepik.com/vecteurs-libre/resume-venir-bientot-conception-fond-style-demi-teinte_10016647.htm#fromView=keyword&page=1&position=0&uuid=4dd51361-219d-4bb1-80e5-36fe1dcf9656&query=Coming+soon"
-        target="_blank" rel="noopener"
-      >
-        Image by Freepik
-      </a>
-    </li>
   </ul>
 
   <h3 data-translate="site_stack_title">Stack du site</h3>
@@ -525,12 +523,12 @@
   </a>
 </div>
     <p>
-  &copy; 2025-2026 Wiki des Mods de Phax709 ·
+  &copy; 2025 Wiki des Mods de Phax709 ·
   <a class="footer-credits" href="#" onclick="showPage('credits'); return false;" data-translate="credits">Crédits</a>
 </p>
 
   </footer>
-  <script src="script.js" defer></script>
+  <script type="module" src="script.js"></script>
 <!-- Drawer mobile -->
 <div id="mobileDrawer" class="drawer" aria-hidden="true">
   <div class="drawer-backdrop" data-close></div>
