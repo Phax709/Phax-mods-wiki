@@ -3,8 +3,21 @@
     "custom": true,
     "type": "announcement",
     "date": "2026-09-04",
-    "title_fr": "👀 Une avant-première se dévoile...",
-    "title_en": "👀 A sneak peek is here...",
+    "title_fr": "👀 Avant-première 2/4 : un nouvel aperçu se dévoile...",
+    "title_en": "👀 Sneak peek 2/4: another glimpse is here...",
+    "summary_fr": "Je vous montre un nouvel aperçu. Je ne peux pas encore vous en montrer davantage... Restez à l'affût pour découvrir la suite !",
+    "summary_en": "I am showing you another glimpse. I cannot show you more just yet... Stay tuned to discover what comes next!",
+    "image": "images/ui/sneack-peek-newswebsite2.png",
+    "show_after": "2026-09-04T20:00:00+01:00",
+    "hide_after": "2026-12-31T23:59:59+01:00"
+  },
+
+  {
+    "custom": true,
+    "type": "announcement",
+    "date": "2026-09-04",
+    "title_fr": "👀 Avant-première 1/4 : un premier aperçu se dévoile...",
+    "title_en": "👀 Sneak peek 1/4: a first glimpse is here...",
     "summary_fr": "Je vous dévoile une première avant-première. Je ne peux pas encore vous en montrer davantage... Restez à l'affût pour découvrir la suite !",
     "summary_en": "I am sharing a first sneak peek with you. I cannot show you more just yet... Stay tuned to discover what comes next!",
     "image": "images/ui/sneack-peek-newswebsite.png",
