@@ -2692,6 +2692,15 @@ body.theme-bleu .back-to-top{
 }
 .news-featured .detail-body.has-visual { grid-template-columns: 1fr; }
 
+.news-featured .visuals-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  width: 100%;
+}
+.news-featured .visuals-group.has-two-visuals {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
 .news-featured .visual {
   border-radius: 12px;
   overflow: hidden;

@@ -2,6 +2,19 @@
   {
     "custom": true,
     "type": "announcement",
+    "date": "2026-09-06",
+    "title_fr": "👀 Avant-première 3/4 : une trace se dévoile...",
+    "title_en": "👀 Sneak peek 3/4: a clue has surfaced...",
+    "summary_fr": "L'une des ressources les plus discrètes du mod a retrouvé une place centrale dans les discussions. Sa présence est déjà là, mais ses secrets ne le sont pas encore... Restez à l'affût, il reste encore quelques indices à déchiffrer.",
+    "summary_en": "One of the most overlooked resources in the mod has returned to the center of the discussion. Its presence is already here, but its secrets are not yet... Stay tuned, there are still a few clues to uncover.",
+    "image": "images/ui/teaser 3 search arcane.png",
+    "image_2": "images/ui/teaser 3_4 mod ore.png",
+    "show_after": "2026-09-06T05:00:00+01:00",
+    "hide_after": "2026-12-31T23:59:59+01:00"
+  },
+  {
+    "custom": true,
+    "type": "announcement",
     "date": "2026-09-04",
     "title_fr": "👀 Avant-première 2/4 : un nouvel aperçu se dévoile...",
     "title_en": "👀 Sneak peek 2/4: another glimpse is here...",

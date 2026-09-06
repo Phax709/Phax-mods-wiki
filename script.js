@@ -3186,9 +3186,13 @@ document.addEventListener('click', (e) => {
       badge = '<span class="stage-badge '+clsStage(it.stage)+'">'+String(it.stage).toUpperCase()+'</span>';
     }
 
-    var hasImg = !!it.image;
-    var isSneakPeekImage = String(it.image || '').includes('sneack-peek-newswebsite');
-    var visual = hasImg ? '<div class="visual'+(isSneakPeekImage ? ' sneak-peek-visual' : '')+'"><img src="'+it.image+'" alt=""></div>' : '';
+    var hasImg1 = !!it.image;
+    var hasImg2 = !!it.image_2;
+    var hasImg = hasImg1 || hasImg2;
+    var isSneakPeekImage = String(it.image || it.image_2 || '').includes('sneack-peek-newswebsite');
+    var visual1 = hasImg1 ? '<div class="visual'+(isSneakPeekImage ? ' sneak-peek-visual' : '')+'"><img src="'+it.image+'" alt=""></div>' : '';
+    var visual2 = hasImg2 ? '<div class="visual visual-secondary'+(isSneakPeekImage ? ' sneak-peek-visual' : '')+'"><img src="'+it.image_2+'" alt=""></div>' : '';
+    var visual = hasImg ? '<div class="visuals-group'+(hasImg1 && hasImg2 ? ' has-two-visuals' : '')+'">'+visual1+visual2+'</div>' : '';
 
     var feats = pickFeatures(it, lang).slice(0, 5);
     var featsHTML = (!isAnnouncement && feats.length)
