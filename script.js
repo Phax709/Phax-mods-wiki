@@ -3085,6 +3085,7 @@ document.addEventListener('click', (e) => {
           link: link,
           mod: isMaint ? 'maintenance' : modKeyRaw,
           image: img,
+          image_2: n.image_2 || '',
           cta_link: n.cta_link || '',
           cta_label_fr: n.cta_label_fr || '',
           cta_label_en: n.cta_label_en || '',
