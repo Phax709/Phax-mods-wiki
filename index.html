@@ -284,7 +284,7 @@
       <h2 id="countdown-title"><span data-lang="fr">Un dévoilement se prépare...</span><span data-lang="en">A reveal is being prepared...</span></h2>
       <p><span data-lang="fr">Objectif : la sortie de la mise à jour du mod Acatar et la sortie officielle du nouveau site.</span><span data-lang="en">Goal: the release of the Acatar mod update and the official launch of the new website.</span></p>
       <div class="countdown-value" data-countdown-value>--:--:--:--</div>
-      <p class="countdown-date" data-countdown-date></p>
+      <p class="countdown-date"><span data-lang="fr" data-countdown-date-fr></span><span data-lang="en" data-countdown-date-en></span></p>
       <p class="countdown-note"><span data-lang="fr">Cette date est indicative et n'est pas confirmée. L'heure affichée est adaptée à votre fuseau local.</span><span data-lang="en">This date is indicative and not confirmed. The displayed time is adapted to your local time zone.</span></p>
     </div>
   </section>
@@ -352,16 +352,18 @@
 
       var countdownOverlay = document.querySelector('[data-countdown-overlay]');
       var countdownValue = document.querySelector('[data-countdown-value]');
-      var countdownDate = document.querySelector('[data-countdown-date]');
-      var revealTarget = new Date('2026-09-18T19:00:00Z');
+      var countdownDateFr = document.querySelector('[data-countdown-date-fr]');
+      var countdownDateEn = document.querySelector('[data-countdown-date-en]');
+      var revealTarget = new Date('2026-09-12T19:00:00Z');
       var visitorTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
 
       function updateCountdownDate() {
-        var dateFormatter = new Intl.DateTimeFormat(undefined, {
+        var dateOptions = {
           weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
           hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
-        });
-        countdownDate.textContent = dateFormatter.format(revealTarget) + ' (' + visitorTimeZone + ')';
+        };
+        countdownDateFr.textContent = new Intl.DateTimeFormat('fr-FR', dateOptions).format(revealTarget) + ' (' + visitorTimeZone + ')';
+        countdownDateEn.textContent = new Intl.DateTimeFormat('en-US', dateOptions).format(revealTarget) + ' (' + visitorTimeZone + ')';
       }
 
       function updateCountdown() {
