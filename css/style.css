@@ -50,14 +50,14 @@
 
 /* Redstone */
 [data-theme="redstone"] {
-  --bg: #2b1210;
-  --bg-light: #3c1a18;
-  --bg-card: #4e1918;
-  --accent: #d32f2f;
-  --accent-hover: #b71c1c;
-  --text: #f2e8e4;
-  --text-muted: #c9b4af;
-  --border: #5e2422;
+  --bg: #4b4b4b;
+  --bg-light: #303030;
+  --bg-card: #3d3d3d;
+  --accent: #b83f3a;
+  --accent-hover: #d05249;
+  --text: #eeeae4;
+  --text-muted: #bdbdbd;
+  --border: #5a4543;
 }
 
 /* Lush Cave + Amethyst */
