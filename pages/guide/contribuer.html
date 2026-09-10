@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="page-depth" content="2">
+  <title>Support & Contact — Phax709 Studios</title>
+  <link rel="icon" href="../images/ui/Phax-mods-petit.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
 
+  <header class="header">
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="../../index.html" class="header-logo"><img src="../images/ui/Phax mods detail.png" alt="Logo" class="header-logo-img"> Phax709 Studios</a>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="Rechercher un mod..." data-i18n-placeholder="search.placeholder" autocomplete="off">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+    <button class="lang-btn" id="langToggle">🇬🇧 EN</button>
+    <div class="theme-selector">
+      <button class="theme-btn" id="themeBtn" title="Thème">🌙</button>
+      <div class="theme-dropdown" id="themeDropdown"></div>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header"><h2 data-i18n="nav.navigation">Navigation</h2></div>
+    <ul class="sidebar-nav">
+      <li><a href="../../index.html">🏠 <span data-i18n="nav.home">Accueil</span></a></li>
+      <li><a href="../news.html">📰 <span data-i18n="nav.news">News</span></a></li>
+      <li><a href="../patchnotes.html">📋 <span data-i18n="nav.patchnotes">Patchnotes</span></a></li>
+      <li>
+        <button class="sidebar-toggle open">📖 <span data-i18n="nav.guide">Assistance</span></button>
+        <ul class="sidebar-sub open">
+          <li><a href="installation.html" data-i18n="nav.installation">Installation de mods</a></li>
+          <li><a href="contribuer.html" class="active" data-i18n="nav.support">Discord & Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="../credits.html">📜 <span data-i18n="nav.credits">Crédits</span></a></li>
+      <li class="sidebar-divider"><hr></li>
+      <li class="sidebar-section-title" data-i18n="nav.mods">Mods</li>
+    </ul>
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main class="content">
+    <h1 data-i18n="support.title">📬 Support & Contact</h1>
+
+    <p data-i18n="support.intro">Vous avez une idée, un bug à signaler, ou simplement un avis à partager ? Utilisez les formulaires ci-dessous pour nous contacter. Chaque retour compte !</p>
+
+    <div class="card-grid" style="margin-top: 1.5rem;">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdleJJj8qWxSV69s54M0C9StFFSov32ecIRQJwXceB_1zsqxw/viewform?usp=pp_url" target="_blank" rel="noopener" class="card">
+        <div class="card-icon">🐛</div>
+        <h3 data-i18n="support.bug.title">Signaler un bug</h3>
+        <p data-i18n="support.bug.desc">Vous avez rencontré un problème dans l'un de nos mods ? Dites-le nous !</p>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6pyu0khXBEbNhCm_7IL5TnTeCGbjM6cZbUfcMKwIMkMeyTA/viewform?usp=pp_url" target="_blank" rel="noopener" class="card">
+        <div class="card-icon">💡</div>
+        <h3 data-i18n="support.suggestion.title">Proposer une suggestion</h3>
+        <p data-i18n="support.suggestion.desc">Une idée de fonctionnalité pour un mod ? Partagez-la avec nous !</p>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9YXok6Er4d6K4XhqwNF2DKsXOftT1QqkRFAkr0mzMH7B4Rg/viewform?usp=pp_url" target="_blank" rel="noopener" class="card">
+        <div class="card-icon">⭐</div>
+        <h3 data-i18n="support.satisfaction.title">Enquête de satisfaction</h3>
+        <p data-i18n="support.satisfaction.desc">Donnez votre avis sur nos mods pour nous aider à les améliorer.</p>
+      </a>
+      <a href="https://forms.gle/FxZn4JaycRJdJZht5" target="_blank" rel="noopener" class="card">
+        <div class="card-icon">🌐</div>
+        <h3 data-i18n="support.site.title">Amélioration du site</h3>
+        <p data-i18n="support.site.desc">Des idées pour rendre ce wiki meilleur ? On vous écoute !</p>
+      </a>
+    </div>
+
+    <div class="mod-section" style="margin-top: 2rem;">
+      <h2 data-i18n="support.discord.title">💬 Rejoignez-nous sur Discord</h2>
+      <p data-i18n="support.discord.text">Pour discuter directement avec la communauté et l'équipe Phax709 Studios, rejoignez notre serveur Discord :</p>
+      <a href="https://discord.gg/DgEhErJ2K4" target="_blank" rel="noopener" class="card discord-card" style="display: inline-block; margin-top: 1rem; text-align: center; max-width: 300px;">
+        <div class="card-icon"><img src="../images/ui/discord.svg" alt="Discord" style="width: 2rem; height: 2rem;"></div>
+        <h3 data-i18n="support.discord.card">Discord Phax709</h3>
+        <p data-i18n="support.discord.join">Rejoindre le serveur</p>
+      </a>
+    </div>
+  </main>
+
+  <script src="../../js/mods-registry.js"></script>
+  <script src="../../js/theme.js"></script>
+  <script src="../../js/i18n.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="page-depth" content="2">
+  <title>Installation de mods — Phax709 Studios</title>
+  <link rel="icon" href="../images/ui/Phax-mods-petit.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="../../index.html" class="header-logo"><img src="../images/ui/Phax mods detail.png" alt="Logo" class="header-logo-img"> Phax709 Studios</a>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="Rechercher un mod..." data-i18n-placeholder="search.placeholder" autocomplete="off">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+    <button class="lang-btn" id="langToggle">🇬🇧 EN</button>
+    <div class="theme-selector">
+      <button class="theme-btn" id="themeBtn" title="Thème">🌙</button>
+      <div class="theme-dropdown" id="themeDropdown"></div>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header"><h2 data-i18n="nav.navigation">Navigation</h2></div>
+    <ul class="sidebar-nav">
+      <li><a href="../../index.html">🏠 <span data-i18n="nav.home">Accueil</span></a></li>
+      <li><a href="../news.html">📰 <span data-i18n="nav.news">News</span></a></li>
+      <li><a href="../patchnotes.html">📋 <span data-i18n="nav.patchnotes">Patchnotes</span></a></li>
+      <li>
+        <button class="sidebar-toggle open">📖 <span data-i18n="nav.guide">Assistance</span></button>
+        <ul class="sidebar-sub open">
+          <li><a href="installation.html" class="active" data-i18n="nav.installation">Installation de mods</a></li>
+          <li><a href="contribuer.html" data-i18n="nav.support">Discord & Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="../credits.html">📜 <span data-i18n="nav.credits">Crédits</span></a></li>
+      <li class="sidebar-divider"><hr></li>
+      <li class="sidebar-section-title" data-i18n="nav.mods">Mods</li>
+    </ul>
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main class="content">
+    <h1 data-i18n="install.title">📦 Installation de mods</h1>
+
+    <div class="mod-section">
+      <h2 data-i18n="install.prerequisites">Prérequis</h2>
+      <ul>
+        <li data-i18n="install.prereq.java">Minecraft <strong>Java Edition</strong></li>
+        <li data-i18n="install.prereq.loader">Un mod loader : <strong>Forge</strong>, <strong>NeoForge</strong> ou <strong>Fabric</strong></li>
+      </ul>
+    </div>
+
+    <div class="mod-section">
+      <h2 data-i18n="install.forge_neoforge.title">Avec Forge ou NeoForge</h2>
+      <ol>
+        <li data-i18n="install.forge_neoforge.step1">Téléchargez <a href="https://files.minecraftforge.net/" target="_blank" rel="noopener">Forge</a> ou <a href="https://neoforged.net/" target="_blank" rel="noopener">NeoForge</a></li>
+        <li data-i18n="install.forge_neoforge.step2">Lancez l'installateur et sélectionnez <strong>Install Client</strong></li>
+        <li data-i18n="install.forge_neoforge.step3">Ouvrez le launcher Minecraft et sélectionnez le profil Forge ou NeoForge</li>
+        <li data-i18n="install.forge_neoforge.step4">Placez vos fichiers <code>.jar</code> dans le dossier <code>mods/</code></li>
+      </ol>
+      <div class="tip">
+        <span data-i18n="install.forge_neoforge.folder"><strong>Dossier mods :</strong></span><br>
+        Windows : <code>%appdata%\.minecraft\mods\</code><br>
+        macOS : <code>~/Library/Application Support/minecraft/mods/</code><br>
+        Linux : <code>~/.minecraft/mods/</code>
+      </div>
+    </div>
+
+    <div class="mod-section">
+      <h2 data-i18n="install.fabric.title">Avec Fabric</h2>
+      <ol>
+        <li data-i18n="install.fabric.step1">Téléchargez <a href="https://fabricmc.net/use/installer/" target="_blank" rel="noopener">Fabric Installer</a></li>
+        <li data-i18n="install.fabric.step2">Lancez l'installateur</li>
+        <li data-i18n="install.fabric.step3">Installez aussi <a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener">Fabric API</a></li>
+        <li data-i18n="install.fabric.step4">Placez vos mods dans le dossier <code>mods/</code></li>
+      </ol>
+      <div class="tip">
+        <span data-i18n="install.forge_neoforge.folder"><strong>Dossier mods :</strong></span><br>
+        Windows : <code>%appdata%\.minecraft\mods\</code><br>
+        macOS : <code>~/Library/Application Support/minecraft/mods/</code><br>
+        Linux : <code>~/.minecraft/mods/</code>
+      </div>
+      <div class="warning" data-i18n="install.fabric.disclaimer">
+        <strong>ℹ️ Note :</strong> Les mods de Phax709 ne sont actuellement <strong>pas disponibles sur Fabric</strong>. Cependant, ce guide reste valable pour l'installation de tout mod Fabric.
+      </div>
+      <div class="warning" data-i18n="install.fabric.warning">
+        <strong>⚠️ Compatibilité :</strong> Les mods Forge, NeoForge et Fabric ne sont <strong>pas</strong> compatibles entre eux. Vérifiez toujours le mod loader requis.
+      </div>
+    </div>
+
+    <div class="mod-section">
+      <h2 data-i18n="install.app.title">Via une application (CurseForge, Modrinth, etc.)</h2>
+      <p data-i18n="install.app.intro">Si vous utilisez une application comme <strong>CurseForge App</strong>, <strong>Modrinth App</strong>, <strong>Prism Launcher</strong> ou autre :</p>
+      <ol>
+        <li data-i18n="install.app.step1">Ouvrez l'application et accédez à la section <strong>Mods</strong></li>
+        <li data-i18n="install.app.step2">Utilisez la barre de recherche pour trouver le mod souhaité</li>
+        <li data-i18n="install.app.step3">Vérifiez que la <strong>version Minecraft</strong> et le <strong>mod loader</strong> correspondent à votre profil</li>
+        <li data-i18n="install.app.step4">Cliquez sur <strong>Installer</strong></li>
+      </ol>
+      <div class="warning" data-i18n="install.app.warning">
+        <strong>⚠️ Mod introuvable ?</strong> Si aucun résultat ne correspond à votre recherche, il est possible que le mod ne soit <strong>pas encore disponible</strong> pour votre version de Minecraft ou votre mod loader. Essayez de changer la version dans les filtres de recherche, ou consultez directement la page du mod sur CurseForge / Modrinth pour vérifier les versions supportées.
+      </div>
+    </div>
+  </main>
+
+  <script src="../../js/mods-registry.js"></script>
+  <script src="../../js/theme.js"></script>
+  <script src="../../js/i18n.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>
