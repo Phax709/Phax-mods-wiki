@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="page-depth" content="0">
+  <title>404 — Phax709 Studios</title>
+  <link rel="icon" href="pages/images/ui/Phax-mods-petit.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: 8rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .error-title {
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .error-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+    .error-home {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: opacity 0.2s;
+    }
+    .error-home:hover {
+      opacity: 0.85;
+    }
+    .error-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
 
+  <!-- Header -->
+  <header class="header">
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a href="index.html" class="header-logo"><img src="pages/images/ui/Phax mods detail.png" alt="Logo" class="header-logo-img"> Phax709 Studios</a>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="Rechercher un mod..." data-i18n-placeholder="search.placeholder" autocomplete="off">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+    <button class="lang-btn" id="langToggle">🇬🇧 EN</button>
+    <div class="theme-selector">
+      <button class="theme-btn" id="themeBtn" title="Thème">🌙</button>
+      <div class="theme-dropdown" id="themeDropdown"></div>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header"><h2 data-i18n="nav.navigation">Navigation</h2></div>
+    <ul class="sidebar-nav">
+      <li><a href="index.html">🏠 <span data-i18n="nav.home">Accueil</span></a></li>
+      <li><a href="pages/news.html">📰 <span data-i18n="nav.news">Actualités</span></a></li>
+      <li><a href="pages/patchnotes.html">📋 <span data-i18n="nav.patchnotes">Patchnotes</span></a></li>
+      <li>
+        <button class="sidebar-toggle">📖 <span data-i18n="nav.guide">Assistance</span></button>
+        <ul class="sidebar-sub">
+          <li><a href="pages/guide/installation.html" data-i18n="nav.installation">Installation de mods</a></li>
+          <li><a href="pages/guide/contribuer.html" data-i18n="nav.support">Discord & Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="pages/credits.html">📜 <span data-i18n="nav.credits">Crédits</span></a></li>
+      <li class="sidebar-divider"><hr></li>
+      <li class="sidebar-section-title" data-i18n="nav.mods">Mods</li>
+    </ul>
+  </nav>
+
+  <!-- Main content -->
+  <main class="content">
+    <div class="error-page">
+      <div class="error-icon">🗺️</div>
+      <div class="error-code">404</div>
+      <h1 class="error-title" data-i18n="error.title">Tu t'es perdu, aventurier !</h1>
+      <p class="error-desc" data-i18n="error.desc">Cette page n'existe pas ou a été déplacée. Ouvre ta map et retrouve ton chemin !</p>
+      <a href="index.html" class="error-home" data-i18n="error.home">Retour au spawn</a>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <h2 id="modalTitle"></h2>
+      <span class="modal-date" id="modalDate"></span>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/mods-registry.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
