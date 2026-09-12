@@ -16,7 +16,7 @@ const newsConfig = [
   {
     id: 'welcome',
     date: '2026-09-12',
-    showUntil: '2026-09-12',
+    showUntil: '2026-11-01',
     icon: '🎉',
     badge: 'announcement',
     title: {
