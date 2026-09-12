@@ -2,404 +2,105 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1220">
-  <title>Maintenance | Phax709</title>
-  <link rel="icon" type="image/png" href="images/ui/Phax mods petit.png">
-  <style>
-    :root {
-      --bg: #0b1220;
-      --panel: rgba(16, 26, 51, .88);
-      --panel-soft: rgba(23, 42, 78, .72);
-      --line: rgba(125, 181, 255, .18);
-      --blue: #1976d2;
-      --blue-light: #4aa3ff;
-      --text: #e7f0ff;
-      --muted: #a9bddb;
-      --white: #fff;
-      --shadow: 0 18px 60px rgba(0, 0, 0, .3);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-width: 320px;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 12% 8%, rgba(74, 163, 255, .16), transparent 30rem),
-        linear-gradient(145deg, #0b1220 0%, #111b35 56%, #0a1120 100%);
-      font-family: Georgia, 'Times New Roman', serif;
-    }
-
-    .topbar {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: .8rem clamp(1rem, 4vw, 4rem);
-      background: linear-gradient(90deg, #0e1a2b 0%, #1976d2 100%);
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .75rem;
-      color: var(--white);
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      font-weight: 700;
-    }
-
-    .secret-trigger { display: inline-flex; align-items: center; padding: 0; border: 0; color: inherit; background: transparent; cursor: pointer; }
-    .brand img { width: 42px; height: 42px; object-fit: contain; }
-
-    .language {
-      display: inline-flex;
-      gap: .35rem;
-      padding: .25rem;
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 8px;
-      background: rgba(7, 15, 31, .28);
-    }
-
-    .language button {
-      border: 0;
-      border-radius: 6px;
-      padding: .45rem .65rem;
-      color: var(--text);
-      background: transparent;
-      cursor: pointer;
-      font: inherit;
-      font-size: .82rem;
-    }
-
-    .language button.active, .language button:hover { background: var(--blue-light); color: #06101f; }
-
-    main { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
-
-    .maintenance-hero {
-      min-height: 390px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 4rem 1rem 3rem;
-    }
-
-    .hero-content { max-width: 760px; animation: appear .7s ease both; }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: .4rem .75rem;
-      border: 1px solid rgba(74, 163, 255, .38);
-      border-radius: 999px;
-      color: #9dceff;
-      background: rgba(25, 118, 210, .14);
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    h1, h2, h3 { margin-top: 0; }
-    h1 { margin-bottom: 1rem; color: var(--white); font-size: clamp(2.3rem, 6vw, 4.8rem); line-height: .98; }
-    .lead { margin: 0 auto; color: var(--muted); font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.7; }
-
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin: 1rem 0 1.2rem; }
-    .section-heading h2 { margin: 0; color: var(--white); font-size: clamp(1.5rem, 3vw, 2rem); }
-    .section-heading p { margin: 0; color: var(--muted); font-size: .95rem; }
-
-    .news-carousel { position: relative; padding: 0 3.2rem 4rem; }
-    .news-viewport { overflow: hidden; border-radius: 10px; }
-    .news-track { display: flex; transition: transform .45s ease; }
-    .news-card {
-      display: flex;
-      flex: 0 0 100%;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-    }
-    .news-arrow {
-      position: absolute;
-      top: 42%;
-      z-index: 2;
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      color: var(--white);
-      background: var(--panel-soft);
-      cursor: pointer;
-      font: inherit;
-      font-size: 1.5rem;
-      line-height: 1;
-    }
-    .news-arrow:hover { background: var(--blue); }
-    .news-arrow.previous { left: 0; }
-    .news-arrow.next { right: 0; }
-    .news-dots { display: flex; justify-content: center; gap: .5rem; margin-top: 1rem; }
-    .news-dot { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: #526988; cursor: pointer; }
-    .news-dot.active { background: var(--blue-light); box-shadow: 0 0 0 3px rgba(74, 163, 255, .16); }
-    .news-card-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; background: #101a33; }
-    .news-card img { display: block; width: 100%; height: 260px; object-fit: contain; background: #101a33; }
-    .news-card-body { display: flex; flex: 1; flex-direction: column; padding: 1.1rem; }
-    .tag { color: #8fc7ff; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-    .news-card h3 { margin: .55rem 0 .7rem; color: var(--white); font-size: 1.15rem; line-height: 1.25; }
-    .news-card p { margin: 0; color: var(--muted); line-height: 1.55; }
-
-    .countdown-overlay { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: 1rem; background: rgba(3, 8, 18, .78); }
-    .countdown-overlay[hidden] { display: none; }
-    .countdown-panel { position: relative; width: min(560px, 100%); padding: 2rem; border: 1px solid var(--line); border-radius: 10px; color: var(--text); background: #101a33; box-shadow: var(--shadow); text-align: center; }
-    .countdown-close { position: absolute; top: .7rem; right: .7rem; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 50%; color: var(--text); background: transparent; cursor: pointer; font: inherit; }
-    .countdown-close:hover { background: var(--blue); }
-    .countdown-panel h2 { margin: 0 2rem .7rem; color: var(--white); font-size: clamp(1.5rem, 4vw, 2.2rem); }
-    .countdown-panel p { margin: .7rem 0; color: var(--muted); line-height: 1.55; }
-    .countdown-value { margin: 1.2rem 0 .7rem; color: #9dceff; font-size: clamp(1.8rem, 7vw, 3.5rem); font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: .04em; }
-    .countdown-date { color: var(--text) !important; font-weight: 700; }
-    .countdown-note { font-size: .86rem; }
-
-    .footer { padding: 1.5rem 1rem 2rem; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .9rem; }
-    .footer strong { color: var(--text); }
-
-    [data-lang="en"] { display: none; }
-    body.english [data-lang="fr"] { display: none; }
-    body.english [data-lang="en"] { display: initial; }
-
-    @keyframes appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 820px) {
-      .news-carousel { padding-right: 2.8rem; padding-left: 2.8rem; }
-      .news-card-images { grid-template-columns: 1fr; }
-      .news-card img { height: auto; max-height: 260px; }
-      .maintenance-hero { min-height: 330px; padding-top: 3rem; }
-    }
-    @media (max-width: 520px) {
-      .topbar { align-items: flex-start; }
-      .brand { font-size: 1rem; }
-      .brand img { width: 36px; height: 36px; }
-      .section-heading { display: block; }
-      .section-heading p { margin-top: .4rem; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="page-depth" content="0">
+  <title>Phax709 Studios — Wiki Mods</title>
+  <link rel="icon" href="pages/images/ui/Phax-mods-petit.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <button type="button" class="secret-trigger" data-secret-trigger aria-label="Ouvrir le compte à rebours">
-        <img src="images/ui/Phax mods detail.png" alt="Phax709">
-      </button>
-      <span>Phax709 Mods Wiki</span>
+
+  <!-- Header -->
+  <header class="header">
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a href="index.html" class="header-logo"><img src="pages/images/ui/Phax mods detail.png" alt="Logo" class="header-logo-img"> Phax709 Studios</a>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="Rechercher un mod..." data-i18n-placeholder="search.placeholder" autocomplete="off">
+      <div class="search-results" id="searchResults"></div>
     </div>
-    <div class="language" aria-label="Language selector">
-      <button type="button" class="active" data-set-lang="fr">FR</button>
-      <button type="button" data-set-lang="en">EN</button>
+    <button class="lang-btn" id="langToggle">🇬🇧 EN</button>
+    <div class="theme-selector">
+      <button class="theme-btn" id="themeBtn" title="Thème">🌙</button>
+      <div class="theme-dropdown" id="themeDropdown"></div>
     </div>
   </header>
 
-  <main>
-    <section class="maintenance-hero" aria-labelledby="maintenance-title">
-      <div class="hero-content">
-        <span class="eyebrow" data-lang="fr">Maintenance en cours</span>
-        <span class="eyebrow" data-lang="en">Maintenance in progress</span>
-        <h1 id="maintenance-title">
-          <span data-lang="fr">Le wiki revient bientôt.</span>
-          <span data-lang="en">The wiki will be back soon.</span>
-        </h1>
-        <p class="lead">
-          <span data-lang="fr">Le site est temporairement indisponible pendant la préparation d'une nouvelle expérience. Les mods restent disponibles, et quelques indices sont déjà là...</span>
-          <span data-lang="en">The website is temporarily unavailable while a new experience is being prepared. The mods are still available, and a few clues are already here...</span>
-        </p>
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2 data-i18n="nav.navigation">Navigation</h2>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="index.html" class="active">🏠 <span data-i18n="nav.home">Accueil</span></a></li>
+      <li><a href="pages/news.html">📰 <span data-i18n="nav.news">News</span></a></li>
+      <li><a href="pages/patchnotes.html">📋 <span data-i18n="nav.patchnotes">Patchnotes</span></a></li>
+      <li>
+        <button class="sidebar-toggle">📖 <span data-i18n="nav.guide">Assistance</span></button>
+        <ul class="sidebar-sub">
+          <li><a href="pages/guide/installation.html" data-i18n="nav.installation">Installation de mods</a></li>
+          <li><a href="pages/guide/contribuer.html" data-i18n="nav.support">Discord & Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="pages/credits.html">📜 <span data-i18n="nav.credits">Crédits</span></a></li>
+      <li class="sidebar-divider"><hr></li>
+      <li class="sidebar-section-title" data-i18n="nav.mods">Mods</li>
+    </ul>
+  </nav>
+
+  <!-- Overlay mobile -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Contenu principal -->
+  <main class="content">
+    <section class="hero">
+      <h1 data-i18n="home.title"> Phax709 Studios</h1>
+      <p data-i18n="home.description">Bienvenue sur le wiki officiel des <strong>mods Minecraft</strong> créés par Phax709. Retrouvez ici toute la documentation, les guides et les détails de chaque mod.</p>
+    </section>
+
+    <section class="news-section-home">
+      <h2 data-i18n="home.news_title">📰 Dernières News</h2>
+      <div id="homeNewsContainer"></div>
+      <a href="pages/news.html" class="news-see-all" data-i18n="home.news_see_all">Voir toutes les news →</a>
+    </section>
+
+    <section class="status-section">
+      <h2 data-i18n="home.status_title">Statut</h2>
+      <div class="mods-status-bar" id="modsStatusBar"></div>
+    </section>
+
+    <section class="categories">
+      <h2 data-i18n="home.mods_title">Nos Mods</h2>
+      <div class="card-grid" id="modCardsGrid">
       </div>
     </section>
 
-    <section aria-labelledby="news-title">
-      <div class="section-heading">
-        <h2 id="news-title"><span data-lang="fr">Dernières nouvelles</span><span data-lang="en">Latest news</span></h2>
-      </div>
-      <div class="news-carousel" aria-label="News">
-        <button type="button" class="news-arrow previous" data-news-prev aria-label="News précédente">&#8249;</button>
-        <div class="news-viewport">
-          <div class="news-track" data-news-track>
-        <article class="news-card">
-          <div class="news-card-images">
-            <img src="images/ui/teaser 3 search arcane.png" alt="Aperçu du teaser 3">
-            <img src="images/ui/teaser 3_4 mod ore.png" alt="Second aperçu du teaser 3">
-          </div>
-          <div class="news-card-body">
-            <span class="tag">Teaser 3/4</span>
-            <h3><span data-lang="fr">Une trace se dévoile...</span><span data-lang="en">A clue has surfaced...</span></h3>
-            <p><span data-lang="fr">Une ressource discrète attire enfin l'attention. Ses secrets restent encore à découvrir.</span><span data-lang="en">An overlooked resource is finally drawing attention. Its secrets are still waiting to be discovered.</span></p>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <img src="images/ui/sneack-peek-newswebsite2.png" alt="Aperçu du teaser 2">
-          <div class="news-card-body">
-            <span class="tag">Teaser 2/4</span>
-            <h3><span data-lang="fr">Un nouvel aperçu se dévoile...</span><span data-lang="en">Another glimpse is here...</span></h3>
-            <p><span data-lang="fr">Je ne peux pas encore vous en montrer davantage. Restez à l'affût pour découvrir la suite.</span><span data-lang="en">I cannot show you more just yet. Stay tuned to discover what comes next.</span></p>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <img src="images/ui/sneack-peek-newswebsite.png" alt="Aperçu du teaser 1">
-          <div class="news-card-body">
-            <span class="tag">Teaser 1/4</span>
-            <h3><span data-lang="fr">Un premier aperçu se dévoile...</span><span data-lang="en">A first glimpse is here...</span></h3>
-            <p><span data-lang="fr">Une première avant-première est apparue. La suite viendra en temps voulu.</span><span data-lang="en">A first sneak peek has appeared. The rest will arrive in time.</span></p>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-card-images">
-            <img src="images/ui/teaser_newswebsite_final1_homepage.png" alt="Aperçu de la page d'accueil">
-            <img src="images/ui/teaser_newswebsite_final2_acatarpage.png" alt="Aperçu de la page Acatar">
-          </div>
-          <div class="news-card-body">
-            <span class="tag">Teaser 4/4</span>
-            <h3><span data-lang="fr">Le dévoilement approche...</span><span data-lang="en">The reveal is approaching...</span></h3>
-            <p><span data-lang="fr">Je vous dévoile la page d'accueil et la page du mod Acatar. La même base sera utilisée pour les autres mods.</span><span data-lang="en">I am revealing the home page and the Acatar mod page. The same foundation will be used for the other mods.</span></p>
-          </div>
-        </article>
-          </div>
-        </div>
-        <button type="button" class="news-arrow next" data-news-next aria-label="News suivante">&#8250;</button>
-        <div class="news-dots" data-news-dots aria-label="Navigation des news"></div>
-      </div>
+    <section class="quick-start">
+      <h2 data-i18n="home.guides_title">📖 Assistance</h2>
+      <ul>
+        <li><a href="pages/guide/installation.html" data-i18n="home.install_link">Comment installer nos mods</a></li>
+        <li><a href="pages/guide/contribuer.html" data-i18n="home.support_link">Discord & Contact</a></li>
+      </ul>
     </section>
   </main>
 
-  <footer class="footer">
-    <span data-lang="fr">© <span id="year-fr"></span> <strong>Phax709</strong> · Merci pour votre patience.</span>
-    <span data-lang="en">© <span id="year-en"></span> <strong>Phax709</strong> · Thank you for your patience.</span>
-  </footer>
-
-  <section class="countdown-overlay" data-countdown-overlay hidden aria-labelledby="countdown-title">
-    <div class="countdown-panel" role="dialog" aria-modal="true">
-      <button type="button" class="countdown-close" data-countdown-close aria-label="Fermer">×</button>
-      <h2 id="countdown-title"><span data-lang="fr">Un dévoilement se prépare...</span><span data-lang="en">A reveal is being prepared...</span></h2>
-      <p><span data-lang="fr">Objectif : la sortie de la mise à jour du mod Acatar et la sortie officielle du nouveau site.</span><span data-lang="en">Goal: the release of the Acatar mod update and the official launch of the new website.</span></p>
-      <div class="countdown-value" data-countdown-value>--:--:--:--</div>
-      <p class="countdown-date"><span data-lang="fr" data-countdown-date-fr></span><span data-lang="en" data-countdown-date-en></span></p>
-      <p class="countdown-note"><span data-lang="fr">Cette date est indicative et n'est pas confirmée. L'heure affichée est adaptée à votre fuseau local.</span><span data-lang="en">This date is indicative and not confirmed. The displayed time is adapted to your local time zone.</span></p>
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <h2 id="modalTitle"></h2>
+      <span class="modal-date" id="modalDate"></span>
+      <div class="modal-body" id="modalBody"></div>
     </div>
-  </section>
+  </div>
 
-  <script>
-    (function () {
-      var buttons = document.querySelectorAll('[data-set-lang]');
-      buttons.forEach(function (button) {
-        button.addEventListener('click', function () {
-          var lang = button.getAttribute('data-set-lang');
-          document.body.classList.toggle('english', lang === 'en');
-          document.documentElement.lang = lang;
-          buttons.forEach(function (item) {
-            item.classList.toggle('active', item === button);
-          });
-          try { localStorage.setItem('phax-maintenance-lang', lang); } catch (error) {}
-        });
-      });
-
-      var savedLang = '';
-      try { savedLang = localStorage.getItem('phax-maintenance-lang') || ''; } catch (error) {}
-      if (savedLang === 'en') document.querySelector('[data-set-lang="en"]').click();
-
-      var track = document.querySelector('[data-news-track]');
-      var slides = track ? Array.prototype.slice.call(track.children) : [];
-      var dots = document.querySelector('[data-news-dots]');
-      var currentSlide = 0;
-      var autoplay;
-
-      function moveTo(index) {
-        if (!slides.length) return;
-        currentSlide = (index + slides.length) % slides.length;
-        track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-        Array.prototype.forEach.call(dots.children, function (dot, dotIndex) {
-          dot.classList.toggle('active', dotIndex === currentSlide);
-        });
-      }
-
-      if (track && dots) {
-        slides.forEach(function (_, index) {
-          var dot = document.createElement('button');
-          dot.type = 'button';
-          dot.className = 'news-dot' + (index === 0 ? ' active' : '');
-          dot.setAttribute('aria-label', 'Afficher la news ' + (index + 1));
-          dot.addEventListener('click', function () { moveTo(index); restartAutoplay(); });
-          dots.appendChild(dot);
-        });
-
-        document.querySelector('[data-news-prev]').addEventListener('click', function () {
-          moveTo(currentSlide - 1);
-          restartAutoplay();
-        });
-        document.querySelector('[data-news-next]').addEventListener('click', function () {
-          moveTo(currentSlide + 1);
-          restartAutoplay();
-        });
-
-        function restartAutoplay() {
-          window.clearInterval(autoplay);
-          autoplay = window.setInterval(function () { moveTo(currentSlide + 1); }, 7000);
-        }
-
-        restartAutoplay();
-      }
-
-      var countdownOverlay = document.querySelector('[data-countdown-overlay]');
-      var countdownValue = document.querySelector('[data-countdown-value]');
-      var countdownDateFr = document.querySelector('[data-countdown-date-fr]');
-      var countdownDateEn = document.querySelector('[data-countdown-date-en]');
-      var revealTarget = new Date('2026-09-12T19:00:00Z');
-      var visitorTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
-
-      function updateCountdownDate() {
-        var dateOptions = {
-          weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
-          hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
-        };
-        countdownDateFr.textContent = new Intl.DateTimeFormat('fr-FR', dateOptions).format(revealTarget) + ' (' + visitorTimeZone + ')';
-        countdownDateEn.textContent = new Intl.DateTimeFormat('en-US', dateOptions).format(revealTarget) + ' (' + visitorTimeZone + ')';
-      }
-
-      function updateCountdown() {
-        var remaining = Math.max(0, revealTarget.getTime() - Date.now());
-        var totalSeconds = Math.floor(remaining / 1000);
-        var days = Math.floor(totalSeconds / 86400);
-        var hours = Math.floor((totalSeconds % 86400) / 3600);
-        var minutes = Math.floor((totalSeconds % 3600) / 60);
-        var seconds = totalSeconds % 60;
-        countdownValue.textContent = [days, hours, minutes, seconds].map(function (part) {
-          return String(part).padStart(2, '0');
-        }).join(':');
-      }
-
-      function openCountdown() {
-        updateCountdownDate();
-        updateCountdown();
-        countdownOverlay.hidden = false;
-      }
-
-      document.querySelector('[data-secret-trigger]').addEventListener('click', openCountdown);
-      document.querySelector('[data-countdown-close]').addEventListener('click', function () {
-        countdownOverlay.hidden = true;
-      });
-      countdownOverlay.addEventListener('click', function (event) {
-        if (event.target === countdownOverlay) countdownOverlay.hidden = true;
-      });
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') countdownOverlay.hidden = true;
-      });
-      window.setInterval(updateCountdown, 1000);
-
-      var year = new Date().getFullYear();
-      document.getElementById('year-fr').textContent = year;
-      document.getElementById('year-en').textContent = year;
-    }());
-  </script>
+  <script src="js/mods-registry.js"></script>
+  <script src="js/news-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
