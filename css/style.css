@@ -51,13 +51,13 @@
 /* Redstone */
 [data-theme="redstone"] {
   --bg: #4b4b4b;
-  --bg-light: #303030;
-  --bg-card: #3d3d3d;
+  --bg-light: #353535;
+  --bg-card: #424242;
   --accent: #b83f3a;
   --accent-hover: #d05249;
   --text: #eeeae4;
   --text-muted: #bdbdbd;
-  --border: #5a4543;
+  --border: #643b37;
 }
 
 /* Lush Cave + Amethyst */
@@ -1128,18 +1128,41 @@ li {
 .news-card {
   background: var(--bg-light);
   border: 1px solid var(--border);
+  border-left: 4px solid var(--accent); /* Barre d'accent sur le côté gauche */
   border-radius: 12px;
   padding: 1.2rem 1.5rem;
   margin-bottom: 1rem;
   cursor: pointer;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  
+  /* Transformation en conteneur horizontal */
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
 
 .news-card:hover {
   border-color: var(--accent);
 }
 
+/* Alignement de l'image à gauche avec taille fixe */
+.news-card-img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.news-card-img-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .news-card-header {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 10px;
