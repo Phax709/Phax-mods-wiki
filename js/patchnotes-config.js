@@ -79,6 +79,7 @@ const patchnotesConfig = {
             <li>Modification de la recette du gravier</li>
             <li>Modification de la recette du spawner en ajoutant l'éclat d'arcane</li>
             <li>Suppression de 2 recettes en doublon, d'œufs d'apparition de créatures</li>
+            <li>Correction de certaines traductions incorrectes</li>
           </ul>`
         ],
         en: [
@@ -110,6 +111,7 @@ const patchnotesConfig = {
             <li>Modification of the recipe of gravel</li>
             <li>Modification of the recipe of spawner by adding arcane shard</li>
             <li>Deletion of 2 duplicate recipes, from creature spawn eggs</li>
+            <li>Correction of some incorrect translations</li>
           </ul>`
         ]
       }
@@ -129,8 +131,25 @@ const patchnotesConfig = {
             </ul>`,
           `<b class="patch-fix">Modification :</b>
           <ul>
-            <li>Correction du nom anglais du lingot de dioptasium en Dioptasium ingot</li>
-            <li>Correction de textes en français encore présents dans la version anglaise</li>
+            <li>Des changements concernants le disque de musique "Sweden" : 
+              <ol>
+                <li>Le disque jouant Sweden déclenche désormais les musiques du tag [music.game]</li>
+                <li>Renommage du disque en "C418 — Musiques aléatoires de l'Overworld"</li>
+                <li>Mise à jour de la description du succès lié au disque</li>
+              </ol>
+            </li>
+            <li>Ajout de la recette manquante de la pomme en dioptasium</li>
+            <li>Ajout de la recette manquante pour decrafter un bloc de xenite</li>
+            <li>Ajout de la recette manquante pour decrafter un bloc d'uranium</li>
+            <li>Ajout de la recette manquante pour decrafter le bloc de crystal rouge</li>
+            <li>La recette de la poudre de souffre est désormais en mode sans forme</li>
+            <li>Modification de la recette de l'essence végétale pour remplacer les bouteilles incraftables par des items du tag 'vegetal'</li>
+            <li>Modification du nombre de minerai de chrome échangé par le villageois mineur</li>
+            <li>Suppression d'un échange non équitable avec le mineur</li>
+            <li>Modification de la recette du gravier</li>
+            <li>Modification de la recette du spawner en ajoutant l'éclat d'arcane</li>
+            <li>Suppression de 2 recettes en doublon, d'œufs d'apparition de créatures</li>
+            <li>Correction de certaines traductions incorrectes</li>
           </ul>`
         ],
         en: [
@@ -159,6 +178,7 @@ const patchnotesConfig = {
             <li>Modification of the recipe of gravel</li>
             <li>Modification of the recipe of spawner by adding arcane shard</li>
             <li>Deletion of 2 duplicate recipes, from creature spawn eggs</li>
+            <li>Correction of some incorrect translations</li>
           </ul>`
         ]
       }
