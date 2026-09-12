@@ -113,7 +113,7 @@
         "name_en": "Glass Door",
         "desc_fr": "Une porte classique en verre transparent.",
         "desc_en": "A classic transparent glass door.",
-        "images": ["glassdoorblock.png"],
+        "images": ["Glassdoorblock.png"],
         "details": {
             "sections": [
                 {
@@ -145,7 +145,7 @@
         "name_en": "Volcanic Block",
         "desc_fr": "Un bloc proche du bloc de magma.",
         "desc_en": "A block similar to the magma block.",
-        "images": ["volcanicrock.png"],
+        "images": ["Volcanicrock.png"],
         
         "details": {
             "sections": [

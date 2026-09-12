@@ -5,7 +5,7 @@
     "name_en": "Igniera Ore",
     "desc_fr": "Minerai rare et instable.",
     "desc_en": "Rare and unstable ore.",
-    "images": ["Ignieraore.png","ignieraingot.png"],
+    "images": ["Ignieraore.png","Ignieraingot.png"],
     "details": {
       "sections": [
         {
@@ -61,7 +61,7 @@
     "name_en": "Paladium Ore",
     "desc_fr": "Première ressource disponible en grande quantité.",
     "desc_en": "First resource available in large quantities.",
-    "images": ["Paladiumore.png", "paladiumingot.png"],
+    "images": ["Paladiumore.png", "Paladiumingot.png"],
     "details": {
       "sections": [
         {
@@ -507,7 +507,7 @@
     "desc_en": "A rare ingot obtained by mixing all the ores.",
     "images": [
       {
-        "src": "scarlet_Ingot.png",
+        "src": "Scarlet_Ingot.png",
         "frameCount": 15,
         "frameWidth": 16,
         "frameHeight": 16,
@@ -546,7 +546,7 @@
     "name_en": "Fluorite Ore",
     "desc_fr": "Est une source de fluorescence dans le mod.",
     "desc_en": "Is a source of fluorescence in the mod.",
-    "images": ["fluoriteore.png", "Fluoriteingot.png"],
+    "images": ["Fluoriteore.png", "Fluoriteingot.png"],
     "details": {
       "sections": [
         {

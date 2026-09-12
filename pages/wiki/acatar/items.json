@@ -184,7 +184,7 @@
     "name_en": "Eye of Revelation",
     "desc_fr": "Un oeil de révélation utilisé pour révéler toutes les entités aux alentours.",
     "desc_en": "An eye of revelation used for revealing all entities around.",
-    "images": ["EyeofRevelation.png"],
+    "images": ["Eyeofrevelation.png"],
 
     "details": {
       "sections": [
