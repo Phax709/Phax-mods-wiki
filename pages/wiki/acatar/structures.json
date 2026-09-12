@@ -1,1 +1,98 @@
-
+[
+    {
+    "id": "structure-colossumarena",
+    "name_fr": "Arène du Colossum",
+    "name_en": "Colossum Arena",
+    "desc_fr": "Une structure rare abritant le générateur du Colossum.",
+    "desc_en": "A rare structure housing the Colossum spawner.",
+    "images": [],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Génération et localisation",
+          "title_en": "Generation and location",
+          "content_fr": "<p>Cette structure se génère dans les biomes suivants : <em>Deep Dark</em>, <em>Dripstone Caves</em>, <em>Lush Caves</em> et <em>Plains</em>. Il s'agit d'une structure extrêmement rare.</p>",
+          "content_en": "<p>This structure generates in the following biomes: <em>Deep Dark</em>, <em>Dripstone Caves</em>, <em>Lush Caves</em>, and <em>Plains</em>. It is an extremely rare structure.</p>"
+        },
+        {
+          "title_fr": "Accessibilité et trouvalité",
+          "title_en": "Accessibility and discoverability",
+          "content_fr": "<p>En raison de sa rareté extrême, cette structure est quasi impossible à trouver en mode Survie sans utiliser le mode Spectateur pour l'explorer.</p>",
+          "content_en": "<p>Due to its extreme rarity, this structure is virtually impossible to find in Survival mode without using Spectator mode to look for it.</p>"
+        },
+        {
+          "title_fr": "Invocateur de boss",
+          "title_en": "Boss spawner",
+          "content_fr": "<p>Au centre de l'arène se trouve le générateur du boss [[creature-colossum|Colossum]]. Pour faire apparaître le boss, le joueur doit effectuer un clic droit sur le générateur et cliquer sur le bouton dans l'interface.</p><p>N'hésitez pas à consulter la fiche du [[creature-colossum|Colossum]] sur le wiki pour découvrir des stratégies efficaces et bien vous préparer au combat.</p>",
+          "content_en": "<p>At the center of the arena lies the [[creature-colossum|Colossum]] boss spawner. To summon the boss, players must right-click the spawner and press the button inside the GUI.</p><p>Check the [[creature-colossum|Colossum]] wiki page to learn effective combat strategies and prepare properly.</p>"
+        },
+        {
+          "title_fr": "Future refonte",
+          "title_en": "Future revamp",
+          "content_fr": "<p><strong>Remarque :</strong> Cette structure subira une refonte visuelle et fonctionnelle complète lors d'une prochaine mise à jour du mod.</p>",
+          "content_en": "<p><strong>Note:</strong> This structure will undergo a complete visual and functional revamp in a future mod update.</p>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "structure-extermatearena",
+    "name_fr": "Arène de l'Extermate",
+    "name_en": "Extermate Arena",
+    "desc_fr": "Une arène du Nether abritant le générateur de l'Extermate.",
+    "desc_en": "A Nether arena housing the Extermate spawner.",
+    "images": [],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Génération et localisation",
+          "title_en": "Generation and location",
+          "content_fr": "<p>Cette structure se génère uniquement dans le Nether, plus particulièrement en cherchant dans le biome <em>Sakura</em>. C'est une structure très rare.</p>",
+          "content_en": "<p>This structure generates exclusively in the Nether, primarily when exploring the <em>Sakura</em> biome. It is a very rare structure.</p>"
+        },
+        {
+          "title_fr": "Accessibilité et trouvalité",
+          "title_en": "Accessibility and discoverability",
+          "content_fr": "<p>Bien qu'elle soit trouvable en Survie en arpentant le biome dédié, sa très forte rareté rend sa recherche difficile.</p>",
+          "content_en": "<p>While findable in Survival mode by exploring the dedicated biome, its high rarity makes searching for it difficult.</p>"
+        },
+        {
+          "title_fr": "Invocateur de boss",
+          "title_en": "Boss spawner",
+          "content_fr": "<p>L'arène abrite le générateur du boss [[creature-exteramate|Extermate]]. Le boss s'invoque en ouvrant l'interface du générateur (clic droit) puis en appuyant sur le bouton prévu à cet effet.</p><p>Pensez à consulter la page wiki dédiée à l'[[creature-exteramate|Extermate]] pour connaître les meilleurs moyens de le vaincre et bien équiper votre personnage.</p>",
+          "content_en": "<p>The arena houses the [[creature-exteramate|Extermate]] boss spawner. The boss is summoned by opening the spawner's GUI (right-click) and pressing the button inside.</p><p>Make sure to read the [[creature-exteramate|Extermate]] wiki page to learn effective tactics and gear up appropriately.</p>"
+        },
+        {
+          "title_fr": "Future refonte",
+          "title_en": "Future revamp",
+          "content_fr": "<p><strong>Remarque :</strong> Cette structure subira une refonte visuelle et fonctionnelle complète lors d'une prochaine mise à jour du mod.</p>",
+          "content_en": "<p><strong>Note:</strong> This structure will undergo a complete visual and functional revamp in a future mod update.</p>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "structure-midlerportal",
+    "name_fr": "Portail du Midler",
+    "name_en": "Midler Portal",
+    "desc_fr": "La structure permettant de voyager vers la dimension du Midler.",
+    "desc_en": "The structure used to travel to the Midler dimension.",
+    "images": [],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Construction et activation",
+          "title_en": "Construction and activation",
+          "content_fr": "<p>Le portail se construit avec la même forme qu'un portail du Nether classique, mais en utilisant de la <strong>pierre de l'End</strong> (End Stone).</p><p>Pour l'allumer et ouvrir le passage, vous devez utiliser un [[item-midlerigniter|briquet du Midler]] sur le cadre.</p>",
+          "content_en": "<p>The portal is constructed in the same shape as a standard Nether portal, but using <strong>End Stone</strong>.</p><p>To ignite it and open the passage, you must use a [[item-midlerigniter|Midler igniter]] on the frame.</p>"
+        },
+        {
+          "title_fr": "Destination",
+          "title_en": "Destination",
+          "content_fr": "<p>Traverser ce portail vous téléporte directement dans la dimension du [[nature-midlerdimension|Midler]].</p>",
+          "content_en": "<p>Stepping through this portal teleports you directly into the [[nature-midlerdimension|Midler]] dimension.</p>"
+        }
+      ]
+    }
+  }
+]

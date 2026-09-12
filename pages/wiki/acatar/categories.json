@@ -1,1 +1,10 @@
-
+[
+  { "id": "all", "label_fr": "Tout", "label_en": "All", "icon": "📦" },
+  { "id": "blocs", "label_fr": "Blocs", "label_en": "Blocks", "icon": "🧱", "file": "blocs.json" },
+  { "id": "minerais", "label_fr": "Minerais", "label_en": "Ores", "icon": "💎", "file": "minerais.json" },
+  { "id": "items", "label_fr": "Items", "label_en": "Items", "icon": "🔧", "file": "items.json" },
+  { "id": "craft", "label_fr": "Craft / Recette", "label_en": "Crafting / Recipes", "icon": "⚒️", "file": "craft.json" },
+  { "id": "nature", "label_fr": "Nature", "label_en": "Nature", "icon": "🌿", "file": "nature.json" },
+  { "id": "structures", "label_fr": "Structures", "label_en": "Structures", "icon": "🏛️", "file": "structures.json" },
+  { "id": "creatures", "label_fr": "Créatures", "label_en": "Creatures", "icon": "🐾", "file": "creatures.json" }
+]

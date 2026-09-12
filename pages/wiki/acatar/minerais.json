@@ -1,1 +1,1032 @@
+[
+  {
+    "id": "minerai-igniera",
+    "name_fr": "Minerai d'igniera",
+    "name_en": "Igniera Ore",
+    "desc_fr": "Minerai rare et instable.",
+    "desc_en": "Rare and unstable ore.",
+    "images": ["Ignieraore.png","ignieraingot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai d'igniera",
+          "title_en": "Igniera Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 25</li><li>Résistance : 4</li><li>Niveau d'extraction : 4 = pioche en diamant</li></ul>",
+          "content_en": "<ul><li>Hardness: 25</li><li>Resistance: 4</li><li>Mining level: 4 = diamond pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min 0 ; Max 64</li><li>Groupes par chunk : ~8</li><li>Minerais par groupe : ~3</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Uniform</li><li>Height: Min 0; Max 64</li><li>Groups per chunk: ~8</li><li>Ores per group: ~3</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Minage",
+          "title_en": "Mining",
+          "content_fr": "<ul><li>Outil minimum : Pioche en diamant (niveau 3)</li><li>Silk Touch : aucun effet (drop identique)</li><li>Fortune : aucun effet</li></ul>",
+          "content_en": "<ul><li>Minimum tool: Diamond pickaxe (level 3)</li><li>Silk Touch: no effect (same drop)</li><li>Fortune: no effect</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Type de recette : Fonderie uniquement (Blasting = haut fourneau)</li><li>XP : 1</li><li>Temps de cuisson : 100 ticks (≈5 s)</li></ul>",
+          "content_en": "<ul><li>Recipe type: Blasting only</li><li>XP: 1</li><li>Cooking time: 100 ticks (≈5s)</li></ul>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc d'igniera → 9 lingots d'igniera</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 igniera block → 9 igniera ingots</li></ul>"
+        }
+      ],
+      "usages": [
+        {
+          "content_fr":"<ul><li>Craft d'un [[craft-spawner|spawner]]</li></ul>",
+          "content_en":"<ul><li>Crafting a [[craft-spawner|spawner]]</li></ul>"
+        },
+        {
+          "content_fr":"<ul><li>Le lingot d'igniera sert au craft du [[minerai-scarlet|lingot de scarlet]]</li></ul>",
+          "content_en":"<ul><li>The igniera ingot is used for crafting the [[minerai-scarlet|scarlet Ingot]]</li></ul>"
+        },
+          {
+            "content_fr":"<ul><li>Le lingot d'igniera est échangeable auprès du villageois forestier pour obtenir des pousses d'arbres.</li></ul>",
+            "content_en":"<ul><li>The igniera ingot is exchangeable with the forester villager to obtain tree shoots</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-paladium",
+    "name_fr": "Minerai de paladium",
+    "name_en": "Paladium Ore",
+    "desc_fr": "Première ressource disponible en grande quantité.",
+    "desc_en": "First resource available in large quantities.",
+    "images": ["Paladiumore.png", "paladiumingot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de paladium",
+          "title_en": "Paladium Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Niveau d'extraction : 1 = pioche en pierre</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Mining level: 1 = stone pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min 10 ; Max 50</li><li>Groupes par chunk : ~8</li><li>Minerais par groupe : ~16</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Uniform</li><li>Height: Min 10; Max 50</li><li>Groups per chunk: ~8</li><li>Ores per group: ~16</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Minage",
+          "title_en": "Mining",
+          "content_fr": "<ul><li>Outil minimum : Pioche en pierre (niveau 1)</li><li>Silk Touch : aucun effet (drop identique)</li><li>Fortune : aucun effet</li></ul>",
+          "content_en": "<ul><li>Minimum tool: Stone pickaxe (level 1)</li><li>Silk Touch: no effect (same drop)</li><li>Fortune: no effect</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Type de recette : Fonderie uniquement (smelting)</li><li>XP : 1</li><li>Temps de cuisson : 6 ticks (≈0,3 s)</li></ul>",
+          "content_en": "<ul><li>Recipe type: Smelting only</li><li>XP: 1</li><li>Cooking time: 6 ticks (≈0.3s)</li></ul>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de paladium → 9 lingots de paladium</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 paladium block → 9 paladium ingots</li></ul>"
+        },
+        {
+          "title_fr": "Armure Et Outils",
+          "title_en": "Armor and Tools",
+          "content_fr": "<ul><li><strong>Outils :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Paramètre</th><th>Épée</th><th>Hache</th><th>Pioche</th><th>Pelle</th><th>Houe</th><th>Marteau</th></tr></thead><tbody><tr><th>Niveau d'extraction</th><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr><tr><th>Efficacité</th><td>8</td><td>8</td><td>8</td><td>8</td><td>8</td><td>8</td></tr><tr><th>Enchantabilité</th><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td></tr><tr><th>Dégâts d'attaque</th><td>7</td><td>7</td><td>2</td><td>3,5</td><td>1</td><td>1</td></tr><tr><th>Vitesse d'attaque</th><td>1,7</td><td>1</td><td>1,2</td><td>1</td><td>1</td><td>1</td></tr><tr><th>Durabilité</th><td>900</td><td>900</td><td>900</td><td>900</td><td>900</td><td>250</td></tr></tbody></table></li><li><strong>Armure :</strong><br><ul class=\"no-bullet\"><li><em>Absorbtion maximale des dégats / durabiilité : 25</em></li><li><em>Valeurs d'armure (casque, plastron, jambières, bottes): 2; 6; 6; 2</em></li><li><em>Enchantabilité : 12</em></li><li><em>Dureté : 2</em></li><li><em>Resistance au recul : 0</em></li></ul></li></ul>",
+          "content_en": "<ul><li><strong>Tools :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Parameter</th><th>Sword</th><th>Axe</th><th>Pickaxe</th><th>Shovel</th><th>Hoe</th><th>Hammer</th></tr></thead><tbody><tr><th>Mining Level</th><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr><tr><th>Efficiency</th><td>8</td><td>8</td><td>8</td><td>8</td><td>8</td><td>8</td></tr><tr><th>Enchantability</th><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td></tr><tr><th>Attack Damage</th><td>7</td><td>7</td><td>2</td><td>3,5</td><td>1</td><td>1</td></tr><tr><th>Attack Speed</th><td>1,7</td><td>1</td><td>1,2</td><td>1</td><td>1</td><td>1</td></tr><tr><th>Durability</th><td>900</td><td>900</td><td>900</td><td>900</td><td>900</td><td>250</td></tr></tbody></table></li><li><strong>Armor :</strong><br><ul class=\"no-bullet\"><li><em>Maximum Damage Absorption / Durability: 25</em></li><li><em>Armor Values (Helmet, Chestplate, Leggings, Boots): 2; 6; 6; 2</em></li><li><em>Enchantability: 12<em></li><li><em>Toughness: 2</em></li><li><em>Knockback Resistance: 0</em></li></ul></li></ul>"
+        },
+        {
+          "title_fr":"Pomme en paladium",
+          "title_en":"Paladium Apple",
+          "content_fr":"<ul><li><strong>Nutrition :</strong> 6 points (3 gigots)</li><li><strong>Saturation :</strong> 2 points</li><li><strong>Temps de consommation :</strong> 1,6 seconde</li><li>La pomme peut être obtenue par l'échange de 6 or brut au villageois mineur au niveau Apprenti.</li><li><strong>Craft d'une pomme en paladium</strong></li></ul>",
+          "content_en":"<ul><li><strong>Nutrition:</strong> 6 points (3 drumsticks)</li><li><strong>Saturation:</strong> 2 points</li><li><strong>Consumption time:</strong> 1.6 seconds</li><li>The apple can be obtained by exchanging 6 raw gold to the minor villagers at the Apprentice level.</li><li><strong>Crafting a paladium apple</strong></li></ul>",
+          "images":["palaapple_recipe.png"]
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Craft d'un marteau en paladium</li></ul>",
+            "content_en":"<ul><li>Crafting a paladium hammer</li></ul>",
+            "images": ["hammer_paladium_recipe.png"]
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de paladium peut être utilisé pour crafter le [[minerai-scarlet| lingot de scarlet]]</li></ul>",
+            "content_en":"<ul><li>The paladium ingot can be used to craft the [[minerai-scarlet| scarlet ingot]]</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de paladium peut être échangé pour obtenir des [[minerai-carmeltazite|fragments de carmeltazite]].</li></ul>",
+            "content_en":"<ul><li>The paladium ingot can be exchanged to obtain [[minerai-carmeltazite|carmeltazite fragments]].</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de paladium peut être utilisé pour crafter le [[bloc-paladiumchest|coffre en paladium]].</li></ul>",
+            "content_en":"<ul><li>The paladium ingot can be used to craft the [[bloc-paladiumchest|paladium chest]].</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-multicolore",
+    "name_fr": "Lingot multicolore",
+    "name_en": "Multicolored Ingot",
+    "desc_fr": "Dernier minerai le plus puissant.",
+    "desc_en": "Last and most powerful ore.",
+    "images": [
+      {
+        "src": "multicolor_ingot.png",
+        "frameCount": 8,
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frameColumns": 1,
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du lingot multicolore",
+          "title_en": "Multicolored Ingot Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Niveau d'extraction : 1 = pioche en pierre</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Mining level: 1 = stone pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min 10 ; Max 50</li><li>Groupes par chunk : ~8</li><li>Minerais par groupe : ~16</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Uniform</li><li>Height: Min 10; Max 50</li><li>Groups per chunk: ~8</li><li>Ores per group: ~16</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Minage",
+          "title_en": "Mining",
+          "content_fr": "<ul><li>Outil minimum : Pioche en pierre (niveau 1)</li><li>Silk Touch : aucun effet (drop identique)</li><li>Fortune : aucun effet</li></ul>",
+          "content_en": "<ul><li>Minimum tool: Stone pickaxe (level 1)</li><li>Silk Touch: no effect (same drop)</li><li>Fortune: no effect</li></ul>"
+        },
+        {
+          "title_fr": "Craft",
+          "title_en": "Crafting",
+          "content_fr": "<ul><li>Type de recette : craft. Le lingot multicolor se craft avec 4 [[minerai-nyxite| lingots de nyxite]], 1 cristal de l'end, 2 étoiles du nether, 1 poudre de redstone, et 1 lingot de cuivre.</li></ul>",
+          "content_en": "<ul><li>Recipe type: Crafting. The multicolor ingot is crafted with 4 [[minerai-nyxite| nyxite ingots]], 1 end crystal, 2 nether stars, 1 redstone powder, and 1 copper ingot.</li></ul>",
+          "images": ["multicolor_recipe.png"]
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de multicolor → 9 lingots multicolor</li><li>Le lingot peut être obtenue également avec des [[minerai-arcaneshards|éclats d'arcane]].</ul>",
+          "content_en": "<ul><li>Uncrafting: 1 multicolor block → 9 multicolor ingots</li><li>The ingot can also be obtained with [[minerai-arcaneshards|arcane shards]].</ul>"
+        },
+        {
+          "title_fr": "Armure Et Outils",
+          "title_en": "Armor and Tools",
+          "content_fr": "<ul><li><strong>Outils :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Paramètre</th><th>Épée</th><th>Hache</th><th>Pioche</th><th>Pelle</th><th>Houe</th><th>Marteau</th></tr></thead><tbody><tr><th>Niveau d'extraction</th><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr><tr><th>Efficacité</th><td>8</td><td>8</td><td>8</td><td>8</td><td>8</td><td>8</td></tr><tr><th>Enchantabilité</th><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td></tr><tr><th>Dégâts d'attaque</th><td>7</td><td>7</td><td>2</td><td>3,5</td><td>1</td><td>1</td></tr><tr><th>Vitesse d'attaque</th><td>1,7</td><td>1</td><td>1,2</td><td>1</td><td>1</td><td>1</td></tr><tr><th>Durabilité</th><td>900</td><td>900</td><td>900</td><td>900</td><td>900</td><td>250</td></tr></tbody></table></li><li><strong>Armure :</strong><br><ul class=\"no-bullet\"><li><em>Absorbtion maximale des dégats / durabiilité : 25</em></li><li><em>Valeurs d'armure (casque, plastron, jambières, bottes): 2; 6; 6; 2</em></li><li><em>Enchantabilité : 12</em></li><li><em>Dureté : 2</em></li><li><em>Resistance au recul : 0</em></li></ul></li></ul>",
+          "content_en": "<ul><li><strong>Tools :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Parameter</th><th>Sword</th><th>Axe</th><th>Pickaxe</th><th>Shovel</th><th>Hoe</th><th>Hammer</th></tr></thead><tbody><tr><th>Mining Level</th><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr><tr><th>Efficiency</th><td>8</td><td>8</td><td>8</td><td>8</td><td>8</td><td>8</td></tr><tr><th>Enchantability</th><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td></tr><tr><th>Attack Damage</th><td>7</td><td>7</td><td>2</td><td>3,5</td><td>1</td><td>1</td></tr><tr><th>Attack Speed</th><td>1,7</td><td>1</td><td>1,2</td><td>1</td><td>1</td><td>1</td></tr><tr><th>Durability</th><td>900</td><td>900</td><td>900</td><td>900</td><td>900</td><td>250</td></tr></tbody></table></li><li><strong>Armor :</strong><br><ul class=\"no-bullet\"><li><em>Maximum Damage Absorption / Durability: 25</em></li><li><em>Armor Values (Helmet, Chestplate, Leggings, Boots): 2; 6; 6; 2</em></li><li><em>Enchantability: 12<em></li><li><em>Toughness: 2</em></li><li><em>Knockback Resistance: 0</em></li></ul></li></ul>"
+        },
 
+        {
+          "title_fr":"Pomme multicolore",
+          "title_en":"Multicolor Apple",
+          "content_fr":"<ul><li><strong>Nutrition :</strong> 7 points (3,5 gigots)</li><li><strong>Saturation :</strong> 14 points</li><li><strong>Temps de consommation :</strong> 1,6 seconde</li><li><strong>Effets appliqués :</strong> Une fois consommée, la pomme donne les effets suivants pendant 1 minute : Bonus de santé I, Régénération II, Résistance II et Soin instantané II.</li><li><strong>Craft d'une pomme en multicolor</strong></li></ul>",
+          "content_en":"<ul><li><strong>Nutrition:</strong> 7 points (3.5 drumsticks)</li><li><strong>Saturation:</strong> 14 points</li><li><strong>Consumption time:</strong> 1.6 seconds</li><li><strong>Applied effects:</strong> The apple, once eaten, gives the following effects for 1 minute: Health Boost I, Regeneration II, Resistance II, and Instant Health II.</li><li><strong>Crafting a multicolor apple</strong></li></ul>",
+          "images":["multicolor_apple_recipe.png"]
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Craft d'un marteau en multicolor</li></ul>",
+            "content_en":"<ul><li>Crafting a multicolor hammer</li></ul>",
+            "images": ["hammer_multicolor_recipe.png"]
+          },
+          {
+            "content_fr":"<ul><li>Le lingot multicolore peut être utilisé pour crafter le [[minerai-scarlet| lingot de scarlet]] ou le [[bloc-multicolorchest| coffre multicolore]]</li></ul>",
+            "content_en":"<ul><li>The multicolor ingot can be used to craft the [[minerai-scarlet| scarlet ingot]] or the [[bloc-multicolorchest| multicolor chest]]</li></ul>"
+          }
+      ]
+    }
+  },
+    {
+    "id": "minerai-red",
+    "name_fr": "Minerai red",
+    "name_en": "Red Ore",
+    "desc_fr": "deuxieme ressource disponible dans le mod.",
+    "desc_en": "Second resource available in the mod.",
+    "images": [
+      {
+        "frames": [
+          { "src": "Redore.png" },
+          { "src": "Rednetherore.png" }
+        ],
+        "interval": 1500,
+        "autoplay": true
+      },
+      {
+        "src": "Redingot.png"
+      }
+    ],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de red",
+          "title_en": "Red Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Niveau d'extraction : 1 = pioche en pierre</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Mining level: 1 = stone pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld et nether</li><li>Forme : Uniforme</li><li>Hauteur : Min 0 ; Max 64</li><li>Groupes par chunk : Minerai red : ~5, Minerai red du nether : ~20</li><li>Minerais par groupe : Minerai red : ~5, Minerai red du nether : ~12</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld and Nether</li><li>Shape: Uniform</li><li>Height: Min 0; Max 64</li><li>Groups per chunk: Red Ore: ~5, Red Nether Ore: ~20</li><li>Ores per group: Red Ore: ~5, Red Nether Ore: ~12</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Minage",
+          "title_en": "Mining",
+          "content_fr": "<ul><li>Outil minimum : Pioche en pierre (niveau 1)</li><li>Silk Touch : aucun effet (drop identique)</li><li>Fortune : aucun effet</li></ul>",
+          "content_en": "<ul><li>Minimum tool: Stone pickaxe (level 1)</li><li>Silk Touch: no effect (same drop)</li><li>Fortune: no effect</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<p>Les minerais red et red du Nether peuvent être fondus dans un four ou un haut fourneau.</p><table class=\"mod-info-table\"><thead><tr><th>Minerai</th><th>Appareil</th><th>Temps de cuisson</th><th>XP</th></tr></thead><tbody><tr><td>Minerai red</td><td>Four</td><td>200 ticks = 10s</td><td>50</td></tr><tr><td>Minerai red</td><td>Haut fourneau</td><td>100 ticks = 5s</td><td>25</td></tr><tr><td>Minerai red du Nether</td><td>Four</td><td>240 ticks = 12s</td><td>16</td></tr><tr><td>Minerai red du Nether</td><td>Haut fourneau</td><td>120 ticks = 6s</td><td>50</td></tr></tbody></table>",
+          "content_en": "<p>Red Ore and Red Nether Ore can be smelted in a furnace or a blast furnace.</p><table class=\"mod-info-table\"><thead><tr><th>Ore</th><th>Appliance</th><th>Cooking Time</th><th>XP</th></tr></thead><tbody><tr><td>Red Ore</td><td>Furnace</td><td>200 ticks = 10s</td><td>50</td></tr><tr><td>Red Ore</td><td>Blast Furnace</td><td>100 ticks = 5s</td><td>25</td></tr><tr><td>Red Nether Ore</td><td>Furnace</td><td>240 ticks = 12s</td><td>16</td></tr><tr><td>Red Nether Ore</td><td>Blast Furnace</td><td>120 ticks = 6s</td><td>50</td></tr></tbody></table>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de red → 9 lingots de red</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 red block → 9 red ingots</li></ul>"
+        },
+        {
+          "title_fr": "Armure Et Outils",
+          "title_en": "Armor and Tools",
+          "content_fr": "<ul><li><strong>Outils :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Paramètre</th><th>Épée</th><th>Hache</th><th>Pioche</th><th>Pelle</th><th>Houe</th><th>Marteau</th></tr></thead><tbody><tr><th>Niveau d'extraction</th><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr><th>Efficacité</th><td>8</td><td>8</td><td>9</td><td>8</td><td>8</td><td>8</td></tr><tr><th>Enchantabilité</th><td>10</td><td>10</td><td>10</td><td>10</td><td>10</td><td>10</td></tr><tr><th>Dégâts d'attaque</th><td>9</td><td>9</td><td>3</td><td>4,5</td><td>1</td><td>1</td></tr><tr><th>Vitesse d'attaque</th><td>1,9</td><td>1</td><td>1,2</td><td>1</td><td>2</td><td>1</td></tr><tr><th>Durabilité</th><td>1200</td><td>1200</td><td>1200</td><td>1200</td><td>1200</td><td>500</td></tr></tbody></table></li><li><strong>Armure :</strong><br><ul class=\"no-bullet\"><li><em>Absorbtion maximale des dégats / durabiilité : 50</em></li><li><em>Valeurs d'armure (casque, plastron, jambières, bottes): 5; 14; 10; 7</em></li><li><em>Enchantabilité : 45</em></li><li><em>dureté : 2</em></li><li><em>Resistance au recul : 0</em></li></ul></li></ul>",
+          "content_en": "<ul><li><strong>Tools :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Parameter</th><th>Sword</th><th>Axe</th><th>Pickaxe</th><th>Shovel</th><th>Hoe</th><th>Hammer</th></tr></thead><tbody><tr><th>Mining Level</th><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr><tr><th>Efficiency</th><td>8</td><td>8</td><td>9</td><td>8</td><td>8</td><td>8</td></tr><tr><th>Enchantability</th><td>10</td><td>10</td><td>10</td><td>10</td><td>10</td><td>10</td></tr><tr><th>Attack Damage</th><td>9</td><td>9</td><td>3</td><td>4,5</td><td>1</td><td>1</td></tr><tr><th> Attack Speed</th><td>1,9</td><td>1</td><td>1,2</td><td>1</td><td>2</td><td>1</td></tr><tr><th>Durability</th><td>1200</td><td>1200</td><td>1200</td><td>1200</td><td>1200</td><td>500</td></tr></tbody></table></li><li><strong> Armor :</strong><br><ul class = \"no-bullet\"><li><em> Maximum Damage Absorption / Durability: 50</em></li><li><em> Armor Values (Helmet, Chestplate, Leggings, Boots): 5; 14; 10; 7</em></li><li><em> Enchantability: 45</em></li><li><em>Toughness: 2</em></li><li><em>Knockback Resistance: 0</em></li></ul></li></ul>"
+        },
+        {
+          "title_fr":"Pomme en red",
+          "title_en":"Red Apple",
+          "content_fr":"<ul><li><strong>Nutrition :</strong> 4 points (2 gigots)</li><li><strong>Saturation :</strong> 2 points</li><li><strong>Temps de consommation :</strong> 1,6 seconde</li><li><strong>Craft d'une pomme en red</strong></li></ul>",
+          "content_en":"<ul><li><strong>Nutrition:</strong> 4 points (2 drumsticks)</li><li><strong>Saturation:</strong> 2 points</li><li><strong>Consumption time:</strong> 1.6 seconds</li><li><strong>Crafting a red apple</strong></li></ul>",
+          "images":["redapple_recipe.png"]
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Craft d'un marteau en red</li></ul>",
+            "content_en":"<ul><li>Crafting a red hammer</li></ul>",
+            "images": ["red_hammer_recipe.png"]
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de red peut être utilisé pour crafter le [[minerai-scarlet| lingot de scarlet]]</li></ul>",
+            "content_en":"<ul><li>The red ingot can be used to craft the [[minerai-scarlet| scarlet ingot]]</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le bloc de red fait à partir des lingots peut être échangé contre des [[item-damageball|boules de dégâts]] au villageois mineur au niveau expert.</li></ul>",
+            "content_en":"<ul><li>The red block made from ingots can be exchanged for [[item-damageball|damage balls]] to the minor villager at the expert level.</li></ul>"
+          }
+        ]
+    }
+  },
+  {
+    "id": "minerai-amazonite",
+    "name_fr": "Minerai d'amazonite",
+    "name_en": "Amazonite Ore",
+    "desc_fr": "Troisième ressource la plus rare mais meilleure que le red",
+    "desc_en": "Third rarest resource but better than red",
+    "images": ["Amazoniteore.png", "Amazoniteingot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai d'amazonite",
+          "title_en": "Amazonite Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 3</li><li>Résistance : 5</li><li>Niveau d'extraction : 2 = pioche en fer</li></ul>",
+          "content_en": "<ul><li>Hardness: 3</li><li>Resistance: 5</li><li>Mining level: 2 = iron pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min 0 ; Max 256</li><li>Groupes par chunk : ~15</li><li>Minerais par groupe : ~7</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Uniform</li><li>Height: Min 0; Max 256</li><li>Groups per chunk: ~15</li><li>Ores per group: ~7</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Minage",
+          "title_en": "Mining",
+          "content_fr": "<ul><li>Outil minimum : Pioche en fer (niveau 2)</li><li>Silk Touch : aucun effet (drop identique)</li><li>Fortune : aucun effet</li></ul>",
+          "content_en": "<ul><li>Minimum tool: Iron pickaxe (level 2)</li><li>Silk Touch: no effect (same drop)</li><li>Fortune: no effect</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Type de recette : Fonderie uniquement (Blasting = haut fourneau)</li><li>XP : 1</li><li>Temps de cuisson : 80 ticks (≈4 s)</li></ul>",
+          "content_en": "<ul><li>Recipe type: Blasting only</li><li>XP: 1</li><li>Cooking time: 80 ticks (≈4 s)</li></ul>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc d'amazonite → 9 lingots d'amazonite</li><li>Le lingot est obtenable par l'échange d'une pioche en [[minerai-paladium|paladium]] et d'un crystal d'azure au villageois mineur niveau maître.</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 amazonite block → 9 amazonite ingots</li><li>The ingot is obtainable by exchanging a pickaxe made of [[minerai-paladium|paladium]] and an azure crystal to the minor master villager.</li></ul>"
+        },
+        {
+          "title_fr": "Armure Et Outils",
+          "title_en": "Armor and Tools",
+          "content_fr": "<ul><li><strong>Outils :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Paramètre</th><th>Épée</th><th>Hache</th><th>Pioche</th><th>Pelle</th><th>Houe</th><th>Marteau</th></tr></thead><tbody><tr><th>Niveau d'extraction</th><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr><tr><th>Efficacité</th><td>10</td><td>10</td><td>12</td><td>10</td><td>10</td><td>10</td></tr><tr><th>Enchantabilité</th><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td></tr><tr><th>Dégâts d'attaque</th><td>12</td><td>10</td><td>4</td><td>5,5</td><td>1</td><td>1</td></tr><tr><th>Vitesse d'attaque</th><td>2,2</td><td>1</td><td>1,2</td><td>1</td><td>3</td><td>1</td></tr><tr><th>Durabilité</th><td>1800</td><td>1800</td><td>1800</td><td>1800</td><td>1800</td><td>750</td></tr></tbody></table></li><li><strong>Armure :</strong><br><ul class=\"no-bullet\"><li><em>Absorbtion maximale des dégats / durabiilité : 100</em></li><li><em>Valeurs d'armure (casque, plastron, jambières, bottes): 4; 10; 12; 4</em></li><li><em>Enchantabilité : 15</em></li><li><em>Dureté : 1</em></li><li><em>Resistance au recul : 0</em></li></ul></li></ul>",
+          "content_en": "<ul><li><strong>Tools :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Parameter</th><th>Sword</th><th>Axe</th><th>Pickaxe</th><th>Shovel</th><th>Hoe</th><th>Hammer</th></tr></thead><tbody><tr><th>Mining Level</th><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr><tr><th>Efficiency</th><td>10</td><td>10</td><td>12</td><td>10</td><td>10</td><td>10</td></tr><tr><th>Enchantability</th><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td></tr><tr><th>Attack Damage</th><td>12</td><td>10</td><td>4</td><td>5,5</td><td>1</td><td>1</td></tr><tr><th>Attack Speed</th><td>2,2</td><td>1</td><td>1,2</td><td>1</td><td>3</td><td>1</tr></tbody></table></li><li><strong> Armor :</strong><br><ul class=\"no-bullet\"><li><em>Maximum Damage Absorption / Durability: 100</em></li><li><em>Armor Values (Helmet, Chestplate, Leggings, Boots): 4; 10; 12; 4</em></li><li><em>Enchantability: 15</em></li><li><em>Toughness: 1</em></li><li><em>Knockback Resistance: 0</em></li></ul></li></ul>"
+        },
+        {
+          "title_fr":"Pomme en red",
+          "title_en":"Red Apple",
+          "content_fr":"<ul><li><strong>Nutrition :</strong> 4 points (2 gigots)</li><li><strong>Saturation :</strong> 2 points</li><li><strong>Temps de consommation :</strong> 1,6 seconde</li><li><strong>Craft d'une pomme en amazonite</strong></li></ul>",
+          "content_en":"<ul><li><strong>Nutrition:</strong> 4 points (2 drumsticks)</li><li><strong>Saturation:</strong> 2 points</li><li><strong>Consumption time:</strong> 1.6 seconds</li><li><strong>Crafting a amazonite apple</strong></li></ul>",
+          "images":["amazonite_apple_recipe.png"]
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Craft d'un marteau en amazonite</li></ul>",
+            "content_en":"<ul><li>Crafting an amazonite hammer</li></ul>",
+            "images": ["amazonite_hammer_recipe.png"]
+          },
+          {
+            "content_fr":"<ul><li>Le lingot d'amazonite peut être utilisé pour crafter le [[minerai-scarlet| lingot de scarlet]] ou l' [[item-elementforge|élément forge]].</li></ul>",
+            "content_en":"<ul><li>The amazonite ingot can be used to craft the [[minerai-scarlet| scarlet ingot]] or the [[item-elementforge| element forge]].</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot d'amazonite est échangeable auprès du villageois forestier pour obtenir des pousses d'arbres.</li></ul>",
+            "content_en":"<ul><li>The amazonite ingot is exchangeable with the forester villager to obtain tree shoots</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot d'amazonite peut être utilisé pour crafter la [[bloc-advancedcraftingtable| table de craft avancé]].</li></ul>",
+            "content_en":"<ul><li>The amazonite ingot can be used to craft the [[bloc-advancedcraftingtable| advanced crafting table]].</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-dioptasium",
+    "name_fr": "Minerai de dioptasium",
+    "name_en": "Dioptasium Ore",
+    "desc_fr": "Quatrième ressource la plus rare avant d'entrer dans le dur.",
+    "desc_en": "Fourth rarest resource before getting into the hard stuff.",
+    "images": ["DioptasiumOre.png", "DioptasiumIngot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de dioptasium",
+          "title_en": "Dioptasium Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 3</li><li>Résistance : 5</li><li>Niveau d'extraction : 2 = pioche en fer</li></ul>",
+          "content_en": "<ul><li>Hardness: 3</li><li>Resistance: 5</li><li>Mining level: 2 = iron pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min 1 ; Max 63</li><li>Groupes par chunk : ~4</li><li>Minerais par groupe : ~5</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Uniform</li><li>Height: Min 1; Max 63</li><li>Groups per chunk: ~4</li><li>Ores per group: ~5</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Minage",
+          "title_en": "Mining",
+          "content_fr": "<ul><li>Outil minimum : Pioche en diamant (niveau 3)</li><li>Silk Touch : aucun effet (drop identique)</li><li>Fortune : aucun effet</li></ul>",
+          "content_en": "<ul><li>Minimum tool: Diamond pickaxe (level 3)</li><li>Silk Touch: no effect (same drop)</li><li>Fortune: no effect</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<p>Le minerai de dioptasium peuvent être fondus dans un four ou un haut fourneau.</p><table class=\"mod-info-table\"><thead><tr><th>Appareil</th><th>Temps de cuisson</th><th>XP</th></tr></thead><tbody><tr><td>Four</td><td>200 ticks = 10s</td><td>0,7</td></tr><tr><td>Haut fourneau</td><td>100 ticks = 5s</td><td>0,7</td></tr></tbody></table>",
+          "content_en": "<p>Dioptasium Ore can be smelted in a furnace or a blast furnace.</p><table class=\"mod-info-table\"><thead><tr><th>Appliance</th><th>Cooking Time</th><th>XP</th></tr></thead><tbody><tr><td>Furnace</td><td>200 ticks = 10s</td><td>0,7</td></tr><tr><td>Blast Furnace</td><td>100 ticks = 5s</td><td>0,7</td></tr></tbody></table>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de dioptasium → 9 lingots de dioptasium</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 dioptasium block → 9 dioptasium ingots</li></ul>"
+        },
+        {
+          "title_fr": "Armure Et Outils",
+          "title_en": "Armor and Tools",
+          "content_fr": "<ul><li><strong>Outils :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Paramètre</th><th>Épée</th><th>Hache</th><th>Pioche</th><th>Pelle</th><th>Houe</th><th>Marteau</th></tr></thead><tbody><tr><th>Niveau d'extraction</th><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr><tr><th>Efficacité</th><td>14</td><td>14</td><td>16</td><td>14</td><td>14</td><td>14</td></tr><tr><th>Enchantabilité</th><td>14</td><td>14</td><td>14</td><td>14</td><td>14</td><td>14</td></tr><tr><th>Dégâts d'attaque</th><td>16</td><td>12</td><td>5</td><td>6,5</td><td>1</td><td>1</td></tr><tr><th>Vitesse d'attaque</th><td>3,5</td><td>1</td><td>1,2</td><td>1</td><td>4</td><td>1</td></tr><tr><th>Durabilité</th><td>2400</td><td>2400</td><td>2400</td><td>2400</td><td>2400</td><td>1400</td></tr></tbody></table></li><li><strong>Armure :</strong><br><ul class=\"no-bullet\"><li><em>Absorbtion maximale des dégats / durabiilité : 150</em></li><li><em>Valeurs d'armure (casque, plastron, jambières, bottes): 2; 6; 5; 2</em></li><li><em>Enchantabilité : 14</em></li><li><em>Dureté : 0</em></li><li><em>Resistance au recul : 0</em></li></ul></li></ul>",
+          "content_en": "<ul><li><strong>Tools :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Parameter</th><th>Sword</th><th>Axe</th><th>Pickaxe</th><th>Shovel</th><th>Hoe</th><th>Hammer</th></tr></thead><tbody><tr><th>Mining Level</th><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr><tr><th>Efficiency</th><td>14</td><td>14</td><td>16</td><td>14</td><td>14</td><td>14</td></tr><tr><th>Enchantability</th><td>14</td><td>14</td><td>14</td><td>14</td><td>14</td><td>14</td></tr><tr><th>Attack Damage</th><td>16</td><td>12</td><td>5</td><td>6,5</td><td>1</td><td>1</td></tr><tr><th>Attack Speed</th><td>3,5</td><td>1</td><td>1,2</td><td>1</td><td>4</td><td>1</td></tr><tr><th>Durability</th><td>2400</td><td>2400</td><td>2400</td><td>2400</td><td>2400</td><td>1400</td></tr></tbody></table></li><li><strong> Armor :</strong><br><ul class=\"no-bullet\"><li><em>Maximum Damage Absorption / Durability: 150</em></li><li><em>Armor Values (Helmet, Chestplate, Leggings, Boots): 2; 6; 5; 2</em></li><li><em>Enchantability: 14</em></li><li><em>Toughness: 0</em></li><li><em>Knockback Resistance: 0</em></li></ul></li></ul>"
+        },
+        {
+          "title_fr":"Pomme en dioptasium",
+          "title_en":"Dioptasium Apple",
+          "content_fr":"<ul><li><strong>Nutrition :</strong> 3 points (1,5 gigot)</li><li><strong>Saturation :</strong> 7 points</li><li><strong>Temps de consommation :</strong> 1,6 seconde</li><li><strong>Craft d'une pomme en dioptasium</strong></li></ul>",
+          "content_en":"<ul><li><strong>Nutrition:</strong> 3 points (1.5 drumsticks)</li><li><strong>Saturation:</strong> 7 points</li><li><strong>Consumption time:</strong> 1.6 seconds</li><li><strong>Crafting a dioptasium apple</strong></li></ul>",
+          "images":["dioptasium_apple_recipe.png"]
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Craft d'un marteau en dioptasium</li></ul>",
+            "content_en":"<ul><li>Crafting a dioptasium hammer</li></ul>",
+            "images": ["hammer_dioptasium_recipe.png"]
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de dioptasium peut être utilisé pour crafter le [[minerai-scarlet| lingot de scarlet]]</li></ul>",
+            "content_en":"<ul><li>The dioptasium ingot can be used to craft the [[minerai-scarlet| scarlet ingot]]</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-nyxite",
+    "name_fr": "Minerai de nyxite",
+    "name_en": "Nyxite Ore",
+    "desc_fr": "Avant dernière ressource qui ne semble pas etre dans l'overworld et le nether.",
+    "desc_en": "Penultimate resource that does not seem to be in the overworld and the nether.",
+    "images": ["NyxiteOre.png", "NyxiteIngot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de nyxite",
+          "title_en": "Nyxite Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 5</li><li>Résistance : 5</li><li>Niveau d'extraction : 3 = pioche en diamant</li></ul>",
+          "content_en": "<ul><li>Hardness: 5</li><li>Resistance: 5</li><li>Mining level: 3 = diamond pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : End uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min -63 ; Max 63</li><li>Groupes par chunk : ~10</li><li>Minerais par groupe : ~5</li><li>Biome restreint : Oui, Biome de l'End</li></ul>",
+          "content_en": "<ul><li>Dimension: End only</li><li>Shape: Uniform</li><li>Height: Min -63; Max 63</li><li>Groups per chunk: ~10</li><li>Ores per group: ~5</li><li>Biome restricted: Yes, End Biome</li></ul>"
+        },
+        {
+          "title_fr": "Minage",
+          "title_en": "Mining",
+          "content_fr": "<ul><li>Outil minimum : Pioche en netherite (niveau 4)</li><li>Silk Touch : aucun effet (drop identique)</li><li>Fortune : aucun effet</li></ul>",
+          "content_en": "<ul><li>Minimum tool: Netherite pickaxe (level 4)</li><li>Silk Touch: no effect (same drop)</li><li>Fortune: no effect</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Type de recette : Fonderie uniquement (smelting)</li><li>XP : 0,7</li><li>Temps de cuisson : 100 ticks (≈5 s)</li></ul>",
+          "content_en": "<ul><li>Recipe type: Smelting only</li><li>XP: 0.7</li><li>Cooking time: 100 ticks (≈5 s)</li></ul>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de nyxite → 9 lingots de nyxite</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 nyxite block → 9 nyxite ingots</li></ul>"
+        },
+        {
+          "title_fr": "Armure Et Outils",
+          "title_en": "Armor and Tools",
+          "content_fr": "<ul><li><strong>Outils :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Paramètre</th><th>Épée</th><th>Hache</th><th>Pioche</th><th>Pelle</th><th>Houe</th><th>Marteau</th></tr></thead><tbody><tr><th>Niveau d'extraction</th><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td></tr><tr><th>Efficacité</th><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td></tr><tr><th>Enchantabilité</th><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td></tr><tr><th>Dégâts d'attaque</th><td>25</td><td>16</td><td>6</td><td>7,5</td><td>1</td><td>1</td></tr><tr><th>Vitesse d'attaque</th><td>4,5</td><td>1</td><td>1,2</td><td>1</td><td>5</td><td>1</td></tr><tr><th>Durabilité</th><td>2750</td><td>2750</td><td>2750</td><td>2750</td><td>2750</td><td>1700</td></tr></tbody></table></li><li><strong>Armure :</strong><br><ul class=\"no-bullet\"><li><em>Absorbtion maximale des dégats / durabiilité : 15</em></li><li><em>Valeurs d'armure (casque, plastron, jambières, bottes): 2; 6; 5; 2</em></li><li><em>Enchantabilité : 9</em></li><li><em>Dureté : 0</em></li><li><em>Resistance au recul : 0</em></li></ul></li></ul>",
+          "content_en": "<ul><li><strong>Tools :</strong><br><table class=\"mod-info-table\"><thead><tr><th>Parameter</th><th>Sword</th><th>Axe</th><th>Pickaxe</th><th>Shovel</th><th>Hoe</th><th>Hammer</th></tr></thead><tbody><tr><th>Mining Level</th><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td></tr><tr><th>Efficiency</th><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td></tr><tr><th>Enchantability</th><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td></tr><tr><th>Attack Damage</th><td>25</td><td>16</td><td>6</td><td>7,5</td><td>1</td><td>1</td></tr><tr><th>Attack Speed</th><td>4,5</td><td>1</td><td>1,2</td><td>1</td><td>5</td><td>1</td></tr><tr><th>Durability</th><td>2750</td><td>2750</td><td>2750</td><td>2750</td><td>2750</td><td>1700</td></tr></tbody></table></li><li><strong>Armor :</strong><br><ul class=\"no-bullet\"><li><em>Maximum Damage Absorption / Durability: 15</em></li><li><em>Armor Values (Helmet, Chestplate, Leggings, Boots): 2; 6; 5; 2</em></li><li><em>Enchantability: 17</em></li><li><em>Toughness: 0</em></li><li><em>Knockback Resistance: 0</em></li></ul></li></ul>"
+        },
+        {
+          "title_fr":"Pomme en nyxite",
+          "title_en":"Nyxite Apple",
+          "content_fr":"<ul><li><strong>Nutrition :</strong> 4 points (2 gigots)</li><li><strong>Saturation :</strong> 10 points</li><li><strong>Temps de consommation :</strong> 1,6 seconde</li><li><strong>Effets appliqués :</strong> Lévitation I pendant 2 minutes (120 secondes).</li><li><strong>Craft d'une pomme en nyxite</strong></li></ul>",
+          "content_en":"<ul><li><strong>Nutrition:</strong> 4 points (2 drumsticks)</li><li><strong>Saturation:</strong> 10 points</li><li><strong>Consumption time:</strong> 1.6 seconds</li><li><strong>Applied effects:</strong> Levitation I for 2 minutes (120 seconds).</li><li><strong>Crafting a nyxite apple</strong></li></ul>",
+          "images":["nyxite_apple_recipe.png"]
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Craft d'un marteau en nyxite</li></ul>",
+            "content_en":"<ul><li>Crafting a nyxite hammer</li></ul>",
+            "images": ["nyxite_hammer_recipe.png"]
+          },
+          {
+            "content_fr":"<ul><li>Le minerai de nyxite peut être utilisé pour crafter le [[minerai-scarlet| lingot de scarlet]]</li></ul>",
+            "content_en":"<ul><li>The nyxite ore can be used to craft the [[minerai-scarlet| scarlet ingot]]</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de nyxite peut aussi servir au craft du [[minerai-multicolore| lingot multicolore]] ou du [[item-stickofaurasteel|bâton d'auriacier]]</li></ul>",
+            "content_en":"<ul><li>The nyxite ingot can also be used to craft the [[minerai-multicolore| multicolor ingot]] or [[item-stickofaurasteel|stick of aurasteel]]</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-scarlet",
+    "name_fr": "Lingot de scarlet",
+    "name_en": "Scarlet Ingot",
+    "desc_fr": "Un lingot rare obtenu en mélangeant tout les minerais.",
+    "desc_en": "A rare ingot obtained by mixing all the ores.",
+    "images": [
+      {
+        "src": "scarlet_Ingot.png",
+        "frameCount": 15,
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frameColumns": 1,
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du lingot de scarlet",
+          "title_en": "Scarlet Ingot Characteristics",
+          "content_fr": "<ul><li>Le lingot de scarlet permet de crafter certains items spécifiques au mod.</li></ul>",
+          "content_en": "<ul><li>The scarlet ingot allows crafting certain items specific to the mod.</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Type de recette : Craft uniquement</li><li>Peut etre crafter en combinant 9 lingots : [[minerai-paladium|Paladium]], [[minerai-red|Red]], [[minerai-amazonite|Amazonite]], [[minerai-dioptasium|Dioptasium]], [[minerai-nyxite|Nyxite]], [[minerai-multicolore|Multicolore]], [[minerai-fluorite|Fluorite]], [[minerai-xenite|Xenite]], [[minerai-igniera|Igniera]], [[minerai-uranium|Uranium]], [[minerai-chrome|Chrome]], [[minerai-nickel|Nickel]], [[minerai-hazmium|Hazmium]], [[minerai-plomb|Plomb]]</li></ul>",
+          "content_en": "<ul><li>Recipe type: Crafting only</li><li>Can be crafted by combining 9 ingots: [[minerai-paladium|Paladium]], [[minerai-red|Red]], [[minerai-amazonite|Amazonite]], [[minerai-dioptasium|Dioptasium]], [[minerai-nyxite|Nyxite]], [[minerai-multicolore|Multicolore]], [[minerai-fluorite|Fluorite]], [[minerai-xenite|Xenite]], [[minerai-igniera|Igniera]], [[minerai-uranium|Uranium]], [[minerai-chrome|Chrome]], [[minerai-nickel|Nickel]], [[minerai-hazmium|Hazmium]], [[minerai-plomb|Plomb]]</li></ul>",
+          "images":["scarlet_ingot_recipe.png"]
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le lingot de scarlet peut être utilisé pour réparer le [[item-nightvisionhelmet|casque de vision nocturne]] et le [[item-regenerationhelmet|casque de régénération]].</li></ul>",
+            "content_en":"<ul><li>The scarlet ingot can be used to repair the [[item-nightvisionhelmet|night vision helmet]] and the [[item-regenerationhelmet|regeneration helmet]].</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-fluorite",
+    "name_fr": "Minerai de fluorite",
+    "name_en": "Fluorite Ore",
+    "desc_fr": "Est une source de fluorescence dans le mod.",
+    "desc_en": "Is a source of fluorescence in the mod.",
+    "images": ["fluoriteore.png", "Fluoriteingot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de fluorite",
+          "title_en": "Fluorite Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 3</li><li>Résistance : 5</li><li>Niveau d'extraction : 1 = pioche en pierre</li></ul>",
+          "content_en": "<ul><li>Hardness: 3</li><li>Resistance: 5</li><li>Harvest Level: 1 = Stone Pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min 0 ; Max 64</li><li>Groupes par chunk : ~10</li><li>Minerais par groupe : ~8</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Uniform</li><li>Height: Min 0; Max 64</li><li>Groups per chunk: ~10</li><li>Ores per group: ~8</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Type de recette : Fonderie uniquement (Blasting = haut fourneau)</li><li>XP : 1</li><li>Temps de cuisson : 100 ticks (≈5 s)</li></ul>",
+          "content_en": "<ul><li>Recipe type: Blasting only</li><li>XP: 1</li><li>Cooking time: 100 ticks (≈5 s)</li></ul>"
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le lingot de scarlet peut être utilisé pour crafter la [[item-damageball|boule de dégâts]].</li></ul>",
+            "content_en":"<ul><li>The scarlet ingot can be used to craft the [[item-damageball|Damage Ball]].</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de fluorite peut aussi servir au craft du [[minerai-scarlet| lingot de scarlet]]</li></ul>",
+            "content_en":"<ul><li>The fluorite ingot can also be used to craft the [[minerai-scarlet| scarlet ingot]]</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de fluorite peut servir aussi dans le craft du générateur d'xp.</li></ul>",
+            "content_en":"<ul><li>The fluorite ingot can also be used in the crafting of the xp generator.</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-xenite",
+    "name_fr": "Minerai de xenite",
+    "name_en": "Xenite Ore",
+    "desc_fr": "Est une source de fluorescence dans le mod.",
+    "desc_en": "Is a source of fluorescence in the mod.",
+    "images": [
+      {
+        "src": "Xenitedebris.png"
+      },
+      {
+        "frames": [
+          { "src": "xenite_scrap.png" },
+          { "src": "Xeniteingot.png" }
+        ],
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de xenite",
+          "title_en": "Xenite Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 30</li><li>Résistance : 1200</li><li>Niveau d'extraction : 2 = pioche en fer</li><li>Le fragment de xenite peut cuire 500 items</li></ul>",
+          "content_en": "<ul><li>Hardness: 30</li><li>Resistance: 1200</li><li>Harvest Level: 2 = Iron Pickaxe</li><li>The xenite scrap can smelt 500 items</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min 0 ; Max 80</li><li>Groupes par chunk : ~2</li><li>Minerais par groupe : ~5</li><li>Biome restreint : Oui, Forêt biscornue, Deltas de basalte, Forêt carmin, Vallée des âmes, Terres désolées du Nether. </li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Uniform</li><li>Height: Min 0; Max 80</li><li>Groups per chunk: ~2</li><li>Ores per group: ~5</li><li>Biome restricted: Yes, Warped forest, Basalt deltas, Crimson forest, Soul sand valley, Nether wastes.</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<p>Si vous utilisez une pioche avec toucher de soie alors pour obtenir un lingot de xenite vous devrez cuir le debris de xenite une fois puis mettre les fragments de xenite dans un four pour obtenir les lingots.</p><table class=\"mod-info-table\"><thead><tr><th>Objet</th><th>Appareil</th><th>Temps de cuisson</th><th>XP</th></tr></thead><tbody><tr><td>Debris de xenite</td><td>Haut fourneau</td><td>360 ticks = 18s</td><td>2</td></tr><tr><td>fragment de xenite</td><td>Four</td><td>360 ticks = 18s</td><td>2</td></tr></tbody></table>",
+          "content_en": "<p>If you use a silk touch pickaxe, you will need to smelt the xenite debris once you have collected it, then place the xenite fragments in a furnace to obtain the ingots.</p><table class=\"mod-info-table\"><thead><tr><th>Item</th><th>Appliance</th><th>Cooking Time</th><th>XP</th></tr></thead><tbody><tr><td>Xenite Debris</td><td>Furnace</td><td>360 ticks = 18s</td><td>2</td></tr><tr><td>Xenite Fragments</td><td>furnace</td><td>360 ticks = 18s</td><td>2</td></tr></tbody></table>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de xenite → 9 lingots de xenite</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 xenite block → 9 xenite ingots</li></ul>"
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le lingot de xenite peut être utilisé pour crafter le [[minerai-scarlet|lingot de scarlet]].</li></ul>",
+            "content_en":"<ul><li>The xenite ingot can be used to craft the [[minerai-scarlet|scarlet ingot]].</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de xenite peut servir aussi dans le craft du générateur d'xp.</li></ul>",
+            "content_en":"<ul><li>The xenite ingot can also be used in the crafting of the xp generator.</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Les fragments de xenite peut être utilisé pour crafter le [[bloc-xenitechest| coffre en xenite]].</li></ul>",
+            "content_en":"<ul><li>The xenite fragments can be used to craft the [[bloc-xenitechest|xenite chest]].</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-uranium",
+    "name_fr": "Minerai d'uranium",
+    "name_en": "Uranium Ore",
+    "desc_fr": "Vraiment dangereux !",
+    "desc_en": "Really dangerous!",
+    "images": ["Uraniumore.png", "Uraniumingot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai d'uranium",
+          "title_en": "Uranium Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Niveau d'extraction : 3 = pioche en diamant</li><li>Le lingot d'uranium peut cuire 2000 items</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Harvest Level: 3 = Diamond Pickaxe</li><li>The uranium ingot can smelt 2000 items</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Triangle</li><li>Hauteur : Min 0 ; Max 25</li><li>Groupes par chunk : ~5</li><li>Minerais par groupe : ~5</li><li>Biome restreint : Oui, Désert, Plaine enneigé, Plage enneigée, Taïga enneigée. </li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Triangle</li><li>Height: Min 0; Max 25</li><li>Groups per chunk: ~5</li><li>Ores per group: ~5</li><li>Biome restricted: Yes, Desert, Snowy plains, snowy beach, Snowy taiga.</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Type de recette : Fonderie uniquement (Blasting = haut fourneau)</li><li>XP : 10</li><li>Temps de cuisson : 2500 ticks (≈125 s)</li></ul>",
+          "content_en": "<ul><li>Recipe type: Blasting only</li><li>XP: 10</li><li>Cooking time: 2500 ticks (≈125 s)</li></ul>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc d'uranium → 9 lingots d'uranium</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 uranium block → 9 uranium ingots</li></ul>"
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le lingot d'uranium peut être utilisé pour crafter le [[minerai-scarlet|lingot de scarlet]].</li></ul>",
+            "content_en":"<ul><li>The uranium ingot can be used to craft the [[minerai-scarlet|scarlet ingot]].</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-chrome",
+    "name_fr": "Minerai de chrome",
+    "name_en": "Chrome Ore",
+    "desc_fr": "Minerai rare et précieux résistant au vide",
+    "desc_en": "Rare and precious ore resistant to vacuum",
+    "images": ["Chromeore.png", "Chromeingot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de chrome",
+          "title_en": "Chrome Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Niveau d'extraction : 3 = pioche en diamant</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Harvest Level: 3 = Diamond Pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Triangle</li><li>Hauteur : Min 0 ; Max 64</li><li>Groupes par chunk : ~5</li><li>Minerais par groupe : ~6</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Triangle</li><li>Height: Min 0; Max 64</li><li>Groups per chunk: ~5</li><li>Ores per group: ~6</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Type de recette : Fonderie uniquement (Blasting = haut fourneau)</li><li>XP : 180</li><li>Temps de cuisson : 100 ticks (≈5 s)</li></ul>",
+          "content_en": "<ul><li>Recipe type: Blasting only</li><li>XP: 180</li><li>Cooking time: 100 ticks (≈5 s)</li></ul>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de chrome → 9 lingots de chrome</li><li>8 minerais de chrome peuvent être obtenus par l'échange de [[minerai-nickel|poudres de nickel]] auprès du villageois mineur au niveau compagnon.</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 chrome block → 9 chrome ingots</li><li>8 chrome ores can be obtained by the exchange of [[minerai-nickel|nickel powders]] from the minor villagers at the companion level.</li></ul>"
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le lingot de chrome peut être utilisé pour crafter le [[minerai-scarlet|lingot de scarlet]].</li></ul>",
+            "content_en":"<ul><li>The chrome ingot can be used to craft the [[minerai-scarlet|scarlet ingot]].</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de chrome peut être utilisé pour crafter le [[item-spacearmortrim|modele d'armure spatiale]] et l'[[item-spacearmor|armure]] dans la table de craft ou dans une table de forge.</li></ul>",
+            "content_en":"<ul><li>The chrome ingot can be used to craft the [[item-spacearmortrim|spatiale armore upgrade]] and the [[item-spacearmor|armor]] in the crafting table or in a smithing table.</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Une autre utilisation possible du lingot de chrome est son utilisation pour la fabrication du [[craft-heavycore|noyau lourd]] ou bien du [[bloc-purifier|purificateur]].</li></ul>",
+            "content_en":"<ul><li>An other possible use for the chrome ingot is its utilization in the construction of the [[craft-heavycore|heavy core]] or the [[bloc-purifier|purifier]].</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-nickel",
+    "name_fr": "Minerai de nickel",
+    "name_en": "Nickel Ore",
+    "desc_fr": "Minerai rare et solide.",
+    "desc_en": "Rare and solid ore.",
+    "images": ["Nickelore.png", "Nickelingot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de nickel",
+          "title_en": "Nickel Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Niveau d'extraction : 2 = pioche en fer</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Harvest Level: 2 = Iron Pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Triangle</li><li>Hauteur : Min -64 ; Max -36</li><li>Groupes par chunk : ~10</li><li>Minerais par groupe : ~4</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Triangle</li><li>Height: Min -64; Max -36</li><li>Groups per chunk: ~10</li><li>Ores per group: ~4</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Type de recette : Fonderie uniquement (Blasting = haut fourneau)</li><li>XP : 1</li><li>Temps de cuisson : 100 ticks (≈5 s)</li></ul>",
+          "content_en": "<ul><li>Recipe type: Blasting only</li><li>XP: 1</li><li>Cooking time: 100 ticks (≈5 s)</li></ul>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de nickel → 9 lingots de nickel</li><li>Le lingot de nickel permet de crafter 6 pepites de nickel</li><li>Les pepites de nickel peuvent crafter par 6 un lingot de nickel</li><li>En mettant une pepite de nickel vous pouvez obtenir 3 poudres de nickel</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 nickel block → 9 nickel ingots</li></ul>"
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le lingot de nickel peut être utilisé pour crafter le [[minerai-scarlet|lingot de scarlet]].</li></ul>",
+            "content_en":"<ul><li>The nickel ingot can be used to craft the [[minerai-scarlet|scarlet ingot]].</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot de nickel peut être utilisé pour crafter le générateur d'xp.</li></ul>",
+            "content_en":"<ul><li>The nickel ingot can be used to craft the experience generator.</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Une autre utilisation possible du lingot de nickel est son utilisation pour la fabrication de la [[item-damageball|boule de dégâts]] ou bien du [[item-stickofaurasteel|bâton d'auriacier]].</li></ul>",
+            "content_en":"<ul><li>An other possible use for the nickel ingot is its utilization in the construction of the [[item-damageball|Damage Ball]] or the [[item-stickofaurasteel|stick of aurasteel]].</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>La poudre de nickel est échangeable avec le villageois mineur au niveau compagnon pour obtenir des [[minerai-chrome|minerais de chrome]].</li></ul>",
+            "content_en":"<ul><li>The nickel powder is exchangeable with the minor villagers at the journeyman level to obtain [[minerai-chrome|chromium ores]].</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le bloc de nickel est échangeable avec le villageois mineur au niveau expert pour obtenir des lingots de netherite.</li></ul>",
+            "content_en":"<ul><li>The nickel block is exchangeable with the minor villagers at the expert level to obtain netherite ingots.</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-carmeltazite",
+    "name_fr": "Minerai de carmeltazite",
+    "name_en": "Carmeltazite Ore",
+    "desc_fr": "Minerai rare et solide.",
+    "desc_en": "Rare and solid ore.",
+    "images": ["Carmeltaziteore.png", "Fragmentofcarmeltazite.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de carmeltazite",
+          "title_en": "Carmeltazite Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Niveau d'extraction : 1 = pioche en pierre</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Harvest Level: 1 = Stone Pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Triangle</li><li>Hauteur : Min 0 ; Max 64</li><li>Groupes par chunk : ~7</li><li>Minerais par groupe : ~4</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Triangle</li><li>Height: Min 0; Max 64</li><li>Groups per chunk: ~7</li><li>Ores per group: ~4</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Obtention",
+          "title_en": "Obtaining",
+          "content_fr": "<ul><li>Le carmeltazite est un minerai ne disposant pas de lingot mais de fragments par consequent son obtention est aleatoire lorsque vous le minez avec une pioche sans fortnue d'appliquer vous pouvez obtenir entre 1 et 6 fragments tandis qu'avec fortnue d'appliquer vous pouvez en obtenir bien plus.</li><li>Les fragments de carmeltazite peuvent être obtenus également par l'échange de [[minerai-paladium|lingots de paladium]] au villageois mineur compagnon.</li></ul>",
+          "content_en": "<ul><li>Carmeltazite is an ore that does not have an ingot but fragments instead, therefore its obtaining is random when you mine it with a pickaxe without Fortune applied you can get between 1 and 6 fragments while with Fortune applied you can get much more.</li><li>Carmeltazite fragments can also be obtained by the exchange of [[minerai-paladium|paladium ingots]] to the minor companion villager.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de carmeltazite → 9 fragments de carmeltazite</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 carmeltazite block → 9 carmeltazite fragments</li></ul>"
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le fragment de carmeltazite peut servir dans le craft du bloc de camanite.</li></ul>",
+            "content_en":"<ul><li>The carmeltazite fragment can be used in the crafting of the camanite block.</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-crystal",
+    "name_fr": "Cristal et Cristal d'azure",
+    "name_en": "Crystal and Azure Crystal",
+    "desc_fr": "Ces crystaux sont des dérivés du quartz.",
+    "desc_en": "These crystals are derivatives of quartz.",
+    "images": ["Cristal.png", "Azurecrystal.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques des cristaux",
+          "title_en": "Crystal Characteristics",
+          "content_fr": "<ul><li>Ces cristaux n'ont ni blocs de minerai ni lingots.</li></ul>",
+          "content_en": "<ul><li>These crystals have no ore blocks or ingots.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention",
+          "title_en": "Obtaining",
+          "content_fr": "<p>Les deux cristaux s'obtiennent par fabrication :</p><ul><li><strong>Cristal :</strong> 1 amas d'améthyste au centre, entouré de 4 quartz.</li><li><strong>Cristal d'azure :</strong> 1 colorant ciel en haut, 1 cristal à gauche, 1 cristal à droite et 1 colorant cyan en bas.</li></ul>",
+          "content_en": "<p>Both crystals are obtained by crafting:</p><ul><li><strong>Crystal:</strong> 1 amethyst cluster in the center, surrounded by 4 quartz.</li><li><strong>Azure Crystal:</strong> 1 sky blue dye on top, 1 crystal on the left, 1 crystal on the right and 1 cyan dye at the bottom.</li></ul>",
+          "images":[
+            { "src": "crystal_recipe.png", "caption_fr": "Cristal : amas d'améthyste au centre et 4 quartz autour", "caption_en": "Crystal: amethyst cluster in the center and 4 quartz around it" },
+            { "src": "azure_crystal_recipe.png", "caption_fr": "Cristal d'azure : colorant ciel en haut, cristaux à gauche et à droite, colorant cyan en bas", "caption_en": "Azure Crystal: sky blue dye on top, crystals on the left and right, cyan dye at the bottom" }
+          ]
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le crystal peut être utilisé dans la fabrication des pieces d'[[item-spacearmor|armure spatiale]] mais aussi dans le craft de l'azure crystal.</li></ul>",
+            "content_en":"<ul><li>The crystal can be used in the crafting of [[item-spacearmor|space armor]] pieces but also in the crafting of the azure crystal.</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>L'azure crystal peut être utilisé dans le craft de la [[item-damageball|boule de dégâts]] ou du [[item-midlerigniter|briquet du midler]] </li></ul>",
+            "content_en":"<ul><li>The azure crystal can be used in the crafting of the [[item-damageball|Damage Ball]] or the [[item-midlerigniter|Midler's Igniter]].</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-red-crystal",
+    "name_fr": "Crystal rouge",
+    "name_en": "Red Crystal",
+    "desc_fr": "Ce crystal est fortement utilisé dans l'agriculture du mod.",
+    "desc_en": "This crystal is heavily used in the mod's agriculture.",
+    "images": ["Redcrystalblock.png", "Redcrystal.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du cristal rouge",
+          "title_en": "Red Crystal Characteristics",
+          "content_fr": "<ul><li>Ce crystal rouge permet de faire pousser aux dernier stages les cultures du mod ([[nature-netherstarflower|fleur d'étoile du Nether]], [[nature-seawheat|blé de mer bleu]], [[nature-netherstarflower|fleur de Netherite]]).</li><li>Il permet également de faire pousser la vegetation lorsque l'item est utilisé sur un bloc compatible comme de l'herbe ou encore sur les blocs de nylium.</li></ul>",
+          "content_en": "<ul><li>The red crystal allows crops to grow to their final stages ([[nature-netherstarflower|Nether Star Flower]], [[nature-seawheat|Blue Sea Wheat]], [[nature-netheriteflower|Netherite Flower]]).</li><li>It also allows the growth of vegetation when the item is used on a compatible block like grass or nylium blocks.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du crystal rouge",
+          "title_en": "Obtaining the red crystal",
+          "content_fr": "<ul><li>Craft du crystal rouge avec un [[item-dye|colorant du feu]]</li></ul>",
+          "content_en": "<ul><li>Crafting of the red crystal with [[item-dye|fire dye]]</li></ul>",
+          "images":["red_crystal_recipe.png"]
+        },
+        {
+          "title_fr":"Obtention du bloc de crystal rouge",
+          "title_en":"Obtaining the red crystal block",
+          "content_fr":"<p>Le craft du crystal rouge a 2 recette possibles :</p><ul><li><strong>Recette 1 :</strong>Bloc d'améthyste et un [[item-dye|colorant du feu]]</li><li><strong>Recette 2 :</strong>Bloc d'amethyste avec 4 cristal rouge</li></ul>",
+          "content_en":"<p>The crafting of the red crystal block has 2 possible recipes:</p><ul><li><strong>Recipe 1:</strong>Amethyst Block and a [[item-dye|fire dye]]</li><li><strong>Recipe 2:</strong>Amethyst Block with 4 Red Crystals</li></ul>",
+          "images":[
+            { "src": "red_crystal_block_recipe1.png", "caption_fr": "Premiere recette du bloc de crystal rouge", "caption_en": "First recipe for the red crystal block" },
+            { "src": "red_crystal_recipe2.png", "caption_fr": "Deuxieme recette du bloc de crystal rouge", "caption_en": "Second recipe for the red crystal block" }
+        ]
+        },
+        {
+          "title_fr": "Autre utilité du crystal rouge",
+          "title_en": "Other uses for the red crystal",
+          "content_fr": "<p>Le crystal rouge peut être utilisé dans le craft du [[nature-fertilesoil|sol fertile]].</p>",
+          "content_en": "<p>The red crystal can be used in the crafting of [[nature-fertilesoil|fertile soil]].</p>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "minerai-hazmium",
+    "name_fr": "Lingot d'hazmium",
+    "name_en": "Hazmium Ingot",
+    "desc_fr": "Lingot résistant à la radiation.",
+    "desc_en": "Ingot resistant to radiation.",
+    "images": ["hazmium_ingot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du lingot de hazmium",
+          "title_en": "Hazmium Ingot Characteristics",
+          "content_fr": "<ul><li>La seule caractéristique du lingot d'hazmium est qu'il est résistant à la radiation.</li></ul>",
+          "content_en": "<ul><li>The only characteristic of the hazmium ingot is that it is resistant to radiation.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention",
+          "title_en": "Obtaining",
+          "content_fr": "<ul><li>Le lingot d'hazmium est crée à partir de [[item-sulfur|poudre de souffre]], de [[minerai-nickel|lingot de nickel]], de [[minerai-lead|lingot de plomb]], d'or et de poudre lumineuse.  </li></ul>",
+          "content_en": "<ul><li>The hazmium ingot is created from [[item-sulfur|sulfur powder]], [[minerai-nickel|nickel ingot]], [[minerai-lead|lead ingot]], gold, and glowstone powder.</li></ul>",
+          "images": ["hazmium_recipe.png"]
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le lingot d'hazmium peut servir dans la fabrication du [[minerai-scarlet|lingot de scarlet]]</li></ul>",
+            "content_en":"<ul><li>The hazmium ingot can be used in the crafting of the [[minerai-scarlet|scarlet ingot]].</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingot d'hazmium peut aussi servir dans la fabrication de la [[item-hazmatarmor|combinaison hazmat]].</li></ul>",
+            "content_en":"<ul><li>The hazmium ingot can also be used in the crafting of the [[item-hazmatarmor|hazmat suit]].</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-lead",
+    "name_fr": "Minerai de plomb",
+    "name_en": "Lead Ore",
+    "desc_fr": "Minerai courant et facile à extraire.",
+    "desc_en": "Common and easy to extract ore.",
+    "images": ["Leadore.png", "lead_ingot.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques du minerai de plomb",
+          "title_en": "Lead Ore Characteristics",
+          "content_fr": "<ul><li>Dureté : 4,5</li><li>Résistance : 6</li><li>Niveau d'extraction : 2 = pioche en fer</li></ul>",
+          "content_en": "<ul><li>Hardness: 4.5</li><li>Resistance: 6</li><li>Harvest Level: 2 = Iron Pickaxe</li></ul>"
+        },
+        {
+          "title_fr": "Génération",
+          "title_en": "Generation",
+          "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Triangle</li><li>Hauteur : Min -64 ; Max 0</li><li>Groupes par chunk : ~5</li><li>Minerais par groupe : ~10</li><li>Biome restreint : Non</li></ul>",
+          "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Triangle</li><li>Height: Min -64; Max 0</li><li>Groups per chunk: ~5</li><li>Ores per group: ~10</li><li>Biome restricted: No</li></ul>"
+        },
+        {
+          "title_fr": "Fonderie",
+          "title_en": "Smelting",
+          "content_fr": "<p>Le plomb brut peuvent être fondus dans un four ou un haut fourneau.</p><table class=\"mod-info-table\"><thead><tr><th>Appareil</th><th>Temps de cuisson</th><th>XP</th></tr></thead><tbody><tr><td>Four</td><td>200 ticks = 10s</td><td>0,7</td></tr><tr><td>Haut fourneau</td><td>100 ticks = 5s</td><td>0,7</td></tr></tbody></table>",
+          "content_en": "<p>Raw lead can be smelted in a furnace or a blast furnace.</p><table class=\"mod-info-table\"><thead><tr><th>Appliance</th><th>Cooking Time</th><th>XP</th></tr></thead><tbody><tr><td>Furnace</td><td>200 ticks = 10s</td><td>0.7</td></tr><tr><td>Blast Furnace</td><td>100 ticks = 5s</td><td>0.7</td></tr></tbody></table>"
+        },
+        {
+          "title_fr": "Obtention alternative",
+          "title_en": "Alternative Obtaining",
+          "content_fr": "<ul><li>Craft inversé : 1 bloc de plomb → 9 lingots de plomb</li></ul>",
+          "content_en": "<ul><li>Uncrafting: 1 lead block → 9 lead ingots</li></ul>"
+        }
+      ],
+      "usages": [
+          {
+            "content_fr":"<ul><li>Le lingots de plomb peut être utilisé dans le craft du [[minerai-scarlet|lingot de scarlet]]</li></ul>",
+            "content_en":"<ul><li>The lead ingot can be used in the crafting of the [[minerai-scarlet|scarlet ingot]]</li></ul>"
+          },
+          {
+            "content_fr":"<ul><li>Le lingots de plomb peut aussi être utilisé dans le craft du [[minerai-hazmium|lingot d'hazmium]]</li></ul>",
+            "content_en":"<ul><li>The lead ingot can be used in the crafting of the [[minerai-hazmium|hazmium ingot]]</li></ul>"
+          }
+      ]
+    }
+  },
+  {
+    "id": "minerai-arcaneshards",
+    "name_fr": "Eclat d'arcane",
+    "name_en": "Arcane Shard",
+    "desc_fr": "Cristal semblant avoir un lien avec les créatures.",
+    "desc_en": "Cristal seems to have a connection with the creatures.",
+    "images": ["ArcaneShards.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques de l'éclat d'arcane",
+          "title_en": "Arcane Shards Characteristics",
+          "content_fr": "<ul><li>Sa seule caractéristique est qu'il est lié au spawner de créature.</li></ul>",
+          "content_en": "<ul><li>Its only feature is that it is related to the creature spawner.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention",
+          "title_en": "Obtaining",
+          "content_fr": "<ul><li>L'éclat d'arcane ne peut être crafté ou miné, il est obtenu en cassant des spawners.</li></ul>",
+          "content_en": "<ul><li>The arcane shard can't be crafted or mined, it is obtained by breaking spawners.</li></ul>"
+        },
+        {
+          "title_fr": "Utilisation",
+          "title_en": "Usages",
+          "content_fr": "<ul><li>L'éclat d'arcane peut être utilisé pour obtenir un [[minerai-multicolore|lingot multicolor]].</li><li>Il peut intervenir aussi dans le craft d'un [[craft-spawner|spawner]].</li></ul>",
+          "content_en": "<ul><li>The arcane shard can be used to obtain a [[minerai-multicolore|multicolored ingot]].</li><li>He can also intervene in the craft of a [[craft-spawner|spawner]].</li></ul>",
+          "images":["multicoloringot_arcaneshard_recipe.png"]
+        }
+      ]
+    }
+  }
+]

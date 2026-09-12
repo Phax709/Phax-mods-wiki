@@ -1,1 +1,491 @@
+[
+    {
+        "id": "bloc-orangesand",
+        "name_fr": "Sable orange",
+        "name_en": "Orange Sand",
+        "desc_fr": "Ni plus ni moins que du sable, mais orange.",
+        "desc_en": "Neither more nor less than sand, but orange.",
+        "images": ["Orangesand.png"],
+        "details": {
+        "sections": [
+            {
+                "title_fr": "Caractéristiques du sable orange",
+                "title_en": "Orange Sand Characteristics",
+                "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Niveau d'extraction : Aucun (récupérable à la main ou plus rapidement avec une houe en pierre)</li></ul>",
+                "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Mining level: None (can be mined by hand or faster with a stone hoe)</li></ul>"
+            },
+            {
+                "title_fr": "Génération",
+                "title_en": "Generation",
+                "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min 0 ; Max 64</li><li>Groupes par chunk : ~10</li><li>Blocs par groupe : ~16</li><li>Biome restreint : Oui, Plages uniquement</li></ul>",
+                "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Uniform</li><li>Height: Min 0; Max 64</li><li>Groups per chunk: ~10</li><li>Blocks per group: ~16</li><li>Biome restricted: Yes, Beaches only</li></ul>"
+            },
+            {
+                "title_fr": "Minage et Loot Table",
+                "title_en": "Mining and Loot Table",
+                "content_fr": "<p>En minant ce bloc, 3 tirages sont effectués parmi la table suivante :</p><table class=\"mod-info-table\"><thead><tr><th>Objet</th><th>Quantité</th><th>Pourcentage</th><th>Poids</th></tr></thead><tbody><tr><td>Sable orange</td><td>1</td><td>55,56 %</td><td>10</td></tr><tr><td>Œuf de renifleur</td><td>1 à 3</td><td>5,56 %</td><td>1</td></tr><tr><td>[[minerai-amazonite|Lingot d'amazonite]]</td><td>1 à 4</td><td>16,67 %</td><td>3</td></tr><tr><td>Graine de blé marin</td><td>1 à 3</td><td>16,67 %</td><td>3</td></tr><tr><td>[[item-grainofsand|Grain de Sable]]</td><td>1 à 6</td><td>16,67 %</td><td>3</td></tr></tbody></table>",
+                "content_en": "<p>By mining this block, 3 rolls are performed from the following table:</p><table class=\"mod-info-table\"><thead><tr><th>Item</th><th>Quantity</th><th>Percentage</th><th>Weight</th></tr></thead><tbody><tr><td>Orange Sand</td><td>1</td><td>55.56%</td><td>10</td></tr><tr><td>Sniffer Egg</td><td>1 to 3</td><td>5.56%</td><td>1</td></tr><tr><td>[[minerai-amazonite|Amazonite ingot]]</td><td>1 to 4</td><td>16.67%</td><td>3</td></tr><tr><td>Sea Wheat Seed</td><td>1 to 3</td><td>16.67%</td><td>3</td></tr><tr><td>[[item-grainofsand|Grain of Sand]]</td><td>1 to 6</td><td>16.67%</td><td>3</td></tr></tbody></tbody></table>"
+            }
+        ]
+        }
+    },
 
+    {
+        "id": "bloc-lightprism",
+        "name_fr": "Lumière prismatique",
+        "name_en": "Light Prism",
+        "desc_fr": "Un bloc lumineux décoratif obtenu par artisanat.",
+        "desc_en": "A decorative luminous block obtained through crafting.",
+        "images": ["LightPrism.png"],
+
+
+        "details": {
+        "sections": [
+            {
+                "title_fr": "Caractéristiques",
+                "title_en": "Characteristics",
+                "content_fr": "<ul><li>Dureté : 0,2</li><li>Résistance : 0,2</li><li>Niveau d'extraction : Aucun (récupérable à la main ou plus rapidement avec une houe en pierre)</li></ul>",
+                "content_en": "<ul><li>Hardness: 0.2</li><li>Resistance: 0.2</li><li>Mining level: None (can be mined by hand or faster with a stone hoe)</li></ul>"
+            },
+            {
+                "title_fr": "Autre utilité de la lumière prismatique",
+                "title_en": "Other usage of the prismatic light",
+                "content_fr": "<p>La lumière prismatique sert uniquement à la décoration et n'a pas d'autre utilité.</p>",
+                "content_en": "<p>The Light Prism is only used for decoration and has no other usage.</p>"
+            },
+            {
+                "title_fr": "Obtention de la lumière prismatique",
+                "title_en": "Obtaining the light prism",
+                "content_fr": "<p>La lumière prismatique a 2 recettes possibles :</p><ul><li><strong>Recette 1 :</strong> 8 feuilles de bois prismatique et 1 bloc de sculk</li><li><strong>Recette 2 :</strong> 1 bloc de sculk et un [[minerai-multicolor|lingot multicolore]]</li></ul>",
+                "content_en": "<p>The crafting of the prismatic light has 2 possible recipes:</p><ul><li><strong>Recipe 1:</strong> 8 prismwood leaves and 1 sculk block</li><li><strong>Recipe 2:</strong> 1 sculk block and a [[minerai-multicolor|multicolor ingot]]</li></ul>",
+                "images": [
+                    {
+                        "src": "prismwood_leaves_recipe.png",
+                        "caption_fr": "Première recette de la lumière prismatique",
+                        "caption_en": "First recipe for the light prism"
+                    },
+                    {
+                        "src": "lightprism_multicolor_ingot_recipe.png",
+                        "caption_fr": "Deuxième recette de la lumière prismatique",
+                        "caption_en": "Second recipe for the light prism"
+                    }
+                ]
+            }
+        ]
+        }
+    },
+
+    {
+        "id": "bloc-barrier",
+        "name_fr": "Barrière",
+        "name_en": "Barrier",
+        "desc_fr": "Bloc de barrière classique en fer.",
+        "desc_en": "Classic iron fence block.",
+        "images": ["Barrier.png"],
+        "details": {
+            "sections": [
+                {
+                    "title_fr": "Caractéristiques",
+                    "title_en": "Characteristics",
+                    "content_fr": "<ul><li>Dureté : 5</li><li>Résistance : 6</li><li>Outil : Main (pioche en fer ou plus recommandée)</li></ul>",
+                    "content_en": "<ul><li>Hardness: 5</li><li>Resistance: 6</li><li>Tool: Hand (iron pickaxe or higher recommended)</li></ul>"
+                },
+                {
+                    "title_fr": "Utilisations et usages",
+                    "title_en": "Uses and applications",
+                    "content_fr": "<p>Il sert à la décoration ou à toutes les utilités des barrières en bois classiques, comme bloquer les créatures.</p>",
+                    "content_en": "<p>It is used for decoration or all the standard uses of regular wooden fences, such as blocking mobs.</p>"
+                },
+                {
+                    "title_fr": "Obtention de la barrière",
+                    "title_en": "Obtaining the barrier",
+                    "content_fr": "<p>Sa fabrication requiert 4 lingots de fer et 2 pépites de fer au milieu.</p>",
+                    "content_en": "<p>Its recipe requires 4 iron ingots and 2 iron nuggets in the middle.</p>",
+                    "images": ["barrier_recipe.png"]
+                }
+            ]
+        }
+    },
+
+    {
+        "id": "bloc-glassdoor",
+        "name_fr": "Porte de verre",
+        "name_en": "Glass Door",
+        "desc_fr": "Une porte classique en verre transparent.",
+        "desc_en": "A classic transparent glass door.",
+        "images": ["glassdoorblock.png"],
+        "details": {
+            "sections": [
+                {
+                    "title_fr": "Caractéristiques",
+                    "title_en": "Characteristics",
+                    "content_fr": "<ul><li>Dureté : 0.3</li><li>Résistance : 1.5</li><li>Outil : Tous (à la main)</li></ul>",
+                    "content_en": "<ul><li>Hardness: 0.3</li><li>Resistance: 1.5</li><li>Tool: Any (by hand)</li></ul>"
+                },
+                {
+                    "title_fr": "Utilisations et usages",
+                    "title_en": "Uses and applications",
+                    "content_fr": "<p>Elle fonctionne comme une porte classique, mais avec la particularité d'être totalement transparente.</p>",
+                    "content_en": "<p>It functions like a regular door, but with the unique feature of being fully transparent.</p>"
+                },
+                {
+                    "title_fr": "Obtention de la porte de verre",
+                    "title_en": "Obtaining the glass door",
+                    "content_fr": "<p>Sa fabrication requiert 6 blocs de verre dans une table de craft.</p>",
+                    "content_en": "<p>Its recipe requires 6 glass blocks in a crafting table.</p>",
+                    "images": ["glassdoor_recipe.png"]
+                }
+            ]
+        }
+    },
+
+    {
+        "id": "bloc-volcanicrock",
+        "name_fr": "Bloc volcanique",
+        "name_en": "Volcanic Block",
+        "desc_fr": "Un bloc proche du bloc de magma.",
+        "desc_en": "A block similar to the magma block.",
+        "images": ["volcanicrock.png"],
+        
+        "details": {
+            "sections": [
+                {
+                    "title_fr": "Caractéristiques",
+                    "title_en": "Characteristics",
+                    "content_fr": "<ul><li>Dureté : 0.5</li><li>Résistance : 0.5</li><li>Luminance : 3</li><li>Outil : Pioche (tout niveau)</li></ul>",
+                    "content_en": "<ul><li>Hardness: 0.5</li><li>Resistance: 0.5</li><li>Luminance: 3</li><li>Tool: Pickaxe (any tier)</li></ul>"
+                },
+                {
+                    "title_fr": "Génération naturelle",
+                    "title_en": "Natural Generation",
+                    "content_fr": "<ul><li>Dimension : Nether uniquement</li><li>Forme de génération : Uniforme</li><li>Groupes par chunk : ~5</li><li>Blocs par groupe : ~25</li><li>Hauteur : Min 0 ; Max 124</li></ul>",
+                    "content_en": "<ul><li>Dimension: Nether only</li><li>Generation pattern: Uniform</li><li>Groups per chunk: ~5</li><li>Blocks per group: ~25</li><li>Height: Min 0; Max 124</li></ul>"
+                },
+                {
+                    "title_fr": "Obtention du bloc volcanique",
+                    "title_en": "Obtaining the volcanic block",
+                    "content_fr": "<p>En plus de la génération naturelle, il peut être fabriqué dans une table de craft avec 1 bloc de magma et 1 bloc de glace.</p>",
+                    "content_en": "<p>In addition to natural generation, it can be crafted in a crafting table using 1 magma block and 1 ice block.</p>",
+                    "images": ["volcanicrock_ice_recipe.png"]
+                }
+            ]
+        }
+    },
+
+    {
+    "id": "bloc-sculkslab",
+    "name_fr": "Dalle en sculk",
+    "name_en": "Sculk Slab",
+    "desc_fr": "La version dalle du bloc de sculk.",
+    "desc_en": "The slab version of the sculk block.",
+    "images": ["Sculkslab.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 0.2</li><li>Résistance : 0.2</li><li>Outil : Aucun (houe recommandée pour plus de rapidité)</li></ul>",
+          "content_en": "<ul><li>Hardness: 0.2</li><li>Resistance: 0.2</li><li>Tool: None (hoe recommended for faster mining)</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>Son utilisation est purement décorative.</p>",
+          "content_en": "<p>Its usage is purely decorative.</p>"
+        },
+        {
+          "title_fr": "Obtention de la dalle en sculk",
+          "title_en": "Obtaining the sculk slab",
+          "content_fr": "<p>Sa fabrication s'effectue dans une table de craft avec 3 blocs de sculk disposés sur la ligne du bas.</p>",
+          "content_en": "<p>It is crafted in a crafting table using 3 sculk blocks along the bottom row.</p>",
+          "images": ["sculkslab_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "bloc-sculkstairs",
+    "name_fr": "Escalier en sculk",
+    "name_en": "Sculk Stairs",
+    "desc_fr": "La version escalier du bloc de sculk.",
+    "desc_en": "The stairs version of the sculk block.",
+    "images": ["Sculkstairs.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 0.2</li><li>Résistance : 0.2</li><li>Outil : Aucun (houe recommandée pour plus de rapidité)</li></ul>",
+          "content_en": "<ul><li>Hardness: 0.2</li><li>Resistance: 0.2</li><li>Tool: None (hoe recommended for faster mining)</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>Son utilisation est purement décorative.</p>",
+          "content_en": "<p>Its usage is purely decorative.</p>"
+        },
+        {
+          "title_fr": "Obtention de l'escalier en sculk",
+          "title_en": "Obtaining the sculk stairs",
+          "content_fr": "<p>Sa fabrication s'effectue dans une table de craft avec 6 blocs de sculk disposés en forme d'escalier.</p>",
+          "content_en": "<p>It is crafted in a crafting table using 6 sculk blocks arranged in a stair pattern.</p>",
+          "images": ["sculkstairs_recipe.png"]
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "bloc-resindoor",
+    "name_fr": "Porte en résine",
+    "name_en": "Resin Door",
+    "desc_fr": "Une porte fabriquee a partir de resine.",
+    "desc_en": "A door crafted from resin.",
+    "images": ["Resindoor.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 1.5</li><li>Résistance : 6</li><li>Outil : Pioche (tout niveau)</li></ul>",
+          "content_en": "<ul><li>Hardness: 1.5</li><li>Resistance: 6</li><li>Tool: Pickaxe (any tier)</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>Elle fonctionne comme une porte classique pour fermer et sécuriser un accès.</p>",
+          "content_en": "<p>It functions like a regular door to block and secure an entrance.</p>"
+        },
+        {
+          "title_fr": "Obtention de la porte en résine",
+          "title_en": "Obtaining the resin door",
+          "content_fr": "<p>Sa fabrication s'effectue dans une table de craft avec 6 amas de résine disposés comme une porte classique.</p>",
+          "content_en": "<p>It is crafted in a crafting table using 6 resin clumps arranged like a standard door.</p>",
+          "images": ["resindoor_recipe.png"]
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "bloc-purifier",
+    "name_fr": "Purificateur",
+    "name_en": "Purifier",
+    "desc_fr": "Un bloc d'artisanat pour les villageois mineurs.",
+    "desc_en": "A job site block for miner villagers.",
+    "images": ["Purifier.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 12</li><li>Outil : Pioche (niveau pierre minimum)</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 12</li><li>Tool: Pickaxe (stone tier minimum)</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>Il sert de bloc d'artisanat pour le villageois Mineur (Miner), qui peut échanger des minerais et des lingots contre divers objets.</p>",
+          "content_en": "<p>It serves as a job site block for the Miner villager, who can trade ores and ingots for various items.</p>"
+        },
+        {
+          "title_fr": "Obtention du purificateur",
+          "title_en": "Obtaining the purifier",
+          "content_fr": "<p>Sa fabrication requiert 3 pierres lisses, 1 haut fourneau et 2 [[minerai-chrome|lingots de chrome]] dans une table de craft.</p>",
+          "content_en": "<p>Its recipe requires 3 smooth stones, 1 blast furnace, and 2 [[minerai-chrome|chrome ingots]] in a crafting table.</p>",
+          "images": ["purifier_recipe.png"]
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "bloc-advancedcraftingtable",
+    "name_fr": "Table de craft avancée",
+    "name_en": "Advanced Crafting Table",
+    "desc_fr": "Un bloc d'artisanat pour le Customer.",
+    "desc_en": "A job site block for the Customer.",
+    "images": ["Advancedcraftingtable.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 60</li><li>Résistance : 5</li><li>Outil : Hache (niveau pierre minimum)</li></ul>",
+          "content_en": "<ul><li>Hardness: 60</li><li>Resistance: 5</li><li>Tool: Axe (stone tier minimum)</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>Il sert de bloc d'artisanat pour le Customer, mais n'a pas d'utilisation pour le moment.</p>",
+          "content_en": "<p>It serves as a job site block for the Customer, but has no usage for now.</p>"
+        },
+        {
+          "title_fr": "Obtention de la table de craft avancée",
+          "title_en": "Obtaining the advanced crafting table",
+          "content_fr": "<p>Sa fabrication requiert 2 planches biscornues, 3 [[minerai-amazonite|lingots d'amazonite]], 1 table de craft et 3 pierres noires polies dans une table de craft.</p>",
+          "content_en": "<p>Its recipe requires 2 warped planks, 3 [[minerai-amazonite|amazonite ingots]], 1 crafting table, and 3 polished blackstones in a crafting table.</p>",
+          "images": ["advancedcraftingtable_recipe.png"]
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "bloc-sawmillblock",
+    "name_fr": "Scierie",
+    "name_en": "Sawmill",
+    "desc_fr": "Un bloc d'artisanat pour le villageois Forestier.",
+    "desc_en": "A job site block for the forester villager.",
+    "images": ["Sawmillblock.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 2.5</li><li>Résistance : 2.5</li><li>Outil : Hache (non obligatoire)</li></ul>",
+          "content_en": "<ul><li>Hardness: 2.5</li><li>Resistance: 2.5</li><li>Tool: Axe (not required)</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>Il sert de bloc d'artisanat pour le villageois Forestier.</p><p>Une fois l'[[item-saplingupgrade|amélioration de pousse]] équipée par un clic droit sur le bloc, la scierie permet de transformer une pousse en une autre. Dans l'interface, placez une [[item-plantessence|plante essence]] à gauche et n'importe quelle pousse à droite pour obtenir l'une des pousses d'arbre du mod.</p><p><strong>Avertissement :</strong> Il est fortement conseillé d'insérer les plantes essence une par une. Sinon, toute votre réserve sera consommée très rapidement et vous vous retrouverez avec de multiples exemplaires d'une même pousse.</p>",
+          "content_en": "<p>It serves as a job site block for the forester villager.</p><p>Once the [[item-saplingupgrade|sapling upgrade]] is equipped with a right-click on the block, the sawmill allows you to transform one sapling into another. In the interface, place a [[item-plantessence|plant essence]] on the left slot and any sapling on the right slot to obtain one of the mod's tree saplings.</p><p><strong>Warning:</strong> It is strongly advised to insert plant essences one by one. Otherwise, your entire stack will be consumed in no time, leaving you with multiple duplicates of the same sapling.</p>"
+        },
+        {
+          "title_fr": "Obtention de la scierie",
+          "title_en": "Obtaining the sawmill",
+          "content_fr": "<p>Sa fabrication requiert 1 table de craft et 4 bûches (de n'importe quel type) placées autour dans une table de craft.</p>",
+          "content_en": "<p>Its recipe requires 1 crafting table and 4 logs (any type) placed around it in a crafting table.</p>",
+          "images": ["sawmillblock_recipe.png"]
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "bloc-chrononimbus",
+    "name_fr": "Chrononimbus",
+    "name_en": "Chrononimbus",
+    "desc_fr": "Un bloc qui contrôle le temps et la météo du jeu.",
+    "desc_en": "A block that controls time and weather in the game.",
+    "images": ["Chrononimbus.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 3.5</li><li>Résistance : 10</li><li>Outil : Pioche (niveau fer minimum)</li></ul>",
+          "content_en": "<ul><li>Hardness: 3.5</li><li>Resistance: 10</li><li>Tool: Pickaxe (iron tier minimum)</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>En faisant un clic droit sur le bloc, vous accédez à son interface (GUI) qui comporte deux options de contrôle :</p><ul><li><strong>Temps :</strong> 3 boutons disponibles (Jour, Noon / Milieu de journée, Nuit).</li><li><strong>Météo :</strong> 3 options disponibles (Dégagé, Pluvieux, Orageux).</li></ul><p>En mode Survie, chaque modification requiert 20 poudres de redstone (soit 40 poudres au total pour changer à la fois l'heure et la météo).</p><p> <strong>Note :</strong>En mode Créatif, le coût en redstone est annulé.</p>",
+          "content_en": "<p>By right-clicking the block, you open its GUI which features two control options:</p><ul><li><strong>Time:</strong> 3 available buttons (Day, Noon, Night).</li><li><strong>Weather:</strong> 3 available options (Clear, Rain, Thunder).</li></ul><p>In Survival mode, each change costs 20 redstone dust (totaling 40 dust to change both time and weather).</p><p><strong>Note:</strong> In Creative mode, the redstone cost is bypassed.</p>"
+        },
+        {
+          "title_fr": "Obtention du chrononimbus",
+          "title_en": "Obtaining the chrononimbus",
+          "content_fr": "<p>Sa fabrication dans une table de craft requiert 6 lingots de fer, 1 poudre de redstone et 2 montres.</p>",
+          "content_en": "<p>Its recipe in a crafting table requires 6 iron ingots, 1 redstone dust, and 2 clocks.</p>",
+          "images": ["chrononimbus_recipe.png"]
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "bloc-paladiumchest",
+    "name_fr": "Coffre en paladium",
+    "name_en": "Paladium Chest",
+    "desc_fr": "Un coffre renforcé d'une capacité de 10 emplacements.",
+    "desc_en": "A reinforced chest with a capacity of 10 slots.",
+    "images": ["Paladiumchest.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Outil : Hache (niveau 1 minimum)</li><li>Capacité : 10 slots d'inventaire</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Tool: Axe (tier 1 minimum)</li><li>Capacity: 10 inventory slots</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>Il permet de stocker des objets mais ne peut pas être combiné avec un autre coffre pour former un double coffre.</p>",
+          "content_en": "<p>It allows storing items but cannot be combined with another chest to form a double chest.</p>"
+        },
+        {
+          "title_fr": "Obtention du coffre en paladium",
+          "title_en": "Obtaining the paladium chest",
+          "content_fr": "<p>Sa fabrication requiert 1 coffre classique et 4 [[minerai-paladium|lingots de paladium]] dans une table de craft.</p>",
+          "content_en": "<p>Its recipe requires 1 regular chest and 4 [[minerai-paladium|paladium ingots]] in a crafting table.</p>",
+          "images": ["paladiumchest_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "bloc-multicolorchest",
+    "name_fr": "Coffre multicolore",
+    "name_en": "Multicolor Chest",
+    "desc_fr": "Un coffre avancé d'une capacité de 55 emplacements.",
+    "desc_en": "An advanced chest with a capacity of 55 slots.",
+    "images": ["Multicolorchest.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Outil : Hache (niveau 1 recommandé, non obligatoire)</li><li>Capacité : 55 slots d'inventaire</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Tool: Axe (tier 1 recommended, not required)</li><li>Capacity: 55 inventory slots</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>Il offre un espace de stockage étendu de 55 emplacements. Il ne peut pas être combiné pour former un double coffre.</p>",
+          "content_en": "<p>It offers an expanded storage capacity of 55 slots. It cannot be combined to form a double chest.</p>"
+        },
+        {
+          "title_fr": "Obtention du coffre multicolore",
+          "title_en": "Obtaining the multicolor chest",
+          "content_fr": "<p>Sa fabrication requiert 1 coffre classique et 4 [[minerai-multicolore|lingots de multicolore]] dans une table de craft.</p>",
+          "content_en": "<p>Its recipe requires 1 regular chest and 4 [[minerai-multicolore|multicolor ingots]] in a crafting table.</p>",
+          "images": ["multicolorchest_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "bloc-xenitechest",
+    "name_fr": "Coffre en xénite",
+    "name_en": "Xenite Chest",
+    "desc_fr": "Un grand coffre de stockage d'une capacité de 84 emplacements.",
+    "desc_en": "A large storage chest with a capacity of 84 slots.",
+    "images": ["Xenitechest.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Caractéristiques",
+          "title_en": "Characteristics",
+          "content_fr": "<ul><li>Dureté : 1</li><li>Résistance : 10</li><li>Outil : Hache (niveau 1 minimum)</li><li>Capacité : 84 slots d'inventaire</li></ul>",
+          "content_en": "<ul><li>Hardness: 1</li><li>Resistance: 10</li><li>Tool: Axe (tier 1 minimum)</li><li>Capacity: 84 inventory slots</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations et usages",
+          "title_en": "Uses and applications",
+          "content_fr": "<p>Il offre un très grand espace de stockage de 84 emplacements, idéal pour ranger une grande quantité d'objets. Tout comme les autres coffres spéciaux, il ne peut pas être combiné pour former un double coffre.</p>",
+          "content_en": "<p>It provides a massive storage space of 84 slots, ideal for storing large amounts of items. Like other special chests, it cannot be combined to form a double chest.</p>"
+        },
+        {
+          "title_fr": "Obtention du coffre en xénite",
+          "title_en": "Obtaining the xenite chest",
+          "content_fr": "<p>Sa fabrication requiert 1 coffre classique et des [[minerai-xenite|fragments de xénite]] dans une table de craft.</p>",
+          "content_en": "<p>Its recipe requires 1 regular chest and [[minerai-xenite|xenite fragments]] in a crafting table.</p>",
+          "images": ["xenitechest_recipe.png"]
+        }
+      ]
+    }
+  }
+]

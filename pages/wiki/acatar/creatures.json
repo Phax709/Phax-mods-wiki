@@ -1,1 +1,244 @@
+[
+    {
+        "id":"creature-wavegel",
+        "name_fr":"Ondegel",
+        "name_en":"Wavegel",
+        "desc_fr":"Une créature proche du noyé mais vivant sur terre et venant de la mer.",
+        "desc_en":"A creature nearby drowned but lives on Earth and comes from the sea.",
+        "images":["wavegel.png"],
 
+        "details": {
+            "sections": [
+                {
+                    "title_fr": "Caractéristiques",
+                    "title_en": "Characteristics",
+                    "content_fr": "<ul><li>Type : créature aquatique terrestre</li><li>Comportement : hostile</li><li>Vie : 30 soit 15 coeurs</li><li>Dégâts : 4</li><li>Résistance : Foudre et Noyade</li><li>ID : acatar:wavegel</li></ul>",
+                    "content_en": "<ul><li>Type: land-based aquatic creature</li><li>Behavior: hostile</li><li>Health: 30(15 hearts)</li><li>Damage: 4</li><li>Resistance: Lightning and Drowning</li><li>ID : acatar:wavegel</li></ul>"
+                },
+                {
+                    "title_fr": "Génération",
+                    "title_en": "Generation",
+                    "content_fr": "<ul><li>Dimension : Surface</li><li>Biomes : Tous</li><li>Condition d'apparition : Obscurité ou Nuit</li><li>Particularité : L'ondegel brûlera une fois que la journée apparaîtra.</li><li>Tailles des groupes : 1 à 4</li></ul>",
+                    "content_en": "<ul><li>Dimension: Overworld</li><li>Biomes : All</li><li>Spawn condition: Darkness or Night</li><li>Particularity: The wavegel will burn once the day appears.</li><li>Group sizes: 1-4</li></ul>"
+                },
+                {
+                    "title_fr": "Comportement",
+                    "title_en": "Behaviour",
+                    "content_fr": "<ul><li>Attaques : Le ondegel attaque avec des coups basiques comme le zombie ou le noyé et inflige 4 de dégâts.</li><li>Déplacement : Il possède une vitesse de déplacement normale.</li><li>Peur : L'ondegel essaiera toujours de fuir les magma cube et blaze.</li><li>Proie / Cible : attaque uniquement le joueur et les villageois</li><li>L'ondegel vous détecte à partir de 8 blocs et vous laissera tomber si vous laissez 64 blocs d'écarts.</li></ul>",
+                    "content_en": "<ul><li>Attacks: The wavegel attacks with basic hits like zombie or drowned and deals 4 damage.</li><li>Movement: It has a normal movement speed.</li><li>Fear: The wavegel will always try to escape the magma cubes and blazes.</li><li>Prey / Target: Attacks only players and villagers</li><li>Detection: Detects players within 8 blocks and loses interest if you move more than 64 blocks away.</li></ul>"
+                },
+                {
+                    "title_fr": "Butin",
+                    "title_en": "Loot",
+                    "content_fr": "<ul><li>L'ondegel donnera à sa mort des [[item-aquaticslimeball|boules de slime aquatique]]. La quantité y est aléatoire mais sera toujours comprise entre 1 et 4 , l'enchantements butin ne compte pas dans le drop de l'objet.</li><li>Xp : 7 orbes d'xp sont données à sa mort</li></ul>",
+                    "content_en": "<ul><li>The wavegel drops upon death [[item-aquaticslimeball|aquatic slime balls]]. The quantity is random but will always be between 1 and 4, The Looting enchantment does not affect drop rates of the item.</li><li>Xp: 7 XP orbs are dropped upon death</li></ul>"
+                },
+                {
+                    "title_fr": "Utilisations",
+                    "title_en": "Usage",
+                    "content_fr":"<ul><li>L'oeuf d'apparition du ondegel peut être obtenu en survie avec un oeuf et de 4 [[item-aquaticslimeball|boules de slime aquatique]].</li></ul>",
+                    "content_en":"<ul><li>The wavegel spawn egg can be crafted in Survival mode using 1 egg and 4 [[item-aquaticslimeball|aquatic slime balls]].</li></ul>",
+                    "images":["wavegel_spawnegg_recipe.png"]
+                }
+            ]
+        }
+    },
+    {
+        "id":"creature-ceruleancreeper",
+        "name_fr":"Creeper céruléen",
+        "name_en":"Cerulean creeper",
+        "desc_fr":"Un petit cousin bleu du creeper.",
+        "desc_en":"A small blue cousin of the creeper.",
+        "images":["cerulean_creeper.png"],
+
+        "details": {
+            "sections": [
+                {
+                    "title_fr": "Caractéristiques",
+                    "title_en": "Characteristics",
+                    "content_fr": "<ul><li>Type : créature terrestre</li><li>Comportement : hostile</li><li>Vie : 20 soit 10 coeurs</li><li>Dégâts : 2</li><li>Résistance : explosions</li><li>ID : acatar:ceruleancreeper</li></ul>",
+                    "content_en": "<ul><li>Type: land-based creature</li><li>Behavior: hostile</li><li>Health: 20(10 hearts)</li><li>Damage: 2</li><li>Resistance: explosions</li><li>ID : acatar:ceruleancreeper</li></ul>"
+                },
+                {
+                    "title_fr": "Génération",
+                    "title_en": "Generation",
+                    "content_fr": "<ul><li>Dimension : Surface</li><li>Biomes : Forêt de bouleau, plaine, forêt, marais de mangrove, jungle, savanne, taiga, bosquet de cerisier, forêt de chene noir</li><li>Condition d'apparition : Obscurité ou Nuit</li><li>Particularité : Le creeper céruléen explose lorsque le joueur est assez proche.</li><li>Tailles des groupes : 1 à 4</li></ul>",
+                    "content_en": "<ul><li>Dimension: Overworld</li><li>Biomes : Birch forest, plains, forest, mangrove swamp, jungle, savanna, taiga, cherry blossom, dark forest</li><li>Spawn condition: Darkness or Night</li><li>Particularity: The Cerulean creeper explodes when the player is close enough.</li><li>Group sizes: 1-4</li></ul>"
+                },
+                {
+                    "title_fr": "Comportement",
+                    "title_en": "Behaviour",
+                    "content_fr": "<ul><li>Attaques : Le creeper céruléen utilise une attaque d'explosion comme le creeper et inflige 2 de dégâts.</li><li>Déplacement : Il possède une vitesse de déplacement légèrement augmentée, comme les araignées.</li><li>Peur : Ne possède aucune peur</li><li>Proie / Cible : attaque uniquement le joueur</li><li>Le creeper céruléen vous détecte à partir de 16 blocs et vous laissera tomber si vous laissez 64 blocs d'écarts.</li></ul>",
+                    "content_en": "<ul><li>Attacks: The cerulean creeper uses an explosion attack like a standard creeper and deals 2 damage.</li><li>Movement: It has a slightly increased movement speed, like spiders.</li><li>Fear: Has no fear.</li><li>Prey / Target: Attacks only players</li><li>Detection: Detects players within 16 blocks and loses interest if you move more than 64 blocks away.</li></ul>"
+                },
+                {
+                    "title_fr": "Butin",
+                    "title_en": "Loot",
+                    "content_fr": "<ul><li>Le creeper céruléen donnera à sa mort des [[item-ceruleancreeperrod|bâton de creeper céruléen]]. La quantité y est aléatoire mais sera toujours comprise entre 1 et 3, cependant le creeper céruléen ne laissera souvent rien tomber, l'enchantement butin ne compte pas dans le drop de l'objet.</li><li>Xp : aucunes orbes d'xp sont données à sa mort</li></ul>",
+                    "content_en": "<ul><li>The cerulean creeper drops [[item-ceruleancreeperrod|cerulean creeper rod]] upon death. The quantity is random but will always be between 1 and 3; however, the cerulean creeper often won't drop anything; The Looting enchantment does not affect drop rates of the item.</li><li>Xp: No XP orbs are dropped upon death</li></ul>"
+                },
+                {
+                    "title_fr": "Utilisations",
+                    "title_en": "Usage",
+                    "content_fr":"<ul><li>L'oeuf d'apparition du creeper céruléen peut être obtenu en survie avec un oeuf et de 4 [[item-ceruleancreeperrod|poudres de creeper céruléen]].</li></ul>",
+                    "content_en":"<ul><li>The cerulean creeper spawn egg can be crafted in Survival mode using 1 egg and 4 [[item-ceruleancreeperrod|cerulean creeper powder]].</li></ul>",
+                    "images":["cerulean_creeper_spawnegg_recipe.png"]
+                }
+            ]
+        }
+    },
+    {
+        "id":"creature-lyvorawolf",
+        "name_fr":"Loup lyvora",
+        "name_en":"Lyvora wolf",
+        "desc_fr":"Le seul animal qui s'est retrouvé dans ce biome et qui a finit par s'y adapter.",
+        "desc_en":"The only animal that found itself in this biome and eventually adapted to it.",
+        "images":["lyvorawolf.png"],
+
+        "details": {
+            "sections": [
+                {
+                    "title_fr": "Caractéristiques",
+                    "title_en": "Characteristics",
+                    "content_fr": "<ul><li>Type : créature terrestre</li><li>Comportement : neutre</li><li>Vie : 10 soit 5 coeurs</li><li>Dégâts : 3</li><li>Résistance : Feu</li><li>ID : acatar:lyvorawolf</li></ul>",
+                    "content_en": "<ul><li>Type: land-based creature</li><li>Behavior: neutral</li><li>Health: 10(5 hearts)</li><li>Damage: 3</li><li>Resistance: Fire</li><li>ID : acatar:lyvorawolf</li></ul>"
+                },
+                {
+                    "title_fr": "Génération",
+                    "title_en": "Generation",
+                    "content_fr": "<ul><li>Dimension : Surface</li><li>Biomes : Forêt de sakura</li><li>Condition d'apparition : Obscurité ou Nuit</li><li>Particularité : Toutes les 20 secondes, il a 1 chance sur 15 (environ 6,67 %) de faire apparaître au sol une [[nature-lyvorianberry|baie lyvorienne]].</li><li>Tailles des groupes : 1 à 3</li></ul>",
+                    "content_en": "<ul><li>Dimension: Overworld</li><li>Biomes : Sakura forest</li><li>Spawn condition: Darkness or Night</li><li>Particularity: Every 20 seconds, it has a 1 in 15 chance (approx. 6.67%) of dropping a [[nature-lyvorianberry|lyvorian berry]].</li><li>Group sizes: 1-3</li></ul>"
+                },
+                {
+                    "title_fr": "Comportement",
+                    "title_en": "Behaviour",
+                    "content_fr": "<ul><li>Attaques : Le loup lyvora attaque avec des coups basiques lorsqu'il est provoqué et inflige 3 de dégâts.</li><li>Déplacement : Il possède une vitesse de déplacement légèrement augmentée, comme les araignées.</li><li>Peur : Ne possède aucune peur</li><li>Proie / Cible : neutre (attaque s'il est provoqué), il peut être reproduit avec des côtes de porc.</li><li>Le loup lyvora vous détecte à partir de 16 blocs et vous laissera tomber si vous laissez 64 blocs d'écarts.</li></ul>",
+                    "content_en": "<ul><li>Attacks: The lyvora wolf attacks with basic hits when provoked and deals 3 damage.</li><li>Movement: It has a slightly increased movement speed, like spiders.</li><li>Fear: Has no fear.</li><li>Prey / Target: neutral (attacks when provoked), can be bred with porkchop.</li><li>Detection: Detects players within 16 blocks and loses interest if you move more than 64 blocks away.</li></ul>"
+                },
+                {
+                    "title_fr": "Butin",
+                    "title_en": "Loot",
+                    "content_fr": "<ul><li>Le loup lyvora ne laisse aucun objet à sa mort.</li><li>Xp : 3 orbes d'xp sont données à sa mort</li></ul>",
+                    "content_en": "<ul><li>The lyvora wolf drops no items upon death.</li><li>Xp: 3 XP orbs are dropped upon death</li></ul>"
+                },
+                {
+                    "title_fr": "Utilisations",
+                    "title_en": "Usage",
+                    "content_fr":"<ul><li>L'oeuf d'apparition du loup lyvora peut être obtenu en survie avec un oeuf et de 4 [[nature-lyvorianberry|baies lyvoriennes]].</li></ul>",
+                    "content_en":"<ul><li>The lyvora wolf spawn egg can be crafted in Survival mode using 1 egg and 4 [[nature-lyvorianberry|lyvorian berries]].</li></ul>",
+                    "images":["lyvorawolf_spawnegg_recipe.png"]
+                }
+            ]
+        }
+    },
+    {
+        "id":"creature-colossum",
+        "name_fr":"Colossum",
+        "name_en":"Colossum",
+        "desc_fr":"Un boss qui s'est isolé seul sous terre...",
+        "desc_en":"A boss that isolated itself deep underground...",
+        "images":["colossum.png"],
+
+        "details": {
+            "sections": [
+                {
+                    "title_fr": "Caractéristiques",
+                    "title_en": "Characteristics",
+                    "content_fr": "<ul><li>Type : boss terrestre</li><li>Comportement : hostile</li><li>Vie : 425 soit 212,5 coeurs</li><li>Dégâts : 8</li><li>Résistance : Feu, Tridents, Effet de potion, Wither et Enclumes</li><li>ID : acatar:colossum</li></ul>",
+                    "content_en": "<ul><li>Type: land-based boss</li><li>Behavior: hostile</li><li>Health: 425(212.5 hearts)</li><li>Damage: 8</li><li>Resistance: Fire, Tridents, Potion effects, Wither and Anvils</li><li>ID : acatar:colossum</li></ul>"
+                },
+                {
+                    "title_fr": "Génération",
+                    "title_en": "Generation",
+                    "content_fr": "<ul><li>Dimension : Surface</li><li>Biomes : Aucun (s'invoque / apparaît uniquement dans une structure)</li><li>Condition d'apparition : Se trouve dans la structure du Colossum</li><li>Particularité : Sa mort permet de compléter les succès « Un disque de musique incroyable ! » et « Et enfin la paix ? ».</li><li>Tailles des groupes : 1</li></ul>",
+                    "content_en": "<ul><li>Dimension: Overworld</li><li>Biomes : None (spawns only in a structure)</li><li>Spawn condition: Found in the Colossum structure</li><li>Particularity: Defeating it completes the achievements \"An incredible music disk !\" and \"And finally peace?\".</li><li>Group sizes: 1</li></ul>"
+                },
+                {
+                    "title_fr": "Comportement",
+                    "title_en": "Behaviour",
+                    "content_fr": "<ul><li>Attaques : Le Colossum attaque avec des coups puissants et inflige 8 de dégâts.</li><li>Déplacement : Il possède une vitesse de déplacement légèrement augmentée, comme les araignées.</li><li>Peur : Ne possède aucune peur</li><li>Proie / Cible : attaque uniquement le joueur</li><li>Le Colossum vous détecte à partir de 16 blocs et vous laissera tomber si vous laissez 64 blocs d'écarts.</li></ul>",
+                    "content_en": "<ul><li>Attacks: The Colossum attacks with powerful hits and deals 8 damage.</li><li>Movement: It has a slightly increased movement speed, like spiders.</li><li>Fear: Has no fear.</li><li>Prey / Target: Attacks only players</li><li>Detection: Detects players within 16 blocks and loses interest if you move more than 64 blocks away.</li></ul>"
+                },
+                {
+                    "title_fr": "Conseils de combat",
+                    "title_en": "Combat Strategy",
+                    "content_fr": "<ul><li>Équipement recommandé : Il est conseillé de l'affronter avec au minimum un équipement en [[minerai-dioptasium|dioptasium]] enchanté, en [[minerai-nyxite|nyxite]] ou en [[minerai-multicolor|multicolore]], ainsi que des moyens de soin.</li><li>Tactique : Comme la créature se trouve dans une structure étroite et enterrée la plupart du temps, boucher le plus rapidement possible la lave présente dans la salle est la première étape. Bloquer le boss ou vous protéger avec des blocs solides permet de l'empêcher de vous atteindre pour le battre très facilement. La technique du bateau fonctionne également sur lui pour le bloquer (profitez-en avant qu'elle ne soit éventuellement corrigée !).</li></ul>",
+                    "content_en": "<ul><li>Recommended equipment: It is recommended to fight it with at least enchanted [[minerai-dioptasium|dioptasium]], [[minerai-nyxite|nyxite]], or [[minerai-multicolor|multicolor]] equipment, along with healing items.</li><li>Tactics: Since the creature is located in a narrow and buried structure most of the time, blocking off the lava in the room as quickly as possible is the first step. Trapping the boss or protecting yourself with solid blocks will keep it from reaching you, making it very easy to defeat. The boat trick also works to immobilize it (take advantage of it before it potentially gets patched!).</li></ul>"
+                },
+                {
+                    "title_fr": "Génération et localisation",
+                    "title_en": "Generation and location",
+                    "content_fr": "<p>Ce boss n'apparaît pas naturellement dans le monde. Il est uniquement présent au centre de l'[[structure-colossumarena|Arène du Colossum]], une structure sous-terraine rare abritant son générateur.</p>",
+                    "content_en": "<p>This boss does not spawn naturally in the world. It is exclusively found inside the [[structure-colossumarena|Colossum Arena]], a rare underground structure containing its spawner.</p>"
+                },
+                {
+                    "title_fr": "Butin",
+                    "title_en": "Loot",
+                    "content_fr": "<ul><li>Le Colossum donnera à sa mort le disque de musique Sunshine Voyage.</li><li>Xp : 100 orbes d'xp sont données à sa mort</li></ul>",
+                    "content_en": "<ul><li>The Colossum drops the Sunshine Voyage music disc upon death.</li><li>Xp: 100 XP orbs are dropped upon death</li></ul>"
+                },
+                {
+                    "title_fr": "Utilisations",
+                    "title_en": "Usage",
+                    "content_fr":"<ul><li>L'oeuf d'apparition du Colossum n'est pas obtenable en survie.</li></ul>",
+                    "content_en":"<ul><li>The Colossum spawn egg cannot be obtained in Survival mode.</li></ul>"
+                }
+            ]
+        }
+    },
+    {
+        "id":"creature-extermate",
+        "name_fr":"Extermate",
+        "name_en":"Extermate",
+        "desc_fr":"Le dernier boss disponible dans le Nether.",
+        "desc_en":"The final boss available in the Nether.",
+        "images":["extermate.png"],
+
+        "details": {
+            "sections": [
+                {
+                    "title_fr": "Caractéristiques",
+                    "title_en": "Characteristics",
+                    "content_fr": "<ul><li>Type : boss terrestre</li><li>Comportement : hostile</li><li>Vie : 1024 soit 512 coeurs</li><li>Dégâts : 25</li><li>Armure : 15 points de protection</li><li>Résistance : Feu, Foudre, Tridents, Flèches, Effets de potion, Souffle de dragon, Dégâts de chute, Cactus, Explosions, Noyade, Enclumes et légère résistance au recul</li><li>ID : acatar:extermate</li></ul>",
+                    "content_en": "<ul><li>Type: land-based boss</li><li>Behavior: hostile</li><li>Health: 1024(512 hearts)</li><li>Damage: 25</li><li>Armor: 15 protection points</li><li>Resistance: Fire, Lightning, Tridents, Arrows, Potion effects, Dragon's breath, Fall damage, Cactus, Explosions, Drowning, Anvils and slight knockback resistance</li><li>ID : acatar:extermate</li></ul>"
+                },
+                {
+                    "title_fr": "Génération",
+                    "title_en": "Generation",
+                    "content_fr": "<ul><li>Dimension : Nether</li><li>Biomes : Aucun (s'invoque dans une structure dédiée)</li><li>Condition d'apparition : Généré uniquement dans sa structure du Nether, invocable via le générateur (spawner) de la salle</li><li>Particularité : Sa mort permet de compléter les succès « Enfin le classique ! » et « Jusqu'au bout ! ».</li><li>Tailles des groupes : 1</li></ul>",
+                    "content_en": "<ul><li>Dimension: Nether</li><li>Biomes : None (spawns in a dedicated structure)</li><li>Spawn condition: Spawns only in its Nether structure, can be summoned using the spawner in the structure</li><li>Particularity: Defeating it completes the achievements \"Finally the classic !\" and \"To the end!\".</li><li>Group sizes: 1</li></ul>"
+                },
+                {
+                    "title_fr": "Comportement",
+                    "title_en": "Behaviour",
+                    "content_fr": "<ul><li>Attaques : Extermate attaque avec des coups dévastateurs et inflige 25 de dégâts.</li><li>Déplacement : Il possède une vitesse de déplacement très rapide, supérieure à celle des araignées.</li><li>Peur : Ne possède aucune peur</li><li>Proie / Cible : attaque uniquement le joueur</li><li>Extermate vous détecte à partir de 16 blocs et vous laissera tomber si vous laissez 32 blocs d'écarts.</li></ul>",
+                    "content_en": "<ul><li>Attacks: Extermate attacks with devastating hits and deals 25 damage.</li><li>Movement: It has a very fast movement speed, faster than spiders.</li><li>Fear: Has no fear.</li><li>Prey / Target: Attacks only players</li><li>Detection: Detects players within 16 blocks and loses interest if you move more than 32 blocks away.</li></ul>"
+                },
+                {
+                    "title_fr": "Conseils de combat",
+                    "title_en": "Combat Strategy",
+                    "content_fr": "<ul><li>Équipement recommandé : Compte tenu de ses immunités et de ses dégâts, il est fortement recommandé de porter une armure en [[minerai-multicolor|multicolore]] (idéalement enchantée). Le port du [[item-regenerationhelmet|casque de régénération]] enchanté est également conseillé pour faciliter le combat, ainsi que des pommes dorées ou pomme d'or enchantées en grande quantité pour régénérer vos points de vie.</li><li>Tactique : La technique majeure actuelle consiste à le coincer dans un bateau (profitez-en tant que cette mécanique fonctionne encore !). Une alternative efficace consiste à employer la stratégie classique du golem de fer : montez sur une colonne de 3 ou 4 blocs de hauteur pour lui infliger des coups d'épée en toute sécurité.</li></ul>",
+                    "content_en": "<ul><li>Recommended equipment: Given its immunities and high damage output, wearing [[minerai-multicolor|multicolor]] armor (preferably enchanted) is strongly recommended. Equipping an enchanted [[item-regenerationhelmet|regeneration helmet]] helps significantly during the fight, along with bringing plenty of golden apples or enchanted golden apples for health regeneration.</li><li>Tactics: The primary tactic currently is trapping it inside a boat (take advantage of this while it still works!). Another solid alternative is using the classic Iron Golem strategy: build up 3 or 4 blocks high and strike it safely from above.</li></ul>"
+                },
+                {
+                    "title_fr": "Génération et localisation",
+                    "title_en": "Generation and location",
+                    "content_fr": "<p>L'Extermate ne se génère pas librement dans le Nether. Pour l'affronter, vous devez trouver l'[[structure-extermatearena|Arène de l'Extermate]] et activer le générateur situé au centre de la structure.</p>",
+                    "content_en": "<p>Extermate does not spawn freely in the Nether. To fight it, you must locate the [[structure-extermatearena|Extermate Arena]] and activate the spawner at the center of the structure.</p>"
+                },
+                {
+                    "title_fr": "Butin",
+                    "title_en": "Loot",
+                    "content_fr": "<ul><li>Extermate donnera à sa mort le [[item-swedenmusicdisc|disque de musique des musiques originales de C418]].</li><li>Xp : 250 orbes d'xp sont données à sa mort</li></ul>",
+                    "content_en": "<ul><li>Extermate drops the [[item-swedenmusicdisc|C418 original music]] disc upon death.</li><li>Xp: 250 XP orbs are dropped upon death</li></ul>"
+                },
+                {
+                    "title_fr": "Utilisations",
+                    "title_en": "Usage",
+                    "content_fr":"<ul><li>L'oeuf d'apparition d'Extermate n'est pas obtenable en survie.</li></ul>",
+                    "content_en":"<ul><li>The Extermate spawn egg cannot be obtained in Survival mode.</li></ul>"
+                }
+            ]
+        }
+    }
+]

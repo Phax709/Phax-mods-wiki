@@ -1,1 +1,571 @@
+[
+  {
+    "id": "craft-saddle",
+    "name_fr": "Recette de la selle",
+    "name_en": "Saddle Recipe",
+    "desc_fr": "Comment crafter une selle ?",
+    "desc_en": "How to craft a Saddle",
+    "images": ["saddle.png"],
 
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>La selle se craft avec 5 cuirs.</li></ul>",
+          "content_en": "<ul><li>Crafting requires 5 leather.</li></ul>",
+          "images":["saddle_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-sand-blasting",
+    "name_fr": "Recette du sable dans un haut fourneau",
+    "name_en": "Sand in blast furnace",
+    "desc_fr": "Un sable qui cuit plus rapidement",
+    "desc_en": "A sand that cooks faster",
+    "images": ["sand.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Cuisson",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Le sable prend 35 ticks dans un haut fourneau soit 1,5 secondes et donne 1xp.</li></ul>",
+          "content_en": "<ul><li>Sand takes 35 ticks (1.5 seconds) to smelt in a blast furnace and yields 1 XP.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-gildedblackstone",
+    "name_fr": "Recette du sable dans un haut fourneau",
+    "name_en": "Sand in blast furnace",
+    "desc_fr": "Un sable qui cuit plus rapidement",
+    "desc_en": "A sand that cooks faster",
+    "images": ["gilded_blackstone.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>La roche noire dorée se craft avec un minerai d'or du nether et d'une roche noir.</li></ul>",
+          "content_en": "<ul><li>The gilded blackstone is made with nether gold ore and a black stone.</li></ul>",
+          "images":["gildedblackstone_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-suspicousgravelandsand",
+    "name_fr": "Recette du sable et du gravier suspect",
+    "name_en": "Suspicious sand and gravel recipe",
+    "desc_fr": "Ces blocs permettent, en temps normal, d'obtenir des items.",
+    "desc_en": "These blocks normally make it possible to obtain items.",
+    "images": ["suspicious_sand.png","suspicious_gravel.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Le sable suspect se craft avec des [[item-grainofsand|grains de sable]].</li><li>Le gravier suspect se craft avec de la poudre à canon.</li></ul>",
+          "content_en": "<ul><li>Suspicious sand is made with [[item-grainofsand|grains of sand]]</li><li>Suspicious gravel is made with gunpowder.</li></ul>",
+          "images":["suspicious_sand_recipe.png", "suspicious_gravel_recipe.png"]
+        },
+        {
+          "title_fr": "Information",
+          "title_en": "Information",
+          "content_fr": "<ul><li>Le sable suspect et le gravier suspect ne permettent pas d'obtenir les objets que le bloc naturel peut vous donner, par conséquent, si vous crafter ces blocs, il est recommandé de les utiliser pour de la décoration.</li></ul>",
+          "content_en": "<ul><li>The suspicious sand and the suspicious gravel do not allow to obtain the objects that the natural block can give you, therefore, if you craft these blocks, it is recommended to use them for decoration.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-horsearmor",
+    "name_fr": "Recette des armures pour cheval",
+    "name_en": "Recipe for armor for horses",
+    "desc_fr": "Comment crafter les armures pour cheval ?",
+    "desc_en": "How to craft horse armors",
+    "images": [
+      {
+        "frames": [
+          { "src": "leather_horse_armor.png" },
+          { "src": "copper_horse_armor.png" },
+          { "src": "iron_horse_armor.png" },
+          { "src": "golden_horse_armor.png" },
+          { "src": "diamond_horse_armor.png" }
+        ],
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Les armures pour cheval sont fabriquées avec soit du cuir, cuivre, fer, or, diamant, netherite.</li></ul>",
+          "content_en": "<ul><li>Horse armor is made with either leather, copper, iron, gold, diamond, netherite.</li></ul>",
+          "images": [
+            {
+              "frames": [
+                { "src": "leather_horse_armor_recipe.png" },
+                { "src": "copper_horse_armor_recipe.png" },
+                { "src": "iron_horse_armor_recipe.png" },
+                { "src": "golden_horse_armor_recipe.png" },
+                { "src": "diamond_horse_armor_recipe.png" }
+              ],
+              "interval": 1500,
+              "autoplay": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-stringrecipe",
+    "name_fr": "Recette du fil",
+    "name_en": "String recipe",
+    "desc_fr": "Un fil, rien de plus basique.",
+    "desc_en": "A string, nothing more basic.",
+    "images": ["string.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Le fil est fait à partir de toile d'araignée.</li></ul>",
+          "content_en": "<ul><li>The string is made from cobwebs.</li></ul>",
+          "images":["string_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-cactus-blasting",
+    "name_fr": "Recette du cactus dans un haut fourneau",
+    "name_en": "Cactus in blast furnace",
+    "desc_fr": "Un cactus qui cuit plus rapidement",
+    "desc_en": "A cactus that cooks faster",
+    "images": ["cactus.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Cuisson",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>Le cactus prend 35 ticks dans un haut fourneau soit 1,5 secondes et donne 1xp.</li></ul>",
+          "content_en": "<ul><li>Cactus takes 35 ticks (1.5 seconds) to smelt in a blast furnace and yields 1 XP.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-glowstone",
+    "name_fr": "Recette de la pierre lumineuse",
+    "name_en": "Recipe for Glowstone",
+    "desc_fr": "Une pierre qui brille.",
+    "desc_en": "A shining stone.",
+    "images": ["glowstone.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>La pierre lumineuse est fabriqué à partir de [[item-grainofsand|grain de sable]] et de [[item-dye|colorant de lumière]].</li></ul>",
+          "content_en": "<ul><li>Cactus takes 35 ticks (1.5 seconds) to smelt in a blast furnace and yields 1 XP.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-elytra",
+    "name_fr": "Recette des élytres",
+    "name_en": "Recipe for Elytra",
+    "desc_fr": "Le moyen de déplacement le plus utilisé.",
+    "desc_en": "The most used means of travel.",
+    "images": ["elytra.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Les élytres sont fabriqués à partir de [[item-reinforcedleather|cuir renforcé]], de [[craft-phantommembrane|membrane de phantom]] et de [[item-dye|colorant du ciel]].</li></ul>",
+          "content_en": "<ul><li>The elytra are made from [[item-reinforcedleather|reinforced leather]], [[craft-phantommembrane|phantom membrane]] and [[item-dye|sky dye]].</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-phantommembrane",
+    "name_fr": "Recette de la membrane de phantom",
+    "name_en": "Recipe for phantom membrane",
+    "desc_fr": "Une membrane obtenue en tuant les phantoms.",
+    "desc_en": "A membrane obtained by killing phantoms.",
+    "images": ["phantom_membrane.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Les membranes sont fabriquées à partir de [[item-reinforcedleather|cuir renforcé]], de quartz, de papiers et de poudres d'os.</li></ul>",
+          "content_en": "<ul><li>The membranes are made from [[item-reinforcedleather|reinforced leather]], quartz, papers and bones meal.</li></ul>",
+          "images":["phantommembrane_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-spawner",
+    "name_fr": "Recette du spawner",
+    "name_en": "Recipe for spawner",
+    "desc_fr": "Une recette qui peut être utile en survie.",
+    "desc_en": "A recipe that can be useful in survival.",
+    "images": ["spawner.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>La recette du spawner est certes un peu coûteuse, mais permet aux scanners d'être déplacés. Il peut être fait avec des blocs de fer, des [[minerai-igniera|lingots d'ignera]] et un [[minerai-arcaneshards|éclat d'arcane]].</li></ul>",
+          "content_en": "<ul><li>The spawner recipe is certainly a bit expensive, but it allows the scanners to be moved. It can be made with iron blocks, [[minerai-igniera|ignera ingots]], and an [[minerai-arcaneshards|arcane shard]].</li></ul>",
+          "images":["spawner_recipe.png"]
+        },
+        {
+          "title_fr": "Note",
+          "title_en": "Note",
+          "content_fr": "<ul><li>Dans les versions précédentes, la recette du spawner ne contient pas d'éclat d'arcane.</li></ul>",
+          "content_en": "<ul><li>In previous versions, the spawner recipe does not contain arcane shards.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-totemofundying",
+    "name_fr": "Recette du totem d'immortalité",
+    "name_en": "Recipe of totem of undying",
+    "desc_fr": "Une recette immortelle.",
+    "desc_en": "An immortal recipe.",
+    "images": ["totem_of_undying.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Fait avec des emeraudes et des lingots d'or.</li></ul>",
+          "content_en": "<ul><li>Made with emerald and gold ingots.</li></ul>",
+          "images":["totemofundying_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-froglight",
+    "name_fr": "Recette des grelampes",
+    "name_en": "Recipe of froglights",
+    "desc_fr": "Les grelampes ont des recettes similaires, mais diffèrent légèrement, découvrez comment les fabriquer.",
+    "desc_en": "Froglights have similar recipes, but differ slightly, discover how to make them.",
+    "images": [
+      {
+        "frames": [
+          { "src": "pearlescent_froglight.png" },
+          { "src": "ochre_froglight.png" },
+          { "src": "verdant_froglight.png" }
+        ],
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Toutes les grelampes sont fabriquées avec du [[item-dye|colorant de lumière]], d'une [[item-frogessence|essence de grenouille]], d'une baie lumineuse et d'un colorant vert clair, jaune ou rose.</li></ul>",
+          "content_en": "<ul><li>All the grelamps are made with [[item-dye|light dye]], a [[item-frogessence|frog essence]], a glow berries and a lime, yellow or pink dye.</li></ul>",
+          "images": [
+            {
+              "frames": [
+                { "src": "pinkfroglight_recipe.png" },
+                { "src": "yellowfroglight_recipe.png" },
+                { "src": "greenfroglight_recipe.png" }
+              ],
+              "interval": 1500,
+              "autoplay": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-sponge",
+    "name_fr": "Recette de l'éponge",
+    "name_en": "Recipe of sponge",
+    "desc_fr": "Un bloc aspirant l'eau.",
+    "desc_en": "A block sucking water..",
+    "images": ["sponge.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>L'éponge est fabriquée avec 4 herbes aquatiques, 4 poissons globes et un bloc de sable.</li></ul>",
+          "content_en": "<ul><li>The sponge is made with 4 sea grass, 4 pufferfish and a block of sand.</li></ul>",
+          "images":["sponge_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-heavycore",
+    "name_fr": "Recette du noyau lourd",
+    "name_en": "Recipe of heavy core",
+    "desc_fr": "Un bloc massif.",
+    "desc_en": "A massive block",
+    "images": ["heavy_core.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Le noyau lourd est fabriqué avec du quartz, d'un bloc de fer et des [[minerai-chrome|lingots de chrome]].</li></ul>",
+          "content_en": "<ul><li>The heavy core is made with quartz, iron block and [[minerai-chrome|chrome ingots]].</li></ul>",
+          "images":["heavycore_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-trident",
+    "name_fr": "Recette du trident",
+    "name_en": "Recipe of trident",
+    "desc_fr": "Une arme aquatique",
+    "desc_en": "An aquatic weapon",
+    "images": ["trident.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Le trident est fabriqué avec de la prismarine, et 4 coquilles nautiles.</li></ul>",
+          "content_en": "<ul><li>The trident is made with prismarin, and 4 nautilus shell..</li></ul>",
+          "images":["trident_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-stone-blasting",
+    "name_fr": "Recette de la pierre dans un haut fourneau",
+    "name_en": "Cobblestone in blast furnace",
+    "desc_fr": "Une pierre qui cuit plus rapidement",
+    "desc_en": "A stone that cooks faster",
+    "images": ["cobblestone.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Cuisson",
+          "title_en": "Smelting",
+          "content_fr": "<ul><li>La pierre prend 40 ticks dans un haut fourneau soit 2 secondes et donne 1xp.</li></ul>",
+          "content_en": "<ul><li>Cobblestone takes 40 ticks (2 seconds) to smelt in a blast furnace and yields 1 XP.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-netheriteupgrade",
+    "name_fr": "Recette de l'amélioration en netherite",
+    "name_en": "Netherite upgrade recipe",
+    "desc_fr": "Une amélioration pour une meilleure résistance",
+    "desc_en": "An upgrade for greater resistance",
+    "images": ["netherite_upgrade_smithing_template.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Necessite : 1 diamant et 8 netherrack.</li></ul>",
+          "content_en": "<ul><li>Requirements: 1 diamond and 8 netherrack./li></ul>",
+          "images":["netheriteupgrade_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-dragonhead",
+    "name_fr": "Recette de la tête de dragon",
+    "name_en": "Dragon head recipe",
+    "desc_fr": "Une tête mythique.",
+    "desc_en": "A mythic head",
+    "images": ["dragon_head.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>La tête de dragon pour être fabriqué a besoin de colorant noir, violet, d'une pierre de l'end et de n'importe quel tête.</li></ul>",
+          "content_en": "<ul><li>The dragon head requires black dye, purple dye, an End stone, and any head to be crafted.</li></ul>",
+          "images":["dragonhead_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-gunpowder",
+    "name_fr": "Recette de la poudre à canon",
+    "name_en": "Gunpowder recipe",
+    "desc_fr": "Notement utile pour les feux d'artifice.",
+    "desc_en": "Very useful for fireworks.",
+    "images": ["gunpowder.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>La poudre à canon est fabriquée à partir de [[item-sulfur|poudre de soufre]].</li></ul>",
+          "content_en": "<ul><li>Gunpowder is made from [[item-sulfur|sulfur powder]].</li></ul>",
+          "images":["gunpowder_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-bannerpattern",
+    "name_fr": "Recette de 4 motifs de bannières",
+    "name_en": "Recipe for 4 banner patterns",
+    "desc_fr": "Recette des motifs de globe, groin, rafaleur et tourbillon.",
+    "desc_en": "Recipe for globe, piglin, flow and guster patterns",
+    "images": [
+      {
+        "frames": [
+          { "src": "piglin_banner_pattern.png" },
+          { "src": "flow_banner_pattern.png" },
+          { "src": "guster_banner_pattern.png" },
+          { "src": "globe_banner_pattern.png" }
+        ],
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Les motifs sont fabriqués à partir de terre pour le motif globe, de bloc d'or pour le piglin, d'un bâton de breeze pour le rafaleur et d'une charge de vent pour le tourbillon.</li></ul>",
+          "content_en": "<ul><li>The patterns are made from dirt for the globe pattern, gold block for the piglin, a breeze rod for the guster and a wind charge for the flow.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-alleffectpotion",
+    "name_fr": "Recette de la potion breuvage de l'être suprême",
+    "name_en": "Potion of blueness of the supreme being recipe",
+    "desc_fr": "Notement utile pour un succès.",
+    "desc_en": "Very useful for 1 achivement.",
+    "images": ["Alleffect.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>La potion est fabriquée avec une [[item-ceruleancreeperrod|poudre de creeper céruléen]] et une potion étrange comme base.</li></ul>",
+          "content_en": "<ul><li>The potion is made with an [[item-ceruleancreeperrod|cerulean creeper powder]] and a awkward potion as its base.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-armortrims",
+    "name_fr": "Recette des ornements d'armure",
+    "name_en": "Armor Trim Recipes",
+    "desc_fr": "Des ornements décoratifs pour personnaliser les armures.",
+    "desc_en": "Decorative armor trims used to customize armor.",
+    "images": [
+      {
+        "frames": [
+          { "src": "sentry_armor_trim_smithing_template.png" },
+          { "src": "coast_armor_trim_smithing_template.png" },
+          { "src": "vex_armor_trim_smithing_template.png" },
+          { "src": "wild_armor_trim_smithing_template.png" },
+          { "src": "dune_armor_trim_smithing_template.png" },
+          { "src": "ward_armor_trim_smithing_template.png" },
+          { "src": "silence_armor_trim_smithing_template.png" },
+          { "src": "tide_armor_trim_smithing_template.png" },
+          { "src": "snout_armor_trim_smithing_template.png" },
+          { "src": "rib_armor_trim_smithing_template.png" },
+          { "src": "eye_armor_trim_smithing_template.png" },
+          { "src": "spire_armor_trim_smithing_template.png" },
+          { "src": "bolt_armor_trim_smithing_template.png" },
+          { "src": "flow_armor_trim_smithing_template.png" },
+          { "src": "wayfinder_armor_trim_smithing_template.png" },
+          { "src": "raiser_armor_trim_smithing_template.png" },
+          { "src": "shaper_armor_trim_smithing_template.png" },
+          { "src": "host_armor_trim_smithing_template.png" }
+        ],
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Ornement des sentinelles : un [[item-elementforge|élément forge]] et une planche de bouleau.</li><li>Ornement des littoraux : un [[item-elementforge|élément forge]] et une planche de chêne.</li><li>Ornement des vex : un [[item-elementforge|élément forge]] et une planche de chêne noir.</li><li>Ornement de la jungle : un [[item-elementforge|élément forge]] et une planche de jungle.</li><li>Ornement des dunes : un [[item-elementforge|élément forge]] et un bloc de sable.</li><li>Ornement des abîmes : un [[item-elementforge|élément forge]] et un bloc de briques de deepslate.</li><li>Ornement du silence : un [[item-elementforge|élément forge]] et un bloc de sculk.</li><li>Ornement des marées : un [[item-elementforge|élément forge]] et n'importe quel bloc de prismarine.</li><li>Ornement du groin : un [[item-elementforge|élément forge]] et un bloc de roche noire.</li><li>Ornement des côtes : un [[item-elementforge|élément forge]] et un bloc de briques du Nether.</li><li>Ornement de l'œil : un [[item-elementforge|élément forge]] et un bloc de pierres taillées.</li><li>Ornement des tours : un [[item-elementforge|élément forge]] et un bloc violet.</li><li>Ornement des boulons : un [[item-elementforge|élément forge]] et une grille en cuivre.</li><li>Ornement du tourbillon : un [[item-elementforge|élément forge]] et un bâton de Breeze.</li><li>Ornement de l'éclaireur : un [[item-elementforge|élément forge]] et un bloc de terre cuite.</li><li>Ornement de l'éleveur : un [[item-elementforge|élément forge]] et un bloc de terre cuite noire.</li><li>Ornement du modeleur : un [[item-elementforge|élément forge]] et un bloc de terre cuite bleue.</li><li>Ornement de l'hôte : un [[item-elementforge|élément forge]] et un bloc de terre cuite marron.</li></ul>",
+          "content_en": "<ul><li>Sentry armor trim: one [[item-elementforge|forge element]] and one birch plank.</li><li>Coast armor trim: one [[item-elementforge|forge element]] and one oak plank.</li><li>Vex armor trim: one [[item-elementforge|forge element]] and one dark oak plank.</li><li>Wild armor trim: one [[item-elementforge|forge element]] and one jungle plank.</li><li>Dune armor trim: one [[item-elementforge|forge element]] and one sand block.</li><li>Ward armor trim: one [[item-elementforge|forge element]] and one deepslate bricks block.</li><li>Silence armor trim: one [[item-elementforge|forge element]] and one sculk block.</li><li>Tide armor trim: one [[item-elementforge|forge element]] and any one prismarine block.</li><li>Snout armor trim: one [[item-elementforge|forge element]] and one blackstone block.</li><li>Rib armor trim: one [[item-elementforge|forge element]] and one nether bricks block.</li><li>Eye armor trim: one [[item-elementforge|forge element]] and one stone bricks block.</li><li>Spire armor trim: one [[item-elementforge|forge element]] and one purple block.</li><li>Bolt armor trim: one [[item-elementforge|forge element]] and one copper grate.</li><li>Flow armor trim: one [[item-elementforge|forge element]] and one breeze rod.</li><li>Wayfinder armor trim: one [[item-elementforge|forge element]] and one terracotta block.</li><li>Raiser armor trim: one [[item-elementforge|forge element]] and one black terracotta block.</li><li>Shaper armor trim: one [[item-elementforge|forge element]] and one blue terracotta block.</li><li>Host armor trim: one [[item-elementforge|forge element]] and one brown terracotta block.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "craft-spawneggs",
+    "name_fr": "Recette des œufs d'apparition",
+    "name_en": "Spawn Egg Recipes",
+    "desc_fr": "Des recettes génériques pour fabriquer des œufs d'apparition.",
+    "desc_en": "Generic recipes for crafting spawn eggs.",
+    "images": ["creeper_spawn_egg.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Recommandation",
+          "title_en": "Recommendation",
+          "content_fr": "<p>Je recommande d'utiliser un mod de gestionnaire de recettes comme JEI ou REI pour consulter facilement les recettes et les objets nécessaires.</p>",
+          "content_en": "<p>I recommend using a recipe-management mod such as JEI or REI to easily view the recipes and required items.</p>"
+        },
+        {
+          "title_fr": "Recettes",
+          "title_en": "Recipes",
+          "content_fr": "<p>Chaque recette suit le même modèle : l'œuf de poule au centre, quatre ingrédients autour de l'œuf et les quatre cases dans les coins vides.</p><ch3>Animaux et créatures passives</h3><ul><li>Cochon : du porc cru.</li><li>Vache : du bœuf cru.</li><li>Poulet : une plume.</li><li>Mouton : du mouton cru.</li><li>Loup : un os.</li><li>Villageois : une émeraude.</li><li>Abeille : un rayon de miel.</li><li>Dromadaire : une selle.</li><li>Axolotl : une petite foliogoutte.</li><li>Allay : une barrière en chêne noir.</li><li>Chauve-souris : de la pierre.</li><li>Chat : 2 œufs d'apparition de villageois.</li><li>Âne : un coffre.</li><li>Renard : une baie sucrée.</li><li>Grenouille : de la boue.</li><li>Cheval : 2 selles.</li><li>Champimeuh : 4 champignons rouges.</li><li>Mule : 2 coffres et 2 selles.</li><li>Ocelot : 4 pastèques.</li><li>Perroquet : un cookie.</li><li>Lapin : de la peau de lapin.</li><li>Arpenteur : un seau de lave.</li><li>Tortue : une écaille de tortue.</li><li>Marchand ambulant : une laisse.</li><li>Tatou : 4 écailles de tatou.</li><li>Chèvre : une corne de chèvre.</li><li>Lama : un tapis marron.</li><li>Lama marchand : un tapis bleu clair.</li><li>Panda : du bambou.</li><li>Noyé : un lingot de cuivre.</li><li>Momifié : du sable.</li><li>Vagabond : 4 flèches.</li><li>Pillager : 2 arbalètes.</li><li>Cube de magma : de la crème de magma.</li><li>Brise : 4 bâtons de brise.</li></ul><h3>Créatures aquatiques</h3><ul><li>Ours polaire : 2 saumons crus et 2 morues crues.</li><li>Saumon : 4 saumons crus.</li><li>Morue : 4 morues crues.</li><li>Poisson tropical : 4 poissons tropicaux.</li><li>Poisson-globe : un poisson-globe.</li><li>Poulpe : une poche d'encre.</li><li>Poulpe luisant : une poche d'encre luisante.</li><li>Dauphin : une morue cuite.</li><li>Gardien : un éclat de prismarine.</li><li>Grand gardien : une éponge.</li><li>Nautile : 2 seaux d'eau.</li></ul><h3>Créatures hostiles</h3><ul><li>Squelette : un arc.</li><li>Zombie : de la chair putréfiée.</li><li>Creeper : de la poudre à canon.</li><li>Araignée : du fil.</li><li>Cheval squelette : 2 selles et 2 os.</li><li>Araignée des cavernes : un œil d'araignée.</li><li>Zombie villageois : 2 émeraudes et 2 chairs putréfiées.</li><li>Vindicteur : 2 haches en fer.</li><li>Évocateur : un totem d'immortalité.</li><li>Sorcière : de la poudre de redstone.</li><li>Slime : une boule de slime.</li><li>Poisson d'argent : une brique de pierre.</li><li>Embourbé : 2 flèches et 2 patates empoisonnées.</li><li>Ravageur : un œuf d'apparition de pillager.</li><li>Warden : 2 blocs de sculk et 2 capteurs sculk.</li><li>[[creature-wavegel|Ondegel]] : 4 [[item-aquaticslimeball|boules de slime aquatique]].</li><li>Creeper céruléen : 4 [[item-ceruleancreeperrod|bâtons de creeper céruléen]].</li><li>Grinceur : 4 amas de résine.</li><li>Parched : 2 flèches et 2 sables.</li></ul><h3>Créatures du Nether et de l'End</h3><ul><li>Enderman : 4 perles de l'Ender.</li><li>Piglin : un lingot d'or.</li><li>Piglin zombifié : une pépite d'or.</li><li>Blaze : un bâton de blaze.</li><li>Endermite : de la pierre de l'End.</li><li>Squelette wither : du charbon.</li><li>Ghast : une larme de ghast.</li><li>Hoglin : du porc cuit.</li><li>Phantom : une membrane de phantom.</li><li>Shulker : une carapace de shulker.</li><li>Piglin brute : 2 blocs d'or.</li><li>Ender Dragon : un œuf de dragon, une obsidienne et 2 pierres de l'End.</li><li>Wither : 2 têtes de squelette wither et 2 sables des âmes.</li></ul><h3>Créatures spéciales et boss</h3><ul><li>Golem de neige : une boule de neige.</li><li>Golem de fer : 4 blocs de fer.</li></ul>", 
+          "content_en": "<p>Each recipe follows the same pattern: the chicken egg in the center, four ingredients around it, and the four corner slots empty.</p><h3>Animals and passive creatures</h3><ul><li>Pig: raw porkchop.</li><li>Cow: raw beef.</li><li>Chicken: feather.</li><li>Sheep: raw mutton.</li><li>Wolf: bone.</li><li>Villager: emerald.</li><li>Bee: honeycomb.</li><li> Camel: saddle.</li><li>Axolotl: small dripleaf.</li><li>Allay: dark oak fence.</li><li>Bat: stone.</li><li>Cat: 2 villager spawn eggs.</li><li>Donkey: chest.</li><li>Fox: sweet berries.</li><li>Frog: mud.</li><li>Horse: 2 saddles.</li><li>Mooshroom: 4 red mushrooms.</li><li>Mule: 2 chests and 2 saddles.</li><li>Ocelot: 4 melons.</li><li>Parrot: cookie.</li><li>Rabbit: rabbit hide.</li><li>Strider: lava bucket.</li><li>Turtle: scute.</li><li>Wandering Trader: lead.</li><li>Armadillo: 4 armadillo scutes.</li><li>Goat: goat horn.</li><li>Llama: brown carpet.</li><li>Trader Llama: light blue carpet.</li><li>Panda: bamboo.</li><li>Drowned: copper ingot.</li><li>Husk: sand.</li><li>Stray: 4 arrows.</li><li>Pillager: 2 crossbows.</li><li>Magma Cube: magma cream.</li><li>Breeze: 4 breeze rods.</li></ul><h3>Aquatic creatures</h3><ul><li>Polar Bear: 2 raw salmon and 2 raw cod.</li><li>Salmon: 4 raw salmon.</li><li>Cod: 4 raw cod.</li><li>Tropical Fish: 4 tropical fish.</li><li>Pufferfish: pufferfish.</li><li>Squid: ink sac.</li><li>Glow Squid: glow ink sac.</li><li>Dolphin: cooked cod.</li><li>Guardian: prismarine shard.</li><li>Elder Guardian: sponge.</li><li>Nautilus: 2 water buckets.</li></ul><h3>Hostile creatures</h3><ul><li>Skeleton: bow.</li><li>Zombie: rotten flesh.</li><li>Creeper: gunpowder.</li><li>Spider: string.</li><li>Skeleton Horse: 2 saddles and 2 bones.</li><li>Cave Spider: spider eye.</li><li>Zombie Villager: 2 emeralds and 2 rotten flesh.</li><li>Vindicator: 2 iron axes.</li><li>Evoker: totem of undying.</li><li>Witch: redstone dust.</li><li>Slime: slimeball.</li><li>Silverfish: stone brick.</li><li>Bogged: 2 arrows and 2 poisonous potatoes.</li><li>Ravager: pillager spawn egg.</li><li>Warden: 2 sculk blocks and 2 sculk sensors.</li><li>[[creature-wavegel|Wavegel]]: 4 [[item-aquaticslimeball|aquatic slime balls]].</li><li>Cerulean Creeper: 4 [[item-ceruleancreeperrod|cerulean creeper rods]].</li><li>Creaking: 4 resin clumps.</li><li>Parched: 2 arrows and 2 sand.</li></ul><h3>Nether and End creatures</h3><ul><li>Enderman: 4 ender pearls.</li><li>Piglin: gold ingot.</li><li>Zombified Piglin: gold nugget.</li><li>Blaze: blaze rod.</li><li>Endermite: End stone.</li><li>Wither Skeleton: coal.</li><li>Ghast: ghast tear.</li><li>Hoglin: cooked porkchop.</li><li>Phantom: phantom membrane.</li><li>Shulker: shulker shell.</li><li>Piglin Brute: 2 gold blocks.</li><li>Ender Dragon: dragon egg, obsidian, and 2 End stones.</li><li>Wither: 2 wither skeleton skulls and 2 soul sand.</li></ul><h3>Special creatures and bosses</h3><ul><li>Snow Golem: snowball.</li><li>Iron Golem: 4 iron blocks.</li></ul>"
+        }
+      ]
+    }
+  }
+]

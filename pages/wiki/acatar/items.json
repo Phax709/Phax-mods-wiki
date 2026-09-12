@@ -1,1 +1,795 @@
+[
+  {
+    "id": "item-sulfur",
+    "name_fr": "Poudre de soufre",
+    "name_en": "Sulfur Powder",
+    "desc_fr": "Un minéral inflammable utilisé dans la fabrication de poudre à canon.",
+    "desc_en": "An inflammable mineral used in the creation of gunpowder.",
+    "images": ["Sulfurpowder.png"],
 
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de la poudre de soufre",
+          "title_en": "Sulfur Powder Usage",
+          "content_fr": "<ul><li>La poudre de soufre est utilisée dans la fabrication de [[craft-gunpowder|poudre à canon]].</li><li>Elle peut également servir dans la fabrication du [[minerai-hazmium|lingot d'hazmium]].</li></ul>",
+          "content_en": "<ul><li>Sulfur Powder is used in the creation of [[craft-gunpowder|gunpowder]].</li><li>It can also be used in the creation of the [[minerai-hazmium|hazmium ingot]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de la poudre de soufre",
+          "title_en": "Obtaining Sulfur Powder",
+          "content_fr": "<ul><li>La poudre de soufre est obtenue à partir de poudre de blaze.</li></ul>",
+          "content_en": "<ul><li>Sulfur Powder is obtained from Blaze Powder.</li></ul>",
+          "images":["sulfurpowder_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-damageball",
+    "name_fr": "Boule de dégâts",
+    "name_en": "Damage Ball",
+    "desc_fr": "Une boule qui réunit tous les dégâts possibles.",
+    "desc_en": "A ball that combines all possible damage.",
+    "images": ["Damageball.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de la boule de dégâts",
+          "title_en": "Damage Ball Usage",
+          "content_fr": "<ul><li>La boule de dégâts est utilisée dans la fabrication du bloc de camanite.</li></ul>",
+          "content_en": "<ul><li>The Damage Ball is used in the creation of the Camanite Block.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de la boule de dégâts",
+          "title_en": "Obtaining the Damage Ball",
+          "content_fr": "<ul><li>La boule de dégâts peut être obtenue par l'échange de [[minerai-red|bloc de red]] au villageois mineur au niveau expert.</li><li>La boule de dégâts est obtenue à partir d'une boule de neige, de 2 [[minerai-nickel|lingots de nickel]], une boule de slime, de [[minerai-crystal|crystal d'azure]], d'une crème de magma, d'un [[minerai-fluorite|lingot de fluorite]], d'un [[item-bluemarinepaper|papier marin]] et un [[item-sharkfin|aileron de requin]].</li></ul>",
+          "content_en": "<ul><li>The damage ball can be obtained by exchanging a [[minerai-red|block of red]] to the minor villager at the expert level.</li><li>The Damage Ball is obtained from a Snow Ball, 2 [[minerai-nickel|Nickel Ingots]], a Slime Ball, a [[minerai-crystal|Azure Crystal]], a Magma Cream, a [[minerai-fluorite|Fluorite Ingot]], a [[item-bluemarinepaper|Marine Paper]], and a [[item-sharkfin|Shark Fin]].</li></ul>",
+          "images":["damage_ball_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-reinforcedleather",
+    "name_fr": "Cuir renforcé",
+    "name_en": "Reinforced Leather",
+    "desc_fr": "Un matériau résistant utilisé dans la fabrication d'armures.",
+    "desc_en": "A durable material used in the crafting of armor.",
+    "images": ["Reinforcedleather.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du cuir renforcé",
+          "title_en": "Reinforced Leather Usage",
+          "content_fr": "<ul><li>Le cuir renforcé est utilisé dans la fabrication des [[craft-elytra|élytres]].</li><li>Il sert aussi dans le craft de la [[craft-phantommembrane|membrane de phantom]].</li></ul>",
+          "content_en": "<ul><li>The Reinforced Leather is used in the crafting of [[craft-elytra|elytra]].</li><li>It is also used in the crafting of [[craft-phantommembrane|phantom membrane]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du cuir renforcé",
+          "title_en": "Obtaining the Reinforced Leather",
+          "content_fr": "<ul><li>Le cuir renforcé est obtenu à partir de cuir standard et de 4 [[minerai-red|lingot de red]].</li></ul>",
+          "content_en": "<ul><li>The Reinforced Leather is obtained from standard leather and 4 [[minerai-red|Red Ingots]].</li></ul>",
+          "images":["reinforced_leather_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-elementforge",
+    "name_fr": "Element forge",
+    "name_en": "Forge element",
+    "desc_fr": "Une plaque basique utilisé pour les modèles de forge.",
+    "desc_en": "A basic plate used for forge templates.",
+    "images": ["Forgeelement.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de la forge d'élément",
+          "title_en": "Element Forge Usage",
+          "content_fr": "<ul><li>L'élément forge est un modèle basique utilisé dans la fabrication des modèles de forge.</li></ul>",
+          "content_en": "<ul><li>The Element Forge is a basic template used in the crafting of smithing templates.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de l'élément forge",
+          "title_en": "Obtaining the Element Forge",
+          "content_fr": "<ul><li>L'élément forge est obtenu à partir d'un [[minerai-amazonite|lingot d'amazonite]] et de 8 lapis-lazuli.</li></ul>",
+          "content_en": "<ul><li>The Element Forge is obtained from a [[minerai-amazonite|Amazonite Ingot]] and 8 lapis-lazuli.</li></ul>",
+          "images":["forgeelement_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-sharkfin",
+    "name_fr": "Aileron de requin",
+    "name_en": "Shark Fin",
+    "desc_fr": "Un aileron de requin utilisé dans la fabrication de certains objets.",
+    "desc_en": "A shark fin used in the crafting of certain items.",
+    "images": ["Sharkfin.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de l'aileron de requin",
+          "title_en": "Shark Fin Usage",
+          "content_fr": "<ul><li>L'aileron de requin est utilisé pour crafter le [[item-midlerigniter|briquet du midler]] mais aussi dans la fabrication de la [[item-damageball|boule de dégâts]].</li></ul>",
+          "content_en": "<ul><li>The shark fin is used for crafting the [[item-midlerigniter|Midler's Igniter]] and also in the creation of the [[item-damageball|damage ball]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de l'aileron de requin",
+          "title_en": "Obtaining the Shark Fin",
+          "content_fr": "<ul><li>L'aileron de requin est obtenu en échangeant 6 [[minerai-fluorite|lingots de fluorite]] contre 3 ailerons de requin avec le pêcheur au niveau compagnon.</li></ul>",
+          "content_en": "<ul><li>The Shark Fin is obtained by trading 6 [[minerai-fluorite|Fluorite Ingots]] for 3 shark fins with the fisherman at the journeyman level.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-grainofsand",
+    "name_fr": "Grain de sable",
+    "name_en": "Sand Grain",
+    "desc_fr": "Un grain de sable plus petit que son bloc.",
+    "desc_en": "A grain of sand smaller than its block.",
+    "images": ["Grainofsand.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du grain de sable",
+          "title_en": "Sand Grain Usage",
+          "content_fr": "<ul><li>Le grain de sable est utilisé pour crafter la [[craft-glowstone|pierre lumineuse]], et le [[craft-suspicousgravelandsand|sable suspect]].</li></ul>",
+          "content_en": "<ul><li>The sand grain is used for crafting [[craft-glowstone|glowstone]], and [[craft-suspicousgravelandsand|suspicious sand]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du grain de sable",
+          "title_en": "Obtaining the Sand Grain",
+          "content_fr": "<ul><li>Le grain de sable est obtenu en minant du sable. Le nombre de grains obtenu peut être augmenté en utilisant fortune.</li></ul>",
+          "content_en": "<ul><li>The Sand Grain is obtained by mining sand. The number of grains obtained can be increased by using fortune.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-frogessence",
+    "name_fr": "Essence de grenouille",
+    "name_en": "Frog Essence",
+    "desc_fr": "Une essence de grenouille utilisée dans la fabrication de grelampes.",
+    "desc_en": "A frog essence used in the creation of froglights.",
+    "images": ["Frogessence.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de l'essence de grenouille",
+          "title_en": "Frog Essence Usage",
+          "content_fr": "<ul><li>L'essence de grenouille est utilisée pour crafter les differentes [[craft-froglight|grelampes]].</li></ul>",
+          "content_en": "<ul><li>The frog essence is used for crafting different [[craft-froglight|froglights]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de l'essence de grenouille",
+          "title_en": "Obtaining the Frog Essence",
+          "content_fr": "<ul><li>L'essence de grenouille est obtenue en tuant des grenouilles.</li></ul>",
+          "content_en": "<ul><li>The frog essence is obtained by killing frogs.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-eyeofrevelation",
+    "name_fr": "Oeil de révélation",
+    "name_en": "Eye of Revelation",
+    "desc_fr": "Un oeil de révélation utilisé pour révéler toutes les entités aux alentours.",
+    "desc_en": "An eye of revelation used for revealing all entities around.",
+    "images": ["EyeofRevelation.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de l'oeil de révélation",
+          "title_en": "Eye of Revelation Usage",
+          "content_fr": "<ul><li>L'oeil de révélation est utilisé pour révéler toutes les entités aux alentours.</li></ul>",
+          "content_en": "<ul><li>The eye of revelation is used for revealing all entities around.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de l'oeil de révélation",
+          "title_en": "Obtaining the Eye of Revelation",
+          "content_fr": "<ul><li>L'oeil de révélation est obtenu à partir de 2 yeux de l'ender, 2 [[minerai-dioptasium|lingot de dioptasium]], et 1 champignon fluorescent.</li></ul>",
+          "content_en": "<ul><li>The eye of revelation is obtained by combining 2 eyes of ender, 2 [[minerai-dioptasium|dioptasium ingots]], and 1 fluorescent mushroom.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-wraithpearl",
+    "name_fr": "Oeil ténébreuse",
+    "name_en": "Wraith Pearl",
+    "desc_fr": "Un oeil ténébreux avec diverses capacitées.",
+    "desc_en": "A wraith pearl with various capabilities.",
+    "images": ["Wraithpearl.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de l'oeil ténébreuse",
+          "title_en": "Wraith Pearl Usage",
+          "content_fr": "<ul><li>L'oeil ténébreuse est utilisé pour enlever tout les effets indésirables.</li><li>Elle permet aussi de faire spawn 3 phantom en la jetant</li></ul>",
+          "content_en": "<ul><li>The wraith pearl is used for removing all undesired effects.</li><li>It also allows spawning of 3 phantoms when thrown.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de l'oeil ténébreuse",
+          "title_en": "Obtaining the Wraith Pearl",
+          "content_fr": "<ul><li>L'oeil ténébreuse est obtenu à partir de 2 perles de l'ender, 1 [[craft-spawneeggs|oeuf d' apparition de phantom]], et 6 [[item-ceruleancreeperrod|poudres de creeper céruléen]].</li></ul>",
+          "content_en": "<ul><li>The wraith pearl is obtained by combining 2 ender pearls, 1 [[craft-spawneeggs|phantom spawn egg]], and 6 [[item-ceruleancreeperrod|cerulean creeper powder]].</li></ul>",
+          "images":["wraithpearl_recipe.png"]    
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-ceruleancreeperrod",
+    "name_fr": "Bâton de creeper céruléen",
+    "name_en": "Cerulean Creeper Rod",
+    "desc_fr": "Un bâton bleu d'un creeper bleu.",
+    "desc_en": "A blue rod from a blue creeper.",
+    "images": ["Ceruleancreeperrod.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du bâton de creeper céruléen",
+          "title_en": "Cerulean Creeper Rod Usage",
+          "content_fr": "<ul><li>Le bâton de creeper céruléen est utilisé pour crafter de la poudre de creeper céruléen utilisée notemment dans le craft de l'[[item-wraithpearl|oeil ténébreux]].</li></ul>",
+          "content_en": "<ul><li>The cerulean creeper rod is used for crafting cerulean creeper powder, primarily used in the recipe for the [[item-wraithpearl|wraith pearl]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du bâton de creeper céruléen",
+          "title_en": "Obtaining the Cerulean Creeper Rod",
+          "content_fr": "<ul><li>Le bâton de creeper céruléen est obtenu en tuant des [[creature-ceruleancreeper|creeper céruléen]].</li></ul>",
+          "content_en": "<ul><li>The cerulean creeper rod is obtained by killing [[creature-ceruleancreeper|cerulean creepers]].</li></ul>"    
+        },
+        {
+          "title_fr": "Usages du bâton de creeper céruléen",
+          "title_en": "Usages of the Cerulean Creeper Rod",    
+          "content_fr": "<ul><li>Craft de la poudre de creeper céruléen</li></ul>",
+          "content_en": "<ul><li>Crafting Cerulean Creeper Powder</li></ul>",
+          "images":["cerulean_creeper_powder_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-swedenmusicdisc",
+    "name_fr": "Disque de musique de Sweden",
+    "name_en": "Sweden Music Disc",
+    "desc_fr": "Un disque de musique avec les morceaux les plus iconiques de C418.",
+    "desc_en": "A music disc featuring some of C418's most iconic tracks.",
+    "images": ["Swedenmusicdisc.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du disque de musique Sweden",
+          "title_en": "Usage of the Sweden Music Disc",
+          "content_fr": "<ul><li>Le disque de musique de Sweden est utilisé pour écouter des morceaux iconiques de C418.</li></ul>",
+          "content_en": "<ul><li>The Sweden Music Disc is used to listen to some of C418's most iconic tracks.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du disque de musique Sweden",
+          "title_en": "Obtaining the Sweden Music Disc",
+          "content_fr": "<ul><li>Le disque de musique de Sweden est obtenu en tuant le [[creature-extermate|boss Extermate]].</li></ul>",
+          "content_en": "<ul><li>The Sweden Music Disc is obtained by killing the [[creature-extermate|Extermate boss]].</li></ul>"    
+        },
+        {
+          "title_fr": "Note de version",
+          "title_en": "Version Note",
+          "content_fr": "<ul><li>Dans les versions précédentes du mod, le disque de musiques Sweden lit le morceau Sweden, tandis que dans les versions récentes le disque joue des musiques aléatoires contenue dans le repertoire de musique de Minecraft 'music.game'.</li></ul>",
+          "content_en": "<ul><li>In previous versions of the mod, the Sweden Music Disc played the Sweden tracks, while in recent versions it plays random tracks from Minecraft's 'music.game' soundtrack.</li></ul>"    
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-stickofaurasteel",
+    "name_fr": "Bâton d'auriacier",
+    "name_en": "Stick of aurasteel",
+    "desc_fr": "Un bâton plus solide que celui en bois.",
+    "desc_en": "A stick that is stronger than the wooden one.",
+    "images": ["Stickofaurasteel.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du bâton d'auriacier",
+          "title_en": "Usage of the Aurasteel Steel Stick",
+          "content_fr": "<ul><li>Le bâton d'auriacier est utilisé dans les craft pour les outils en [[minerai-nyxite|nyxite]].</li></ul>",
+          "content_en": "<ul><li>The stick of aurasteel is used in crafting tools made from [[minerai-nyxite|nyxite]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du bâton d'auriacier",
+          "title_en": "Obtaining the Aurasteel Steel Stick",
+          "content_fr": "<ul><li>Le bâton d'auriacier est obtenu en combinant un lingot de cuivre et un [[minerai-nickel|lingot de nickel]] .</li></ul>",
+          "content_en": "<ul><li>The stick of aurasteel is obtained by combining a copper ingot with a [[minerai-nickel|nickel ingot]].</li></ul>",
+          "images":["stickofaurasteel_recipe.png"] 
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-saplingupgrade",
+    "name_fr": "Amélioration de pousse",
+    "name_en": "Sapling Upgrade",
+    "desc_fr": "Une amélioration pour le bloc de scierie.",
+    "desc_en": "An upgrade for the sawmill block.",
+    "images": ["Saplingupgrade.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de l'amélioration de pousse",
+          "title_en": "Usage of the sapling upgrade",
+          "content_fr": "<ul><li>L'amélioration de pousse est utilisée pour améliorer le [[bloc-sawmillblock|bloc de scierie]].</li></ul>",
+          "content_en": "<ul><li>The sapling upgrade is used to enhance the [[bloc-sawmillblock|sawmill block]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de l'amélioration de pousse",
+          "title_en": "Obtaining the sapling upgrade",
+          "content_fr": "<ul><li>L'amélioration de pousse est obtenue en combinant 9 pousses d'arbre du mod ou de minecraft dans une table de craft.</li></ul>",
+          "content_en": "<ul><li>The sapling upgrade is obtained by combining 9 saplings from the mod or Minecraft in a crafting table.</li></ul>" 
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-plantessence",
+    "name_fr": "Essence végétale",
+    "name_en": "Plant Essence",
+    "desc_fr": "Une essence utilisée dans les crafts pour obtenir des pousses.",
+    "desc_en": "An essence used in crafting to obtain saplings.",
+    "images": ["Plantessence.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de l'essence végétale",
+          "title_en": "Usage of the plant essence",
+          "content_fr": "<ul><li>L'essence végétale est utilisée pour obtenir des pousses dans le [[bloc-sawmillblock|blocs de scierie]].</li></ul>",
+          "content_en": "<ul><li>The plant essence is used to obtain saplings in the [[bloc-sawmillblock|sawmill block]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de l'essence végétale",
+          "title_en": "Obtaining the plant essence",
+          "content_fr": "<ul><li>L'essence végétale est obtenue en combinant 4 poudres de pierre lumineuse, 4 item végétal du tag 'vegetal' (utilisé par exemple Jei pour connaitre les items acceptés) et 1 briquet.</li></ul>",
+          "content_en": "<ul><li>The plant essence is obtained by combining 4 glowstone powder, 4 vegetable items from the 'vegetal' tag (use JEI, for example, to find out which items are accepted.), and 1 flint and steel.</li></ul>",
+          "images":["plantessence_recipe.png"]
+        },
+        {
+          "title_fr":"Note de version",
+          "title_en":"Version Note",
+          "content_fr":"<ul><li>Dans les versions précédentes du mod, le craft utilisait 2 bouteilles incraftables à la place des 2 item végetal du bas et ne donnait que 2 essences végétales.</li></ul>",
+          "content_en":"<ul><li>In previous versions of the mod, the crafting recipe used 2 uncraftable bottles instead of the 2 vegetable items at the bottom and only yielded 2 plant essences.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-aquaticslimeball",
+    "name_fr": "Boule de slime aquatique",
+    "name_en": "Aquatic Slime Ball",
+    "desc_fr": "Une boule de slime donnée par l'ondegel.",
+    "desc_en": "A slime ball given by the wavegel.",
+    "images": ["Aquaticslimeball.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de la boule de slime aquatique",
+          "title_en": "Usage of the aquatic slime ball",
+          "content_fr": "<ul><li>La boule de slime aquatique est utilisée pour crafter des boule de slime.</li><li>La boule de slime aquatique permet aussi de craft l'[[craft-spawneggs|oeuf d'apparition de l'ondegel]].</li></ul>",
+          "content_en": "<ul><li>The aquatic slime ball is used to craft slime balls.</li><li>The aquatic slime ball also allows crafting the [[craft-spawneggs|egg of the wavegel]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de la boule de slime aquatique",
+          "title_en": "Obtaining the aquatic slime ball",
+          "content_fr": "<ul><li>La boule de slime aquatique est obtenue en tuant l'[[creature-wavegel|ondegel]].</li></ul>",
+          "content_en": "<ul><li>The aquatic slime ball is obtained by killing the [[creature-wavegel|wavegel]].</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-condensedxpbottle",
+    "name_fr": "Bouteille d'XP condensée",
+    "name_en": "Condensed XP Bottle",
+    "desc_fr": "Une bouteille d'XP condensée.",
+    "desc_en": "A condensed XP bottle.",
+    "images": ["CondensedXPBottle.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de la bouteille d'XP condensée",
+          "title_en": "Usage of the condensed XP bottle",
+          "content_fr": "<ul><li>La bouteille d'XP condensée permet de gagner 2 niveaux d'Xp.</li></ul>",
+          "content_en": "<ul><li>The condensed XP bottle allows the player to gain 2 levels of XP.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de la bouteille d'XP condensée",
+          "title_en": "Obtaining the condensed XP bottle",
+          "content_fr": "<ul><li>La bouteille d'XP condensée est obtenue en combinant des [[item-experiencecore|noyaux d'experience]] et des bouteilles vides dans le générateur d'xp pendant 1 minute.</li></ul>",
+          "content_en": "<ul><li>The condensed XP bottle is obtained by combining [[item-experiencecore|experience cores]] and empty bottles in the XP generator for 1 minute.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-experiencecore",
+    "name_fr": "Noyau d'experience",
+    "name_en": "Experience Core",
+    "desc_fr": "Un noyau d'XP.",
+    "desc_en": "An experience core.",
+    "images": ["Experiencecore.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du noyau d'experience",
+          "title_en": "Usage of the experience core",
+          "content_fr": "<ul><li>Le noyau d'XP permet le craft de la [[item-condensedxpbottle|bouteille d'XP condensée]].</li></ul>",
+          "content_en": "<ul><li>The experience core allows the player to craft the [[item-condensedxpbottle|condensed XP bottle]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du noyau d'experience",
+          "title_en": "Obtaining the experience core",
+          "content_fr": "<ul><li>Le noyau d'XP est obtenu en tuant les monstres de type mort-vivant. La probabilité d'obtention sur les mort-vivants est de 20%.</li></ul>",
+          "content_en": "<ul><li>The experience core is obtained by killing undead monsters. The probability of obtaining it from undead monsters is 20%.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-runeoftheelement",
+    "name_fr": "rune des éléments",
+    "name_en": "Rune of the Elements",
+    "desc_fr": "Une rune utilisée pour les crafts.",
+    "desc_en": "A rune used for crafting.",
+    "images": ["Runeoftheelements.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de la rune des éléments",
+          "title_en": "Usage of the rune of the elements",
+          "content_fr": "<ul><li>La rune des éléments permet le craft des [[item-regenerationhelmet|casques de régénération]] et de [[item-nightvisionhelmet|vision nocturne]]. Une fois équipés, les casques donnent leur effet de manière permanente.</li></ul>",
+          "content_en": "<ul><li>The rune of the elements allows the player to craft the [[item-regenerationhelmet|regeneration helmet]] and the [[item-nightvisionhelmet|night vision helmet]]. Once equipped, the helmets provide their effects permanently.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention de la rune des éléments",
+          "title_en": "Obtaining the rune of the elements",
+          "content_fr": "<ul><li>La rune des éléments est craftée en utilisant une amélioration en netherite au milieu et entourée de colorant du mod.</li></ul>",
+          "content_en": "<ul><li>The rune of the elements is crafted using a netherite upgrade in the center and surrounded by the mod's dye.</li></ul>",
+          "images":["runeoftheelement_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-dye",
+    "name_fr": "Colorant du mod",
+    "name_en": "Mod dye",
+    "desc_fr": "Des colorants avec pouvoirs spéciaux.",
+    "desc_en": "Dyes with special powers.",
+    "images": [
+      {
+        "frames": [
+          { "src": "Firedye.png" },
+          { "src": "Seadye.png" },
+          { "src": "Spacedye.png" },
+          { "src": "Skydye.png" },
+          { "src": "Lightdye.png" },
+          { "src": "Snowdye.png" },
+          { "src": "Volcanodye.png" }
+        ],
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation des colorants du mod",
+          "title_en": "Usage of the mod's dyes",
+          "content_fr":"<ul><li>Tout les colorants du mod ont des propriétés qui peuvent être utilisées dans les crafts.</li></ul>",
+          "content_en": "<ul><li>All the mod's dyes have special properties that can be used in crafting.</li></ul>"
+        },
+        {
+            "title_fr": "Obtention et utilisation du colorant de feu",
+            "title_en": "Obtaining and Using the Fire Dye",
+            "content_fr": "<ul><li>Le colorant de feu est obtenue à partir de la fleur de feu.</li><li>Il peut être utilisé dans les cas suivant : pour le craft de la [[item-runeoftheelement|rune des éléments]], pour le craft d'un colorant rouge, dans le craft du [[minerai-red-crystal|crystal rouge ou du bloc]] mais aussi dans le craft d'une potion de résistance aux feu avec des fioles étranges elle donnera directement des potion longue durée.</li></ul>",
+            "content_en": "<ul><li>The fire dye is obtained from the fire flower.</li><li>It can be used in the following recipes: for crafting the [[item-runeoftheelement|rune of the elements]], for crafting a red dye, in the crafting of the [[minerai-red-crystal|red crystal or block]], and also in the crafting of a fire resistance potion using awkward potions, which will directly produce a long-duration potion.</li></ul>",
+            "images": ["firedye_recipe.png"]
+        },
+        {
+          "title_fr": "Obtention et utilisation du colorant de la mer",
+          "title_en": "Obtaining and Using the Sea Dye",
+          "content_fr": "<ul><li>Le colorant de la mer est obtenu à partir d'aqualo.</li><li>Il peut être utilisé dans les cas suivants : pour le craft de la [[item-runeoftheelement|rune des éléments]], et le craft de graines de blé marin.</li></ul>",
+          "content_en": "<ul><li>The ocean dye is obtained from the ocean flower.</li><li>It can be used in the following recipes: for crafting the [[item-runeoftheelement|rune of the elements]], and for crafting sea wheet seeds.</li></ul>",
+          "images": ["seadye_recipe.png"]
+        },
+        {
+          "title_fr": "Obtention et utilisation du colorant de l'espace",
+          "title_en": "Obtaining and Using the Space Dye",
+          "content_fr": "<ul><li>Le colorant de l'espace est obtenu à partir de la fleur de l'espace.</li><li>Il peut être utilisé dans les cas suivants : pour le craft de la [[item-runeoftheelement|rune des éléments]], et le craft de l'armure spatiale.</li></ul>",
+          "content_en": "<ul><li>The space dye is obtained from the space flower.</li><li>It can be used in the following recipes: for crafting the [[item-runeoftheelement|rune of the elements]], and for crafting space armor.</li></ul>",
+          "images": ["spacedye_recipe.png"]
+        },
+        {
+          "title_fr": "Obtention et utilisation du colorant du ciel",
+          "title_en": "Obtaining and Using the Sky Dye",
+          "content_fr": "<ul><li>Le colorant du ciel est obtenu à partir de la fleur cielyna.</li><li>Il peut être utilisé dans les cas suivants : pour le craft de la [[item-runeoftheelement|rune des éléments]], dans le craft du [[item-midlerigniter|briquet du midler]], pour crafter les [[craft-elytra|élytres]], pour le [[minerai-crystal|crystal d'azure]], et le colorant bleu ciel.</li></ul>",
+          "content_en": "<ul><li>The sky dye is obtained from the sky flower.</li><li>It can be used in the following recipes: for crafting the [[item-runeoftheelement|rune of the elements]], in the craft of the [[item-midlerigniter|Midler's Igniter]], for crafting [[craft-elytra|elytra]], for the [[minerai-crystal|azure crystal]], and the sky blue dye.</li></ul>",
+          "images": ["skydye_recipe.png"]
+        },
+        {
+          "title_fr": "Obtention et utilisation du colorant de lumière",
+          "title_en": "Obtaining and Using the Light Dye",
+          "content_fr": "<ul><li>Le colorant de lumière est obtenu à partir de lumieros.</li><li>Il peut être utilisé dans les cas suivants : pour le craft de la [[item-runeoftheelement|rune des éléments]], dans le craft de la [[craft-glowstone|pierre lumineuse]], et rentre dans le craft des grelampes.</li></ul>",
+          "content_en": "<ul><li>The light dye is obtained from the lightos.</li><li>It can be used in the following recipes: for crafting the [[item-runeoftheelement|rune of the elements]], in the craft of [[craft-glowstone|glowstone]], and in the craft of froglight.</li></ul>",
+          "images": ["lightdye_recipe.png"]
+        },
+        {
+          "title_fr": "Obtention et utilisation du colorant des neiges",
+          "title_en": "Obtaining and Using the Snow Dye",
+          "content_fr": "<ul><li>Il ne peut pour l'instant être récupéré en survie.</li></ul>",
+          "content_en": "<ul><li>It can be obtained in survival mode.</li></ul>",
+          "images": [""]
+        },
+        {
+          "title_fr": "Obtention et utilisation du colorant des volcans",
+          "title_en": "Obtaining and Using the Volcano Dye",
+          "content_fr": "<ul><li>Le colorant des volcans est obtenu à partir de la fleur de volcan.</li><li>Il peut être utilisé dans les cas suivants : pour le craft de la [[item-runeoftheelement|rune des éléments]], et permet de craft du colorant orange.</li></ul>",
+          "content_en": "<ul><li>The volcano dye is obtained from the volcano flower.</li><li>It can be used in the following recipes: for crafting the [[item-runeoftheelement|rune of the elements]], and for crafting the orange dye.</li></ul>",
+          "images": ["volcanodye_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-midlerigniter",
+    "name_fr": "Briquet du midler",
+    "name_en": "Midler's Igniter",
+    "desc_fr": "Un briquet utilisé pour allumer des feux.",
+    "desc_en": "A lighter used to ignite fires.",
+    "images": ["Midler_Igniter.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du briquet du midler",
+          "title_en": "Usage of Midler's Igniter",
+          "content_fr": "<ul><li>Le briquet du midler permet d'allumer le [[structure-midlerportal|portail]] menant vers la dimension du [[nature-midlerdimension|midler]].</li></ul>",
+          "content_en": "<ul><li>Midler's Igniter allows the player to ignite the [[structure-midlerportal|portal]] leading to the [[nature-midlerdimension|midler]] dimension.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du briquet du midler",
+          "title_en": "Obtaining Midler's Igniter",
+          "content_fr": "<ul><li>Il est crafté a partir d'[[item-sharkfin|aileron de requin]], de 2 [[minerai-crystal|crystal d'azure]], d'un briquet et d'un [[item-dye|colorant du ciel]].</li></ul>",
+          "content_en": "<ul><li>Midler's Igniter is crafted using a [[item-sharkfin|sharkfin]], of 2 [[minerai-crystal|azure crystal]], a flint and steel, and a [[item-dye|sky dye]].</li></ul>",
+          "images":["midlerigniter_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-regenerationhelmet",
+    "name_fr": "Casque de régénération",
+    "name_en": "Regeneration Helmet",
+    "desc_fr": "Un casque qui permet de régénérer la santé.",
+    "desc_en": "A helmet that allows health regeneration.",
+    "images": ["regeneration_armor_helmet.png"],
+
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du casque de régénération",
+          "title_en": "Usage of the regeneration helmet",
+          "content_fr": "<ul><li>Lorsque le casque est équipé, il donnera un effet de régénération 1 a l'infini en revanche si le casque est retiré l'effet restera 3 secondes puis disparait.</li></ul>",
+          "content_en": "<ul><li>When the helmet is equipped, it will provide a regeneration 1 effect indefinitely, but if the helmet is removed, the effect will last for 3 seconds and then disappear.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du casque de régénération",
+          "title_en": "Obtaining the regeneration helmet",
+          "content_fr": "<ul><li>Il est crafté dans la table de forge.</li><li> le casque pour être crafté necessite une [[item-runeoftheelement|rune des éléments]], n'importe quel casque et un sceau d'élixir de vie.</li></ul>",
+          "content_en": "<ul><li>Can be crafted in the smithing table</li><li>It requires a [[item-runeoftheelement|rune of the element]], any helmet, and a bucket of elixir of life.</li></ul>",
+          "images":["regenerationhelmet_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-nightvisionhelmet",
+    "name_fr": "Casque de vision nocturne",
+    "name_en": "Night Vision Helmet",
+    "desc_fr": "Un casque qui permet de voir dans le noir.",
+    "desc_en": "A helmet that allows seeing in the dark.",
+    "images": ["night_vision_helmet.png"],
+
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du casque de vision nocturne",
+          "title_en": "Usage of the night vision helmet",
+          "content_fr": "<ul><li>Lorsque le casque est équipé, il donnera un effet de vision nocturne 1 a l'infini en revanche si le casque est retiré l'effet restera 3 secondes puis disparait.</li></ul>",
+          "content_en": "<ul><li>When the helmet is equipped, it will provide a night vision 1 effect indefinitely, but if the helmet is removed, the effect will last for 3 seconds and then disappear.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du casque de vision nocturne",
+          "title_en": "Obtaining the night vision helmet",
+          "content_fr": "<ul><li>Il est crafté dans la table de forge.</li><li> le casque pour être crafté necessite une [[item-runeoftheelement|rune des éléments]], n'importe quel casque et un [[item-dye|colorant de l'espace]].</li></ul>",
+          "content_en": "<ul><li>Can be crafted in the smithing table</li><li>It requires a [[item-runeoftheelement|rune of the element]], any helmet, and a [[item-dye|space dye]].</li></ul>",
+          "images":["nightvisionhelmet_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-spacearmortrim",
+    "name_fr": "Modèle d'armure spatiale",
+    "name_en": "Space Armor upgrade",
+    "desc_fr": "Un modèle d'armure pour les combinaisons spatiales.",
+    "desc_en": "A model for space suit armors.",
+    "images": ["Spacearmortrim.png"],
+
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du modèle d'armure spatiale",
+          "title_en": "Usage of the space armor upgrade",
+          "content_fr": "<ul><li>Le modèle d'armure spatiale petmet de crée une [[item-spacearmor|armure spatiale]] dont ca capacite est de vous permettre de voler comme en creatif.</li></ul>",
+          "content_en": "<ul><li>The space armor upgrade allows you to create a [[item-spacearmor|space armor]] with the capacity to fly like in creative mode.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du modèle d'armure spatiale",
+          "title_en": "Obtaining the space armor upgrade",
+          "content_fr": "<ul><li>Il est obtenue en échangeant 5 block de chrome au forgeron d'outils au niveau Compagnon pour obtenir 1 modèle d'armure spatiale.</li></ul>",
+          "content_en": "<ul><li>Can be obtained by trading 5 blocks of chrome with the toolsmith at the journeyman level to obtain 1 space armor upgrade.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention alternative du modèle d'armure spatiale",
+          "title_en": "Alternative Obtaining the space armor upgrade",
+          "content_fr": "<ul><li>Si vous possédez déjà le modèle d'armure spatiale, vous pouvez également l'obtenir en le duplicant comme les modèle de forge avec une pierre de l'end au milieu de la table de craft, avec le modèle d'armure spatiale en haut et 7 [[minerai-chrome|lingots de chrome]].</li></ul>",
+          "content_en": "<ul><li>If you already have the space armor upgrade, you can also obtain it by duplicating it like the smithing template with an end stone in the middle of the crafting table, with the space armor upgrade on top and 7 [[minerai-chrome|chrome ingots]].</li></ul>",
+          "images":["spacearmorupgrade_duplication_recipe.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-spacearmor",
+    "name_fr": "Armure spatiale",
+    "name_en": "Space Armor",
+    "desc_fr": "Une armure pour voler.",
+    "desc_en": "An armor to fly.",
+    "images": [
+      {
+        "frames": [
+          { "src": "space_helmet.png" },
+          { "src": "space_chestplate.png" },
+          { "src": "space_leggings.png" },
+          { "src": "space_boots.png" }
+        ],
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du modèle d'armure spatiale",
+          "title_en": "Usage of the space armor upgrade",
+          "content_fr": "<ul><li>Cette armure vous permet de voler en continue comme en créatif.</li></ul>",
+          "content_en": "<ul><li>This space armor allow you to fly in continue like in creative mode.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du casque spatial",
+          "title_en": "Obtaining the space helmet",
+          "content_fr": "<ul><li>Vous aurez besoin de 2 [[minerai-chrome|lingots de chrome]], d'un [[item-dye|colorant de l'espace]], 2 [[minerai-crystal|crystal]] et un casque en fer pour obtenir le casque.</li><li> Vous pouvez aussi utilisé la table de forge avec le [[item-spacearmortrim|modèle d'armure spatiale]], un casque en fer et 1 [[minerai-chrome|lingot de chrome]].</li></ul>",
+          "content_en": "<ul><li>You will need 2 [[minerai-chrome|chrome ingot]], 1 [[item-dye|space dye]], 2 [[minerai-crystal|crystal]], and 1 iron helmet to obtain the helmet.</li><li>You can also used the smithing table with [[item-spacearmortrim|space armor upgrade]], an iron helmet and 1 [[minerai-chrome|chrome ingot]].</li></ul>",
+          "images":["spacehelmet_recipe.png", "spacehelmet_recipe2.png"]
+        },
+        {
+          "title_fr": "Obtention du plastron spatial",
+          "title_en": "Obtaining the space chesplate",
+          "content_fr": "<ul><li>Vous aurez besoin de 4 [[minerai-chrome|lingots de chrome]], d'un [[item-dye|colorant de l'espace]], 2 [[minerai-crystal|crystal]] et un plastron en fer pour obtenir le plastron.</li><li> Vous pouvez aussi utilisé la table de forge avec le [[item-spacearmortrim|modèle d'armure spatiale]], un plastron en fer et 1 [[minerai-chrome|lingot de chrome]].</li></ul>",
+          "content_en": "<ul><li>You will need 4 [[minerai-chrome|chrome ingot]], 1 [[item-dye|space dye]], 2 [[minerai-crystal|crystal]], and 1 iron chestpalte to obtain the chestplate.</li><li>You can also used the smithing table with [[item-spacearmortrim|space armor upgrade]], an iron chestplate and 1 [[minerai-chrome|chrome ingot]].</li></ul>",
+          "images":["spacechestplate_recipe.png", "spacechesplate_recipe2.png"]
+        },
+        {
+          "title_fr": "Obtention de la jambière spatial",
+          "title_en": "Obtaining the space leggings",
+          "content_fr": "<ul><li>Vous aurez besoin de 4 [[minerai-chrome|lingots de chrome]], d'un [[item-dye|colorant de l'espace]], 2 [[minerai-crystal|crystal]] et une jambière en fer pour obtenir la jambière.</li><li> Vous pouvez aussi utilisé la table de forge avec le [[item-spacearmortrim|modèle d'armure spatiale]], une jambière en fer et 1 [[minerai-chrome|lingot de chrome]].</li></ul>",
+          "content_en": "<ul><li>You will need 4 [[minerai-chrome|chrome ingot]], 1 [[item-dye|space dye]], 2 [[minerai-crystal|crystal]], and 1 iron leggings to obtain the leggings.</li><li>You can also used the smithing table with [[item-spacearmortrim|space armor upgrade]], an iron leggings and 1 [[minerai-chrome|chrome ingot]].</li></ul>",
+          "images":["spaceleggings_recipe.png", "spaceleggings_recipe2.png"]
+        },
+        {
+          "title_fr": "Obtention des bottes spatial",
+          "title_en": "Obtaining the space boots",
+          "content_fr": "<ul><li>Vous aurez besoin de 2 [[minerai-chrome|lingots de chrome]], d'un [[item-dye|colorant de l'espace]], 2 [[minerai-crystal|crystal]] et une bottes en fer pour obtenir la bottes.</li><li> Vous pouvez aussi utilisé la table de forge avec le [[item-spacearmortrim|modèle d'armure spatiale]], une botte en fer et 1 [[minerai-chrome|lingot de chrome]].</li></ul>",
+          "content_en": "<ul><li>You will need 2 [[minerai-chrome|chrome ingot]], 1 [[item-dye|space dye]], 2 [[minerai-crystal|crystal]], and 1 iron boots to obtain the boots.</li><li>You can also used the smithing table with [[item-spacearmortrim|space armor upgrade]], an iron boots and 1 [[minerai-chrome|chrome ingot]].</li></ul>",
+          "images":["spaceboots_recipe.png", "spaceboots_recipe2.png"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-hazmatarmor",
+    "name_fr": "Armure hazmat",
+    "name_en": "Hazmat Armor",
+    "desc_fr": "Une armure résistante aux radiations.",
+    "desc_en": "Radiation-resistant armor",
+    "images": [
+      {
+        "frames": [
+          { "src": "Hazmat_helmet.png" },
+          { "src": "Hazmat_chestplate.png" },
+          { "src": "Hazmat_leggings.png" },
+          { "src": "Hazmat_boots.png" }
+        ],
+        "interval": 1500,
+        "autoplay": true
+      }
+    ],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation de l'armure hazmat",
+          "title_en": "Usage of the hazmat armor",
+          "content_fr": "<ul><li>L'armure hazmat est nécessaire pour vous protégez des radiations que le [[minerai-uranium|minerai d'uranium]] peut vous infliger en le minant.</li></ul>",
+          "content_en": "<ul><li>The hazmat armor is necessary to protect you from the radiation that [[minerai-uranium|uranium ore]] can inflict on you by mining it.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du casque spatial",
+          "title_en": "Obtaining the space helmet",
+          "content_fr": "<ul><li>Cette armure s'obtient de maniere classique en mettant les [[minerai-hazmium|lingot d'hazmium]] correctement dans la table de craft.</li></ul>",
+          "content_en": "<ul><li>This armor is obtained in a classic way by placing the [[minerai-hazmium|hazmium ingot]] correctly in the crafting table.</li></ul>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "item-bluemarinepaper",
+    "name_fr": "Papier marin bleu",
+    "name_en": "Blue Marine Paper",
+    "desc_fr": "Un papier bleu qui aime l'eau.",
+    "desc_en": "A blue paper who likes water.",
+    "images": ["Bluemarinepaper.png"],
+
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Utilisation du papier marin",
+          "title_en": "Usage of blue marine paper",
+          "content_fr": "<ul><li>Le papier marin bleu est utilisé dans la fabrication de la [[item-damageball|boule de dégâts]].</li></ul>",
+          "content_en": "<ul><li>Blue marine paper is used in the manufacture of [[item-damageball|damage ball]].</li></ul>"
+        },
+        {
+          "title_fr": "Obtention du papier marin bleu",
+          "title_en": "Obtaining the blue marine paper",
+          "content_fr": "<ul><li>Il est obtenu par la fabrication de papier et de blé marin.</li></ul>",
+          "content_en": "<ul><li>It is obtained by the manufacture of paper and marine wheat.</li></ul>",
+          "images":["bluemarinepaper_recipe.png"]
+        }
+      ]
+    }
+  }
+]

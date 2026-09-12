@@ -1,1 +1,333 @@
+[
+    {
+    "id": "nature-midlerdimension",
+    "name_fr": "Dimension du Midler",
+    "name_en": "Midler Dimension",
+    "desc_fr": "Une dimension mystérieuse regroupant divers biomes et caractéristiques de génération.",
+    "desc_en": "A mysterious dimension featuring various biomes and generation traits.",
+    "images": [],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Accès",
+          "title_en": "Access",
+          "content_fr": "<p>On accède à cette dimension en construisant et en allumant un [[structure-midlerportal|portail du Midler]] à l'aide de pierre de l'End et d'un [[item-midlerigniter|briquet du Midler]].</p>",
+          "content_en": "<p>This dimension is accessed by building and lighting a [[structure-midlerportal|Midler portal]] using End stone and a [[item-midlerigniter|Midler igniter]].</p>"
+        },
+        {
+          "title_fr": "Biomes et génération",
+          "title_en": "Biomes and generation",
+          "content_fr": "<p>La dimension abrite une grande diversité de biomes : <em>Jungle</em>, <em>Hautes terres de l'End (End Highlands)</em>, <em>Forêt cramoisie (Crimson Forest)</em>, <em>Forêt biseautée (Warped Forest)</em>, <em>Deltas de basalte (Basalt Deltas)</em>, <em>Océan</em> et <em>Bosquet de cerisiers (Cherry Grove)</em>.</p><p>Des veines de minerais ainsi que des aquifères s'y génèrent naturellement.</p>",
+          "content_en": "<p>The dimension houses a wide variety of biomes: <em>Jungle</em>, <em>End Highlands</em>, <em>Crimson Forest</em>, <em>Warped Forest</em>, <em>Basalt Deltas</em>, <em>Ocean</em>, and <em>Cherry Grove</em>.</p><p>Ore veins and aquifers generate naturally throughout the dimension.</p>"
+        },
+        {
+          "title_fr": "Fonctionnalités et règles",
+          "title_en": "Features and mechanics",
+          "content_fr": "<ul><li><strong>Lits :</strong> Les lits peuvent être utilisés normalement pour dormir sans exploser.</li><li><strong>Ancres de réapparition :</strong> Les ancres de réapparition fonctionnent également dans cette dimension.</li><li><strong>ID :</strong> <code>acatar:midlerdimension</code></li></ul>",
+          "content_en": "<ul><li><strong>Beds:</strong> Beds can be used normally to sleep without exploding.</li><li><strong>Respawn Anchors:</strong> Respawn anchors are fully functional in this dimension.</li><li><strong>ID:</strong> <code>acatar:midlerdimension</code></li></ul>"
+        },
+        {
+          "title_fr": "Avertissement et future mise à jour",
+          "title_en": "Warning and future update",
+          "content_fr": "<p><strong>Attention :</strong> Il est actuellement fortement déconseillé de vous aventurer dans la dimension du Midler. Une refonte majeure de cette dimension est prévue dans une prochaine mise à jour du mod.</p>",
+          "content_en": "<p><strong>Warning:</strong> It is currently strongly advised against entering the Midler dimension. A major revamp of this dimension is scheduled for a future mod update.</p>"
+        }
+      ]
+    }
+  },
 
+  {
+    "id": "nature-orange",
+    "name_fr": "Orange",
+    "name_en": "Orange",
+    "desc_fr": "Un fruit rafraîchissant obtenu dans les feuilles de Saya.",
+    "desc_en": "A refreshing fruit obtained from Saya leaves.",
+    "images": ["Orange.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Valeurs nutritionnelles",
+          "title_en": "Nutritional Values",
+          "content_fr": "<ul><li><strong>Nutrition :</strong> 4 points (2 gigots)</li><li><strong>Saturation :</strong> 3 points</li><li><strong>Temps de consommation :</strong> 1,6 seconde</li></ul>",
+          "content_en": "<ul><li><strong>Nutrition:</strong> 4 points (2 drumsticks)</li><li><strong>Saturation:</strong> 3 points</li><li><strong>Consumption time:</strong> 1.6 seconds</li></ul>"
+        },
+        {
+          "title_fr": "Obtention",
+          "title_en": "Obtaining",
+          "content_fr": "<p>L'orange s'obtient en détruisant des <strong>feuilles de Saya</strong>. Elle possède un taux d'obtention de <strong>20 %</strong> et tombe par groupe de <strong>3 à 5</strong> oranges.</p><p>Le taux d'apparition et la quantité maximale reçue peuvent être augmentés grâce à l'enchantement <strong>Fortune</strong>.</p>",
+          "content_en": "<p>Oranges are obtained by breaking <strong>Saya leaves</strong>. They have a <strong>20%</strong> drop chance and yield <strong>3 to 5</strong> oranges at once.</p><p>The drop chance and maximum yield can be increased using the <strong>Fortune</strong> enchantment.</p>"
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "nature-orangeberry",
+    "name_fr": "Baie orange",
+    "name_en": "Orange berry",
+    "desc_fr": "Une petite baie comestible poussant sur un buisson très fragile.",
+    "desc_en": "A small edible berry growing on a very fragile bush.",
+    "images": ["Orangeberry.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Valeurs nutritionnelles",
+          "title_en": "Nutritional Values",
+          "content_fr": "<ul><li><strong>Nutrition :</strong> 2 points (1 gigot)</li><li><strong>Saturation :</strong> 0,3 point</li><li><strong>Temps de consommation :</strong> 1,6 seconde</li></ul>",
+          "content_en": "<ul><li><strong>Nutrition:</strong> 2 points (1 drumstick)</li><li><strong>Saturation:</strong> 0.3 points</li><li><strong>Consumption time:</strong> 1.6 seconds</li></ul>"
+        },
+        {
+          "title_fr": "Agriculture et comportement",
+          "title_en": "Farming and behavior",
+          "content_fr": "<p>La baie orange peut être plantée au sol pour faire pousser un buisson à baies. Une fois à maturité, la récolte donne entre <strong>1 et 6 baies orange</strong>.</p><p><strong>Particularité :</strong> Ce buisson est extrêmement fragile et ne supporte qu'une seule fructification. Lors de la récolte, le buisson est intégralement détruit et doit être replanté.</p>",
+          "content_en": "<p>Orange berries can be planted on the ground to grow a berry bush. Once mature, harvesting yields between <strong>1 and 6 orange berries</strong>.</p><p><strong>Particularity:</strong> This bush is extremely fragile and only supports a single fruiting cycle. Upon harvest, the bush is completely destroyed and must be replanted.</p>"
+        },
+        {
+          "title_fr": "Obtention et future mise à jour",
+          "title_en": "Obtaining and future update",
+          "content_fr": "<p>Pour le moment, le buisson ne se génère pas naturellement dans le monde.</p><p><strong>Refonte à venir :</strong> Une future mise à jour ajoutera la génération naturelle de ces buissons dans plusieurs biomes spécifiques. Les conditions d'obtention exactes seront directement mises à jour sur cette page du wiki.</p>",
+          "content_en": "<p>Currently, the bush does not generate naturally in the world.</p><p><strong>Upcoming revamp:</strong> A future update will introduce natural spawning for these bushes across specific biomes. Detailed obtaining methods will be updated directly on this wiki page.</p>"
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "nature-lyvorianberry",
+    "name_fr": "Baie lyvorienne",
+    "name_en": "Lyvorian berry",
+    "desc_fr": "Une baie très nourrissante offrant d'excellents effets de soin.",
+    "desc_en": "A highly nutritious berry granting excellent healing effects.",
+    "images": ["Lyvorianberry.png"],
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Valeurs nutritionnelles et effets",
+          "title_en": "Nutritional Values and effects",
+          "content_fr": "<ul><li><strong>Nutrition :</strong> 8 points (4 gigots)</li><li><strong>Saturation :</strong> 11 points</li><li><strong>Temps de consommation :</strong> 1,6 seconde</li><li><strong>Effets appliqués :</strong> Régénération II pendant 8 secondes et Absorption I pendant 20 secondes.</li></ul>",
+          "content_en": "<ul><li><strong>Nutrition:</strong> 8 points (4 drumsticks)</li><li><strong>Saturation:</strong> 11 points</li><li><strong>Consumption time:</strong> 1.6 seconds</li><li><strong>Applied effects:</strong> Regeneration II for 8 seconds and Absorption I for 20 seconds.</li></ul>"
+        },
+        {
+          "title_fr": "Obtention",
+          "title_en": "Obtaining",
+          "content_fr": "<p>Cette baie a une chance d'être déposée au sol par un [[creature-lyvorawolf|loup lyvora]] toutes les 20 secondes (environ 6,67 % de chance).</p>",
+          "content_en": "<p>This berry has a chance to be dropped on the ground by a [[creature-lyvorawolf|Lyvora wolf]] every 20 seconds (approx. 6.67% chance).</p>"
+        },
+        {
+          "title_fr": "Utilisations",
+          "title_en": "Usage",
+          "content_fr": "<ul><li>Peut être consommée pour régénérer rapidement sa vie et obtenir des cœurs d'absorption.</li><li>Sert à reproduire les [[creature-lyvorawolf|loups lyvora]].</li><li>Permet de fabriquer leur œuf d'apparition en Survie (1 œuf + 4 baies lyvoriennes).</li></ul>",
+          "content_en": "<ul><li>Can be consumed to quickly restore health and gain absorption hearts.</li><li>Used to breed [[creature-lyvorawolf|Lyvora wolves]].</li><li>Used to craft their spawn egg in Survival mode (1 egg + 4 Lyvorian berries).</li></ul>"
+        }
+      ]
+    }
+  },
+
+  {
+  "id": "nature-netherstarflower",
+  "name_fr": "Fleur d'étoile du Nether",
+  "name_en": "Nether Star Flower",
+  "desc_fr": "Une plante rare permettant de faire pousser des fragments d'étoile du Nether.",
+  "desc_en": "A rare plant that allows growing Nether star fragments.",
+  "images": [
+    "Netherstarflowerseed.png",
+    "Netherstarfragment.png"
+  ],
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Culture et comportement",
+        "title_en": "Farming and behavior",
+        "content_fr": "<p>La graine de fleur d'étoile du Nether ne peut être plantée que sur de la [[nature-fertilesoil|terre fertile]].</p><p>Vous pouvez appliquer un [[minerai-red-crystal|cristal rouge]] pour accélérer sa pousse de 1 stade.</p><p>Une fois placée dans un composteur, la graine possède <strong>25 % de chance</strong> d'augmenter le niveau de compostage.</p>",
+        "content_en": "<p>Nether star flower seeds can only be planted on [[nature-fertilesoil|fertile soil]].</p><p>Applying a [[minerai-red-crystal|red crystal]] advances its growth by 1 stage.</p><p>When placed in a composter, the seed has a <strong>25% chance</strong> to raise the compost level.</p>"
+      },
+      {
+        "title_fr": "Butin et récolte",
+        "title_en": "Loot and harvesting",
+        "content_fr": "<p>À maturité, la récolte offre les taux d'obtention suivants :</p><table class=\"mod-info-table\"><thead><tr><th>Objet</th><th>Chances</th><th>Quantité</th><th>Fortune</th></tr></thead><tbody><tr><td>Graines de fleur d'étoile du Nether</td><td>50 %</td><td>1 - 3</td><td>Oui</td></tr><tr><td>Fragments d'étoile du Nether</td><td>33,3 %</td><td>1 - 3</td><td>Oui</td></tr><tr><td>Rien</td><td>16,7 %</td><td>-</td><td>Non</td></tr></tbody></table>",
+        "content_en": "<p>When fully grown, harvesting yields the following drop rates:</p><table class=\"mod-info-table\"><thead><tr><th>Item</th><th>Chance</th><th>Quantity</th><th>Fortune</th></tr></thead><tbody><tr><td>Nether star flower seeds</td><td>50%</td><td>1 - 3</td><td>Yes</td></tr><tr><td>Nether star fragments</td><td>33.3%</td><td>1 - 3</td><td>Yes</td></tr><tr><td>Nothing</td><td>16.7%</td><td>-</td><td>No</td></tr></tbody></table>"
+      },
+      {
+        "title_fr": "Fabrication",
+        "title_en": "Crafting",
+        "content_fr": "<ul><li><strong>Graine :</strong> Se fabrique en combinant une Étoile du Nether et une graine de Torchefleur.</li></ul>",
+        "content_en": "<ul><li><strong>Seed:</strong> Crafted using a Nether Star and a Torchflower seed.</li></ul>",
+        "images": [
+          "netherstarflower_recipe.png"
+        ]
+      },
+      {
+        "title_fr": "",
+        "title_en": "",
+        "content_fr": "<ul><li><strong>Étoile du Nether :</strong> Peut être reconstituée en combinant des fragments d'étoile du Nether.</li></ul>",
+        "content_en": "<ul><li><strong>Nether Star:</strong> Can be crafted back by combining Nether star fragments.</li></ul>",
+        "images": [
+          "netherstar_recipe.png"
+        ]
+      }
+    ]
+  }
+},
+
+{
+  "id": "nature-seawheat",
+  "name_fr": "Blé marin",
+  "name_en": "Sea Wheat",
+  "desc_fr": "Une culture aquatique poussant sur de la terre fertile.",
+  "desc_en": "An aquatic crop growing on fertile soil.",
+  "images": [
+    "Seawheatseeds.png",
+    "Seawheat.png"
+  ],
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Culture et croissance",
+        "title_en": "Farming and growth",
+        "content_fr": "<p>La graine de blé marin ne peut être plantée que sur de la [[nature-fertilesoil|terre fertile]]. Si le bloc de terre fertile est détruit, la culture disparaît immédiatement.</p><p>La plante compte <strong>8 stades de croissance</strong> avant d'atteindre sa maturité. Vous pouvez appliquer un [[minerai-red-crystal|cristal rouge]] pour accélérer sa pousse de 1 stade.</p><p>Mise au composteur, la graine offre <strong>40 % de chance</strong> d'augmenter le niveau de compost.</p>",
+        "content_en": "<p>Sea wheat seeds can only be planted on [[nature-fertilesoil|fertile soil]]. Breaking the fertile soil block destroys the crop instantly.</p><p>The crop features <strong>8 growth stages</strong> before maturity. Applying a [[minerai-red-crystal|red crystal]] advances growth by 1 stage.</p><p>Placing seeds in a composter has a <strong>40% chance</strong> to raise the compost level.</p>"
+      },
+      {
+        "title_fr": "Butin et récolte",
+        "title_en": "Loot and harvesting",
+        "content_fr": "<p>À maturité, la récolte offre les taux d'obtention suivants :</p><table class=\"mod-info-table\"><thead><tr><th>Objet</th><th>Chances</th><th>Quantité</th><th>Fortune</th></tr></thead><tbody><tr><td>Graines de blé marin</td><td>66,7 %</td><td>0 - 2</td><td>Non</td></tr><tr><td>Blé marin</td><td>33,3 %</td><td>0 - 3</td><td>Oui</td></tr></tbody></table>",
+        "content_en": "<p>When fully grown, harvesting yields the following drop rates:</p><table class=\"mod-info-table\"><thead><tr><th>Item</th><th>Chance</th><th>Quantity</th><th>Fortune</th></tr></thead><tbody><tr><td>Sea wheat seeds</td><td>66.7%</td><td>0 - 2</td><td>No</td></tr><tr><td>Sea wheat</td><td>33.3%</td><td>0 - 3</td><td>Yes</td></tr></tbody></table>"
+      },
+      {
+        "title_fr": "Obtention des graines",
+        "title_en": "Obtaining seeds",
+        "content_fr": "<ul><li><strong>Table de craft :</strong> La graine se fabrique en combinant une graine de blé classique, du sel et du [[item-dye|colorant de la mer]].</li></ul>",
+        "content_en": "<ul><li><strong>Crafting table:</strong> Seeds are crafted by combining regular wheat seeds, salt, and [[item-dye|sea dye]].</li></ul>",
+        "images": [
+          "seawheatseeds_craft_recipe.png"
+        ]
+      },
+      {
+        "title_fr": "",
+        "title_en": "",
+        "content_fr": "<ul><li><strong>Au feu de camp :</strong> S'obtient en faisant cuire des herbes marines (seagrass) pendant <strong>30 secondes</strong>.</li></ul>",
+        "content_en": "<ul><li><strong>Campfire:</strong> Obtained by cooking seagrass for <strong>30 seconds</strong>.</li></ul>",
+        "images": [
+          "seawheatseeds_campfire_recipe.png"
+        ]
+      },
+      {
+        "title_fr": "Utilisation",
+        "title_en": "Usage",
+        "content_fr": "<p>Le blé marin sert exclusivement à fabriquer le [[item-bluemarinpaper|papier marin bleu]].</p>",
+        "content_en": "<p>Sea wheat is exclusively used to craft [[item-bluemarinpaper|blue sea paper]].</p>"
+      }
+    ]
+  }
+},
+
+{
+  "id": "nature-netheriteflower",
+  "name_fr": "Fleur de netherite",
+  "name_en": "Netherite Flower",
+  "desc_fr": "Plante rare poussant sur de la terre fertile, produisant de la poudre de netherite.",
+  "desc_en": "Rare plant growing on farmland, producing netherite powder.",
+  "images": [
+    "Netheriteflowerseeds.png",
+    "Netheritepowder.png"
+  ],
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques et plantation",
+        "title_en": "Characteristics and Planting",
+        "content_fr": "<ul><li>Peut être plantée uniquement sur de la [[nature-fertilesoil|terre fertile]]</li><li>Comprend 3 stades de croissance</li><li>Un [[minerai-red-crystal|cristal rouge]] peut être utilisé pour augmenter sa croissance</li><li>Rendement au composteur : 12 % de chance de succès</li></ul>",
+        "content_en": "<ul><li>Can only be planted on [[nature-fertilesoil|fertile soil]]</li><li>Has 3 growth stages</li><li>A [[minerai-red-crystal|red crystal]] can be used to boost its growth</li><li>Composter yield: 12% success rate</li></ul>"
+      },
+      {
+        "title_fr": "Table de butin",
+        "title_en": "Loot Table",
+        "content_fr": "<table class=\"mod-info-table\"><thead><tr><th>Item</th><th>Poids</th><th>Quantité (Min - Max)</th><th>Fortune</th></tr></thead><tbody><tr><td>Poudre de netherite</td><td>3</td><td>1 - 2</td><td>Non</td></tr><tr><td>Graine de fleur de netherite</td><td>2</td><td>1 - 3</td><td>Non</td></tr><tr><td>Air (rien)</td><td>1</td><td>1 - 1</td><td>Non</td></tr></tbody></table>",
+        "content_en": "<table class=\"mod-info-table\"><thead><tr><th>Item</th><th>Weight</th><th>Quantity (Min - Max)</th><th>Fortune</th></tr></thead><tbody><tr><td>Netherite Powder</td><td>3</td><td>1 - 2</td><td>No</td></tr><tr><td>Netherite Flower Seed</td><td>2</td><td>1 - 3</td><td>No</td></tr><tr><td>Air (nothing)</td><td>1</td><td>1 - 1</td><td>No</td></tr></tbody></table>"
+      },
+      {
+        "title_fr": "Obtention et fabrication",
+        "title_en": "Obtaining and Crafting",
+        "content_fr": "<ul><li><strong>Craft :</strong> 8 blocs de netherrack entourant une graine de torchefleur</li></ul>",
+        "content_en": "<ul><li><strong>Crafting:</strong> 8 netherrack blocks surrounding a torchflower seed</li></ul>",
+        "images": ["netheriteflowerseeds_recipe.png"]
+      },
+      {
+        "title_fr": "",
+        "title_en": "",
+        "content_fr": "<ul><li><strong>Feu de camp :</strong> Cuisson d'une fleur de feu pendant 30 secondes.</li></ul>",
+        "content_en": "<ul><li><strong>Campfire:</strong> Cooking a fire flower for 30 secondes.</li></ul>",
+        "images": [
+          "netheriteflowerseeds_recipe2.png"
+        ]
+      },
+      {
+        "title_fr":"Utilisations",
+        "title_en":"Usages",
+        "content_fr":"<li><strong>Utilisation :</strong> La poudre de netherite permet de fabriquer des fragments de netherite.</li>",
+        "content_en":"<li><strong>Usage:</strong> Netherite powder is used to craft netherite scraps.</li>"
+      }
+    ]
+  }
+},
+
+{
+  "id": "nature-fertilesoil",
+  "name_fr": "Terre fertile",
+  "name_en": "Fertile Soil",
+  "desc_fr": "Un bloc de terre enrichi favorisant la pousse.",
+  "desc_en": "An enriched dirt block promoting plant growth.",
+  "images": ["Fertilesoil.png"],
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques de la terre fertile",
+        "title_en": "Fertile Soil Characteristics",
+        "content_fr": "<ul><li>Dureté : 2</li><li>Résistance : 3</li><li>Minage : Peut être miné à la main, mais la pelle est plus rapide.</li><li>La terre fertile est un support indispensable pour faire pousser les cultures spécifiques du mod, telles que la [[nature-netherstarflower|fleur d'étoile du Nether]], la [[nature-netheriteflower|fleur de Netherite]] ou encore le [[nature-seawheat|blé marin]]. En revanche, les graines classiques de Minecraft ne peuvent pas être plantées dessus. Ce bloc a l'avantage de pouvoir être placé n'importe où sans nécessiter la proximité d'une source d'eau. L'utilisation directe du [[minerai-red-crystal|cristal rouge]] sur ce bloc n'a aucun effet particulier.</li></ul>",
+        "content_en": "<ul><li>Hardness: 2</li><li>Resistance: 3</li><li>Mining: Can be mined by hand, but a shovel is faster.</li><li>Fertile soil is an essential block required to grow specific mod crops, such as the [[nature-netherstarflower|Nether Star Flower]], the [[nature-netheriteflower|Netherite Flower]], or [[nature-seawheat|Sea Wheat]]. However, regular Vanilla seeds cannot grow on it. This block can be placed anywhere without needing a nearby water source. Applying the [[minerai-red-crystal|red crystal]] directly onto this block has no effect.</li></ul>"
+      },
+      {
+        "title_fr": "Craft",
+        "title_en": "Crafting",
+        "content_fr": "<p>La terre fertile peut être fabriquée de deux manières différentes avec de la terre au centre :</p><ul><li><strong>Recette 1 :</strong> Avec de la poudre d'os</li><li><strong>Recette 2 :</strong> Avec des cristaux rouges</li></ul>",
+        "content_en": "<p>Fertile soil can be crafted in two different ways with dirt in the center:</p><ul><li><strong>Recipe 1:</strong> With bone meal</li><li><strong>Recipe 2:</strong> With red crystals</li></ul>",
+        "images": [
+          { "src": "fertile_soil_recipe.png", "caption_fr": "Première recette de la terre fertile (poudre d'os)", "caption_en": "First recipe for fertile soil (bone meal)" },
+          { "src": "fertile_soil_recipe2.png", "caption_fr": "Deuxième recette de la terre fertile (cristal rouge)", "caption_en": "Second recipe for fertile soil (red crystal)" }
+        ]
+      }
+    ]
+  }
+},
+
+{
+  "id": "nature-salt",
+  "name_fr": "Sel",
+  "name_en": "Salt",
+  "desc_fr": "Resource minérale trouvée dans les océans.",
+  "desc_en": "Mineral resource found in oceans.",
+  "images": ["Salt.png"],
+  "details": {
+    "sections": [
+      {
+        "title_fr": "Caractéristiques du sel",
+        "title_en": "Salt Characteristics",
+        "content_fr": "<ul><li>Dureté : 0,6</li><li>Résistance : 0,6</li><li>Outil requis : Pelle</li></ul>",
+        "content_en": "<ul><li>Hardness: 0.6</li><li>Resistance: 0.6</li><li>Required tool: Shovel</li></ul>"
+      },
+      {
+        "title_fr": "Génération",
+        "title_en": "Generation",
+        "content_fr": "<ul><li>Dimension : Overworld uniquement</li><li>Forme : Uniforme</li><li>Hauteur : Min 0 ; Max 64</li><li>Groupes par chunk : ~10</li><li>Blocs par groupe : ~19</li><li>Biomes : Océan froid, Océan froid profond, Océan gelé profond, Océan, Océan chaud, Océan tiède, Océan tiède profond</li></ul>",
+        "content_en": "<ul><li>Dimension: Overworld only</li><li>Shape: Uniform</li><li>Height: Min 0; Max 64</li><li>Groups per chunk: ~10</li><li>Blocks per group: ~19</li><li>Biomes: Cold Ocean, Deep Cold Ocean, Deep Frozen Ocean, Ocean, Warm Ocean, Lukewarm Ocean, Deep Lukewarm Ocean</li></ul>"
+      },
+      {
+        "title_fr": "Utilisations",
+        "title_en": "Usages",
+        "content_fr": "<ul><li>Utilisé dans le craft de la [[nature-seawheatseed|graine de blé marin]]</li></ul>",
+        "content_en": "<ul><li>Used in crafting [[nature-seawheatseed|sea wheat seeds]]</li></ul>"
+      }
+    ]
+  }
+}
+]
