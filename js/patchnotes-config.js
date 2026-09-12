@@ -122,15 +122,11 @@ const patchnotesConfig = {
       type: 'release',
       changes: {
         fr: [
-          `<b class="patch-info">Information :</b>
-          <ul>
-            <li>Note importante concernant la version 1.21.1 :</li>
-            <li>La mise à jour 1.4.2 est une version mineure et marque la dernière mise à jour prévue pour Minecraft 1.21.1. Si des bugs non détectés persistent, vous pouvez envoyer un rapport de bug : seuls les problèmes perturbant directement le gameplay seront corrigés. Les petits détails secondaires (comme une erreur dans le nom d'un item) ne feront pas l'objet d'un correctif. Sans bug majeur, le développement du mod basculera exclusivement sur les dernières versions de MCreator et de Minecraft pour suivre la nouvelle direction des mises à jour de Mojang.</li>
-          </ul>`,
           `<b class="patch-add">Ajout :</b>
           <ul>
             <li>Rebalancement complet des outils, minerais et blocs : Ajustement de tous les niveaux de récolte à travers tous les outils, minerais et blocs pour une progression plus fluide</li>
-          </ul>`,
+            <li>Ajout du craft de l'oeuf d'apparition du loup lyvora</li>
+            </ul>`,
           `<b class="patch-fix">Modification :</b>
           <ul>
             <li>Correction du nom anglais du lingot de dioptasium en Dioptasium ingot</li>
@@ -138,19 +134,31 @@ const patchnotesConfig = {
           </ul>`
         ],
         en: [
-          `<b class="patch-info">Information:</b>
-          <ul>
-            <li>Important note regarding version 1.21.1:</li>
-            <li>Update 1.4.2 is a minor update and marks the final planned release for Minecraft 1.21.1. If you encounter any undetected issues, feel free to submit a bug report: only gameplay-disrupting bugs will be patched. Minor oversights (such as an incorrect item name) will not receive a fix. Otherwise, active development will shift exclusively to the latest versions of MCreator and Minecraft to stay aligned with Mojang's new update approach.</li>
-          </ul>`,
           `<b class="patch-add">Added:</b>
           <ul>
             <li>Complete tool, ore, and block rebalancing: Adjusted all mining levels (harvest levels) across all tools, ores, and blocks for a smoother progression</li>
+            <li>Addition of a recipe for the wolf lyvora's egg</li>
           </ul>`,
-          `<b class="patch-fix">Fixes:</b>
+          `<b class="patch-fix">Changes & Fixes</b>
           <ul>
-            <li>Fixed the English translation for the Dioptasium Ingot item name</li>
-            <li>Fixed French texts appearing in the English translation</li>
+            <li>Changes related to the "Sweden" music disc: 
+              <ol>
+                <li>The disc playing Sweden now triggers track events from the [music.game] tag</li>
+                <li>Renamed the disc to "C418 — Random Overworld Tracks"</li>
+                <li>Updated the description of the achievement linked to the disc</li>
+              </ol>
+            </li>
+            <li>Fixed missing recipe for the Dioptasium Apple</li>
+            <li>Fixed missing recipe to uncraft a Xenite Block</li>
+            <li>Fixed missing recipe to uncraft an Uranium Block</li>
+            <li>Fixed missing recipe to uncraft the Red Crystal Block</li>
+            <li>The recipe for Sulfur Powder is now shapeless</li>
+            <li>Modification of the recipe for vegetable essence to replace the uncraftable bottles with items from the 'vegetal' tag</li>
+            <li>Modification of the number of chromium ore exchanged by the minor villager</li>
+            <li>Suppression of an unfair exchange with the minor</li>
+            <li>Modification of the recipe of gravel</li>
+            <li>Modification of the recipe of spawner by adding arcane shard</li>
+            <li>Deletion of 2 duplicate recipes, from creature spawn eggs</li>
           </ul>`
         ]
       }
