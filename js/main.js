@@ -480,20 +480,28 @@ const modalBody = document.getElementById('modalBody');
 
 function openModal(title, date, bodyHTML, image) {
   if (!modalOverlay) return;
-  // Remove previous modal image + credit if any
+
+  // Nettoyage des anciennes images/crédits
   var oldImg = modalOverlay.querySelector('.modal-news-img');
   if (oldImg) oldImg.remove();
   var oldCredit = modalOverlay.querySelector('.modal-img-credit');
   if (oldCredit) oldCredit.remove();
-  // Insert image before title if provided
+
   if (image) {
     var img = document.createElement('img');
     img.className = 'modal-news-img';
     img.src = image;
     img.alt = '';
     modalTitle.parentNode.insertBefore(img, modalTitle);
-    // Add credit link if image has one
+
+    // Recherche de l'URL du crédit (vérifie le chemin brut ET le chemin relatif)
     var creditUrl = imageCredits[image];
+    if (!creditUrl) {
+      // Si le chemin commence par '../', on essaie de trouver la clé correspondante
+      var cleanKey = image.replace(/^(\.\.\/)+/, '');
+      creditUrl = imageCredits[cleanKey] || imageCredits['pages/' + cleanKey];
+    }
+
     if (creditUrl) {
       var credit = document.createElement('a');
       credit.className = 'modal-img-credit';
@@ -504,6 +512,7 @@ function openModal(title, date, bodyHTML, image) {
       modalTitle.parentNode.insertBefore(credit, modalTitle);
     }
   }
+
   modalTitle.innerHTML = title;
   modalDate.textContent = date;
   modalBody.innerHTML = bodyHTML;
@@ -530,7 +539,33 @@ document.addEventListener('keydown', (e) => {
 (function renderNews() {
   if (typeof newsConfig === 'undefined') return;
   const today = new Date().toISOString().slice(0, 10);
-  var defaultNewsImg = 'pages/images/ui/breaking_news.jpg';
+  
+  // Gestion de la profondeur pour cibler toujours le dossier root/pages/images/ui/
+  const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0');
+  const prefix = depth === 0 ? 'pages/' : '../pages/';
+  // Dictionnaire des images par défaut selon le badge
+  const defaultImagesByBadge = {
+    announcement: 'pages/images/ui/breaking_news.jpg',
+    urgent: 'pages/images/ui/22776454_Urgent.jpg',
+    maintenance: 'pages/images/ui/maintenance_warning.jpg',
+    update: 'pages/images/ui/comming_soon 400.jpg', // ou l'image de ton choix pour les majs
+    info: 'pages/images/ui/breaking_news.jpg'
+  };
+
+  // Fonction pour garantir que l'image pointe toujours sur pages/images/...
+  // Fonction pour garantir que l'image pointe toujours sur le bon chemin
+  function resolveImgPath(imgPath, badge) {
+    // Si aucune image n'est spécifiée, on prend celle associée au badge (ou breaking_news par défaut)
+    if (!imgPath) {
+      const fallbackImg = defaultImagesByBadge[badge] || defaultImagesByBadge.announcement;
+      return prefix + fallbackImg.replace(/^pages\//, '');
+    }
+    
+    if (imgPath.startsWith('http://') || imgPath.startsWith('https://')) return imgPath;
+    
+    let cleanPath = imgPath.replace(/^(\.\/|pages\/)+/, '');
+    return prefix + cleanPath;
+  }
 
   // Homepage: slider
   const homeContainer = document.getElementById('homeNewsContainer');
@@ -548,15 +583,14 @@ document.addEventListener('keydown', (e) => {
     }
     let currentSlide = 0;
 
-    // Build slider HTML
     let sliderHTML = '<div class="news-slider-wrapper"><div class="news-slider" id="newsSlider">';
     active.forEach((n, i) => {
       const title = n.title[lang] || n.title.fr;
       const badgeLabel = n.badge ? ((typeof i18n !== 'undefined') ? i18n.get('news.badge_' + n.badge) : n.badge) : '';
       const badgeHTML = n.badge ? '<span class="news-badge news-badge-' + n.badge + '">' + badgeLabel + '</span>' : '';
-      const newsImg = n.image || defaultNewsImg;
+      const newsImg = resolveImgPath(n.image, n.badge);
       const imageHTML = '<img class="news-slide-img" src="' + newsImg + '" alt="">';
-      const creditUrl = imageCredits[newsImg];
+      const creditUrl = imageCredits[n.image] || imageCredits[newsImg];
       const creditHTML = creditUrl ? '<a class="slide-img-credit" href="' + creditUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">Image by Freepik</a>' : '';
       sliderHTML += '<div class="news-slide has-image" data-news-index="' + i + '">' +
         '<div class="news-slide-img-wrap">' + imageHTML + creditHTML + '</div>' +
@@ -570,7 +604,6 @@ document.addEventListener('keydown', (e) => {
     });
     sliderHTML += '</div></div>';
 
-    // Nav
     sliderHTML += '<div class="news-slider-nav">';
     sliderHTML += '<button class="news-slider-btn" id="sliderPrev">&#8249;</button>';
     sliderHTML += '<div class="news-slider-dots" id="sliderDots">';
@@ -598,7 +631,6 @@ document.addEventListener('keydown', (e) => {
     document.getElementById('sliderNext').addEventListener('click', () => goToSlide(currentSlide + 1));
     dots.forEach(d => d.addEventListener('click', () => goToSlide(parseInt(d.dataset.slide))));
 
-    // Click on slide opens modal
     homeContainer.querySelectorAll('.news-slide').forEach(slide => {
       slide.addEventListener('click', () => {
         const currentLang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
@@ -608,18 +640,17 @@ document.addEventListener('keydown', (e) => {
         const content = n.content[currentLang] || n.content.fr;
         const bLabel = n.badge ? ((typeof i18n !== 'undefined') ? i18n.get('news.badge_' + n.badge) : n.badge) : '';
         const bHTML = n.badge ? ' <span class="news-badge news-badge-' + n.badge + '">' + bLabel + '</span>' : '';
-        openModal(n.icon + ' ' + title + bHTML, n.date, content, n.image || defaultNewsImg);
+        openModal(n.icon + ' ' + title + bHTML, n.date, content, resolveImgPath(n.image, n.badge));
       });
     });
 
-    // Auto-slide every 5 seconds
     homeSliderInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
   }
 
   renderHomeNews();
   document.addEventListener('langChanged', renderHomeNews);
 
-  // Full news page: cards that open modal on click
+  // Full news page
   const newsContainer = document.getElementById('newsContainer');
   const newsSortOrder = document.getElementById('newsSortOrder');
   const newsFilterBadge = document.getElementById('newsFilterBadge');
@@ -653,15 +684,43 @@ document.addEventListener('keydown', (e) => {
       card.className = 'news-card';
       const badgeLabel = n.badge ? ((typeof i18n !== 'undefined') ? i18n.get('news.badge_' + n.badge) : n.badge) : '';
       const badgeHTML = n.badge ? '<span class="news-badge news-badge-' + n.badge + '">' + badgeLabel + '</span>' : '';
+      
+      const newsImg = resolveImgPath(n.image, n.badge);
+      
+      // Recherche de l'URL du crédit : vérifie n.image, puis l'image résolue (par défaut), puis sans le préfixe
+      let creditUrl = imageCredits[n.image] || imageCredits[newsImg];
+      if (!creditUrl) {
+        const cleanKey = newsImg.replace(/^(\.\.\/)+/, '');
+        creditUrl = imageCredits[cleanKey] || imageCredits['pages/' + cleanKey];
+      }
+      
+      // Image + Lien Crédit Freepik sur la carte
+      var imageHTML = '<div class="news-slide-img-wrap">' +
+        '<img class="news-slide-img" src="' + newsImg + '" alt="">';
+      if (creditUrl) {
+        imageHTML += '<a class="slide-img-credit" href="' + creditUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">Image by Freepik</a>';
+      }
+      imageHTML += '</div>';
+
       card.innerHTML =
+        imageHTML +
         '<div class="news-card-header">' +
           '<span class="news-icon">' + n.icon + '</span>' +
           '<h3>' + title + '</h3>' +
           badgeHTML +
           '<span class="news-card-date">' + n.date + '</span>' +
         '</div>';
-      card.addEventListener('click', () => {
-        openModal(n.icon + ' ' + title + (badgeHTML ? ' ' + badgeHTML : ''), n.date, content, n.image || 'pages/images/ui/breaking_news.jpg');
+      
+      card.addEventListener('click', (e) => {
+        // Ne pas ouvrir le modal si on clique directement sur le lien Freepik
+        if (e.target.tagName === 'A') return;
+        
+        openModal(
+          n.icon + ' ' + title + (badgeHTML ? ' ' + badgeHTML : ''), 
+          n.date, 
+          content, 
+          newsImg
+        );
       });
       newsContainer.appendChild(card);
     });
