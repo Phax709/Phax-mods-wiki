@@ -47,7 +47,7 @@ const patchnotesConfig = {
       date: '2026-08-26',
       loader: 'NeoForge',
       mcVersion: '26.1.2',
-      type: 'release',
+      type: 'alpha',
       changes: {
         fr: [
           `<b class="patch-add">Ajout :</b>
@@ -121,7 +121,7 @@ const patchnotesConfig = {
       date: '2026-08-26',
       loader: 'NeoForge',
       mcVersion: '1.21.1',
-      type: 'release',
+      type: 'beta',
       changes: {
         fr: [
           `<b class="patch-add">Ajout :</b>
