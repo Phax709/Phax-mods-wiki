@@ -102,7 +102,7 @@ const modsRegistry = [
     features: [
       {text: {fr: 'Bateau des differents type de bois', en:'Boat of different types of wood'}, done:false},
       {text: {fr: 'Refonte dimensions Midler', en:'Midler dimensions redesign'}, done:false},
-      {text: {fr: 'Refonte de la structure du boss (externe + colosse)', en:'Overhaul of the boss structure (external + colossus)'}, done:false},
+      {text: {fr: 'Refonte de la structure du boss (Extermate + Colossum)', en:'Overhaul of the boss structure (Extermate + Colossum)'}, done:false},
       {text: {fr: 'Ajout de la génération de la baie orange', en:'Addition of the orange berry generation'}, done:false},
       {text: {fr: 'Donner plus d`utilisation et de moyens d`obtention à l`éclat d`arcane', en:'Give more use and means of obtaining to the arcane brilliance'}, done:false},
       {text: {fr: 'Nouvelles créatures ?', en:'New creatures?'}, done:false},
