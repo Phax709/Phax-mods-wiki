@@ -43,11 +43,65 @@
 const patchnotesConfig = {
   acatar: [
     {
+      version: '1.4.3',
+      date: '2026-09-14',
+      loader: 'Neoforge',
+      mcVersion: '1.21.1',
+      type: 'release',
+      changes: {
+        fr: [
+          `<b class="patch-fix">Changements & Corrections :</b>
+          <ul>
+            <li>Correction de plusieurs fautes d'orthographe et de traductions incorrectes</li>
+            <li>Ajout d'un effet sonore lorsque le creeper céruléen prend des dégâts</li>
+            <li>Modification de l'icône/objet de deux succès</li>
+            <li>Suppression des recettes incompatibles (provenant de versions ultérieures/incompatibles) qui ne fonctionnaient pas</li>
+          </ul>`
+        ],
+        en: [
+          `<b class="patch-fix">Changes & Fixes</b>
+          <ul>
+            <li>Fixed several spelling mistakes and incorrect translations</li>
+            <li>Added sound effects when the cerulean creeper takes damage</li>
+            <li>updated the item icon for two achievements</li>
+            <li>Removed incompatible recipes (from mismatched versions) that didn't work</li>
+          </ul>`
+        ]
+      }
+    },
+    {
+      version: '1.0.1',
+      date: '2026-09-14',
+      loader: 'Neoforge',
+      mcVersion: '26.1.2',
+      type: 'release',
+      changes: {
+        fr: [
+          `<b class="patch-fix">Changements & Corrections :</b>
+          <ul>
+            <li>Correction de plusieurs fautes d'orthographe et de traductions incorrectes</li>
+            <li>Le problème qui bloquait la création d'un monde à l'infini a été corrigé, mais en contrepartie, le biome « Forêt de sakura » ne se génère pas pour le moment en 26.1.2</li>
+            <li>Modification de l'icône/objet de deux succès</li>
+            <li>Ajout d'un effet sonore lorsque le creeper céruléen prend des dégâts</li>
+          </ul>`
+        ],
+        en: [
+          `<b class="patch-fix">Changes & Fixes</b>
+          <ul>
+            <li>Fixed several spelling mistakes and incorrect translations</li>
+            <li>Fixed the issue causing infinite world creation, but as a trade-off, the "Sakura Forest" biome currently does not generate in 26.1.2</li>
+            <li>updated the item icon for two achievements</li>
+            <li>Added sound effects when the cerulean creeper takes damage</li>
+          </ul>`
+        ]
+      }
+    },
+    {
       version: '1.0.0',
-      date: '2026-08-26',
+      date: '2026-09-13',
       loader: 'NeoForge',
       mcVersion: '26.1.2',
-      type: 'alpha',
+      type: 'release',
       changes: {
         fr: [
           `<b class="patch-add">Ajout :</b>
@@ -121,7 +175,7 @@ const patchnotesConfig = {
       date: '2026-08-26',
       loader: 'NeoForge',
       mcVersion: '1.21.1',
-      type: 'beta',
+      type: 'release',
       changes: {
         fr: [
           `<b class="patch-add">Ajout :</b>
