@@ -14,6 +14,23 @@
 
 const newsConfig = [
   {
+    id:'Bug fixe',
+    date:'2026-09-13',
+    showUntil: '2026-10-01',
+    icon: '🐛',
+    badge:'urgent',
+    title:{
+      fr:'Bug important découvert.',
+      en:'Important bug discovered.'
+    },
+    content: {
+      fr:`<p>Des bugs ont été découverts et peuvent impacter fortement votre expérience en jeu, ces soucis sont en cours de résolution, ne vous inquiétez pas, un patch sortira une fois le tout résolu, désolé pour ce contretemps après la sortie du site.</p> 
+          <p>Merci de votre compréhension.</p>`,
+      en:`<p>Bugs have been discovered and can greatly impact your gaming experience; these issues are currently being resolved. Don't worry, a patch will be released once everything is fixed. Sorry for this inconvenience after the release of the site.</p> 
+          <p>Thank you for your understanding.</p>`
+    }
+  },
+  {
     id: 'welcome',
     date: '2026-09-12',
     showUntil: '2026-11-01',
