@@ -14,20 +14,36 @@
 
 const newsConfig = [
   {
-    id:'Bug fixe',
-    date:'2026-09-13',
-    showUntil: '2026-10-01',
-    icon: '🐛',
-    badge:'urgent',
-    title:{
-      fr:'Bug important découvert.',
-      en:'Important bug discovered.'
+    id: 'acatar-version-change',
+    date: '2026-09-14',
+    showUntil: '2026-10-15',
+    icon: '🚀',
+    badge: 'announcement',
+    title: {
+      fr: 'Avenir d\'Acatar : évolution des versions Minecraft',
+      en: 'Acatar Future: Minecraft Version Updates'
     },
     content: {
-      fr:`<p>Des bugs ont été découverts et peuvent impacter fortement votre expérience en jeu, ces soucis sont en cours de résolution, ne vous inquiétez pas, un patch sortira une fois le tout résolu, désolé pour ce contretemps après la sortie du site.</p> 
-          <p>Merci de votre compréhension.</p>`,
-      en:`<p>Bugs have been discovered and can greatly impact your gaming experience; these issues are currently being resolved. Don't worry, a patch will be released once everything is fixed. Sorry for this inconvenience after the release of the site.</p> 
-          <p>Thank you for your understanding.</p>`
+      fr: `<p>Après quelques dernières mises à jour, le mod <strong>Acatar</strong> arrêtera le support de Minecraft 1.21.1 pour se concentrer sur <strong>Minecraft 26.1.2</strong>.</p>
+           <p>Suite au changement de rythme des mises à jour de Mojang, ce choix permet de suivre le mouvement tout en évitant les bugs sur les anciennes versions.</p>`,
+      en: `<p>After a few final updates, the <strong>Acatar</strong> mod will end support for Minecraft 1.21.1 and focus on <strong>Minecraft 26.1.2</strong>.</p>
+           <p>Following Mojang's change in update pacing, this choice allows us to keep up while avoiding bugs on older versions.</p>`
+    }
+  },
+  {
+    id: 'bug-resolved',
+    date: '2026-09-14',
+    showUntil: '2026-09-25',
+    icon: '✅',
+    badge: 'update',
+    image: 'pages/images/ui/new_logo_acatar.png',
+    title: {
+      fr: 'Problèmes résolus et fichiers en ligne !',
+      en: 'Issues resolved and files are online!'
+    },
+    content: {
+      fr: `<p>Tous les bugs signalés ont été résolus et la vérification sur CurseForge est passée. Les fichiers mis à jour sont désormais disponibles en ligne !</p>`,
+      en: `<p>All reported bugs have been resolved and the CurseForge verification is complete. The updated files are now available online!</p>`
     }
   },
   {
