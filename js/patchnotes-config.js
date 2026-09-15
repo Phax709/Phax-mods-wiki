@@ -43,6 +43,29 @@
 const patchnotesConfig = {
   acatar: [
     {
+      version: '1.0.2',
+      date: '2026-09-15',
+      loader: 'NeoForge',
+      mcVersion: '26.1.2',
+      type: 'release',
+      changes: {
+        fr: [
+          `<b class="patch-fix">Changements & Corrections :</b>
+          <ul>
+            <li>Retour de la génération du biome « Forêt de Sakura »</li>
+            <li>Correction du bug où le tapis de mousse sakura pouvait flotter dans les airs (ce correctif sera également intégré dans la prochaine version d'Acatar pour Minecraft 1.21.1)</li>
+          </ul>`
+        ],
+        en: [
+          `<b class="patch-fix">Changes & Fixes</b>
+          <ul>
+            <li>Restored generation for the "Sakura Forest" biome</li>
+            <li>Fixed a bug causing the sakura moss carpet to float in the air (this fix will also be included in the next Acatar version for Minecraft 1.21.1)</li>
+          </ul>`
+        ]
+      }
+    },
+    {
       version: '1.4.3',
       date: '2026-09-14',
       loader: 'Neoforge',

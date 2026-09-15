@@ -14,6 +14,26 @@
 
 const newsConfig = [
   {
+    id: 'acatar-sakura-biome-fix-info',
+    date: '2026-09-15',
+    showUntil: '2026-11-15',
+    icon: '🌸',
+    badge: 'update',
+    image: 'pages/images/ui/breaking_news.jpg',
+    title: {
+      fr: 'Génération de la Forêt de Sakura & Compatibilité des mods',
+      en: 'Sakura Forest Generation & Mod Compatibility'
+    },
+    content: {
+      fr: `<p>Depuis la publication du correctif d'<strong>Acatar 1.0.1</strong> pour Minecraft 26.1.2, j'ai tout mis en œuvre pour réactiver la génération du biome « Forêt de Sakura ».</p>
+           <p>Aucune solution classique ne fonctionnant, j'ai analysé le problème plus en profondeur. L'impossibilité de créer un monde est potentiellement due à un conflit avec un autre mod. Vérifiez si l'un de vos mods installés provoque ce souci. Dans mes configurations de test post-export, le mod <strong>Jade</strong> en était la cause, mais d'autres mods peuvent présenter ce problème avec les récentes versions de Minecraft.</p>
+           <p>Je vous conseille de tester vos mods un par un si le problème persiste afin de trouver le responsable et le signaler à son créateur. Désolé pour la gêne occasionnée, mais cette étape s'avère nécessaire !</p>`,
+      en: `<p>Since the release of the <strong>Acatar 1.0.1</strong> patch for Minecraft 26.1.2, I have been doing everything possible to restore the generation of the "Sakura Forest" biome.</p>
+           <p>Since standard methods failed, I looked deeper into the source of the issue. The inability to create a world is potentially caused by a conflict with another mod. Please check if any mod in your setup causes this issue. In my post-export test configurations, the <strong>Jade</strong> mod was causing it, but other mods might have similar issues with recent Minecraft versions.</p>
+           <p>I recommend testing your mods one by one if the problem persists to identify the culprit and report the bug to its respective author. Sorry for the inconvenience, but this check is necessary!</p>`
+    }
+  },
+  {
     id: 'acatar-version-change',
     date: '2026-09-14',
     showUntil: '2026-10-15',
