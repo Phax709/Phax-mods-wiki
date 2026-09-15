@@ -43,6 +43,27 @@
 const patchnotesConfig = {
   acatar: [
     {
+      version: '1.0.3',
+      date: '2026-09-16',
+      loader: 'NeoForge',
+      mcVersion: '26.1.2',
+      type: 'release',
+      changes: {
+        fr: [
+          `<b class="patch-fix">Changements & Corrections :</b>
+          <ul>
+            <li>Correction de la baie lyvorienne non stackable (ce correctif sera également intégré dans la prochaine version d'Acatar pour Minecraft 1.21.1)</li>
+          </ul>`
+        ],
+        en: [
+          `<b class="patch-fix">Changes & Fixes</b>
+          <ul>
+            <li>Fixed Lyvorian Berry stacking issue (this fix will also be included in the next Acatar version for Minecraft 1.21.1)</li>
+          </ul>`
+        ]
+      }
+    },
+    {
       version: '1.0.2',
       date: '2026-09-15',
       loader: 'NeoForge',
