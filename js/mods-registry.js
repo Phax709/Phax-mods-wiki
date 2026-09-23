@@ -98,7 +98,7 @@ const modsRegistry = [
     cardDescKey: 'card.acatar.desc',
     wikiId: 'acatar',
     status: 'development',
-    progress: 12.5,
+    progress: 18.5,
     features: [
       {text: {fr: 'Bateau et panneau des différents types de bois', en:'Boat and sign of the different types of wood'}, done:true},
       {text: {fr: 'Refonte dimensions Midler', en:'Midler dimensions redesign'}, done:false},

@@ -14,6 +14,26 @@
 
 const newsConfig = [
   {
+    id: 'acatar-next-update-teaser-1',
+    date: '2026-09-23',
+    showUntil: '2026-11-23',
+    icon: '🌳',
+    badge: 'announcement',
+    image: 'pages/images/ui/first_teaser_acatar_nextupdate.png',
+    title: {
+      fr: 'Aperçu : Un nouveau biome se dévoile !',
+      en: 'Teaser: A new biome revealed!'
+    },
+    content: {
+      fr: `<p>Découvrez un premier aperçu de la prochaine mise à jour d'<strong>Acatar</strong> !</p>
+           <p>Ce biome semble renfermer quelque chose... À suivre !</p>
+           <p><em>Pré-rendu en jeu — travail en cours, sujet à modifications.</em></p>`,
+      en: `<p>Take a first look at the upcoming <strong>Acatar</strong> update!</p>
+           <p>This biome seems to hold something hidden... To be continued!</p>
+           <p><em>In-game preview — work in progress, subject to change.</em></p>`
+    }
+  },
+  {
     id: 'acatar-sakura-biome-fix-info',
     date: '2026-09-15',
     showUntil: '2026-11-15',
