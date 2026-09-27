@@ -98,12 +98,12 @@ const modsRegistry = [
     cardDescKey: 'card.acatar.desc',
     wikiId: 'acatar',
     status: 'development',
-    progress: 18.5,
+    progress: 31.5,
     features: [
       {text: {fr: 'Bateau et panneau des différents types de bois', en:'Boat and sign of the different types of wood'}, done:true},
       {text: {fr: 'Refonte dimensions Midler', en:'Midler dimensions redesign'}, done:false},
       {text: {fr: 'Refonte de la structure du boss (externe + colosse)', en:'Overhaul of the boss structure (external + colossus)'}, done:false},
-      {text: {fr: 'Ajout de la génération de la baie orange', en:'Addition of the orange berry generation'}, done:false},
+      {text: {fr: 'Ajout de la génération de la baie orange', en:'Addition of the orange berry generation'}, done:true},
       {text: {fr: 'Donner plus d`utilisation et de moyens d`obtention à l`éclat d`arcane', en:'Give more use and means of obtaining to the arcane brilliance'}, done:false},
       {text: {fr: 'Nouvelles créatures ?', en:'New creatures?'}, done:false},
       {text: {fr: 'Résolution de bug et ajustements', en:'Bug resolution and adjustments', done:false}},
@@ -125,10 +125,10 @@ const modsRegistry = [
     cardDescKey: 'card.chaosium.desc',
     wikiId: 'chaosium',
     status: 'development',
-    progress: 67,
+    progress: 0,
     features: [
-      { text: { fr: 'Système de magie de base', en: 'Base magic system' }, done: true },
-      { text: { fr: 'Nouveaux minerais du Chaos', en: 'New Chaos ores' }, done: true },
+      { text: { fr: 'Système de magie de base', en: 'Base magic system' }, done: false },
+      { text: { fr: 'Nouveaux minerais du Chaos', en: 'New Chaos ores' }, done: false },
       { text: { fr: 'Boss du Chaos', en: 'Chaos Boss' }, done: false },
       { text: { fr: 'Dimension du Chaos', en: 'Chaos Dimension' }, done: false },
       { text: { fr: 'Enchantements spéciaux', en: 'Special enchantments' }, done: false }
