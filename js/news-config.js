@@ -14,6 +14,32 @@
 
 const newsConfig = [
   {
+    id: 'acatar-next-update-teaser-2',
+    date: '2026-10-02',
+    showUntil: '2026-12-01',
+    icon: '🗝️',
+    badge: 'announcement',
+    image: 'pages/images/ui/teaser_acatar_nextupdate 2.png',
+    title: {
+      fr: 'Carnet de développement & Teasing : Que se prépare-t-il pour Acatar ?',
+      en: 'Dev Log & Teasing: What\'s Brewing for Acatar?'
+    },
+    content: {
+      fr: `<p>Le développement avance très bien ! Pour vous faire patienter, voici un petit aperçu confidentiel du patchnote en cours de rédaction. Comme vous pouvez le constater, la liste des changements est déjà bien fournie, et elle est encore susceptible d'évoluer dans un futur proche !</p>
+           <p><img src="pages/images/ui/teaser_acatar_nextupdate 2.1.png" alt="Teaser des fichiers de développement" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
+           <p>Notez qu'avec la sortie récente de <strong>Minecraft Dungeons II</strong>, certaines fonctionnalités seront reprises ou serviront d'inspiration pour enrichir le contenu lors de la refonte de la dimension du <strong>Midler</strong> !</p>
+           <p>Le développement prend du temps car chaque nouveauté est testée pour garantir qu'elle soit fluide, opérationnelle et sans bug. D'ailleurs, de nombreux soucis identifiés lors des récentes phases de vérification ont déjà été résolus.</p>
+           <p><em>Petite précision concernant le pourcentage de progression affiché sur le statut du mod :</em> celui-ci est donné <strong>à titre indicatif</strong>. Il est basé sur mon ressenti global par rapport à ce que je souhaite intégrer dans cette mise à jour, en répartissant différemment les pourcentages selon l'importance de chaque objectif.</p>
+           <p>Merci pour votre soutien et à très vite pour la suite !</p>`,
+      en: `<p>Development is progressing smoothly! To give you a sneak peek, here is a confidential preview of the patch notes currently being written. As you can see, the list of changes is already quite extensive and may continue to grow in the near future!</p>
+           <p><img src="pages/images/ui/teaser_acatar_nextupdate 2.1.png" alt="Development files teaser" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
+           <p>Please note that with the recent release of <strong>Minecraft Dungeons II</strong>, some of its features will be brought over or serve as inspiration to enrich the content for the upcoming <strong>Midler</strong> dimension overhaul!</p>
+           <p>Development takes time because every feature is thoroughly tested to ensure smooth, bug-free, and operational gameplay. In fact, many issues found during recent testing phases have already been fixed.</p>
+           <p><em>A quick note regarding the progress percentage shown in the mod's status:</em> it is <strong>strictly indicative</strong>. It reflects my overall personal feel regarding everything planned for this update, with percentages distributed based on the scope of each goal.</p>
+           <p>Thank you for your support and stay tuned for more!</p>`
+    }
+  },
+  {
     id: 'acatar-next-update-teaser-1',
     date: '2026-09-23',
     showUntil: '2026-11-23',
