@@ -14,6 +14,30 @@
 
 const newsConfig = [
   {
+    id: 'secret-project-teaser',
+    date: '2026-10-02',
+    showUntil : '2027-02-01',
+    icon: '❓',
+    badge: 'announcement',
+    image: 'pages/images/ui/mysterious.png',
+    title: {
+      fr: '??? : Un projet de longue date en réalisation...',
+      en: '??? : A long-standing project in development...'
+    },
+    content: {
+      fr: `<p>Un signal inconnu vient d'être détecté...</p>
+           <p style="font-family: monospace; word-break: break-all; background: #1e1e1e; padding: 10px; border-radius: 6px; color: #00ffcc;">
+             ..- -. / .--. .-. --- .--- . - / -.. .- -. ... / .-.. . ... / -- .. .-.. .. . ..- -..- / .--. .-. --- ..-. --- -. -.. ... / --- ..- / .--. .-.. ..- ... / .--. .-. --- -.-. .... . / .. -. - .-. .. --. ..- .
+           </p>
+           <p><em>Saurez-vous décoder ce message ?</em></p>`,
+      en: `<p>An unknown signal has just been detected...</p>
+           <p style="font-family: monospace; word-break: break-all; background: #1e1e1e; padding: 10px; border-radius: 6px; color: #00ffcc;">
+             ..- -. / .--. .-. --- .--- . - / -.. .- -. ... / .-.. . ... / -- .. .-.. .. . ..- -..- / .--. .-. --- ..-. --- -. -.. ... / --- ..- / .--. .-.. ..- ... / .--. .-. --- -.-. .... . / .. -. - .-. .. --. ..- .
+           </p>
+           <p><em>Can you decode this message?</em></p>`
+    }
+  },
+  {
     id: 'acatar-next-update-teaser-2',
     date: '2026-10-02',
     showUntil: '2026-12-01',
