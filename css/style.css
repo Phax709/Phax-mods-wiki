@@ -312,8 +312,16 @@ code {
   margin: 4px 0;
 }
 
-/* Lang toggle */
+/* Language selector */
+.lang-selector {
+  position: relative;
+  flex-shrink: 0;
+}
+
 .lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--bg);
   border: 1px solid var(--border);
   color: var(--text);
@@ -328,6 +336,57 @@ code {
 .lang-btn:hover {
   border-color: var(--accent);
   background: var(--bg-card);
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 190px;
+  z-index: 300;
+  overflow: hidden;
+}
+
+.lang-dropdown.visible {
+  display: block;
+}
+
+.lang-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.lang-dropdown button:hover {
+  background: var(--bg-card);
+}
+
+.lang-dropdown button.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.lang-flag {
+  display: block;
+  width: 24px;
+  height: 17px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 2px;
 }
 
 /* Theme selector */
@@ -802,12 +861,52 @@ li {
   margin-bottom: 1.2rem;
 }
 
+.progress-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .progress-label,
 .features-label {
   font-weight: 700;
   font-size: 0.9rem;
   color: var(--text);
   margin-bottom: 0.5rem;
+}
+
+.progress-info-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.progress-info-toggle:hover,
+.progress-info-toggle:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.progress-info {
+  margin: 0 0 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 .progress-bar-container {
@@ -859,12 +958,55 @@ li {
   border-bottom: none;
 }
 
-.features-list .feature-done {
-  color: var(--text-muted);
+.features-list .feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
-.features-list .feature-pending {
-  color: var(--text);
+.feature-item-text {
+  min-width: 0;
+}
+
+.feature-status-badge {
+  flex: 0 0 auto;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.feature-status-complete {
+  border-color: #22c55e;
+  background: rgba(22, 101, 52, 0.92);
+  color: #fff;
+}
+
+.feature-status-in_progress {
+  border-color: #fac94e;
+  background: rgba(204, 168, 84, 0.92);
+  color: #fff;
+}
+
+.feature-status-not_started {
+  border-color: #94a3b8;
+  background: rgba(71, 85, 105, 0.92);
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .features-list .feature-item {
+    align-items: flex-start;
+  }
+
+  .feature-status-badge {
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 /* ===== News ===== */
@@ -1508,6 +1650,11 @@ li {
 .wiki-sidebar {
   width: 220px;
   flex-shrink: 0;
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
+  align-self: flex-start;
+  max-height: calc(100vh - var(--header-h) - 2rem);
+  overflow-y: auto;
   border-right: 2px solid var(--border);
   padding-right: 1.5rem;
 }
@@ -1919,7 +2066,6 @@ li {
   }
 
   .lang-btn {
-    flex-shrink: 0;
     padding: 4px 8px;
     font-size: 0.75rem;
   }
@@ -2139,8 +2285,18 @@ li {
 
   .wiki-sidebar {
     width: 100%;
+    position: sticky;
+    top: var(--header-h);
+    z-index: 20;
+    align-self: stretch;
+    max-height: none;
+    overflow: visible;
+    padding: 0.65rem 0;
+    background: var(--bg);
     border-right: none;
+    border-bottom: none;
     padding-right: 0;
+    box-shadow: none;
   }
 
   .wiki-categories {

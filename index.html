@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="page-depth" content="0">
-  <title>Phax709 Studios — Wiki Mods</title>
+  <title>Phax709 Studios | Phax Mods Wiki</title>
+  <meta name="description" content="Discover Phax709's Minecraft mods: Acatar, Chaosium, Phax Sirens, and Potion Time+. Explore their wikis, guides, updates, and news.">
+  <link rel="canonical" href="https://phax709.github.io/Phax-mods-wiki/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Phax709 Studios">
+  <meta property="og:title" content="Phax709 Studios | Phax Mods Wiki">
+  <meta property="og:description" content="Discover Phax709's Minecraft mods: Acatar, Chaosium, Phax Sirens, and Potion Time+. Explore their wikis, guides, updates, and news.">
+  <meta property="og:url" content="https://phax709.github.io/Phax-mods-wiki/">
+  <meta property="og:image" content="https://phax709.github.io/Phax-mods-wiki/pages/images/ui/Phax%20mods%20detail.png">
+  <meta property="og:image:alt" content="Phax Mods logo by Phax709 Studios">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Phax709 Studios | Phax Mods Wiki">
+  <meta name="twitter:description" content="Discover Phax709's Minecraft mods: Acatar, Chaosium, Phax Sirens, and Potion Time+. Explore their wikis, guides, updates, and news.">
+  <meta name="twitter:image" content="https://phax709.github.io/Phax-mods-wiki/pages/images/ui/Phax%20mods%20detail.png">
+  <meta name="twitter:image:alt" content="Phax Mods logo by Phax709 Studios">
   <link rel="icon" href="pages/images/ui/Phax-mods-petit.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,7 +40,10 @@
       <input type="text" id="searchInput" placeholder="Rechercher un mod..." data-i18n-placeholder="search.placeholder" autocomplete="off">
       <div class="search-results" id="searchResults"></div>
     </div>
-    <button class="lang-btn" id="langToggle">🇬🇧 EN</button>
+    <div class="lang-selector">
+      <button class="lang-btn" id="langToggle" type="button" aria-label="Language" aria-expanded="false">🇺🇸 EN ▾</button>
+      <div class="lang-dropdown" id="langDropdown"></div>
+    </div>
     <div class="theme-selector">
       <button class="theme-btn" id="themeBtn" title="Thème">🌙</button>
       <div class="theme-dropdown" id="themeDropdown"></div>

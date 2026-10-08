@@ -1,3 +1,4 @@
+i18n.ready.then(() => {
 // ===== Sidebar toggle (mobile) =====
 const menuBtn = document.getElementById('menuBtn');
 const sidebar = document.getElementById('sidebar');
@@ -101,21 +102,22 @@ function clearDesktopSearch() {
   const searchBtn = document.createElement('button');
   searchBtn.className = 'mobile-search-btn';
   searchBtn.innerHTML = '🔍';
-  searchBtn.setAttribute('aria-label', 'Rechercher');
+  searchBtn.setAttribute('data-i18n-label', 'search.mobile_label');
   const header = document.querySelector('.header');
-  const langBtn = document.getElementById('langToggle');
-  if (header && langBtn) header.insertBefore(searchBtn, langBtn);
+  const langSelector = document.querySelector('.lang-selector');
+  if (header && langSelector) header.insertBefore(searchBtn, langSelector);
 
   // Create overlay
   const overlay = document.createElement('div');
   overlay.className = 'search-overlay';
   overlay.innerHTML =
     '<div class="search-overlay-header">' +
-      '<input type="text" id="mobileSearchInput" placeholder="Rechercher un mod..." autocomplete="off">' +
+      '<input type="text" id="mobileSearchInput" data-i18n-placeholder="search.placeholder" autocomplete="off">' +
       '<button class="search-overlay-close">&times;</button>' +
     '</div>' +
     '<div class="search-overlay-results" id="mobileSearchResults"></div>';
   document.body.appendChild(overlay);
+  if (typeof i18n !== 'undefined') i18n.applyAll();
 
   const mobileInput = document.getElementById('mobileSearchInput');
   const mobileResults = document.getElementById('mobileSearchResults');
@@ -149,7 +151,7 @@ function clearDesktopSearch() {
     // Lazy load wiki index on first search
     if (!wikiIndexLoaded) await loadWikiSearchIndex();
 
-    const lang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
+    const lang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
     const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0');
     const prefix = depth === 0 ? '' : '../'.repeat(depth);
 
@@ -199,7 +201,7 @@ const modsSearchData = modsRegistry.map(mod => ({
 // Lazy-loaded: only fetches wiki JSON when user first types in search
 const wikiSearchIndex = [];
 let wikiIndexLoaded = false;
-let wikiIndexLoading = false;
+let wikiIndexLoading = null;
 // Wiki search index — mod mapping built from modsRegistry
 const wikiModMapping = modsRegistry.map(mod => ({
   modId: mod.wikiId,
@@ -208,22 +210,29 @@ const wikiModMapping = modsRegistry.map(mod => ({
 }));
 
 async function loadWikiSearchIndex() {
-  if (wikiIndexLoaded || wikiIndexLoading) return;
-  wikiIndexLoading = true;
+  if (wikiIndexLoaded) return;
+  if (wikiIndexLoading) return wikiIndexLoading;
   const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0');
   const base = '../'.repeat(depth) + 'pages/wiki/';
 
-  for (const mod of wikiModMapping) {
-    try {
-      const catRes = await fetch(base + mod.modId + '/categories.json');
-      const categories = await catRes.json();
-      for (const cat of categories) {
-        if (cat.id === 'all' || !cat.file) continue;
-        try {
-          const itemsRes = await fetch(base + mod.modId + '/' + cat.file);
-          const items = await itemsRes.json();
-          items.forEach(item => {
-            wikiSearchIndex.push({
+  wikiIndexLoading = (async () => {
+    const modCategories = await Promise.all(wikiModMapping.map(async mod => {
+      try {
+        const catRes = await fetch(base + mod.modId + '/categories.json');
+        return { mod, categories: await catRes.json() };
+      } catch (e) {
+        return { mod, categories: [] };
+      }
+    }));
+
+    const modItems = await Promise.all(modCategories.flatMap(({ mod, categories }) =>
+      categories
+        .filter(cat => cat.id !== 'all' && cat.file)
+        .map(async cat => {
+          try {
+            const itemsRes = await fetch(base + mod.modId + '/' + cat.file);
+            const items = await itemsRes.json();
+            return items.map(item => ({
               id: item.id,
               name_fr: item.name_fr,
               name_en: item.name_en,
@@ -233,14 +242,22 @@ async function loadWikiSearchIndex() {
               modId: mod.modId,
               page: mod.page,
               category: cat.id
-            });
-          });
-        } catch (e) { /* skip */ }
-      }
-    } catch (e) { /* skip */ }
+            }));
+          } catch (e) {
+            return [];
+          }
+        })
+    ));
+
+    wikiSearchIndex.push(...modItems.flat());
+    wikiIndexLoaded = true;
+  })();
+
+  try {
+    await wikiIndexLoading;
+  } finally {
+    wikiIndexLoading = null;
   }
-  wikiIndexLoaded = true;
-  wikiIndexLoading = false;
 }
 
 searchInput.addEventListener('input', async () => {
@@ -255,7 +272,7 @@ searchInput.addEventListener('input', async () => {
   // Lazy load wiki index on first search
   if (!wikiIndexLoaded) await loadWikiSearchIndex();
 
-  const lang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
+  const lang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
   const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0');
   const prefix = depth === 0 ? '' : '../'.repeat(depth);
 
@@ -429,18 +446,29 @@ searchResults.addEventListener('click', (e) => {
 
   // Open status modal with progress bar + features
   function openStatusModal(modId, config) {
-    const lang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
+    const lang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
     const title = getModDisplayName(modId);
     const statusLabel = getStatusLabel(config.status);
     const progress = config.progress || 0;
 
     const progressLabel = (typeof i18n !== 'undefined') ? i18n.get('status.progress') : 'Progression';
+    const progressInfoLabel = (typeof i18n !== 'undefined') ? i18n.get('status.progress_info_label') : 'À propos de ce pourcentage';
+    const progressInfo = (typeof i18n !== 'undefined') ? i18n.get('status.progress_info') : 'Le pourcentage de progression est défini manuellement et donné à titre indicatif. Il reflète mon estimation globale de l’avancement, en tenant compte de l’importance relative des objectifs prévus pour cette mise à jour.';
     const featuresLabel = (typeof i18n !== 'undefined') ? i18n.get('status.features') : 'Fonctionnalités prévues';
+    const featureStatusLabels = {
+      complete: 'status.feature.complete',
+      in_progress: 'status.feature.in_progress',
+      not_started: 'status.feature.not_started'
+    };
 
     let html = '';
     // Progress bar
     html += '<div class="progress-section">';
+    html += '<div class="progress-heading">';
     html += '<p class="progress-label">' + progressLabel + '</p>';
+    html += '<button class="progress-info-toggle" type="button" aria-expanded="false" aria-controls="statusProgressInfo" aria-label="' + progressInfoLabel + '"><span aria-hidden="true">ⓘ</span></button>';
+    html += '</div>';
+    html += '<p class="progress-info" id="statusProgressInfo" hidden>' + progressInfo + '</p>';
     html += '<div class="progress-bar-container">';
     html += '<div class="progress-bar" style="width:' + progress + '%">';
     html += '<span class="progress-text">' + progress + '%</span>';
@@ -453,13 +481,31 @@ searchResults.addEventListener('click', (e) => {
       html += '<ul class="features-list">';
       config.features.forEach(f => {
         const text = f.text[lang] || f.text.fr;
-        const icon = f.done ? '✅' : '⬜';
-        html += '<li class="' + (f.done ? 'feature-done' : 'feature-pending') + '">' + icon + ' ' + text + '</li>';
+        const status = f.status;
+        const statusKey = featureStatusLabels[status];
+        if (!statusKey) {
+          console.error('Unknown feature status "' + status + '" for mod "' + modId + '".');
+          return;
+        }
+        const statusText = (typeof i18n !== 'undefined') ? i18n.get(statusKey) : status;
+        html += '<li class="feature-item">';
+        html += '<span class="feature-item-text">' + text + '</span>';
+        html += '<span class="feature-status-badge feature-status-' + status + '">' + statusText + '</span>';
+        html += '</li>';
       });
       html += '</ul></div>';
     }
 
     openModal(title + ' <span class="mod-status status-' + config.status + '">' + statusLabel + '</span>', '', html);
+    const progressInfoToggle = modalBody.querySelector('.progress-info-toggle');
+    const progressInfoElement = modalBody.querySelector('.progress-info');
+    if (progressInfoToggle && progressInfoElement) {
+      progressInfoToggle.addEventListener('click', () => {
+        const isExpanded = progressInfoToggle.getAttribute('aria-expanded') === 'true';
+        progressInfoToggle.setAttribute('aria-expanded', String(!isExpanded));
+        progressInfoElement.hidden = isExpanded;
+      });
+    }
   }
 })();
 
@@ -574,7 +620,7 @@ document.addEventListener('keydown', (e) => {
   function renderHomeNews() {
     if (!homeContainer) return;
     if (homeSliderInterval) { clearInterval(homeSliderInterval); homeSliderInterval = null; }
-    const lang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
+    const lang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
     const active = newsConfig.filter(n => n.showUntil >= today);
     if (active.length === 0) {
       const noNews = (typeof i18n !== 'undefined') ? i18n.get('news.no_news') : 'Aucune news pour le moment.';
@@ -633,7 +679,7 @@ document.addEventListener('keydown', (e) => {
 
     homeContainer.querySelectorAll('.news-slide').forEach(slide => {
       slide.addEventListener('click', () => {
-        const currentLang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
+        const currentLang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
         const idx = parseInt(slide.dataset.newsIndex);
         const n = active[idx];
         const title = n.title[currentLang] || n.title.fr;
@@ -657,7 +703,7 @@ document.addEventListener('keydown', (e) => {
 
   function renderNewsPage() {
     if (!newsContainer) return;
-    const currentLang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
+    const currentLang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
     const sortOrder = newsSortOrder ? newsSortOrder.value : 'desc';
     const badgeFilter = newsFilterBadge ? newsFilterBadge.value : 'all';
 
@@ -797,7 +843,7 @@ document.addEventListener('keydown', (e) => {
   }
 
   function render() {
-    const currentLang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
+    const currentLang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
     const modFilter = filterMod ? filterMod.value : 'all';
     const mcFilter = filterMcVersion ? filterMcVersion.value : 'all';
     const loaderFilter = filterLoader ? filterLoader.value : 'all';
@@ -882,3 +928,4 @@ document.addEventListener('keydown', (e) => {
   if (patchSearch) patchSearch.addEventListener('input', render);
   document.addEventListener('langChanged', render);
 })();
+});

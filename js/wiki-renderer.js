@@ -302,11 +302,15 @@
     });
   }
 
+  let activeWikiLanguageHandler = null;
+  let activeWikiHashHandler = null;
+
   async function initWiki(modId) {
     const container = document.getElementById('wikiContainer');
     if (!container) return;
+    if (typeof i18n !== 'undefined') await i18n.ready;
 
-    const lang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
+    const lang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
     const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0');
     const basePath = '../'.repeat(depth) + 'pages/wiki/' + modId + '/';
     const imgBasePath = '../'.repeat(depth) + 'pages/images/wiki/' + modId + '/';
@@ -325,20 +329,24 @@
     const allItems = [];
     const categoryMap = {};
 
-    for (const cat of categories) {
-      if (cat.id === 'all' || !cat.file) continue;
+    const itemResults = await Promise.all(categories.map(async cat => {
+      if (cat.id === 'all' || !cat.file) return { categoryId: cat.id, items: [] };
       try {
         const res = await fetch(basePath + cat.file);
         const items = await res.json();
-        items.forEach(item => {
-          item._category = cat.id;
-          allItems.push(item);
-        });
-        categoryMap[cat.id] = items;
+        return { categoryId: cat.id, items };
       } catch (e) {
-        categoryMap[cat.id] = [];
+        return { categoryId: cat.id, items: [] };
       }
-    }
+    }));
+
+    itemResults.forEach(({ categoryId, items }) => {
+      categoryMap[categoryId] = items;
+      items.forEach(item => {
+        item._category = categoryId;
+        allItems.push(item);
+      });
+    });
 
     // 3. Build UI
     let activeCategory = 'all';
@@ -355,7 +363,7 @@
     const searchBox = document.createElement('input');
     searchBox.type = 'text';
     searchBox.className = 'wiki-search';
-    searchBox.placeholder = lang === 'fr' ? 'Rechercher...' : 'Search...';
+    searchBox.placeholder = i18n.get('wiki.search');
     searchBox.autocomplete = 'off';
     sidebar.appendChild(searchBox);
 
@@ -417,7 +425,7 @@
     const emptyState = document.createElement('p');
     emptyState.className = 'wiki-empty';
     emptyState.style.display = 'none';
-    emptyState.textContent = lang === 'fr' ? 'Aucun élément trouvé.' : 'No items found.';
+    emptyState.textContent = i18n.get('wiki.empty');
     mainArea.appendChild(emptyState);
 
     container.appendChild(mainArea);
@@ -492,7 +500,7 @@
 
       // Top bar: Copy link (right-aligned)
       html += '<div class="wiki-modal-topbar">';
-      html += '<button class="wiki-modal-copy" data-item-id="' + item.id + '">🔗 ' + (lang === 'fr' ? 'Copier le lien' : 'Copy link') + '</button>';
+      html += '<button class="wiki-modal-copy" data-item-id="' + item.id + '">🔗 ' + i18n.get('wiki.copy_link') + '</button>';
       html += '</div>';
 
       // Card images (large)
@@ -537,7 +545,7 @@
       // Detail usages (multiple lines with images)
       if (item.details && item.details.usages) {
         html += '<div class="wiki-modal-section">';
-        html += '<h3>' + (lang === 'fr' ? 'Usages du lingot' : 'Ingot Uses') + '</h3>';
+        html += '<h3>' + i18n.get('wiki.ingot_uses') + '</h3>';
 
         item.details.usages.forEach(usage => {
           const content = renderWikiLinks(lang === 'fr' ? usage.content_fr : usage.content_en);
@@ -586,9 +594,9 @@
         copyBtn.addEventListener('click', function () {
           var url = window.location.origin + window.location.pathname + '#wiki=' + encodeURIComponent(item.id);
           navigator.clipboard.writeText(url).then(function () {
-            copyBtn.textContent = '✅ ' + (lang === 'fr' ? 'Copié !' : 'Copied!');
+            copyBtn.textContent = '✅ ' + i18n.get('wiki.copied');
             setTimeout(function () {
-              copyBtn.textContent = '🔗 ' + (lang === 'fr' ? 'Copier le lien' : 'Copy link');
+              copyBtn.textContent = '🔗 ' + i18n.get('wiki.copy_link');
             }, 2000);
           });
         });
@@ -623,7 +631,14 @@
       }
     }
 
-    window.addEventListener('hashchange', handleWikiHash);
+    if (activeWikiHashHandler) window.removeEventListener('hashchange', activeWikiHashHandler);
+    activeWikiHashHandler = handleWikiHash;
+    window.addEventListener('hashchange', activeWikiHashHandler);
+
+    if (activeWikiLanguageHandler) document.removeEventListener('langChanged', activeWikiLanguageHandler);
+    activeWikiLanguageHandler = () => initWiki(modId);
+    document.addEventListener('langChanged', activeWikiLanguageHandler);
+
     handleWikiHash();
   }
 
