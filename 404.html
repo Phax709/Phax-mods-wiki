@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="page-depth" content="0">
-  <title>404 — Phax709 Studios</title>
+  <title>Page Not Found | Phax709 Studios</title>
+  <meta name="description" content="This Phax709 Studios page cannot be found or may have moved. Return to the homepage to explore Minecraft mods and guides.">
+  <meta name="robots" content="noindex, follow">
   <link rel="icon" href="pages/images/ui/Phax-mods-petit.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -69,7 +71,10 @@
       <input type="text" id="searchInput" placeholder="Rechercher un mod..." data-i18n-placeholder="search.placeholder" autocomplete="off">
       <div class="search-results" id="searchResults"></div>
     </div>
-    <button class="lang-btn" id="langToggle">🇬🇧 EN</button>
+    <div class="lang-selector">
+      <button class="lang-btn" id="langToggle" type="button" aria-label="Language" aria-expanded="false">🇺🇸 EN ▾</button>
+      <div class="lang-dropdown" id="langDropdown"></div>
+    </div>
     <div class="theme-selector">
       <button class="theme-btn" id="themeBtn" title="Thème">🌙</button>
       <div class="theme-dropdown" id="themeDropdown"></div>
