@@ -10,7 +10,7 @@
 // ║  2. Créer la page HTML du mod dans pages/mods/                               ║
 // ║  3. (Optionnel) Créer les JSON wiki dans pages/wiki/<wikiId>/                ║
 // ║  4. (Optionnel) Ajouter les patchnotes dans patchnotes-config.js             ║
-// ║  5. (Optionnel) Ajouter les traductions i18n (descriptions page mod)         ║
+// ║  5. (Optionnel) Ajouter les traductions dans les fichiers lang/*.json        ║
 // ║  C'est tout ! La sidebar, les cartes, la status bar, la recherche            ║
 // ║  et les badges seront automatiquement mis à jour.                            ║
 // ║                                                                              ║
@@ -48,13 +48,14 @@
 // ║                - 'beta'        → Bêta (modale avec progression)              ║
 // ║                - 'development' → En développement (modale avec progression)  ║
 // ║                                                                              ║
-// ║  progress    : Pourcentage d'avancement (0 à 100)                            ║
+// ║  progress    : Pourcentage manuel et indicatif (0 à 100)                     ║
+// ║                Expliqué dans la fenêtre de statut du mod                     ║
 // ║                Uniquement utile si status = 'beta' ou 'development'          ║
 // ║                Optionnel, défaut : 0                                         ║
 // ║                                                                              ║
 // ║  features    : Liste de fonctionnalités prévues (tableau)                    ║
-// ║                Chaque entrée : { text: { fr: "...", en: "..." }, done: … }   ║
-// ║                done: true = ✅ terminé, false = ⬜ en cours                 ║
+// ║                Chaque entrée : { text: { fr: "...", en: "..." }, status: … } ║
+// ║                status : 'complete' | 'in_progress' | 'not_started'           ║
 // ║                Optionnel (tableau vide par défaut)                           ║
 // ║                                                                              ║
 // ║  links       : Liens externes du mod                                         ║
@@ -76,8 +77,8 @@
 // ║    status: 'development',                                                    ║
 // ║    progress: 45,                                                             ║
 // ║    features: [                                                               ║
-// ║      { text: { fr: 'Feature 1', en: 'Feature 1' }, done: true },             ║
-// ║      { text: { fr: 'Feature 2', en: 'Feature 2' }, done: false }             ║
+// ║      { text: { fr: 'Feature 1', en: 'Feature 1' }, status: 'complete' },     ║
+// ║      { text: { fr: 'Feature 2', en: 'Feature 2' }, status: 'in_progress' },  ║
 // ║    ],                                                                        ║
 // ║    links: {                                                                  ║
 // ║      curseforge: 'https://www.curseforge.com/minecraft/mc-mods/mon-mod',     ║
@@ -100,14 +101,14 @@ const modsRegistry = [
     status: 'development',
     progress: 31.5,
     features: [
-      {text: {fr: 'Bateau et panneau des différents types de bois', en:'Boat and sign of the different types of wood'}, done:true},
-      {text: {fr: 'Refonte dimensions Midler', en:'Midler dimensions redesign'}, done:false},
-      {text: {fr: 'Refonte de la structure du boss (externe + colosse)', en:'Overhaul of the boss structure (external + colossus)'}, done:false},
-      {text: {fr: 'Ajout de la génération de la baie orange', en:'Addition of the orange berry generation'}, done:true},
-      {text: {fr: 'Donner plus d`utilisation et de moyens d`obtention à l`éclat d`arcane', en:'Give more use and means of obtaining to the arcane brilliance'}, done:false},
-      {text: {fr: 'Nouvelles créatures ?', en:'New creatures?'}, done:false},
-      {text: {fr: 'Résolution de bug et ajustements', en:'Bug resolution and adjustments', done:false}},
-      {text: {fr: 'Et plein d`autres', en:'And many other'}, done:false}
+      {text: {fr: 'Bateau et panneau des différents types de bois', en:'Boat and sign of the different types of wood'}, status: 'complete'},
+      {text: {fr: 'Refonte dimensions Midler', en:'Midler dimensions redesign'}, status: 'in_progress'},
+      {text: {fr: 'Refonte de la structure du boss (externe + colosse)', en:'Overhaul of the boss structure (external + colossus)'}, status: 'not_started'},
+      {text: {fr: 'Ajout de la génération de la baie orange', en:'Addition of the orange berry generation'}, status: 'complete'},
+      {text: {fr: 'Donner plus d`utilisation et de moyens d`obtention à l`éclat d`arcane', en:'Give more use and means of obtaining to the arcane brilliance'}, status: 'not_started'},
+      {text: {fr: 'Nouvelles créatures ?', en:'New creatures?'}, status: 'not_started'},
+      {text: {fr: 'Résolution de bug et ajustements', en:'Bug resolution and adjustments'}, status: 'not_started'},
+      {text: {fr: 'Et plein d`autres', en:'And many other'}, status: 'not_started'}
 
     ],
     links: {
@@ -127,11 +128,11 @@ const modsRegistry = [
     status: 'development',
     progress: 0,
     features: [
-      { text: { fr: 'Système de magie de base', en: 'Base magic system' }, done: false },
-      { text: { fr: 'Nouveaux minerais du Chaos', en: 'New Chaos ores' }, done: false },
-      { text: { fr: 'Boss du Chaos', en: 'Chaos Boss' }, done: false },
-      { text: { fr: 'Dimension du Chaos', en: 'Chaos Dimension' }, done: false },
-      { text: { fr: 'Enchantements spéciaux', en: 'Special enchantments' }, done: false }
+      { text: { fr: 'Système de magie de base', en: 'Base magic system' }, status: 'not_started' },
+      { text: { fr: 'Nouveaux minerais du Chaos', en: 'New Chaos ores' }, status: 'not_started' },
+      { text: { fr: 'Boss du Chaos', en: 'Chaos Boss' }, status: 'not_started' },
+      { text: { fr: 'Dimension du Chaos', en: 'Chaos Dimension' }, status: 'not_started' },
+      { text: { fr: 'Enchantements spéciaux', en: 'Special enchantments' }, status: 'not_started' }
     ],
     links: {
       curseforge: 'https://www.curseforge.com/minecraft/mc-mods/chaosium',
