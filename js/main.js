@@ -565,6 +565,8 @@ function openModal(title, date, bodyHTML, image) {
   modalOverlay.classList.add('visible');
 }
 
+window.openModal = openModal;
+
 function closeModal() {
   if (!modalOverlay) return;
   modalOverlay.classList.remove('visible');
