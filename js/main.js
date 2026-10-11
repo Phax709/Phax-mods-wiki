@@ -452,6 +452,7 @@ searchResults.addEventListener('click', (e) => {
     const progress = config.progress || 0;
 
     const progressLabel = (typeof i18n !== 'undefined') ? i18n.get('status.progress') : 'Progression';
+    const progressInfoButtonLabel = (typeof i18n !== 'undefined') ? i18n.get('status.progress_info_button') : 'Détails';
     const progressInfoLabel = (typeof i18n !== 'undefined') ? i18n.get('status.progress_info_label') : 'À propos de ce pourcentage';
     const progressInfo = (typeof i18n !== 'undefined') ? i18n.get('status.progress_info') : 'Le pourcentage de progression est défini manuellement et donné à titre indicatif. Il reflète mon estimation globale de l’avancement, en tenant compte de l’importance relative des objectifs prévus pour cette mise à jour.';
     const featuresLabel = (typeof i18n !== 'undefined') ? i18n.get('status.features') : 'Fonctionnalités prévues';
@@ -466,7 +467,7 @@ searchResults.addEventListener('click', (e) => {
     html += '<div class="progress-section">';
     html += '<div class="progress-heading">';
     html += '<p class="progress-label">' + progressLabel + '</p>';
-    html += '<button class="progress-info-toggle" type="button" aria-expanded="false" aria-controls="statusProgressInfo" aria-label="' + progressInfoLabel + '"><span aria-hidden="true">ⓘ</span></button>';
+    html += '<button class="progress-info-toggle" type="button" aria-expanded="false" aria-controls="statusProgressInfo" aria-label="' + progressInfoLabel + '">' + progressInfoButtonLabel + '</button>';
     html += '</div>';
     html += '<p class="progress-info" id="statusProgressInfo" hidden>' + progressInfo + '</p>';
     html += '<div class="progress-bar-container">';
