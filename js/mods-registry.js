@@ -128,6 +128,7 @@ const modsRegistry = [
     status: 'development',
     progress: 0,
     features: [
+      { text: {fr: 'Réécriture complète du mod', en: 'Complete rewrite of the mod'}, status: 'not_started' },
       { text: { fr: 'Système de magie de base', en: 'Base magic system' }, status: 'not_started' },
       { text: { fr: 'Nouveaux minerais du Chaos', en: 'New Chaos ores' }, status: 'not_started' },
       { text: { fr: 'Boss du Chaos', en: 'Chaos Boss' }, status: 'not_started' },
@@ -148,9 +149,11 @@ const modsRegistry = [
     page: 'phax-sirens.html',
     cardDescKey: 'card.sirens.desc',
     wikiId: 'phax-sirens',
-    status: 'available',
+    status: 'development',
     progress: 0,
-    features: [],
+    features: [
+      { text: { fr: 'Réecriture complete du mod', en: 'Complete rewrite of the mod' }, status: 'not_started' },
+    ],
     links: {
       curseforge: 'https://www.curseforge.com/minecraft/mc-mods/phax-sirens',
       modrinth: 'https://modrinth.com/mod/phax-sirens'
