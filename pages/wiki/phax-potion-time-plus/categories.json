@@ -1,1 +1,5 @@
-
+[
+  { "id": "all", "label_fr": "Tout", "label_en": "All", "icon": "📦", "file": null },
+  { "id": "items", "label_fr": "Items", "label_en": "Items", "icon": "🔮", "file": "items.json" },
+  { "id": "craft", "label_fr": "Craft / Recette", "label_en": "Crafting", "icon": "⚒️", "file": "craft.json" }
+]

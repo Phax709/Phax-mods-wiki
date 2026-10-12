@@ -1,0 +1,94 @@
+[
+    {
+    "id": "craft-15-minutes-potion",
+    "name_fr": "Recette de potion de 15 minutes (Général)",
+    "name_en": "Recipe of 15-minute potion (General)",
+    "desc_fr": "Une potion qui dure 15 minutes. Toutes les infos concernent toutes les potions de 15 minutes.",
+    "desc_en": "A potion that lasts 15 minutes. All information concerns all 15-minute potions.",
+    "images": ["Regeneration15.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Informations",
+          "title_en": "Information",
+          "content_fr": "<ul><li>Les potions de 15 minutes sont exactement comme les potions vanilla de base mais leur particularité est qu'elles durent 15 minutes.</li><li> Toutes les potions du jeu ne sont pas forcement compatible avec la version 15 minutes alors voici la liste des potions qui le sont : vision nocturne, régénération, invisibilité, saut, résistance au feu, rapidité, lenteur, maitre tortue, respiration aquatique, poison, force, faiblesse et chute lente d'autre potion peuvent arriver plus tard mais sans confirmation.</li><li>Point important : tout comme les potions vanilla la maniere dont vous prenez la potion est importante pour appliquez l'effet, cependant certaines potions ont des durée un peu moins que celle annoncé en raison du temps que minecraft applique.</li></ul>",
+          "content_en": "<ul><li>15-minute potions are exactly like the base vanilla potions but their particularity is that they last 15 minutes.</li><li> Not all game potions are necessarily compatible with the 15-minute version, so here is the list of potions that are: night vision, regeneration, invisibility, leaping, fire resistance, swiftness, slowness, turtle master, water breathing, poison, strength, weakness and slow falling. Other potions may arrive later but without confirmation.</li><li>Important note: Just like vanilla potions, the way you consume the potion is important for applying the effect. However, some potions may have a slightly shorter duration than advertised due to the time Minecraft applies.</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations",
+          "title_en": "Uses",
+          "content_fr": "<ul><li>La potion de 15 minutes peut être utilisée pour fabriquer les [[craft-30-minutes-potion|potions de 30 minutes]] dans un alambic.</li></ul>",
+          "content_en": "<ul><li>15-minute potions can be used to craft [[craft-30-minutes-potion|30-minute potions]] in a brewing stand.</li></ul>"
+        },
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Toutes les recettes de potion de 15 minutes nécessitent de la [[item-shinedust|poudre scintillante]] et utilise des potions vanilla longue version (généralement 8 minutes).</li></ul>",
+          "content_en": "<ul><li>All 15-minute potion recipes require [[item-shinedust|shine dust]] and use vanilla potions in their long version (generally 8 minutes).</li></ul>",
+          "images":["15potion_recipe.png"]
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "craft-30-minutes-potion",
+    "name_fr": "Recette de potion de 30 minutes (Général)",
+    "name_en": "Recipe of 30-minute potion (General)",
+    "desc_fr": "Une potion qui dure 30 minutes. Toutes les infos concernent toutes les potions de 30 minutes.",
+    "desc_en": "A potion that lasts 30 minutes. All information concerns all 30-minute potions.",
+    "images": ["Regeneration30.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Informations",
+          "title_en": "Information",
+          "content_fr": "<ul><li>Les potions de 30 minutes sont exactement comme les potions vanilla de base mais leur particularité est qu'elles durent 30 minutes.</li><li> Toutes les potions du jeu ne sont pas forcement compatible avec la version 30 minutes alors voici la liste des potions qui le sont : vision nocturne, régénération, invisibilité, saut, résistance au feu, rapidité, lenteur, maitre tortue, respiration aquatique, poison, force, faiblesse et chute lente d'autre potion peuvent arriver plus tard mais sans confirmation.</li><li>Point important : tout comme les potions vanilla la maniere dont vous prenez la potion est importante pour appliquez l'effet, cependant certaines potions ont des durée un peu moins que celle annoncé en raison du temps que minecraft applique.</li></ul>",
+          "content_en": "<ul><li>30-minute potions are exactly like the base vanilla potions but their particularity is that they last 30 minutes.</li><li> Not all game potions are necessarily compatible with the 30-minute version, so here is the list of potions that are: night vision, regeneration, invisibility, leaping, fire resistance, swiftness, slowness, turtle master, water breathing, poison, strength, weakness and slow falling. Other potions may arrive later but without confirmation.</li><li>Important note: Just like vanilla potions, the way you consume the potion is important for applying the effect. However, some potions may have a slightly shorter duration than advertised due to the time Minecraft applies.</li></ul>"
+        },
+        {
+          "title_fr": "Utilisations",
+          "title_en": "Uses",
+          "content_fr": "<ul><li>La potion de 30 minutes peut être utilisée pour fabriquer les [[craft-60-minutes-potion|potions de 60 minutes]] dans un alambic.</li></ul>",
+          "content_en": "<ul><li>30-minute potions can be used to craft [[craft-60-minutes-potion|60-minute potions]] in a brewing stand.</li></ul>"
+        },
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Toutes les recettes de potion de 30 minutes nécessitent de la [[item-mysticdust|poudre mystique]] et utilise les [[craft-15-minutes-potion|potions de 15 minutes]].</li></ul>",
+          "content_en": "<ul><li>All 30-minute potion recipes require [[item-mysticdust|mystic dust]] and use the [[craft-15-minutes-potion|15-minute potions]].</li></ul>",
+          "images":["30potion_recipe.png"]
+        }
+      ]
+    }
+  },
+
+  {
+    "id": "craft-60-minutes-potion",
+    "name_fr": "Recette de potion de 60 minutes (Général)",
+    "name_en": "Recipe of 60-minute potion (General)",
+    "desc_fr": "Une potion qui dure 60 minutes. Toutes les infos concernent toutes les potions de 60 minutes.",
+    "desc_en": "A potion that lasts 60 minutes. All information concerns all 60-minute potions.",
+    "images": ["Regeneration60.png"],
+
+    "details": {
+      "sections": [
+        {
+          "title_fr": "Informations",
+          "title_en": "Information",
+          "content_fr": "<ul><li>Les potions de 60 minutes sont exactement comme les potions vanilla de base mais leur particularité est qu'elles durent 60 minutes.</li><li> Toutes les potions du jeu ne sont pas forcement compatible avec la version 60 minutes alors voici la liste des potions qui le sont : vision nocturne, régénération, invisibilité, saut, résistance au feu, rapidité, lenteur, maitre tortue, respiration aquatique, poison, force, faiblesse et chute lente d'autre potion peuvent arriver plus tard mais sans confirmation.</li><li>Point important : tout comme les potions vanilla la maniere dont vous prenez la potion est importante pour appliquez l'effet, cependant certaines potions ont des durée un peu moins que celle annoncé en raison du temps que minecraft applique.</li></ul>",
+          "content_en": "<ul><li>60-minute potions are exactly like the base vanilla potions but their particularity is that they last 60 minutes.</li><li> Not all game potions are necessarily compatible with the 60-minute version, so here is the list of potions that are: night vision, regeneration, invisibility, leaping, fire resistance, swiftness, slowness, turtle master, water breathing, poison, strength, weakness and slow falling. Other potions may arrive later but without confirmation.</li><li>Important note: Just like vanilla potions, the way you consume the potion is important for applying the effect. However, some potions may have a slightly shorter duration than advertised due to the time Minecraft applies.</li></ul>"
+        },
+        {
+          "title_fr": "Ingredients",
+          "title_en": "Ingredients",
+          "content_fr": "<ul><li>Toutes les recettes de potion de 60 minutes nécessitent de la [[item-goldendust|poudre dorée]] et utilise les [[craft-30-minutes-potion|potions de 30 minutes]].</li></ul>",
+          "content_en": "<ul><li>All 60-minute potion recipes require [[item-goldendust|golden dust]] and use the [[craft-30-minutes-potion|30-minute potions]].</li></ul>",
+          "images":["60potion_recipe.png"]
+        }
+      ]
+    }
+  }
+]
