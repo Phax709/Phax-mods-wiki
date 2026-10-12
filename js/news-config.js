@@ -14,6 +14,29 @@
 
 const newsConfig = [
   {
+    id: 'phax-sirens-chaosium-wiki-overhaul',
+    date: '2026-10-12',
+    showUntil: '2027-02-28',
+    icon: '🛠️',
+    badge: 'announcement',
+    title: {
+      fr: 'Phax Sirens et Chaosium : refonte en préparation',
+      en: 'Phax Sirens and Chaosium: an overhaul is in preparation'
+    },
+    content: {
+      fr: `<p>Les mods <strong>Phax Sirens</strong> et <strong>Chaosium</strong> pourraient faire l'objet d'une refonte interne de leurs fichiers et de leur développement. En conséquence, leurs mods comme leurs wikis ne seront pas mis à jour tout de suite.</p>
+           <p><strong>Phax Sirens</strong>, plus petit, mais qui nécessite des précisions techniques, pourrait être le premier à recevoir une mise à jour. Dans son état actuel, il ne répond pas à toutes les exigences que je me fixe pour le laisser tel quel : une refonte est donc nécessaire.</p>
+           <p>Le développement de <strong>Chaosium</strong> ne dépendant pas entièrement de moi, le mod et son wiki seront mis à jour lorsque le mod sera prêt à être déployé sur les nouvelles versions de Minecraft.</p>
+           <p>En attendant, les deux mods sont indiqués comme <strong>« En développement »</strong>. Vous pouvez consulter leur statut dans la section <strong>Statut</strong> de la page d'accueil, ou sur la page wiki de chaque mod, à la dernière ligne du tableau d'informations (« Statut »).</p>
+           <p>Merci pour votre patience !</p>`,
+      en: `<p><strong>Phax Sirens</strong> and <strong>Chaosium</strong> may undergo an internal overhaul of both their files and their development. As a result, neither the mods nor their wikis will be updated just yet.</p>
+           <p><strong>Phax Sirens</strong> is the smaller mod, but it requires technical details and may therefore be the first to receive an update. In its current state, it does not meet all the requirements I set for leaving it as it is, so an overhaul is needed.</p>
+           <p>Since <strong>Chaosium</strong>'s development does not depend entirely on me, the mod and its wiki will be updated when the mod is ready to be released for newer Minecraft versions.</p>
+           <p>In the meantime, both mods are marked as <strong>“In development”</strong>. You can check their status in the <strong>Status</strong> section on the homepage, or on each mod's wiki page, in the last row of its information table (“Status”).</p>
+           <p>Thank you for your patience!</p>`
+    }
+  },
+  {
     id: 'secret-project-teaser',
     date: '2026-10-02',
     showUntil : '2027-02-01',

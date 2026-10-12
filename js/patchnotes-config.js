@@ -43,6 +43,17 @@
 const patchnotesConfig = {
   acatar: [
     {
+      version: '1.1.0',
+      date: '2026-10-18',
+      loader: 'NeoForge',
+      mcVersion: '26.1.2',
+      type: 'release',
+      changes: {
+        fr: ["Vous ne le saurez que quand elle sera prête !"],
+        en: ["You won't find out until it's ready!"]
+      }
+    },
+    {
       version: '1.0.3',
       date: '2026-09-16',
       loader: 'NeoForge',
@@ -56,7 +67,7 @@ const patchnotesConfig = {
           </ul>`
         ],
         en: [
-          `<b class="patch-fix">Changes & Fixes</b>
+          `<b class="patch-fix">Changes & Fixes:</b>
           <ul>
             <li>Fixed Lyvorian Berry stacking issue (this fix will also be included in the next Acatar version for Minecraft 1.21.1)</li>
           </ul>`
@@ -78,7 +89,7 @@ const patchnotesConfig = {
           </ul>`
         ],
         en: [
-          `<b class="patch-fix">Changes & Fixes</b>
+          `<b class="patch-fix">Changes & Fixes:</b>
           <ul>
             <li>Restored generation for the "Sakura Forest" biome</li>
             <li>Fixed a bug causing the sakura moss carpet to float in the air (this fix will also be included in the next Acatar version for Minecraft 1.21.1)</li>
@@ -103,7 +114,7 @@ const patchnotesConfig = {
           </ul>`
         ],
         en: [
-          `<b class="patch-fix">Changes & Fixes</b>
+          `<b class="patch-fix">Changes & Fixes:</b>
           <ul>
             <li>Fixed several spelling mistakes and incorrect translations</li>
             <li>Added sound effects when the cerulean creeper takes damage</li>
@@ -130,7 +141,7 @@ const patchnotesConfig = {
           </ul>`
         ],
         en: [
-          `<b class="patch-fix">Changes & Fixes</b>
+          `<b class="patch-fix">Changes & Fixes:</b>
           <ul>
             <li>Fixed several spelling mistakes and incorrect translations</li>
             <li>Fixed the issue causing infinite world creation, but as a trade-off, the "Sakura Forest" biome currently does not generate in 26.1.2</li>
@@ -156,7 +167,7 @@ const patchnotesConfig = {
             <li>Ajout d'une nouvelle recette pour fabriquer de la poudre à canon à partir de poudre de souffre</li>    
             <li>Ajout d'une recette pour l'armure pour cheval en cuivre</li>
             <li>Ajout du craft de l'oeuf d'apparition du loup lyvora</li>  
-            </ul>`,
+          </ul>`,
           `<b class="patch-fix">Changements & Corrections :</b>
           <ul>
             <li>Des changements concernants le disque de musique "Sweden" : 
@@ -189,7 +200,7 @@ const patchnotesConfig = {
             <li>Addition of a recipe for copper horse armor</li>
             <li>Addition of a recipe for the wolf lyvora's egg</li>
           </ul>`,
-          `<b class="patch-fix">Changes & Fixes</b>
+          `<b class="patch-fix">Changes & Fixes:</b>
           <ul>
             <li>Changes related to the "Sweden" music disc: 
               <ol>
@@ -256,7 +267,7 @@ const patchnotesConfig = {
             <li>Complete tool, ore, and block rebalancing: Adjusted all mining levels (harvest levels) across all tools, ores, and blocks for a smoother progression</li>
             <li>Addition of a recipe for the wolf lyvora's egg</li>
           </ul>`,
-          `<b class="patch-fix">Changes & Fixes</b>
+          `<b class="patch-fix">Changes & Fixes:</b>
           <ul>
             <li>Changes related to the "Sweden" music disc: 
               <ol>
@@ -296,7 +307,7 @@ const patchnotesConfig = {
           </ul>`
         ],
         en: [
-          `<b class="patch-add">Added :</b>
+          `<b class="patch-add">Added:</b>
           <ul>
             <li>Added a new crafting recipe for the Turtle Spawn Egg</li>
             <li>Added a new Master level trade to the Butcher villager to obtain the Lava Chicken music disc</li>
@@ -323,7 +334,7 @@ const patchnotesConfig = {
           </ul>`
         ],
         en: [
-          `<b class="patch-fix">Bug fixes and compatibility cleanup :</b>
+          `<b class="patch-fix">Bug fixes and compatibility cleanup:</b>
           <ul>
             <li>Fixed invalid tags and broken references</li>
             <li>Removed unsupported legacy entries</li>
@@ -415,7 +426,7 @@ const patchnotesConfig = {
             <li>Mod armors (except space armor) can now have a forge model (available only with vanilla materials: diamond, emerald, iron, gold, redstone, etc.)</li>
             <li>Added 2 crafts for the Bad Omen potion: one in the crafting table (9 ingredients) and one in the brewing stand 🧪</li>
             <li>Added the dioptasium apple 🍏</li>
-            <li>Added sulfur, craftable with blaze powder 🔥</l>
+            <li>Added sulfur, craftable with blaze powder 🔥</li>
             <li>New ore: lead ⛏️</li>
             <li>New ingot: Hazmium, obtained with sulfur, lead, luminous powder and gold — used for Hazmat armor ⚗️</li>
             <li>Hazmat armor is now available in survival 🧍‍♂️</li>
@@ -510,7 +521,7 @@ const patchnotesConfig = {
             <li>Mod armors (except space armor) can now have a forge model (available only with vanilla materials: diamond, emerald, iron, gold, redstone, etc.)</li>
             <li>Added 2 crafts for the Bad Omen potion: one in the crafting table (9 ingredients) and one in the brewing stand 🧪</li>
             <li>Added the dioptasium apple 🍏</li>
-            <li>Added sulfur, craftable with blaze powder 🔥</l>
+            <li>Added sulfur, craftable with blaze powder 🔥</li>
             <li>New ore: lead ⛏️</li>
             <li>New ingot: Hazmium, obtained with sulfur, lead, luminous powder and gold — used for Hazmat armor ⚗️</li>
             <li>Hazmat armor is now available in survival 🧍‍♂️</li>
@@ -3049,7 +3060,40 @@ const patchnotesConfig = {
       type: 'release',
       changes: {
         fr: ["Ceci est la première version, elle ajoute toutes les potions en 15 minutes, 30 minutes ou 1 heure. Certaines potions peuvent avoir une durée plus courte en raison de l'effet indiqué. Les potions ne sont pas autorisées à cette durée prolongée en raison de leur effet : chance, infestation, suintement, tissage, charge de vent, guérison, malédiction. Les potions renforcées comme Lenteur IV n'ont pas de durée augmentée pour le moment mais pourraient l'avoir plus tard."],
-        en: ['This is the first version it adds all the potions in 15 minutes, 30 minutes or 1 hour. Certain potion may have a shorter duration due to the indicated effect. Potions are not allowed this increased duration due to their effect: luck, infestation, oozing, weaving, wind charging, healing, harming. Reinforced potions like Slowness IV do not have an increasing duration at the moment but may be later.']
+        en: ["This is the first version it adds all the potions in 15 minutes, 30 minutes or 1 hour. Certain potion may have a shorter duration due to the indicated effect. Potions are not allowed this increased duration due to their effect: luck, infestation, oozing, weaving, wind charging, healing, harming. Reinforced potions like Slowness IV do not have an increasing duration at the moment but may be later."]
+      }
+    },
+    {
+      version: '1.0.0',
+      date: '2026-10-12',
+      loader: 'NeoForge',
+      mcVersion: '1.21.1',
+      type: 'release',
+      changes: {
+        fr: ["Ajout du support pour Minecraft 1.21.1 seulement."],
+        en: ["Added support for Minecraft 1.21.1 only."]
+      }
+    },
+    {
+      version: '1.0.0',
+      date: '2026-10-12',
+      loader: 'NeoForge',
+      mcVersion: '1.21.8',
+      type: 'release',
+      changes: {
+        fr: ["Ajout du support pour Minecraft 1.21.8 seulement."],
+        en: ["Added support for Minecraft 1.21.8 only."]
+      }
+    },
+    {
+      version: '1.0.0',
+      date: '2026-10-12',
+      loader: 'NeoForge',
+      mcVersion: '26.1.2',
+      type: 'release',
+      changes: {
+        fr: ["Ajout du support pour Minecraft 26.1.2 seulement."],
+        en: ["Added support for Minecraft 26.1.2 only."]
       }
     }
   ]
