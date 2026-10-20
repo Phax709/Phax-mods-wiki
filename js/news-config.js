@@ -14,6 +14,31 @@
 
 const newsConfig = [
   {
+    id: 'acatar-wilds-of-the-midler-teaser',
+    date: '2026-10-20',
+    showUntil: '2026-11-15',
+    icon: '🌿',
+    badge: 'announcement',
+    title: {
+      fr: 'Acatar dévoile le titre de sa prochaine mise à jour !',
+      en: 'Acatar reveals the title of its next update!'
+    },
+    content: {
+      fr: `<p>La prochaine mise à jour d'<strong>Acatar</strong> a désormais un titre : <strong>Terres sauvages du Midler</strong> !</p>
+           <p>Le développement avance très bien, malgré quelques surprises de la part de <strong>MCreator</strong>. Je m'efforce de les contourner ou de trouver des solutions pour rendre possibles toutes les nouveautés prévues. Si tout continue ainsi, la mise à jour pourrait arriver prochainement.</p>
+           <p>Le patch présenté précédemment s'est d'ailleurs bien étoffé depuis !</p>
+           <p><img src="pages/images/ui/acatar_wild_of_the_midler_update_fr.png" alt="Teaser de la mise à jour Terres sauvages du Midler" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
+           <p>Certaines créatures, autrefois ordinaires à la Surface, deviennent différentes dans cette dimension…</p>
+           <p>J'ai d'ailleurs un message de Steve pour vous : « Cette dimension, autrefois pauvre et décevante, n'est plus… Le renouveau est… est… »</p>`,
+      en: `<p>Acatar's next update now has a title: <strong>Wilds of the Midler</strong>!</p>
+           <p>Development is progressing very well, despite a few surprises from <strong>MCreator</strong>. I'm working to find workarounds and make all the planned features possible. If things continue this way, the update could be released soon.</p>
+           <p>The patch previewed earlier has grown considerably since then!</p>
+           <p><img src="pages/images/ui/acatar_wild_of_the_midler_update.png" alt="Teaser for the Wilds of the Midler update" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
+           <p>Some creatures that once seemed ordinary on the Surface become different in this dimension…</p>
+           <p>Steve also has a message for you: “This once poor and disappointing dimension is no more… The renewal is… is…”</p>`
+    }
+  },
+  {
     id: 'phax-sirens-chaosium-wiki-overhaul',
     date: '2026-10-12',
     showUntil: '2027-02-28',
@@ -63,7 +88,7 @@ const newsConfig = [
   {
     id: 'acatar-next-update-teaser-2',
     date: '2026-10-02',
-    showUntil: '2026-12-01',
+    showUntil: '2026-11-15',
     icon: '🗝️',
     badge: 'announcement',
     image: 'pages/images/ui/teaser_acatar_nextupdate 2.png',
@@ -89,7 +114,7 @@ const newsConfig = [
   {
     id: 'acatar-next-update-teaser-1',
     date: '2026-09-23',
-    showUntil: '2026-11-23',
+    showUntil: '2026-11-15',
     icon: '🌳',
     badge: 'announcement',
     image: 'pages/images/ui/first_teaser_acatar_nextupdate.png',
