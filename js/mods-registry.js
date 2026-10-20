@@ -99,7 +99,7 @@ const modsRegistry = [
     cardDescKey: 'card.acatar.desc',
     wikiId: 'acatar',
     status: 'development',
-    progress: 45.0,
+    progress: 50.0,
     features: [
       {text: {fr: 'Bateau et panneau des différents types de bois', en:'Boat and sign of the different types of wood'}, status: 'complete'},
       {text: {fr: 'Refonte dimensions Midler', en:'Midler dimensions redesign'}, status: 'in_progress'},
@@ -108,7 +108,7 @@ const modsRegistry = [
       {text: {fr: 'Donner plus d`utilisation et de moyens d`obtention à l`éclat d`arcane', en:'Give more use and means of obtaining to the arcane brilliance'}, status: 'not_started'},
       {text: {fr: 'Nouvelles créatures ?', en:'New creatures?'}, status: 'in_progress'},
       {text: {fr: 'Résolution de bug et ajustements', en:'Bug resolution and adjustments'}, status: 'in_progress'},
-      {text: {fr: 'Et plein d`autres', en:'And many other'}, status: 'not_started'}
+      {text: {fr: 'Et plein d`autres', en:'And many other'}, status: 'in_progress'}
 
     ],
     links: {
