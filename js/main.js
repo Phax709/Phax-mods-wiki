@@ -616,6 +616,13 @@ document.addEventListener('keydown', (e) => {
     return prefix + cleanPath;
   }
 
+  function getNewsImage(image, lang) {
+    if (image && typeof image === 'object') {
+      return image[lang] || image.fr || image.en;
+    }
+    return image;
+  }
+
   // Homepage: slider
   const homeContainer = document.getElementById('homeNewsContainer');
   let homeSliderInterval = null;
@@ -637,9 +644,10 @@ document.addEventListener('keydown', (e) => {
       const title = n.title[lang] || n.title.fr;
       const badgeLabel = n.badge ? ((typeof i18n !== 'undefined') ? i18n.get('news.badge_' + n.badge) : n.badge) : '';
       const badgeHTML = n.badge ? '<span class="news-badge news-badge-' + n.badge + '">' + badgeLabel + '</span>' : '';
-      const newsImg = resolveImgPath(n.image, n.badge);
+      const image = getNewsImage(n.image, lang);
+      const newsImg = resolveImgPath(image, n.badge);
       const imageHTML = '<img class="news-slide-img" src="' + newsImg + '" alt="">';
-      const creditUrl = imageCredits[n.image] || imageCredits[newsImg];
+      const creditUrl = imageCredits[image] || imageCredits[newsImg];
       const creditHTML = creditUrl ? '<a class="slide-img-credit" href="' + creditUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">Image by Freepik</a>' : '';
       sliderHTML += '<div class="news-slide has-image" data-news-index="' + i + '">' +
         '<div class="news-slide-img-wrap">' + imageHTML + creditHTML + '</div>' +
@@ -689,7 +697,7 @@ document.addEventListener('keydown', (e) => {
         const content = n.content[currentLang] || n.content.fr;
         const bLabel = n.badge ? ((typeof i18n !== 'undefined') ? i18n.get('news.badge_' + n.badge) : n.badge) : '';
         const bHTML = n.badge ? ' <span class="news-badge news-badge-' + n.badge + '">' + bLabel + '</span>' : '';
-        openModal(n.icon + ' ' + title + bHTML, n.date, content, resolveImgPath(n.image, n.badge));
+        openModal(n.icon + ' ' + title + bHTML, n.date, content, resolveImgPath(getNewsImage(n.image, currentLang), n.badge));
       });
     });
 
@@ -734,10 +742,11 @@ document.addEventListener('keydown', (e) => {
       const badgeLabel = n.badge ? ((typeof i18n !== 'undefined') ? i18n.get('news.badge_' + n.badge) : n.badge) : '';
       const badgeHTML = n.badge ? '<span class="news-badge news-badge-' + n.badge + '">' + badgeLabel + '</span>' : '';
       
-      const newsImg = resolveImgPath(n.image, n.badge);
+      const image = getNewsImage(n.image, currentLang);
+      const newsImg = resolveImgPath(image, n.badge);
       
       // Recherche de l'URL du crédit : vérifie n.image, puis l'image résolue (par défaut), puis sans le préfixe
-      let creditUrl = imageCredits[n.image] || imageCredits[newsImg];
+      let creditUrl = imageCredits[image] || imageCredits[newsImg];
       if (!creditUrl) {
         const cleanKey = newsImg.replace(/^(\.\.\/)+/, '');
         creditUrl = imageCredits[cleanKey] || imageCredits['pages/' + cleanKey];

@@ -9,10 +9,36 @@
 //   - icon      : emoji affiché à côté
 //   - badge     : type de badge (announcement, maintenance, urgent, update, event, info)
 //   - image     : (optionnel) chemin vers une image affichée dans le slider
+//                 Peut être un objet { fr: "...", en: "..." } pour une image localisée.
 //   - title     : { fr: "...", en: "..." }
 //   - content   : { fr: "...", en: "..." }  (HTML autorisé)
 
 const newsConfig = [
+  {
+    id: 'acatar-ashlands-final-development-phase',
+    date: '2026-10-25',
+    showUntil: '2026-11-15',
+    icon: '🌋',
+    badge: 'announcement',
+    image: {
+      fr: 'pages/images/ui/ashlands_teaser_fr.png',
+      en: 'pages/images/ui/ashlands_teaser_en.png'
+    },
+    title: {
+      fr: 'Acatar : le développement entre dans sa dernière phase !',
+      en: 'Acatar: development enters its final phase!'
+    },
+    content: {
+      fr: `<p>Le développement de la prochaine mise à jour d'<strong>Acatar</strong> entre dans sa dernière phase : les derniers ajouts et les finitions sont en cours !</p>
+           <p>Il s'agit de la plus grosse mise à jour que le mod aura reçue depuis <strong>The Sakura Spirit Update</strong>. Le patchnote compte déjà plus de <strong>25 lignes d'ajouts</strong>, ainsi qu'un nombre comparable de lignes de correctifs et de changements.</p>
+           <p>Le <strong>31 octobre 2026</strong> est la date que je vise pour la sortie, mais elle n'est pas encore certaine. Si la mise à jour n'est pas prête à temps, sa sortie sera décalée à la semaine du <strong>2 novembre</strong>.</p>
+           <p>Cette capture a été prise pendant le développement. Elle se rapproche de la version finale du biome, mais ne la représente pas exactement : le biome a depuis reçu davantage de contenu et a continué d'évoluer.</p>`,
+      en: `<p>Development on the next <strong>Acatar</strong> update is entering its final phase: the last additions and finishing touches are underway!</p>
+           <p>This will be the biggest update the mod has received since <strong>The Sakura Spirit Update</strong>. The patch notes already contain over <strong>25 lines of additions</strong>, plus a comparable number of fixes and changes.</p>
+           <p><strong>October 31, 2026</strong> is my target release date, but it is not confirmed yet. If the update is not ready in time, its release will be pushed to the week of <strong>November 2</strong>.</p>
+           <p>This screenshot was taken during development. It is close to the biome's final version, but does not show it exactly: the biome has since received more content and continued to evolve.</p>`
+    }
+  },
   {
     id: 'acatar-wilds-of-the-midler-teaser',
     date: '2026-10-20',
