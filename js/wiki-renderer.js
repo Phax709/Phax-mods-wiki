@@ -308,9 +308,23 @@
   async function initWiki(modId) {
     const container = document.getElementById('wikiContainer');
     if (!container) return;
+
+    const loading = document.createElement('div');
+    loading.className = 'wiki-loading';
+    loading.setAttribute('role', 'status');
+    loading.setAttribute('aria-live', 'polite');
+    const loadingSpinner = document.createElement('span');
+    loadingSpinner.className = 'wiki-loading-spinner';
+    loadingSpinner.setAttribute('aria-hidden', 'true');
+    const loadingLabel = document.createElement('span');
+    loadingLabel.className = 'wiki-loading-label';
+    loading.append(loadingSpinner, loadingLabel);
+    container.replaceChildren(loading);
+
     if (typeof i18n !== 'undefined') await i18n.ready;
 
     const lang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
+    loadingLabel.textContent = lang === 'fr' ? 'Chargement des cartes…' : 'Loading cards…';
     const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0');
     const basePath = '../'.repeat(depth) + 'pages/wiki/' + modId + '/';
     const imgBasePath = '../'.repeat(depth) + 'pages/images/wiki/' + modId + '/';
