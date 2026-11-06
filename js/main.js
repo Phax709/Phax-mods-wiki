@@ -564,6 +564,18 @@ function openModal(title, date, bodyHTML, image) {
   modalDate.textContent = date;
   modalBody.innerHTML = bodyHTML;
   modalOverlay.classList.add('visible');
+
+  const secretLabel = modalBody.querySelector('.news-secret');
+  if (secretLabel) {
+    requestAnimationFrame(() => {
+      const rect = secretLabel.getBoundingClientRect();
+      const offsetX = window.innerWidth / 2 - (rect.left + rect.width / 2);
+      const offsetY = window.innerHeight / 2 - (rect.top + rect.height / 2);
+      secretLabel.style.setProperty('--news-secret-start-x', offsetX + 'px');
+      secretLabel.style.setProperty('--news-secret-start-y', offsetY + 'px');
+      requestAnimationFrame(() => secretLabel.classList.add('is-arriving'));
+    });
+  }
 }
 
 window.openModal = openModal;

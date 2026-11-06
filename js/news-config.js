@@ -15,6 +15,29 @@
 
 const newsConfig = [
   {
+    id: 'acatar-structure-overhaul-delay',
+    date: '2026-11-05',
+    showUntil: '2026-11-15',
+    icon: '🏗️',
+    badge: 'announcement',
+    title: {
+      fr: 'Acatar : la refonte des structures prend plus de temps que prévu',
+      en: 'Acatar: the structure overhaul is taking longer than expected'
+    },
+    content: {
+      fr: `<p>Je voulais vous tenir au courant : la refonte des structures prend plus de temps que prévu. Petit teaser : elles seront construites à l'aide de <strong>blocs de puzzle</strong>. Cela m'oblige à revoir entièrement leur génération afin qu'elles apparaissent correctement dans le monde, sans décalages ni désalignements.</p>
+           <p>Mon objectif est de finaliser <strong>trois structures d'ici au 15 novembre</strong> : les deux arènes de combat des boss déjà présents, ainsi qu'une troisième structure dédiée à la créature <span class="news-secret">secret</span>.</p>
+           <p>La mise à jour sortira lorsqu'elle sera prête, avec le moins de bugs possible. Si je n'arrive pas à la terminer d'ici au 15 novembre, je la reporterai au plus tard au <strong>5 décembre</strong>.</p>
+           <p>Comme <strong>GTA VI</strong> doit sortir le 19 novembre, je prendrai probablement une petite pause pour en profiter. J'ai aussi besoin de souffler après tout le travail fourni sur cette mise à jour : je développe et teste tout seul, en interne.</p>
+           <p>J'espère ne pas trop vous décevoir, mais il me semblait important de vous tenir au courant de l'avancée du projet. Merci pour votre patience et votre soutien !</p>`,
+      en: `<p>I wanted to keep you updated: the structure overhaul is taking longer than expected. Here's a little teaser: the structures will be built using <strong>jigsaw blocks</strong>. This means I have to rework their generation so they spawn properly in the world, without offsets or misalignment.</p>
+           <p>My goal is to finish <strong>three structures by November 15</strong>: the two combat arenas for the existing bosses, plus a third structure dedicated to the creature <span class="news-secret">secret</span>.</p>
+           <p>The update will be released when it's ready, with as few bugs as possible. If I can't finish it by November 15, I'll postpone it to no later than <strong>December 5</strong>.</p>
+           <p>Since <strong>Grand Theft Auto VI</strong> is set to release on November 19, I'll probably take a short break to play it. I also need some time to recharge after all the work I've put into this update: I'm developing and testing everything on my own.</p>
+           <p>I hope I won't disappoint too many of you, but I felt it was important to keep you informed about the project's progress. Thank you for your patience and support!</p>`
+    }
+  },
+  {
     id: 'acatar-ashlands-final-development-phase',
     date: '2026-10-25',
     showUntil: '2026-11-15',
