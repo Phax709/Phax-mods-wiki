@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="page-depth" content="1">
-  <title>Patchnotes — Phax709 Studios</title>
+  <title>Minecraft Mod Changelogs &amp; Release Notes | Phax709 Studios</title>
+  <meta name="description" content="Browse release notes for Phax709's Minecraft mods, including changes, supported game versions, and mod loaders.">
+  <link rel="canonical" href="https://phax709.github.io/Phax-mods-wiki/pages/patchnotes.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Phax709 Studios">
+  <meta property="og:title" content="Minecraft Mod Changelogs &amp; Release Notes | Phax709 Studios">
+  <meta property="og:description" content="Browse release notes for Phax709's Minecraft mods, including changes, supported game versions, and mod loaders.">
+  <meta property="og:url" content="https://phax709.github.io/Phax-mods-wiki/pages/patchnotes.html">
+  <meta property="og:image" content="https://phax709.github.io/Phax-mods-wiki/pages/images/ui/Phax%20mods%20detail.png">
+  <meta property="og:image:alt" content="Logo Phax Mods de Phax709 Studios">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Minecraft Mod Changelogs &amp; Release Notes | Phax709 Studios">
+  <meta name="twitter:description" content="Browse release notes for Phax709's Minecraft mods, including changes, supported game versions, and mod loaders.">
+  <meta name="twitter:image" content="https://phax709.github.io/Phax-mods-wiki/pages/images/ui/Phax%20mods%20detail.png">
+  <meta name="twitter:image:alt" content="Logo Phax Mods de Phax709 Studios">
   <link rel="icon" href="images/ui/Phax-mods-petit.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -19,7 +37,10 @@
       <input type="text" id="searchInput" placeholder="Rechercher un mod..." data-i18n-placeholder="search.placeholder" autocomplete="off">
       <div class="search-results" id="searchResults"></div>
     </div>
-    <button class="lang-btn" id="langToggle">🇬🇧 EN</button>
+    <div class="lang-selector">
+      <button class="lang-btn" id="langToggle" type="button" aria-label="Language" aria-expanded="false">🇺🇸 EN ▾</button>
+      <div class="lang-dropdown" id="langDropdown"></div>
+    </div>
     <div class="theme-selector">
       <button class="theme-btn" id="themeBtn" title="Thème">🌙</button>
       <div class="theme-dropdown" id="themeDropdown"></div>
@@ -31,7 +52,7 @@
     <ul class="sidebar-nav">
       <li><a href="../index.html">🏠 <span data-i18n="nav.home">Accueil</span></a></li>
       <li><a href="news.html">📰 <span data-i18n="nav.news">News</span></a></li>
-      <li><a href="patchnotes.html" class="active">📋 <span data-i18n="nav.patchnotes">Patchnotes</span></a></li>
+      <li><a href="patchnotes.html" class="active">📋 <span class="i18n-pending-label" data-i18n="nav.patchnotes">Note de mise à jour</span></a></li>
       <li>
         <button class="sidebar-toggle">📖 <span data-i18n="nav.guide">Assistance</span></button>
         <ul class="sidebar-sub">
@@ -48,11 +69,11 @@
   <div class="overlay" id="overlay"></div>
 
   <main class="content">
-    <h1 data-i18n="patchnotes.title">📋 Patchnotes</h1>
+    <h1 data-i18n="patchnotes.title">📋 Note de mise à jour</h1>
 
     <!-- Filters -->
     <div class="patchnotes-filters">
-      <input type="text" id="patchSearch" class="patch-search" placeholder="Rechercher dans les patchnotes..." data-i18n-placeholder="patchnotes.search_placeholder" autocomplete="off">
+      <input type="text" id="patchSearch" class="patch-search" placeholder="Rechercher dans les notes de mise à jour..." data-i18n-placeholder="patchnotes.search_placeholder" autocomplete="off">
       <div class="patch-filter-row">
         <select id="filterMod" class="patch-filter">
           <option value="all" data-i18n="patchnotes.filter_all_mods">Tous les mods</option>

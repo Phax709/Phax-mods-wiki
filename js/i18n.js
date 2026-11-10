@@ -12,6 +12,19 @@ const i18n = {
     ko: 'ko_kr',
     'pt-br': 'pt_br'
   },
+  earlyTranslations: {
+    'nav.patchnotes': {
+      en: 'Patchnotes',
+      gb: 'Patchnotes',
+      it: 'Note di rilascio',
+      fr: 'Note de mise à jour',
+      es: 'Notas de la versión',
+      de: 'Versionshinweise',
+      ja: 'パッチノート',
+      ko: '패치 노트',
+      'pt-br': 'Notas de atualização'
+    }
+  },
   languages: [
     { id: 'en', flag: 'flag-us-svgrepo-com.svg', label: 'English (US)', shortLabel: 'EN', htmlLang: 'en-US' },
     { id: 'gb', flag: 'flag-gb-svgrepo-com.svg', label: 'English (UK)', shortLabel: 'EN', htmlLang: 'en-GB', fallback: 'en' },
@@ -128,6 +141,19 @@ const i18n = {
         el.setAttribute('aria-label', val);
       }
     });
+
+    document.querySelectorAll('.i18n-pending-label').forEach(el => {
+      el.classList.remove('i18n-pending-label');
+    });
+  },
+
+  applyEarlyTranslations() {
+    document.querySelectorAll('.i18n-pending-label[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const value = this.earlyTranslations[key]?.[this.currentLang];
+      if (value) el.textContent = value;
+      el.classList.remove('i18n-pending-label');
+    });
   },
 
   async setLanguage(lang) {
@@ -187,6 +213,7 @@ const i18n = {
   }
 };
 
+i18n.applyEarlyTranslations();
 i18n.buildDropdown();
 i18n.updateToggleBtn();
 i18n.init();
