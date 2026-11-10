@@ -187,13 +187,22 @@ function clearDesktopSearch() {
       mobileResults.innerHTML = html;
     }
   });
+
+  mobileInput.addEventListener('keydown', event => {
+    if (event.key === 'Enter' && mobileInput.value.trim()) {
+      event.preventDefault();
+      navigateToSearchResults(mobileInput.value);
+    }
+  });
 })();
 
 // Registry search data — built from modsRegistry (mods-registry.js)
 const modsSearchData = modsRegistry.map(mod => ({
   name: mod.name,
+  emoji: mod.emoji,
   category: mod.category,
   tags: mod.tags,
+  cardDescKey: mod.cardDescKey,
   url: 'pages/mods/' + mod.page
 }));
 
@@ -238,10 +247,13 @@ async function loadWikiSearchIndex() {
               name_en: item.name_en,
               desc_fr: item.desc_fr || '',
               desc_en: item.desc_en || '',
+              images: Array.isArray(item.images) ? item.images : [],
               modName: mod.modName,
               modId: mod.modId,
               page: mod.page,
-              category: cat.id
+              category: cat.id,
+              category_fr: cat.label_fr || cat.id,
+              category_en: cat.label_en || cat.id
             }));
           } catch (e) {
             return [];
@@ -260,6 +272,150 @@ async function loadWikiSearchIndex() {
   }
 }
 
+function getSearchMatches(query, lang) {
+  const normalizedQuery = query.trim().toLowerCase();
+  const modResults = modsSearchData.filter(mod =>
+    mod.name.toLowerCase().includes(normalizedQuery)
+    || mod.category.toLowerCase().includes(normalizedQuery)
+    || mod.tags.some(tag => tag.toLowerCase().includes(normalizedQuery))
+  );
+  const wikiResults = wikiSearchIndex.filter(item => {
+    const name = (lang === 'fr' ? item.name_fr : item.name_en).toLowerCase();
+    const desc = (lang === 'fr' ? item.desc_fr : item.desc_en).toLowerCase();
+    return name.includes(normalizedQuery) || desc.includes(normalizedQuery);
+  });
+  return { modResults, wikiResults };
+}
+
+function navigateToSearchResults(query) {
+  const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0', 10);
+  const prefix = '../'.repeat(depth);
+  window.location.href = prefix + 'pages/search.html?q=' + encodeURIComponent(query.trim());
+}
+
+function getSearchImageSource(image, modId, prefix) {
+  const source = typeof image === 'string'
+    ? image
+    : image && (image.src || image.image || image.url);
+  if (!source) return '';
+  return /^(https?:)?\/\//i.test(source) || source.startsWith('data:')
+    ? source
+    : prefix + 'pages/images/wiki/' + encodeURIComponent(modId) + '/' + encodeURI(source);
+}
+
+function createSearchResultImage(item, alt, prefix) {
+  const images = item.images || [];
+  const imageConfig = images[0];
+  if (!imageConfig) {
+    const placeholder = document.createElement('span');
+    placeholder.className = 'search-result-image search-result-image-placeholder';
+    placeholder.setAttribute('aria-hidden', 'true');
+    return placeholder;
+  }
+
+  const container = document.createElement('span');
+  container.className = 'search-result-image search-result-image-frame';
+  const stage = document.createElement('span');
+  stage.className = 'search-result-image-stage';
+  container.appendChild(stage);
+
+  const frameList = imageConfig && (imageConfig.frames || imageConfig.images);
+  const spriteCount = Number(imageConfig && (imageConfig.frameCount || imageConfig.framesCount || imageConfig.count || imageConfig.frameTotal) || 0);
+  const frameWidth = Number(imageConfig && (imageConfig.frameWidth || imageConfig.width) || 0);
+  const frameHeight = Number(imageConfig && (imageConfig.frameHeight || imageConfig.height) || 0);
+  const interval = Math.max(100, Number(imageConfig && (imageConfig.interval || imageConfig.delay) || 1500));
+  const autoplay = !imageConfig || imageConfig.autoplay !== false;
+  let updateFrame = null;
+
+  if (Array.isArray(frameList) && frameList.length > 1) {
+    const image = document.createElement('img');
+    image.alt = alt;
+    image.decoding = 'async';
+    image.className = 'search-result-frame';
+    image.addEventListener('load', () => {
+      if (image.naturalWidth <= 32 && image.naturalHeight <= 32) {
+        image.classList.add('search-result-pixel-art');
+      }
+    }, { once: true });
+    stage.appendChild(image);
+    let currentIndex = 0;
+    updateFrame = () => {
+      currentIndex = (currentIndex + 1) % frameList.length;
+      image.src = getSearchImageSource(frameList[currentIndex], item.modId, prefix);
+    };
+    image.src = getSearchImageSource(frameList[0], item.modId, prefix);
+  } else if (spriteCount > 1 && frameWidth > 0 && frameHeight > 0) {
+    const columns = Math.max(1, Number(imageConfig.frameColumns || imageConfig.columns || imageConfig.framesPerRow || imageConfig.framePerRow || 1));
+    const rows = Math.max(1, Number(imageConfig.frameRows || imageConfig.rows || Math.ceil(spriteCount / columns)));
+    const canvas = document.createElement('canvas');
+    canvas.width = frameWidth;
+    canvas.height = frameHeight;
+    canvas.className = 'search-result-frame search-result-sprite';
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', alt);
+    stage.appendChild(canvas);
+
+    const context = canvas.getContext('2d');
+    if (context) {
+      context.imageSmoothingEnabled = false;
+      const spriteImage = new Image();
+      spriteImage.decoding = 'async';
+      spriteImage.src = getSearchImageSource(imageConfig, item.modId, prefix);
+      let currentIndex = 0;
+      const drawFrame = () => {
+        if (!spriteImage.complete || !spriteImage.naturalWidth) return;
+        const col = currentIndex % columns;
+        const row = Math.floor(currentIndex / columns);
+        if (row >= rows) return;
+        context.clearRect(0, 0, frameWidth, frameHeight);
+        context.drawImage(spriteImage, col * frameWidth, row * frameHeight, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
+      };
+      spriteImage.addEventListener('load', drawFrame);
+      updateFrame = () => {
+        currentIndex = (currentIndex + 1) % spriteCount;
+        drawFrame();
+      };
+      drawFrame();
+    }
+  } else {
+    const image = document.createElement('img');
+    image.alt = alt;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.className = 'search-result-frame';
+    image.addEventListener('load', () => {
+      if (image.naturalWidth <= 32 && image.naturalHeight <= 32) {
+        image.classList.add('search-result-pixel-art');
+      }
+    }, { once: true });
+    image.src = getSearchImageSource(imageConfig, item.modId, prefix);
+    stage.appendChild(image);
+  }
+
+  if (updateFrame && autoplay) {
+    let timer = null;
+    const startAnimation = () => {
+      if (timer === null) timer = window.setInterval(updateFrame, interval);
+    };
+    const stopAnimation = () => {
+      if (timer !== null) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    };
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => entry.isIntersecting ? startAnimation() : stopAnimation());
+      });
+      observer.observe(container);
+    } else {
+      startAnimation();
+    }
+  }
+
+  return container;
+}
+
 searchInput.addEventListener('input', async () => {
   const query = searchInput.value.trim().toLowerCase();
 
@@ -276,19 +432,8 @@ searchInput.addEventListener('input', async () => {
   const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0');
   const prefix = depth === 0 ? '' : '../'.repeat(depth);
 
-  // Mod results
-  const modResults = modsSearchData.filter(mod => {
-    return mod.name.toLowerCase().includes(query)
-      || mod.category.toLowerCase().includes(query)
-      || mod.tags.some(tag => tag.includes(query));
-  });
-
-  // Wiki item results
-  const wikiResults = wikiSearchIndex.filter(item => {
-    const name = (lang === 'fr' ? item.name_fr : item.name_en).toLowerCase();
-    const desc = (lang === 'fr' ? item.desc_fr : item.desc_en).toLowerCase();
-    return name.includes(query) || desc.includes(query);
-  }).slice(0, 8);
+  const { modResults, wikiResults: allWikiResults } = getSearchMatches(query, lang);
+  const wikiResults = allWikiResults.slice(0, 8);
 
   if (modResults.length === 0 && wikiResults.length === 0) {
     const noResultText = (typeof i18n !== 'undefined') ? i18n.get('search.no_result') : 'Aucun résultat';
@@ -310,6 +455,118 @@ searchInput.addEventListener('input', async () => {
 
   searchResults.classList.add('visible');
 });
+
+searchInput.addEventListener('keydown', event => {
+  if (event.key === 'Enter' && searchInput.value.trim()) {
+    event.preventDefault();
+    navigateToSearchResults(searchInput.value);
+  }
+});
+
+async function initSearchResultsPage() {
+  const resultsContainer = document.getElementById('searchPageResults');
+  if (!resultsContainer) return;
+
+  const query = new URLSearchParams(window.location.search).get('q')?.trim() || '';
+  const querySummary = document.getElementById('searchQuerySummary');
+  const queryInput = document.getElementById('searchInput');
+  const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0', 10);
+  const prefix = '../'.repeat(depth);
+  const lang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
+  const homeLink = document.getElementById('searchHomeLink');
+
+  if (homeLink) homeLink.href = prefix + 'index.html';
+  if (queryInput) queryInput.value = query;
+
+  if (!query) {
+    querySummary.textContent = i18n.get('search.no_query');
+    resultsContainer.textContent = '';
+    return;
+  }
+
+  querySummary.textContent = i18n.get('search.query_for') + ' ' + query;
+  resultsContainer.setAttribute('aria-busy', 'true');
+  try {
+    await loadWikiSearchIndex();
+    const { modResults, wikiResults } = getSearchMatches(query, lang);
+    resultsContainer.replaceChildren();
+
+    modResults.forEach(mod => {
+      const link = document.createElement('a');
+      link.className = 'search-result-row';
+      link.href = prefix + encodeURI(mod.url);
+
+      const icon = document.createElement('span');
+      icon.className = 'search-result-image search-result-mod-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = mod.emoji;
+
+      const content = document.createElement('span');
+      content.className = 'search-result-content';
+      const heading = document.createElement('span');
+      heading.className = 'search-result-heading';
+      const title = document.createElement('strong');
+      title.textContent = mod.name;
+      const modLabel = document.createElement('small');
+      modLabel.className = 'search-result-mod-badge';
+      modLabel.textContent = mod.category;
+      heading.append(title, modLabel);
+
+      const description = document.createElement('span');
+      description.className = 'search-result-description';
+      description.textContent = i18n.get(mod.cardDescKey);
+      content.append(heading, description);
+      link.append(icon, content);
+      resultsContainer.appendChild(link);
+    });
+
+    wikiResults.forEach(item => {
+      const link = document.createElement('a');
+      link.className = 'search-result-row';
+      link.href = prefix + encodeURI(item.page) + '#wiki=' + encodeURIComponent(item.id);
+
+      const itemName = lang === 'fr' ? item.name_fr || item.name_en || '' : item.name_en || item.name_fr || '';
+      const image = createSearchResultImage(item, itemName, prefix);
+
+      const content = document.createElement('span');
+      content.className = 'search-result-content';
+      const heading = document.createElement('span');
+      heading.className = 'search-result-heading';
+      const title = document.createElement('strong');
+      title.textContent = itemName;
+      const modLabel = document.createElement('small');
+      modLabel.className = 'search-result-mod-badge';
+      modLabel.textContent = item.modName + ' — ' + (lang === 'fr' ? item.category_fr : item.category_en);
+      heading.append(title, modLabel);
+
+      const description = document.createElement('span');
+      description.className = 'search-result-description';
+      description.textContent = lang === 'fr' ? item.desc_fr : item.desc_en;
+      content.append(heading, description);
+      link.append(image, content);
+      resultsContainer.appendChild(link);
+    });
+
+    if (modResults.length === 0 && wikiResults.length === 0) {
+      const noResults = document.createElement('p');
+      noResults.className = 'search-page-empty';
+      noResults.textContent = i18n.get('search.no_result');
+      resultsContainer.appendChild(noResults);
+    }
+  } catch (error) {
+    console.error('Unable to load search results.', error);
+    resultsContainer.textContent = i18n.get('search.load_error');
+  } finally {
+    resultsContainer.removeAttribute('aria-busy');
+  }
+}
+
+if (document.getElementById('searchPageResults')) {
+  Promise.resolve(typeof i18n !== 'undefined' ? i18n.ready : null).then(() => {
+    initSearchResultsPage();
+    document.addEventListener('langChanged', initSearchResultsPage);
+  });
+}
 
 // Close search on click outside
 document.addEventListener('click', (e) => {
@@ -562,7 +819,11 @@ function openModal(title, date, bodyHTML, image) {
 
   modalTitle.innerHTML = title;
   modalDate.textContent = date;
-  modalBody.innerHTML = bodyHTML;
+  if (bodyHTML instanceof Node) {
+    modalBody.replaceChildren(bodyHTML);
+  } else {
+    modalBody.innerHTML = bodyHTML;
+  }
   modalOverlay.classList.add('visible');
 
   const secretLabel = modalBody.querySelector('.news-secret');
@@ -866,8 +1127,66 @@ document.addEventListener('keydown', (e) => {
     return all;
   }
 
+  function getPatchChanges(patch, language) {
+    const translations = patch.changes || {};
+    return translations[language] || (language === 'gb' ? translations.en : null) || translations.en || translations.fr || [];
+  }
+
+  function getPatchChangeText(changes) {
+    if (!Array.isArray(changes)) return '';
+    return changes.map(section => {
+      const readItems = items => (items || []).map(item => {
+        if (typeof item === 'string') return item;
+        return [item.text || '', readItems(item.children)].join(' ');
+      }).join(' ');
+      return [section.heading || '', readItems(section.items)].join(' ');
+    }).join(' ');
+  }
+
+  function appendPatchItems(list, items) {
+    (items || []).forEach(item => {
+      const entry = document.createElement('li');
+      if (typeof item === 'string') {
+        entry.textContent = item;
+      } else {
+        entry.appendChild(document.createTextNode(item.text || ''));
+        if (Array.isArray(item.children) && item.children.length > 0) {
+          const nestedList = document.createElement(item.childrenListType === 'ordered' ? 'ol' : 'ul');
+          appendPatchItems(nestedList, item.children);
+          entry.appendChild(nestedList);
+        }
+      }
+      list.appendChild(entry);
+    });
+  }
+
+  function buildPatchChangesContent(changes) {
+    const list = document.createElement('ul');
+    const sectionClasses = {
+      add: 'patch-add',
+      fix: 'patch-fix',
+      info: 'patch-info',
+      warn: 'patch-warn'
+    };
+
+    changes.forEach(section => {
+      const entry = document.createElement('li');
+      const heading = document.createElement('b');
+      heading.className = sectionClasses[section.type] || 'patch-info';
+      heading.textContent = section.heading || '';
+      entry.appendChild(heading);
+
+      const sectionItems = document.createElement('ul');
+      appendPatchItems(sectionItems, section.items);
+      entry.appendChild(sectionItems);
+      list.appendChild(entry);
+    });
+
+    return list;
+  }
+
   function render() {
-    const currentLang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
+    const currentLang = (typeof i18n !== 'undefined') ? i18n.currentLang : 'fr';
     const modFilter = filterMod ? filterMod.value : 'all';
     const mcFilter = filterMcVersion ? filterMcVersion.value : 'all';
     const loaderFilter = filterLoader ? filterLoader.value : 'all';
@@ -880,7 +1199,7 @@ document.addEventListener('keydown', (e) => {
       if (mcFilter !== 'all' && p.mcVersion !== mcFilter) return false;
       if (loaderFilter !== 'all' && p.loader !== loaderFilter) return false;
       if (query) {
-        const changes = (p.changes[currentLang] || p.changes.fr).join(' ').toLowerCase();
+        const changes = getPatchChangeText(getPatchChanges(p, currentLang)).toLowerCase();
         const modName = (modNames[p.modId] || p.modId).toLowerCase();
         const searchable = (modName + ' ' + p.version + ' ' + p.mcVersion + ' ' + p.loader + ' ' + changes).toLowerCase();
         if (!searchable.includes(query)) return false;
@@ -896,7 +1215,6 @@ document.addEventListener('keydown', (e) => {
 
     let html = '';
     filtered.forEach(p => {
-      const changes = p.changes[currentLang] || p.changes.fr;
       const modName = modNames[p.modId] || p.modId;
       html += '<div class="patch-entry" data-patch-mod="' + p.modId + '" data-patch-version="' + p.version + '" data-patch-type="' + (p.type || 'release') + '" data-patch-mc="' + p.mcVersion + '">';
       html += '<div class="patch-entry-header">';
@@ -924,20 +1242,35 @@ document.addEventListener('keydown', (e) => {
         const patch = patches.find(p => p.version === version && (p.type || 'release') === type && p.mcVersion === mc);
         if (!patch) return;
         const modName = modNames[modId] || modId;
-        const changes = patch.changes[currentLang] || patch.changes.fr;
+        const changes = getPatchChanges(patch, currentLang);
         const title = modName + ' — v' + patch.version;
         var mBadgeType = patch.type || 'release';
-        const tags = '<span class="patch-type-badge patch-type-' + mBadgeType + '">' + mBadgeType.toUpperCase() + '</span>' +
-                     '<span class="patch-tag" style="margin-right:6px">MC ' + patch.mcVersion + '</span>' +
-                     '<span class="patch-tag">' + patch.loader + '</span>';
-        var changesHtml;
+        const body = document.createElement('div');
+        const tags = document.createElement('div');
+        tags.style.marginBottom = '0.8rem';
+        const typeTag = document.createElement('span');
+        typeTag.className = 'patch-type-badge patch-type-' + mBadgeType;
+        typeTag.textContent = mBadgeType.toUpperCase();
+        const mcTag = document.createElement('span');
+        mcTag.className = 'patch-tag';
+        mcTag.style.marginRight = '6px';
+        mcTag.textContent = 'MC ' + patch.mcVersion;
+        const loaderTag = document.createElement('span');
+        loaderTag.className = 'patch-tag';
+        loaderTag.textContent = patch.loader;
+        tags.append(typeTag, mcTag, loaderTag);
+        body.appendChild(tags);
+
         if (changes.length === 0) {
           var noChanges = currentLang === 'en' ? 'No details available for this version.' : 'Aucun détail disponible pour cette version.';
-          changesHtml = '<p style="color:var(--text-muted);font-style:italic">' + noChanges + '</p>';
+          const noChangesText = document.createElement('p');
+          noChangesText.style.color = 'var(--text-muted)';
+          noChangesText.style.fontStyle = 'italic';
+          noChangesText.textContent = noChanges;
+          body.appendChild(noChangesText);
         } else {
-          changesHtml = '<ul>' + changes.map(c => '<li>' + c + '</li>').join('') + '</ul>';
+          body.appendChild(buildPatchChangesContent(changes));
         }
-        const body = '<div style="margin-bottom:0.8rem">' + tags + '</div>' + changesHtml;
         openModal(title, patch.date, body);
       });
     });
