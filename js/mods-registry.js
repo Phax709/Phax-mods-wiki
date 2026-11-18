@@ -25,6 +25,9 @@
 // ║  emoji       : Emoji du mod (utilisé dans sidebar, status bar, modale)       ║
 // ║                Exemple : '🔮'                                                ║
 // ║                                                                              ║
+// ║  newsImage   : Image par défaut des news associées à ce mod                  ║
+// ║                Utilisée lorsque la news indique mod: '<id>' sans image.      ║
+// ║                                                                              ║
 // ║  category    : Catégorie pour la recherche                                   ║
 // ║                Exemple : 'Mod'                                               ║
 // ║                                                                              ║
@@ -93,22 +96,47 @@ const modsRegistry = [
     id: 'acatar',
     name: 'Acatar',
     emoji: '🌍',
+    newsImage: 'pages/images/ui/new_logo_acatar.png',
     category: 'Mod',
     tags: ['acatar', 'monde', 'dimension'],
     page: 'acatar.html',
     cardDescKey: 'card.acatar.desc',
     wikiId: 'acatar',
     status: 'development',
-    progress: 75.0,
+    progress: 80.0,
     features: [
-      {text: {fr: 'Bateau et panneau des différents types de bois', en:'Boat and sign of the different types of wood'}, status: 'complete'},
-      {text: {fr: 'Refonte dimensions Midler', en:'Midler dimensions redesign'}, status: 'in_progress'},
-      {text: {fr: 'Refonte de la structure du boss (externe + colosse)', en:'Overhaul of the boss structure (external + colossus)'}, status: 'in_progress'},
-      {text: {fr: 'Ajout de la génération de la baie orange', en:'Addition of the orange berry generation'}, status: 'complete'},
-      {text: {fr: 'Donner plus d`utilisation et de moyens d`obtention à l`éclat d`arcane', en:'Give more use and means of obtaining to the arcane brilliance'}, status: 'complete'},
-      {text: {fr: 'Nouvelles créatures ?', en:'New creatures?'}, status: 'complete'},
-      {text: {fr: 'Résolution de bug et ajustements', en:'Bug resolution and adjustments'}, status: 'in_progress'},
-      {text: {fr: 'Et plein d`autres', en:'And many other'}, status: 'complete'}
+      {text: {
+        fr: 'Bateau et panneau des différents types de bois', 
+        en:'Boat and sign of the different types of wood'}, 
+        status: 'complete'},
+      {text: {
+        fr: 'Refonte dimensions Midler', 
+        en:'Midler dimensions redesign'}, 
+        status: 'in_progress'},
+      {text: {
+        fr: 'Refonte de la structure du boss (externe + colosse)', 
+        en:'Overhaul of the boss structure (external + colossus)'}, 
+        status: 'in_progress'},
+      {text: {
+        fr: 'Ajout de la génération de la baie orange', 
+        en:'Addition of the orange berry generation'}, 
+        status: 'complete'},
+      {text: {
+        fr: 'Donner plus d`utilisation et de moyens d`obtention à l`éclat d`arcane', 
+        en:'Give more use and means of obtaining to the arcane brilliance'}, 
+        status: 'complete'},
+      {text: {
+        fr: 'Nouvelles créatures ?', 
+        en:'New creatures?'}, 
+        status: 'complete'},
+      {text: {
+        fr: 'Résolution de bug et ajustements', 
+        en:'Bug resolution and adjustments'}, 
+        status: 'complete'},
+      {text: {
+        fr: 'Et plein d`autres', 
+        en:'And many other'}, 
+        status: 'complete'}
 
     ],
     links: {
@@ -120,6 +148,7 @@ const modsRegistry = [
     id: 'chaosium',
     name: 'Chaosium',
     emoji: '🔮',
+    newsImage: 'pages/images/ui/chaosium_image.png',
     category: 'Mod',
     tags: ['chaosium', 'chaos', 'magie'],
     page: 'chaosium.html',
@@ -144,6 +173,7 @@ const modsRegistry = [
     id: 'phax-sirens',
     name: 'Phax Sirens',
     emoji: '🚨',
+    newsImage: 'pages/images/ui/phax_sirens_image.png',
     category: 'Mod',
     tags: ['sirens', 'sirene', 'alarme', 'siren', 'blocs'],
     page: 'phax-sirens.html',
@@ -163,6 +193,7 @@ const modsRegistry = [
     id: 'potion-time-plus',
     name: 'Phax : Potion Time+',
     emoji: '🧪',
+    newsImage: 'pages/images/ui/phax potion time plus image 400px.png',
     category: 'Mod',
     tags: ['potion', 'time', 'brewing', 'alchimie'],
     page: 'potion-time-plus.html',

@@ -7,13 +7,48 @@
 //   - showUntil : date jusqu'à laquelle la news apparaît en accueil (YYYY-MM-DD)
 //                 Après cette date, elle reste visible uniquement sur la page News.
 //   - icon      : emoji affiché à côté
+//   - mod       : (optionnel) identifiant du mod associé; utilise son image par défaut
 //   - badge     : type de badge (announcement, maintenance, urgent, update, event, info)
 //   - image     : (optionnel) chemin vers une image affichée dans le slider
-//                 Peut être un objet { fr: "...", en: "..." } pour une image localisée.
+//                 Prioritaire sur mod et peut être { fr: "...", en: "..." }.
 //   - title     : { fr: "...", en: "..." }
 //   - content   : { fr: "...", en: "..." }  (HTML autorisé)
+//
+// Exemple : mod: 'acatar' utilise l'image par défaut d'Acatar;
+//           ajouter image: '...' permet de la remplacer pour cette news.
 
 const newsConfig = [
+  {
+    id: 'acatar-wilds-of-the-midler-next-week',
+    date: '2026-11-18',
+    showUntil: '2026-12-18',
+    icon: '🌿',
+    badge: 'announcement',
+    title: {
+      fr: 'Point développement : Avancement du Midler et objectifs du site',
+      en: 'Development update: Midler progress and website goals'
+    },
+    content: {
+      fr: `<p>Bonne nouvelle concernant la prochaine mise à jour d'<strong>Acatar</strong> : le développement avance bien, et la mise à jour <strong>Terres Sauvages du Midler</strong> pourrait finalement arriver dès la semaine prochaine !</p>
+           <p>La première refonte complète de la structure du boss <strong>Colossum</strong> est maintenant terminée et fonctionne parfaitement comme prévu.</p>
+           <p>Je travaille actuellement à étendre le support multilingue aux actualités, afin qu'elles soient disponibles dans les <strong>9 langues</strong> prises en charge. Concernant les phrases déjà présentes dans les patchnotes ou celles à venir, si certaines tournures ou formulations ne semblent pas naturelles, je m'en excuse : je développe tout seul et je dois donc effectuer moi-même toutes les vérifications nécessaires.</p>
+           <p>Concernant le wiki, une mise à jour est prévue <strong>au début de 2027</strong> afin d'ajouter plusieurs fiches encore manquantes. De nouvelles fiches feront notamment leur apparition pour accompagner les nouveautés de la mise à jour Terres Sauvages du Midler. Les fiches déjà existantes qui auront été modifiées par cette mise à jour seront également mises à jour afin de rester fidèles au contenu du mod.</p>
+           <p>Pour 2027, plusieurs objectifs sont également envisagés. Toutes les fiches pourraient être réorganisées en interne afin d'y intégrer le support des langues, avec plusieurs points du site à vérifier ou à modifier si nécessaire. Une nouvelle présentation des fiches pourrait aussi être ajoutée à cette occasion, afin d'apporter davantage de détails qu'actuellement. Le site pourrait également recevoir quelques nouvelles fonctionnalités pratiques.</p>
+           <p>Voici les premiers prototypes de présentation qui pourraient arriver sur le site par la suite :</p>
+           <p><img src="pages/images/ui/phax709-studios_prototype_card_wiki1.png" alt="Prototype de fiche wiki — présentation principale" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
+           <p><img src="pages/images/ui/phax709-studios_prototype_card_wiki2.png" alt="Prototype de fiche wiki — présentation détaillée" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
+           <p>Ces annonces donnent simplement une idée des travaux prévus à venir : les échéances pourront naturellement évoluer selon l'avancement du développement. Merci pour votre soutien et à très bientôt pour la suite !</p>`,
+      en: `<p>Good news regarding <strong>Acatar</strong>'s next update: development is progressing well, and the <strong>Wilds of the Midler</strong> update could finally arrive as soon as next week!</p>
+           <p>The first complete overhaul of the <strong>Colossum</strong> boss structure is now finished and works perfectly as intended.</p>
+           <p>I am currently working to add multilingual support to the news, so that they will be available in all <strong>9 supported languages</strong>. For phrases already present in the patch notes or those that will be added in the future, I apologize if some wording or phrasing does not sound natural: I am developing everything on my own and have to carry out all these checks myself.</p>
+           <p>Regarding the wiki, an update is planned for <strong>early 2027</strong> to add several missing cards. New cards will also appear, especially for the new content from the Wilds of the Midler update. Existing cards affected by the update will be revised as well so they remain accurate.</p>
+           <p>Several goals are also being considered for 2027. All cards could be reorganized internally to support languages, with several areas of the site needing to be checked or changed when necessary. A redesigned card presentation could also be added to provide more details than are currently available. The site could also receive several useful new features.</p>
+           <p>Here are the first presentation prototypes that could be added to the site later:</p>
+           <p><img src="pages/images/ui/phax709-studios_prototype_card_wiki1.png" alt="Wiki card prototype — main presentation" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
+           <p><img src="pages/images/ui/phax709-studios_prototype_card_wiki2.png" alt="Wiki card prototype — detailed presentation" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
+           <p>This announcement only outlines the work currently planned for the future: deadlines may naturally change depending on development progress. Thank you for your support, and stay tuned for more!</p>`
+    }
+  },
   {
     id: 'acatar-structure-overhaul-delay',
     date: '2026-11-05',
@@ -53,7 +88,7 @@ const newsConfig = [
     },
     content: {
       fr: `<p>Le développement de la prochaine mise à jour d'<strong>Acatar</strong> entre dans sa dernière phase : les derniers ajouts et les finitions sont en cours !</p>
-           <p>Il s'agit de la plus grosse mise à jour que le mod aura reçue depuis <strong>The Sakura Spirit Update</strong>. Le patchnote compte déjà plus de <strong>25 lignes d'ajouts</strong>, ainsi qu'un nombre comparable de lignes de correctifs et de changements.</p>
+           <p>Il s'agit de la plus grosse mise à jour que le mod aura reçue depuis <strong>The Sakura Spirit Update</strong>. Les notes de mise à jour comptent déjà plus de <strong>25 lignes consacrées aux ajouts</strong>, ainsi qu'un nombre comparable de lignes de correctifs et de changements.</p>
            <p>Le <strong>31 octobre 2026</strong> est la date que je vise pour la sortie, mais elle n'est pas encore certaine. Si la mise à jour n'est pas prête à temps, sa sortie sera décalée à la semaine du <strong>2 novembre</strong>.</p>
            <p>Cette capture a été prise pendant le développement. Elle se rapproche de la version finale du biome, mais ne la représente pas exactement : le biome a depuis reçu davantage de contenu et a continué d'évoluer.</p>`,
       en: `<p>Development on the next <strong>Acatar</strong> update is entering its final phase: the last additions and finishing touches are underway!</p>
@@ -104,7 +139,7 @@ const newsConfig = [
            <p>En attendant, les deux mods sont indiqués comme <strong>« En développement »</strong>. Vous pouvez consulter leur statut dans la section <strong>Statut</strong> de la page d'accueil, ou sur la page wiki de chaque mod, à la dernière ligne du tableau d'informations (« Statut »).</p>
            <p>Merci pour votre patience !</p>`,
       en: `<p><strong>Phax Sirens</strong> and <strong>Chaosium</strong> may undergo an internal overhaul of both their files and their development. As a result, neither the mods nor their wikis will be updated just yet.</p>
-           <p><strong>Phax Sirens</strong> is the smaller mod, but it requires technical details and may therefore be the first to receive an update. In its current state, it does not meet all the requirements I set for leaving it as it is, so an overhaul is needed.</p>
+           <p><strong>Phax Sirens</strong> is the smaller mod, but its update requires some technical work, so it may be the first to receive one. In its current state, it does not meet all the requirements I set for leaving it as it is, so an overhaul is needed.</p>
            <p>Since <strong>Chaosium</strong>'s development does not depend entirely on me, the mod and its wiki will be updated when the mod is ready to be released for newer Minecraft versions.</p>
            <p>In the meantime, both mods are marked as <strong>“In development”</strong>. You can check their status in the <strong>Status</strong> section on the homepage, or on each mod's wiki page, in the last row of its information table (“Status”).</p>
            <p>Thank you for your patience!</p>`
@@ -143,10 +178,10 @@ const newsConfig = [
     image: 'pages/images/ui/teaser_acatar_nextupdate 2.png',
     title: {
       fr: 'Carnet de développement & Teasing : Que se prépare-t-il pour Acatar ?',
-      en: 'Dev Log & Teasing: What\'s Brewing for Acatar?'
+      en: 'Dev Log & Teaser: What\'s in Store for Acatar?'
     },
     content: {
-      fr: `<p>Le développement avance très bien ! Pour vous faire patienter, voici un petit aperçu confidentiel du patchnote en cours de rédaction. Comme vous pouvez le constater, la liste des changements est déjà bien fournie, et elle est encore susceptible d'évoluer dans un futur proche !</p>
+      fr: `<p>Le développement avance très bien ! Pour vous faire patienter, voici un petit aperçu confidentiel des notes de mise à jour en cours de rédaction. Comme vous pouvez le constater, la liste des changements est déjà bien fournie, et elle est encore susceptible d'évoluer dans un futur proche !</p>
            <p><img src="pages/images/ui/teaser_acatar_nextupdate 2.1.png" alt="Teaser des fichiers de développement" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
            <p>Notez qu'avec la sortie récente de <strong>Minecraft Dungeons II</strong>, certaines fonctionnalités seront reprises ou serviront d'inspiration pour enrichir le contenu lors de la refonte de la dimension du <strong>Midler</strong> !</p>
            <p>Le développement prend du temps car chaque nouveauté est testée pour garantir qu'elle soit fluide, opérationnelle et sans bug. D'ailleurs, de nombreux soucis identifiés lors des récentes phases de vérification ont déjà été résolus.</p>
@@ -156,7 +191,7 @@ const newsConfig = [
            <p><img src="pages/images/ui/teaser_acatar_nextupdate 2.1.png" alt="Development files teaser" style="max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;" /></p>
            <p>Please note that with the recent release of <strong>Minecraft Dungeons II</strong>, some of its features will be brought over or serve as inspiration to enrich the content for the upcoming <strong>Midler</strong> dimension overhaul!</p>
            <p>Development takes time because every feature is thoroughly tested to ensure smooth, bug-free, and operational gameplay. In fact, many issues found during recent testing phases have already been fixed.</p>
-           <p><em>A quick note regarding the progress percentage shown in the mod's status:</em> it is <strong>strictly indicative</strong>. It reflects my overall personal feel regarding everything planned for this update, with percentages distributed based on the scope of each goal.</p>
+           <p><em>A quick note regarding the progress percentage shown in the mod's status:</em> it is <strong>for guidance only</strong>. It reflects my overall assessment of what I want to include in this update, with percentages assigned according to the relative importance of each goal.</p>
            <p>Thank you for your support and stay tuned for more!</p>`
     }
   },
@@ -208,7 +243,7 @@ const newsConfig = [
     badge: 'announcement',
     title: {
       fr: 'Avenir d\'Acatar : évolution des versions Minecraft',
-      en: 'Acatar Future: Minecraft Version Updates'
+      en: 'The Future of Acatar: Minecraft Version Updates'
     },
     content: {
       fr: `<p>Après quelques dernières mises à jour, le mod <strong>Acatar</strong> arrêtera le support de Minecraft 1.21.1 pour se concentrer sur <strong>Minecraft 26.1.2</strong>.</p>
@@ -252,7 +287,7 @@ const newsConfig = [
             <li>Il dispose enfin d'une documentation quasi complète pour <strong>Acatar</strong>.</li>
             </ul>
           <p>Concernant les autres contenus : vous pouvez déjà noter que les 3 autres mods arriveront dans quelques semaines, il faudra patienter encore un tout petit peu ! De nouvelles fonctionnalités débarqueront également dans la prochaine mise à jour.</p>
-          <p>Certains points du site peuvent être changés légèrement par rapport à mes attentes que j'aimerais et pour simplifier la compréhension de vous — comme par exemple préciser ce que signifie exactement un mod affiché « en développement ». Il reste aussi quelques détails graphiques que j'aimerais peaufiner, mais tout cela arrivera en temps voulu.</p>
+          <p>Certains aspects du site pourront encore être légèrement modifiés afin de mieux correspondre à mes attentes et de le rendre plus facile à comprendre. Par exemple, je souhaite préciser ce que signifie exactement le statut « En développement » pour un mod. Il reste aussi quelques détails graphiques que j'aimerais peaufiner, mais tout cela arrivera en temps voulu.</p>
         <p>J'espère sincèrement que vous apprécierez tout le travail apporté à cette nouvelle version !</p>`,
 
       en: `<p>I am really proud to announce the launch of this brand-new site! The official site <strong>Wiki des Mods de Phax709</strong> is officially changing its name to <strong>Phax709 Studios</strong>.</p>
@@ -263,7 +298,7 @@ const newsConfig = [
             <li>It finally features almost complete documentation for <strong>Acatar</strong>.</li>
           </ul>
           <p>As for the rest of the content: the 3 other mods will arrive in a few weeks, so please be patient just a little longer! New features will also land in the next update.</p>
-          <p>Certain points of the site may be changed slightly compared to my expectations that I would like and to simplify the understanding of you — for example, clarifying what it means when a mod is marked as "in development". There are also a few visual details I'd like to polish, but that will come in due time.</p>
+          <p>Some aspects of the site may still be adjusted to better match my expectations and make the site easier to understand. For example, I would like to clarify exactly what the "In development" status means for a mod. There are also a few visual details I'd like to polish, but that will come in due time.</p>
           <p>I truly hope you enjoy all the hard work put into this new site!</p>`
     }
   }
