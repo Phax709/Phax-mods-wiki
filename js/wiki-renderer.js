@@ -323,8 +323,8 @@
 
     if (typeof i18n !== 'undefined') await i18n.ready;
 
-    const lang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
-    loadingLabel.textContent = lang === 'fr' ? 'Chargement des cartes…' : 'Loading cards…';
+    const lang = typeof i18n !== 'undefined' ? i18n.contentLang : 'en';
+    loadingLabel.textContent = (typeof i18n !== 'undefined') ? i18n.get('wiki.loading') : 'Loading cards…';
     const depth = parseInt(document.querySelector('meta[name="page-depth"]')?.content || '0');
     const basePath = '../'.repeat(depth) + 'pages/wiki/' + modId + '/';
     const imgBasePath = '../'.repeat(depth) + 'pages/images/wiki/' + modId + '/';
