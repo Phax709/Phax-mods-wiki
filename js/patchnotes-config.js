@@ -4,6 +4,7 @@
 //
 // Chaque entrée a :
 //   - version  : numéro de version (ex: "1.0.0")
+//   - title    : (optionnel) titre localisé, ex. { fr: "...", en: "...", it: "..." }
 //   - date     : date de sortie (YYYY-MM-DD)
 //   - loader   : "Forge", "NeoForge", "Fabric", "Forge + NeoForge", "Fabric + NeoForge", ou "All"
 //   - mcVersion: version Minecraft (ex: "1.20.1")
@@ -66,12 +67,12 @@ const patchnotesConfig = {
             ]
           }
         ],
-        "it": [{ "type": "fix", "heading": "Modifiche e correzioni:", "items": ["Risolto il problema di impilamento della Lyvorian Berry (la correzione sarà inclusa anche nella prossima versione di Acatar per Minecraft 1.21.1)."] }],
-        "es": [{ "type": "fix", "heading": "Cambios y correcciones:", "items": ["Corregido el problema que impedía apilar la Lyvorian Berry (esta corrección también se incluirá en la próxima versión de Acatar para Minecraft 1.21.1)."] }],
-        "de": [{ "type": "fix", "heading": "Änderungen und Fehlerbehebungen:", "items": ["Problem mit dem Stapeln der Lyvorian Berry behoben (diese Korrektur wird auch in der nächsten Acatar-Version für Minecraft 1.21.1 enthalten sein)."] }],
-        "ja": [{ "type": "fix", "heading": "変更と修正:", "items": ["Lyvorian Berry をスタックできない問題を修正しました (この修正は Minecraft 1.21.1 向けの次回 Acatar バージョンにも含まれます)。"] }],
-        "ko": [{ "type": "fix", "heading": "변경 및 수정:", "items": ["Lyvorian Berry가 중첩되지 않던 문제를 수정했습니다 (이 수정 사항은 Minecraft 1.21.1용 다음 Acatar 버전에도 포함됩니다)."] }],
-        "pt-br": [{ "type": "fix", "heading": "Alterações e correções:", "items": ["Corrigido o problema que impedia o empilhamento da Lyvorian Berry (esta correção também será incluída na próxima versão do Acatar para Minecraft 1.21.1)."] }]
+        "it": [{ "type": "fix", "heading": "Modifiche e correzioni:", "items": ["Risolto il problema di impilamento della Bacca Lyvorian (la correzione sarà inclusa anche nella prossima versione di Acatar per Minecraft 1.21.1)."] }],
+        "es": [{ "type": "fix", "heading": "Cambios y correcciones:", "items": ["Corregido el problema que impedía apilar la Baya Lyvorian (esta corrección también se incluirá en la próxima versión de Acatar para Minecraft 1.21.1)."] }],
+        "de": [{ "type": "fix", "heading": "Änderungen und Fehlerbehebungen:", "items": ["Problem mit dem Stapeln der Lyvorian-Beere behoben (diese Korrektur wird auch in der nächsten Acatar-Version für Minecraft 1.21.1 enthalten sein)."] }],
+        "ja": [{ "type": "fix", "heading": "変更と修正:", "items": ["Lyvorianベリーをスタックできない問題を修正しました (この修正は Minecraft 1.21.1 向けの次回 Acatar バージョンにも含まれます)。"] }],
+        "ko": [{ "type": "fix", "heading": "변경 및 수정:", "items": ["Lyvorian 베리가 중첩되지 않던 문제를 수정했습니다 (이 수정 사항은 Minecraft 1.21.1용 다음 Acatar 버전에도 포함됩니다)."] }],
+        "pt-br": [{ "type": "fix", "heading": "Alterações e correções:", "items": ["Corrigido o problema que impedia o empilhamento da Baga Lyvorian (esta correção também será incluída na próxima versão do Acatar para Minecraft 1.21.1)."] }]
       }
     },
     {
@@ -101,12 +102,12 @@ const patchnotesConfig = {
             ]
           }
         ],
-        "it": [{ "type": "fix", "heading": "Modifiche e correzioni:", "items": ["Ripristinata la generazione del bioma “Sakura Forest”.", "Risolto un bug che faceva fluttuare in aria il tappeto di muschio sakura (la correzione sarà inclusa anche nella prossima versione di Acatar per Minecraft 1.21.1)."] }],
-        "es": [{ "type": "fix", "heading": "Cambios y correcciones:", "items": ["Restaurada la generación del bioma «Sakura Forest».", "Corregido un error que hacía que la alfombra de musgo sakura flotara en el aire (esta corrección también se incluirá en la próxima versión de Acatar para Minecraft 1.21.1)."] }],
-        "de": [{ "type": "fix", "heading": "Änderungen und Fehlerbehebungen:", "items": ["Generierung des Bioms „Sakura Forest“ wiederhergestellt.", "Fehler behoben, durch den der Sakura-Moosteppich in der Luft schwebte (diese Korrektur wird auch in der nächsten Acatar-Version für Minecraft 1.21.1 enthalten sein)."] }],
-        "ja": [{ "type": "fix", "heading": "変更と修正:", "items": ["「Sakura Forest」バイオームの生成を復元しました。", "サクラの苔カーペットが空中に浮く問題を修正しました (この修正は Minecraft 1.21.1 向けの次回 Acatar バージョンにも含まれます)。"] }],
-        "ko": [{ "type": "fix", "heading": "변경 및 수정:", "items": ["Sakura Forest 생물 군계의 생성을 복구했습니다.", "사쿠라 이끼 카펫이 공중에 떠 있던 문제를 수정했습니다 (이 수정 사항은 Minecraft 1.21.1용 다음 Acatar 버전에도 포함됩니다)."] }],
-        "pt-br": [{ "type": "fix", "heading": "Alterações e correções:", "items": ["A geração do bioma “Sakura Forest” foi restaurada.", "Corrigido um erro que fazia o tapete de musgo sakura flutuar no ar (esta correção também será incluída na próxima versão do Acatar para Minecraft 1.21.1)."] }]
+        "it": [{ "type": "fix", "heading": "Modifiche e correzioni:", "items": ["Ripristinata la generazione del bioma “Foresta di Sakura”.", "Risolto un bug che faceva fluttuare in aria il tappeto di muschio di Sakura (la correzione sarà inclusa anche nella prossima versione di Acatar per Minecraft 1.21.1)."] }],
+        "es": [{ "type": "fix", "heading": "Cambios y correcciones:", "items": ["Restaurada la generación del bioma «Bosque de Sakura».", "Corregido un error que hacía que la alfombra de musgo de Sakura flotara en el aire (esta corrección también se incluirá en la próxima versión de Acatar para Minecraft 1.21.1)."] }],
+        "de": [{ "type": "fix", "heading": "Änderungen und Fehlerbehebungen:", "items": ["Generierung des Bioms „Sakura-Wald“ wiederhergestellt.", "Fehler behoben, durch den der Sakura-Moosteppich in der Luft schwebte (diese Korrektur wird auch in der nächsten Acatar-Version für Minecraft 1.21.1 enthalten sein)."] }],
+        "ja": [{ "type": "fix", "heading": "変更と修正:", "items": ["「サクラの森」バイオームの生成を復元しました。", "サクラの苔カーペットが空中に浮く問題を修正しました (この修正は Minecraft 1.21.1 向けの次回 Acatar バージョンにも含まれます)。"] }],
+        "ko": [{ "type": "fix", "heading": "변경 및 수정:", "items": ["사쿠라 숲 생물 군계의 생성을 복구했습니다.", "사쿠라 이끼 카펫이 공중에 떠 있던 문제를 수정했습니다 (이 수정 사항은 Minecraft 1.21.1용 다음 Acatar 버전에도 포함됩니다)."] }],
+        "pt-br": [{ "type": "fix", "heading": "Alterações e correções:", "items": ["A geração do bioma “Floresta de Sakura” foi restaurada.", "Corrigido um erro que fazia o tapete de musgo de Sakura flutuar no ar (esta correção também será incluída na próxima versão de Acatar para Minecraft 1.21.1)."] }]
       }
     },
     {
@@ -140,12 +141,12 @@ const patchnotesConfig = {
             ]
           }
         ],
-        "it": [{ "type": "fix", "heading": "Modifiche e correzioni:", "items": ["Corrette diverse imprecisioni ortografiche e traduzioni errate.", "Aggiunti effetti sonori quando il Cerulean Creeper subisce danni.", "Aggiornata l’icona degli oggetti di due obiettivi.", "Rimosse le ricette incompatibili, provenienti da versioni diverse, che non funzionavano."] }],
-        "es": [{ "type": "fix", "heading": "Cambios y correcciones:", "items": ["Corregidos varios errores ortográficos y traducciones incorrectas.", "Añadidos efectos de sonido cuando el Cerulean Creeper recibe daño.", "Actualizado el icono del objeto de dos logros.", "Eliminadas las recetas incompatibles de versiones distintas que no funcionaban."] }],
-        "de": [{ "type": "fix", "heading": "Änderungen und Fehlerbehebungen:", "items": ["Mehrere Rechtschreibfehler und falsche Übersetzungen behoben.", "Soundeffekte hinzugefügt, wenn der Cerulean Creeper Schaden erleidet.", "Das Gegenstandssymbol für zwei Errungenschaften aktualisiert.", "Nicht funktionierende, inkompatible Rezepte aus abweichenden Versionen entfernt."] }],
-        "ja": [{ "type": "fix", "heading": "変更と修正:", "items": ["複数の誤字と誤訳を修正しました。", "Cerulean Creeper がダメージを受けたときの効果音を追加しました。", "2つの進捗に関連するアイテムアイコンを更新しました。", "異なるバージョン由来の、動作しない互換性のないレシピを削除しました。"] }],
-        "ko": [{ "type": "fix", "heading": "변경 및 수정:", "items": ["여러 맞춤법 오류와 잘못된 번역을 수정했습니다.", "Cerulean Creeper가 피해를 입을 때 재생되는 효과음을 추가했습니다.", "두 발전 과제의 아이템 아이콘을 업데이트했습니다.", "서로 다른 버전에서 가져와 작동하지 않던 호환되지 않는 제작법을 제거했습니다."] }],
-        "pt-br": [{ "type": "fix", "heading": "Alterações e correções:", "items": ["Corrigidos vários erros de ortografia e traduções incorretas.", "Adicionados efeitos sonoros quando o Cerulean Creeper sofre dano.", "Atualizado o ícone do item de duas conquistas.", "Removidas receitas incompatíveis de versões diferentes que não funcionavam."] }]
+        "it": [{ "type": "fix", "heading": "Modifiche e correzioni:", "items": ["Corrette diverse imprecisioni ortografiche e traduzioni errate.", "Aggiunti effetti sonori quando il Creeper ceruleo subisce danni.", "Aggiornata l’icona degli oggetti di due obiettivi.", "Rimosse le ricette incompatibili, provenienti da versioni diverse, che non funzionavano."] }],
+        "es": [{ "type": "fix", "heading": "Cambios y correcciones:", "items": ["Corregidos varios errores ortográficos y traducciones incorrectas.", "Añadidos efectos de sonido cuando el Creeper cerúleo recibe daño.", "Actualizado el icono del objeto de dos logros.", "Eliminadas las recetas incompatibles de versiones distintas que no funcionaban."] }],
+        "de": [{ "type": "fix", "heading": "Änderungen und Fehlerbehebungen:", "items": ["Mehrere Rechtschreibfehler und falsche Übersetzungen behoben.", "Soundeffekte hinzugefügt, wenn der himmelblaue Creeper Schaden erleidet.", "Das Gegenstandssymbol für zwei Errungenschaften aktualisiert.", "Nicht funktionierende, inkompatible Rezepte aus abweichenden Versionen entfernt."] }],
+        "ja": [{ "type": "fix", "heading": "変更と修正:", "items": ["複数の誤字と誤訳を修正しました。", "青いクリーパーがダメージを受けたときの効果音を追加しました。", "2つの進捗に関連するアイテムアイコンを更新しました。", "異なるバージョン由来の、動作しない互換性のないレシピを削除しました。"] }],
+        "ko": [{ "type": "fix", "heading": "변경 및 수정:", "items": ["여러 맞춤법 오류와 잘못된 번역을 수정했습니다.", "하늘색 크리퍼가 피해를 입을 때 재생되는 효과음을 추가했습니다.", "두 발전 과제의 아이템 아이콘을 업데이트했습니다.", "서로 다른 버전에서 가져와 작동하지 않던 호환되지 않는 제작법을 제거했습니다."] }],
+        "pt-br": [{ "type": "fix", "heading": "Alterações e correções:", "items": ["Corrigidos vários erros de ortografia e traduções incorretas.", "Adicionados efeitos sonoros quando o Creeper cerúleo sofre dano.", "Atualizado o ícone do item de duas conquistas.", "Removidas receitas incompatíveis de versões diferentes que não funcionavam."] }]
       }
     },
     {
@@ -179,12 +180,12 @@ const patchnotesConfig = {
             ]
           }
         ],
-        "it": [{ "type": "fix", "heading": "Modifiche e correzioni:", "items": ["Corrette diverse imprecisioni ortografiche e traduzioni errate.", "Risolto il problema che causava la generazione infinita dei mondi; di conseguenza, al momento il bioma “Sakura Forest” non viene generato nella versione 26.1.2.", "Aggiornata l’icona degli oggetti di due obiettivi.", "Aggiunti effetti sonori quando il Cerulean Creeper subisce danni."] }],
-        "es": [{ "type": "fix", "heading": "Cambios y correcciones:", "items": ["Corregidos varios errores ortográficos y traducciones incorrectas.", "Corregido el problema que provocaba la creación infinita de mundos; como consecuencia, el bioma «Sakura Forest» no se genera actualmente en la versión 26.1.2.", "Actualizado el icono del objeto de dos logros.", "Añadidos efectos de sonido cuando el Cerulean Creeper recibe daño."] }],
-        "de": [{ "type": "fix", "heading": "Änderungen und Fehlerbehebungen:", "items": ["Mehrere Rechtschreibfehler und falsche Übersetzungen behoben.", "Problem mit der endlosen Welterstellung behoben; als Folge davon wird das Biom „Sakura Forest“ in Version 26.1.2 derzeit nicht generiert.", "Das Gegenstandssymbol für zwei Errungenschaften aktualisiert.", "Soundeffekte hinzugefügt, wenn der Cerulean Creeper Schaden erleidet."] }],
-        "ja": [{ "type": "fix", "heading": "変更と修正:", "items": ["複数の誤字と誤訳を修正しました。", "ワールド作成が無限に続く問題を修正しました。その影響で、バージョン 26.1.2 では現在「Sakura Forest」バイオームが生成されません。", "2つの進捗に関連するアイテムアイコンを更新しました。", "Cerulean Creeper がダメージを受けたときの効果音を追加しました。"] }],
-        "ko": [{ "type": "fix", "heading": "변경 및 수정:", "items": ["여러 맞춤법 오류와 잘못된 번역을 수정했습니다.", "월드가 무한히 생성되던 문제를 수정했습니다. 대신 현재 26.1.2에서는 Sakura Forest 생물 군계가 생성되지 않습니다.", "두 발전 과제의 아이템 아이콘을 업데이트했습니다.", "Cerulean Creeper가 피해를 입을 때 재생되는 효과음을 추가했습니다."] }],
-        "pt-br": [{ "type": "fix", "heading": "Alterações e correções:", "items": ["Corrigidos vários erros de ortografia e traduções incorretas.", "Corrigido o problema que causava a criação infinita de mundos; como consequência, o bioma “Sakura Forest” não é gerado atualmente na versão 26.1.2.", "Atualizado o ícone do item de duas conquistas.", "Adicionados efeitos sonoros quando o Cerulean Creeper sofre dano."] }]
+        "it": [{ "type": "fix", "heading": "Modifiche e correzioni:", "items": ["Corrette diverse imprecisioni ortografiche e traduzioni errate.", "Risolto il problema che causava la generazione infinita dei mondi; di conseguenza, al momento il bioma “Foresta di Sakura” non viene generato nella versione 26.1.2.", "Aggiornata l’icona degli oggetti di due obiettivi.", "Aggiunti effetti sonori quando il Creeper ceruleo subisce danni."] }],
+        "es": [{ "type": "fix", "heading": "Cambios y correcciones:", "items": ["Corregidos varios errores ortográficos y traducciones incorrectas.", "Corregido el problema que provocaba la creación infinita de mundos; como consecuencia, el bioma «Bosque de Sakura» no se genera actualmente en la versión 26.1.2.", "Actualizado el icono del objeto de dos logros.", "Añadidos efectos de sonido cuando el Creeper cerúleo recibe daño."] }],
+        "de": [{ "type": "fix", "heading": "Änderungen und Fehlerbehebungen:", "items": ["Mehrere Rechtschreibfehler und falsche Übersetzungen behoben.", "Problem mit der endlosen Welterstellung behoben; als Folge davon wird das Biom „Sakura-Wald“ in Version 26.1.2 derzeit nicht generiert.", "Das Gegenstandssymbol für zwei Errungenschaften aktualisiert.", "Soundeffekte hinzugefügt, wenn der himmelblaue Creeper Schaden erleidet."] }],
+        "ja": [{ "type": "fix", "heading": "変更と修正:", "items": ["複数の誤字と誤訳を修正しました。", "ワールド作成が無限に続く問題を修正しました。その影響で、バージョン 26.1.2 では現在「サクラの森」バイオームが生成されません。", "2つの進捗に関連するアイテムアイコンを更新しました。", "青いクリーパーがダメージを受けたときの効果音を追加しました。"] }],
+        "ko": [{ "type": "fix", "heading": "변경 및 수정:", "items": ["여러 맞춤법 오류와 잘못된 번역을 수정했습니다.", "월드가 무한히 생성되던 문제를 수정했습니다. 대신 현재 26.1.2에서는 사쿠라 숲 생물 군계가 생성되지 않습니다.", "두 발전 과제의 아이템 아이콘을 업데이트했습니다.", "하늘색 크리퍼가 피해를 입을 때 재생되는 효과음을 추가했습니다."] }],
+        "pt-br": [{ "type": "fix", "heading": "Alterações e correções:", "items": ["Corrigidos vários erros de ortografia e traduções incorretas.", "Corrigido o problema que causava a criação infinita de mundos; como consequência, o bioma “Floresta de Sakura” não é gerado atualmente na versão 26.1.2.", "Atualizado o ícone do item de duas conquistas.", "Adicionados efeitos sonoros quando o Creeper cerúleo sofre dano."] }]
       }
     },
     {
@@ -909,6 +910,16 @@ const patchnotesConfig = {
     },
     {
       "version": "1.4.0",
+      "title": {
+        "fr": "La mise à jour de l'esprit Sakura",
+        "en": "The Sakura Spirit Update",
+        "it": "L'aggiornamento dello spirito Sakura",
+        "es": "La actualización del espíritu Sakura",
+        "de": "Das Update des Sakura-Geistes",
+        "ja": "サクラの精霊アップデート",
+        "ko": "사쿠라 정령 업데이트",
+        "pt-br": "Atualização do Espírito Sakura"
+      },
       "date": "2025-10-20",
       "loader": "Forge, NeoForge",
       "mcVersion": "1.21.1",
@@ -1022,7 +1033,7 @@ const patchnotesConfig = {
               "Add sakura roots 🌸",
               "Add sakura carpet 🌿",
               "The sakura mushroom appears naturally in the sakura forest 🍄",
-              "New mystical flower: Anthéria 🌺",
+              "New mystical flower: Antheria 🌺",
               "New creature: the Lyvora Wolf 🐺",
               "New food: the Lyvorian Berry 🍇"
             ]
@@ -1055,43 +1066,53 @@ const patchnotesConfig = {
         "it": [
           { "type": "warn", "heading": "Attenzione:", "items": [{ "text": "⚠️ Versione non più supportata:", "childrenListType": "ordered", "children": ["Questa versione non è più mantenuta.", "Potrebbe contenere bug e richiedere dipendenze aggiuntive, come Curios.", "Usa invece Acatar 1.4.1 o una versione più recente."] }] },
           { "type": "info", "heading": "Informazioni:", "items": ["Esplora la serenità di Sakura e la potenza di Lyvora, in un aggiornamento in cui la vita e la luce fioriscono persino nel Nether. ⚙️ Alcune funzionalità sono ancora in fase di test: il tuo feedback ci aiuterà a perfezionarle!"] },
-          { "type": "add", "heading": "Aggiunto:", "items": ["Le armature della mod, tranne quella spaziale, possono ora avere un modello forge (disponibile solo con materiali vanilla: diamante, smeraldo, ferro, oro, redstone ecc.).", "Aggiunte 2 ricette per la pozione Cattivo Presagio: una al banco da lavoro (9 ingredienti) e una al supporto per pozioni 🧪.", "Aggiunta la Dioptasium Apple 🍏.", "Aggiunto zolfo, ottenibile con polvere di blaze 🔥.", "Nuovo minerale: piombo ⛏️.", "Nuovo lingotto: Hazmium, ottenuto con zolfo, piombo, polvere luminosa e oro; usato per l’armatura Hazmat ⚗️.", "L’armatura Hazmat è ora disponibile in modalità sopravvivenza 🧍‍♂️.", "Nuovo incantesimo: Radiation Protection ☢️.", "Aggiunti 2 nuovi obiettivi 🏆.", "Aggiunte Sakura Roots 🌸.", "Aggiunto Sakura Carpet 🌿.", "Il Sakura Mushroom ora compare naturalmente nella Sakura Forest 🍄.", "Nuovo fiore mistico: Anthéria 🌺.", "Nuova creatura: Lyvora Wolf 🐺.", "Nuovo cibo: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "Correzioni:", "items": ["💡 Leggermente ridotta la luminosità del lingotto di uranio.", { "text": "☠️ Il minerale di uranio ora applica l’effetto veleno se non indossi l’armatura Hazmat o un’armatura con “Radiation Protection”.", "childrenListType": "ordered", "children": ["(⚠️ Questa funzione è ancora instabile: per ora è preferibile usare l’armatura Hazmat.)"] }, "🔢 Cambiata la numerazione degli obiettivi: i numeri 5 e 6 sono diventati 7 e 8.", "🧱 Cambiata l’icona dell’obiettivo “What is this?” (Carmeltazite).", "💣 [⚠️] La bomba nucleare è ancora in fase di test.", "🌾 Ora il fungo esplosivo può essere posizionato sulla terra.", "🐗 Ridotta la frequenza di comparsa di Piglins, Hoglins e maiali zombificati nel bioma Sakura.", "🌸 [⚠️] Il Sakura Mushroom ora cresce solo con un cristallo rosso o polvere d’ossa.", "🈁 Corretto: “Sakura Wart Block” ora è “Sakura Wart Block”.", "🌱 Sakura Nylium ora si diffonde come Crimson Nylium se stimolato con polvere d’ossa.", "🔥 Nel bioma Sakura ora possono generarsi naturalmente portali in rovina.", "👁️ Aumentato il raggio di rilevamento dell’Eye of Revelation."] }
+          { "type": "add", "heading": "Aggiunto:", "items": ["Le armature della mod, tranne l'armatura Space, possono ora avere un modello forge (disponibile solo con materiali vanilla: diamante, smeraldo, ferro, oro, redstone ecc.).", "Aggiunte 2 ricette per la pozione Cattivo Presagio: una al banco da lavoro (9 ingredienti) e una al supporto per pozioni 🧪.", "Aggiunta la Mela Dioptasium 🍏.", "Aggiunto zolfo, ottenibile con polvere di blaze 🔥.", "Nuovo minerale: piombo ⛏️.", "Nuovo lingotto: Hazmium, ottenuto con zolfo, piombo, polvere luminosa e oro; usato per l’armatura Hazmat ⚗️.", "L’armatura Hazmat è ora disponibile in modalità sopravvivenza 🧍‍♂️.", "Nuovo incantesimo: Protezione dalle radiazioni ☢️.", "Aggiunti 2 nuovi obiettivi 🏆.", "Aggiunte Radici di Sakura 🌸.", "Aggiunto Tappeto di Sakura 🌿.", "Il Fungo di Sakura ora compare naturalmente nella Foresta di Sakura 🍄.", "Nuovo fiore mistico: Antheria 🌺.", "Nuova creatura: Lupo Lyvora 🐺.", "Nuovo cibo: Bacca Lyvorian 🍇."] },
+          { "type": "fix", "heading": "Correzioni:", "items": ["💡 Leggermente ridotta la luminosità del lingotto di uranio.", { "text": "☠️ Il minerale di uranio ora applica l’effetto veleno se non indossi l’armatura Hazmat o un’armatura con “Protezione dalle radiazioni”.", "childrenListType": "ordered", "children": ["(⚠️ Questa funzione è ancora instabile: per ora è preferibile usare l’armatura Hazmat.)"] }, "🔢 Cambiata la numerazione degli obiettivi: i numeri 5 e 6 sono diventati 7 e 8.", "🧱 Cambiata l’icona dell’obiettivo “What is this?” (Carmeltazite).", "💣 [⚠️] La bomba nucleare è ancora in fase di test.", "🌾 Ora il fungo esplosivo può essere posizionato sulla terra.", "🐗 Ridotta la frequenza di comparsa di Piglins, Hoglins e maiali zombificati nel bioma di Sakura.", "🌸 [⚠️] Il Fungo di Sakura ora cresce solo con un cristallo rosso o polvere d’ossa.", "🈁 Corretto: “Blocco di verruche del Nether di Sakura” ora è “Blocco di verruche del Nether di Sakura”.", "🌱 Necelio di Sakura ora si diffonde come Necelio cremisi se stimolato con polvere d’ossa.", "🔥 Nel bioma di Sakura ora possono generarsi naturalmente portali in rovina.", "👁️ Aumentato il raggio di rilevamento dell’Occhio della Rivelazione."] }
         ],
         "es": [
           { "type": "warn", "heading": "Atención:", "items": [{ "text": "⚠️ Versión obsoleta:", "childrenListType": "ordered", "children": ["Esta versión ya no recibe mantenimiento.", "Puede contener errores y requerir dependencias adicionales, como Curios.", "Utiliza Acatar 1.4.1 o una versión más reciente."] }] },
           { "type": "info", "heading": "Información:", "items": ["Explora la serenidad de Sakura y el poder de Lyvora en una actualización donde la vida y la luz florecen incluso en el Nether. ⚙️ Algunas funciones aún están en pruebas; tus comentarios ayudarán a perfeccionarlas."] },
-          { "type": "add", "heading": "Añadido:", "items": ["Las armaduras del mod, excepto la espacial, ahora pueden tener un modelo de forge (solo disponible con materiales vanilla: diamante, esmeralda, hierro, oro, redstone, etc.).", "Añadidas 2 recetas para la poción de Mal Presagio: una en la mesa de trabajo (9 ingredientes) y otra en el soporte para pociones 🧪.", "Añadida Dioptasium Apple 🍏.", "Añadido azufre, que se puede fabricar con polvo de blaze 🔥.", "Nuevo mineral: plomo ⛏️.", "Nuevo lingote: Hazmium, obtenido con azufre, plomo, polvo luminoso y oro; se utiliza para la armadura Hazmat ⚗️.", "La armadura Hazmat ya está disponible en supervivencia 🧍‍♂️.", "Nuevo encantamiento: Radiation Protection ☢️.", "Añadidos 2 logros nuevos 🏆.", "Añadidas Sakura Roots 🌸.", "Añadido Sakura Carpet 🌿.", "Sakura Mushroom ahora aparece de forma natural en Sakura Forest 🍄.", "Nueva flor mística: Anthéria 🌺.", "Nueva criatura: Lyvora Wolf 🐺.", "Nuevo alimento: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "Correcciones:", "items": ["💡 Reducido ligeramente el brillo del lingote de uranio.", { "text": "☠️ El mineral de uranio ahora aplica el efecto de veneno si no llevas la armadura Hazmat o una armadura con “Radiation Protection”.", "childrenListType": "ordered", "children": ["(⚠️ Esta función aún es inestable; por ahora, se recomienda usar la armadura Hazmat.)"] }, "🔢 Cambiada la numeración de los logros 5 y 6: ahora son 7 y 8.", "🧱 Cambiado el icono del logro “What is this?” (Carmeltazite).", "💣 [⚠️] La bomba nuclear aún está en fase de pruebas.", "🌾 El hongo explosivo ahora se puede colocar sobre tierra.", "🐗 Reducida la frecuencia de aparición de Piglins, Hoglins y cerdos zombificados en el bioma Sakura.", "🌸 [⚠️] Sakura Mushroom ahora solo crece con un cristal rojo o polvo de hueso.", "🈁 Corregido: “Sakura Wart Block” pasa a llamarse “Sakura Wart Block”.", "🌱 Sakura Nylium ahora se propaga como Crimson Nylium al recibir polvo de hueso.", "🔥 El bioma Sakura ahora puede generar portales en ruinas de forma natural.", "👁️ Aumentado el alcance de detección de Eye of Revelation."] }
+          { "type": "add", "heading": "Añadido:", "items": ["Las armaduras del mod, excepto la armadura Space, ahora pueden tener un modelo de forge (solo disponible con materiales vanilla: diamante, esmeralda, hierro, oro, redstone, etc.).", "Añadidas 2 recetas para la poción de Mal Presagio: una en la mesa de trabajo (9 ingredientes) y otra en el soporte para pociones 🧪.", "Añadida Manzana Dioptasium 🍏.", "Añadido azufre, que se puede fabricar con polvo de blaze 🔥.", "Nuevo mineral: plomo ⛏️.", "Nuevo lingote: Hazmium, obtenido con azufre, plomo, polvo luminoso y oro; se utiliza para la armadura Hazmat ⚗️.", "La armadura Hazmat ya está disponible en supervivencia 🧍‍♂️.", "Nuevo encantamiento: Protección contra la radiación ☢️.", "Añadidos 2 logros nuevos 🏆.", "Añadidas Raíces de Sakura 🌸.", "Añadida la alfombra de Sakura 🌿.", "El hongo de Sakura ahora aparece de forma natural en el bosque de Sakura 🍄.", "Nueva flor mística: Antheria 🌺.", "Nueva criatura: Lobo Lyvora 🐺.", "Nuevo alimento: Baya Lyvorian 🍇."] },
+          { "type": "fix", "heading": "Correcciones:", "items": ["💡 Reducido ligeramente el brillo del lingote de uranio.", { "text": "☠️ El mineral de uranio ahora aplica el efecto de veneno si no llevas la armadura Hazmat o una armadura con “Protección contra la radiación”.", "childrenListType": "ordered", "children": ["(⚠️ Esta función aún es inestable; por ahora, se recomienda usar la armadura Hazmat.)"] }, "🔢 Cambiada la numeración de los logros 5 y 6: ahora son 7 y 8.", "🧱 Cambiado el icono del logro “What is this?” (Carmeltazite).", "💣 [⚠️] La bomba nuclear aún está en fase de pruebas.", "🌾 El hongo explosivo ahora se puede colocar sobre tierra.", "🐗 Reducida la frecuencia de aparición de Piglins, Hoglins y cerdos zombificados en el bioma de Sakura.", "🌸 [⚠️] Hongo de Sakura ahora solo crece con un cristal rojo o polvo de hueso.", "🈁 Corregido: “Bloque de verrugas del Nether de Sakura” pasa a llamarse “Bloque de verrugas del Nether de Sakura”.", "🌱 Necelio de Sakura ahora se propaga como Necelio carmesí al recibir polvo de hueso.", "🔥 El bioma de Sakura ahora puede generar portales en ruinas de forma natural.", "👁️ Aumentado el alcance de detección del ojo de la Revelación."] }
         ],
         "de": [
           { "type": "warn", "heading": "Achtung:", "items": [{ "text": "⚠️ Veraltete Version:", "childrenListType": "ordered", "children": ["Diese Version wird nicht mehr gepflegt.", "Sie kann Fehler enthalten und zusätzliche Abhängigkeiten wie Curios erfordern.", "Bitte verwende stattdessen Acatar 1.4.1 oder neuer."] }] },
           { "type": "info", "heading": "Information:", "items": ["Entdecke die Ruhe von Sakura und die Kraft von Lyvora – in einem Update, in dem Leben und Licht sogar im Nether gedeihen. ⚙️ Einige Funktionen werden noch getestet; dein Feedback hilft bei der Verbesserung!"] },
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Rüstungen der Mod (außer der Weltraumrüstung) können jetzt ein Forge-Modell haben (nur mit Vanilla-Materialien wie Diamant, Smaragd, Eisen, Gold, Redstone usw.).", "2 Rezepte für den Trank des Schlechten Omens hinzugefügt: eines am Werktisch (9 Zutaten) und eines am Braustand 🧪.", "Dioptasium Apple hinzugefügt 🍏.", "Schwefel hinzugefügt, herstellbar mit Blaze-Pulver 🔥.", "Neues Erz: Blei ⛏️.", "Neuer Barren: Hazmium, hergestellt aus Schwefel, Blei, Leuchtpulver und Gold – für die Hazmat-Rüstung ⚗️.", "Hazmat-Rüstung ist jetzt im Überlebensmodus verfügbar 🧍‍♂️.", "Neue Verzauberung: Radiation Protection ☢️.", "2 neue Errungenschaften hinzugefügt 🏆.", "Sakura Roots hinzugefügt 🌸.", "Sakura Carpet hinzugefügt 🌿.", "Sakura Mushroom erscheint jetzt natürlich im Biom Sakura Forest 🍄.", "Neue mystische Blume: Anthéria 🌺.", "Neue Kreatur: Lyvora Wolf 🐺.", "Neues Nahrungsmittel: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["💡 Helligkeit des Uranbarrens leicht reduziert.", { "text": "☠️ Uranerz verursacht jetzt den Vergiftungseffekt, wenn du keine Hazmat-Rüstung oder Rüstung mit „Radiation Protection“ trägst.", "childrenListType": "ordered", "children": ["(⚠️ Diese Funktion ist noch instabil – verwende vorerst bevorzugt die Hazmat-Rüstung.)"] }, "🔢 Nummerierung der Errungenschaften 5 und 6 geändert: Sie heißen jetzt 7 und 8.", "🧱 Symbol der Errungenschaft „What is this?“ (Carmeltazite) geändert.", "💣 [⚠️] Die Atombombe wird noch getestet.", "🌾 Der Explosionspilz kann jetzt auf Erde platziert werden.", "🐗 Spawnrate von Piglins, Hoglins und zombifizierten Schweinen im Biom Sakura verringert.", "🌸 [⚠️] Sakura Mushroom wächst jetzt nur noch mit einem Rotkristall oder Knochenmehl.", "🈁 Korrigiert: „Sakura Wart Block“ heißt jetzt „Sakura Wart Block“.", "🌱 Sakura Nylium breitet sich bei Verwendung von Knochenmehl jetzt wie Crimson Nylium aus.", "🔥 Im Biom Sakura können jetzt natürlich verfallene Portale entstehen.", "👁️ Erkennungsreichweite des Eye of Revelation erhöht."] }
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Rüstungen der Mod (außer der Space-Rüstung) können jetzt ein Forge-Modell haben (nur mit Vanilla-Materialien wie Diamant, Smaragd, Eisen, Gold, Redstone usw.).", "2 Rezepte für den Trank des Schlechten Omens hinzugefügt: eines am Werktisch (9 Zutaten) und eines am Braustand 🧪.", "Dioptasium-Apfel hinzugefügt 🍏.", "Schwefel hinzugefügt, herstellbar mit Blaze-Pulver 🔥.", "Neues Erz: Blei ⛏️.", "Neuer Barren: Hazmium, hergestellt aus Schwefel, Blei, Leuchtpulver und Gold – für die Hazmat-Rüstung ⚗️.", "Hazmat-Rüstung ist jetzt im Überlebensmodus verfügbar 🧍‍♂️.", "Neue Verzauberung: Strahlenschutz ☢️.", "2 neue Errungenschaften hinzugefügt 🏆.", "Sakura-Wurzeln hinzugefügt 🌸.", "Sakura-Teppich hinzugefügt 🌿.", "Sakura-Pilz erscheint jetzt natürlich im Sakura-Wald-Biom 🍄.", "Neue mystische Blume: Antheria 🌺.", "Neue Kreatur: Lyvora-Wolf 🐺.", "Neues Nahrungsmittel: Lyvorian-Beere 🍇."] },
+          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["💡 Helligkeit des Uranbarrens leicht reduziert.", { "text": "☠️ Uranerz verursacht jetzt den Vergiftungseffekt, wenn du keine Hazmat-Rüstung oder Rüstung mit „Strahlenschutz“ trägst.", "childrenListType": "ordered", "children": ["(⚠️ Diese Funktion ist noch instabil – verwende vorerst bevorzugt die Hazmat-Rüstung.)"] }, "🔢 Nummerierung der Errungenschaften 5 und 6 geändert: Sie heißen jetzt 7 und 8.", "🧱 Symbol der Errungenschaft „What is this?“ (Carmeltazite) geändert.", "💣 [⚠️] Die Atombombe wird noch getestet.", "🌾 Der Explosionspilz kann jetzt auf Erde platziert werden.", "🐗 Spawnrate von Piglins, Hoglins und zombifizierten Schweinen im Biom Sakura verringert.", "🌸 [⚠️] Sakura-Pilz wächst jetzt nur noch mit einem Rotkristall oder Knochenmehl.", "🈁 Korrigiert: „Sakura-Netherwarzenblock“ heißt jetzt „Sakura-Netherwarzenblock“.", "🌱 Sakura-Nezel breitet sich bei Verwendung von Knochenmehl jetzt wie Karmesin-Nezel aus.", "🔥 Im Biom Sakura können jetzt natürlich verfallene Portale entstehen.", "👁️ Erkennungsreichweite des Auges der Offenbarung erhöht."] }
         ],
         "ja": [
           { "type": "warn", "heading": "注意:", "items": [{ "text": "⚠️ サポート終了バージョン:", "childrenListType": "ordered", "children": ["このバージョンは今後メンテナンスされません。", "バグが含まれている場合や、Curios などの追加依存関係が必要になる場合があります。", "代わりに Acatar 1.4.1 以降を使用してください。"] }] },
-          { "type": "info", "heading": "情報:", "items": ["Sakura の静けさと Lyvora の力を体験できるアップデートです。生命と光が Nether にまで広がります。⚙️ 一部の機能はまだテスト中です。改善のため、ぜひフィードバックをお寄せください。"] },
-          { "type": "add", "heading": "追加:", "items": ["Mod の防具 (宇宙防具を除く) に Forge モデルを適用できるようになりました (ダイヤモンド、エメラルド、鉄、金、レッドストーンなど、バニラ素材のみ対応)。", "不吉な予感のポーションのレシピを2種類追加しました。作業台 (素材9個) と醸造台で作成できます 🧪。", "Dioptasium Apple を追加 🍏。", "ブレイズパウダーでクラフトできる硫黄を追加 🔥。", "新しい鉱石: 鉛 ⛏️。", "新しいインゴット: Hazmium。硫黄、鉛、発光する粉、金から作成でき、Hazmat Armor に使用します ⚗️。", "Hazmat Armor がサバイバルモードで使用可能になりました 🧍‍♂️。", "新しいエンチャント: Radiation Protection ☢️。", "新しい進捗を2つ追加 🏆。", "Sakura Roots を追加 🌸。", "Sakura Carpet を追加 🌿。", "Sakura Mushroom が Sakura Forest に自然生成するようになりました 🍄。", "新しい神秘の花: Anthéria 🌺。", "新しい生物: Lyvora Wolf 🐺。", "新しい食料: Lyvorian Berry 🍇。"] },
-          { "type": "fix", "heading": "修正:", "items": ["💡 ウランインゴットの明るさをわずかに下げました。", { "text": "☠️ ウラン鉱石は、Hazmat Armor または “Radiation Protection” 付きの防具を着用していない場合に毒効果を与えるようになりました。", "childrenListType": "ordered", "children": ["(⚠️ この機能はまだ不安定なため、今は Hazmat Armor の使用を推奨します。)"] }, "🔢 進捗5と6の番号を7と8に変更しました。", "🧱 進捗 “What is this?” (Carmeltazite) のアイコンを変更しました。", "💣 [⚠️] 核爆弾はまだテスト中です。", "🌾 爆発キノコを土に設置できるようになりました。", "🐗 Sakura バイオームでの Piglin、Hoglin、ゾンビ化したブタの出現率を下げました。", "🌸 [⚠️] Sakura Mushroom はレッドクリスタルまたは骨粉でのみ成長するようになりました。", "🈁 修正: “Sakura Wart Block” の名称を “Sakura Wart Block” に変更しました。", "🌱 Sakura Nylium は骨粉を使用すると Crimson Nylium のように広がります。", "🔥 Sakura バイオームに荒廃したポータルが自然生成するようになりました。", "👁️ Eye of Revelation の検知範囲を拡大しました。"] }
+          { "type": "info", "heading": "情報:", "items": ["サクラの静けさと Lyvora の力を体験できるアップデートです。生命と光が Nether にまで広がります。⚙️ 一部の機能はまだテスト中です。改善のため、ぜひフィードバックをお寄せください。"] },
+          { "type": "add", "heading": "追加:", "items": ["Mod の防具 (Space Armorを除く) に Forge モデルを適用できるようになりました (ダイヤモンド、エメラルド、鉄、金、レッドストーンなど、バニラ素材のみ対応)。", "不吉な予感のポーションのレシピを2種類追加しました。作業台 (素材9個) と醸造台で作成できます 🧪。", "Dioptasiumのリンゴ を追加 🍏。", "ブレイズパウダーでクラフトできる硫黄を追加 🔥。", "新しい鉱石: 鉛 ⛏️。", "新しいインゴット: Hazmium。硫黄、鉛、発光する粉、金から作成でき、Hazmat Armor に使用します ⚗️。", "Hazmat Armor がサバイバルモードで使用可能になりました 🧍‍♂️。", "新しいエンチャント: 放射線防護 ☢️。", "新しい進捗を2つ追加 🏆。", "サクラの根 を追加 🌸。", "サクラのカーペット を追加 🌿。", "サクラのキノコ が サクラの森 に自然生成するようになりました 🍄。", "新しい神秘の花: Antheria 🌺。", "新しい生物: Lyvoraのオオカミ 🐺。", "新しい食料: Lyvorianベリー 🍇。"] },
+          { "type": "fix", "heading": "修正:", "items": ["💡 ウランインゴットの明るさをわずかに下げました。", { "text": "☠️ ウラン鉱石は、Hazmat Armor または “放射線防護” 付きの防具を着用していない場合に毒効果を与えるようになりました。", "childrenListType": "ordered", "children": ["(⚠️ この機能はまだ不安定なため、今は Hazmat Armor の使用を推奨します。)"] }, "🔢 進捗5と6の番号を7と8に変更しました。", "🧱 進捗 “What is this?” (Carmeltazite) のアイコンを変更しました。", "💣 [⚠️] 核爆弾はまだテスト中です。", "🌾 爆発キノコを土に設置できるようになりました。", "🐗 サクラバイオームでの Piglin、Hoglin、ゾンビ化したブタの出現率を下げました。", "🌸 [⚠️] サクラのキノコ はレッドクリスタルまたは骨粉でのみ成長するようになりました。", "🈁 修正: “サクラのネザーウォートブロック” の名称を “サクラのネザーウォートブロック” に変更しました。", "🌱 サクラのナイリウム は骨粉を使用すると 真紅のナイリウム のように広がります。", "🔥 サクラバイオームに荒廃したポータルが自然生成するようになりました。", "👁️ 啓示の目 の検知範囲を拡大しました。"] }
         ],
         "ko": [
           { "type": "warn", "heading": "주의:", "items": [{ "text": "⚠️ 지원이 종료된 버전:", "childrenListType": "ordered", "children": ["이 버전은 더 이상 유지 관리되지 않습니다.", "버그가 포함되어 있거나 Curios와 같은 추가 의존성이 필요할 수 있습니다.", "대신 Acatar 1.4.1 이상을 사용하세요."] }] },
-          { "type": "info", "heading": "정보:", "items": ["Sakura의 고요함과 Lyvora의 힘을 만나 보세요. 생명과 빛이 Nether까지 피어나는 업데이트입니다. ⚙️ 일부 기능은 아직 테스트 중이며, 여러분의 의견이 개선에 도움이 됩니다!"] },
-          { "type": "add", "heading": "추가:", "items": ["우주 갑옷을 제외한 모드 갑옷에 Forge 모델을 적용할 수 있습니다 (다이아몬드, 에메랄드, 철, 금, 레드스톤 등 바닐라 재료만 지원).", "불길한 징조 물약 제작법 2개를 추가했습니다. 작업대(재료 9개)와 양조대에서 각각 제작할 수 있습니다 🧪.", "Dioptasium Apple 추가 🍏.", "블레이즈 가루로 제작할 수 있는 황 추가 🔥.", "새로운 광석: 납 ⛏️.", "새로운 주괴: Hazmium. 황, 납, 발광 가루, 금으로 만들며 Hazmat 갑옷에 사용됩니다 ⚗️.", "Hazmat 갑옷을 생존 모드에서 사용할 수 있습니다 🧍‍♂️.", "새로운 마법 부여: Radiation Protection ☢️.", "새로운 발전 과제 2개 추가 🏆.", "Sakura Roots 추가 🌸.", "Sakura Carpet 추가 🌿.", "Sakura Mushroom이 Sakura Forest에 자연 생성됩니다 🍄.", "새로운 신비한 꽃: Anthéria 🌺.", "새로운 생물: Lyvora Wolf 🐺.", "새로운 음식: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "수정:", "items": ["💡 우라늄 주괴의 밝기를 약간 낮췄습니다.", { "text": "☠️ Hazmat 갑옷이나 “Radiation Protection”이 부여된 갑옷을 입지 않으면 우라늄 광석이 독 효과를 줍니다.", "childrenListType": "ordered", "children": ["(⚠️ 아직 불안정한 기능이므로 당분간 Hazmat 갑옷을 사용하는 것이 좋습니다.)"] }, "🔢 발전 과제 5와 6의 번호를 7과 8로 변경했습니다.", "🧱 “What is this?” (Carmeltazite) 발전 과제 아이콘을 변경했습니다.", "💣 [⚠️] 핵폭탄은 아직 테스트 중입니다.", "🌾 폭발 버섯을 흙에 설치할 수 있습니다.", "🐗 Sakura 생물 군계에서 Piglin, Hoglin, 좀비화된 돼지의 생성률을 낮췄습니다.", "🌸 [⚠️] Sakura Mushroom은 이제 붉은 수정이나 뼛가루로만 자랍니다.", "🈁 수정: “Sakura Wart Block”의 이름을 “Sakura Wart Block”으로 변경했습니다.", "🌱 Sakura Nylium은 뼛가루를 사용하면 Crimson Nylium처럼 퍼집니다.", "🔥 Sakura 생물 군계에서 폐허가 된 포털이 자연 생성됩니다.", "👁️ Eye of Revelation의 감지 범위를 늘렸습니다."] }
+          { "type": "info", "heading": "정보:", "items": ["사쿠라의 고요함과 Lyvora의 힘을 만나 보세요. 생명과 빛이 Nether까지 피어나는 업데이트입니다. ⚙️ 일부 기능은 아직 테스트 중이며, 여러분의 의견이 개선에 도움이 됩니다!"] },
+          { "type": "add", "heading": "추가:", "items": ["Space 방어구를 제외한 모드 갑옷에 Forge 모델을 적용할 수 있습니다 (다이아몬드, 에메랄드, 철, 금, 레드스톤 등 바닐라 재료만 지원).", "불길한 징조 물약 제작법 2개를 추가했습니다. 작업대(재료 9개)와 양조대에서 각각 제작할 수 있습니다 🧪.", "Dioptasium 사과 추가 🍏.", "블레이즈 가루로 제작할 수 있는 황 추가 🔥.", "새로운 광석: 납 ⛏️.", "새로운 주괴: Hazmium. 황, 납, 발광 가루, 금으로 만들며 Hazmat 갑옷에 사용됩니다 ⚗️.", "Hazmat 갑옷을 생존 모드에서 사용할 수 있습니다 🧍‍♂️.", "새로운 마법 부여: 방사선 방호 ☢️.", "새로운 발전 과제 2개 추가 🏆.", "사쿠라 뿌리 추가 🌸.", "사쿠라 카펫 추가 🌿.", "사쿠라 버섯이 사쿠라 숲에 자연 생성됩니다 🍄.", "새로운 신비한 꽃: Antheria 🌺.", "새로운 생물: Lyvora 늑대 🐺.", "새로운 음식: Lyvorian 베리 🍇."] },
+          { "type": "fix", "heading": "수정:", "items": ["💡 우라늄 주괴의 밝기를 약간 낮췄습니다.", { "text": "☠️ Hazmat 갑옷이나 “방사선 방호”이 부여된 갑옷을 입지 않으면 우라늄 광석이 독 효과를 줍니다.", "childrenListType": "ordered", "children": ["(⚠️ 아직 불안정한 기능이므로 당분간 Hazmat 갑옷을 사용하는 것이 좋습니다.)"] }, "🔢 발전 과제 5와 6의 번호를 7과 8로 변경했습니다.", "🧱 “What is this?” (Carmeltazite) 발전 과제 아이콘을 변경했습니다.", "💣 [⚠️] 핵폭탄은 아직 테스트 중입니다.", "🌾 폭발 버섯을 흙에 설치할 수 있습니다.", "🐗 사쿠라 생물 군계에서 Piglin, Hoglin, 좀비화된 돼지의 생성률을 낮췄습니다.", "🌸 [⚠️] 사쿠라 버섯은 이제 붉은 수정이나 뼛가루로만 자랍니다.", "🈁 수정: “사쿠라 네더 사마귀 블록”의 이름을 “사쿠라 네더 사마귀 블록”으로 변경했습니다.", "🌱 사쿠라 네사체는 뼛가루를 사용하면 진홍빛 네사체처럼 퍼집니다.", "🔥 사쿠라 생물 군계에서 폐허가 된 포털이 자연 생성됩니다.", "👁️ 계시의 눈의 감지 범위를 늘렸습니다."] }
         ],
         "pt-br": [
           { "type": "warn", "heading": "Atenção:", "items": [{ "text": "⚠️ Versão descontinuada:", "childrenListType": "ordered", "children": ["Esta versão não recebe mais manutenção.", "Ela pode conter bugs e exigir dependências adicionais, como Curios.", "Use Acatar 1.4.1 ou uma versão mais recente."] }] },
           { "type": "info", "heading": "Informação:", "items": ["Explore a tranquilidade de Sakura e o poder de Lyvora em uma atualização na qual a vida e a luz florescem até no Nether. ⚙️ Alguns recursos ainda estão em fase de testes; seu feedback ajudará a aprimorá-los!"] },
-          { "type": "add", "heading": "Adicionado:", "items": ["As armaduras do mod, exceto a armadura espacial, agora podem usar um modelo forge (disponível apenas com materiais vanilla: diamante, esmeralda, ferro, ouro, redstone etc.).", "Adicionadas 2 receitas para a poção de Mau Presságio: uma na bancada de trabalho (9 ingredientes) e outra no suporte de poções 🧪.", "Adicionada Dioptasium Apple 🍏.", "Adicionado enxofre, que pode ser fabricado com pó de blaze 🔥.", "Novo minério: chumbo ⛏️.", "Novo lingote: Hazmium, obtido com enxofre, chumbo, pó luminoso e ouro — usado na armadura Hazmat ⚗️.", "A armadura Hazmat agora está disponível no modo sobrevivência 🧍‍♂️.", "Novo encantamento: Radiation Protection ☢️.", "Adicionadas 2 novas conquistas 🏆.", "Adicionadas Sakura Roots 🌸.", "Adicionado Sakura Carpet 🌿.", "Sakura Mushroom agora aparece naturalmente em Sakura Forest 🍄.", "Nova flor mística: Anthéria 🌺.", "Nova criatura: Lyvora Wolf 🐺.", "Novo alimento: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "Correções:", "items": ["💡 Brilho do lingote de urânio ligeiramente reduzido.", { "text": "☠️ O minério de urânio agora causa envenenamento se você não estiver usando a armadura Hazmat ou uma armadura com “Radiation Protection”.", "childrenListType": "ordered", "children": ["(⚠️ Este recurso ainda está instável — por enquanto, prefira usar a armadura Hazmat.)"] }, "🔢 Numeração das conquistas 5 e 6 alterada para 7 e 8.", "🧱 Ícone da conquista “What is this?” (Carmeltazite) alterado.", "💣 [⚠️] A bomba nuclear ainda está em fase de testes.", "🌾 O cogumelo explosivo agora pode ser colocado na terra.", "🐗 Taxa de surgimento de Piglins, Hoglins e porcos-zumbis reduzida no bioma Sakura.", "🌸 [⚠️] Sakura Mushroom agora só cresce com cristal vermelho ou pó de osso.", "🈁 Correção: “Sakura Wart Block” passa a se chamar “Sakura Wart Block”.", "🌱 Sakura Nylium agora se espalha como Crimson Nylium quando estimulado com pó de osso.", "🔥 O bioma Sakura agora pode gerar portais em ruínas naturalmente.", "👁️ Alcance de detecção do Eye of Revelation aumentado."] }
+          { "type": "add", "heading": "Adicionado:", "items": ["As armaduras do mod, exceto a armadura espacial, agora podem usar um modelo forge (disponível apenas com materiais vanilla: diamante, esmeralda, ferro, ouro, redstone etc.).", "Adicionadas 2 receitas para a poção de Mau Presságio: uma na bancada de trabalho (9 ingredientes) e outra no suporte de poções 🧪.", "Adicionada Maçã de Dioptasium 🍏.", "Adicionado enxofre, que pode ser fabricado com pó de blaze 🔥.", "Novo minério: chumbo ⛏️.", "Novo lingote: Hazmium, obtido com enxofre, chumbo, pó luminoso e ouro — usado na armadura Hazmat ⚗️.", "A armadura Hazmat agora está disponível no modo sobrevivência 🧍‍♂️.", "Novo encantamento: Proteção contra radiação ☢️.", "Adicionadas 2 novas conquistas 🏆.", "Adicionadas Raízes de Sakura 🌸.", "Adicionado Tapete de Sakura 🌿.", "Cogumelo de Sakura agora aparece naturalmente em Floresta de Sakura 🍄.", "Nova flor mística: Antheria 🌺.", "Nova criatura: Lobo Lyvora 🐺.", "Novo alimento: Baga Lyvorian 🍇."] },
+          { "type": "fix", "heading": "Correções:", "items": ["💡 Brilho do lingote de urânio ligeiramente reduzido.", { "text": "☠️ O minério de urânio agora causa envenenamento se você não estiver usando a armadura Hazmat ou uma armadura com “Proteção contra radiação”.", "childrenListType": "ordered", "children": ["(⚠️ Este recurso ainda está instável — por enquanto, prefira usar a armadura Hazmat.)"] }, "🔢 Numeração das conquistas 5 e 6 alterada para 7 e 8.", "🧱 Ícone da conquista “What is this?” (Carmeltazite) alterado.", "💣 [⚠️] A bomba nuclear ainda está em fase de testes.", "🌾 O cogumelo explosivo agora pode ser colocado na terra.", "🐗 Taxa de surgimento de Piglins, Hoglins e porcos-zumbis reduzida no bioma Sakura.", "🌸 [⚠️] Cogumelo de Sakura agora só cresce com cristal vermelho ou pó de osso.", "🈁 Correção: “Bloco de verrugas do Nether de Sakura” passa a se chamar “Bloco de verrugas do Nether de Sakura”.", "🌱 Nicélio de Sakura agora se espalha como Nicélio carmesim quando estimulado com pó de osso.", "🔥 O bioma Sakura agora pode gerar portais em ruínas naturalmente.", "👁️ Alcance de detecção do Olho da Revelação aumentado."] }
         ]
       }
     },
     {
       "version": "1.3.0",
+      "title": {
+        "fr": "La mise à jour de l'esprit Sakura",
+        "en": "The Sakura Spirit Update",
+        "it": "L'aggiornamento dello spirito Sakura",
+        "es": "La actualización del espíritu Sakura",
+        "de": "Das Update des Sakura-Geistes",
+        "ja": "サクラの精霊アップデート",
+        "ko": "사쿠라 정령 업데이트",
+        "pt-br": "Atualização do Espírito Sakura"
+      },
       "date": "2025-10-20",
       "loader": "Forge, NeoForge",
       "mcVersion": "1.21.4",
@@ -1175,7 +1196,7 @@ const patchnotesConfig = {
               "Add sakura roots 🌸",
               "Add sakura carpet 🌿",
               "The sakura mushroom appears naturally in the sakura forest 🍄",
-              "New mystical flower: Anthéria 🌺",
+              "New mystical flower: Antheria 🌺",
               "New creature: the Lyvora Wolf 🐺",
               "New food: the Lyvorian Berry 🍇"
             ]
@@ -1207,33 +1228,33 @@ const patchnotesConfig = {
         ],
         "it": [
           { "type": "info", "heading": "Informazioni:", "items": ["Esplora la serenità di Sakura e la potenza di Lyvora: un aggiornamento in cui la vita e la luce fioriscono persino nel Nether. ⚙️ Alcune funzionalità sono ancora in fase di test; il tuo feedback ci aiuterà a perfezionarle!"] },
-          { "type": "add", "heading": "Aggiunto:", "items": ["Le armature della mod, tranne quella spaziale, possono ora avere un modello forge (solo con materiali vanilla: diamante, smeraldo, ferro, oro, redstone ecc.).", "Aggiunte 2 ricette per la pozione Cattivo Presagio: una al banco da lavoro (9 ingredienti) e una al supporto per pozioni 🧪.", "Aggiunta Dioptasium Apple 🍏.", "Aggiunto zolfo, creabile con polvere di blaze 🔥.", "Nuovo minerale: piombo ⛏️.", "Nuovo lingotto: Hazmium, ottenuto con zolfo, piombo, polvere luminosa e oro; usato per l’armatura Hazmat ⚗️.", "L’armatura Hazmat è ora disponibile in modalità sopravvivenza 🧍‍♂️.", "Nuovo incantesimo: Radiation Protection ☢️.", "Aggiunti 2 nuovi obiettivi 🏆.", "Aggiunte Sakura Roots 🌸.", "Aggiunto Sakura Carpet 🌿.", "Sakura Mushroom ora compare naturalmente in Sakura Forest 🍄.", "Nuovo fiore mistico: Anthéria 🌺.", "Nuova creatura: Lyvora Wolf 🐺.", "Nuovo cibo: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "Correzioni:", "items": ["💡 Leggermente ridotta la luminosità del lingotto di uranio.", { "text": "☠️ Il minerale di uranio ora applica l’effetto veleno se non indossi l’armatura Hazmat o un’armatura con “Radiation Protection”.", "childrenListType": "ordered", "children": ["(⚠️ Funzione ancora instabile: per ora è preferibile usare l’armatura Hazmat.)"] }, "🔢 Cambiata la numerazione degli obiettivi 5 e 6: ora sono 7 e 8.", "🧱 Cambiata l’icona dell’obiettivo “What is this?” (Carmeltazite).", "💣 [⚠️] La bomba nucleare è ancora in fase di test.", "🌾 Il fungo esplosivo ora può essere posizionato sulla terra.", "🐗 Ridotta la comparsa di Piglins, Hoglins e maiali zombificati nel bioma Sakura.", "🌸 [⚠️] Sakura Mushroom ora cresce solo con un cristallo rosso o polvere d’ossa.", "🈁 Corretto: “Sakura Wart Block” diventa “Sakura Wart Block”.", "🌱 Sakura Nylium ora si diffonde come Crimson Nylium quando stimolato con polvere d’ossa.", "🔥 Il bioma Sakura ora può generare naturalmente portali in rovina.", "👁️ Aumentato il raggio di rilevamento dell’Eye of Revelation."] }
+          { "type": "add", "heading": "Aggiunto:", "items": ["Le armature della mod, tranne l'armatura Space, possono ora avere un modello forge (solo con materiali vanilla: diamante, smeraldo, ferro, oro, redstone ecc.).", "Aggiunte 2 ricette per la pozione Cattivo Presagio: una al banco da lavoro (9 ingredienti) e una al supporto per pozioni 🧪.", "Aggiunta Mela Dioptasium 🍏.", "Aggiunto zolfo, creabile con polvere di blaze 🔥.", "Nuovo minerale: piombo ⛏️.", "Nuovo lingotto: Hazmium, ottenuto con zolfo, piombo, polvere luminosa e oro; usato per l’armatura Hazmat ⚗️.", "L’armatura Hazmat è ora disponibile in modalità sopravvivenza 🧍‍♂️.", "Nuovo incantesimo: Protezione dalle radiazioni ☢️.", "Aggiunti 2 nuovi obiettivi 🏆.", "Aggiunte Radici di Sakura 🌸.", "Aggiunto Tappeto di Sakura 🌿.", "Fungo di Sakura ora compare naturalmente in Foresta di Sakura 🍄.", "Nuovo fiore mistico: Antheria 🌺.", "Nuova creatura: Lupo Lyvora 🐺.", "Nuovo cibo: Bacca Lyvorian 🍇."] },
+          { "type": "fix", "heading": "Correzioni:", "items": ["💡 Leggermente ridotta la luminosità del lingotto di uranio.", { "text": "☠️ Il minerale di uranio ora applica l’effetto veleno se non indossi l’armatura Hazmat o un’armatura con “Protezione dalle radiazioni”.", "childrenListType": "ordered", "children": ["(⚠️ Funzione ancora instabile: per ora è preferibile usare l’armatura Hazmat.)"] }, "🔢 Cambiata la numerazione degli obiettivi 5 e 6: ora sono 7 e 8.", "🧱 Cambiata l’icona dell’obiettivo “What is this?” (Carmeltazite).", "💣 [⚠️] La bomba nucleare è ancora in fase di test.", "🌾 Il fungo esplosivo ora può essere posizionato sulla terra.", "🐗 Ridotta la comparsa di Piglins, Hoglins e maiali zombificati nel bioma di Sakura.", "🌸 [⚠️] Fungo di Sakura ora cresce solo con un cristallo rosso o polvere d’ossa.", "🈁 Corretto: “Blocco di verruche del Nether di Sakura” diventa “Blocco di verruche del Nether di Sakura”.", "🌱 Necelio di Sakura ora si diffonde come Necelio cremisi quando stimolato con polvere d’ossa.", "🔥 Il bioma di Sakura ora può generare naturalmente portali in rovina.", "👁️ Aumentato il raggio di rilevamento dell’Occhio della Rivelazione."] }
         ],
         "es": [
           { "type": "info", "heading": "Información:", "items": ["Explora la serenidad de Sakura y el poder de Lyvora en una actualización donde la vida y la luz florecen incluso en el Nether. ⚙️ Algunas funciones aún están en pruebas; tus comentarios ayudarán a perfeccionarlas."] },
-          { "type": "add", "heading": "Añadido:", "items": ["Las armaduras del mod, excepto la espacial, ahora pueden tener un modelo forge (solo con materiales vanilla: diamante, esmeralda, hierro, oro, redstone, etc.).", "Añadidas 2 recetas para la poción de Mal Presagio: una en la mesa de trabajo (9 ingredientes) y otra en el soporte para pociones 🧪.", "Añadida Dioptasium Apple 🍏.", "Añadido azufre, que se puede fabricar con polvo de blaze 🔥.", "Nuevo mineral: plomo ⛏️.", "Nuevo lingote: Hazmium, obtenido con azufre, plomo, polvo luminoso y oro; se usa para la armadura Hazmat ⚗️.", "La armadura Hazmat ya está disponible en supervivencia 🧍‍♂️.", "Nuevo encantamiento: Radiation Protection ☢️.", "Añadidos 2 logros nuevos 🏆.", "Añadidas Sakura Roots 🌸.", "Añadido Sakura Carpet 🌿.", "Sakura Mushroom aparece de forma natural en Sakura Forest 🍄.", "Nueva flor mística: Anthéria 🌺.", "Nueva criatura: Lyvora Wolf 🐺.", "Nuevo alimento: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "Correcciones:", "items": ["💡 Reducido ligeramente el brillo del lingote de uranio.", { "text": "☠️ El mineral de uranio ahora aplica veneno si no llevas la armadura Hazmat o una armadura con “Radiation Protection”.", "childrenListType": "ordered", "children": ["(⚠️ Esta función aún es inestable; por ahora, se recomienda usar la armadura Hazmat.)"] }, "🔢 Cambiada la numeración de los logros 5 y 6: ahora son 7 y 8.", "🧱 Cambiado el icono del logro “What is this?” (Carmeltazite).", "💣 [⚠️] La bomba nuclear aún está en pruebas.", "🌾 El hongo explosivo ahora se puede colocar sobre tierra.", "🐗 Reducida la aparición de Piglins, Hoglins y cerdos zombificados en el bioma Sakura.", "🌸 [⚠️] Sakura Mushroom ahora solo crece con cristal rojo o polvo de hueso.", "🈁 Corregido: “Sakura Wart Block” pasa a llamarse “Sakura Wart Block”.", "🌱 Sakura Nylium ahora se propaga como Crimson Nylium al usar polvo de hueso.", "🔥 El bioma Sakura ahora puede generar portales en ruinas de forma natural.", "👁️ Aumentado el alcance de detección de Eye of Revelation."] }
+          { "type": "add", "heading": "Añadido:", "items": ["Las armaduras del mod, excepto la armadura Space, ahora pueden tener un modelo forge (solo con materiales vanilla: diamante, esmeralda, hierro, oro, redstone, etc.).", "Añadidas 2 recetas para la poción de Mal Presagio: una en la mesa de trabajo (9 ingredientes) y otra en el soporte para pociones 🧪.", "Añadida Manzana Dioptasium 🍏.", "Añadido azufre, que se puede fabricar con polvo de blaze 🔥.", "Nuevo mineral: plomo ⛏️.", "Nuevo lingote: Hazmium, obtenido con azufre, plomo, polvo luminoso y oro; se usa para la armadura Hazmat ⚗️.", "La armadura Hazmat ya está disponible en supervivencia 🧍‍♂️.", "Nuevo encantamiento: Protección contra la radiación ☢️.", "Añadidos 2 logros nuevos 🏆.", "Añadidas Raíces de Sakura 🌸.", "Añadida la alfombra de Sakura 🌿.", "Hongo de Sakura aparece de forma natural en Bosque de Sakura 🍄.", "Nueva flor mística: Antheria 🌺.", "Nueva criatura: Lobo Lyvora 🐺.", "Nuevo alimento: Baya Lyvorian 🍇."] },
+          { "type": "fix", "heading": "Correcciones:", "items": ["💡 Reducido ligeramente el brillo del lingote de uranio.", { "text": "☠️ El mineral de uranio ahora aplica veneno si no llevas la armadura Hazmat o una armadura con “Protección contra la radiación”.", "childrenListType": "ordered", "children": ["(⚠️ Esta función aún es inestable; por ahora, se recomienda usar la armadura Hazmat.)"] }, "🔢 Cambiada la numeración de los logros 5 y 6: ahora son 7 y 8.", "🧱 Cambiado el icono del logro “What is this?” (Carmeltazite).", "💣 [⚠️] La bomba nuclear aún está en pruebas.", "🌾 El hongo explosivo ahora se puede colocar sobre tierra.", "🐗 Reducida la aparición de Piglins, Hoglins y cerdos zombificados en el bioma de Sakura.", "🌸 [⚠️] Hongo de Sakura ahora solo crece con cristal rojo o polvo de hueso.", "🈁 Corregido: “Bloque de verrugas del Nether de Sakura” pasa a llamarse “Bloque de verrugas del Nether de Sakura”.", "🌱 Necelio de Sakura ahora se propaga como Necelio carmesí al usar polvo de hueso.", "🔥 El bioma de Sakura ahora puede generar portales en ruinas de forma natural.", "👁️ Aumentado el alcance de detección del ojo de la Revelación."] }
         ],
         "de": [
           { "type": "info", "heading": "Information:", "items": ["Entdecke die Ruhe von Sakura und die Kraft von Lyvora – in einem Update, in dem Leben und Licht sogar im Nether gedeihen. ⚙️ Einige Funktionen werden noch getestet; dein Feedback hilft bei der Verbesserung!"] },
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Rüstungen der Mod (außer der Weltraumrüstung) können jetzt ein Forge-Modell haben (nur mit Vanilla-Materialien wie Diamant, Smaragd, Eisen, Gold, Redstone usw.).", "2 Rezepte für den Trank des Schlechten Omens hinzugefügt: eines am Werktisch (9 Zutaten) und eines am Braustand 🧪.", "Dioptasium Apple hinzugefügt 🍏.", "Schwefel hinzugefügt, herstellbar mit Blaze-Pulver 🔥.", "Neues Erz: Blei ⛏️.", "Neuer Barren: Hazmium, hergestellt aus Schwefel, Blei, Leuchtpulver und Gold – für die Hazmat-Rüstung ⚗️.", "Hazmat-Rüstung ist jetzt im Überlebensmodus verfügbar 🧍‍♂️.", "Neue Verzauberung: Radiation Protection ☢️.", "2 neue Errungenschaften hinzugefügt 🏆.", "Sakura Roots hinzugefügt 🌸.", "Sakura Carpet hinzugefügt 🌿.", "Sakura Mushroom erscheint jetzt natürlich im Biom Sakura Forest 🍄.", "Neue mystische Blume: Anthéria 🌺.", "Neue Kreatur: Lyvora Wolf 🐺.", "Neues Nahrungsmittel: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["💡 Helligkeit des Uranbarrens leicht reduziert.", { "text": "☠️ Uranerz verursacht jetzt Vergiftung, wenn du keine Hazmat-Rüstung oder Rüstung mit „Radiation Protection“ trägst.", "childrenListType": "ordered", "children": ["(⚠️ Diese Funktion ist noch instabil – verwende vorerst bevorzugt die Hazmat-Rüstung.)"] }, "🔢 Nummerierung der Errungenschaften 5 und 6 auf 7 und 8 geändert.", "🧱 Symbol der Errungenschaft „What is this?“ (Carmeltazite) geändert.", "💣 [⚠️] Die Atombombe wird noch getestet.", "🌾 Explosionspilz kann jetzt auf Erde platziert werden.", "🐗 Spawnrate von Piglins, Hoglins und zombifizierten Schweinen im Biom Sakura verringert.", "🌸 [⚠️] Sakura Mushroom wächst jetzt nur noch mit Rotkristall oder Knochenmehl.", "🈁 Korrigiert: „Sakura Wart Block“ wird zu „Sakura Wart Block“.", "🌱 Sakura Nylium breitet sich mit Knochenmehl jetzt wie Crimson Nylium aus.", "🔥 Im Biom Sakura können jetzt natürlich verfallene Portale entstehen.", "👁️ Erkennungsreichweite des Eye of Revelation erhöht."] }
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Rüstungen der Mod (außer der Space-Rüstung) können jetzt ein Forge-Modell haben (nur mit Vanilla-Materialien wie Diamant, Smaragd, Eisen, Gold, Redstone usw.).", "2 Rezepte für den Trank des Schlechten Omens hinzugefügt: eines am Werktisch (9 Zutaten) und eines am Braustand 🧪.", "Dioptasium-Apfel hinzugefügt 🍏.", "Schwefel hinzugefügt, herstellbar mit Blaze-Pulver 🔥.", "Neues Erz: Blei ⛏️.", "Neuer Barren: Hazmium, hergestellt aus Schwefel, Blei, Leuchtpulver und Gold – für die Hazmat-Rüstung ⚗️.", "Hazmat-Rüstung ist jetzt im Überlebensmodus verfügbar 🧍‍♂️.", "Neue Verzauberung: Strahlenschutz ☢️.", "2 neue Errungenschaften hinzugefügt 🏆.", "Sakura-Wurzeln hinzugefügt 🌸.", "Sakura-Teppich hinzugefügt 🌿.", "Sakura-Pilz erscheint jetzt natürlich im Sakura-Wald-Biom 🍄.", "Neue mystische Blume: Antheria 🌺.", "Neue Kreatur: Lyvora-Wolf 🐺.", "Neues Nahrungsmittel: Lyvorian-Beere 🍇."] },
+          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["💡 Helligkeit des Uranbarrens leicht reduziert.", { "text": "☠️ Uranerz verursacht jetzt Vergiftung, wenn du keine Hazmat-Rüstung oder Rüstung mit „Strahlenschutz“ trägst.", "childrenListType": "ordered", "children": ["(⚠️ Diese Funktion ist noch instabil – verwende vorerst bevorzugt die Hazmat-Rüstung.)"] }, "🔢 Nummerierung der Errungenschaften 5 und 6 auf 7 und 8 geändert.", "🧱 Symbol der Errungenschaft „What is this?“ (Carmeltazite) geändert.", "💣 [⚠️] Die Atombombe wird noch getestet.", "🌾 Explosionspilz kann jetzt auf Erde platziert werden.", "🐗 Spawnrate von Piglins, Hoglins und zombifizierten Schweinen im Biom Sakura verringert.", "🌸 [⚠️] Sakura-Pilz wächst jetzt nur noch mit Rotkristall oder Knochenmehl.", "🈁 Korrigiert: „Sakura-Netherwarzenblock“ wird zu „Sakura-Netherwarzenblock“.", "🌱 Sakura-Nezel breitet sich mit Knochenmehl jetzt wie Karmesin-Nezel aus.", "🔥 Im Biom Sakura können jetzt natürlich verfallene Portale entstehen.", "👁️ Erkennungsreichweite des Auges der Offenbarung erhöht."] }
         ],
         "ja": [
-          { "type": "info", "heading": "情報:", "items": ["Sakura の静けさと Lyvora の力を体験できるアップデートです。生命と光が Nether にまで広がります。⚙️ 一部の機能はまだテスト中です。改善のため、ぜひフィードバックをお寄せください。"] },
-          { "type": "add", "heading": "追加:", "items": ["宇宙防具を除くMod防具にForgeモデルを適用できるようになりました (ダイヤモンド、エメラルド、鉄、金、レッドストーンなどバニラ素材のみ対応)。", "不吉な予感のポーションのレシピを2種類追加しました。作業台 (素材9個) と醸造台で作成できます 🧪。", "Dioptasium Apple を追加 🍏。", "ブレイズパウダーでクラフトできる硫黄を追加 🔥。", "新しい鉱石: 鉛 ⛏️。", "新しいインゴット: Hazmium。硫黄、鉛、発光する粉、金から作成でき、Hazmat Armor に使用します ⚗️。", "Hazmat Armor がサバイバルモードで使用可能になりました 🧍‍♂️。", "新しいエンチャント: Radiation Protection ☢️。", "新しい進捗を2つ追加 🏆。", "Sakura Roots を追加 🌸。", "Sakura Carpet を追加 🌿。", "Sakura Mushroom が Sakura Forest に自然生成するようになりました 🍄。", "新しい神秘の花: Anthéria 🌺。", "新しい生物: Lyvora Wolf 🐺。", "新しい食料: Lyvorian Berry 🍇。"] },
-          { "type": "fix", "heading": "修正:", "items": ["💡 ウランインゴットの明るさをわずかに下げました。", { "text": "☠️ Hazmat Armor または “Radiation Protection” 付きの防具を着用していない場合、ウラン鉱石が毒効果を与えるようになりました。", "childrenListType": "ordered", "children": ["(⚠️ この機能はまだ不安定なため、今は Hazmat Armor の使用を推奨します。)"] }, "🔢 進捗5と6の番号を7と8に変更しました。", "🧱 進捗 “What is this?” (Carmeltazite) のアイコンを変更しました。", "💣 [⚠️] 核爆弾はまだテスト中です。", "🌾 爆発キノコを土に設置できるようになりました。", "🐗 Sakura バイオームでの Piglin、Hoglin、ゾンビ化したブタの出現率を下げました。", "🌸 [⚠️] Sakura Mushroom はレッドクリスタルまたは骨粉でのみ成長します。", "🈁 修正: “Sakura Wart Block” の名称を “Sakura Wart Block” に変更しました。", "🌱 Sakura Nylium は骨粉を使用すると Crimson Nylium のように広がります。", "🔥 Sakura バイオームに荒廃したポータルが自然生成するようになりました。", "👁️ Eye of Revelation の検知範囲を拡大しました。"] }
+          { "type": "info", "heading": "情報:", "items": ["サクラの静けさと Lyvora の力を体験できるアップデートです。生命と光が Nether にまで広がります。⚙️ 一部の機能はまだテスト中です。改善のため、ぜひフィードバックをお寄せください。"] },
+          { "type": "add", "heading": "追加:", "items": ["Space Armorを除くMod防具にForgeモデルを適用できるようになりました (ダイヤモンド、エメラルド、鉄、金、レッドストーンなどバニラ素材のみ対応)。", "不吉な予感のポーションのレシピを2種類追加しました。作業台 (素材9個) と醸造台で作成できます 🧪。", "Dioptasiumのリンゴ を追加 🍏。", "ブレイズパウダーでクラフトできる硫黄を追加 🔥。", "新しい鉱石: 鉛 ⛏️。", "新しいインゴット: Hazmium。硫黄、鉛、発光する粉、金から作成でき、Hazmat Armor に使用します ⚗️。", "Hazmat Armor がサバイバルモードで使用可能になりました 🧍‍♂️。", "新しいエンチャント: 放射線防護 ☢️。", "新しい進捗を2つ追加 🏆。", "サクラの根 を追加 🌸。", "サクラのカーペット を追加 🌿。", "サクラのキノコ が サクラの森 に自然生成するようになりました 🍄。", "新しい神秘の花: Antheria 🌺。", "新しい生物: Lyvoraのオオカミ 🐺。", "新しい食料: Lyvorianベリー 🍇。"] },
+          { "type": "fix", "heading": "修正:", "items": ["💡 ウランインゴットの明るさをわずかに下げました。", { "text": "☠️ Hazmat Armor または “放射線防護” 付きの防具を着用していない場合、ウラン鉱石が毒効果を与えるようになりました。", "childrenListType": "ordered", "children": ["(⚠️ この機能はまだ不安定なため、今は Hazmat Armor の使用を推奨します。)"] }, "🔢 進捗5と6の番号を7と8に変更しました。", "🧱 進捗 “What is this?” (Carmeltazite) のアイコンを変更しました。", "💣 [⚠️] 核爆弾はまだテスト中です。", "🌾 爆発キノコを土に設置できるようになりました。", "🐗 サクラバイオームでの Piglin、Hoglin、ゾンビ化したブタの出現率を下げました。", "🌸 [⚠️] サクラのキノコ はレッドクリスタルまたは骨粉でのみ成長します。", "🈁 修正: “サクラのネザーウォートブロック” の名称を “サクラのネザーウォートブロック” に変更しました。", "🌱 サクラのナイリウム は骨粉を使用すると 真紅のナイリウム のように広がります。", "🔥 サクラバイオームに荒廃したポータルが自然生成するようになりました。", "👁️ 啓示の目 の検知範囲を拡大しました。"] }
         ],
         "ko": [
-          { "type": "info", "heading": "정보:", "items": ["Sakura의 고요함과 Lyvora의 힘을 만나 보세요. 생명과 빛이 Nether까지 피어나는 업데이트입니다. ⚙️ 일부 기능은 아직 테스트 중이며, 여러분의 의견이 개선에 도움이 됩니다!"] },
-          { "type": "add", "heading": "추가:", "items": ["우주 갑옷을 제외한 모드 갑옷에 Forge 모델을 적용할 수 있습니다 (다이아몬드, 에메랄드, 철, 금, 레드스톤 등 바닐라 재료만 지원).", "불길한 징조 물약 제작법 2개를 추가했습니다. 작업대(재료 9개)와 양조대에서 각각 제작할 수 있습니다 🧪.", "Dioptasium Apple 추가 🍏.", "블레이즈 가루로 만들 수 있는 황 추가 🔥.", "새로운 광석: 납 ⛏️.", "새로운 주괴: Hazmium. 황, 납, 발광 가루, 금으로 만들며 Hazmat 갑옷에 사용됩니다 ⚗️.", "Hazmat 갑옷을 생존 모드에서 사용할 수 있습니다 🧍‍♂️.", "새로운 마법 부여: Radiation Protection ☢️.", "새로운 발전 과제 2개 추가 🏆.", "Sakura Roots 추가 🌸.", "Sakura Carpet 추가 🌿.", "Sakura Mushroom이 Sakura Forest에 자연 생성됩니다 🍄.", "새로운 신비한 꽃: Anthéria 🌺.", "새로운 생물: Lyvora Wolf 🐺.", "새로운 음식: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "수정:", "items": ["💡 우라늄 주괴의 밝기를 약간 낮췄습니다.", { "text": "☠️ Hazmat 갑옷이나 “Radiation Protection”이 부여된 갑옷을 입지 않으면 우라늄 광석이 독 효과를 줍니다.", "childrenListType": "ordered", "children": ["(⚠️ 아직 불안정하므로 당분간 Hazmat 갑옷을 사용하는 것이 좋습니다.)"] }, "🔢 발전 과제 5와 6의 번호를 7과 8로 변경했습니다.", "🧱 “What is this?” (Carmeltazite) 발전 과제 아이콘을 변경했습니다.", "💣 [⚠️] 핵폭탄은 아직 테스트 중입니다.", "🌾 폭발 버섯을 흙에 설치할 수 있습니다.", "🐗 Sakura 생물 군계에서 Piglin, Hoglin, 좀비화된 돼지의 생성률을 낮췄습니다.", "🌸 [⚠️] Sakura Mushroom은 붉은 수정이나 뼛가루로만 자랍니다.", "🈁 수정: “Sakura Wart Block”의 이름을 “Sakura Wart Block”으로 변경했습니다.", "🌱 Sakura Nylium은 뼛가루를 사용하면 Crimson Nylium처럼 퍼집니다.", "🔥 Sakura 생물 군계에서 폐허가 된 포털이 자연 생성됩니다.", "👁️ Eye of Revelation의 감지 범위를 늘렸습니다."] }
+          { "type": "info", "heading": "정보:", "items": ["사쿠라의 고요함과 Lyvora의 힘을 만나 보세요. 생명과 빛이 Nether까지 피어나는 업데이트입니다. ⚙️ 일부 기능은 아직 테스트 중이며, 여러분의 의견이 개선에 도움이 됩니다!"] },
+          { "type": "add", "heading": "추가:", "items": ["Space 방어구를 제외한 모드 갑옷에 Forge 모델을 적용할 수 있습니다 (다이아몬드, 에메랄드, 철, 금, 레드스톤 등 바닐라 재료만 지원).", "불길한 징조 물약 제작법 2개를 추가했습니다. 작업대(재료 9개)와 양조대에서 각각 제작할 수 있습니다 🧪.", "Dioptasium 사과 추가 🍏.", "블레이즈 가루로 만들 수 있는 황 추가 🔥.", "새로운 광석: 납 ⛏️.", "새로운 주괴: Hazmium. 황, 납, 발광 가루, 금으로 만들며 Hazmat 갑옷에 사용됩니다 ⚗️.", "Hazmat 갑옷을 생존 모드에서 사용할 수 있습니다 🧍‍♂️.", "새로운 마법 부여: 방사선 방호 ☢️.", "새로운 발전 과제 2개 추가 🏆.", "사쿠라 뿌리 추가 🌸.", "사쿠라 카펫 추가 🌿.", "사쿠라 버섯이 사쿠라 숲에 자연 생성됩니다 🍄.", "새로운 신비한 꽃: Antheria 🌺.", "새로운 생물: Lyvora 늑대 🐺.", "새로운 음식: Lyvorian 베리 🍇."] },
+          { "type": "fix", "heading": "수정:", "items": ["💡 우라늄 주괴의 밝기를 약간 낮췄습니다.", { "text": "☠️ Hazmat 갑옷이나 “방사선 방호”이 부여된 갑옷을 입지 않으면 우라늄 광석이 독 효과를 줍니다.", "childrenListType": "ordered", "children": ["(⚠️ 아직 불안정하므로 당분간 Hazmat 갑옷을 사용하는 것이 좋습니다.)"] }, "🔢 발전 과제 5와 6의 번호를 7과 8로 변경했습니다.", "🧱 “What is this?” (Carmeltazite) 발전 과제 아이콘을 변경했습니다.", "💣 [⚠️] 핵폭탄은 아직 테스트 중입니다.", "🌾 폭발 버섯을 흙에 설치할 수 있습니다.", "🐗 사쿠라 생물 군계에서 Piglin, Hoglin, 좀비화된 돼지의 생성률을 낮췄습니다.", "🌸 [⚠️] 사쿠라 버섯은 붉은 수정이나 뼛가루로만 자랍니다.", "🈁 수정: “사쿠라 네더 사마귀 블록”의 이름을 “사쿠라 네더 사마귀 블록”으로 변경했습니다.", "🌱 사쿠라 네사체는 뼛가루를 사용하면 진홍빛 네사체처럼 퍼집니다.", "🔥 사쿠라 생물 군계에서 폐허가 된 포털이 자연 생성됩니다.", "👁️ 계시의 눈의 감지 범위를 늘렸습니다."] }
         ],
         "pt-br": [
           { "type": "info", "heading": "Informação:", "items": ["Explore a tranquilidade de Sakura e o poder de Lyvora em uma atualização na qual a vida e a luz florescem até no Nether. ⚙️ Alguns recursos ainda estão em fase de testes; seu feedback ajudará a aprimorá-los!"] },
-          { "type": "add", "heading": "Adicionado:", "items": ["As armaduras do mod, exceto a espacial, agora podem usar um modelo forge (somente com materiais vanilla: diamante, esmeralda, ferro, ouro, redstone etc.).", "Adicionadas 2 receitas para a poção de Mau Presságio: uma na bancada de trabalho (9 ingredientes) e outra no suporte de poções 🧪.", "Adicionada Dioptasium Apple 🍏.", "Adicionado enxofre, fabricável com pó de blaze 🔥.", "Novo minério: chumbo ⛏️.", "Novo lingote: Hazmium, obtido com enxofre, chumbo, pó luminoso e ouro — usado na armadura Hazmat ⚗️.", "A armadura Hazmat agora está disponível no modo sobrevivência 🧍‍♂️.", "Novo encantamento: Radiation Protection ☢️.", "Adicionadas 2 novas conquistas 🏆.", "Adicionadas Sakura Roots 🌸.", "Adicionado Sakura Carpet 🌿.", "Sakura Mushroom agora surge naturalmente em Sakura Forest 🍄.", "Nova flor mística: Anthéria 🌺.", "Nova criatura: Lyvora Wolf 🐺.", "Novo alimento: Lyvorian Berry 🍇."] },
-          { "type": "fix", "heading": "Correções:", "items": ["💡 Brilho do lingote de urânio ligeiramente reduzido.", { "text": "☠️ O minério de urânio agora causa envenenamento se você não estiver usando a armadura Hazmat ou uma armadura com “Radiation Protection”.", "childrenListType": "ordered", "children": ["(⚠️ Este recurso ainda está instável — por enquanto, prefira usar a armadura Hazmat.)"] }, "🔢 Numeração das conquistas 5 e 6 alterada para 7 e 8.", "🧱 Ícone da conquista “What is this?” (Carmeltazite) alterado.", "💣 [⚠️] A bomba nuclear ainda está em fase de testes.", "🌾 O cogumelo explosivo agora pode ser colocado na terra.", "🐗 Taxa de surgimento de Piglins, Hoglins e porcos-zumbis reduzida no bioma Sakura.", "🌸 [⚠️] Sakura Mushroom agora só cresce com cristal vermelho ou pó de osso.", "🈁 Correção: “Sakura Wart Block” passa a se chamar “Sakura Wart Block”.", "🌱 Sakura Nylium agora se espalha como Crimson Nylium quando estimulado com pó de osso.", "🔥 O bioma Sakura agora pode gerar portais em ruínas naturalmente.", "👁️ Alcance de detecção do Eye of Revelation aumentado."] }
+          { "type": "add", "heading": "Adicionado:", "items": ["As armaduras do mod, exceto a armadura Space, agora podem usar um modelo forge (somente com materiais vanilla: diamante, esmeralda, ferro, ouro, redstone etc.).", "Adicionadas 2 receitas para a poção de Mau Presságio: uma na bancada de trabalho (9 ingredientes) e outra no suporte de poções 🧪.", "Adicionada Maçã de Dioptasium 🍏.", "Adicionado enxofre, fabricável com pó de blaze 🔥.", "Novo minério: chumbo ⛏️.", "Novo lingote: Hazmium, obtido com enxofre, chumbo, pó luminoso e ouro — usado na armadura Hazmat ⚗️.", "A armadura Hazmat agora está disponível no modo sobrevivência 🧍‍♂️.", "Novo encantamento: Proteção contra radiação ☢️.", "Adicionadas 2 novas conquistas 🏆.", "Adicionadas Raízes de Sakura 🌸.", "Adicionado Tapete de Sakura 🌿.", "Cogumelo de Sakura agora surge naturalmente em Floresta de Sakura 🍄.", "Nova flor mística: Antheria 🌺.", "Nova criatura: Lobo Lyvora 🐺.", "Novo alimento: Baga Lyvorian 🍇."] },
+          { "type": "fix", "heading": "Correções:", "items": ["💡 Brilho do lingote de urânio ligeiramente reduzido.", { "text": "☠️ O minério de urânio agora causa envenenamento se você não estiver usando a armadura Hazmat ou uma armadura com “Proteção contra radiação”.", "childrenListType": "ordered", "children": ["(⚠️ Este recurso ainda está instável — por enquanto, prefira usar a armadura Hazmat.)"] }, "🔢 Numeração das conquistas 5 e 6 alterada para 7 e 8.", "🧱 Ícone da conquista “What is this?” (Carmeltazite) alterado.", "💣 [⚠️] A bomba nuclear ainda está em fase de testes.", "🌾 O cogumelo explosivo agora pode ser colocado na terra.", "🐗 Taxa de surgimento de Piglins, Hoglins e porcos-zumbis reduzida no bioma Sakura.", "🌸 [⚠️] Cogumelo de Sakura agora só cresce com cristal vermelho ou pó de osso.", "🈁 Correção: “Bloco de verrugas do Nether de Sakura” passa a se chamar “Bloco de verrugas do Nether de Sakura”.", "🌱 Nicélio de Sakura agora se espalha como Nicélio carmesim quando estimulado com pó de osso.", "🔥 O bioma Sakura agora pode gerar portais em ruínas naturalmente.", "👁️ Alcance de detecção do Olho da Revelação aumentado."] }
         ]
       }
     },
@@ -1312,12 +1333,12 @@ const patchnotesConfig = {
         ],
         "it": [
           { "type": "info", "heading": "Informazioni:", "items": ["Grazie per la pazienza durante questo lungo periodo senza aggiornamenti. Prima di pubblicare una versione definitiva (non beta), vorrei coinvolgervi: se avete idee per un aggiornamento “Desert”, fatemelo sapere; se volete vedere realizzato il vostro sogno, sapete dove trovarmi."] },
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta una bottiglia di XP condensata.", "Aggiunto l’Experience Core.", "Aggiunto l’XP Generator.", "Aggiunto il Sapling Upgrade.", "Nuova funzione per il blocco Sawmill (in fase di test).", "Aggiunta una bomba nucleare (in fase di test).", "Aggiunta una variante di ossidiana in mattoni e una variante normale.", "Aggiunta la comparsa di Piglin, Piglin zombificati e Hoglin nel bioma Sakura."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta una bottiglia di XP condensata.", "Aggiunto l’Experience Core.", "Aggiunto l’XP Generator.", "Aggiunto il Sapling Upgrade.", "Nuova funzione per il blocco Sawmill (in fase di test).", "Aggiunta una bomba nucleare (in fase di test).", "Aggiunta una variante di ossidiana in mattoni e una variante normale.", "Aggiunta la comparsa di Piglin, Piglin zombificati e Hoglin nel bioma di Sakura."] },
           { "type": "fix", "heading": "Correzioni:", "items": ["I bauli nell’arena di Extermate ora contengono più di un oggetto.", "Modificato il numero di alberi Sakura nel Nether.", "L’arena di Extermate può ora comparire nelle terre desolate del Nether.", "L’arena di Extermate compare più spesso (sono necessarie ulteriori verifiche; se vuoi partecipare, non esitare a farti avanti)."] }
         ],
         "es": [
           { "type": "info", "heading": "Información:", "items": ["Gracias por vuestra paciencia durante este largo periodo sin actualizaciones. Antes de publicar una versión definitiva (no beta), me gustaría que participarais: si tenéis ideas para una actualización “Desert”, contádmelas; si queréis ver vuestro sueño hecho realidad, ya sabéis dónde encontrarme."] },
-          { "type": "add", "heading": "Añadido:", "items": ["Añadida una botella de XP condensada.", "Añadido el Experience Core.", "Añadido el XP Generator.", "Añadido el Sapling Upgrade.", "Nueva función para el bloque Sawmill (en pruebas).", "Añadida una bomba nuclear (en pruebas).", "Añadida una variante de obsidiana en ladrillo y otra normal.", "Añadida la aparición de Piglin, Piglin zombificados y Hoglin en el bioma Sakura."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadida una botella de XP condensada.", "Añadido el Experience Core.", "Añadido el XP Generator.", "Añadido el Sapling Upgrade.", "Nueva función para el bloque Sawmill (en pruebas).", "Añadida una bomba nuclear (en pruebas).", "Añadida una variante de obsidiana en ladrillo y otra normal.", "Añadida la aparición de Piglin, Piglin zombificados y Hoglin en el bioma de Sakura."] },
           { "type": "fix", "heading": "Correcciones:", "items": ["Los cofres de la arena de Extermate ahora contienen más de un objeto.", "Modificada la cantidad de árboles Sakura en el Nether.", "La arena de Extermate ahora puede aparecer en las tierras desoladas del Nether.", "La arena de Extermate aparece con más frecuencia (aún requiere comprobaciones; si quieres participar, no dudes en hacerlo)."] }
         ],
         "de": [
@@ -1327,13 +1348,13 @@ const patchnotesConfig = {
         ],
         "ja": [
           { "type": "info", "heading": "情報:", "items": ["長い間アップデートがなかったにもかかわらずお待ちいただき、ありがとうございます。正式版 (ベータではない版) を公開する前に、ぜひ皆さんにも参加してほしいと思っています。“Desert” アップデートのアイデアがあれば教えてください。夢を実現したい方は、連絡先をご存じのはずです。"] },
-          { "type": "add", "heading": "追加:", "items": ["凝縮 XP ボトルを追加", "Experience Core を追加", "XP Generator を追加", "Sapling Upgrade を追加", "Sawmill ブロックに新機能を追加 (テスト中)", "核爆弾を追加 (テスト中)", "レンガ状の黒曜石と通常の黒曜石のバリエーションを追加", "Sakura バイオームに Piglin、ゾンビ化した Piglin、Hoglin が出現するように追加"] },
-          { "type": "fix", "heading": "修正:", "items": ["Extermate のアリーナのチェストから複数のアイテムが出るようになりました。", "Nether の Sakura の木の数を変更しました。", "Extermate のアリーナが Nether の荒地に生成されるようになりました。", "Extermate のアリーナがより頻繁に生成されるようになりました (追加検証が必要です。参加したい方はぜひご協力ください)。"] }
+          { "type": "add", "heading": "追加:", "items": ["凝縮 XP ボトルを追加", "Experience Core を追加", "XP Generator を追加", "Sapling Upgrade を追加", "Sawmill ブロックに新機能を追加 (テスト中)", "核爆弾を追加 (テスト中)", "レンガ状の黒曜石と通常の黒曜石のバリエーションを追加", "サクラバイオームに Piglin、ゾンビ化した Piglin、Hoglin が出現するように追加"] },
+          { "type": "fix", "heading": "修正:", "items": ["Extermate のアリーナのチェストから複数のアイテムが出るようになりました。", "ネザーのサクラの木の数を変更しました。", "Extermate のアリーナが Nether の荒地に生成されるようになりました。", "Extermate のアリーナがより頻繁に生成されるようになりました (追加検証が必要です。参加したい方はぜひご協力ください)。"] }
         ],
         "ko": [
           { "type": "info", "heading": "정보:", "items": ["오랫동안 모드 업데이트가 없었는데 기다려 주셔서 감사합니다. 정식 버전(베타가 아닌 버전)을 공개하기 전에 여러분의 참여를 부탁드리고 싶습니다. “Desert” 업데이트 아이디어가 있다면 알려 주세요. 꿈을 실현하고 싶다면 어디서 저를 찾을 수 있는지 아실 겁니다."] },
-          { "type": "add", "heading": "추가:", "items": ["응축 XP 병 추가", "Experience Core 추가", "XP Generator 추가", "Sapling Upgrade 추가", "Sawmill 블록의 새로운 기능 추가 (테스트 중)", "핵폭탄 추가 (테스트 중)", "벽돌 형태와 일반 형태의 흑요석 변형 추가", "Sakura 생물 군계에 Piglin, 좀비화된 Piglin, Hoglin이 생성되도록 추가"] },
-          { "type": "fix", "heading": "수정:", "items": ["Extermate 투기장의 상자에서 이제 아이템을 여러 개 얻을 수 있습니다.", "Nether의 Sakura 나무 수를 변경했습니다.", "Extermate 투기장이 이제 Nether 황무지에도 생성될 수 있습니다.", "Extermate 투기장이 더 자주 생성됩니다 (추가 확인이 필요합니다. 참여하고 싶다면 언제든지 환영합니다)."] }
+          { "type": "add", "heading": "추가:", "items": ["응축 XP 병 추가", "Experience Core 추가", "XP Generator 추가", "Sapling Upgrade 추가", "Sawmill 블록의 새로운 기능 추가 (테스트 중)", "핵폭탄 추가 (테스트 중)", "벽돌 형태와 일반 형태의 흑요석 변형 추가", "사쿠라 생물 군계에 Piglin, 좀비화된 Piglin, Hoglin이 생성되도록 추가"] },
+          { "type": "fix", "heading": "수정:", "items": ["Extermate 투기장의 상자에서 이제 아이템을 여러 개 얻을 수 있습니다.", "Nether의 사쿠라 나무 수를 변경했습니다.", "Extermate 투기장이 이제 Nether 황무지에도 생성될 수 있습니다.", "Extermate 투기장이 더 자주 생성됩니다 (추가 확인이 필요합니다. 참여하고 싶다면 언제든지 환영합니다)."] }
         ],
         "pt-br": [
           { "type": "info", "heading": "Informação:", "items": ["Obrigado pela paciência durante este longo período sem atualizações. Antes de publicar uma versão definitiva (não beta), gostaria que vocês participassem: se tiverem ideias para uma atualização “Desert”, contem para mim. Se quiserem ver seu sonho se tornar realidade, sabem onde me encontrar."] },
@@ -1417,12 +1438,12 @@ const patchnotesConfig = {
         ],
         "it": [
           { "type": "info", "heading": "Informazioni:", "items": ["Grazie per la pazienza durante questo lungo periodo senza aggiornamenti. Prima di pubblicare una versione definitiva (non beta), vorrei coinvolgervi: se avete idee per un aggiornamento “Desert”, fatemelo sapere; se volete vedere realizzato il vostro sogno, sapete dove trovarmi."] },
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta una bottiglia di XP condensata.", "Aggiunto l’Experience Core.", "Aggiunto l’XP Generator.", "Aggiunto il Sapling Upgrade.", "Nuova funzione per il blocco Sawmill (in fase di test).", "Aggiunta una bomba nucleare (in fase di test).", "Aggiunta una variante di ossidiana in mattoni e una variante normale.", "Aggiunta la comparsa di Piglin, Piglin zombificati e Hoglin nel bioma Sakura."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta una bottiglia di XP condensata.", "Aggiunto l’Experience Core.", "Aggiunto l’XP Generator.", "Aggiunto il Sapling Upgrade.", "Nuova funzione per il blocco Sawmill (in fase di test).", "Aggiunta una bomba nucleare (in fase di test).", "Aggiunta una variante di ossidiana in mattoni e una variante normale.", "Aggiunta la comparsa di Piglin, Piglin zombificati e Hoglin nel bioma di Sakura."] },
           { "type": "fix", "heading": "Correzioni:", "items": ["I bauli nell’arena di Extermate ora contengono più di un oggetto.", "Modificato il numero di alberi Sakura nel Nether.", "L’arena di Extermate può ora comparire nelle terre desolate del Nether.", "L’arena di Extermate compare più spesso (sono necessarie ulteriori verifiche; se vuoi partecipare, non esitare a farti avanti)."] }
         ],
         "es": [
           { "type": "info", "heading": "Información:", "items": ["Gracias por vuestra paciencia durante este largo periodo sin actualizaciones. Antes de publicar una versión definitiva (no beta), me gustaría que participarais: si tenéis ideas para una actualización “Desert”, contádmelas; si queréis ver vuestro sueño hecho realidad, ya sabéis dónde encontrarme."] },
-          { "type": "add", "heading": "Añadido:", "items": ["Añadida una botella de XP condensada.", "Añadido el Experience Core.", "Añadido el XP Generator.", "Añadido el Sapling Upgrade.", "Nueva función para el bloque Sawmill (en pruebas).", "Añadida una bomba nuclear (en pruebas).", "Añadida una variante de obsidiana en ladrillo y otra normal.", "Añadida la aparición de Piglin, Piglin zombificados y Hoglin en el bioma Sakura."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadida una botella de XP condensada.", "Añadido el Experience Core.", "Añadido el XP Generator.", "Añadido el Sapling Upgrade.", "Nueva función para el bloque Sawmill (en pruebas).", "Añadida una bomba nuclear (en pruebas).", "Añadida una variante de obsidiana en ladrillo y otra normal.", "Añadida la aparición de Piglin, Piglin zombificados y Hoglin en el bioma de Sakura."] },
           { "type": "fix", "heading": "Correcciones:", "items": ["Los cofres de la arena de Extermate ahora contienen más de un objeto.", "Modificada la cantidad de árboles Sakura en el Nether.", "La arena de Extermate ahora puede aparecer en las tierras desoladas del Nether.", "La arena de Extermate aparece con más frecuencia (aún requiere comprobaciones; si quieres participar, no dudes en hacerlo)."] }
         ],
         "de": [
@@ -1432,13 +1453,13 @@ const patchnotesConfig = {
         ],
         "ja": [
           { "type": "info", "heading": "情報:", "items": ["長い間アップデートがなかったにもかかわらずお待ちいただき、ありがとうございます。正式版 (ベータではない版) を公開する前に、ぜひ皆さんにも参加してほしいと思っています。“Desert” アップデートのアイデアがあれば教えてください。夢を実現したい方は、連絡先をご存じのはずです。"] },
-          { "type": "add", "heading": "追加:", "items": ["凝縮 XP ボトルを追加", "Experience Core を追加", "XP Generator を追加", "Sapling Upgrade を追加", "Sawmill ブロックに新機能を追加 (テスト中)", "核爆弾を追加 (テスト中)", "レンガ状の黒曜石と通常の黒曜石のバリエーションを追加", "Sakura バイオームに Piglin、ゾンビ化した Piglin、Hoglin が出現するように追加"] },
-          { "type": "fix", "heading": "修正:", "items": ["Extermate のアリーナのチェストから複数のアイテムが出るようになりました。", "Nether の Sakura の木の数を変更しました。", "Extermate のアリーナが Nether の荒地に生成されるようになりました。", "Extermate のアリーナがより頻繁に生成されるようになりました (追加検証が必要です。参加したい方はぜひご協力ください)。"] }
+          { "type": "add", "heading": "追加:", "items": ["凝縮 XP ボトルを追加", "Experience Core を追加", "XP Generator を追加", "Sapling Upgrade を追加", "Sawmill ブロックに新機能を追加 (テスト中)", "核爆弾を追加 (テスト中)", "レンガ状の黒曜石と通常の黒曜石のバリエーションを追加", "サクラバイオームに Piglin、ゾンビ化した Piglin、Hoglin が出現するように追加"] },
+          { "type": "fix", "heading": "修正:", "items": ["Extermate のアリーナのチェストから複数のアイテムが出るようになりました。", "ネザーのサクラの木の数を変更しました。", "Extermate のアリーナが Nether の荒地に生成されるようになりました。", "Extermate のアリーナがより頻繁に生成されるようになりました (追加検証が必要です。参加したい方はぜひご協力ください)。"] }
         ],
         "ko": [
           { "type": "info", "heading": "정보:", "items": ["오랫동안 모드 업데이트가 없었는데 기다려 주셔서 감사합니다. 정식 버전(베타가 아닌 버전)을 공개하기 전에 여러분의 참여를 부탁드리고 싶습니다. “Desert” 업데이트 아이디어가 있다면 알려 주세요. 꿈을 실현하고 싶다면 어디서 저를 찾을 수 있는지 아실 겁니다."] },
-          { "type": "add", "heading": "추가:", "items": ["응축 XP 병 추가", "Experience Core 추가", "XP Generator 추가", "Sapling Upgrade 추가", "Sawmill 블록의 새로운 기능 추가 (테스트 중)", "핵폭탄 추가 (테스트 중)", "벽돌 형태와 일반 형태의 흑요석 변형 추가", "Sakura 생물 군계에 Piglin, 좀비화된 Piglin, Hoglin이 생성되도록 추가"] },
-          { "type": "fix", "heading": "수정:", "items": ["Extermate 투기장의 상자에서 이제 아이템을 여러 개 얻을 수 있습니다.", "Nether의 Sakura 나무 수를 변경했습니다.", "Extermate 투기장이 이제 Nether 황무지에도 생성될 수 있습니다.", "Extermate 투기장이 더 자주 생성됩니다 (추가 확인이 필요합니다. 참여하고 싶다면 언제든지 환영합니다)."] }
+          { "type": "add", "heading": "추가:", "items": ["응축 XP 병 추가", "Experience Core 추가", "XP Generator 추가", "Sapling Upgrade 추가", "Sawmill 블록의 새로운 기능 추가 (테스트 중)", "핵폭탄 추가 (테스트 중)", "벽돌 형태와 일반 형태의 흑요석 변형 추가", "사쿠라 생물 군계에 Piglin, 좀비화된 Piglin, Hoglin이 생성되도록 추가"] },
+          { "type": "fix", "heading": "수정:", "items": ["Extermate 투기장의 상자에서 이제 아이템을 여러 개 얻을 수 있습니다.", "Nether의 사쿠라 나무 수를 변경했습니다.", "Extermate 투기장이 이제 Nether 황무지에도 생성될 수 있습니다.", "Extermate 투기장이 더 자주 생성됩니다 (추가 확인이 필요합니다. 참여하고 싶다면 언제든지 환영합니다)."] }
         ],
         "pt-br": [
           { "type": "info", "heading": "Informação:", "items": ["Obrigado pela paciência durante este longo período sem atualizações. Antes de publicar uma versão definitiva (não beta), gostaria que vocês participassem: se tiverem ideias para uma atualização “Desert”, contem para mim. Se quiserem ver seu sonho se tornar realidade, sabem onde me encontrar."] },
@@ -1859,7 +1880,7 @@ const patchnotesConfig = {
         "de": [
           { "type": "add", "heading": "Hinzugefügt:", "items": [
             { "text": "Elementarrune hinzugefügt", "childrenListType": "ordered", "children": ["(Netherite-Aufrüstung + 8 Mod-Farbstoffe)"] },
-            { "text": "Nachtsichthelm hinzugefügt", "childrenListType": "ordered", "children": ["(am Schmiedetisch: Elementarrune + Helm + Space-Farbstoff)"] },
+            { "text": "Nachtsichthelm hinzugefügt", "childrenListType": "ordered", "children": ["(am Schmiedetisch: Elementarrune + Helm + Weltraumfarbstoff)"] },
             { "text": "Regenerationshelm hinzugefügt", "childrenListType": "ordered", "children": ["(am Schmiedetisch: Elementarrune + Helm + Siegel des Lebenselixiers)"] }
           ] },
           { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Angriffsschaden des Dioptasium-Schwerts erhöht, der zuvor zu niedrig war.", "Englische Übersetzungen der Paladium-, Multicolor- und Space-Rüstungen korrigiert."] }
@@ -1867,16 +1888,16 @@ const patchnotesConfig = {
         "ja": [
           { "type": "add", "heading": "追加:", "items": [
             { "text": "元素のルーンを追加", "childrenListType": "ordered", "children": ["(ネザライト強化 + Mod の染料 8 個)"] },
-            { "text": "暗視のヘルメットを追加", "childrenListType": "ordered", "children": ["(鍛冶台で、元素のルーン + ヘルメット + Space の染料)"] },
-            { "text": "再生のヘルメットを追加", "childrenListType": "ordered", "children": ["(鍛冶台で、元素のルーン + ヘルメット + Elixir of Life の印章)"] }
+            { "text": "暗視のヘルメットを追加", "childrenListType": "ordered", "children": ["(鍛冶台で、元素のルーン + ヘルメット + 宇宙の染料)"] },
+            { "text": "再生のヘルメットを追加", "childrenListType": "ordered", "children": ["(鍛冶台で、元素のルーン + ヘルメット + 生命のエリクサーの印章)"] }
           ] },
           { "type": "fix", "heading": "修正:", "items": ["Dioptasium の剣の攻撃ダメージが低すぎた問題を修正しました。", "Paladium、Multicolor、Space の防具の英語表記を修正しました。"] }
         ],
         "ko": [
           { "type": "add", "heading": "추가:", "items": [
             { "text": "원소 룬 추가", "childrenListType": "ordered", "children": ["(네더라이트 강화 + 모드 염료 8개)"] },
-            { "text": "야간 투시 투구 추가", "childrenListType": "ordered", "children": ["(대장장이 작업대에서 원소 룬 + 투구 + Space 염료)"] },
-            { "text": "재생 투구 추가", "childrenListType": "ordered", "children": ["(대장장이 작업대에서 원소 룬 + 투구 + Elixir of Life 인장)"] }
+            { "text": "야간 투시 투구 추가", "childrenListType": "ordered", "children": ["(대장장이 작업대에서 원소 룬 + 투구 + 우주 염료)"] },
+            { "text": "재생 투구 추가", "childrenListType": "ordered", "children": ["(대장장이 작업대에서 원소 룬 + 투구 + 생명의 비약 인장)"] }
           ] },
           { "type": "fix", "heading": "수정:", "items": ["Dioptasium 검의 공격 피해가 너무 낮던 문제를 수정했습니다.", "Paladium, Multicolor, Space 방어구의 영어 번역을 수정했습니다."] }
         ],
@@ -2269,23 +2290,23 @@ const patchnotesConfig = {
           { "type": "fix", "heading": "Correzioni:", "items": ["Modificata la Potion of the Supreme Being per includere i nuovi effetti della versione 1.21.1.", "La porta di vetro ora ignora i pistoni.", "Ridotti i prezzi del Customer per renderli più ragionevoli.", "Aumentata l’XP ottenuta dagli scambi con il Customer."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Añadido el soporte para Minecraft 1.21.1.", "Añadidas recetas para los huevos de Breeze, Bogged y Armadillo.", "Añadidos los adornos Whirlwind y Bolt al Customer.", "Añadida niebla al Elixir of Life y al Poisoned Water."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadido el soporte para Minecraft 1.21.1.", "Añadidas recetas para los huevos de Breeze, Bogged y Armadillo.", "Añadidos los adornos Whirlwind y Bolt al Customer.", "Añadida niebla al Elixir de la vida y al Poisoned Water."] },
           { "type": "fix", "heading": "Correcciones:", "items": ["Modificada la Potion of the Supreme Being para incluir los nuevos efectos de la versión 1.21.1.", "La puerta de cristal ahora ignora los pistones.", "Reducidos los precios del Customer para que sean más razonables.", "Aumentada la XP obtenida al comerciar con el Customer."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Unterstützung für Minecraft 1.21.1 hinzugefügt.", "Rezepte für Breeze-, Bogged- und Gürteltier-Eier hinzugefügt.", "Whirlwind- und Bolt-Verzierungen beim Customer hinzugefügt.", "Elixir of Life und Poisoned Water mit Nebel versehen."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Unterstützung für Minecraft 1.21.1 hinzugefügt.", "Rezepte für Breeze-, Bogged- und Gürteltier-Eier hinzugefügt.", "Whirlwind- und Bolt-Verzierungen beim Customer hinzugefügt.", "Elixier des Lebens und Poisoned Water mit Nebel versehen."] },
           { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Potion of the Supreme Being angepasst, damit sie die neuen Effekte aus Version 1.21.1 enthält.", "Die Glastür ignoriert jetzt Kolben.", "Preise des Customer gesenkt, damit sie angemessener sind.", "Die durch Handel mit dem Customer erhaltene XP erhöht."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["Minecraft 1.21.1 に対応しました。", "Breeze、Bogged、アルマジロのスポーンエッグのレシピを追加しました。", "Customer に Whirlwind と Bolt のトリムを追加しました。", "Elixir of Life と Poisoned Water に霧を追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["Minecraft 1.21.1 に対応しました。", "Breeze、Bogged、アルマジロのスポーンエッグのレシピを追加しました。", "Customer に Whirlwind と Bolt のトリムを追加しました。", "生命のエリクサー と Poisoned Water に霧を追加しました。"] },
           { "type": "fix", "heading": "修正:", "items": ["Potion of the Supreme Being を変更し、バージョン 1.21.1 の新しい効果に対応しました。", "ガラスのドアがピストンの影響を受けなくなりました。", "Customer の価格をより妥当な額に引き下げました。", "Customer との取引で得られる XP を増やしました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["Minecraft 1.21.1 지원 추가", "Breeze, Bogged, 아르마딜로 생성 알 제작법 추가", "Customer에 Whirlwind 및 Bolt 장식 추가", "Elixir of Life와 Poisoned Water에 안개 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["Minecraft 1.21.1 지원 추가", "Breeze, Bogged, 아르마딜로 생성 알 제작법 추가", "Customer에 Whirlwind 및 Bolt 장식 추가", "생명의 비약와 Poisoned Water에 안개 추가"] },
           { "type": "fix", "heading": "수정:", "items": ["Potion of the Supreme Being을 수정해 1.21.1의 새로운 효과를 반영했습니다.", "유리 문이 피스톤의 영향을 받지 않도록 수정했습니다.", "Customer의 가격을 더 합리적으로 낮췄습니다.", "Customer와 거래할 때 얻는 XP를 늘렸습니다."] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado suporte para Minecraft 1.21.1.", "Adicionadas receitas para os ovos de Breeze, Bogged e tatu.", "Adicionados os adornos Whirlwind e Bolt ao Customer.", "Adicionada névoa ao Elixir of Life e à Poisoned Water."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado suporte para Minecraft 1.21.1.", "Adicionadas receitas para os ovos de Breeze, Bogged e tatu.", "Adicionados os adornos Whirlwind e Bolt ao Customer.", "Adicionada névoa ao Elixir da Vida e à Poisoned Water."] },
           { "type": "fix", "heading": "Correções:", "items": ["Potion of the Supreme Being alterada para incluir os novos efeitos da versão 1.21.1.", "A porta de vidro agora ignora pistões.", "Preços do Customer reduzidos para ficarem mais razoáveis.", "Aumentada a XP recebida ao negociar com o Customer."] }
         ]
       }
@@ -2371,27 +2392,27 @@ const patchnotesConfig = {
         ],
         "it": [
           { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunto un nuovo tipo di legno: Opaline.", "Aggiunta la ricetta per le uova di Cerulean Creeper e Wavegel.", "Aggiunta una ricetta per la spugna.", "Aggiunta l’armatura Hazmat.", "Funzione sperimentale: subisci danni se ti avvicini al minerale di uranio senza indossare l’armatura Hazmat.", "Aggiunti 4 blocchi di mattoni di ghiaccio e le relative varianti.", "Aggiunta la pozione per ottenere l’avanzamento “Dangerous Mixes” usando la polvere di Cerulean Creeper."] },
-          { "type": "fix", "heading": "Correzioni:", "items": ["Corretto un errore di traduzione della spada Multicolor.", "Rinnovate le texture dell’intero set di armature Red.", "Rinnovate le texture dell’intero set di armature Paladium.", "Il blocco Multicolor non emette più luce.", "Modificata la texture del lingotto di Dioptasium.", "Modificata la lingua dell’Eye of Revelation e della Dark Pearl.", { "text": "Modifiche al Wavegel:", "childrenListType": "ordered", "children": ["Velocità ridotta: 0.3 → 0.25", "Raggio di inseguimento ridotto: 16 → 8", "Forza d’attacco ridotta: 7 → 4"] }] }
+          { "type": "fix", "heading": "Correzioni:", "items": ["Corretto un errore di traduzione della spada Multicolor.", "Rinnovate le texture dell’intero set di armature Red.", "Rinnovate le texture dell’intero set di armature Paladium.", "Il blocco Multicolor non emette più luce.", "Modificata la texture del lingotto di Dioptasium.", "Modificata la lingua dell’Occhio della Rivelazione e della Dark Pearl.", { "text": "Modifiche al Wavegel:", "childrenListType": "ordered", "children": ["Velocità ridotta: 0.3 → 0.25", "Raggio di inseguimento ridotto: 16 → 8", "Forza d’attacco ridotta: 7 → 4"] }] }
         ],
         "es": [
           { "type": "add", "heading": "Añadido:", "items": ["Añadido un nuevo tipo de madera: Opaline.", "Añadidas recetas para los huevos de Cerulean Creeper y Wavegel.", "Añadida una receta para la esponja.", "Añadida la armadura Hazmat.", "Función experimental: recibes daño al acercarte al mineral de uranio sin llevar la armadura Hazmat.", "Añadidos 4 bloques de ladrillos de hielo y sus variantes.", "Añadida la poción que permite obtener el progreso «Dangerous Mixes» usando polvo de Cerulean Creeper."] },
-          { "type": "fix", "heading": "Correcciones:", "items": ["Corregido un error de traducción en la espada Multicolor.", "Rediseñadas las texturas de todo el conjunto de armadura Red.", "Rediseñadas las texturas de todo el conjunto de armadura Paladium.", "El bloque Multicolor ya no emite luz.", "Cambiada la textura del lingote de Dioptasium.", "Cambiado el idioma del Eye of Revelation y la Dark Pearl.", { "text": "Cambios en Wavegel:", "childrenListType": "ordered", "children": ["Velocidad reducida: 0.3 → 0.25", "Alcance de seguimiento reducido: 16 → 8", "Fuerza de ataque reducida: 7 → 4"] }] }
+          { "type": "fix", "heading": "Correcciones:", "items": ["Corregido un error de traducción en la espada Multicolor.", "Rediseñadas las texturas de todo el conjunto de armadura Red.", "Rediseñadas las texturas de todo el conjunto de armadura Paladium.", "El bloque Multicolor ya no emite luz.", "Cambiada la textura del lingote de Dioptasium.", "Cambiado el idioma del Ojo de la Revelación y la Dark Pearl.", { "text": "Cambios en Wavegel:", "childrenListType": "ordered", "children": ["Velocidad reducida: 0.3 → 0.25", "Alcance de seguimiento reducido: 16 → 8", "Fuerza de ataque reducida: 7 → 4"] }] }
         ],
         "de": [
           { "type": "add", "heading": "Hinzugefügt:", "items": ["Neue Holzart Opaline hinzugefügt.", "Rezepte für die Eier des Cerulean Creeper und des Wavegel hinzugefügt.", "Rezept für einen Schwamm hinzugefügt.", "Hazmat-Rüstung hinzugefügt.", "Experimentelle Funktion: In der Nähe von Uranerz erleidest du ohne Hazmat-Rüstung Schaden.", "4 Eisziegelblöcke und ihre Varianten hinzugefügt.", "Trank hinzugefügt, mit dem sich der Fortschritt „Dangerous Mixes“ mithilfe von Cerulean-Creeper-Pulver erhalten lässt."] },
-          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Übersetzungsfehler beim Multicolor-Schwert behoben.", "Texturen des gesamten Red-Rüstungssets überarbeitet.", "Texturen des gesamten Paladium-Rüstungssets überarbeitet.", "Der Multicolor-Block leuchtet nicht mehr.", "Textur des Dioptasium-Barrens geändert.", "Sprache von Eye of Revelation und Dark Pearl geändert.", { "text": "Wavegel angepasst:", "childrenListType": "ordered", "children": ["Geschwindigkeit verringert: 0.3 → 0.25", "Verfolgungsreichweite verringert: 16 → 8", "Angriffsstärke verringert: 7 → 4"] }] }
+          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Übersetzungsfehler beim Multicolor-Schwert behoben.", "Texturen des gesamten Red-Rüstungssets überarbeitet.", "Texturen des gesamten Paladium-Rüstungssets überarbeitet.", "Der Multicolor-Block leuchtet nicht mehr.", "Textur des Dioptasium-Barrens geändert.", "Sprache von Auge der Offenbarung und Dark Pearl geändert.", { "text": "Wavegel angepasst:", "childrenListType": "ordered", "children": ["Geschwindigkeit verringert: 0.3 → 0.25", "Verfolgungsreichweite verringert: 16 → 8", "Angriffsstärke verringert: 7 → 4"] }] }
         ],
         "ja": [
           { "type": "add", "heading": "追加:", "items": ["新しい木材 Opaline を追加しました。", "Cerulean Creeper と Wavegel のスポーンエッグのレシピを追加しました。", "スポンジのレシピを追加しました。", "Hazmat Armor を追加しました。", "実験的機能: Hazmat Armor を装備せずにウラン鉱石の近くにいるとダメージを受けます。", "氷レンガブロック 4 種とその派生ブロックを追加しました。", "Cerulean Creeper の粉を使って進捗「Dangerous Mixes」を達成できるポーションを追加しました。"] },
-          { "type": "fix", "heading": "修正:", "items": ["Multicolor の剣の翻訳ミスを修正しました。", "Red 防具一式のテクスチャを刷新しました。", "Paladium 防具一式のテクスチャを刷新しました。", "Multicolor ブロックが発光しなくなりました。", "Dioptasium インゴットのテクスチャを変更しました。", "Eye of Revelation と Dark Pearl の言語表記を変更しました。", { "text": "Wavegel を調整しました:", "childrenListType": "ordered", "children": ["速度を低下: 0.3 → 0.25", "追跡範囲を縮小: 16 → 8", "攻撃力を低下: 7 → 4"] }] }
+          { "type": "fix", "heading": "修正:", "items": ["Multicolor の剣の翻訳ミスを修正しました。", "Red 防具一式のテクスチャを刷新しました。", "Paladium 防具一式のテクスチャを刷新しました。", "Multicolor ブロックが発光しなくなりました。", "Dioptasium インゴットのテクスチャを変更しました。", "啓示の目 と Dark Pearl の言語表記を変更しました。", { "text": "Wavegel を調整しました:", "childrenListType": "ordered", "children": ["速度を低下: 0.3 → 0.25", "追跡範囲を縮小: 16 → 8", "攻撃力を低下: 7 → 4"] }] }
         ],
         "ko": [
           { "type": "add", "heading": "추가:", "items": ["새로운 목재 Opaline 추가", "Cerulean Creeper와 Wavegel 생성 알 제작법 추가", "스펀지 제작법 추가", "Hazmat 방어구 추가", "실험적 기능: Hazmat 방어구 없이 우라늄 광석 블록 가까이에 있으면 피해를 받습니다.", "얼음 벽돌 블록 4종과 파생 블록 추가", "Cerulean Creeper 가루로 “Dangerous Mixes” 발전 과제를 달성할 수 있는 물약 추가"] },
-          { "type": "fix", "heading": "수정:", "items": ["Multicolor 검의 번역 오류 수정", "Red 방어구 세트 전체의 텍스처 개편", "Paladium 방어구 세트 전체의 텍스처 개편", "Multicolor 블록이 더 이상 빛을 내지 않도록 수정", "Dioptasium 주괴 텍스처 변경", "Eye of Revelation과 Dark Pearl의 언어 변경", { "text": "Wavegel 변경:", "childrenListType": "ordered", "children": ["속도 감소: 0.3 → 0.25", "추적 범위 감소: 16 → 8", "공격력 감소: 7 → 4"] }] }
+          { "type": "fix", "heading": "수정:", "items": ["Multicolor 검의 번역 오류 수정", "Red 방어구 세트 전체의 텍스처 개편", "Paladium 방어구 세트 전체의 텍스처 개편", "Multicolor 블록이 더 이상 빛을 내지 않도록 수정", "Dioptasium 주괴 텍스처 변경", "계시의 눈과 Dark Pearl의 언어 변경", { "text": "Wavegel 변경:", "childrenListType": "ordered", "children": ["속도 감소: 0.3 → 0.25", "추적 범위 감소: 16 → 8", "공격력 감소: 7 → 4"] }] }
         ],
         "pt-br": [
           { "type": "add", "heading": "Adicionado:", "items": ["Adicionado um novo tipo de madeira: Opaline.", "Adicionadas receitas para os ovos de Cerulean Creeper e Wavegel.", "Adicionada uma receita para a esponja.", "Adicionada a armadura Hazmat.", "Recurso experimental: você sofre dano ao se aproximar do minério de urânio sem a armadura Hazmat.", "Adicionados 4 blocos de tijolos de gelo e suas variantes.", "Adicionada a poção que permite obter o avanço “Dangerous Mixes” usando pó de Cerulean Creeper."] },
-          { "type": "fix", "heading": "Correções:", "items": ["Corrigido um erro de tradução na espada Multicolor.", "Texturas de todo o conjunto de armadura Red reformuladas.", "Texturas de todo o conjunto de armadura Paladium reformuladas.", "O bloco Multicolor não emite mais luz.", "Textura do lingote de Dioptasium alterada.", "Idioma do Eye of Revelation e da Dark Pearl alterado.", { "text": "Alterações no Wavegel:", "childrenListType": "ordered", "children": ["Velocidade reduzida: 0.3 → 0.25", "Alcance de perseguição reduzido: 16 → 8", "Força de ataque reduzida: 7 → 4"] }] }
+          { "type": "fix", "heading": "Correções:", "items": ["Corrigido um erro de tradução na espada Multicolor.", "Texturas de todo o conjunto de armadura Red reformuladas.", "Texturas de todo o conjunto de armadura Paladium reformuladas.", "O bloco Multicolor não emite mais luz.", "Textura do lingote de Dioptasium alterada.", "Idioma do Olho da Revelação e da Dark Pearl alterado.", { "text": "Alterações no Wavegel:", "childrenListType": "ordered", "children": ["Velocidade reduzida: 0.3 → 0.25", "Alcance de perseguição reduzido: 16 → 8", "Força de ataque reduzida: 7 → 4"] }] }
         ]
       }
     },
@@ -2459,27 +2480,27 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunto l’Eye of Revelation (impilabile fino a 6).", "Aggiunta la Dark Pearl (impilabile fino a 12).", "Aggiunta la roccia vulcanica, fabbricabile con un blocco di magma e del ghiaccio e presente anche nel Nether.", "Aggiunto il Cerulean Creeper, che compare nelle pianure e in diverse foreste.", "Aggiunti il bastone e la polvere del Cerulean Creeper."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunto l’Occhio della Rivelazione (impilabile fino a 6).", "Aggiunta la Dark Pearl (impilabile fino a 12).", "Aggiunta la roccia vulcanica, fabbricabile con un blocco di magma e del ghiaccio e presente anche nel Nether.", "Aggiunto il Cerulean Creeper, che compare nelle pianure e in diverse foreste.", "Aggiunti il bastone e la polvere del Cerulean Creeper."] },
           { "type": "fix", "heading": "Correzioni:", "items": ["Rimosso lo slot aggiuntivo per la collana.", "Leggermente modificata la texture del blocco Multicolor.", "Modificata la texture del lingotto di Dioptasium.", "Modificata la texture della sfera di prevenzione dei danni.", "Gli annegati non rilasciano più Aquatic Slime.", "Il Wavegel non compare più nel Nether.", "Danni inflitti dal Wavegel ridotti da 13 a 7.", "Modificato il nome in gioco in inglese del disco “Sunshine Voyage”.", "Modificati la descrizione e il nome in gioco in francese."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Añadido el Eye of Revelation (se puede apilar hasta 6).", "Añadida la Dark Pearl (se puede apilar hasta 12).", "Añadida la roca volcánica, que se fabrica con un bloque de magma y hielo y también aparece en el Nether.", "Añadido el Cerulean Creeper, que aparece en las llanuras y en distintos bosques.", "Añadidos el bastón y el polvo del Cerulean Creeper."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadido el Ojo de la Revelación (se puede apilar hasta 6).", "Añadida la Dark Pearl (se puede apilar hasta 12).", "Añadida la roca volcánica, que se fabrica con un bloque de magma y hielo y también aparece en el Nether.", "Añadido el Cerulean Creeper, que aparece en las llanuras y en distintos bosques.", "Añadidos el bastón y el polvo del Cerulean Creeper."] },
           { "type": "fix", "heading": "Correcciones:", "items": ["Eliminado el espacio adicional para collares.", "Retocada ligeramente la textura del bloque Multicolor.", "Cambiada la textura del lingote de Dioptasium.", "Cambiada la textura del orbe de prevención de daño.", "Los ahogados ya no sueltan Aquatic Slime.", "Wavegel ya no aparece en el Nether.", "Daño infligido por Wavegel reducido de 13 a 7.", "Cambiado el nombre en el juego en inglés del disco «Sunshine Voyage».", "Cambiados la descripción y el nombre en el juego en francés."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Eye of Revelation hinzugefügt (bis zu 6 stapelbar).", "Dark Pearl hinzugefügt (bis zu 12 stapelbar).", "Vulkanstein hinzugefügt, herstellbar aus einem Magmablock und Eis und auch im Nether zu finden.", "Cerulean Creeper hinzugefügt; erscheint in Ebenen und verschiedenen Wäldern.", "Stab und Pulver des Cerulean Creeper hinzugefügt."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Auge der Offenbarung hinzugefügt (bis zu 6 stapelbar).", "Dark Pearl hinzugefügt (bis zu 12 stapelbar).", "Vulkanstein hinzugefügt, herstellbar aus einem Magmablock und Eis und auch im Nether zu finden.", "Cerulean Creeper hinzugefügt; erscheint in Ebenen und verschiedenen Wäldern.", "Stab und Pulver des Cerulean Creeper hinzugefügt."] },
           { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Zusätzlichen Halsketten-Slot entfernt.", "Textur des Multicolor-Blocks leicht geändert.", "Textur des Dioptasium-Barrens geändert.", "Textur der Schadensschutzkugel geändert.", "Ertrunkene droppen keine Aquatic Slime mehr.", "Wavegel erscheint nicht mehr im Nether.", "Vom Wavegel verursachter Schaden von 13 auf 7 reduziert.", "Ingame-Namen der „Sunshine Voyage“-Schallplatte für Englisch geändert.", "Beschreibung und Ingame-Namen für Französisch geändert."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["Eye of Revelation を追加 (最大 6 個までスタック可能)。", "Dark Pearl を追加 (最大 12 個までスタック可能)。", "火山岩を追加しました (マグマブロックと氷でクラフトでき、Nether にも生成されます)。", "Cerulean Creeper を追加しました (平原や各種の森に出現)。", "Cerulean Creeper の杖と粉を追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["啓示の目 を追加 (最大 6 個までスタック可能)。", "Dark Pearl を追加 (最大 12 個までスタック可能)。", "火山岩を追加しました (マグマブロックと氷でクラフトでき、Nether にも生成されます)。", "Cerulean Creeper を追加しました (平原や各種の森に出現)。", "Cerulean Creeper の杖と粉を追加しました。"] },
           { "type": "fix", "heading": "修正:", "items": ["追加のネックレススロットを削除しました。", "Multicolor ブロックのテクスチャを少し変更しました。", "Dioptasium インゴットのテクスチャを変更しました。", "ダメージ防止オーブのテクスチャを変更しました。", "ドラウンドが Aquatic Slime をドロップしなくなりました。", "Wavegel が Nether に出現しなくなりました。", "Wavegel のダメージを 13 から 7 に減らしました。", "ディスク「Sunshine Voyage」の英語版ゲーム内名を変更しました。", "フランス語版の説明とゲーム内名を変更しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["Eye of Revelation 추가 (최대 6개까지 중첩 가능)", "Dark Pearl 추가 (최대 12개까지 중첩 가능)", "화산암 추가 (마그마 블록과 얼음으로 제작하며 Nether에도 생성)", "Cerulean Creeper 추가 (평원과 여러 숲에 생성)", "Cerulean Creeper 막대와 가루 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["계시의 눈 추가 (최대 6개까지 중첩 가능)", "Dark Pearl 추가 (최대 12개까지 중첩 가능)", "화산암 추가 (마그마 블록과 얼음으로 제작하며 Nether에도 생성)", "Cerulean Creeper 추가 (평원과 여러 숲에 생성)", "Cerulean Creeper 막대와 가루 추가"] },
           { "type": "fix", "heading": "수정:", "items": ["추가 목걸이 슬롯 제거", "Multicolor 블록 텍스처를 약간 변경", "Dioptasium 주괴 텍스처 변경", "피해 방지 구체 텍스처 변경", "드라운드가 더 이상 Aquatic Slime을 드롭하지 않음", "Wavegel이 Nether에 더 이상 생성되지 않음", "Wavegel의 피해량을 13에서 7로 감소", "“Sunshine Voyage” 음반의 영어 게임 내 이름 변경", "프랑스어 설명과 게임 내 이름 변경"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado o Eye of Revelation (empilhável até 6).", "Adicionada a Dark Pearl (empilhável até 12).", "Adicionada a rocha vulcânica, fabricável com bloco de magma e gelo e que também aparece no Nether.", "Adicionado o Cerulean Creeper, que aparece em planícies e diferentes florestas.", "Adicionados o bastão e o pó do Cerulean Creeper."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado o Olho da Revelação (empilhável até 6).", "Adicionada a Dark Pearl (empilhável até 12).", "Adicionada a rocha vulcânica, fabricável com bloco de magma e gelo e que também aparece no Nether.", "Adicionado o Cerulean Creeper, que aparece em planícies e diferentes florestas.", "Adicionados o bastão e o pó do Cerulean Creeper."] },
           { "type": "fix", "heading": "Correções:", "items": ["Removido o espaço adicional para colar.", "Textura do bloco Multicolor ligeiramente alterada.", "Textura do lingote de Dioptasium alterada.", "Textura do orbe de prevenção de dano alterada.", "Afogados não deixam mais Aquatic Slime como item.", "Wavegel não aparece mais no Nether.", "Dano causado por Wavegel reduzido de 13 para 7.", "Nome em jogo em inglês do disco “Sunshine Voyage” alterado.", "Descrição e nome em jogo em francês alterados."] }
         ]
       }
@@ -2548,27 +2569,27 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunto l’Eye of Revelation (impilabile fino a 6).", "Aggiunta la Dark Pearl (impilabile fino a 12).", "Aggiunta la roccia vulcanica, fabbricabile con un blocco di magma e del ghiaccio e presente anche nel Nether.", "Aggiunto il Cerulean Creeper, che compare nelle pianure e in diverse foreste.", "Aggiunti il bastone e la polvere del Cerulean Creeper."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunto l’Occhio della Rivelazione (impilabile fino a 6).", "Aggiunta la Dark Pearl (impilabile fino a 12).", "Aggiunta la roccia vulcanica, fabbricabile con un blocco di magma e del ghiaccio e presente anche nel Nether.", "Aggiunto il Cerulean Creeper, che compare nelle pianure e in diverse foreste.", "Aggiunti il bastone e la polvere del Cerulean Creeper."] },
           { "type": "fix", "heading": "Correzioni:", "items": ["Rimosso lo slot aggiuntivo per la collana.", "Leggermente modificata la texture del blocco Multicolor.", "Modificata la texture del lingotto di Dioptasium.", "Modificata la texture della sfera di prevenzione dei danni.", "Gli annegati non rilasciano più Aquatic Slime.", "Il Wavegel non compare più nel Nether.", "Danni inflitti dal Wavegel ridotti da 13 a 7.", "Modificato il nome in gioco in inglese del disco “Sunshine Voyage”.", "Modificati la descrizione e il nome in gioco in francese."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Añadido el Eye of Revelation (se puede apilar hasta 6).", "Añadida la Dark Pearl (se puede apilar hasta 12).", "Añadida la roca volcánica, que se fabrica con un bloque de magma y hielo y también aparece en el Nether.", "Añadido el Cerulean Creeper, que aparece en las llanuras y en distintos bosques.", "Añadidos el bastón y el polvo del Cerulean Creeper."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadido el Ojo de la Revelación (se puede apilar hasta 6).", "Añadida la Dark Pearl (se puede apilar hasta 12).", "Añadida la roca volcánica, que se fabrica con un bloque de magma y hielo y también aparece en el Nether.", "Añadido el Cerulean Creeper, que aparece en las llanuras y en distintos bosques.", "Añadidos el bastón y el polvo del Cerulean Creeper."] },
           { "type": "fix", "heading": "Correcciones:", "items": ["Eliminado el espacio adicional para collares.", "Retocada ligeramente la textura del bloque Multicolor.", "Cambiada la textura del lingote de Dioptasium.", "Cambiada la textura del orbe de prevención de daño.", "Los ahogados ya no sueltan Aquatic Slime.", "Wavegel ya no aparece en el Nether.", "Daño infligido por Wavegel reducido de 13 a 7.", "Cambiado el nombre en el juego en inglés del disco «Sunshine Voyage».", "Cambiados la descripción y el nombre en el juego en francés."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Eye of Revelation hinzugefügt (bis zu 6 stapelbar).", "Dark Pearl hinzugefügt (bis zu 12 stapelbar).", "Vulkanstein hinzugefügt, herstellbar aus einem Magmablock und Eis und auch im Nether zu finden.", "Cerulean Creeper hinzugefügt; erscheint in Ebenen und verschiedenen Wäldern.", "Stab und Pulver des Cerulean Creeper hinzugefügt."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Auge der Offenbarung hinzugefügt (bis zu 6 stapelbar).", "Dark Pearl hinzugefügt (bis zu 12 stapelbar).", "Vulkanstein hinzugefügt, herstellbar aus einem Magmablock und Eis und auch im Nether zu finden.", "Cerulean Creeper hinzugefügt; erscheint in Ebenen und verschiedenen Wäldern.", "Stab und Pulver des Cerulean Creeper hinzugefügt."] },
           { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Zusätzlichen Halsketten-Slot entfernt.", "Textur des Multicolor-Blocks leicht geändert.", "Textur des Dioptasium-Barrens geändert.", "Textur der Schadensschutzkugel geändert.", "Ertrunkene droppen keine Aquatic Slime mehr.", "Wavegel erscheint nicht mehr im Nether.", "Vom Wavegel verursachter Schaden von 13 auf 7 reduziert.", "Ingame-Namen der „Sunshine Voyage“-Schallplatte für Englisch geändert.", "Beschreibung und Ingame-Namen für Französisch geändert."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["Eye of Revelation を追加 (最大 6 個までスタック可能)。", "Dark Pearl を追加 (最大 12 個までスタック可能)。", "火山岩を追加しました (マグマブロックと氷でクラフトでき、Nether にも生成されます)。", "Cerulean Creeper を追加しました (平原や各種の森に出現)。", "Cerulean Creeper の杖と粉を追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["啓示の目 を追加 (最大 6 個までスタック可能)。", "Dark Pearl を追加 (最大 12 個までスタック可能)。", "火山岩を追加しました (マグマブロックと氷でクラフトでき、Nether にも生成されます)。", "Cerulean Creeper を追加しました (平原や各種の森に出現)。", "Cerulean Creeper の杖と粉を追加しました。"] },
           { "type": "fix", "heading": "修正:", "items": ["追加のネックレススロットを削除しました。", "Multicolor ブロックのテクスチャを少し変更しました。", "Dioptasium インゴットのテクスチャを変更しました。", "ダメージ防止オーブのテクスチャを変更しました。", "ドラウンドが Aquatic Slime をドロップしなくなりました。", "Wavegel が Nether に出現しなくなりました。", "Wavegel のダメージを 13 から 7 に減らしました。", "ディスク「Sunshine Voyage」の英語版ゲーム内名を変更しました。", "フランス語版の説明とゲーム内名を変更しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["Eye of Revelation 추가 (최대 6개까지 중첩 가능)", "Dark Pearl 추가 (최대 12개까지 중첩 가능)", "화산암 추가 (마그마 블록과 얼음으로 제작하며 Nether에도 생성)", "Cerulean Creeper 추가 (평원과 여러 숲에 생성)", "Cerulean Creeper 막대와 가루 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["계시의 눈 추가 (최대 6개까지 중첩 가능)", "Dark Pearl 추가 (최대 12개까지 중첩 가능)", "화산암 추가 (마그마 블록과 얼음으로 제작하며 Nether에도 생성)", "Cerulean Creeper 추가 (평원과 여러 숲에 생성)", "Cerulean Creeper 막대와 가루 추가"] },
           { "type": "fix", "heading": "수정:", "items": ["추가 목걸이 슬롯 제거", "Multicolor 블록 텍스처를 약간 변경", "Dioptasium 주괴 텍스처 변경", "피해 방지 구체 텍스처 변경", "드라운드가 더 이상 Aquatic Slime을 드롭하지 않음", "Wavegel이 Nether에 더 이상 생성되지 않음", "Wavegel의 피해량을 13에서 7로 감소", "“Sunshine Voyage” 음반의 영어 게임 내 이름 변경", "프랑스어 설명과 게임 내 이름 변경"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado o Eye of Revelation (empilhável até 6).", "Adicionada a Dark Pearl (empilhável até 12).", "Adicionada a rocha vulcânica, fabricável com bloco de magma e gelo e que também aparece no Nether.", "Adicionado o Cerulean Creeper, que aparece em planícies e diferentes florestas.", "Adicionados o bastão e o pó do Cerulean Creeper."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado o Olho da Revelação (empilhável até 6).", "Adicionada a Dark Pearl (empilhável até 12).", "Adicionada a rocha vulcânica, fabricável com bloco de magma e gelo e que também aparece no Nether.", "Adicionado o Cerulean Creeper, que aparece em planícies e diferentes florestas.", "Adicionados o bastão e o pó do Cerulean Creeper."] },
           { "type": "fix", "heading": "Correções:", "items": ["Removido o espaço adicional para colar.", "Textura do bloco Multicolor ligeiramente alterada.", "Textura do lingote de Dioptasium alterada.", "Textura do orbe de prevenção de dano alterada.", "Afogados não deixam mais Aquatic Slime como item.", "Wavegel não aparece mais no Nether.", "Dano causado por Wavegel reduzido de 13 para 7.", "Nome em jogo em inglês do disco “Sunshine Voyage” alterado.", "Descrição e nome em jogo em francês alterados."] }
         ]
       }
@@ -3034,27 +3055,27 @@ const patchnotesConfig = {
         ],
         "it": [
           { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta la ricetta dello spawner.", { "text": "Aggiunta la ricetta per ogni uovo generabile", "childrenListType": "ordered", "children": ["Tranne Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze e Bogged"] }, "Aggiunto il disco con la musica “Sweden” di C418.", "Aggiunto il nuovo boss Extermate (Warden) e un avanzamento.", "Aggiunta la struttura per affrontare Extermate nei biomi Sakura, Crimson Forest, Warped Forest e Soul Sand Valley."] },
-          { "type": "fix", "heading": "Correzioni:", "items": ["La Multicolor Apple ora applica gli effetti di rigenerazione, salute istantanea, resistenza e aumento della salute.", "Ridotti i bottini delle colture (Nether Star e Netherite).", "Aggiornate le traduzioni francesi.", "Aggiornata la traduzione francese del liquido “Elixir of Life”.", "Aggiunta la visualizzazione del prezzo per modificare ora e meteo con il Chrononimbus.", "Aggiunto un suono quando si indossano le armature Amazonite e Space.", { "text": "Modificati i suoni quando si indossano le armature:", "childrenListType": "ordered", "children": ["Paladium → suono del ferro invece del diamante", "Red → suono dell’oro invece del diamante", "Dioptasium → suono della netherite invece del diamante"] }, "Modificata la texture dell’armatura Amazonite.", "Modificate le texture del lingotto e del blocco Chrome.", "Durabilità degli strumenti modificata da 700 a 1700 e da 1000 a 1400 per l’Hammer in Dioptasium.", "Modificata la texture del lingotto e del blocco Chrome.", { "text": "Durabilità delle armature Amazonite, Dioptasium, Multicolor e Space modificata:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "fix", "heading": "Correzioni:", "items": ["La Multicolor Apple ora applica gli effetti di rigenerazione, salute istantanea, resistenza e aumento della salute.", "Ridotti i bottini delle colture (Nether Star e Netherite).", "Aggiornate le traduzioni francesi.", "Aggiornata la traduzione francese del liquido “Elisir della vita”.", "Aggiunta la visualizzazione del prezzo per modificare ora e meteo con il Chrononimbus.", "Aggiunto un suono quando si indossano le armature Amazonite e Space.", { "text": "Modificati i suoni quando si indossano le armature:", "childrenListType": "ordered", "children": ["Paladium → suono del ferro invece del diamante", "Red → suono dell’oro invece del diamante", "Dioptasium → suono della netherite invece del diamante"] }, "Modificata la texture dell’armatura Amazonite.", "Modificate le texture del lingotto e del blocco Chrome.", "Durabilità degli strumenti modificata da 700 a 1700 e da 1000 a 1400 per l’Hammer in Dioptasium.", "Modificata la texture del lingotto e del blocco Chrome.", { "text": "Durabilità delle armature Amazonite, Dioptasium, Multicolor e Space modificata:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "es": [
           { "type": "add", "heading": "Añadido:", "items": ["Añadida la receta del generador de criaturas.", { "text": "Añadida la receta de cada huevo de aparición", "childrenListType": "ordered", "children": ["Excepto Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze y Bogged"] }, "Añadido el disco con la música «Sweden» de C418.", "Añadidos el nuevo jefe Extermate (Warden) y un progreso.", "Añadida la estructura para luchar contra Extermate en los biomas Sakura, Crimson Forest, Warped Forest y Soul Sand Valley."] },
-          { "type": "fix", "heading": "Correcciones:", "items": ["La Multicolor Apple ahora aplica los efectos de regeneración, salud instantánea, resistencia y aumento de salud.", "Reducido el botín de los cultivos (Nether Star y Netherite).", "Actualizadas las traducciones al francés.", "Actualizada la traducción al francés del líquido «Elixir of Life».", "Añadida la visualización del precio para cambiar la hora y el clima con el Chrononimbus.", "Añadido un sonido al equipar las armaduras de Amazonite y Space.", { "text": "Cambiados los sonidos al equipar las armaduras:", "childrenListType": "ordered", "children": ["Paladium → sonido de hierro en lugar de diamante", "Red → sonido de oro en lugar de diamante", "Dioptasium → sonido de netherita en lugar de diamante"] }, "Cambiada la textura de la armadura de Amazonite.", "Cambiadas las texturas del lingote y el bloque de Chrome.", "Durabilidad de las herramientas cambiada de 700 a 1700 y de 1000 a 1400 para el Hammer de Dioptasium.", "Cambiada la textura del lingote y el bloque de Chrome.", { "text": "Durabilidad de las armaduras de Amazonite, Dioptasium, Multicolor y Space modificada:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "fix", "heading": "Correcciones:", "items": ["La Multicolor Apple ahora aplica los efectos de regeneración, salud instantánea, resistencia y aumento de salud.", "Reducido el botín de los cultivos (Nether Star y Netherite).", "Actualizadas las traducciones al francés.", "Actualizada la traducción al francés del líquido «Elixir de la vida».", "Añadida la visualización del precio para cambiar la hora y el clima con el Chrononimbus.", "Añadido un sonido al equipar las armaduras de Amazonite y Space.", { "text": "Cambiados los sonidos al equipar las armaduras:", "childrenListType": "ordered", "children": ["Paladium → sonido de hierro en lugar de diamante", "Red → sonido de oro en lugar de diamante", "Dioptasium → sonido de netherita en lugar de diamante"] }, "Cambiada la textura de la armadura de Amazonite.", "Cambiadas las texturas del lingote y el bloque de Chrome.", "Durabilidad de las herramientas cambiada de 700 a 1700 y de 1000 a 1400 para el Hammer de Dioptasium.", "Cambiada la textura del lingote y el bloque de Chrome.", { "text": "Durabilidad de las armaduras de Amazonite, Dioptasium, Multicolor y Space modificada:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "de": [
           { "type": "add", "heading": "Hinzugefügt:", "items": ["Rezept für den Mob-Spawner hinzugefügt.", { "text": "Rezept für jedes Spawn-Ei hinzugefügt", "childrenListType": "ordered", "children": ["Außer für Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze und Bogged"] }, "Musikdisc mit C418s Musikstück „Sweden“ hinzugefügt.", "Neuen Boss Extermate (Warden) und einen Fortschritt hinzugefügt.", "Struktur zum Kampf gegen Extermate in den Biomen Sakura, Crimson Forest, Warped Forest und Soul Sand Valley hinzugefügt."] },
-          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Multicolor Apple verleiht jetzt Regeneration, Sofortheilung, Resistenz und erhöhte Gesundheit.", "Beute aus der Landwirtschaft (Nether Star und Netherite) verringert.", "Französische Übersetzungen aktualisiert.", "Französische Übersetzung der Flüssigkeit „Elixir of Life“ aktualisiert.", "Preisanzeige zum Ändern von Zeit und Wetter mit dem Chrononimbus hinzugefügt.", "Ton beim Ausrüsten der Amazonite- und Space-Rüstung hinzugefügt.", { "text": "Ausrüstungstöne der Rüstungen geändert:", "childrenListType": "ordered", "children": ["Paladium → Eisengeräusch statt Diamant", "Red → Goldgeräusch statt Diamant", "Dioptasium → Netherite-Geräusch statt Diamant"] }, "Textur der Amazonite-Rüstung geändert.", "Texturen des Chrome-Barrens und -Blocks geändert.", "Werkzeughaltbarkeit von 700 auf 1700 und für den Dioptasium-Hammer von 1000 auf 1400 geändert.", "Textur des Chrome-Barrens und -Blocks geändert.", { "text": "Haltbarkeit der Rüstungen aus Amazonite, Dioptasium, Multicolor und Space geändert:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Multicolor Apple verleiht jetzt Regeneration, Sofortheilung, Resistenz und erhöhte Gesundheit.", "Beute aus der Landwirtschaft (Nether Star und Netherite) verringert.", "Französische Übersetzungen aktualisiert.", "Französische Übersetzung der Flüssigkeit „Elixier des Lebens“ aktualisiert.", "Preisanzeige zum Ändern von Zeit und Wetter mit dem Chrononimbus hinzugefügt.", "Ton beim Ausrüsten der Amazonite- und Space-Rüstung hinzugefügt.", { "text": "Ausrüstungstöne der Rüstungen geändert:", "childrenListType": "ordered", "children": ["Paladium → Eisengeräusch statt Diamant", "Red → Goldgeräusch statt Diamant", "Dioptasium → Netherite-Geräusch statt Diamant"] }, "Textur der Amazonite-Rüstung geändert.", "Texturen des Chrome-Barrens und -Blocks geändert.", "Werkzeughaltbarkeit von 700 auf 1700 und für den Dioptasium-Hammer von 1000 auf 1400 geändert.", "Textur des Chrome-Barrens und -Blocks geändert.", { "text": "Haltbarkeit der Rüstungen aus Amazonite, Dioptasium, Multicolor und Space geändert:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["モブスポナーのレシピを追加しました。", { "text": "各スポーンエッグのレシピを追加しました", "childrenListType": "ordered", "children": ["Sniffer、Chicken Jockey、Skeleton Horseman、Spider Jockey、Vex、Zoglin、Breeze、Bogged を除く"] }, "C418 の「Sweden」を収録した音楽ディスクを追加しました。", "新しいボス Extermate (Warden) と進捗を追加しました。", "Sakura、Crimson Forest、Warped Forest、Soul Sand Valley に Extermate と戦うための構造物を追加しました。"] },
-          { "type": "fix", "heading": "修正:", "items": ["Multicolor Apple 使用時に再生、即時回復、耐性、体力増加の効果が付与されるようになりました。", "作物から得られる戦利品 (Nether Star と Netherite) を減らしました。", "フランス語訳を更新しました。", "液体「Elixir of Life」のフランス語訳を更新しました。", "Chrononimbus で時間や天候を変更する際の価格表示を追加しました。", "Amazonite と Space の防具を装備した際の音を追加しました。", { "text": "防具を装備した際の音を変更しました:", "childrenListType": "ordered", "children": ["Paladium → ダイヤモンド音から鉄音に変更", "Red → ダイヤモンド音から金音に変更", "Dioptasium → ダイヤモンド音からネザライト音に変更"] }, "Amazonite 防具のテクスチャを変更しました。", "Chrome インゴットとブロックのテクスチャを変更しました。", "ツールの耐久値を 700 から 1700 に、Dioptasium Hammer の耐久値を 1000 から 1400 に変更しました。", "Chrome インゴットとブロックのテクスチャを変更しました。", { "text": "Amazonite、Dioptasium、Multicolor、Space 防具の耐久値を変更しました:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "add", "heading": "追加:", "items": ["モブスポナーのレシピを追加しました。", { "text": "各スポーンエッグのレシピを追加しました", "childrenListType": "ordered", "children": ["Sniffer、Chicken Jockey、Skeleton Horseman、Spider Jockey、Vex、Zoglin、Breeze、Bogged を除く"] }, "C418 の「Sweden」を収録した音楽ディスクを追加しました。", "新しいボス Extermate (Warden) と進捗を追加しました。", "サクラ、Crimson Forest、Warped Forest、Soul Sand Valley に Extermate と戦うための構造物を追加しました。"] },
+          { "type": "fix", "heading": "修正:", "items": ["Multicolor Apple 使用時に再生、即時回復、耐性、体力増加の効果が付与されるようになりました。", "作物から得られる戦利品 (Nether Star と Netherite) を減らしました。", "フランス語訳を更新しました。", "液体「生命のエリクサー」のフランス語訳を更新しました。", "Chrononimbus で時間や天候を変更する際の価格表示を追加しました。", "Amazonite と Space の防具を装備した際の音を追加しました。", { "text": "防具を装備した際の音を変更しました:", "childrenListType": "ordered", "children": ["Paladium → ダイヤモンド音から鉄音に変更", "Red → ダイヤモンド音から金音に変更", "Dioptasium → ダイヤモンド音からネザライト音に変更"] }, "Amazonite 防具のテクスチャを変更しました。", "Chrome インゴットとブロックのテクスチャを変更しました。", "ツールの耐久値を 700 から 1700 に、Dioptasium Hammer の耐久値を 1000 から 1400 に変更しました。", "Chrome インゴットとブロックのテクスチャを変更しました。", { "text": "Amazonite、Dioptasium、Multicolor、Space 防具の耐久値を変更しました:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["몹 생성기 제작법 추가", { "text": "각 생성 알의 제작법 추가", "childrenListType": "ordered", "children": ["Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze, Bogged 제외"] }, "C418의 “Sweden” 음악이 담긴 음반 추가", "신규 보스 Extermate(Warden)와 발전 과제 추가", "Sakura, Crimson Forest, Warped Forest, Soul Sand Valley 생물 군계에 Extermate 보스 전투 구조물 추가"] },
-          { "type": "fix", "heading": "수정:", "items": ["Multicolor Apple 사용 시 재생, 즉시 치유, 저항, 최대 체력 증가 효과 적용", "농작물 전리품(Nether Star 및 Netherite) 감소", "프랑스어 번역 업데이트", "“Elixir of Life” 액체의 프랑스어 번역 업데이트", "Chrononimbus에서 시간과 날씨를 변경할 때 가격 표시 추가", "Amazonite 및 Space 방어구 착용 시 소리 추가", { "text": "방어구 착용 소리 변경:", "childrenListType": "ordered", "children": ["Paladium → 다이아몬드 대신 철 소리", "Red → 다이아몬드 대신 금 소리", "Dioptasium → 다이아몬드 대신 네더라이트 소리"] }, "Amazonite 방어구 텍스처 변경", "Chrome 주괴와 블록 텍스처 변경", "도구 내구도를 700에서 1700으로, Dioptasium Hammer 내구도를 1000에서 1400으로 변경", "Chrome 주괴와 블록 텍스처 변경", { "text": "Amazonite, Dioptasium, Multicolor, Space 방어구 내구도 변경:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "add", "heading": "추가:", "items": ["몹 생성기 제작법 추가", { "text": "각 생성 알의 제작법 추가", "childrenListType": "ordered", "children": ["Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze, Bogged 제외"] }, "C418의 “Sweden” 음악이 담긴 음반 추가", "신규 보스 Extermate(Warden)와 발전 과제 추가", "사쿠라, Crimson Forest, Warped Forest, Soul Sand Valley 생물 군계에 Extermate 보스 전투 구조물 추가"] },
+          { "type": "fix", "heading": "수정:", "items": ["Multicolor Apple 사용 시 재생, 즉시 치유, 저항, 최대 체력 증가 효과 적용", "농작물 전리품(Nether Star 및 Netherite) 감소", "프랑스어 번역 업데이트", "“생명의 비약” 액체의 프랑스어 번역 업데이트", "Chrononimbus에서 시간과 날씨를 변경할 때 가격 표시 추가", "Amazonite 및 Space 방어구 착용 시 소리 추가", { "text": "방어구 착용 소리 변경:", "childrenListType": "ordered", "children": ["Paladium → 다이아몬드 대신 철 소리", "Red → 다이아몬드 대신 금 소리", "Dioptasium → 다이아몬드 대신 네더라이트 소리"] }, "Amazonite 방어구 텍스처 변경", "Chrome 주괴와 블록 텍스처 변경", "도구 내구도를 700에서 1700으로, Dioptasium Hammer 내구도를 1000에서 1400으로 변경", "Chrome 주괴와 블록 텍스처 변경", { "text": "Amazonite, Dioptasium, Multicolor, Space 방어구 내구도 변경:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "pt-br": [
           { "type": "add", "heading": "Adicionado:", "items": ["Adicionada a receita do gerador de criaturas.", { "text": "Adicionada a receita de cada ovo de criatura", "childrenListType": "ordered", "children": ["Exceto para Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze e Bogged"] }, "Adicionado o disco com a música “Sweden”, de C418.", "Adicionados o novo chefe Extermate (Warden) e um avanço.", "Adicionada a estrutura para enfrentar Extermate nos biomas Sakura, Crimson Forest, Warped Forest e Soul Sand Valley."] },
-          { "type": "fix", "heading": "Correções:", "items": ["Multicolor Apple agora concede regeneração, cura instantânea, resistência e aumento de vida.", "Reduzidos os saques das plantações (Nether Star e Netherite).", "Traduções para francês atualizadas.", "Tradução para francês do líquido “Elixir of Life” atualizada.", "Adicionada a exibição do preço para alterar o horário e o clima com o Chrononimbus.", "Adicionado um som ao equipar as armaduras Amazonite e Space.", { "text": "Sons ao equipar armaduras alterados:", "childrenListType": "ordered", "children": ["Paladium → som de ferro em vez de diamante", "Red → som de ouro em vez de diamante", "Dioptasium → som de netherita em vez de diamante"] }, "Textura da armadura Amazonite alterada.", "Texturas do lingote e do bloco de Chrome alteradas.", "Durabilidade das ferramentas alterada de 700 para 1700 e, para o Hammer de Dioptasium, de 1000 para 1400.", "Textura do lingote e do bloco de Chrome alterada.", { "text": "Durabilidade das armaduras Amazonite, Dioptasium, Multicolor e Space alterada:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "fix", "heading": "Correções:", "items": ["Multicolor Apple agora concede regeneração, cura instantânea, resistência e aumento de vida.", "Reduzidos os saques das plantações (Nether Star e Netherite).", "Traduções para francês atualizadas.", "Tradução para francês do líquido “Elixir da Vida” atualizada.", "Adicionada a exibição do preço para alterar o horário e o clima com o Chrononimbus.", "Adicionado um som ao equipar as armaduras Amazonite e Space.", { "text": "Sons ao equipar armaduras alterados:", "childrenListType": "ordered", "children": ["Paladium → som de ferro em vez de diamante", "Red → som de ouro em vez de diamante", "Dioptasium → som de netherita em vez de diamante"] }, "Textura da armadura Amazonite alterada.", "Texturas do lingote e do bloco de Chrome alteradas.", "Durabilidade das ferramentas alterada de 700 para 1700 e, para o Hammer de Dioptasium, de 1000 para 1400.", "Textura do lingote e do bloco de Chrome alterada.", { "text": "Durabilidade das armaduras Amazonite, Dioptasium, Multicolor e Space alterada:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ]
       }
     },
@@ -3175,27 +3196,27 @@ const patchnotesConfig = {
         ],
         "it": [
           { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta la ricetta dello spawner.", { "text": "Aggiunta la ricetta per ogni uovo generabile", "childrenListType": "ordered", "children": ["Tranne Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze e Bogged"] }, "Aggiunto il disco con la musica “Sweden” di C418.", "Aggiunto il nuovo boss Extermate (Warden) e un avanzamento.", "Aggiunta la struttura per affrontare Extermate nei biomi Sakura, Crimson Forest, Warped Forest e Soul Sand Valley."] },
-          { "type": "fix", "heading": "Correzioni:", "items": ["La Multicolor Apple ora applica gli effetti di rigenerazione, salute istantanea, resistenza e aumento della salute.", "Ridotti i bottini delle colture (Nether Star e Netherite).", "Aggiornate le traduzioni francesi.", "Aggiornata la traduzione francese del liquido “Elixir of Life”.", "Aggiunta la visualizzazione del prezzo per modificare ora e meteo con il Chrononimbus.", "Aggiunto un suono quando si indossano le armature Amazonite e Space.", { "text": "Modificati i suoni quando si indossano le armature:", "childrenListType": "ordered", "children": ["Paladium → suono del ferro invece del diamante", "Red → suono dell’oro invece del diamante", "Dioptasium → suono della netherite invece del diamante"] }, "Modificata la texture dell’armatura Amazonite.", "Modificate le texture del lingotto e del blocco Chrome.", "Durabilità degli strumenti modificata da 700 a 1700 e da 1000 a 1400 per l’Hammer in Dioptasium.", "Modificata la texture del lingotto e del blocco Chrome.", { "text": "Durabilità delle armature Amazonite, Dioptasium, Multicolor e Space modificata:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "fix", "heading": "Correzioni:", "items": ["La Multicolor Apple ora applica gli effetti di rigenerazione, salute istantanea, resistenza e aumento della salute.", "Ridotti i bottini delle colture (Nether Star e Netherite).", "Aggiornate le traduzioni francesi.", "Aggiornata la traduzione francese del liquido “Elisir della vita”.", "Aggiunta la visualizzazione del prezzo per modificare ora e meteo con il Chrononimbus.", "Aggiunto un suono quando si indossano le armature Amazonite e Space.", { "text": "Modificati i suoni quando si indossano le armature:", "childrenListType": "ordered", "children": ["Paladium → suono del ferro invece del diamante", "Red → suono dell’oro invece del diamante", "Dioptasium → suono della netherite invece del diamante"] }, "Modificata la texture dell’armatura Amazonite.", "Modificate le texture del lingotto e del blocco Chrome.", "Durabilità degli strumenti modificata da 700 a 1700 e da 1000 a 1400 per l’Hammer in Dioptasium.", "Modificata la texture del lingotto e del blocco Chrome.", { "text": "Durabilità delle armature Amazonite, Dioptasium, Multicolor e Space modificata:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "es": [
           { "type": "add", "heading": "Añadido:", "items": ["Añadida la receta del generador de criaturas.", { "text": "Añadida la receta de cada huevo de aparición", "childrenListType": "ordered", "children": ["Excepto Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze y Bogged"] }, "Añadido el disco con la música «Sweden» de C418.", "Añadidos el nuevo jefe Extermate (Warden) y un progreso.", "Añadida la estructura para luchar contra Extermate en los biomas Sakura, Crimson Forest, Warped Forest y Soul Sand Valley."] },
-          { "type": "fix", "heading": "Correcciones:", "items": ["La Multicolor Apple ahora aplica los efectos de regeneración, salud instantánea, resistencia y aumento de salud.", "Reducido el botín de los cultivos (Nether Star y Netherite).", "Actualizadas las traducciones al francés.", "Actualizada la traducción al francés del líquido «Elixir of Life».", "Añadida la visualización del precio para cambiar la hora y el clima con el Chrononimbus.", "Añadido un sonido al equipar las armaduras de Amazonite y Space.", { "text": "Cambiados los sonidos al equipar las armaduras:", "childrenListType": "ordered", "children": ["Paladium → sonido de hierro en lugar de diamante", "Red → sonido de oro en lugar de diamante", "Dioptasium → sonido de netherita en lugar de diamante"] }, "Cambiada la textura de la armadura de Amazonite.", "Cambiadas las texturas del lingote y el bloque de Chrome.", "Durabilidad de las herramientas cambiada de 700 a 1700 y de 1000 a 1400 para el Hammer de Dioptasium.", "Cambiada la textura del lingote y el bloque de Chrome.", { "text": "Durabilidad de las armaduras de Amazonite, Dioptasium, Multicolor y Space modificada:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "fix", "heading": "Correcciones:", "items": ["La Multicolor Apple ahora aplica los efectos de regeneración, salud instantánea, resistencia y aumento de salud.", "Reducido el botín de los cultivos (Nether Star y Netherite).", "Actualizadas las traducciones al francés.", "Actualizada la traducción al francés del líquido «Elixir de la vida».", "Añadida la visualización del precio para cambiar la hora y el clima con el Chrononimbus.", "Añadido un sonido al equipar las armaduras de Amazonite y Space.", { "text": "Cambiados los sonidos al equipar las armaduras:", "childrenListType": "ordered", "children": ["Paladium → sonido de hierro en lugar de diamante", "Red → sonido de oro en lugar de diamante", "Dioptasium → sonido de netherita en lugar de diamante"] }, "Cambiada la textura de la armadura de Amazonite.", "Cambiadas las texturas del lingote y el bloque de Chrome.", "Durabilidad de las herramientas cambiada de 700 a 1700 y de 1000 a 1400 para el Hammer de Dioptasium.", "Cambiada la textura del lingote y el bloque de Chrome.", { "text": "Durabilidad de las armaduras de Amazonite, Dioptasium, Multicolor y Space modificada:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "de": [
           { "type": "add", "heading": "Hinzugefügt:", "items": ["Rezept für den Mob-Spawner hinzugefügt.", { "text": "Rezept für jedes Spawn-Ei hinzugefügt", "childrenListType": "ordered", "children": ["Außer für Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze und Bogged"] }, "Musikdisc mit C418s Musikstück „Sweden“ hinzugefügt.", "Neuen Boss Extermate (Warden) und einen Fortschritt hinzugefügt.", "Struktur zum Kampf gegen Extermate in den Biomen Sakura, Crimson Forest, Warped Forest und Soul Sand Valley hinzugefügt."] },
-          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Multicolor Apple verleiht jetzt Regeneration, Sofortheilung, Resistenz und erhöhte Gesundheit.", "Beute aus der Landwirtschaft (Nether Star und Netherite) verringert.", "Französische Übersetzungen aktualisiert.", "Französische Übersetzung der Flüssigkeit „Elixir of Life“ aktualisiert.", "Preisanzeige zum Ändern von Zeit und Wetter mit dem Chrononimbus hinzugefügt.", "Ton beim Ausrüsten der Amazonite- und Space-Rüstung hinzugefügt.", { "text": "Ausrüstungstöne der Rüstungen geändert:", "childrenListType": "ordered", "children": ["Paladium → Eisengeräusch statt Diamant", "Red → Goldgeräusch statt Diamant", "Dioptasium → Netherite-Geräusch statt Diamant"] }, "Textur der Amazonite-Rüstung geändert.", "Texturen des Chrome-Barrens und -Blocks geändert.", "Werkzeughaltbarkeit von 700 auf 1700 und für den Dioptasium-Hammer von 1000 auf 1400 geändert.", "Textur des Chrome-Barrens und -Blocks geändert.", { "text": "Haltbarkeit der Rüstungen aus Amazonite, Dioptasium, Multicolor und Space geändert:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Multicolor Apple verleiht jetzt Regeneration, Sofortheilung, Resistenz und erhöhte Gesundheit.", "Beute aus der Landwirtschaft (Nether Star und Netherite) verringert.", "Französische Übersetzungen aktualisiert.", "Französische Übersetzung der Flüssigkeit „Elixier des Lebens“ aktualisiert.", "Preisanzeige zum Ändern von Zeit und Wetter mit dem Chrononimbus hinzugefügt.", "Ton beim Ausrüsten der Amazonite- und Space-Rüstung hinzugefügt.", { "text": "Ausrüstungstöne der Rüstungen geändert:", "childrenListType": "ordered", "children": ["Paladium → Eisengeräusch statt Diamant", "Red → Goldgeräusch statt Diamant", "Dioptasium → Netherite-Geräusch statt Diamant"] }, "Textur der Amazonite-Rüstung geändert.", "Texturen des Chrome-Barrens und -Blocks geändert.", "Werkzeughaltbarkeit von 700 auf 1700 und für den Dioptasium-Hammer von 1000 auf 1400 geändert.", "Textur des Chrome-Barrens und -Blocks geändert.", { "text": "Haltbarkeit der Rüstungen aus Amazonite, Dioptasium, Multicolor und Space geändert:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["モブスポナーのレシピを追加しました。", { "text": "各スポーンエッグのレシピを追加しました", "childrenListType": "ordered", "children": ["Sniffer、Chicken Jockey、Skeleton Horseman、Spider Jockey、Vex、Zoglin、Breeze、Bogged を除く"] }, "C418 の「Sweden」を収録した音楽ディスクを追加しました。", "新しいボス Extermate (Warden) と進捗を追加しました。", "Sakura、Crimson Forest、Warped Forest、Soul Sand Valley に Extermate と戦うための構造物を追加しました。"] },
-          { "type": "fix", "heading": "修正:", "items": ["Multicolor Apple 使用時に再生、即時回復、耐性、体力増加の効果が付与されるようになりました。", "作物から得られる戦利品 (Nether Star と Netherite) を減らしました。", "フランス語訳を更新しました。", "液体「Elixir of Life」のフランス語訳を更新しました。", "Chrononimbus で時間や天候を変更する際の価格表示を追加しました。", "Amazonite と Space の防具を装備した際の音を追加しました。", { "text": "防具を装備した際の音を変更しました:", "childrenListType": "ordered", "children": ["Paladium → ダイヤモンド音から鉄音に変更", "Red → ダイヤモンド音から金音に変更", "Dioptasium → ダイヤモンド音からネザライト音に変更"] }, "Amazonite 防具のテクスチャを変更しました。", "Chrome インゴットとブロックのテクスチャを変更しました。", "ツールの耐久値を 700 から 1700 に、Dioptasium Hammer の耐久値を 1000 から 1400 に変更しました。", "Chrome インゴットとブロックのテクスチャを変更しました。", { "text": "Amazonite、Dioptasium、Multicolor、Space 防具の耐久値を変更しました:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "add", "heading": "追加:", "items": ["モブスポナーのレシピを追加しました。", { "text": "各スポーンエッグのレシピを追加しました", "childrenListType": "ordered", "children": ["Sniffer、Chicken Jockey、Skeleton Horseman、Spider Jockey、Vex、Zoglin、Breeze、Bogged を除く"] }, "C418 の「Sweden」を収録した音楽ディスクを追加しました。", "新しいボス Extermate (Warden) と進捗を追加しました。", "サクラ、Crimson Forest、Warped Forest、Soul Sand Valley に Extermate と戦うための構造物を追加しました。"] },
+          { "type": "fix", "heading": "修正:", "items": ["Multicolor Apple 使用時に再生、即時回復、耐性、体力増加の効果が付与されるようになりました。", "作物から得られる戦利品 (Nether Star と Netherite) を減らしました。", "フランス語訳を更新しました。", "液体「生命のエリクサー」のフランス語訳を更新しました。", "Chrononimbus で時間や天候を変更する際の価格表示を追加しました。", "Amazonite と Space の防具を装備した際の音を追加しました。", { "text": "防具を装備した際の音を変更しました:", "childrenListType": "ordered", "children": ["Paladium → ダイヤモンド音から鉄音に変更", "Red → ダイヤモンド音から金音に変更", "Dioptasium → ダイヤモンド音からネザライト音に変更"] }, "Amazonite 防具のテクスチャを変更しました。", "Chrome インゴットとブロックのテクスチャを変更しました。", "ツールの耐久値を 700 から 1700 に、Dioptasium Hammer の耐久値を 1000 から 1400 に変更しました。", "Chrome インゴットとブロックのテクスチャを変更しました。", { "text": "Amazonite、Dioptasium、Multicolor、Space 防具の耐久値を変更しました:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["몹 생성기 제작법 추가", { "text": "각 생성 알의 제작법 추가", "childrenListType": "ordered", "children": ["Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze, Bogged 제외"] }, "C418의 “Sweden” 음악이 담긴 음반 추가", "신규 보스 Extermate(Warden)와 발전 과제 추가", "Sakura, Crimson Forest, Warped Forest, Soul Sand Valley 생물 군계에 Extermate 보스 전투 구조물 추가"] },
-          { "type": "fix", "heading": "수정:", "items": ["Multicolor Apple 사용 시 재생, 즉시 치유, 저항, 최대 체력 증가 효과 적용", "농작물 전리품(Nether Star 및 Netherite) 감소", "프랑스어 번역 업데이트", "“Elixir of Life” 액체의 프랑스어 번역 업데이트", "Chrononimbus에서 시간과 날씨를 변경할 때 가격 표시 추가", "Amazonite 및 Space 방어구 착용 시 소리 추가", { "text": "방어구 착용 소리 변경:", "childrenListType": "ordered", "children": ["Paladium → 다이아몬드 대신 철 소리", "Red → 다이아몬드 대신 금 소리", "Dioptasium → 다이아몬드 대신 네더라이트 소리"] }, "Amazonite 방어구 텍스처 변경", "Chrome 주괴와 블록 텍스처 변경", "도구 내구도를 700에서 1700으로, Dioptasium Hammer 내구도를 1000에서 1400으로 변경", "Chrome 주괴와 블록 텍스처 변경", { "text": "Amazonite, Dioptasium, Multicolor, Space 방어구 내구도 변경:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "add", "heading": "추가:", "items": ["몹 생성기 제작법 추가", { "text": "각 생성 알의 제작법 추가", "childrenListType": "ordered", "children": ["Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze, Bogged 제외"] }, "C418의 “Sweden” 음악이 담긴 음반 추가", "신규 보스 Extermate(Warden)와 발전 과제 추가", "사쿠라, Crimson Forest, Warped Forest, Soul Sand Valley 생물 군계에 Extermate 보스 전투 구조물 추가"] },
+          { "type": "fix", "heading": "수정:", "items": ["Multicolor Apple 사용 시 재생, 즉시 치유, 저항, 최대 체력 증가 효과 적용", "농작물 전리품(Nether Star 및 Netherite) 감소", "프랑스어 번역 업데이트", "“생명의 비약” 액체의 프랑스어 번역 업데이트", "Chrononimbus에서 시간과 날씨를 변경할 때 가격 표시 추가", "Amazonite 및 Space 방어구 착용 시 소리 추가", { "text": "방어구 착용 소리 변경:", "childrenListType": "ordered", "children": ["Paladium → 다이아몬드 대신 철 소리", "Red → 다이아몬드 대신 금 소리", "Dioptasium → 다이아몬드 대신 네더라이트 소리"] }, "Amazonite 방어구 텍스처 변경", "Chrome 주괴와 블록 텍스처 변경", "도구 내구도를 700에서 1700으로, Dioptasium Hammer 내구도를 1000에서 1400으로 변경", "Chrome 주괴와 블록 텍스처 변경", { "text": "Amazonite, Dioptasium, Multicolor, Space 방어구 내구도 변경:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ],
         "pt-br": [
           { "type": "add", "heading": "Adicionado:", "items": ["Adicionada a receita do gerador de criaturas.", { "text": "Adicionada a receita de cada ovo de criatura", "childrenListType": "ordered", "children": ["Exceto para Sniffer, Chicken Jockey, Skeleton Horseman, Spider Jockey, Vex, Zoglin, Breeze e Bogged"] }, "Adicionado o disco com a música “Sweden”, de C418.", "Adicionados o novo chefe Extermate (Warden) e um avanço.", "Adicionada a estrutura para enfrentar Extermate nos biomas Sakura, Crimson Forest, Warped Forest e Soul Sand Valley."] },
-          { "type": "fix", "heading": "Correções:", "items": ["Multicolor Apple agora concede regeneração, cura instantânea, resistência e aumento de vida.", "Reduzidos os saques das plantações (Nether Star e Netherite).", "Traduções para francês atualizadas.", "Tradução para francês do líquido “Elixir of Life” atualizada.", "Adicionada a exibição do preço para alterar o horário e o clima com o Chrononimbus.", "Adicionado um som ao equipar as armaduras Amazonite e Space.", { "text": "Sons ao equipar armaduras alterados:", "childrenListType": "ordered", "children": ["Paladium → som de ferro em vez de diamante", "Red → som de ouro em vez de diamante", "Dioptasium → som de netherita em vez de diamante"] }, "Textura da armadura Amazonite alterada.", "Texturas do lingote e do bloco de Chrome alteradas.", "Durabilidade das ferramentas alterada de 700 para 1700 e, para o Hammer de Dioptasium, de 1000 para 1400.", "Textura do lingote e do bloco de Chrome alterada.", { "text": "Durabilidade das armaduras Amazonite, Dioptasium, Multicolor e Space alterada:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
+          { "type": "fix", "heading": "Correções:", "items": ["Multicolor Apple agora concede regeneração, cura instantânea, resistência e aumento de vida.", "Reduzidos os saques das plantações (Nether Star e Netherite).", "Traduções para francês atualizadas.", "Tradução para francês do líquido “Elixir da Vida” atualizada.", "Adicionada a exibição do preço para alterar o horário e o clima com o Chrononimbus.", "Adicionado um som ao equipar as armaduras Amazonite e Space.", { "text": "Sons ao equipar armaduras alterados:", "childrenListType": "ordered", "children": ["Paladium → som de ferro em vez de diamante", "Red → som de ouro em vez de diamante", "Dioptasium → som de netherita em vez de diamante"] }, "Textura da armadura Amazonite alterada.", "Texturas do lingote e do bloco de Chrome alteradas.", "Durabilidade das ferramentas alterada de 700 para 1700 e, para o Hammer de Dioptasium, de 1000 para 1400.", "Textura do lingote e do bloco de Chrome alterada.", { "text": "Durabilidade das armaduras Amazonite, Dioptasium, Multicolor e Space alterada:", "childrenListType": "ordered", "children": ["Amazonite: 30 → 100", "Dioptasium: 15 → 150", "Multicolor: 100 → 187", "Space: 25 → 34"] }] }
         ]
       }
     },
@@ -3273,11 +3294,11 @@ const patchnotesConfig = {
           { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Übersetzung des Igniera-Erzes hinzugefügt.", "Red Apple droppen jetzt von Redwood-Blättern.", "Textur des Red-Barrens überarbeitet.", "Textur des Redwood-Holzes überarbeitet."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["残り 9 種類の木を追加しました。", { "text": "林業家の取引に苗木を追加しました", "childrenListType": "ordered", "children": ["Sakura、Enderwood、Silverwood、Prismwood、Phylotas の苗木は、マスターレベルで Igniera インゴットと交換できます。"] }, "砂粒 4 個から砂を、火薬 4 個から砂利を作るレシピを追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["残り 9 種類の木を追加しました。", { "text": "林業家の取引に苗木を追加しました", "childrenListType": "ordered", "children": ["サクラ、Enderwood、Silverwood、Prismwood、Phylotas の苗木は、マスターレベルで Igniera インゴットと交換できます。"] }, "砂粒 4 個から砂を、火薬 4 個から砂利を作るレシピを追加しました。"] },
           { "type": "fix", "heading": "修正:", "items": ["Igniera 鉱石の翻訳を追加しました。", "Red Apple が Redwood の葉からドロップするようになりました。", "Red インゴットのテクスチャを刷新しました。", "Redwood の木材テクスチャを刷新しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["나머지 나무 9종 추가", { "text": "산림업자 주민 거래에 묘목 추가", "childrenListType": "ordered", "children": ["Sakura, Enderwood, Silverwood, Prismwood, Phylotas 묘목은 마스터 레벨에서 Igniera 주괴와 교환할 수 있습니다."] }, "모래 알갱이 4개로 모래를, 화약 4개로 자갈을 만드는 제작법 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["나머지 나무 9종 추가", { "text": "산림업자 주민 거래에 묘목 추가", "childrenListType": "ordered", "children": ["사쿠라, Enderwood, Silverwood, Prismwood, Phylotas 묘목은 마스터 레벨에서 Igniera 주괴와 교환할 수 있습니다."] }, "모래 알갱이 4개로 모래를, 화약 4개로 자갈을 만드는 제작법 추가"] },
           { "type": "fix", "heading": "수정:", "items": ["Igniera 광석 번역 추가", "Red Apple이 이제 Redwood 잎에서 드롭됩니다.", "Red 주괴 텍스처 개편", "Redwood 목재 텍스처 개편"] }
         ],
         "pt-br": [
@@ -3360,11 +3381,11 @@ const patchnotesConfig = {
           { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Übersetzung des Igniera-Erzes hinzugefügt.", "Red Apple droppen jetzt von Redwood-Blättern.", "Textur des Red-Barrens überarbeitet.", "Textur des Redwood-Holzes überarbeitet."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["残り 9 種類の木を追加しました。", { "text": "林業家の取引に苗木を追加しました", "childrenListType": "ordered", "children": ["Sakura、Enderwood、Silverwood、Prismwood、Phylotas の苗木は、マスターレベルで Igniera インゴットと交換できます。"] }, "砂粒 4 個から砂を、火薬 4 個から砂利を作るレシピを追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["残り 9 種類の木を追加しました。", { "text": "林業家の取引に苗木を追加しました", "childrenListType": "ordered", "children": ["サクラ、Enderwood、Silverwood、Prismwood、Phylotas の苗木は、マスターレベルで Igniera インゴットと交換できます。"] }, "砂粒 4 個から砂を、火薬 4 個から砂利を作るレシピを追加しました。"] },
           { "type": "fix", "heading": "修正:", "items": ["Igniera 鉱石の翻訳を追加しました。", "Red Apple が Redwood の葉からドロップするようになりました。", "Red インゴットのテクスチャを刷新しました。", "Redwood の木材テクスチャを刷新しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["나머지 나무 9종 추가", { "text": "산림업자 주민 거래에 묘목 추가", "childrenListType": "ordered", "children": ["Sakura, Enderwood, Silverwood, Prismwood, Phylotas 묘목은 마스터 레벨에서 Igniera 주괴와 교환할 수 있습니다."] }, "모래 알갱이 4개로 모래를, 화약 4개로 자갈을 만드는 제작법 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["나머지 나무 9종 추가", { "text": "산림업자 주민 거래에 묘목 추가", "childrenListType": "ordered", "children": ["사쿠라, Enderwood, Silverwood, Prismwood, Phylotas 묘목은 마스터 레벨에서 Igniera 주괴와 교환할 수 있습니다."] }, "모래 알갱이 4개로 모래를, 화약 4개로 자갈을 만드는 제작법 추가"] },
           { "type": "fix", "heading": "수정:", "items": ["Igniera 광석 번역 추가", "Red Apple이 이제 Redwood 잎에서 드롭됩니다.", "Red 주괴 텍스처 개편", "Redwood 목재 텍스처 개편"] }
         ],
         "pt-br": [
@@ -3425,27 +3446,27 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Nuovo tipo di albero: Sakura, con il relativo albero e una piantina per farlo crescere.", "Nuovo bioma: Sakura Forest.", "Aggiunto il lago dell’Elixir of Life nel bioma Sakura del Nether, spesso nascosto.", "Aggiunti una barriera di ferro e una porta di vetro.", "Nuovo minerale: Igniera (per ora senza utilizzo, in arrivo).", "Aggiunta la ricetta per fabbricare cobweb con 5 fili.", "Aggiunta una ricetta per ottenere deepslate da cobbled deepslate nell’altoforno."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Nuovo tipo di albero: Sakura, con il relativo albero e una piantina per farlo crescere.", "Nuovo bioma: Foresta di Sakura.", "Aggiunto il lago dell’Elisir della vita nel bioma di Sakura del Nether, spesso nascosto.", "Aggiunti una barriera di ferro e una porta di vetro.", "Nuovo minerale: Igniera (per ora senza utilizzo, in arrivo).", "Aggiunta la ricetta per fabbricare cobweb con 5 fili.", "Aggiunta una ricetta per ottenere deepslate da cobbled deepslate nell’altoforno."] },
           { "type": "fix", "heading": "Correzioni:", "items": ["Rinnovate le texture del lingotto e del blocco Red."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Nuevo tipo de árbol: Sakura, con su árbol y un plantón para cultivarlo.", "Nuevo bioma: Sakura Forest.", "Añadido el lago de Elixir of Life en el bioma Sakura del Nether, a menudo oculto.", "Añadidos un bloque de barrera de hierro y una puerta de cristal.", "Nuevo mineral: Igniera (todavía sin uso; llegará próximamente).", "Añadida la receta para fabricar cobweb con 5 hilos.", "Añadida una receta para obtener deepslate a partir de cobbled deepslate en el alto horno."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Nuevo tipo de árbol: Sakura, con su árbol y un plantón para cultivarlo.", "Nuevo bioma: Bosque de Sakura.", "Añadido el lago del Elixir de la vida en el bioma de Sakura del Nether, a menudo oculto.", "Añadidos un bloque de barrera de hierro y una puerta de cristal.", "Nuevo mineral: Igniera (todavía sin uso; llegará próximamente).", "Añadida la receta para fabricar cobweb con 5 hilos.", "Añadida una receta para obtener deepslate a partir de cobbled deepslate en el alto horno."] },
           { "type": "fix", "heading": "Correcciones:", "items": ["Rediseñadas las texturas del lingote y el bloque Red."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Neue Baumart Sakura mit Baum und Setzling zum Anpflanzen hinzugefügt.", "Neues Biom: Sakura Forest.", "See des Elixir of Life im Sakura-Biom des Nether hinzugefügt, oft verborgen.", "Eisenbarriere und Glastür hinzugefügt.", "Neues Erz: Igniera (derzeit ohne Verwendung, kommt bald).", "Rezept für Cobweb aus 5 Fäden hinzugefügt.", "Rezept hinzugefügt, um Deepslate aus Cobbled Deepslate im Hochofen herzustellen."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Neue Baumart Sakura mit Baum und Setzling zum Anpflanzen hinzugefügt.", "Neues Biom: Sakura-Wald.", "See des Lebenselixiers im Sakura-Biom des Nether hinzugefügt, oft verborgen.", "Eisenbarriere und Glastür hinzugefügt.", "Neues Erz: Igniera (derzeit ohne Verwendung, kommt bald).", "Rezept für Cobweb aus 5 Fäden hinzugefügt.", "Rezept hinzugefügt, um Deepslate aus Cobbled Deepslate im Hochofen herzustellen."] },
           { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Texturen des Red-Barrens und -Blocks überarbeitet."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["Sakura の木と育てるための苗木を追加しました。", "新しいバイオーム: Sakura Forest。", "Nether の Sakura バイオームに Elixir of Life の湖を追加しました (隠れていることが多いです)。", "鉄のバリアブロックとガラスのドアを追加しました。", "新しい鉱石 Igniera を追加しました (現在は用途なし、近日対応予定)。", "糸 5 個から Cobweb を作るレシピを追加しました。", "溶鉱炉で Cobbled Deepslate から Deepslate を作るレシピを追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["サクラの木と育てるための苗木を追加しました。", "新しいバイオーム: サクラの森。", "ネザーのサクラバイオームに 生命のエリクサーの湖を追加しました (隠れていることが多いです)。", "鉄のバリアブロックとガラスのドアを追加しました。", "新しい鉱石 Igniera を追加しました (現在は用途なし、近日対応予定)。", "糸 5 個から Cobweb を作るレシピを追加しました。", "溶鉱炉で Cobbled Deepslate から Deepslate を作るレシピを追加しました。"] },
           { "type": "fix", "heading": "修正:", "items": ["Red インゴットとブロックのテクスチャを刷新しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["나무와 성장용 묘목이 있는 신규 Sakura 나무 유형 추가", "신규 생물 군계: Sakura Forest", "Nether의 Sakura 생물 군계에 Elixir of Life 호수 추가 (대개 숨겨져 있음)", "철 장벽 블록과 유리 문 추가", "신규 광석 Igniera 추가 (현재 용도는 없으며 추후 추가 예정)", "실 5개로 Cobweb을 만드는 제작법 추가", "용광로에서 Cobbled Deepslate로 Deepslate를 만드는 제작법 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["나무와 성장용 묘목이 있는 신규 사쿠라 나무 유형 추가", "신규 생물 군계: 사쿠라 숲", "Nether의 사쿠라 생물 군계에 생명의 비약 호수 추가 (대개 숨겨져 있음)", "철 장벽 블록과 유리 문 추가", "신규 광석 Igniera 추가 (현재 용도는 없으며 추후 추가 예정)", "실 5개로 Cobweb을 만드는 제작법 추가", "용광로에서 Cobbled Deepslate로 Deepslate를 만드는 제작법 추가"] },
           { "type": "fix", "heading": "수정:", "items": ["Red 주괴와 블록 텍스처 개편"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Novo tipo de árvore: Sakura, com sua árvore e uma muda para cultivá-la.", "Novo bioma: Sakura Forest.", "Adicionado o lago de Elixir of Life no bioma Sakura do Nether, geralmente escondido.", "Adicionados um bloco de barreira de ferro e uma porta de vidro.", "Novo minério: Igniera (ainda sem uso; em breve).", "Adicionada a receita de Cobweb com 5 linhas.", "Adicionada uma receita para obter Deepslate a partir de Cobbled Deepslate no alto-forno."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Novo tipo de árvore: Sakura, com sua árvore e uma muda para cultivá-la.", "Novo bioma: Floresta de Sakura.", "Adicionado o lago do Elixir da Vida no bioma Sakura do Nether, geralmente escondido.", "Adicionados um bloco de barreira de ferro e uma porta de vidro.", "Novo minério: Igniera (ainda sem uso; em breve).", "Adicionada a receita de Cobweb com 5 linhas.", "Adicionada uma receita para obter Deepslate a partir de Cobbled Deepslate no alto-forno."] },
           { "type": "fix", "heading": "Correções:", "items": ["Texturas do lingote e do bloco Red reformuladas."] }
         ]
       }
@@ -3502,27 +3523,27 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Nuovo tipo di albero: Sakura, con il relativo albero e una piantina per farlo crescere.", "Nuovo bioma: Sakura Forest.", "Aggiunto il lago dell’Elixir of Life nel bioma Sakura del Nether, spesso nascosto.", "Aggiunti una barriera di ferro e una porta di vetro.", "Nuovo minerale: Igniera (per ora senza utilizzo, in arrivo).", "Aggiunta la ricetta per fabbricare cobweb con 5 fili.", "Aggiunta una ricetta per ottenere deepslate da cobbled deepslate nell’altoforno."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Nuovo tipo di albero: Sakura, con il relativo albero e una piantina per farlo crescere.", "Nuovo bioma: Foresta di Sakura.", "Aggiunto il lago dell’Elisir della vita nel bioma di Sakura del Nether, spesso nascosto.", "Aggiunti una barriera di ferro e una porta di vetro.", "Nuovo minerale: Igniera (per ora senza utilizzo, in arrivo).", "Aggiunta la ricetta per fabbricare cobweb con 5 fili.", "Aggiunta una ricetta per ottenere deepslate da cobbled deepslate nell’altoforno."] },
           { "type": "fix", "heading": "Correzioni:", "items": ["Rinnovate le texture del lingotto e del blocco Red."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Nuevo tipo de árbol: Sakura, con su árbol y un plantón para cultivarlo.", "Nuevo bioma: Sakura Forest.", "Añadido el lago de Elixir of Life en el bioma Sakura del Nether, a menudo oculto.", "Añadidos un bloque de barrera de hierro y una puerta de cristal.", "Nuevo mineral: Igniera (todavía sin uso; llegará próximamente).", "Añadida la receta para fabricar cobweb con 5 hilos.", "Añadida una receta para obtener deepslate a partir de cobbled deepslate en el alto horno."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Nuevo tipo de árbol: Sakura, con su árbol y un plantón para cultivarlo.", "Nuevo bioma: Bosque de Sakura.", "Añadido el lago del Elixir de la vida en el bioma de Sakura del Nether, a menudo oculto.", "Añadidos un bloque de barrera de hierro y una puerta de cristal.", "Nuevo mineral: Igniera (todavía sin uso; llegará próximamente).", "Añadida la receta para fabricar cobweb con 5 hilos.", "Añadida una receta para obtener deepslate a partir de cobbled deepslate en el alto horno."] },
           { "type": "fix", "heading": "Correcciones:", "items": ["Rediseñadas las texturas del lingote y el bloque Red."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Neue Baumart Sakura mit Baum und Setzling zum Anpflanzen hinzugefügt.", "Neues Biom: Sakura Forest.", "See des Elixir of Life im Sakura-Biom des Nether hinzugefügt, oft verborgen.", "Eisenbarriere und Glastür hinzugefügt.", "Neues Erz: Igniera (derzeit ohne Verwendung, kommt bald).", "Rezept für Cobweb aus 5 Fäden hinzugefügt.", "Rezept hinzugefügt, um Deepslate aus Cobbled Deepslate im Hochofen herzustellen."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Neue Baumart Sakura mit Baum und Setzling zum Anpflanzen hinzugefügt.", "Neues Biom: Sakura-Wald.", "See des Lebenselixiers im Sakura-Biom des Nether hinzugefügt, oft verborgen.", "Eisenbarriere und Glastür hinzugefügt.", "Neues Erz: Igniera (derzeit ohne Verwendung, kommt bald).", "Rezept für Cobweb aus 5 Fäden hinzugefügt.", "Rezept hinzugefügt, um Deepslate aus Cobbled Deepslate im Hochofen herzustellen."] },
           { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Texturen des Red-Barrens und -Blocks überarbeitet."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["Sakura の木と育てるための苗木を追加しました。", "新しいバイオーム: Sakura Forest。", "Nether の Sakura バイオームに Elixir of Life の湖を追加しました (隠れていることが多いです)。", "鉄のバリアブロックとガラスのドアを追加しました。", "新しい鉱石 Igniera を追加しました (現在は用途なし、近日対応予定)。", "糸 5 個から Cobweb を作るレシピを追加しました。", "溶鉱炉で Cobbled Deepslate から Deepslate を作るレシピを追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["サクラの木と育てるための苗木を追加しました。", "新しいバイオーム: サクラの森。", "ネザーのサクラバイオームに 生命のエリクサーの湖を追加しました (隠れていることが多いです)。", "鉄のバリアブロックとガラスのドアを追加しました。", "新しい鉱石 Igniera を追加しました (現在は用途なし、近日対応予定)。", "糸 5 個から Cobweb を作るレシピを追加しました。", "溶鉱炉で Cobbled Deepslate から Deepslate を作るレシピを追加しました。"] },
           { "type": "fix", "heading": "修正:", "items": ["Red インゴットとブロックのテクスチャを刷新しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["나무와 성장용 묘목이 있는 신규 Sakura 나무 유형 추가", "신규 생물 군계: Sakura Forest", "Nether의 Sakura 생물 군계에 Elixir of Life 호수 추가 (대개 숨겨져 있음)", "철 장벽 블록과 유리 문 추가", "신규 광석 Igniera 추가 (현재 용도는 없으며 추후 추가 예정)", "실 5개로 Cobweb을 만드는 제작법 추가", "용광로에서 Cobbled Deepslate로 Deepslate를 만드는 제작법 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["나무와 성장용 묘목이 있는 신규 사쿠라 나무 유형 추가", "신규 생물 군계: 사쿠라 숲", "Nether의 사쿠라 생물 군계에 생명의 비약 호수 추가 (대개 숨겨져 있음)", "철 장벽 블록과 유리 문 추가", "신규 광석 Igniera 추가 (현재 용도는 없으며 추후 추가 예정)", "실 5개로 Cobweb을 만드는 제작법 추가", "용광로에서 Cobbled Deepslate로 Deepslate를 만드는 제작법 추가"] },
           { "type": "fix", "heading": "수정:", "items": ["Red 주괴와 블록 텍스처 개편"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Novo tipo de árvore: Sakura, com sua árvore e uma muda para cultivá-la.", "Novo bioma: Sakura Forest.", "Adicionado o lago de Elixir of Life no bioma Sakura do Nether, geralmente escondido.", "Adicionados um bloco de barreira de ferro e uma porta de vidro.", "Novo minério: Igniera (ainda sem uso; em breve).", "Adicionada a receita de Cobweb com 5 linhas.", "Adicionada uma receita para obter Deepslate a partir de Cobbled Deepslate no alto-forno."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Novo tipo de árvore: Sakura, com sua árvore e uma muda para cultivá-la.", "Novo bioma: Floresta de Sakura.", "Adicionado o lago do Elixir da Vida no bioma Sakura do Nether, geralmente escondido.", "Adicionados um bloco de barreira de ferro e uma porta de vidro.", "Novo minério: Igniera (ainda sem uso; em breve).", "Adicionada a receita de Cobweb com 5 linhas.", "Adicionada uma receita para obter Deepslate a partir de Cobbled Deepslate no alto-forno."] },
           { "type": "fix", "heading": "Correções:", "items": ["Texturas do lingote e do bloco Red reformuladas."] }
         ]
       }
@@ -3704,7 +3725,7 @@ const patchnotesConfig = {
             "Aggiunto un coltello da cucina.",
             "Aggiunta una luce spettrale.",
             "Aggiunti 3 blocchi della mod Blockus di brandcraft per Fabric (con credito sul blocco).",
-            "Aggiunto un nuovo liquido: “Elixir of Life”."
+            "Aggiunto un nuovo liquido: “Elisir della vita”."
           ] },
           { "type": "fix", "heading": "Correzioni:", "items": ["Corrette le traduzioni delle versioni precedenti.", "Nella versione francese, rinominati Water Flower in Aqualo, Sky Flower in Cielyna e Light Flower in Lumieros.", "Corretta la traduzione francese del sale, che mostrava “Salt”.", "Ridotti gli oggetti rilasciati rompendo un blocco di palma.", "Leggermente modificata la texture del tronco Prismwood."] }
         ],
@@ -3716,7 +3737,7 @@ const patchnotesConfig = {
             "Añadido un cuchillo de cocina.",
             "Añadida una luz espectral.",
             "Añadidos 3 bloques del mod Blockus de brandcraft para Fabric (con el crédito en el bloque).",
-            "Añadido un nuevo líquido: «Elixir of Life»."
+            "Añadido un nuevo líquido: «Elixir de la vida»."
           ] },
           { "type": "fix", "heading": "Correcciones:", "items": ["Corregidas las traducciones de las versiones anteriores.", "En francés, se cambiaron los nombres de Water Flower a Aqualo, Sky Flower a Cielyna y Light Flower a Lumieros.", "Corregida la traducción al francés de la sal, que mostraba «Salt».", "Reducidos los objetos que sueltan los bloques de palmera al romperse.", "Retocada ligeramente la textura del tronco Prismwood."] }
         ],
@@ -3728,7 +3749,7 @@ const patchnotesConfig = {
             "Küchenmesser hinzugefügt.",
             "Spektrallicht hinzugefügt.",
             "3 Blöcke aus der Mod Blockus von brandcraft für Fabric hinzugefügt (mit Namensnennung am Block).",
-            "Neue Flüssigkeit „Elixir of Life“ hinzugefügt."
+            "Neue Flüssigkeit „Elixier des Lebens“ hinzugefügt."
           ] },
           { "type": "fix", "heading": "Fehlerbehebungen:", "items": ["Übersetzungen älterer Versionen korrigiert.", "Die französischen Namen der Water Flower, Sky Flower und Light Flower in Aqualo, Cielyna und Lumieros geändert.", "Französische Übersetzung von Salz korrigiert, die zuvor „Salt“ anzeigte.", "Drops beim Abbau eines Palmenblocks verringert.", "Textur des Prismwood-Stamms leicht geändert."] }
         ],
@@ -3740,7 +3761,7 @@ const patchnotesConfig = {
             "料理用ナイフを追加しました。",
             "スペクトルライトを追加しました。",
             "brandcraft による Fabric 用 Mod「Blockus」のブロックを 3 種追加しました (ブロックにクレジット表記あり)。",
-            "新しい液体「Elixir of Life」を追加しました。"
+            "新しい液体「生命のエリクサー」を追加しました。"
           ] },
           { "type": "fix", "heading": "修正:", "items": ["旧バージョンの翻訳を修正しました。", "フランス語版で Water Flower を Aqualo、Sky Flower を Cielyna、Light Flower を Lumieros に改名しました。", "フランス語版で「Salt」と表示されていた塩の翻訳を修正しました。", "ヤシのブロックを壊したときのドロップ数を減らしました。", "Prismwood の原木テクスチャを少し変更しました。"] }
         ],
@@ -3752,7 +3773,7 @@ const patchnotesConfig = {
             "요리용 칼 추가",
             "스펙트럼 빛 추가",
             "Fabric용 brandcraft의 다른 모드 “Blockus” 블록 3종 추가 (블록에 출처 표기)",
-            "새로운 액체 “Elixir of Life” 추가"
+            "새로운 액체 “생명의 비약” 추가"
           ] },
           { "type": "fix", "heading": "수정:", "items": ["이전 버전의 번역 수정", "프랑스어 버전에서 Water Flower를 Aqualo, Sky Flower를 Cielyna, Light Flower를 Lumieros로 이름 변경", "프랑스어에서 “Salt”로 표시되던 소금 번역 수정", "야자나무 블록을 부술 때 나오는 아이템 수 감소", "Prismwood 원목 텍스처를 약간 변경"] }
         ],
@@ -3764,7 +3785,7 @@ const patchnotesConfig = {
             "Adicionada uma faca de cozinha.",
             "Adicionada uma luz espectral.",
             "Adicionados 3 blocos do mod Blockus, de brandcraft para Fabric (com crédito no bloco).",
-            "Adicionado um novo líquido: “Elixir of Life”."
+            "Adicionado um novo líquido: “Elixir da Vida”."
           ] },
           { "type": "fix", "heading": "Correções:", "items": ["Corrigidas as traduções das versões antigas.", "Na versão francesa, Water Flower foi renomeada para Aqualo, Sky Flower para Cielyna e Light Flower para Lumieros.", "Corrigida a tradução francesa de sal, que exibia “Salt”.", "Reduzidos os itens obtidos ao quebrar um bloco de palmeira.", "Textura do tronco Prismwood ligeiramente alterada."] }
         ]
@@ -3936,13 +3957,13 @@ const patchnotesConfig = {
             "type": "add",
             "heading": "Ajout :",
             "items": [
-              "Ajout du grain de sable",
-              "Ajout du forge élément",
-              "Ajout des craft de chaque model d'armure ( armor trims)",
-              "Ajout du craft du gilded blackstone",
-              "Ajout d'une nouvelle culture « graine de netherite » craftable dans le feu de camp avec une fire flower ou une graine de torche-fleur entouré de netherrack",
-              "Ajout de la poudre de netherite permet de crafter avec 9 poudre un fragment de netherite",
-              "Ajout de la boule de slime aquatique obtenable sur les noyé ( drowned )"
+              "Ajout d'un grain de sable",
+              "Ajout de Forge Element",
+              "Ajout des recettes pour chaque ornement d'armure",
+              "Ajout de la recette de la pierre noire dorée",
+              "Ajout d'une nouvelle culture « graine de Netherite », obtenue au feu de camp avec une fleur de feu ou une graine de fleur de torche entourée de roche du Nether",
+              "Ajout de poudre de Netherite, permettant de fabriquer un fragment de Netherite avec 9 poudres",
+              "Ajout d'une boule de slime aquatique, obtenue auprès des noyés"
             ]
           },
           {
@@ -3978,27 +3999,27 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunto il granello di sabbia.", "Aggiunto il Forge Element.", "Aggiunte le ricette per tutti i modelli di armatura (armor trims).", "Aggiunta la ricetta per la Gilded Blackstone.", "Aggiunta la nuova coltura “Netherite Seed”, ottenibile al falò con una Fire Flower o un seme di Torchflower circondato da netherrack.", "Aggiunta la polvere di Netherite: 9 unità possono essere usate per fabbricare un frammento di Netherite.", "Aggiunta la palla di Aquatic Slime, ottenibile dai Drowned."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunto un granello di sabbia.", "Aggiunto Forge Element.", "Aggiunte le ricette per tutte le decorazioni per armatura.", "Aggiunta la ricetta per la pietranera dorata.", "Aggiunta la nuova coltura “seme di Netherite”, ottenibile al falò con un Fiore di fuoco o un seme di fiorditorcia circondato da roccia del Nether.", "Aggiunta la polvere di Netherite: con 9 unità si può fabbricare un frammento di Netherite.", "Aggiunta la palla di slime acquatico, ottenibile dagli annegati."] },
           { "type": "fix", "heading": "Modifiche:", "items": ["Modificate le texture del lingotto e del piccone in Paladium.", "Modificata la texture della sabbia arancione (ora meno intensa)."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Añadido el grano de arena.", "Añadido el Forge Element.", "Añadidas recetas para todos los adornos de armadura (armor trims).", "Añadida la receta de Gilded Blackstone.", "Añadido el nuevo cultivo «Netherite Seed», que se obtiene en una hoguera con una Fire Flower o una semilla de Torchflower rodeada de netherrack.", "Añadido polvo de Netherite: se pueden fabricar fragmentos de Netherite con 9 unidades.", "Añadida la bola de Aquatic Slime, que se obtiene de los Drowned."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadido un grano de arena.", "Añadido Forge Element.", "Añadidas recetas para todos los adornos de armadura.", "Añadida la receta de la piedra negra dorada.", "Añadido el nuevo cultivo «semilla de Netherita», que se obtiene en una hoguera con una flor de fuego o una semilla de flor antorcha rodeada de roca del Nether.", "Añadido polvo de Netherita: con 9 unidades se puede fabricar un fragmento de Netherita.", "Añadida la bola de slime acuático, que se obtiene de los ahogados."] },
           { "type": "fix", "heading": "Modificaciones:", "items": ["Cambiadas las texturas del lingote y el pico de Paladium.", "Cambiada la textura de la arena naranja (menos intensa)."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Sandkorn hinzugefügt.", "Forge Element hinzugefügt.", "Rezepte für alle Rüstungsverzierungen hinzugefügt.", "Rezept für Gilded Blackstone hinzugefügt.", "Neue Nutzpflanze „Netherite Seed“ hinzugefügt, am Lagerfeuer aus einer Fire Flower oder einem Torchflower-Samen mit umgebendem Netherrack herstellbar.", "Netherite-Pulver hinzugefügt: Aus 9 Pulvern lässt sich ein Netherite-Fragment herstellen.", "Aquatic-Slime-Kugel hinzugefügt, erhältlich von Drowned."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Sandkorn hinzugefügt.", "Forge Element hinzugefügt.", "Rezepte für alle Rüstungsverzierungen hinzugefügt.", "Rezept für vergoldeten Schwarzstein hinzugefügt.", "Neue Nutzpflanze „Netherit-Samen“ hinzugefügt, am Lagerfeuer aus einer Feuerblume oder einem Fackelliliensamen mit umgebendem Netherrack herstellbar.", "Netherit-Pulver hinzugefügt: Aus 9 Pulvern lässt sich ein Netherit-Fragment herstellen.", "Kugel aus aquatischem Schleim hinzugefügt, erhältlich von Ertrunkenen."] },
           { "type": "fix", "heading": "Änderungen:", "items": ["Texturen des Paladium-Barrens und der Spitzhacke geändert.", "Textur des orangenen Sands geändert (weniger grell)."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["砂粒を追加しました。", "Forge Element を追加しました。", "すべての防具トリムのレシピを追加しました。", "Gilded Blackstone のレシピを追加しました。", "新しい作物 Netherite Seed を追加しました (Fire Flower または Torchflower の種をネザーラックで囲み、焚き火で作成)。", "ネザライトの粉を追加しました。粉 9 個からネザライトの欠片を作れます。", "ドラウンドから入手できる Aquatic Slime のボールを追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["砂粒を追加しました。", "Forge Element を追加しました。", "すべての防具装飾のレシピを追加しました。", "きらめくブラックストーンのレシピを追加しました。", "新しい作物「ネザライトの種」を追加しました (火の花またはトーチフラワーの種をネザーラックで囲み、焚き火で作成)。", "ネザライトの粉を追加しました。粉 9 個からネザライトの欠片を作れます。", "水生スライムのボールを追加しました。ドラウンドから入手できます。"] },
           { "type": "fix", "heading": "変更:", "items": ["Paladium インゴットとツルハシのテクスチャを変更しました。", "オレンジ色の砂のテクスチャを変更しました (刺激を弱めました)。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["모래 알갱이 추가", "Forge Element 추가", "모든 방어구 장식(armor trims) 제작법 추가", "Gilded Blackstone 제작법 추가", "모닥불에서 Fire Flower 또는 Torchflower 씨앗을 네더랙으로 둘러 Netherite Seed 작물을 만들 수 있도록 추가", "Netherite 가루 추가 (가루 9개로 Netherite 조각 제작 가능)", "Drowned에게서 얻을 수 있는 Aquatic Slime 공 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["모래 알갱이 추가", "Forge Element 추가", "모든 방어구 장식 제작법 추가", "금빛 블랙스톤 제작법 추가", "모닥불에서 불의 꽃 또는 횃불꽃 씨앗을 네더랙으로 둘러 네더라이트 씨앗 작물을 만들 수 있도록 추가", "네더라이트 가루 추가 (가루 9개로 네더라이트 조각 제작 가능)", "수생 슬라임 공 추가 (드라운드에게서 획득 가능)"] },
           { "type": "fix", "heading": "변경:", "items": ["Paladium 주괴와 곡괭이 텍스처 변경", "주황색 모래 텍스처 변경 (덜 자극적으로 조정)"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado o grão de areia.", "Adicionado o Forge Element.", "Adicionadas receitas para todos os adornos de armadura (armor trims).", "Adicionada a receita de Gilded Blackstone.", "Adicionada a nova plantação Netherite Seed, fabricável na fogueira com uma Fire Flower ou uma semente de Torchflower cercada por netherrack.", "Adicionado pó de Netherite: 9 pós podem ser usados para fabricar um fragmento de Netherite.", "Adicionada a bola de Aquatic Slime, obtida de Drowned."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado um grão de areia.", "Adicionado Forge Element.", "Adicionadas receitas para todos os adornos de armadura.", "Adicionada a receita de pedra-negra dourada.", "Adicionada a nova plantação «semente de Netherita», fabricável na fogueira com uma flor de fogo ou uma semente de flor-tocha cercada por rocha do Nether.", "Adicionado pó de Netherita: 9 unidades podem ser usadas para fabricar um fragmento de Netherita.", "Adicionada a bola de slime aquático, obtida de afogados."] },
           { "type": "fix", "heading": "Modificações:", "items": ["Texturas do lingote e da picareta de Paladium alteradas.", "Textura da areia laranja alterada (menos intensa)."] }
         ]
       }
@@ -4020,7 +4041,7 @@ const patchnotesConfig = {
                 "text": "Ajout d'un champignon explosif",
                 "childrenListType": "ordered",
                 "children": [
-                  "Trouvable dans les forêts, jungles et jungles clairsemée"
+                  "Trouvable dans les forêts, les jungles et les jungles clairsemées"
                 ]
               },
               "Ajout d'un nouvel onglet créatif avec tout les minerai et outils",
@@ -4032,8 +4053,8 @@ const patchnotesConfig = {
                 ]
               },
               "Ajout d'informations sur les minerai, pioche et outil grâce à Jei",
-              "Ajout de l'apparition du champignon fluorescent dans les biomes marais et mangroves en plus des lush caves",
-              "Ajout des escalier, dalle et muret de crystal d'azur et phoriste"
+              "Ajout de l'apparition du champignon fluorescent dans les marais, les mangroves et les cavernes luxuriantes",
+              "Ajout d'escaliers, de dalles et de murets en cristal d'azur et en cristal de Phoriste"
             ]
           },
           {
@@ -4041,10 +4062,10 @@ const patchnotesConfig = {
             "heading": "Modification :",
             "items": [
               "Changement de la texture de l'épée en paladium",
-              "Correction du hammer en amazonite dont lequel il ne minai pas en 3*3 comme les autres hammer",
-              "Correction du hammer en amazonite qui avait un niveau de minage de 3 au lieu de 2",
-              "Ajustement du spawn du champignons fluorescent",
-              "Correction du temps de minage du minerai d'amazonite"
+              "Correction du marteau en Amazonite dont lequel il ne minai pas en 3*3 comme les autres marteau",
+              "Correction du marteau en Amazonite qui avait un niveau de minage de 3 au lieu de 2",
+              "Ajustement de l'apparition du champignons fluorescent",
+              "Correction du temps de minage du minerai d'Amazonite"
             ]
           }
         ],
@@ -4071,7 +4092,7 @@ const patchnotesConfig = {
               },
               "Added information on minerals, pickaxe and tool thanks to Jei",
               "Added the appearance of fluorescent mushroom in swamps and mangroves as well as lush caves",
-              "Added stairs, slabs and wall of crystal azur and phoriste"
+              "Added stairs, slabs, and walls made of azure crystal and Phoriste crystal"
             ]
           },
           {
@@ -4087,27 +4108,27 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunto un nuovo minerale, Dioptasium, con strumenti di livello 4.", { "text": "Aggiunto un fungo esplosivo", "childrenListType": "ordered", "children": ["Si trova nelle foreste, nelle giungle e nelle giungle rade."] }, "Aggiunta una nuova scheda creativa con tutti i minerali e gli strumenti.", { "text": "Aggiunto un nuovo liquido, l’acqua velenosa", "childrenListType": "ordered", "children": ["Si trova nelle paludi e nelle mangrovie."] }, "Aggiunte informazioni su minerali, picconi e strumenti tramite JEI.", "Aggiunta la generazione del fungo fluorescente nelle paludi e nelle mangrovie, oltre che nelle Lush Caves.", "Aggiunte scale, lastre e muretti di cristallo Azur e Phoriste."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunto un nuovo minerale, Dioptasium, con strumenti di livello 4.", { "text": "Aggiunto un fungo esplosivo", "childrenListType": "ordered", "children": ["Si trova nelle foreste, nelle giungle e nelle giungle rade."] }, "Aggiunta una nuova scheda creativa con tutti i minerali e gli strumenti.", { "text": "Aggiunto un nuovo liquido, l’acqua velenosa", "childrenListType": "ordered", "children": ["Si trova nelle paludi e nelle mangrovie."] }, "Aggiunte informazioni su minerali, picconi e strumenti tramite JEI.", "Aggiunta la generazione del fungo fluorescente nelle paludi, nelle mangrovie e nelle grotte lussureggianti.", "Aggiunte scale, lastre e muretti di cristallo azzurro e di cristallo di Phoriste."] },
           { "type": "fix", "heading": "Modifiche:", "items": ["Modificata la texture della spada in Paladium.", "Corretto l’Hammer in Amazonite, che non scavava in un’area 3×3 come gli altri martelli.", "Corretto il livello di estrazione dell’Hammer in Amazonite, che era 3 anziché 2.", "Regolata la generazione del fungo fluorescente.", "Corretto il tempo di estrazione del minerale di Amazonite."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Añadido un nuevo mineral, Dioptasium, con herramientas de nivel 4.", { "text": "Añadido un hongo explosivo", "childrenListType": "ordered", "children": ["Se encuentra en bosques, junglas y junglas dispersas."] }, "Añadida una nueva pestaña creativa con todos los minerales y herramientas.", { "text": "Añadido un nuevo líquido: agua venenosa", "childrenListType": "ordered", "children": ["Se encuentra en pantanos y manglares."] }, "Añadida información sobre minerales, picos y herramientas mediante JEI.", "Añadida la aparición del hongo fluorescente en pantanos y manglares, además de Lush Caves.", "Añadidas escaleras, losas y muretes de cristal Azur y Phoriste."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadido un nuevo mineral, Dioptasium, con herramientas de nivel 4.", { "text": "Añadido un hongo explosivo", "childrenListType": "ordered", "children": ["Se encuentra en bosques, junglas y junglas dispersas."] }, "Añadida una nueva pestaña creativa con todos los minerales y herramientas.", { "text": "Añadido un nuevo líquido: agua venenosa", "childrenListType": "ordered", "children": ["Se encuentra en pantanos y manglares."] }, "Añadida información sobre minerales, picos y herramientas mediante JEI.", "Añadida la aparición del hongo fluorescente en pantanos y manglares, además de las cuevas frondosas.", "Añadidas escaleras, losas y muretes de cristal azul y de cristal de Phoriste."] },
           { "type": "fix", "heading": "Modificaciones:", "items": ["Cambiada la textura de la espada de Paladium.", "Corregido el Hammer de Amazonite, que no minaba en un área de 3×3 como los demás martillos.", "Corregido el nivel de minería del Hammer de Amazonite, que era 3 en vez de 2.", "Ajustada la aparición del hongo fluorescente.", "Corregido el tiempo de minería del mineral de Amazonite."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Neues Erz Dioptasium hinzugefügt; Werkzeuge daraus haben Stufe 4.", { "text": "Explosiven Pilz hinzugefügt", "childrenListType": "ordered", "children": ["In Wäldern, Dschungeln und lichten Dschungeln zu finden."] }, "Neuen Kreativ-Tab mit allen Erzen und Werkzeugen hinzugefügt.", { "text": "Neue Flüssigkeit „Poisonous Water“ hinzugefügt", "childrenListType": "ordered", "children": ["In Sümpfen und Mangroven zu finden."] }, "Informationen zu Erzen, Spitzhacken und Werkzeugen über JEI hinzugefügt.", "Fluoreszierenden Pilz auch in Sümpfen und Mangroven neben Lush Caves generiert.", "Treppen, Platten und Mauern aus Azur- und Phoriste-Kristall hinzugefügt."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Neues Erz Dioptasium hinzugefügt; Werkzeuge daraus haben Stufe 4.", { "text": "Explosiven Pilz hinzugefügt", "childrenListType": "ordered", "children": ["In Wäldern, Dschungeln und lichten Dschungeln zu finden."] }, "Neuen Kreativ-Tab mit allen Erzen und Werkzeugen hinzugefügt.", { "text": "Neue Flüssigkeit „giftiges Wasser“ hinzugefügt", "childrenListType": "ordered", "children": ["In Sümpfen und Mangroven zu finden."] }, "Informationen zu Erzen, Spitzhacken und Werkzeugen über JEI hinzugefügt.", "Fluoreszierenden Pilz auch in Sümpfen, Mangroven und üppigen Höhlen generiert.", "Treppen, Platten und Mauern aus azurblauem Kristall und Phoriste-Kristall hinzugefügt."] },
           { "type": "fix", "heading": "Änderungen:", "items": ["Textur des Paladium-Schwerts geändert.", "Amazonite-Hammer korrigiert, der wie die anderen Hämmer nicht in einem 3×3-Bereich abbaute.", "Abbaustufe des Amazonite-Hammers von 3 auf 2 korrigiert.", "Generierung des fluoreszierenden Pilzes angepasst.", "Abbauzeit des Amazonite-Erzes korrigiert."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["新しい鉱石 Dioptasium を追加しました。ツールレベルは 4 です。", { "text": "爆発するキノコを追加しました", "childrenListType": "ordered", "children": ["森林、ジャングル、まばらなジャングルで見つかります。"] }, "すべての鉱石とツールを含む新しいクリエイティブタブを追加しました。", { "text": "新しい液体「Poisonous Water」を追加しました", "childrenListType": "ordered", "children": ["沼地やマングローブで見つかります。"] }, "JEI で鉱石、ツルハシ、ツールの情報を表示するようにしました。", "Lush Caves に加えて、沼地とマングローブにも蛍光キノコが生成されるようになりました。", "Azur と Phoriste の水晶ブロックに階段、ハーフブロック、塀を追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["新しい鉱石 Dioptasium を追加しました。ツールレベルは 4 です。", { "text": "爆発するキノコを追加しました", "childrenListType": "ordered", "children": ["森林、ジャングル、まばらなジャングルで見つかります。"] }, "すべての鉱石とツールを含む新しいクリエイティブタブを追加しました。", { "text": "新しい液体「有毒な水」を追加しました", "childrenListType": "ordered", "children": ["沼地やマングローブで見つかります。"] }, "JEI で鉱石、ツルハシ、ツールの情報を表示するようにしました。", "繁茂した洞窟に加えて、沼地とマングローブにも蛍光キノコが生成されるようになりました。", "青色の結晶とPhoristeの結晶でできた階段、ハーフブロック、塐を追加しました。"] },
           { "type": "fix", "heading": "変更:", "items": ["Paladium の剣のテクスチャを変更しました。", "他のハンマーのように 3×3 範囲を採掘できなかった Amazonite Hammer を修正しました。", "Amazonite Hammer の採掘レベルが 2 ではなく 3 だった問題を修正しました。", "蛍光キノコの生成を調整しました。", "Amazonite 鉱石の採掘時間を修正しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["도구 등급이 4인 신규 광석 Dioptasium 추가", { "text": "폭발 버섯 추가", "childrenListType": "ordered", "children": ["숲, 정글, 드문드문한 정글에서 발견됩니다."] }, "모든 광석과 도구가 포함된 새로운 크리에이티브 탭 추가", { "text": "신규 액체 Poisonous Water 추가", "childrenListType": "ordered", "children": ["늪과 맹그로브에서 발견됩니다."] }, "JEI를 통해 광석, 곡괭이, 도구 정보 추가", "Lush Caves뿐 아니라 늪과 맹그로브에도 형광 버섯 생성 추가", "Azur 및 Phoriste 수정 계단, 반 블록, 담장 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["도구 등급이 4인 신규 광석 Dioptasium 추가", { "text": "폭발 버섯 추가", "childrenListType": "ordered", "children": ["숲, 정글, 드문드문한 정글에서 발견됩니다."] }, "모든 광석과 도구가 포함된 새로운 크리에이티브 탭 추가", { "text": "신규 액체 독성 물 추가", "childrenListType": "ordered", "children": ["늪과 맹그로브에서 발견됩니다."] }, "JEI를 통해 광석, 곡괭이, 도구 정보 추가", "무성한 동굴뿐 아니라 늪과 맹그로브에도 형광 버섯 생성 추가", "하늘색 수정과 Phoriste 수정으로 만든 계단, 반 블록, 담장 추가"] },
           { "type": "fix", "heading": "변경:", "items": ["Paladium 검 텍스처 변경", "다른 망치처럼 3×3 범위를 채굴하지 못하던 Amazonite Hammer 수정", "Amazonite Hammer의 채굴 등급이 2가 아닌 3이던 문제 수정", "형광 버섯 생성 조정", "Amazonite 광석 채굴 시간 수정"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado o novo minério Dioptasium, cujas ferramentas têm nível 4.", { "text": "Adicionado um cogumelo explosivo", "childrenListType": "ordered", "children": ["Encontrado em florestas, selvas e selvas esparsas."] }, "Adicionada uma nova aba criativa com todos os minérios e ferramentas.", { "text": "Adicionado um novo líquido, Poisonous Water", "childrenListType": "ordered", "children": ["Encontrado em pântanos e manguezais."] }, "Adicionadas informações sobre minérios, picaretas e ferramentas pelo JEI.", "Adicionada a geração do cogumelo fluorescente em pântanos e manguezais, além das Lush Caves.", "Adicionadas escadas, lajes e muros de cristal Azur e Phoriste."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionado o novo minério Dioptasium, cujas ferramentas têm nível 4.", { "text": "Adicionado um cogumelo explosivo", "childrenListType": "ordered", "children": ["Encontrado em florestas, selvas e selvas esparsas."] }, "Adicionada uma nova aba criativa com todos os minérios e ferramentas.", { "text": "Adicionado um novo líquido, água venenosa", "childrenListType": "ordered", "children": ["Encontrado em pântanos e manguezais."] }, "Adicionadas informações sobre minérios, picaretas e ferramentas pelo JEI.", "Adicionada a geração do cogumelo fluorescente em pântanos e manguezais, além das cavernas exuberantes.", "Adicionadas escadas, lajes e muros de cristal azul e de cristal de Phoriste."] },
           { "type": "fix", "heading": "Modificações:", "items": ["Textura da espada de Paladium alterada.", "Corrigido o Hammer de Amazonite, que não minerava em uma área 3×3 como os outros martelos.", "Corrigido o nível de mineração do Hammer de Amazonite, que era 3 em vez de 2.", "Ajustada a geração do cogumelo fluorescente.", "Corrigido o tempo de mineração do minério de Amazonite."] }
         ]
       }
@@ -4125,21 +4146,21 @@ const patchnotesConfig = {
             "heading": "Ajout :",
             "items": [
               {
-                "text": "Ajout de la fleur de la mer* et du craft pour le colorant de la mer",
+                "text": "Ajout de la fleur Aqualo* et de la recette pour le colorant de la mer",
                 "childrenListType": "ordered",
                 "children": [
                   "*Fleur obtenable sur la plage"
                 ]
               },
               {
-                "text": "Ajout d'une nouvelle culture de la « nether star flower* »",
+                "text": "Ajout d'une nouvelle culture de la « fleur d'étoile du Nether* »",
                 "childrenListType": "ordered",
                 "children": [
-                  "*Culture obtenable a partir d'une graine de torche fleur et d'une nether star"
+                  "*Culture obtenable à partir d'une graine de fleur de torche et d'une étoile du Nether"
                 ]
               },
               {
-                "text": "Ajout d'un second craft pour la graine de blé marin*",
+                "text": "Ajout d'une seconde recette pour la graine de blé marin*",
                 "childrenListType": "ordered",
                 "children": [
                   "*obtenable à partir d'une graine de blé, de sel, et du colorant de la mer"
@@ -4163,24 +4184,24 @@ const patchnotesConfig = {
             "heading": "Addition :",
             "items": [
               {
-                "text": "Added a mer flower* and a craft for the mer colorant",
+                "text": "Added a Sea Flower* and a recipe for Sea dye",
                 "childrenListType": "ordered",
                 "children": [
-                  "*Mer flower obtainable on the beach"
+                  "*Sea Flower obtainable on the beach"
                 ]
               },
               {
-                "text": "Added a new culture of the “nether star flower*”",
+                "text": "Added a new crop of the “Nether Star Flower*”",
                 "childrenListType": "ordered",
                 "children": [
-                  "*Culture obtainable from a torch flower seed and a nether star"
+                  "*Crop can be grown using Torchflower Seeds and a Nether Star"
                 ]
               },
               {
-                "text": "Added a second craft for the marin ble seed*",
+                "text": "Added a second recipe for Sea Wheat seeds*",
                 "childrenListType": "ordered",
                 "children": [
-                  "*obtainable from a ble seed, salt, and mer colorant"
+                  "*obtainable from a wheat seed, salt, and Sea dye"
                 ]
               },
               "Added the structure of the first boss Colossum"
@@ -4197,54 +4218,54 @@ const patchnotesConfig = {
         ],
         "it": [
           { "type": "add", "heading": "Aggiunto:", "items": [
-            { "text": "Aggiunti il fiore Mer* e la ricetta per il colorante Mer", "childrenListType": "ordered", "children": ["*Il fiore Mer si trova sulle spiagge."] },
-            { "text": "Aggiunta una nuova coltura: “Nether Star Flower*”", "childrenListType": "ordered", "children": ["*Coltivabile usando un seme di Torchflower e una Nether Star."] },
-            { "text": "Aggiunta una seconda ricetta per il seme di Marin Ble*", "childrenListType": "ordered", "children": ["*Ottenibile da un seme di grano, sale e colorante Mer."] },
+            { "text": "Aggiunti il fiore del mare* e la ricetta per il colorante del mare", "childrenListType": "ordered", "children": ["*Il fiore del mare si trova sulle spiagge."] },
+            { "text": "Aggiunta una nuova coltura: “fiore della Stella del Nether*”", "childrenListType": "ordered", "children": ["*Coltivabile usando un seme di fiore di torcia e una Stella del Nether."] },
+            { "text": "Aggiunta una seconda ricetta per il seme di grano marino*", "childrenListType": "ordered", "children": ["*Ottenibile da un seme di grano, sale e colorante del mare."] },
             "Aggiunta la struttura del primo boss, Colossum."
           ] },
           { "type": "fix", "heading": "Modifiche:", "items": ["Ridotta la protezione dell’armatura Red.", "Aggiunta la traduzione francese dell’ultimo aggiornamento."] }
         ],
         "es": [
           { "type": "add", "heading": "Añadido:", "items": [
-            { "text": "Añadidas la flor Mer* y la receta del tinte Mer", "childrenListType": "ordered", "children": ["*La flor Mer se puede encontrar en la playa."] },
-            { "text": "Añadido un nuevo cultivo: «Nether Star Flower*»", "childrenListType": "ordered", "children": ["*Se cultiva con una semilla de Torchflower y una Nether Star."] },
-            { "text": "Añadida una segunda receta para la semilla de Marin Ble*", "childrenListType": "ordered", "children": ["*Se obtiene con una semilla de trigo, sal y tinte Mer."] },
+            { "text": "Añadidas la flor del mar* y la receta del tinte del mar", "childrenListType": "ordered", "children": ["*La flor del mar se puede encontrar en la playa."] },
+            { "text": "Añadido un nuevo cultivo: «flor de estrella del Nether*»", "childrenListType": "ordered", "children": ["*Se cultiva con una semilla de flor antorcha y una estrella del Nether."] },
+            { "text": "Añadida una segunda receta para la semilla de trigo marino*", "childrenListType": "ordered", "children": ["*Se obtiene con una semilla de trigo, sal y tinte del mar."] },
             "Añadida la estructura del primer jefe, Colossum."
           ] },
           { "type": "fix", "heading": "Modificaciones:", "items": ["Reducida la protección de la armadura Red.", "Añadida la traducción al francés de la última actualización."] }
         ],
         "de": [
           { "type": "add", "heading": "Hinzugefügt:", "items": [
-            { "text": "Mer-Blume* und Rezept für Mer-Farbstoff hinzugefügt", "childrenListType": "ordered", "children": ["*Die Mer-Blume ist am Strand erhältlich."] },
-            { "text": "Neue Nutzpflanze „Nether Star Flower*“ hinzugefügt", "childrenListType": "ordered", "children": ["*Anbaubar mit einem Torchflower-Samen und einem Nether Star."] },
-            { "text": "Zweites Rezept für Marin-Ble-Samen* hinzugefügt", "childrenListType": "ordered", "children": ["*Aus Weizensamen, Salz und Mer-Farbstoff erhältlich."] },
+            { "text": "Meeresblume* und Rezept für Meeresfarbstoff hinzugefügt", "childrenListType": "ordered", "children": ["*Die Meeresblume ist am Strand erhältlich."] },
+            { "text": "Neue Nutzpflanze „Nethersternblume*“ hinzugefügt", "childrenListType": "ordered", "children": ["*Anbaubar mit einem Fackelblumensamen und einem Netherstern."] },
+            { "text": "Zweites Rezept für Meeresweizensamen* hinzugefügt", "childrenListType": "ordered", "children": ["*Aus Weizensamen, Salz und Meeresfarbstoff erhältlich."] },
             "Struktur des ersten Bosses Colossum hinzugefügt."
           ] },
           { "type": "fix", "heading": "Änderungen:", "items": ["Schutz der Red-Rüstung verringert.", "Französische Übersetzung des letzten Updates hinzugefügt."] }
         ],
         "ja": [
           { "type": "add", "heading": "追加:", "items": [
-            { "text": "Mer Flower* と Mer の染料のレシピを追加しました", "childrenListType": "ordered", "children": ["*Mer Flower は海岸で入手できます。"] },
-            { "text": "新しい作物「Nether Star Flower*」を追加しました", "childrenListType": "ordered", "children": ["*Torchflower の種と Nether Star から栽培できます。"] },
-            { "text": "Marin Ble の種*の2つ目のレシピを追加しました", "childrenListType": "ordered", "children": ["*小麦の種、塩、Mer の染料から入手できます。"] },
+            { "text": "海の花* と 海の染料のレシピを追加しました", "childrenListType": "ordered", "children": ["*海の花 は海岸で入手できます。"] },
+            { "text": "新しい作物「ネザースターの花*」を追加しました", "childrenListType": "ordered", "children": ["*トーチフラワー の種と ネザースター から栽培できます。"] },
+            { "text": "海の小麦 の種*の2つ目のレシピを追加しました", "childrenListType": "ordered", "children": ["*小麦の種、塩、海の染料から入手できます。"] },
             "最初のボス Colossum の構造物を追加しました。"
           ] },
           { "type": "fix", "heading": "変更:", "items": ["Red 防具の防御力を下げました。", "最新アップデートのフランス語訳を追加しました。"] }
         ],
         "ko": [
           { "type": "add", "heading": "추가:", "items": [
-            { "text": "Mer 꽃*과 Mer 염료 제작법 추가", "childrenListType": "ordered", "children": ["*Mer 꽃은 해변에서 얻을 수 있습니다."] },
-            { "text": "신규 작물 “Nether Star Flower*” 추가", "childrenListType": "ordered", "children": ["*Torchflower 씨앗과 Nether Star로 재배할 수 있습니다."] },
-            { "text": "Marin Ble 씨앗*의 두 번째 제작법 추가", "childrenListType": "ordered", "children": ["*밀 씨앗, 소금, Mer 염료로 얻을 수 있습니다."] },
+            { "text": "바다꽃*과 바다 염료 제작법 추가", "childrenListType": "ordered", "children": ["*바다꽃은 해변에서 얻을 수 있습니다."] },
+            { "text": "신규 작물 “네더의 별꽃*” 추가", "childrenListType": "ordered", "children": ["*훃불꽃 씨앗과 네더의 별로 재배할 수 있습니다."] },
+            { "text": "바다 밀 씨앗*의 두 번째 제작법 추가", "childrenListType": "ordered", "children": ["*밀 씨앗, 소금, 바다 염료로 얻을 수 있습니다."] },
             "첫 번째 보스 Colossum의 구조물 추가"
           ] },
           { "type": "fix", "heading": "변경:", "items": ["Red 방어구의 보호 수치 감소", "최신 업데이트의 프랑스어 번역 추가"] }
         ],
         "pt-br": [
           { "type": "add", "heading": "Adicionado:", "items": [
-            { "text": "Adicionadas a flor Mer* e a receita do corante Mer", "childrenListType": "ordered", "children": ["*A flor Mer pode ser encontrada na praia."] },
-            { "text": "Adicionada uma nova plantação: “Nether Star Flower*”", "childrenListType": "ordered", "children": ["*Pode ser cultivada com uma semente de Torchflower e uma Nether Star."] },
-            { "text": "Adicionada uma segunda receita para a semente Marin Ble*", "childrenListType": "ordered", "children": ["*Obtida com uma semente de trigo, sal e corante Mer."] },
+            { "text": "Adicionadas a flor do mar* e a receita do corante do mar", "childrenListType": "ordered", "children": ["*A flor do mar pode ser encontrada na praia."] },
+            { "text": "Adicionada uma nova plantação: “flor da Estrela do Nether*”", "childrenListType": "ordered", "children": ["*Pode ser cultivada com uma semente de flor-tocha e uma Estrela do Nether."] },
+            { "text": "Adicionada uma segunda receita para a semente de trigo marinho*", "childrenListType": "ordered", "children": ["*Obtida com uma semente de trigo, sal e corante do mar."] },
             "Adicionada a estrutura do primeiro chefe, Colossum."
           ] },
           { "type": "fix", "heading": "Alterações:", "items": ["Proteção da armadura Red reduzida.", "Adicionada a tradução para francês da última atualização."] }
@@ -4271,11 +4292,11 @@ const patchnotesConfig = {
                   "Se craft pour le bloc avec un bloc d'amethyste et un colorant de feu et pour le crystal rouge il faut un colorant de feu entouré d'éclat d'amethyste"
                 ]
               },
-              "Nouveau bloc de culture : fertile soil",
+              "Nouveau bloc de culture : sol fertile",
               "Ajout du bloc de sel obtenable dans les océans couche 0 à 64",
               "Ajout du bloc de bouton en roche interstellaire",
               "Ajout des recettes pour les blocs de mur, dalle, escalirer en roche interstellaire",
-              "Les blocs de minerai peuvent être utilisé pour la base de beacon (Paladium, red, multicolor, carmeltazite, fluorite, chrome, amazonite, xenite,nickel)"
+              "Les blocs de minerai peuvent être utilisés comme base de balise (Paladium, Red, Multicolor, Carmeltazite, fluorite, Chrome, Amazonite, Xenite, nickel)"
             ]
           },
           {
@@ -4283,7 +4304,7 @@ const patchnotesConfig = {
             "heading": "Modification :",
             "items": [
               {
-                "text": "Refonte du systeme pour la blue sea weed qui devient une culture comme le blé la « blue sea wheat »",
+                "text": "Refonte du systeme pour la algue marine bleue qui devient une culture comme le blé la « blé marin bleu »",
                 "childrenListType": "ordered",
                 "children": [
                   "La graine peut être obtenu en cuisant de l'herbe marine sur un feu de camp"
@@ -4333,14 +4354,14 @@ const patchnotesConfig = {
         "it": [
           { "type": "add", "heading": "Aggiunto:", "items": [
             { "text": "Aggiunti il cristallo rosso, il blocco di cristallo rosso e il cluster di cristallo rosso.", "childrenListType": "ordered", "children": ["Il cristallo rosso porta al livello massimo le colture del mod e fa avanzare di una o più fasi le colture di Minecraft.", "Il blocco si fabbrica con un blocco di ametista e un colorante del fuoco; il cristallo rosso si fabbrica circondando frammenti di ametista con un colorante del fuoco."] },
-            "Nuovo blocco agricolo: Fertile Soil.",
+            "Nuovo blocco agricolo: terreno fertile.",
             "Aggiunto il blocco di sale, ottenibile negli oceani tra i livelli 0 e 64.",
             "Aggiunto un pulsante in roccia interstellare.",
             "Aggiunte ricette per muri, lastre e scale in roccia interstellare.",
-            "I blocchi di minerale possono essere usati come base per un beacon (Paladium, Red, Multicolor, Carmeltazite, Fluorite, Chrome, Amazonite, Xenite e Nickel)."
+            "I blocchi di minerale possono essere usati come base per un beacon (Paladium, Red, Multicolor, Carmeltazite, fluorite, Chrome, Amazonite, Xenite e nichel)."
           ] },
           { "type": "fix", "heading": "Modifiche:", "items": [
-            { "text": "Rifatto il sistema della Blue Sea Weed, trasformandola in una coltura simile al grano chiamata “Blue Sea Wheat”.", "childrenListType": "ordered", "children": ["Il seme si ottiene cuocendo erba marina su un falò."] },
+            { "text": "Rifatto il sistema della alga marina blu, trasformandola in una coltura simile al grano chiamata “grano marino blu”.", "childrenListType": "ordered", "children": ["Il seme si ottiene cuocendo erba marina su un falò."] },
             "Gli strumenti in Amazonite ora hanno le rispettive funzionalità.",
             "Chrononimbus può essere usato in modalità creativa senza avere polvere di redstone nell’inventario."
           ] }
@@ -4348,14 +4369,14 @@ const patchnotesConfig = {
         "es": [
           { "type": "add", "heading": "Añadido:", "items": [
             { "text": "Añadidos el cristal rojo, el bloque de cristal rojo y el cúmulo de cristal rojo.", "childrenListType": "ordered", "children": ["El cristal rojo hace crecer los cultivos del mod hasta su nivel máximo y puede avanzar una o varias etapas de los cultivos de Minecraft.", "El bloque se fabrica con un bloque de amatista y tinte de fuego; el cristal rojo se fabrica rodeando fragmentos de amatista con tinte de fuego."] },
-            "Nuevo bloque de cultivo: Fertile Soil.",
+            "Nuevo bloque de cultivo: tierra fértil.",
             "Añadido el bloque de sal, que se obtiene en los océanos entre las capas 0 y 64.",
             "Añadido un botón de roca interestelar.",
             "Añadidas recetas para muros, losas y escaleras de roca interestelar.",
-            "Los bloques de mineral se pueden usar como base para una baliza (Paladium, Red, Multicolor, Carmeltazite, Fluorite, Chrome, Amazonite, Xenite y Nickel)."
+            "Los bloques de mineral se pueden usar como base para una baliza (Paladium, Red, Multicolor, Carmeltazite, fluorita, Chrome, Amazonite, Xenite y níquel)."
           ] },
           { "type": "fix", "heading": "Modificaciones:", "items": [
-            { "text": "Rediseñado el sistema de Blue Sea Weed, que ahora es un cultivo similar al trigo llamado «Blue Sea Wheat».", "childrenListType": "ordered", "children": ["La semilla se obtiene cocinando algas marinas en una hoguera."] },
+            { "text": "Rediseñado el sistema de alga marina azul, que ahora es un cultivo similar al trigo llamado «trigo marino azul».", "childrenListType": "ordered", "children": ["La semilla se obtiene cocinando algas marinas en una hoguera."] },
             "Las herramientas de Amazonite ahora tienen sus funciones correspondientes.",
             "Chrononimbus se puede usar en creativo sin tener polvo de redstone en el inventario."
           ] }
@@ -4363,14 +4384,14 @@ const patchnotesConfig = {
         "de": [
           { "type": "add", "heading": "Hinzugefügt:", "items": [
             { "text": "Roten Kristall, roten Kristallblock und roten Kristallcluster hinzugefügt.", "childrenListType": "ordered", "children": ["Der rote Kristall lässt Mod-Pflanzen auf die höchste Stufe wachsen und kann Minecraft-Pflanzen um eine oder mehrere Wachstumsstufen voranbringen.", "Der Block wird aus einem Amethystblock und Feuerfarbstoff hergestellt; der rote Kristall aus Feuerfarbstoff, der von Amethystsplittern umgeben ist."] },
-            "Neuer Anbaublock: Fertile Soil.",
+            "Neuer Anbaublock: fruchtbarer Boden.",
             "Salzblock hinzugefügt, der in Ozeanen zwischen Höhe 0 und 64 vorkommt.",
             "Knopf aus interstellar-gestein hinzugefügt.",
             "Rezepte für Mauern, Platten und Treppen aus interstellar-gestein hinzugefügt.",
-            "Erzblöcke können als Basis für ein Leuchtfeuer verwendet werden (Paladium, Red, Multicolor, Carmeltazite, Fluorite, Chrome, Amazonite, Xenite und Nickel)."
+            "Erzblöcke können als Basis für ein Leuchtfeuer verwendet werden (Paladium, Red, Multicolor, Carmeltazite, Fluorit, Chrome, Amazonite, Xenite und Nickel)."
           ] },
           { "type": "fix", "heading": "Änderungen:", "items": [
-            { "text": "System der Blue Sea Weed überarbeitet: Sie wächst jetzt wie Weizen als Nutzpflanze „Blue Sea Wheat“.", "childrenListType": "ordered", "children": ["Der Samen ist durch das Garen von Seegras auf einem Lagerfeuer erhältlich."] },
+            { "text": "System der blaue Meeresalge überarbeitet: Sie wächst jetzt wie Weizen als Nutzpflanze „blauer Meeresweizen“.", "childrenListType": "ordered", "children": ["Der Samen ist durch das Garen von Seegras auf einem Lagerfeuer erhältlich."] },
             "Amazonite-Werkzeuge verfügen jetzt über ihre jeweiligen Funktionen.",
             "Chrononimbus kann im Kreativmodus verwendet werden, ohne Redstone-Pulver im Inventar zu haben."
           ] }
@@ -4378,14 +4399,14 @@ const patchnotesConfig = {
         "ja": [
           { "type": "add", "heading": "追加:", "items": [
             { "text": "赤いクリスタル、赤いクリスタルブロック、赤いクリスタルクラスターを追加しました。", "childrenListType": "ordered", "children": ["赤いクリスタルは Mod の作物を最大段階まで成長させ、Minecraft の作物を1段階以上成長させます。", "ブロックはアメジストブロックと火の染料で作成できます。赤いクリスタルはアメジストの欠片を火の染料で囲んで作成します。"] },
-            "新しい作物ブロック: Fertile Soil。",
+            "新しい作物ブロック: 肥沃な土。",
             "レベル 0～64 の海洋で入手できる塩ブロックを追加しました。",
-            "インターステラーロックのボタンを追加しました。",
-            "インターステラーロックの塀、ハーフブロック、階段のレシピを追加しました。",
-            "鉱石ブロックをビーコンの土台に使用できるようになりました (Paladium、Red、Multicolor、Carmeltazite、Fluorite、Chrome、Amazonite、Xenite、Nickel)。"
+            "星間岩石のボタンを追加しました。",
+            "星間岩石の塀、ハーフブロック、階段のレシピを追加しました。",
+            "鉱石ブロックをビーコンの土台に使用できるようになりました (Paladium、Red、Multicolor、Carmeltazite、蛍石、Chrome、Amazonite、Xenite、ニッケル)。"
           ] },
           { "type": "fix", "heading": "変更:", "items": [
-            { "text": "Blue Sea Weed の仕組みを作り直し、小麦のように育つ作物「Blue Sea Wheat」にしました。", "childrenListType": "ordered", "children": ["海草を焚き火で焼くと種を入手できます。"] },
+            { "text": "青い海藻 の仕組みを作り直し、小麦のように育つ作物「青い海の小麦」にしました。", "childrenListType": "ordered", "children": ["海草を焚き火で焼くと種を入手できます。"] },
             "Amazonite 製ツールにそれぞれの機能が追加されました。",
             "Chrononimbus を、レッドストーンパウダーを持たずにクリエイティブで使えるようになりました。"
           ] }
@@ -4393,14 +4414,14 @@ const patchnotesConfig = {
         "ko": [
           { "type": "add", "heading": "추가:", "items": [
             { "text": "빨간 수정, 빨간 수정 블록, 빨간 수정 군집 추가", "childrenListType": "ordered", "children": ["빨간 수정은 모드 작물을 최대 단계까지 자라게 하고 Minecraft 작물의 성장 단계를 하나 이상 올릴 수 있습니다.", "블록은 자수정 블록과 화염 염료로 제작하며, 빨간 수정은 화염 염료를 자수정 조각으로 둘러 제작합니다."] },
-            "신규 작물 블록: Fertile Soil",
+            "신규 작물 블록: 비옥한 흠",
             "바다의 높이 0~64에서 얻을 수 있는 소금 블록 추가",
             "성간 암석 버튼 블록 추가",
             "성간 암석 벽, 반 블록, 계단 제작법 추가",
-            "광석 블록을 신호기의 기반으로 사용할 수 있습니다 (Paladium, Red, Multicolor, Carmeltazite, Fluorite, Chrome, Amazonite, Xenite, Nickel)."
+            "광석 블록을 신호기의 기반으로 사용할 수 있습니다 (Paladium, Red, Multicolor, Carmeltazite, 형석, Chrome, Amazonite, Xenite, 니켈)."
           ] },
           { "type": "fix", "heading": "변경:", "items": [
-            { "text": "Blue Sea Weed 시스템을 개편해 밀처럼 재배하는 “Blue Sea Wheat”로 변경", "childrenListType": "ordered", "children": ["해초를 모닥불에서 구워 씨앗을 얻을 수 있습니다."] },
+            { "text": "푸른 바다 해초 시스템을 개편해 밀처럼 재배하는 “푸른 바다 밀”로 변경", "childrenListType": "ordered", "children": ["해초를 모닥불에서 구워 씨앗을 얻을 수 있습니다."] },
             "Amazonite 도구가 이제 각자의 기능을 갖습니다.",
             "크리에이티브에서 인벤토리에 레드스톤 가루가 없어도 Chrononimbus를 사용할 수 있습니다."
           ] }
@@ -4408,14 +4429,14 @@ const patchnotesConfig = {
         "pt-br": [
           { "type": "add", "heading": "Adicionado:", "items": [
             { "text": "Adicionados o cristal vermelho, o bloco de cristal vermelho e o aglomerado de cristal vermelho.", "childrenListType": "ordered", "children": ["O cristal vermelho faz as plantações do mod crescerem até o nível máximo e pode avançar uma ou mais etapas das plantações do Minecraft.", "O bloco é fabricado com um bloco de ametista e corante de fogo; o cristal vermelho é fabricado cercando fragmentos de ametista com corante de fogo."] },
-            "Novo bloco de plantação: Fertile Soil.",
+            "Novo bloco de plantação: solo fértil.",
             "Adicionado o bloco de sal, encontrado nos oceanos entre as camadas 0 e 64.",
             "Adicionado um botão de rocha interestelar.",
             "Adicionadas receitas de muros, lajes e escadas de rocha interestelar.",
-            "Blocos de minério podem ser usados como base de sinalizador (Paladium, Red, Multicolor, Carmeltazite, Fluorite, Chrome, Amazonite, Xenite e Nickel)."
+            "Blocos de minério podem ser usados como base de sinalizador (Paladium, Red, Multicolor, Carmeltazite, fluorita, Chrome, Amazonite, Xenite e níquel)."
           ] },
           { "type": "fix", "heading": "Alterações:", "items": [
-            { "text": "Sistema da Blue Sea Weed reformulado: agora é uma plantação como o trigo, chamada “Blue Sea Wheat”.", "childrenListType": "ordered", "children": ["A semente pode ser obtida assando grama marinha em uma fogueira."] },
+            { "text": "Sistema da alga marinha azul reformulado: agora é uma plantação como o trigo, chamada “trigo marinho azul”.", "childrenListType": "ordered", "children": ["A semente pode ser obtida assando grama marinha em uma fogueira."] },
             "As ferramentas de Amazonite agora têm suas respectivas funções.",
             "Chrononimbus pode ser usado no criativo sem pó de redstone no inventário."
           ] }
@@ -4438,7 +4459,7 @@ const patchnotesConfig = {
                 "text": "4 nouveaux types de bois :",
                 "childrenListType": "ordered",
                 "children": [
-                  "le bois de l'end",
+                  "le bois de l'ender",
                   "Yophylys",
                   "Luminapin",
                   "Noctacacia"
@@ -4453,13 +4474,13 @@ const patchnotesConfig = {
                   "En Multicolore"
                 ]
               },
-              "Nouvelle roche disponible dans l'end : Interstellar rock",
-              "Possibilité de cuire 500 objets avec le fragment de xenite",
+              "Nouvelle roche disponible dans l'end : roche interstellaire",
+              "Possibilité de cuire 500 objets avec le fragment de Xenite",
               "Ajout d'une nouvelle profession de villageois « le forestier » avec un nouveau bloc d'artisanat :le bloc de scierie",
-              "Ajout du craft de fragment de xenite dans un haut fourneau",
+              "Ajout de la recette du fragment de Xenite dans un haut fourneau",
               "Ajout d'une alarme",
-              "Ajout d'une fonctionnalité de vol avec l'armure de l'espace",
-              "Ajout du modele de l'armure spatial"
+              "Ajout d'une fonctionnalité de vol avec l'armure Space",
+              "Ajout du modele de l'armure Space"
             ]
           },
           {
@@ -4471,11 +4492,11 @@ const patchnotesConfig = {
                 "childrenListType": "ordered",
                 "children": [
                   "« an incredible music disk ! » Disc > Disk",
-                  "dans la creation du lingot de multicolore Multicolored > Multicolor"
+                  "dans la creation du lingot de Multicolor Multicolored > Multicolor"
                 ]
               },
-              "Suppression de tout les biomes crées jusque là et de leurs avancements",
-              "Suppression du craft de la potion anti dégâts et du spawner de colossum"
+              "Suppression de tous les biomes créés jusque-là et de leurs avancements",
+              "Suppression de la recette de la potion de protection contre les dégâts et du générateur de Colossum"
             ]
           }
         ],
@@ -4531,11 +4552,11 @@ const patchnotesConfig = {
         ],
         "it": [
           { "type": "add", "heading": "Aggiunto:", "items": [
-            { "text": "4 nuovi tipi di legno:", "childrenListType": "ordered", "children": ["Enderwood", "Yophylys", "Luminapin", "Noctacacia"] },
+            { "text": "4 nuovi tipi di legno:", "childrenListType": "ordered", "children": ["legno dell'Ender", "Yophylys", "Luminapin", "Noctacacia"] },
             { "text": "3 nuovi bauli:", "childrenListType": "ordered", "children": ["in Xenite", "in Paladium", "in Multicolor"] },
-            "Nuova roccia disponibile nell’End: Interstellar Rock.",
+            "Nuova roccia disponibile nell’End: roccia interstellare.",
             "Possibilità di fondere 500 oggetti usando il frammento di Xenite.",
-            "Aggiunta la professione del villager Forestiere con un nuovo blocco da lavoro: la segheria.",
+            "Aggiunta la professione dell'abitante del villaggio guardaboschi con un nuovo blocco da lavoro: la segheria.",
             "Aggiunta la ricetta per il frammento di Xenite in una fornace.",
             "Aggiunto un allarme.",
             "Aggiunta la possibilità di volare con l’armatura Space.",
@@ -4544,16 +4565,16 @@ const patchnotesConfig = {
           { "type": "fix", "heading": "Modifiche:", "items": [
             { "text": "Corrette le ortografie di alcuni avanzamenti:", "childrenListType": "ordered", "children": ["“an incredible music disk ! ” Disc > Disk", "Nella creazione del lingotto Multicolor: Multicolored > Multicolor"] },
             "Rimossi tutti i biomi creati fino a quel momento e i relativi avanzamenti.",
-            "Rimosse le ricette della pozione anti-danno e dello spawner di Colossum."
+            "Rimosse le ricette della pozione di protezione dai danni e del generatore di Colossum."
           ] }
         ],
         "es": [
           { "type": "add", "heading": "Añadido:", "items": [
-            { "text": "4 nuevos tipos de madera:", "childrenListType": "ordered", "children": ["Enderwood", "Yophylys", "Luminapin", "Noctacacia"] },
+            { "text": "4 nuevos tipos de madera:", "childrenListType": "ordered", "children": ["madera del Ender", "Yophylys", "Luminapin", "Noctacacia"] },
             { "text": "3 nuevos cofres:", "childrenListType": "ordered", "children": ["de Xenite", "de Paladium", "de Multicolor"] },
-            "Nueva roca disponible en el End: Interstellar Rock.",
+            "Nueva roca disponible en el End: roca interestelar.",
             "Posibilidad de fundir 500 objetos con el fragmento de Xenite.",
-            "Añadida la profesión de aldeano Forestero con un nuevo bloque de trabajo: el aserradero.",
+            "Añadida la profesión de aldeano guardabosques con un nuevo bloque de trabajo: el aserradero.",
             "Añadida la receta del fragmento de Xenite en un horno.",
             "Añadida una alarma.",
             "Añadida la posibilidad de volar con la armadura Space.",
@@ -4562,14 +4583,14 @@ const patchnotesConfig = {
           { "type": "fix", "heading": "Modificaciones:", "items": [
             { "text": "Corregida la ortografía de algunos progresos:", "childrenListType": "ordered", "children": ["«an incredible music disk ! » Disc > Disk", "En la creación del lingote Multicolor: Multicolored > Multicolor"] },
             "Eliminados todos los biomas creados hasta entonces y sus progresos.",
-            "Eliminadas las recetas de la poción antid daño y del generador de Colossum."
+            "Eliminadas las recetas de la poción de protección contra el daño y del generador de Colossum."
           ] }
         ],
         "de": [
           { "type": "add", "heading": "Hinzugefügt:", "items": [
-            { "text": "4 neue Holzarten:", "childrenListType": "ordered", "children": ["Enderwood", "Yophylys", "Luminapin", "Noctacacia"] },
+            { "text": "4 neue Holzarten:", "childrenListType": "ordered", "children": ["Enderholz", "Yophylys", "Luminapin", "Noctacacia"] },
             { "text": "3 neue Truhen:", "childrenListType": "ordered", "children": ["aus Xenite", "aus Paladium", "aus Multicolor"] },
-            "Neues Gestein im End: Interstellar Rock.",
+            "Neues Gestein im End: interstellarer Fels.",
             "Mit einem Xenite-Fragment können 500 Gegenstände geschmolzen werden.",
             "Beruf des Dorfbewohners Förster mit neuem Arbeitsblock, dem Sägewerk, hinzugefügt.",
             "Rezept für Xenite-Fragmente im Ofen hinzugefügt.",
@@ -4580,20 +4601,20 @@ const patchnotesConfig = {
           { "type": "fix", "heading": "Änderungen:", "items": [
             { "text": "Rechtschreibfehler in Fortschritten korrigiert:", "childrenListType": "ordered", "children": ["„an incredible music disk ! ” Disc > Disk", "Bei der Herstellung des Multicolor-Barrens: Multicolored > Multicolor"] },
             "Alle bis dahin erstellten Biome und ihre Fortschritte entfernt.",
-            "Rezepte für den Anti-Schaden-Trank und den Colossum-Spawner entfernt."
+            "Rezepte für den Trank zum Schutz vor Schaden und den Colossum-Spawner entfernt."
           ] }
         ],
         "ja": [
           { "type": "add", "heading": "追加:", "items": [
-            { "text": "4 種類の新しい木材:", "childrenListType": "ordered", "children": ["Enderwood", "Yophylys", "Luminapin", "Noctacacia"] },
+            { "text": "4 種類の新しい木材:", "childrenListType": "ordered", "children": ["エンダーの木材", "Yophylys", "Luminapin", "Noctacacia"] },
             { "text": "3 種類の新しいチェスト:", "childrenListType": "ordered", "children": ["Xenite 製", "Paladium 製", "Multicolor 製"] },
-            "End に新しい岩石 Interstellar Rock を追加しました。",
+            "Endに新しい岩石「星間岩石」を追加しました。",
             "Xenite の欠片で 500 個のアイテムを精錬できるようになりました。",
-            "新しい職業ブロック「製材所」と村人の職業「Forester」を追加しました。",
+            "新しい職業ブロック「製材所」と村人の職業「森林管理人」を追加しました。",
             "かまどで Xenite の欠片を作るレシピを追加しました。",
             "警報を追加しました。",
-            "Space Armor で飛行できる機能を追加しました。",
-            "Space Armor のモデルを追加しました。"
+            "Spaceの防具で飛行できる機能を追加しました。",
+            "Spaceの防具のモデルを追加しました。"
           ] },
           { "type": "fix", "heading": "変更:", "items": [
             { "text": "進捗の誤字を修正しました:", "childrenListType": "ordered", "children": ["「an incredible music disk ! 」Disc > Disk", "Multicolor インゴットの作成時: Multicolored > Multicolor"] },
@@ -4603,9 +4624,9 @@ const patchnotesConfig = {
         ],
         "ko": [
           { "type": "add", "heading": "추가:", "items": [
-            { "text": "신규 목재 4종:", "childrenListType": "ordered", "children": ["Enderwood", "Yophylys", "Luminapin", "Noctacacia"] },
+            { "text": "신규 목재 4종:", "childrenListType": "ordered", "children": ["엔더 목재", "Yophylys", "Luminapin", "Noctacacia"] },
             { "text": "신규 상자 3종:", "childrenListType": "ordered", "children": ["Xenite", "Paladium", "Multicolor"] },
-            "End에서 얻을 수 있는 신규 암석 Interstellar Rock 추가",
+            "End에서 얻을 수 있는 신규 암석 성간 암석 추가",
             "Xenite 조각으로 아이템 500개를 제련할 수 있도록 추가",
             "새 작업 블록 제재소와 주민 직업 산림업자 추가",
             "화로에서 Xenite 조각을 만드는 제작법 추가",
@@ -4621,9 +4642,9 @@ const patchnotesConfig = {
         ],
         "pt-br": [
           { "type": "add", "heading": "Adicionado:", "items": [
-            { "text": "4 novos tipos de madeira:", "childrenListType": "ordered", "children": ["Enderwood", "Yophylys", "Luminapin", "Noctacacia"] },
+            { "text": "4 novos tipos de madeira:", "childrenListType": "ordered", "children": ["madeira do Ender", "Yophylys", "Luminapin", "Noctacacia"] },
             { "text": "3 novos baús:", "childrenListType": "ordered", "children": ["de Xenite", "de Paladium", "de Multicolor"] },
-            "Nova rocha disponível no End: Interstellar Rock.",
+            "Nova rocha disponível no End: rocha interestelar.",
             "Possibilidade de fundir 500 itens usando o fragmento de Xenite.",
             "Adicionada a profissão de aldeão Silvicultor com um novo bloco de trabalho: a serraria.",
             "Adicionada a receita do fragmento de Xenite na fornalha.",
@@ -4634,7 +4655,7 @@ const patchnotesConfig = {
           { "type": "fix", "heading": "Alterações:", "items": [
             { "text": "Corrigidos erros de ortografia em avanços:", "childrenListType": "ordered", "children": ["“an incredible music disk ! ” Disc > Disk", "Na criação do lingote Multicolor: Multicolored > Multicolor"] },
             "Removidos todos os biomas criados até então e seus avanços.",
-            "Removidas as receitas da poção ant dano e do gerador de Colossum."
+            "Removidas as receitas da poção de proteção contra danos e do gerador de Colossum."
           ] }
         ]
       }
@@ -4651,7 +4672,7 @@ const patchnotesConfig = {
             "type": "add",
             "heading": "Ajout :",
             "items": [
-              "Acatar book"
+              "Livre Acatar"
             ]
           },
           {
@@ -4695,32 +4716,32 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Acatar Book."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Libro Acatar."] },
           { "type": "info", "heading": "Informazioni:", "items": ["Per aiutarti a progredire nel mod, è disponibile un libro che riassume la maggior parte delle informazioni necessarie: è praticamente una wiki all’interno di un libro e ti aiuta a progredire e a creare gli oggetti che desideri.", "Fabbricalo con 8 lingotti di Paladium e un libro al centro. Fai clic destro sul libro per aprire la wiki, poi scegli una scheda, ad esempio quella dei minerali, e seleziona il minerale desiderato."] },
           { "type": "fix", "heading": "Modifiche:", "items": ["Corretta la generazione del bioma della spiaggia con palme e dei relativi alberi."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Acatar Book."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Libro de Acatar."] },
           { "type": "info", "heading": "Información:", "items": ["Para ayudarte a progresar en el mod, tienes disponible un libro que resume la mayoría de la información necesaria; básicamente, es una wiki dentro de un libro que te permite avanzar y fabricar los bloques y otros objetos que quieras.", "Fabrícalo con 8 lingotes de Paladium y un libro en el centro. Haz clic derecho en el libro para abrir la wiki; después, selecciona una pestaña, como la de minerales, y el mineral que quieras consultar."] },
           { "type": "fix", "heading": "Modificaciones:", "items": ["Corregida la generación del bioma de playa con palmeras y de sus árboles."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Acatar Book."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Acatar-Buch."] },
           { "type": "info", "heading": "Information:", "items": ["Um dir den Fortschritt in der Mod zu erleichtern, gibt es ein Buch mit den wichtigsten Informationen – praktisch ein Wiki in Buchform, das dir beim Vorankommen und Herstellen gewünschter Blöcke und anderer Gegenstände hilft.", "Stelle es aus 8 Paladium-Barren und einem Buch in der Mitte her. Rechtsklicke auf das Buch, um das Wiki zu öffnen, wähle dann eine Registerkarte wie Erze und anschließend das gewünschte Erz."] },
           { "type": "fix", "heading": "Änderungen:", "items": ["Generierung des Strandbioms mit Palmen und der zugehörigen Bäume korrigiert."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["Acatar Book を追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["Acatarの本 を追加しました。"] },
           { "type": "info", "heading": "情報:", "items": ["Mod の進行を助ける本を用意しました。これは本の中の Wiki のようなもので、ゲームを進めたり、ブロックなどをクラフトしたりするために必要な情報の大半をまとめています。", "Paladium インゴット 8 個と本 1 冊を中央に置いてクラフトします。本を右クリックすると Wiki が開きます。鉱石などのタブを選び、知りたい鉱石をクリックしてください。"] },
           { "type": "fix", "heading": "変更:", "items": ["ヤシの木のある海岸バイオームと木の生成を修正しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["Acatar Book 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["Acatar 책 추가"] },
           { "type": "info", "heading": "정보:", "items": ["모드 진행을 돕기 위해 필요한 정보 대부분을 요약한 책을 준비했습니다. 책 속의 위키처럼 모드 진행과 원하는 블록 및 아이템 제작에 필요한 내용을 확인할 수 있습니다.", "Paladium 주괴 8개와 가운데 책 1개로 제작하세요. 책을 우클릭하면 위키가 열립니다. 광석 탭 등 원하는 탭을 누른 뒤 확인할 광석을 선택하세요."] },
           { "type": "fix", "heading": "변경:", "items": ["야자나무 해변 생물 군계와 나무 생성 수정"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Acatar Book."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Livro de Acatar."] },
           { "type": "info", "heading": "Informação:", "items": ["Para ajudar você a progredir no mod, há um livro que resume a maioria das informações necessárias — basicamente, uma wiki dentro de um livro para ajudar a avançar e fabricar os blocos e outros itens desejados.", "Fabrique-o com 8 lingotes de Paladium e um livro no centro. Clique com o botão direito no livro para abrir a wiki; depois escolha uma aba, como a de minérios, e selecione o minério desejado."] },
           { "type": "fix", "heading": "Alterações:", "items": ["Corrigida a geração do bioma de praia com palmeiras e das árvores."] }
         ]
@@ -4740,18 +4761,18 @@ const patchnotesConfig = {
             "items": [
               "Ajout des éléments en amazonite",
               "Ajout du craft de la amaapple",
-              "Ajout du purifieur et de la table de craft avancé",
-              "Ajout de 2 nouveaux type de villageois le « Mineur » et le « Customer »",
+              "Ajout du purificateur et de la table de craft avancé",
+              "Ajout de 2 nouveaux types de villageois le « Mineur » et le « Customer »",
               {
                 "text": "Les blocs d'artisanat des villageois sont :",
                 "childrenListType": "ordered",
                 "children": [
-                  "Pour le mineur → le purifieur",
-                  "Pour le customer → la table de craft avancé"
+                  "Pour le mineur → le purificateur",
+                  "Pour le Customer → la table de craft avancé"
                 ]
               },
               "Ajout d'un biome plage avec palmier",
-              "Ajout de la potion anti dégats",
+              "Ajout de la potion de protection contre les dégâts",
               "Ajout d'un avancement « Plage paradisiaque »"
             ]
           },
@@ -4759,7 +4780,7 @@ const patchnotesConfig = {
             "type": "fix",
             "heading": "Modification :",
             "items": [
-              "Texture des feuille de redwood refaite",
+              "Texture des feuille de Redwood refaite",
               "Arbre de palmier maintenant disponible avec les pousse de palmier"
             ]
           },
@@ -4768,7 +4789,7 @@ const patchnotesConfig = {
             "heading": "Attention :",
             "items": [
               "Il y a divers problèmes avec la génération du palmier et de son biome",
-              "La potion anti-dégats est en actuellement en phase de test"
+              "La potion de protection contre les dégâts est actuellement en phase de test"
             ]
           }
         ],
@@ -4812,34 +4833,34 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunti gli elementi in Amazonite.", "Aggiunta la ricetta per l’Amaapple.", "Aggiunti il Purifier e il tavolo di creazione avanzato.", "Aggiunti 2 nuovi tipi di villager: Miner e Customer.", { "text": "Blocchi da lavoro dei villager:", "childrenListType": "ordered", "children": ["Per il Miner → Purifier", "Per il Customer → tavolo di creazione avanzato"] }, "Aggiunto un bioma di spiaggia con palme.", "Aggiunta la pozione anti-danno.", "Aggiunto l’avanzamento “Paradise Beach”."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunti gli elementi in Amazonite.", "Aggiunta la ricetta per l’Amaapple.", "Aggiunti il purificatore e il tavolo di creazione avanzato.", "Aggiunti 2 nuovi tipi di abitanti del villaggio: minatore e Customer.", { "text": "Blocchi di lavoro degli abitanti del villaggio:", "childrenListType": "ordered", "children": ["Per il minatore → purificatore", "Per il Customer → tavolo di creazione avanzato"] }, "Aggiunto un bioma di spiaggia con palme.", "Aggiunta la pozione di protezione dai danni.", "Aggiunto l’avanzamento “Spiaggia paradisiaca”."] },
           { "type": "fix", "heading": "Modifiche:", "items": ["Rifatta la texture delle foglie di Redwood.", "Ora la palma può crescere dai germogli di palma."] },
-          { "type": "warn", "heading": "Attenzione:", "items": ["La generazione delle palme e del relativo bioma presenta alcuni problemi.", "La pozione anti-danno è attualmente in fase di test."] }
+          { "type": "warn", "heading": "Attenzione:", "items": ["La generazione delle palme e del relativo bioma presenta alcuni problemi.", "La pozione di protezione dai danni è attualmente in fase di test."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Añadidos los elementos de Amazonite.", "Añadida la receta de Amaapple.", "Añadidos el Purifier y la mesa de fabricación avanzada.", "Añadidos 2 nuevos tipos de aldeanos: Miner y Customer.", { "text": "Bloques de trabajo de los aldeanos:", "childrenListType": "ordered", "children": ["Para el Miner → Purifier", "Para el Customer → mesa de fabricación avanzada"] }, "Añadido un bioma de playa con palmeras.", "Añadida la poción antidamage.", "Añadido el progreso «Paradise Beach»."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadidos los elementos de Amazonite.", "Añadida la receta de Amaapple.", "Añadidos el purificador y la mesa de fabricación avanzada.", "Añadidos 2 nuevos tipos de aldeanos: minero y Customer.", { "text": "Bloques de trabajo de los aldeanos:", "childrenListType": "ordered", "children": ["Para el minero → purificador", "Para el Customer → mesa de fabricación avanzada"] }, "Añadido un bioma de playa con palmeras.", "Añadida la poción de protección contra el daño.", "Añadido el progreso «Playa paradisíaca»."] },
           { "type": "fix", "heading": "Modificaciones:", "items": ["Rediseñada la textura de las hojas de Redwood.", "Ahora se pueden cultivar palmeras con sus plantones."] },
-          { "type": "warn", "heading": "Atención:", "items": ["Hay varios problemas con la generación de las palmeras y su bioma.", "La poción antidamage está actualmente en fase de pruebas."] }
+          { "type": "warn", "heading": "Atención:", "items": ["Hay varios problemas con la generación de las palmeras y su bioma.", "La poción de protección contra el daño está actualmente en fase de pruebas."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Elemente aus Amazonite hinzugefügt.", "Rezept für Amaapple hinzugefügt.", "Purifier und erweiterten Werktisch hinzugefügt.", "2 neue Dorfbewohnertypen hinzugefügt: Miner und Customer.", { "text": "Arbeitsblöcke der Dorfbewohner:", "childrenListType": "ordered", "children": ["Für den Miner → Purifier", "Für den Customer → erweiterter Werktisch"] }, "Strandbiom mit Palmen hinzugefügt.", "Anti-Schaden-Trank hinzugefügt.", "Fortschritt „Paradise Beach“ hinzugefügt."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Elemente aus Amazonite hinzugefügt.", "Rezept für Amaapple hinzugefügt.", "Reinigungsgerät und erweiterten Werktisch hinzugefügt.", "2 neue Dorfbewohnertypen hinzugefügt: Bergarbeiter und Customer.", { "text": "Arbeitsblöcke der Dorfbewohner:", "childrenListType": "ordered", "children": ["Für den Bergarbeiter → Reinigungsgerät", "Für den Customer → erweiterter Werktisch"] }, "Strandbiom mit Palmen hinzugefügt.", "Trank zum Schutz vor Schaden hinzugefügt.", "Fortschritt „Paradiesstrand“ hinzugefügt."] },
           { "type": "fix", "heading": "Änderungen:", "items": ["Textur der Redwood-Blätter überarbeitet.", "Palmen können jetzt aus Palmensetzlingen wachsen."] },
-          { "type": "warn", "heading": "Achtung:", "items": ["Bei der Generierung der Palmen und ihres Bioms gibt es verschiedene Probleme.", "Der Anti-Schaden-Trank befindet sich derzeit in der Testphase."] }
+          { "type": "warn", "heading": "Achtung:", "items": ["Bei der Generierung der Palmen und ihres Bioms gibt es verschiedene Probleme.", "Der Trank zum Schutz vor Schaden befindet sich derzeit in der Testphase."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["Amazonite の要素を追加しました。", "Amaapple のレシピを追加しました。", "Purifier と高度な作業台を追加しました。", "新しい村人の職業 Miner と Customer を追加しました。", { "text": "村人の職業ブロック:", "childrenListType": "ordered", "children": ["Miner → Purifier", "Customer → 高度な作業台"] }, "ヤシのある海岸バイオームを追加しました。", "ダメージ防止ポーションを追加しました。", "進捗「Paradise Beach」を追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["Amazonite の要素を追加しました。", "Amaapple のレシピを追加しました。", "浄化装置と高度な作業台を追加しました。", "新しい村人の職業「鉱夫」と「Customer」を追加しました。", { "text": "村人の職業ブロック:", "childrenListType": "ordered", "children": ["鉱夫 → 浄化装置", "Customer → 高度な作業台"] }, "ヤシのある海岸バイオームを追加しました。", "ダメージ防止ポーションを追加しました。", "進捗「楽園のビーチ」を追加しました。"] },
           { "type": "fix", "heading": "変更:", "items": ["Redwood の葉のテクスチャを作り直しました。", "ヤシの苗木からヤシの木を育てられるようになりました。"] },
           { "type": "warn", "heading": "注意:", "items": ["ヤシの木とそのバイオームの生成にはいくつか問題があります。", "ダメージ防止ポーションは現在テスト中です。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["Amazonite 요소 추가", "Amaapple 제작법 추가", "Purifier와 고급 제작대 추가", "신규 주민 직업 Miner와 Customer 2종 추가", { "text": "주민 작업 블록:", "childrenListType": "ordered", "children": ["Miner → Purifier", "Customer → 고급 제작대"] }, "야자나무가 있는 해변 생물 군계 추가", "피해 방지 물약 추가", "“Paradise Beach” 발전 과제 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["Amazonite 요소 추가", "Amaapple 제작법 추가", "정화기와 고급 제작대 추가", "신규 주민 직업 광부와 Customer 2종 추가", { "text": "주민 작업 블록:", "childrenListType": "ordered", "children": ["광부 → 정화기", "Customer → 고급 제작대"] }, "야자나무가 있는 해변 생물 군계 추가", "피해 방지 물약 추가", "“낙원의 해변” 발전 과제 추가"] },
           { "type": "fix", "heading": "변경:", "items": ["Redwood 잎 텍스처 개편", "야자나무 묘목으로 야자나무를 키울 수 있도록 변경"] },
           { "type": "warn", "heading": "주의:", "items": ["야자나무와 해당 생물 군계 생성에 여러 문제가 있습니다.", "피해 방지 물약은 현재 테스트 중입니다."] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Adicionados os elementos de Amazonite.", "Adicionada a receita da Amaapple.", "Adicionados o Purifier e a mesa de criação avançada.", "Adicionados 2 novos tipos de aldeões: Miner e Customer.", { "text": "Blocos de trabalho dos aldeões:", "childrenListType": "ordered", "children": ["Para o Miner → Purifier", "Para o Customer → mesa de criação avançada"] }, "Adicionado um bioma de praia com palmeiras.", "Adicionada a poção ant dano.", "Adicionado o avanço “Paradise Beach”."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionados os elementos de Amazonite.", "Adicionada a receita da Amaapple.", "Adicionados o purificador e a mesa de criação avançada.", "Adicionados 2 novos tipos de aldeões: mineiro e Customer.", { "text": "Blocos de trabalho dos aldeões:", "childrenListType": "ordered", "children": ["Para o mineiro → purificador", "Para o Customer → mesa de criação avançada"] }, "Adicionado um bioma de praia com palmeiras.", "Adicionada a poção de proteção contra danos.", "Adicionado o avanço “Praia paradisíaca”."] },
           { "type": "fix", "heading": "Alterações:", "items": ["Textura das folhas de Redwood refeita.", "Agora é possível cultivar palmeiras com mudas de palmeira."] },
-          { "type": "warn", "heading": "Atenção:", "items": ["Há vários problemas com a geração das palmeiras e do bioma.", "A poção ant dano está atualmente em fase de testes."] }
+          { "type": "warn", "heading": "Atenção:", "items": ["Há vários problemas com a geração das palmeiras e do bioma.", "A poção de proteção contra danos está atualmente em fase de testes."] }
         ]
       }
     },
@@ -4856,7 +4877,7 @@ const patchnotesConfig = {
             "heading": "Ajout :",
             "items": [
               "Ajout de l'armure de l'espace",
-              "Ajout des blocs de béton de couleurs pour les escalier et les dalles",
+              "Ajout de blocs de béton colorés pour les escaliers et les dalles",
               "Ajout d'un biome de grotte de glace",
               "Ajout du minerai de Chrome",
               "Ajout de la fleur de l'espace",
@@ -4867,8 +4888,8 @@ const patchnotesConfig = {
             "type": "fix",
             "heading": "Modification :",
             "items": [
-              "Correction du champignon fluorescent où les effets escompté n'apparaissait pas",
-              "Ajustement des dégâts pour l'épée en multicolor qui passe de 38 point d'attaque à 44"
+              "Correction du problème du champignon fluorescent dont les effets attendus ne se déclenchaient pas",
+              "Dégâts de l’épée Multicolor augmentés de 38 à 44 points d’attaque"
             ]
           }
         ],
@@ -4895,27 +4916,27 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta l’armatura Space.", "Aggiunti blocchi di cemento colorato per scale e lastre.", "Aggiunto un bioma di grotte di ghiaccio.", "Aggiunto il minerale Chrome.", "Aggiunto il fiore Space.", "Aggiunti blocchi di palma."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta l’armatura Space.", "Aggiunti blocchi di cemento colorato per scale e lastre.", "Aggiunto un bioma di grotte di ghiaccio.", "Aggiunto il minerale Chrome.", "Aggiunto il fiore spaziale.", "Aggiunti blocchi di palma."] },
           { "type": "fix", "heading": "Modifiche:", "items": ["Corretto il fungo fluorescente, i cui effetti previsti non apparivano.", "Danni della spada Multicolor modificati da 38 a 44 punti d’attacco."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Añadida la armadura Space.", "Añadidos bloques de hormigón de colores para escaleras y losas.", "Añadido un bioma de cuevas de hielo.", "Añadido el mineral Chrome.", "Añadida la flor Space.", "Añadidos bloques de palmera."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadida la armadura Space.", "Añadidos bloques de hormigón de colores para escaleras y losas.", "Añadido un bioma de cuevas de hielo.", "Añadido el mineral Chrome.", "Añadida la flor espacial.", "Añadidos bloques de palmera."] },
           { "type": "fix", "heading": "Modificaciones:", "items": ["Corregido el hongo fluorescente, cuyos efectos esperados no aparecían.", "Daño de la espada Multicolor ajustado de 38 a 44 puntos de ataque."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Space-Rüstung hinzugefügt.", "Farbige Betonblöcke für Treppen und Platten hinzugefügt.", "Eisgrottenbiom hinzugefügt.", "Chrome-Erz hinzugefügt.", "Space-Blume hinzugefügt.", "Palmenblöcke hinzugefügt."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Space-Rüstung hinzugefügt.", "Farbige Betonblöcke für Treppen und Platten hinzugefügt.", "Eisgrottenbiom hinzugefügt.", "Chrome-Erz hinzugefügt.", "Weltraumblume hinzugefügt.", "Palmenblöcke hinzugefügt."] },
           { "type": "fix", "heading": "Änderungen:", "items": ["Fluoreszierenden Pilz korrigiert, dessen erwartete Effekte nicht auftraten.", "Schaden des Multicolor-Schwerts von 38 auf 44 Angriffspunkte angepasst."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["Space Armor を追加しました。", "階段やハーフブロック用の色付きコンクリートブロックを追加しました。", "氷の洞窟バイオームを追加しました。", "Chrome 鉱石を追加しました。", "Space Flower を追加しました。", "ヤシのブロックを追加しました。"] },
+          { "type": "add", "heading": "追加:", "items": ["Space Armor を追加しました。", "階段やハーフブロック用の色付きコンクリートブロックを追加しました。", "氷の洞窟バイオームを追加しました。", "Chrome鉱石を追加しました。", "宇宙の花を追加しました。", "ヤシのブロックを追加しました。"] },
           { "type": "fix", "heading": "変更:", "items": ["期待した効果が発生しなかった蛍光キノコを修正しました。", "Multicolor の剣の攻撃力を 38 から 44 に調整しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["Space 방어구 추가", "계단과 반 블록용 색상 콘크리트 블록 추가", "얼음 동굴 생물 군계 추가", "Chrome 광석 추가", "Space 꽃 추가", "야자나무 블록 추가"] },
+          { "type": "add", "heading": "추가:", "items": ["Space 방어구 추가", "계단과 반 블록용 색상 콘크리트 블록 추가", "얼음 동굴 생물 군계 추가", "Chrome 광석 추가", "우주 꽃 추가", "야자나무 블록 추가"] },
           { "type": "fix", "heading": "변경:", "items": ["기대했던 효과가 나타나지 않던 형광 버섯 수정", "Multicolor 검의 공격력을 38에서 44로 조정"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Adicionada a armadura Space.", "Adicionados blocos de concreto colorido para escadas e lajes.", "Adicionado um bioma de cavernas de gelo.", "Adicionado o minério Chrome.", "Adicionada a flor Space.", "Adicionados blocos de palmeira."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionada a armadura Space.", "Adicionados blocos de concreto colorido para escadas e lajes.", "Adicionado um bioma de cavernas de gelo.", "Adicionado o minério Chrome.", "Adicionada a flor espacial.", "Adicionados blocos de palmeira."] },
           { "type": "fix", "heading": "Alterações:", "items": ["Corrigido o cogumelo fluorescente, cujos efeitos esperados não apareciam.", "Dano da espada Multicolor ajustado de 38 para 44 pontos de ataque."] }
         ]
       }
@@ -4936,7 +4957,7 @@ const patchnotesConfig = {
               "Ajout d'un avancement avec le sable orange",
               "Ajout d'un champignon fluorescent",
               {
-                "text": "Ajout de 3 crafts à base des colorants de fleur :",
+                "text": "Ajout de 3 recettes à base des colorants de fleurs :",
                 "childrenListType": "ordered",
                 "children": [
                   "Colorant de feu → colorant rouge",
@@ -4944,15 +4965,15 @@ const patchnotesConfig = {
                   "Colorant du volcan → colorant orange"
                 ]
               },
-              "Ajout des dérivés des blocs de gilbre (escalier, dalle et muret )",
-              "Ajout de la porte en redwood"
+              "Ajout des variantes des blocs de Gilbre (escaliers, dalles et murets)",
+              "Ajout de la porte Redwood"
             ]
           },
           {
             "type": "fix",
             "heading": "Modification :",
             "items": [
-              "Changement des textures des blocs de « gilbre »"
+              "Modification des textures des blocs de « Gilbre »"
             ]
           }
         ],
@@ -5057,28 +5078,28 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta la ricetta per ottenere un blocco Red da 9 lingotti Red.", "Aggiunto un avanzamento per aver ottenuto una Fire Flower."] },
-          { "type": "fix", "heading": "Modifiche:", "items": ["Corretto un errore ortografico in uno degli avanzamenti.", "Corretta nella versione francese la traduzione mancante di uno degli avanzamenti.", "Titolo dell’avanzamento modificato da “a plant in the volcanic lands” a “a lava-resistant plant”."] }
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunta la ricetta per ottenere un blocco Red da 9 lingotti Red.", "Aggiunto un avanzamento per aver ottenuto una fiore di fuoco."] },
+          { "type": "fix", "heading": "Modifiche:", "items": ["Corretto un errore ortografico in uno degli avanzamenti.", "Corretta nella versione francese la traduzione mancante di uno degli avanzamenti.", "Titolo dell’avanzamento modificato da “una pianta nelle terre vulcaniche” a “una pianta resistente alla lava”."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Añadida una receta para fabricar un bloque Red con 9 lingotes Red.", "Añadido un progreso al obtener una Fire Flower."] },
-          { "type": "fix", "heading": "Modificaciones:", "items": ["Corregido un error ortográfico en uno de los progresos.", "Corregida en la versión francesa la traducción que faltaba en uno de los progresos.", "Título del progreso cambiado de «a plant in the volcanic lands» a «a lava-resistant plant»."] }
+          { "type": "add", "heading": "Añadido:", "items": ["Añadida una receta para fabricar un bloque Red con 9 lingotes Red.", "Añadido un progreso al obtener una flor de fuego."] },
+          { "type": "fix", "heading": "Modificaciones:", "items": ["Corregido un error ortográfico en uno de los progresos.", "Corregida en la versión francesa la traducción que faltaba en uno de los progresos.", "Título del progreso cambiado de «una planta en las tierras volcánicas» a «una planta resistente a la lava»."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["Rezept zur Herstellung eines Red-Blocks aus 9 Red-Barren hinzugefügt.", "Fortschritt für den Erhalt einer Fire Flower hinzugefügt."] },
-          { "type": "fix", "heading": "Änderungen:", "items": ["Rechtschreibfehler in einem Fortschritt korrigiert.", "Fehlende Übersetzung eines Fortschritts in der französischen Version ergänzt.", "Titel des Fortschritts von „a plant in the volcanic lands“ in „a lava-resistant plant“ geändert."] }
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Rezept zur Herstellung eines Red-Blocks aus 9 Red-Barren hinzugefügt.", "Fortschritt für den Erhalt einer Feuerblume hinzugefügt."] },
+          { "type": "fix", "heading": "Änderungen:", "items": ["Rechtschreibfehler in einem Fortschritt korrigiert.", "Fehlende Übersetzung eines Fortschritts in der französischen Version ergänzt.", "Titel des Fortschritts von „eine Pflanze im Vulkanland“ in „eine lavabeständige Pflanze“ geändert."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["Red インゴット 9 個から Red ブロックを作るレシピを追加しました。", "Fire Flower を入手すると達成できる進捗を追加しました。"] },
-          { "type": "fix", "heading": "変更:", "items": ["進捗の誤字を修正しました。", "フランス語版で進捗の未翻訳箇所を修正しました。", "進捗名を「a plant in the volcanic lands」から「a lava-resistant plant」に変更しました。"] }
+          { "type": "add", "heading": "追加:", "items": ["Red インゴット 9 個から Red ブロックを作るレシピを追加しました。", "火の花 を入手すると達成できる進捗を追加しました。"] },
+          { "type": "fix", "heading": "変更:", "items": ["進捗の誤字を修正しました。", "フランス語版で進捗の未翻訳箇所を修正しました。", "進捗名を「火山地帯の植物」から「溶岩に耐える植物」に変更しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["Red 주괴 9개로 Red 블록을 만드는 제작법 추가", "Fire Flower를 얻으면 달성하는 발전 과제 추가"] },
-          { "type": "fix", "heading": "변경:", "items": ["발전 과제 중 하나의 오타 수정", "프랑스어 버전의 발전 과제에 누락된 번역 수정", "발전 과제 제목을 “a plant in the volcanic lands”에서 “a lava-resistant plant”로 변경"] }
+          { "type": "add", "heading": "추가:", "items": ["Red 주괴 9개로 Red 블록을 만드는 제작법 추가", "불의 꽃를 얻으면 달성하는 발전 과제 추가"] },
+          { "type": "fix", "heading": "변경:", "items": ["발전 과제 중 하나의 오타 수정", "프랑스어 버전의 발전 과제에 누락된 번역 수정", "발전 과제 제목을 “화산 지대의 식물”에서 “용암에 강한 식물”로 변경"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Adicionada uma receita para fabricar um bloco Red com 9 lingotes Red.", "Adicionado um avanço ao obter uma Fire Flower."] },
-          { "type": "fix", "heading": "Alterações:", "items": ["Corrigido um erro de ortografia em um dos avanços.", "Corrigida a tradução que faltava em um dos avanços na versão francesa.", "Título do avanço alterado de “a plant in the volcanic lands” para “a lava-resistant plant”."] }
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionada uma receita para fabricar um bloco Red com 9 lingotes Red.", "Adicionado um avanço ao obter uma flor de fogo."] },
+          { "type": "fix", "heading": "Alterações:", "items": ["Corrigido um erro de ortografia em um dos avanços.", "Corrigida a tradução que faltava em um dos avanços na versão francesa.", "Título do avanço alterado de “uma planta nas terras vulcânicas” para “uma planta resistente à lava”."] }
         ]
       }
     },
@@ -5094,11 +5115,11 @@ const patchnotesConfig = {
             "type": "add",
             "heading": "Ajout :",
             "items": [
-              "Ajout de 2 nouveaux biome : la foret de redwood et la terre de volcan",
+              "Ajout de 2 nouveaux biomes : la forêt Redwood et la terre volcanique",
               "Ajout de 2 blocs de sable",
-              "Ajout de blocs décoratif : le Gilbre",
+              "Ajout de blocs décoratifs : le Gilbre",
               "Ajout de 6 nouveaux avancements",
-              "Ajout de 2 nouvelle fleur : la fleur du ciel et la fleur des volans"
+              "Ajout de 2 nouvelles fleurs : la fleur du ciel et la fleur volante"
             ]
           },
           {
@@ -5106,10 +5127,10 @@ const patchnotesConfig = {
             "heading": "Modification :",
             "items": [
               "Réorganisation de l'inventaire créatif",
-              "Modificatons de la texture du cave block et des block en redwood",
-              "Changement du nom de Sayabiome a Saya forest",
-              "Résolution de duplication avec les craft sur le nickel",
-              "Modifications du nombre d'apparition d'abeille dans la foret de saya"
+              "Modification des textures du Cave Block et des blocs Redwood",
+              "Nom changé de « biome Saya » en « forêt Saya »",
+              "Résolution des recettes dupliquées à base de nickel",
+              "Ajustement du nombre d'abeilles dans la forêt Saya"
             ]
           }
         ],
@@ -5138,28 +5159,28 @@ const patchnotesConfig = {
           }
         ],
         "it": [
-          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunti 2 nuovi biomi: Redwood Forest e Volcano Land.", "Aggiunti 2 nuovi blocchi di sabbia.", "Aggiunti blocchi decorativi: Gilbre.", "Aggiunti 6 nuovi avanzamenti.", "Aggiunti 2 nuovi fiori: Sky Flower e Flying Flower."] },
-          { "type": "fix", "heading": "Modifiche:", "items": ["Riorganizzato l’inventario creativo.", "Modificate le texture del Cave Block e dei blocchi Redwood.", "Modificato il nome da Sayabiome a Saya Forest.", "Risolta la duplicazione delle ricette del Nickel.", "Modificato il numero di api che compaiono nella foresta Saya."] }
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunti 2 nuovi biomi: Foresta Redwood e Terra vulcanica.", "Aggiunti 2 nuovi blocchi di sabbia.", "Aggiunti blocchi decorativi: Gilbre.", "Aggiunti 6 nuovi avanzamenti.", "Aggiunti 2 nuovi fiori: Fiore del cielo e Fiore volante."] },
+          { "type": "fix", "heading": "Modifiche:", "items": ["Riorganizzato l’inventario creativo.", "Modificate le texture del Cave Block e dei blocchi Redwood.", "Modificato il nome da bioma Saya a Foresta Saya.", "Risolta la duplicazione delle ricette del Nichel.", "Modificato il numero di api che compaiono nella foresta Saya."] }
         ],
         "es": [
-          { "type": "add", "heading": "Añadido:", "items": ["Añadidos 2 biomas nuevos: Redwood Forest y Volcano Land.", "Añadidos 2 bloques de arena nuevos.", "Añadidos bloques decorativos: Gilbre.", "Añadidos 6 progresos nuevos.", "Añadidas 2 flores nuevas: Sky Flower y Flying Flower."] },
-          { "type": "fix", "heading": "Modificaciones:", "items": ["Reorganizado el inventario creativo.", "Modificadas las texturas del Cave Block y de los bloques Redwood.", "Cambiado el nombre de Sayabiome a Saya Forest.", "Resuelta la duplicación de las recetas de Nickel.", "Modificada la cantidad de abejas que aparecen en el bosque Saya."] }
+          { "type": "add", "heading": "Añadido:", "items": ["Añadidos 2 biomas nuevos: Bosque Redwood y Tierra volcánica.", "Añadidos 2 bloques de arena nuevos.", "Añadidos bloques decorativos: Gilbre.", "Añadidos 6 progresos nuevos.", "Añadidas 2 flores nuevas: Flor del cielo y Flor voladora."] },
+          { "type": "fix", "heading": "Modificaciones:", "items": ["Reorganizado el inventario creativo.", "Modificadas las texturas del Cave Block y de los bloques Redwood.", "Cambiado el nombre de bioma Saya a Bosque Saya.", "Resuelta la duplicación de las recetas de Níquel.", "Modificada la cantidad de abejas que aparecen en el bosque Saya."] }
         ],
         "de": [
-          { "type": "add", "heading": "Hinzugefügt:", "items": ["2 neue Biome hinzugefügt: Redwood Forest und Volcano Land.", "2 neue Sandblöcke hinzugefügt.", "Dekorative Blöcke hinzugefügt: Gilbre.", "6 neue Fortschritte hinzugefügt.", "2 neue Blumen hinzugefügt: Sky Flower und Flying Flower."] },
-          { "type": "fix", "heading": "Änderungen:", "items": ["Kreativinventar neu organisiert.", "Texturen des Cave Block und der Redwood-Blöcke geändert.", "Name von Sayabiome in Saya Forest geändert.", "Doppelte Nickel-Rezepte behoben.", "Anzahl der Bienen im Saya-Wald angepasst."] }
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["2 neue Biome hinzugefügt: Redwood-Wald und Vulkanland.", "2 neue Sandblöcke hinzugefügt.", "Dekorative Blöcke hinzugefügt: Gilbre.", "6 neue Fortschritte hinzugefügt.", "2 neue Blumen hinzugefügt: Himmelsblume und Fliegende Blume."] },
+          { "type": "fix", "heading": "Änderungen:", "items": ["Kreativinventar neu organisiert.", "Texturen des Cave Block und der Redwood-Blöcke geändert.", "Name von Saya-Biom in Saya-Wald geändert.", "Doppelte Nickel-Rezepte behoben.", "Anzahl der Bienen im Saya-Wald angepasst."] }
         ],
         "ja": [
-          { "type": "add", "heading": "追加:", "items": ["新しいバイオーム Redwood Forest と Volcano Land を2種類追加しました。", "新しい砂ブロックを2種類追加しました。", "装飾ブロック Gilbre を追加しました。", "新しい進捗を6個追加しました。", "新しい花 Sky Flower と Flying Flower を2種類追加しました。"] },
-          { "type": "fix", "heading": "変更:", "items": ["クリエイティブインベントリを再編成しました。", "Cave Block と Redwood ブロックのテクスチャを変更しました。", "名前を Sayabiome から Saya Forest に変更しました。", "Nickel のレシピが重複する問題を修正しました。", "Saya Forest に出現するミツバチの数を調整しました。"] }
+          { "type": "add", "heading": "追加:", "items": ["新しいバイオーム「Redwoodの森」と「火山の地」を2種類追加しました。", "新しい砂ブロックを2種類追加しました。", "装飾ブロック Gilbre を追加しました。", "新しい進捗を6個追加しました。", "新しい花「空の花」と「空飛ぶ花」を2種類追加しました。"] },
+          { "type": "fix", "heading": "変更:", "items": ["クリエイティブインベントリを再編成しました。", "Cave Block と Redwood ブロックのテクスチャを変更しました。", "名前を「Sayaバイオーム」から「Sayaの森」に変更しました。", "ニッケル のレシピが重複する問題を修正しました。", "Sayaの森に出現するミツバチの数を調整しました。"] }
         ],
         "ko": [
-          { "type": "add", "heading": "추가:", "items": ["신규 생물 군계 Redwood Forest와 Volcano Land 2종 추가", "신규 모래 블록 2종 추가", "장식 블록 Gilbre 추가", "신규 발전 과제 6개 추가", "신규 꽃 Sky Flower와 Flying Flower 2종 추가"] },
-          { "type": "fix", "heading": "변경:", "items": ["크리에이티브 인벤토리 재구성", "Cave Block과 Redwood 블록 텍스처 변경", "이름을 Sayabiome에서 Saya Forest로 변경", "Nickel 제작법 중복 수정", "Saya 숲에 생성되는 벌 수 조정"] }
+          { "type": "add", "heading": "추가:", "items": ["신규 생물 군계 Redwood 숲과 화산 지대 2종 추가", "신규 모래 블록 2종 추가", "장식 블록 Gilbre 추가", "신규 발전 과제 6개 추가", "신규 꽃 하늘꽃과 날아다니는 꽃 2종 추가"] },
+          { "type": "fix", "heading": "변경:", "items": ["크리에이티브 인벤토리 재구성", "Cave Block과 Redwood 블록 텍스처 변경", "이름을 Saya 생물 군계에서 Saya 숲으로 변경", "니켈 제작법 중복 수정", "Saya 숲에 생성되는 벌 수 조정"] }
         ],
         "pt-br": [
-          { "type": "add", "heading": "Adicionado:", "items": ["Adicionados 2 novos biomas: Redwood Forest e Volcano Land.", "Adicionados 2 novos blocos de areia.", "Adicionados blocos decorativos: Gilbre.", "Adicionados 6 novos avanços.", "Adicionadas 2 novas flores: Sky Flower e Flying Flower."] },
-          { "type": "fix", "heading": "Alterações:", "items": ["Inventário criativo reorganizado.", "Texturas do Cave Block e dos blocos Redwood alteradas.", "Nome alterado de Sayabiome para Saya Forest.", "Corrigida a duplicação das receitas de Nickel.", "Quantidade de abelhas que aparecem na floresta Saya alterada."] }
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionados 2 novos biomas: Floresta Redwood e Terra vulcânica.", "Adicionados 2 novos blocos de areia.", "Adicionados blocos decorativos: Gilbre.", "Adicionados 6 novos avanços.", "Adicionadas 2 novas flores: Flor do céu e Flor voadora."] },
+          { "type": "fix", "heading": "Alterações:", "items": ["Inventário criativo reorganizado.", "Texturas do Cave Block e dos blocos Redwood alteradas.", "Nome alterado de bioma Saya para Floresta Saya.", "Corrigida a duplicação das receitas de Níquel.", "Quantidade de abelhas que aparecem na floresta Saya alterada."] }
         ]
       }
     },
@@ -5175,20 +5196,20 @@ const patchnotesConfig = {
             "type": "add",
             "heading": "Ajout :",
             "items": [
-              "Ajout d'un nouveau types d'arbres",
-              "Ajout d'un nouveaux minerai le « Carmeltazite »",
-              "Nouvelle item",
-              "Nouveaux blocs craftable",
-              "Nouvelle achievement",
-              "Ajout d'un craft pour la selle",
-              "Ajout du blocs de multicolore"
+              "Ajout d'un nouveau type d'arbre",
+              "Ajout d'un nouveau minerai « Carmeltazite »",
+              "Ajout d'un nouvel objet",
+              "Ajout de nouveaux blocs fabricables",
+              "Ajout d'un nouvel avancement",
+              "Ajout d'une recette pour la selle",
+              "Ajout de blocs Multicolor"
             ]
           },
           {
             "type": "fix",
             "heading": "Modification :",
             "items": [
-              "Correction sur certain minerai de la couche d'apparition par chunk et de sa forme d'apparition"
+              "Correction de la hauteur et de la forme de génération par chunk de certains minerais"
             ]
           }
         ],
@@ -5252,14 +5273,14 @@ const patchnotesConfig = {
             "type": "add",
             "heading": "Ajout :",
             "items": [
-              "Ajout du blocs de multicolore"
+              "Ajout de blocs Multicolor"
             ]
           },
           {
             "type": "fix",
             "heading": "Modification :",
             "items": [
-              "Refonte des textures pour tout les élément en Multicolore"
+              "Refonte des textures de tous les éléments Multicolor"
             ]
           }
         ],

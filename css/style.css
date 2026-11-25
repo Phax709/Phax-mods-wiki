@@ -1432,6 +1432,116 @@ li {
   margin-bottom: 0.3rem;
 }
 
+.news-countdown {
+  margin: 0 0 1.4rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.news-countdown-title {
+  margin: 0 0 0.75rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.news-countdown-timer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.news-countdown-timer[hidden] {
+  display: none;
+}
+
+.news-countdown-unit {
+  padding: 0.9rem 0.4rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.14);
+  text-align: center;
+}
+
+.news-countdown-value,
+.news-countdown-label {
+  display: block;
+}
+
+.news-countdown-value {
+  color: var(--text);
+  font-size: clamp(1.5rem, 5vw, 2.7rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.news-countdown-label {
+  margin-top: 0.25rem;
+  color: var(--text);
+  font-size: 0.75rem;
+}
+
+.news-countdown-zone {
+  margin: 1.2rem 0 1.4rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.news-countdown-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.news-countdown-date-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.news-countdown-date {
+  color: var(--text);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.news-countdown-status:empty {
+  display: none;
+}
+
+.news-countdown-status {
+  margin: 0.7rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 520px) {
+  .news-countdown-timer {
+    gap: 0.4rem;
+  }
+
+  .news-countdown-unit {
+    padding: 0.75rem 0.2rem 0.65rem;
+    border-radius: 10px;
+  }
+
+  .news-countdown-date-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .news-countdown-date {
+    text-align: left;
+  }
+}
+
 .modal-news-img {
   display: block;
   max-width: 100%;

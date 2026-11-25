@@ -122,7 +122,11 @@ const i18n = {
       const key = el.getAttribute('data-i18n');
       const val = this.get(key);
       if (val !== key) {
-        el.innerHTML = val;
+        if (el.tagName === 'TITLE') {
+          el.textContent = val;
+        } else {
+          el.innerHTML = val;
+        }
       }
     });
 
