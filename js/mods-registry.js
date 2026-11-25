@@ -103,7 +103,7 @@ const modsRegistry = [
     cardDescKey: 'card.acatar.desc',
     wikiId: 'acatar',
     status: 'development',
-    progress: 80.0,
+    progress: 100.0,
     features: [
       {text: {
         fr: 'Bateau et panneau des différents types de bois', 
@@ -112,11 +112,11 @@ const modsRegistry = [
       {text: {
         fr: 'Refonte dimensions Midler', 
         en:'Midler dimensions redesign'}, 
-        status: 'in_progress'},
+        status: 'complete'},
       {text: {
         fr: 'Refonte de la structure du boss (externe + colosse)', 
         en:'Overhaul of the boss structure (external + colossus)'}, 
-        status: 'in_progress'},
+        status: 'complete'},
       {text: {
         fr: 'Ajout de la génération de la baie orange', 
         en:'Addition of the orange berry generation'}, 

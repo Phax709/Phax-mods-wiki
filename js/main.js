@@ -781,9 +781,18 @@ const modalClose = document.getElementById('modalClose');
 const modalTitle = document.getElementById('modalTitle');
 const modalDate = document.getElementById('modalDate');
 const modalBody = document.getElementById('modalBody');
+let newsCountdownInterval = null;
+
+function clearNewsCountdown() {
+  if (newsCountdownInterval !== null) {
+    clearInterval(newsCountdownInterval);
+    newsCountdownInterval = null;
+  }
+}
 
 function openModal(title, date, bodyHTML, image) {
   if (!modalOverlay) return;
+  clearNewsCountdown();
 
   // Nettoyage des anciennes images/crédits
   var oldImg = modalOverlay.querySelector('.modal-news-img');
@@ -812,7 +821,7 @@ function openModal(title, date, bodyHTML, image) {
       credit.href = creditUrl;
       credit.target = '_blank';
       credit.rel = 'noopener';
-      credit.textContent = 'Image by Freepik';
+      credit.textContent = i18n.get('credits.image_by');
       modalTitle.parentNode.insertBefore(credit, modalTitle);
     }
   }
@@ -843,6 +852,7 @@ window.openModal = openModal;
 
 function closeModal() {
   if (!modalOverlay) return;
+  clearNewsCountdown();
   modalOverlay.classList.remove('visible');
   if (window.location.hash.startsWith('#wiki=')) {
     history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -889,11 +899,189 @@ document.addEventListener('keydown', (e) => {
     return prefix + cleanPath;
   }
 
-  function getNewsImage(image, lang) {
-    if (image && typeof image === 'object') {
-      return image[lang] || image.fr || image.en;
+  function getNewsImage(news, lang) {
+    if (news.image) {
+      if (typeof news.image === 'object') {
+        return news.image[lang] || news.image.fr || news.image.en;
+      }
+      return news.image;
     }
-    return image;
+
+    if (!news.mod) return undefined;
+
+    const mod = getModById(news.mod);
+    if (!mod) {
+      console.error('Unknown mod "' + news.mod + '" in news "' + news.id + '".');
+      return undefined;
+    }
+
+    if (!mod.newsImage) {
+      console.error('No default news image is configured for mod "' + news.mod + '".');
+      return undefined;
+    }
+
+    return mod.newsImage;
+  }
+
+  function createNewsCountdown(remainingTime, lang) {
+    const targetDate = new Date(remainingTime.target);
+    if (!Number.isFinite(targetDate.getTime())) {
+      throw new Error('Invalid remainingTime target: ' + remainingTime.target);
+    }
+
+    const isEnglish = lang === 'en';
+    const strings = isEnglish
+      ? {
+          title: 'Time remaining before release',
+          timeZone: 'Detected time zone:',
+          releaseDate: 'Release date in your time zone',
+          days: 'days',
+          hours: 'hours',
+          minutes: 'minutes',
+          seconds: 'seconds',
+          released: 'The planned release time has arrived.'
+        }
+      : {
+          title: 'Temps restant avant la sortie',
+          timeZone: 'Fuseau détecté :',
+          releaseDate: 'Date de sortie dans ton fuseau horaire',
+          days: 'jours',
+          hours: 'heures',
+          minutes: 'minutes',
+          seconds: 'secondes',
+          released: 'L’heure de sortie prévue est arrivée.'
+        };
+    const locale = isEnglish ? 'en' : 'fr';
+    const dateFormatter = new Intl.DateTimeFormat(locale, {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZoneName: 'short'
+    });
+
+    const section = document.createElement('section');
+    section.className = 'news-countdown';
+    section.setAttribute('aria-label', strings.title);
+
+    const heading = document.createElement('h3');
+    heading.className = 'news-countdown-title';
+    heading.textContent = strings.title;
+    section.appendChild(heading);
+
+    const timer = document.createElement('div');
+    timer.className = 'news-countdown-timer';
+    timer.setAttribute('role', 'timer');
+    timer.setAttribute('aria-live', 'off');
+    const units = [
+      ['days', strings.days],
+      ['hours', strings.hours],
+      ['minutes', strings.minutes],
+      ['seconds', strings.seconds]
+    ];
+
+    units.forEach(([unit, label]) => {
+      const item = document.createElement('div');
+      item.className = 'news-countdown-unit';
+
+      const value = document.createElement('span');
+      value.className = 'news-countdown-value';
+      value.dataset.countdownValue = unit;
+      value.textContent = '00';
+      item.appendChild(value);
+
+      const unitLabel = document.createElement('span');
+      unitLabel.className = 'news-countdown-label';
+      unitLabel.textContent = label;
+      item.appendChild(unitLabel);
+      timer.appendChild(item);
+    });
+    section.appendChild(timer);
+
+    const timeZoneStatus = document.createElement('p');
+    timeZoneStatus.className = 'news-countdown-zone';
+    timeZoneStatus.textContent =
+      strings.timeZone + ' ' + (Intl.DateTimeFormat().resolvedOptions().timeZone || 'unknown') + '.';
+    section.appendChild(timeZoneStatus);
+
+    const releaseDateRow = document.createElement('div');
+    releaseDateRow.className = 'news-countdown-date-row';
+
+    const releaseDateLabel = document.createElement('span');
+    releaseDateLabel.className = 'news-countdown-date-label';
+    releaseDateLabel.textContent = strings.releaseDate;
+    releaseDateRow.appendChild(releaseDateLabel);
+
+    const releaseDate = document.createElement('strong');
+    releaseDate.className = 'news-countdown-date';
+    releaseDate.textContent = dateFormatter.format(targetDate);
+    releaseDateRow.appendChild(releaseDate);
+    section.appendChild(releaseDateRow);
+
+    const status = document.createElement('p');
+    status.className = 'news-countdown-status';
+    status.setAttribute('role', 'status');
+    section.appendChild(status);
+
+    function update() {
+      const remaining = targetDate.getTime() - Date.now();
+      if (remaining <= 0) {
+        timer.hidden = true;
+        status.textContent = strings.released;
+        return false;
+      }
+
+      const totalSeconds = Math.floor(remaining / 1000);
+      const values = {
+        days: Math.floor(totalSeconds / 86400),
+        hours: Math.floor((totalSeconds % 86400) / 3600),
+        minutes: Math.floor((totalSeconds % 3600) / 60),
+        seconds: totalSeconds % 60
+      };
+
+      Object.entries(values).forEach(([unit, value]) => {
+        timer.querySelector('[data-countdown-value="' + unit + '"]').textContent =
+          String(value).padStart(2, '0');
+      });
+      return true;
+    }
+
+    return { section, update };
+  }
+
+  function openNewsModal(news, lang) {
+    const title = news.title[lang] || news.title.fr;
+    const contentLang = news.content[lang] ? lang : 'fr';
+    const content = news.content[contentLang] || news.content.fr;
+    const badgeLabel = news.badge
+      ? (typeof i18n !== 'undefined' ? i18n.get('news.badge_' + news.badge) : news.badge)
+      : '';
+    const badgeHTML = news.badge
+      ? ' <span class="news-badge news-badge-' + news.badge + '">' + badgeLabel + '</span>'
+      : '';
+    const image = resolveImgPath(getNewsImage(news, lang), news.badge);
+
+    if (!news.remainingTime) {
+      openModal(news.icon + ' ' + title + badgeHTML, news.date, content, image);
+      return;
+    }
+
+    const countdown = createNewsCountdown(news.remainingTime, contentLang);
+    const body = document.createElement('div');
+    body.appendChild(countdown.section);
+
+    const fullContent = document.createElement('div');
+    fullContent.innerHTML = content;
+    body.appendChild(fullContent);
+
+    openModal(news.icon + ' ' + title + badgeHTML, news.date, body, image);
+    if (countdown.update()) {
+      newsCountdownInterval = window.setInterval(() => {
+        if (!countdown.update()) clearNewsCountdown();
+      }, 1000);
+    }
   }
 
   // Homepage: slider
@@ -917,11 +1105,11 @@ document.addEventListener('keydown', (e) => {
       const title = n.title[lang] || n.title.fr;
       const badgeLabel = n.badge ? ((typeof i18n !== 'undefined') ? i18n.get('news.badge_' + n.badge) : n.badge) : '';
       const badgeHTML = n.badge ? '<span class="news-badge news-badge-' + n.badge + '">' + badgeLabel + '</span>' : '';
-      const image = getNewsImage(n.image, lang);
+      const image = getNewsImage(n, lang);
       const newsImg = resolveImgPath(image, n.badge);
       const imageHTML = '<img class="news-slide-img" src="' + newsImg + '" alt="">';
       const creditUrl = imageCredits[image] || imageCredits[newsImg];
-      const creditHTML = creditUrl ? '<a class="slide-img-credit" href="' + creditUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">Image by Freepik</a>' : '';
+      const creditHTML = creditUrl ? '<a class="slide-img-credit" href="' + creditUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + i18n.get('credits.image_by') + '</a>' : '';
       sliderHTML += '<div class="news-slide has-image" data-news-index="' + i + '">' +
         '<div class="news-slide-img-wrap">' + imageHTML + creditHTML + '</div>' +
         '<div class="news-slide-header">' +
@@ -965,12 +1153,7 @@ document.addEventListener('keydown', (e) => {
       slide.addEventListener('click', () => {
         const currentLang = (typeof i18n !== 'undefined') ? i18n.contentLang : 'fr';
         const idx = parseInt(slide.dataset.newsIndex);
-        const n = active[idx];
-        const title = n.title[currentLang] || n.title.fr;
-        const content = n.content[currentLang] || n.content.fr;
-        const bLabel = n.badge ? ((typeof i18n !== 'undefined') ? i18n.get('news.badge_' + n.badge) : n.badge) : '';
-        const bHTML = n.badge ? ' <span class="news-badge news-badge-' + n.badge + '">' + bLabel + '</span>' : '';
-        openModal(n.icon + ' ' + title + bHTML, n.date, content, resolveImgPath(getNewsImage(n.image, currentLang), n.badge));
+        openNewsModal(active[idx], currentLang);
       });
     });
 
@@ -1015,7 +1198,7 @@ document.addEventListener('keydown', (e) => {
       const badgeLabel = n.badge ? ((typeof i18n !== 'undefined') ? i18n.get('news.badge_' + n.badge) : n.badge) : '';
       const badgeHTML = n.badge ? '<span class="news-badge news-badge-' + n.badge + '">' + badgeLabel + '</span>' : '';
       
-      const image = getNewsImage(n.image, currentLang);
+      const image = getNewsImage(n, currentLang);
       const newsImg = resolveImgPath(image, n.badge);
       
       // Recherche de l'URL du crédit : vérifie n.image, puis l'image résolue (par défaut), puis sans le préfixe
@@ -1029,7 +1212,7 @@ document.addEventListener('keydown', (e) => {
       var imageHTML = '<div class="news-slide-img-wrap">' +
         '<img class="news-slide-img" src="' + newsImg + '" alt="">';
       if (creditUrl) {
-        imageHTML += '<a class="slide-img-credit" href="' + creditUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">Image by Freepik</a>';
+        imageHTML += '<a class="slide-img-credit" href="' + creditUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + i18n.get('credits.image_by') + '</a>';
       }
       imageHTML += '</div>';
 
@@ -1045,13 +1228,8 @@ document.addEventListener('keydown', (e) => {
       card.addEventListener('click', (e) => {
         // Ne pas ouvrir le modal si on clique directement sur le lien Freepik
         if (e.target.tagName === 'A') return;
-        
-        openModal(
-          n.icon + ' ' + title + (badgeHTML ? ' ' + badgeHTML : ''), 
-          n.date, 
-          content, 
-          newsImg
-        );
+
+        openNewsModal(n, currentLang);
       });
       newsContainer.appendChild(card);
     });
@@ -1132,6 +1310,22 @@ document.addEventListener('keydown', (e) => {
     return translations[language] || (language === 'gb' ? translations.en : null) || translations.en || translations.fr || [];
   }
 
+  function getPatchTitle(patch, language) {
+    if (typeof patch.title === 'string') return patch.title;
+    if (!patch.title || typeof patch.title !== 'object') return '';
+    return patch.title[language] || (language === 'gb' ? patch.title.en : null) || patch.title.en || patch.title.fr || '';
+  }
+
+  function escapeHTML(value) {
+    return value.replace(/[&<>"']/g, character => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    })[character]);
+  }
+
   function getPatchChangeText(changes) {
     if (!Array.isArray(changes)) return '';
     return changes.map(section => {
@@ -1201,7 +1395,8 @@ document.addEventListener('keydown', (e) => {
       if (query) {
         const changes = getPatchChangeText(getPatchChanges(p, currentLang)).toLowerCase();
         const modName = (modNames[p.modId] || p.modId).toLowerCase();
-        const searchable = (modName + ' ' + p.version + ' ' + p.mcVersion + ' ' + p.loader + ' ' + changes).toLowerCase();
+        const patchTitle = getPatchTitle(p, currentLang).toLowerCase();
+        const searchable = (modName + ' ' + patchTitle + ' ' + p.version + ' ' + p.mcVersion + ' ' + p.loader + ' ' + changes).toLowerCase();
         if (!searchable.includes(query)) return false;
       }
       return true;
@@ -1216,9 +1411,10 @@ document.addEventListener('keydown', (e) => {
     let html = '';
     filtered.forEach(p => {
       const modName = modNames[p.modId] || p.modId;
+      const patchTitle = getPatchTitle(p, currentLang);
       html += '<div class="patch-entry" data-patch-mod="' + p.modId + '" data-patch-version="' + p.version + '" data-patch-type="' + (p.type || 'release') + '" data-patch-mc="' + p.mcVersion + '">';
       html += '<div class="patch-entry-header">';
-      html += '<span class="patch-mod-name">' + modName + '</span>';
+      html += '<span class="patch-mod-name">' + modName + (patchTitle ? ' : ' + escapeHTML(patchTitle) : '') + '</span>';
       html += '<span class="patch-version">v' + p.version + '</span>';
       var badgeType = p.type || 'release';
       html += '<span class="patch-type-badge patch-type-' + badgeType + '">' + badgeType.toUpperCase() + '</span>';
@@ -1243,7 +1439,8 @@ document.addEventListener('keydown', (e) => {
         if (!patch) return;
         const modName = modNames[modId] || modId;
         const changes = getPatchChanges(patch, currentLang);
-        const title = modName + ' — v' + patch.version;
+        const patchTitle = getPatchTitle(patch, currentLang);
+        const title = modName + (patchTitle ? ' : ' + escapeHTML(patchTitle) : '') + ' — v' + patch.version;
         var mBadgeType = patch.type || 'release';
         const body = document.createElement('div');
         const tags = document.createElement('div');
@@ -1262,7 +1459,7 @@ document.addEventListener('keydown', (e) => {
         body.appendChild(tags);
 
         if (changes.length === 0) {
-          var noChanges = currentLang === 'en' ? 'No details available for this version.' : 'Aucun détail disponible pour cette version.';
+          var noChanges = i18n.get('patchnotes.no_details');
           const noChangesText = document.createElement('p');
           noChangesText.style.color = 'var(--text-muted)';
           noChangesText.style.fontStyle = 'italic';

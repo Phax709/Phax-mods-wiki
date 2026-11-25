@@ -13,11 +13,35 @@
 //                 Prioritaire sur mod et peut être { fr: "...", en: "..." }.
 //   - title     : { fr: "...", en: "..." }
 //   - content   : { fr: "...", en: "..." }  (HTML autorisé)
+//   - remainingTime: (optionnel) { target: "date ISO avec décalage horaire" }
 //
 // Exemple : mod: 'acatar' utilise l'image par défaut d'Acatar;
 //           ajouter image: '...' permet de la remplacer pour cette news.
 
 const newsConfig = [
+  {
+    id: 'acatar-wilds-of-the-midler-release',
+    date: '2026-11-25',
+    showUntil: '2026-11-30',
+    icon: '🌿',
+    badge: 'announcement',
+    mod: 'acatar',
+    remainingTime: {
+      target: '2026-11-27T17:00:00+01:00'
+    },
+    title: {
+      fr: 'Acatar : sortie des Terres Sauvages du Midler vendredi à 17 h !',
+      en: 'Acatar: Wilds of the Midler releases Friday at 5 PM!'
+    },
+    content: {
+      fr: `<p>J'annonce la sortie de la mise à jour <strong>Terres Sauvages du Midler</strong> pour ce vendredi 27 novembre à 17 h, heure de Paris. Le compte à rebours ci-dessus vous indique la date et l'heure correspondantes dans votre fuseau horaire.</p>
+           <p>Le développement entre maintenant en <strong>phase de test</strong>. Les structures sont finalisées et la progression du développement de cette mise à jour est désormais à <strong>100 %</strong>. Je vais maintenant tester le contenu et effectuer les dernières vérifications avant la sortie.</p>
+           <p>Merci pour votre patience et votre soutien !</p>`,
+      en: `<p>The <strong>Wilds of the Midler</strong> update is scheduled to release this Friday, November 27 at 5 PM Paris time. The countdown above shows the corresponding date and time in your local time zone.</p>
+           <p>Development is now entering the <strong>testing phase</strong>. The structures are finalized, and development progress for this update has reached <strong>100%</strong>. I will now test the content and carry out the final checks before release.</p>
+           <p>Thank you for your patience and support!</p>`
+    }
+  },
   {
     id: 'acatar-wilds-of-the-midler-next-week',
     date: '2026-11-18',
