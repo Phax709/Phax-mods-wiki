@@ -20,9 +20,37 @@
 
 const newsConfig = [
   {
+    id: 'acatar-wilds-of-the-midler-released',
+    date: '2026-11-27',
+    showUntil: '2026-12-04',
+    icon: '🎉',
+    badge: 'update',
+    mod: 'acatar',
+    title: {
+      fr: 'Acatar 1.1.0 est disponible !',
+      en: 'Acatar 1.1.0 is now available!'
+    },
+    content: {
+      fr: `<p>La mise à jour <strong>Terres Sauvages du Midler</strong> est maintenant disponible pour Minecraft <strong>26.1.2</strong>.</p>
+           <p>C'est la plus grosse mise à jour que j'aie jamais réalisée, et son développement m'a pris plus de <strong>deux mois</strong>.</p>
+           <p>Un patch correctif suivra après la sortie, dès que j'aurai trouvé une solution aux derniers bugs connus.</p>
+           <p>Malheureusement, d'importants problèmes techniques sont survenus lors de la migration du contenu et de la compilation (build) du mod pour Minecraft 1.21.1. Le maintien de cette version n'étant plus viable techniquement, j'ai pris la décision d'arrêter définitivement son support.
+            Par conséquent, la version 1.4.3 restera la dernière version disponible pour la 1.21.1, et la mise à jour Terres Sauvages ne pourra malheureusement pas voir le jour sur cette version du jeu.
+            Désolé pour ce désagrément, et merci pour votre compréhension et votre soutien !</p>
+           <p>Merci pour votre patience et votre soutien !</p>`,
+      en: `<p>The <strong>Wilds of the Midler</strong> update is now available for Minecraft <strong>26.1.2</strong>.</p>
+           <p>This is the biggest update I have ever made, and it took me over <strong>two months</strong> to complete.</p>
+           <p>A post-release patch will follow once I have found solutions for the remaining known bugs.</p>
+           <p>Unfortunately, significant technical issues occurred while migrating the content and building the mod for Minecraft 1.21.1. Since maintaining this version is no longer technically viable, I have made the decision to permanently discontinue its support.
+            Consequently, version 1.4.3 will remain the final release available for 1.21.1, and the Wildlands (ou Terres Sauvages) update will unfortunately not be released for this version of the game.
+            Sorry for the inconvenience, and thank you for your understanding and support!</p>
+           <p>Thank you for your patience and support!</p>`
+    }
+  },
+  {
     id: 'acatar-wilds-of-the-midler-release',
     date: '2026-11-25',
-    showUntil: '2026-11-30',
+    showUntil: '2026-11-26',
     icon: '🌿',
     badge: 'announcement',
     mod: 'acatar',

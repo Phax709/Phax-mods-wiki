@@ -43,6 +43,251 @@
 const patchnotesConfig = {
   acatar: [
     {
+      "version": "1.1.0",
+      "title": {
+        "fr": "Terre Sauvage du Midler",
+        "en": "Wilds of the Midler",
+        "it": "Terre selvagge del Midler",
+        "es": "Tierras salvajes del Midler",
+        "de": "Die Wildnis von Midler",
+        "ja": "ミドラーの荒野",
+        "ko": "미들러의 황야",
+        "pt-br": "Terras Selvagens do Midler"
+      },
+      "date": "2026-11-27",
+      "loader": "NeoForge",
+      "mcVersion": "26.1.2",
+      "type": "release",
+      "changes": {
+        "fr": [
+          {
+            "type": "info",
+            "heading": "Note :",
+            "items": [
+              "Problème connu : Les arbres de Menthombre peuvent parfois se générer en lévitation au-dessus de la végétation ou des buissons ; j'y travaille activement pour essayer de réduire ou de régler ce souci.",
+              "La fonctionnalité de lancer l'œuf de poule des brumes est temporairement désactivée. Je vais essayer de la refaire fonctionner correctement dans une prochaine mise à jour.",
+              "Problème connu : les animations de marche du modèle principal de l'Ondegel adulte et du bébé Ondegel sont désynchronisées avec celles de leur couche extérieure. Dès que j'aurai réussi à trouver l'origine du problème, je publierai un patch.", "Je publierai un patch correctif après la sortie, dès que j'aurai trouvé une solution aux derniers bugs connus."
+            ]
+          },
+          {
+            "type": "add",
+            "heading": "Ajout :",
+            "items": [
+              "Ajout de l'othonite et de ses variantes",
+              "Ajout de l'arcanite et de ses variantes",
+              "Ajout de particules de feuilles tombantes pour tous les blocs de feuilles",
+              "Ajout de la Tarte à la baie orange",
+              "Ajout d'un nouvel arbre : le Mintshade",
+              "Ajout de l'ambre résineuse et de ses variantes",
+              "Ajout du biome « Clairière Scintillante »",
+              "Ajout du biome « Plaines d'Albâtre »",
+              "Ajout du biome « Terres cendreuses »",
+              "Ajout du Buisson d'albâtre",
+              "Ajout de la Calyce d'Othonite",
+              "Ajout de l'obsidienne de faille",
+              "Ajout de la Vache du Midler et de sa version bébé (Veau du Midler)",
+              "Ajout du Cuir du Midler",
+              "Ajout du Bœuf du Midler (cru et cuit)",
+              "Ajout du Cochon céleste et de sa version bébé (Porcelet céleste)",
+              "Ajout de la Côtelette céleste (crue et cuite)",
+              "Ajout du Mouton onirique et de sa version bébé (Agneau onirique)",
+              "Ajout de la Côtelette céleste (crue et cuite)",
+              "Ajout de la laine onirique",
+              "Ajout de la Poule des brumes et de sa version bébé (Poussin des brumes)",
+              "Ajout de l'Œuf de poule des brumes",
+              "Ajout de la Volaille des brumes (crue et cuite)",
+              "Ajout du Grizzly et de son bébé",
+              "Ajout du renard d'etycola et de sa variante bébé.",
+              "Ajout de la griffe de renard d'etycola.",
+              "Ajout de la relique des cendres.",
+              "Ajout de l'arbuste calciné et de l'arbuste pétrifié.",
+              "Ajout du Primordial.",
+              "Ajout du bloc de cristal d'arcane et du bloc de cristal d'arcane stabilisé",
+              "Ajout de la géode d'arcane",
+              "Ajout de différentes versions de coffres-forts : redstone, moussu, de combat et dimensionnel",
+              "Ajout du spawner du Primordial"
+            ]
+          },
+          {
+            "type": "fix",
+            "heading": "Changements & Corrections :",
+            "items": [
+              "Correction de la désintégration des feuilles du bois de l'ender et du palmier qui restaient sans bois",
+              "Restructuration et rééquilibrage des tables de butin pour l'ensemble des feuillages",
+              "Il est maintenant possible d'utiliser le compost pour toutes les feuilles.",
+              "Ajout des recettes de composteur manquantes avec les dalles de palmier, de noctacacia et de luminapin",
+              "Correction d'un problème où les pousses d'opaline ne se lootaient pas lors de la désintégration des feuilles",
+              {
+                "text": "Réorganisation de l'inventaire créatif :",
+                "childrenListType": "ordered",
+                "children": [
+                  "Réorganisation des minerais dans l'onglet créatif",
+                  "Réorganisation des blocs et objets divers dans l'onglet créatif",
+                  "Renommage de l'onglet créatif en « Acatar : Blocs et Divers »"
+                ]
+              },
+              "Refonte complète des textures du bois de l'ender",
+              "Refonte complète et optimisation du buisson de baie orange (génération, mécaniques et équilibrage)",
+              "Suppression du livre Acatar",
+              "Modification de la recette du briquet du midler",
+              "Le briquet du midler n'a désormais plus que 2 utilisations en mode survie",
+              "Modification du bloc de portail pour la dimension du Midler",
+              "Refonte des œufs d'apparition pour les boss Extermate et Colossum (passage à des textures personnalisées)",
+              "Refonte des œufs d'apparition pour le Lyvora, Creeper céruléen et l'Ondegel (passage à des textures personnalisées)",
+              "Suppression du libellé au dessus de la tête du boss Extermate",
+              "Ajustement de la table de butin du Creeper céruléen",
+              "Refonte visuelle du Bébé Ondegel (nouveau modèle 3D et nouvelle texture)",
+              "Optimisation et amélioration de la gestion de l'objet lâché par le Lyvora",
+              "Réduction des points de vie du Wavegel de 30 à 20 PV",
+              "La fleur des volcans peut désormais être posée sur tous les blocs de pierre du Nether, tout en restant posable sur la terre et les blocs classiques.",
+              "La fleur des volcans n'apparaît désormais plus dans les plaines et génère exclusivement dans le biome Terres cendreuses.",
+              "L'arbre d'etycola génère désormais naturellement dans le biome Terres cendreuses.",
+              "La pousse d'etycola peut désormais être plantée sur les blocs de pierre du Nether.",
+              "La recette de tous les œufs d'apparition accepte désormais n'importe quel type d'œuf de poule.",
+              "Réduction des points de vie du boss Extermate de 1024 à 800 HP.",
+              "Le champignon explosif et le champignon fluorescent peuvent désormais être placés sur n'importe quel type de terre.",
+              "Refonte de la structure du boss Colossum.",
+              "La hitbox du boss Colossum possède désormais celle d'un golem de fer vanilla, ce qui l'empêche désormais d'aller dans les bateaux.",
+              "Réduction de la vitesse de suivi du boss Colossum de 0.3 à 0.25.",
+              "Extermate possède désormais une hitbox plus large et ne peut donc plus aller dans les bateaux.",
+              "Le loup Lyvora joue désormais le son « pickup » lorsqu'il lâche une baie lyvorienne.",
+              "Le sable lâche désormais obligatoirement le bloc, tandis que les grains de sable deviennent plus rares.",
+              "Suppression des trois avancées incitant à rejoindre le serveur Discord ou à ouvrir la page du mod pour signaler un bug ou une suggestion.", "Correction du bug pouvant bloquer le joueur dans l'interface d'apparition des boss.", "Refonte de la table de butin des coffres de la structure de l'arène du boss Extermate.", "Les spawners de boss sont désormais incassables.", "Refonte de l'arène du boss Extermate.",
+              "Les spawners de boss sont désormais incassables"
+            ]
+          }
+        ],
+        "en": [
+          {
+            "type": "info",
+            "heading": "Note:",
+            "items": [
+              "Known issue: Mintshade trees may occasionally generate hovering above vegetation or bushes; I am actively working on it to try to reduce or fix this problem.",
+              "The feature to throw the Mist Fowl Egg is temporarily disabled. I will try to get it working properly in a future update.",
+              "Known issue: the walking animations of the main models for both adult and baby Wavegel are desynchronized from their outer layers. As soon as I find the cause of the issue, I will publish a patch.", "I will release a post-launch patch once I have found solutions for the remaining known bugs."
+            ]
+          },
+          {
+            "type": "add",
+            "heading": "Added:",
+            "items": [
+              "Added Othonite and its variants",
+              "Added Arcanite and its variants",
+              "Added falling leaf particles for all leaf blocks",
+              "Added Orange Berry Pie",
+              "Added a new tree: the Mintshade",
+              "Added Resinous Amber and its variants",
+              "Added the “Glimmering Glade” biome",
+              "Added the “Alabaster Plains” biome",
+              "Added the “Ashlands” biome",
+              "Added the Alabaster Bush",
+              "Added the Othonite Calyx",
+              "Added Rift Obsidian",
+              "Added the Midler Cow and its baby version (Midler Calf)",
+              "Added Midler Leather",
+              "Added Midler Beef (raw and cooked)",
+              "Added the Celestial Pig and its baby version (Celestial Piglet)",
+              "Added Celestial Porkchop (raw and cooked)",
+              "Added the Dreaming Sheep and its baby version (Dreaming Lamb)",
+              "Added Celestial Porkchop (raw and cooked)",
+              "Added Dreaming Wool",
+              "Added the Mist Fowl and its baby version (Baby Mist Fowl)",
+              "Added the Mist Fowl Egg",
+              "Added Mist Fowl (raw and cooked)",
+              "Added the Grizzly Bear and its baby version",
+              "Added the Etycola Fox and its baby variant.",
+              "Added the Etycola Fox Claw.",
+              "Added the Ashen Relic.",
+              "Added the Charred Bush and Petrified Bush.",
+              "Added the Primordial.",
+              "Added the Arcane Crystal Block and Stabilized Arcane Crystal Block",
+              "Added the Arcane Geode",
+              "Added the Redstone Vault and its mossy, combat, and dimensional variants",
+              "Added the Primordial Spawner"
+            ]
+          },
+          {
+            "type": "fix",
+            "heading": "Changes & Fixes:",
+            "items": [
+              "Fixed Enderwood and Palm leaves not decaying properly when detached from logs",
+              "Rebalanced and restructured drop rates for all leaf blocks",
+              "It is now possible to use compost for all the leaves.",
+              "Added missing composter recipes with palm, noctacacia, and luminapin slabs",
+              "Fixed Opaline saplings not dropping when leaves decay naturally",
+              {
+                "text": "Creative Inventory Overhaul:",
+                "childrenListType": "ordered",
+                "children": [
+                  "Reorganized ores in the creative tab",
+                  "Reorganized blocks and miscellaneous items in the creative tab",
+                  "Renamed the creative tab to “Acatar: Blocks & Miscellaneous”"
+                ]
+              },
+              "Completely revamped the Ender Wood textures",
+              "Completely overhauled and optimization of the Orange Berry bush (generation, mechanics, and balance)",
+              "Deleting the Acatar Book",
+              "Modification of the Midler igniter recipe",
+              "The Midler igniter now only has 2 uses in survival mode",
+              "Modified the portal block for the Midler dimension",
+              "Updated spawn egg textures for Extermate and Colossum bosses (now using custom textures)",
+              "Updated spawn egg textures for Lyvora, Wavegel and Cerulean Creeper (now using custom textures)",
+              "Removed the Extermate boss nameplate",
+              "Adjusted Cerulean Creeper loot table",
+              "Visual overhaul for the Baby Wavegel (updated 3D model and texture)",
+              "Optimized and improved how items dropped by the Lyvora are handled",
+              "Reduced Wavegel health from 30 to 20 HP",
+              "The volcano flower can now be placed on all Nether stone blocks, while remaining placeable on dirt and other standard blocks.",
+              "The volcano flower no longer spawns in plains biomes and now generates exclusively in the Ashlands biome.",
+              "The Etycola tree now spawns naturally in the Ashlands biome.",
+              "The Etycola sapling can now be planted on Nether stone blocks.",
+              "All spawn egg recipes now accept any type of chicken egg.",
+              "Reduced Extermate boss health from 1024 to 800 HP.",
+              "The explosive mushroom and the fluorescent mushroom can now be placed on any type of dirt.",
+              "Overhauled the structure of the Colossum boss.",
+              "The Colossum boss now has the hitbox of a vanilla iron golem, which prevents it from entering boats.",
+              "Reduced the Colossum boss's follow speed from 0.3 to 0.25.",
+              "Extermate now has a larger hitbox and can no longer enter boats.",
+              "The Lyvora wolf now plays the pickup sound when it drops a Lyvorian berry.",
+              "Sand now always drops the block, while sand grains have become rarer.",
+              "Removed the three advancements that encouraged players to join the Discord server or open the mod page to report a bug or suggestion.", "Fixed a bug that could leave the player stuck in the boss spawn interface.", "Overhauled the loot table for the chests in the Extermate arena structure.", "Boss spawners are now unbreakable.", "Overhauled the Extermate arena.",
+              "Boss spawners are now unbreakable."
+            ]
+          }
+        ],
+        "it": [
+          { "type": "info", "heading": "Nota:", "items": ["Problema noto: gli alberi Mintshade possono talvolta generarsi sospesi sopra la vegetazione o i cespugli; sto lavorando per ridurre o risolvere il problema.", "La funzione per lanciare il Mist Fowl Egg è temporaneamente disattivata. Cercherò di ripristinarla in un prossimo aggiornamento.", "Problema noto: le animazioni di camminata del modello principale di Wavegel adulto e Baby Wavegel sono desincronizzate rispetto al loro strato esterno. Appena avrò trovato l'origine del problema, pubblicherò una patch.", "Pubblicherò una patch dopo l'uscita non appena avrò trovato una soluzione agli ultimi bug noti."] },
+          { "type": "add", "heading": "Aggiunto:", "items": ["Aggiunti Othonite e le sue varianti.", "Aggiunti Arcanite e le sue varianti.", "Aggiunte particelle di foglie cadenti per tutti i blocchi di foglie.", "Aggiunta Orange Berry Pie.", "Aggiunto un nuovo albero: Mintshade.", "Aggiunti Resinous Amber e le sue varianti.", "Aggiunto il bioma “Glimmering Glade”.", "Aggiunto il bioma “Alabaster Plains”.", "Aggiunto il bioma “Ashlands”.", "Aggiunto Alabaster Bush.", "Aggiunto Othonite Calyx.", "Aggiunto Rift Obsidian.", "Aggiunti Midler Cow e la sua versione cucciola (Midler Calf).", "Aggiunta Midler Leather.", "Aggiunto Midler Beef (cruda e cotta).", "Aggiunti Celestial Pig e la sua versione cucciola (Celestial Piglet).", "Aggiunto Celestial Porkchop (crudo e cotto).", "Aggiunti Dreaming Sheep e la sua versione cucciola (Dreaming Lamb).", "Aggiunto Celestial Porkchop (crudo e cotto).", "Aggiunta Dreaming Wool.", "Aggiunti Mist Fowl e la sua versione cucciola (Baby Mist Fowl).", "Aggiunto Mist Fowl Egg.", "Aggiunto Mist Fowl (crudo e cotto).", "Aggiunti Grizzly Bear e la sua versione cucciola.", "Aggiunti Etycola Fox e la sua variante cucciola.", "Aggiunto Etycola Fox Claw.", "Aggiunto Ashen Relic.", "Aggiunti Charred Bush e Petrified Bush.", "Aggiunto Primordial.", "Aggiunti Arcane Crystal Block e Stabilized Arcane Crystal Block.", "Aggiunta Arcane Geode.", "Aggiunto il caveau di redstone e le varianti muschiosa, da combattimento e dimensionale.", "Aggiunto lo spawner del Primordial." ] },
+          { "type": "fix", "heading": "Modifiche e correzioni:", "items": ["Corretto il decadimento delle foglie di Enderwood e Palm che non avveniva correttamente quando separate dai tronchi.", "Ribilanciate e ristrutturate le probabilità di drop di tutti i blocchi di foglie.", "Ora è possibile usare il compost su tutte le foglie.", "Aggiunte le ricette mancanti del compostatore con le lastre di Palm, noctacacia e luminapin.", "Corretto il mancato rilascio degli alberelli Opaline quando le foglie decadono naturalmente.", { "text": "Riorganizzazione dell’inventario creativo:", "childrenListType": "ordered", "children": ["Riorganizzati i minerali nella scheda creativa.", "Riorganizzati i blocchi e gli oggetti vari nella scheda creativa.", "Rinominata la scheda creativa in “Acatar: Blocks & Miscellaneous”."] }, "Rinnovate completamente le texture di Ender Wood.", "Rielaborato e ottimizzato completamente Orange Berry Bush (generazione, meccaniche e bilanciamento).", "Rimosso Acatar Book.", "Modificata la ricetta di Midler igniter.", "Midler igniter ora ha solo 2 utilizzi in modalità sopravvivenza.", "Modificato il blocco portale della dimensione Midler.", "Aggiornate le texture delle uova di generazione dei boss Extermate e Colossum con texture personalizzate.", "Aggiornate le texture delle uova di generazione di Lyvora, Wavegel e Cerulean Creeper con texture personalizzate.", "Rimosso il nome sopra la testa del boss Extermate.", "Regolata la tabella dei drop di Cerulean Creeper.", "Rinnovati modello 3D e texture di Baby Wavegel.", "Ottimizzata la gestione degli oggetti rilasciati da Lyvora.", "Ridotta la salute di Wavegel da 30 a 20 HP.", "Ora Volcano Flower può essere posizionata su tutti i blocchi di pietra del Nether, oltre che su terra e altri blocchi standard.", "Volcano Flower non genera più nelle pianure e ora compare solo nel bioma Ashlands.", "Etycola Tree ora genera naturalmente nel bioma Ashlands.", "Ora Etycola Sapling può essere piantata sui blocchi di pietra del Nether.", "Tutte le ricette delle uova di generazione accettano ora qualsiasi tipo di uovo di gallina.", "Ridotta la salute del boss Extermate da 1024 a 800 HP.", "Il fungo esplosivo e il fungo fluorescente possono ora essere posizionati su qualsiasi tipo di terra.", "Rielaborata la struttura del boss Colossum.", "Il boss Colossum possiede ora la hitbox di un golem di ferro vanilla, impedendogli quindi di salire sulle barche.", "Ridotta la velocità di inseguimento del boss Colossum da 0.3 a 0.25.", "Extermate possiede ora una hitbox più grande e non può più salire sulle barche.", "Il lupo Lyvora riproduce ora il suono pickup quando lascia cadere una Lyvorian berry.", "La sabbia lascia ora sempre il blocco, mentre i grani di sabbia sono diventati più rari.", "Rimossi i tre progressi che invitavano ad unirsi al server Discord o ad aprire la pagina del mod per segnalare bug o suggerimenti.", "Corretto un bug che poteva bloccare il giocatore nell'interfaccia di comparsa dei boss.", "Rinnovata la tabella del bottino dei forzieri nella struttura dell'arena del boss Extermate.", "Gli spawner dei boss ora sono indistruttibili.", "Rinnovata l'arena del boss Extermate.", "Gli generatori di mostri dei boss sono ora inespugnabili."] }
+        ],
+        "es": [
+          { "type": "info", "heading": "Nota:", "items": ["Problema conocido: los árboles Mintshade a veces pueden generarse suspendidos sobre la vegetación o los arbustos; estoy trabajando para reducir o solucionar este problema.", "La función para lanzar el Mist Fowl Egg está desactivada temporalmente. Intentaré restaurarla en una próxima actualización.", "Problema conocido: las animaciones de caminar del modelo principal de Wavegel adulto y Baby Wavegel están desincronizadas con su capa exterior. En cuanto encuentre el origen del problema, publicaré una corrección.", "Publicaré un parche después del lanzamiento cuando encuentre soluciones para los últimos errores conocidos."] },
+          { "type": "add", "heading": "Añadido:", "items": ["Añadidos Othonite y sus variantes.", "Añadidos Arcanite y sus variantes.", "Añadidas partículas de hojas al caer para todos los bloques de hojas.", "Añadida Orange Berry Pie.", "Añadido un nuevo árbol: Mintshade.", "Añadidos Resinous Amber y sus variantes.", "Añadido el bioma “Glimmering Glade”.", "Añadido el bioma “Alabaster Plains”.", "Añadido el bioma “Ashlands”.", "Añadido Alabaster Bush.", "Añadido Othonite Calyx.", "Añadido Rift Obsidian.", "Añadidos Midler Cow y su versión bebé (Midler Calf).", "Añadido Midler Leather.", "Añadido Midler Beef (cruda y cocinada).", "Añadidos Celestial Pig y su versión bebé (Celestial Piglet).", "Añadido Celestial Porkchop (crudo y cocinado).", "Añadidos Dreaming Sheep y su versión bebé (Dreaming Lamb).", "Añadido Celestial Porkchop (crudo y cocinado).", "Añadida Dreaming Wool.", "Añadidos Mist Fowl y su versión bebé (Baby Mist Fowl).", "Añadido Mist Fowl Egg.", "Añadido Mist Fowl (crudo y cocinado).", "Añadidos Grizzly Bear y su versión bebé.", "Añadidos Etycola Fox y su variante bebé.", "Añadido Etycola Fox Claw.", "Añadido Ashen Relic.", "Añadidos Charred Bush y Petrified Bush.", "Añadido Primordial.", "Añadidos Arcane Crystal Block y Stabilized Arcane Crystal Block.", "Añadida Arcane Geode.", "Añadido el cofre fuerte de redstone y sus variantes musgosa, de combate y dimensional.", "Añadido el generador del Primordial." ] },
+          { "type": "fix", "heading": "Cambios y correcciones:", "items": ["Corregido el problema por el que las hojas de Enderwood y Palm no desaparecían correctamente al separarse de los troncos.", "Reequilibradas y reorganizadas las probabilidades de aparición de todos los bloques de hojas.", "Ahora se puede usar compost en todas las hojas.", "Añadidas las recetas de compostador que faltaban con losas de Palm, noctacacia y luminapin.", "Corregido un error por el que los brotes Opaline no aparecían al descomponerse las hojas de forma natural.", { "text": "Reorganización del inventario creativo:", "childrenListType": "ordered", "children": ["Reorganizados los minerales en la pestaña creativa.", "Reorganizados los bloques y objetos diversos en la pestaña creativa.", "Renombrada la pestaña creativa como “Acatar: Blocks & Miscellaneous”."] }, "Renovadas por completo las texturas de Ender Wood.", "Rediseñado y optimizado por completo Orange Berry Bush (generación, mecánicas y equilibrio).", "Eliminado Acatar Book.", "Modificada la receta de Midler igniter.", "Midler igniter ahora solo tiene 2 usos en el modo supervivencia.", "Modificado el bloque del portal de la dimensión Midler.", "Actualizadas con texturas personalizadas las texturas de los huevos generadores de los jefes Extermate y Colossum.", "Actualizadas con texturas personalizadas las texturas de los huevos generadores de Lyvora, Wavegel y Cerulean Creeper.", "Eliminada la etiqueta sobre la cabeza del jefe Extermate.", "Ajustada la tabla de botín de Cerulean Creeper.", "Renovados el modelo 3D y la textura de Baby Wavegel.", "Optimizada la gestión de los objetos soltados por Lyvora.", "Reducida la salud de Wavegel de 30 a 20 HP.", "Volcano Flower ahora puede colocarse sobre todos los bloques de piedra del Nether, además de tierra y otros bloques estándar.", "Volcano Flower ya no aparece en las llanuras y ahora se genera exclusivamente en el bioma Ashlands.", "Etycola Tree ahora se genera de forma natural en el bioma Ashlands.", "Etycola Sapling ahora puede plantarse sobre bloques de piedra del Nether.", "Todas las recetas de huevos generadores aceptan ahora cualquier tipo de huevo de gallina.", "Reducida la salud del jefe Extermate de 1024 a 800 HP.", "El hongo explosivo y el hongo fluorescente ahora pueden colocarse sobre cualquier tipo de tierra.", "Rediseñada la estructura del jefe Colossum.", "El jefe Colossum tiene ahora la hitbox de un gólem de hierro vanilla, por lo que ya no puede entrar en botes.", "Reducida la velocidad de seguimiento del jefe Colossum de 0.3 a 0.25.", "Extermate tiene ahora una hitbox más grande y ya no puede entrar en botes.", "El lobo Lyvora reproduce ahora el sonido pickup cuando suelta una baya Lyvorian.", "La arena ahora siempre deja caer el bloque, mientras que los granos de arena son más raros.", "Se han eliminado los tres avances que animaban a unirse al servidor de Discord o abrir la página del mod para informar de un error o una sugerencia.", "Corregido un error que podía dejar al jugador bloqueado en la interfaz de aparición de jefes.", "Rediseñada la tabla de botín de los cofres de la estructura de la arena de Extermate.", "Los generadores de jefes ahora son irrompibles.", "Rediseñada la arena del jefe Extermate.", "Los generadores de monstruos son ahora indestructibles."] }
+        ],
+        "de": [
+          { "type": "info", "heading": "Hinweis:", "items": ["Bekanntes Problem: Mintshade-Bäume können gelegentlich schwebend über Pflanzen oder Büschen erscheinen. Ich arbeite daran, das Problem einzudämmen oder zu beheben.", "Die Funktion zum Werfen des Mist Fowl Egg ist vorübergehend deaktiviert. Ich werde versuchen, sie in einem zukünftigen Update wieder funktionsfähig zu machen.", "Bekanntes Problem: Die Laufanimationen des Hauptmodells von erwachsenem und jungem Wavegel sind nicht mit ihrer äußeren Ebene synchronisiert. Sobald ich die Ursache gefunden habe, veröffentliche ich einen Patch.", "Nach der Veröffentlichung erscheint ein Patch, sobald ich Lösungen für die letzten bekannten Fehler gefunden habe."] },
+          { "type": "add", "heading": "Hinzugefügt:", "items": ["Othonite und seine Varianten hinzugefügt.", "Arcanite und seine Varianten hinzugefügt.", "Fallende Blattpartikel für alle Blattblöcke hinzugefügt.", "Orange Berry Pie hinzugefügt.", "Neuen Baum hinzugefügt: Mintshade.", "Resinous Amber und seine Varianten hinzugefügt.", "Biom „Glimmering Glade“ hinzugefügt.", "Biom „Alabaster Plains“ hinzugefügt.", "Biom „Ashlands“ hinzugefügt.", "Alabaster Bush hinzugefügt.", "Othonite Calyx hinzugefügt.", "Rift Obsidian hinzugefügt.", "Midler Cow und ihre Jungtier-Version (Midler Calf) hinzugefügt.", "Midler Leather hinzugefügt.", "Midler Beef (roh und gebraten) hinzugefügt.", "Celestial Pig und ihre Jungtier-Version (Celestial Piglet) hinzugefügt.", "Celestial Porkchop (roh und gebraten) hinzugefügt.", "Dreaming Sheep und ihre Jungtier-Version (Dreaming Lamb) hinzugefügt.", "Celestial Porkchop (roh und gebraten) hinzugefügt.", "Dreaming Wool hinzugefügt.", "Mist Fowl und ihre Jungtier-Version (Baby Mist Fowl) hinzugefügt.", "Mist Fowl Egg hinzugefügt.", "Mist Fowl (roh und gebraten) hinzugefügt.", "Grizzly Bear und sein Jungtier hinzugefügt.", "Etycola Fox und seine Jungtier-Variante hinzugefügt.", "Etycola Fox Claw hinzugefügt.", "Ashen Relic hinzugefügt.", "Charred Bush und Petrified Bush hinzugefügt.", "Primordial hinzugefügt.", "Arcane Crystal Block und Stabilized Arcane Crystal Block hinzugefügt.", "Arcane Geode hinzugefügt.", "Redstone-Tresor mit moosigen, Kampf- und Dimensionsvarianten hinzugefügt.", "Primordial-Spawner hinzugefügt." ] },
+          { "type": "fix", "heading": "Änderungen und Fehlerbehebungen:", "items": ["Fehler behoben, durch den die Blätter von Enderwood und Palm nach dem Trennen von Stämmen nicht richtig zerfielen.", "Drop-Raten für alle Blattblöcke neu ausbalanciert und strukturiert.", "Kompost kann jetzt für alle Blätter verwendet werden.", "Fehlende Komposter-Rezepte mit Palm-, noctacacia- und luminapin-Platten hinzugefügt.", "Fehler behoben, durch den Opaline-Setzlinge beim natürlichen Zerfall von Blättern nicht droppten.", { "text": "Kreativinventar überarbeitet:", "childrenListType": "ordered", "children": ["Erze im Kreativ-Tab neu angeordnet.", "Blöcke und sonstige Gegenstände im Kreativ-Tab neu angeordnet.", "Kreativ-Tab in „Acatar: Blocks & Miscellaneous“ umbenannt."] }, "Texturen von Ender Wood vollständig überarbeitet.", "Orange Berry Bush (Generierung, Mechaniken und Balance) vollständig überarbeitet und optimiert.", "Acatar Book entfernt.", "Rezept für Midler igniter geändert.", "Midler igniter hat im Überlebensmodus jetzt nur noch 2 Verwendungen.", "Portalblock für die Midler-Dimension geändert.", "Spawn-Ei-Texturen der Bosse Extermate und Colossum durch eigene Texturen ersetzt.", "Spawn-Ei-Texturen von Lyvora, Wavegel und Cerulean Creeper durch eigene Texturen ersetzt.", "Namensschild über dem Kopf des Bosses Extermate entfernt.", "Loot-Tabelle von Cerulean Creeper angepasst.", "3D-Modell und Textur von Baby Wavegel überarbeitet.", "Verarbeitung der von Lyvora gedroppten Gegenstände optimiert.", "Gesundheit von Wavegel von 30 auf 20 HP reduziert.", "Volcano Flower kann jetzt auf allen Nether-Steinblöcken sowie weiterhin auf Erde und anderen Standardblöcken platziert werden.", "Volcano Flower erscheint nicht mehr in Ebenen und generiert jetzt ausschließlich im Biom Ashlands.", "Etycola Tree generiert jetzt natürlich im Biom Ashlands.", "Etycola Sapling kann jetzt auf Nether-Steinblöcken gepflanzt werden.", "Alle Spawn-Ei-Rezepte akzeptieren jetzt jede Art von Hühnerei.", "Gesundheit des Bosses Extermate von 1024 auf 800 HP reduziert.", "Der explosive Pilz und der fluoreszierende Pilz können jetzt auf jeder Art von Erde platziert werden.", "Struktur des Bosses Colossum überarbeitet.", "Der Boss Colossum besitzt jetzt die Hitbox eines gewöhnlichen Eisengolems, wodurch er nicht mehr in Boote gehen kann.", "Die Verfolgungsgeschwindigkeit des Bosses Colossum wurde von 0.3 auf 0.25 reduziert.", "Extermate besitzt jetzt eine größere Hitbox und kann nicht mehr in Boote gehen.", "Der Lyvora-Wolf spielt jetzt den pickup-Sound, wenn er eine Lyvorian-Beere fallen lässt.", "Sand lässt jetzt immer den Block fallen, während Sandkörner seltener geworden sind.", "Die drei Fortschritte wurden entfernt, die zum Beitritt zum Discord-Server oder zum Öffnen der Mod-Seite aufforderten, um einen Fehler oder Vorschlag zu melden.", "Fehler behoben, durch den der Spieler in der Boss-Erscheinungsoberfläche stecken bleiben konnte.", "Loot-Tabelle der Truhen in der Arena-Struktur von Extermate überarbeitet.", "Boss-Spawner sind jetzt unzerstörbar.", "Arena des Bosses Extermate überarbeitet.", "Monstergeneratoren sind jetzt unzerbrechlich."] }
+        ],
+        "ja": [
+          { "type": "info", "heading": "注意:", "items": ["既知の問題: Mintshade の木が、植物や茂みの上に浮いた状態で生成されることがあります。問題の軽減または修正に取り組んでいます。", "Mist Fowl Egg を投げる機能は一時的に無効になっています。今後のアップデートで正常に動作するよう対応する予定です。", "既知の問題: 成体と子どもの Ondegel のメインモデルと外装レイヤーの歩行アニメーションがずれています。原因が特定でき次第、パッチを公開します。", "リリース後、残っている既知の問題の解決策が見つかり次第、修正パッチを公開します。"] },
+          { "type": "add", "heading": "追加:", "items": ["Othonite とそのバリエーションを追加", "Arcanite とそのバリエーションを追加", "すべての葉ブロックに落ち葉のパーティクルを追加", "Orange Berry Pie を追加", "新しい木 Mintshade を追加", "Resinous Amber とそのバリエーションを追加", "バイオーム “Glimmering Glade” を追加", "バイオーム “Alabaster Plains” を追加", "バイオーム “Ashlands” を追加", "Alabaster Bush を追加", "Othonite Calyx を追加", "Rift Obsidian を追加", "Midler Cow と子どもの Midler Calf を追加", "Midler Leather を追加", "Midler Beef (生・焼き) を追加", "Celestial Pig と子どもの Celestial Piglet を追加", "Celestial Porkchop (生・焼き) を追加", "Dreaming Sheep と子どもの Dreaming Lamb を追加", "Celestial Porkchop (生・焼き) を追加", "Dreaming Wool を追加", "Mist Fowl と子どもの Baby Mist Fowl を追加", "Mist Fowl Egg を追加", "Mist Fowl (生・焼き) を追加", "Grizzly Bear とその子どもを追加", "Etycola Fox とその子どものバリエーションを追加", "Etycola Fox Claw を追加", "Ashen Relic を追加", "Charred Bush と Petrified Bush を追加", "Primordial を追加", "Arcane Crystal Block と Stabilized Arcane Crystal Block を追加", "Arcane Geode を追加", "レッドストーンの金庫と苔むした金庫、戦闘用金庫、ディメンション金庫を追加", "Primordial のスポーナーを追加" ] },
+          { "type": "fix", "heading": "変更と修正:", "items": ["Enderwood と Palm の葉が原木から離れたときに正しく消えない問題を修正しました。", "すべての葉ブロックのドロップ率を再調整し、構成を見直しました。", "すべての葉にコンポストを使用できるようになりました。", "Palm、noctacacia、luminapin のハーフブロックを使う不足していたコンポスターのレシピを追加しました。", "葉が自然に消えたときに Opaline の苗木がドロップしない問題を修正しました。", { "text": "クリエイティブインベントリを再編成:", "childrenListType": "ordered", "children": ["クリエイティブタブの鉱石を並べ替えました。", "クリエイティブタブのブロックとその他のアイテムを並べ替えました。", "クリエイティブタブの名前を “Acatar: Blocks & Miscellaneous” に変更しました。"] }, "Ender Wood のテクスチャを全面的に刷新しました。", "Orange Berry Bush の生成、仕組み、バランスを全面的に見直し、最適化しました。", "Acatar Book を削除しました。", "Midler igniter のレシピを変更しました。", "サバイバルモードで Midler igniter を使用できる回数を2回に変更しました。", "Midler ディメンションのポータルブロックを変更しました。", "ボス Extermate と Colossum のスポーンエッグを専用テクスチャに変更しました。", "Lyvora、Wavegel、Cerulean Creeper のスポーンエッグを専用テクスチャに変更しました。", "ボス Extermate の頭上に表示される名前を削除しました。", "Cerulean Creeper のドロップテーブルを調整しました。", "Baby Wavegel の3Dモデルとテクスチャを刷新しました。", "Lyvora がドロップするアイテムの処理を最適化しました。", "Wavegel の体力を30から20 HPに減らしました。", "Volcano Flower は土などの標準ブロックに加え、すべてのネザー石ブロックにも設置できるようになりました。", "Volcano Flower は平原に生成されなくなり、Ashlands バイオームのみに生成されます。", "Etycola Tree が Ashlands バイオームに自然生成されるようになりました。", "Etycola Sapling をネザー石ブロックに植えられるようになりました。", "すべてのスポーンエッグのレシピで、あらゆる種類のニワトリの卵を使用できるようになりました。", "ボス Extermate の体力を1024から800 HPに減らしました。", "爆発キノコと発光キノコを、あらゆる種類の土に設置できるようになりました。", "ボス「Colossum」の構造を刷新しました。", "ボス Colossum はバニラのアイアンゴーレムと同じ当たり判定になり、ボートに乗れなくなりました。", "ボス Colossum の追跡速度を0.3から0.25に低下しました。", "Extermate の当たり判定が拡大し、ボートに乗れなくなりました。", "Lyvora は Lyvorian ベリーを落とすときに pickup サウンドを再生します。", "砂はブロックを必ずドロップするようになり、砂の粒はより入手しにくくなりました。", "Discordサーバーへの参加や、バグや提案の報告のためにModページを開くことを促す3つの進捗を削除しました。", "ボスの出現画面でプレイヤーが操作不能になる問題を修正しました。", "Extermateのアリーナ構造にあるチェストの戦利品テーブルを刷新しました。", "ボスのスポナーは破壊できなくなりました。", "ボスExtermateのアリーナを刷新しました。", "モンスタージェネレーターは今や壊れない。"] }
+        ],
+        "ko": [
+          { "type": "info", "heading": "참고:", "items": ["알려진 문제: Mintshade 나무가 식물이나 덤불 위에 떠 있는 상태로 생성될 수 있습니다. 문제를 줄이거나 해결하기 위해 작업 중입니다.", "Mist Fowl Egg를 던지는 기능은 일시적으로 비활성화되었습니다. 향후 업데이트에서 정상 작동하도록 수정할 예정입니다.", "알려진 문제: 성체와 아기 Ondegel의 기본 모델 걷기 애니메이션이 외부 레이어와 동기화되지 않습니다. 원인을 찾는 즉시 패치를 배포하겠습니다.", "출시 후 남은 알려진 버그의 해결 방법을 찾는 대로 패치를 배포하겠습니다."] },
+          { "type": "add", "heading": "추가:", "items": ["Othonite와 변형 아이템 추가", "Arcanite와 변형 아이템 추가", "모든 잎 블록에 낙엽 파티클 추가", "Orange Berry Pie 추가", "새로운 나무 Mintshade 추가", "Resinous Amber와 변형 아이템 추가", "“Glimmering Glade” 생물 군계 추가", "“Alabaster Plains” 생물 군계 추가", "“Ashlands” 생물 군계 추가", "Alabaster Bush 추가", "Othonite Calyx 추가", "Rift Obsidian 추가", "Midler Cow와 아기 Midler Calf 추가", "Midler Leather 추가", "Midler Beef (날것 및 조리된 것) 추가", "Celestial Pig와 아기 Celestial Piglet 추가", "Celestial Porkchop (날것 및 조리된 것) 추가", "Dreaming Sheep와 아기 Dreaming Lamb 추가", "Celestial Porkchop (날것 및 조리된 것) 추가", "Dreaming Wool 추가", "Mist Fowl과 아기 Baby Mist Fowl 추가", "Mist Fowl Egg 추가", "Mist Fowl (날것 및 조리된 것) 추가", "Grizzly Bear와 아기 버전 추가", "Etycola Fox와 아기 변형 추가", "Etycola Fox Claw 추가", "Ashen Relic 추가", "Charred Bush와 Petrified Bush 추가", "Primordial 추가", "Arcane Crystal Block과 Stabilized Arcane Crystal Block 추가", "Arcane Geode 추가", "레드스톤 금고와 이끼 낀 금고, 전투 금고, 차원 금고 추가", "Primordial 스포너 추가" ] },
+          { "type": "fix", "heading": "변경 및 수정:", "items": ["통나무에서 분리된 Enderwood 및 Palm 잎이 제대로 사라지지 않던 문제를 수정했습니다.", "모든 잎 블록의 드롭 확률을 재조정하고 구조를 개선했습니다.", "이제 모든 잎에 퇴비를 사용할 수 있습니다.", "Palm, noctacacia, luminapin 반 블록을 사용하는 누락된 퇴비통 제작법을 추가했습니다.", "잎이 자연적으로 사라질 때 Opaline 묘목이 드롭되지 않던 문제를 수정했습니다.", { "text": "크리에이티브 인벤토리 개편:", "childrenListType": "ordered", "children": ["크리에이티브 탭의 광석을 재정렬했습니다.", "크리에이티브 탭의 블록과 기타 아이템을 재정렬했습니다.", "크리에이티브 탭 이름을 “Acatar: Blocks & Miscellaneous”로 변경했습니다."] }, "Ender Wood 텍스처를 전면 개편했습니다.", "Orange Berry Bush의 생성, 작동 방식, 밸런스를 전면 개편하고 최적화했습니다.", "Acatar Book을 제거했습니다.", "Midler igniter 제작법을 변경했습니다.", "생존 모드에서 Midler igniter의 사용 횟수를 2회로 줄였습니다.", "Midler 차원의 포털 블록을 변경했습니다.", "보스 Extermate와 Colossum 생성 알 텍스처를 전용 텍스처로 변경했습니다.", "Lyvora, Wavegel, Cerulean Creeper 생성 알 텍스처를 전용 텍스처로 변경했습니다.", "보스 Extermate 머리 위의 이름표를 제거했습니다.", "Cerulean Creeper 전리품 표를 조정했습니다.", "Baby Wavegel의 3D 모델과 텍스처를 개편했습니다.", "Lyvora가 떨어뜨리는 아이템의 처리를 최적화했습니다.", "Wavegel 체력을 30에서 20 HP로 줄였습니다.", "Volcano Flower를 흙과 일반 블록뿐 아니라 모든 네더 돌 블록에도 설치할 수 있습니다.", "Volcano Flower는 더 이상 평원에 생성되지 않으며 Ashlands 생물 군계에서만 생성됩니다.", "Etycola Tree가 Ashlands 생물 군계에 자연 생성됩니다.", "Etycola Sapling을 네더 돌 블록에 심을 수 있습니다.", "모든 생성 알 제작법에서 모든 종류의 닭 알을 사용할 수 있습니다.", "보스 Extermate의 체력을 1024에서 800 HP로 줄였습니다.", "이제 폭발 버섯과 형광 버섯을 모든 종류의 흙에 설치할 수 있습니다.", "보스 Colossum의 구조를 개편했습니다.", "보스 Colossum은 이제 바닐라 철 골렘과 같은 히트박스를 가지게 되어 배에 탈 수 없게 되었습니다.", "보스 Colossum의 추적 속도를 0.3에서 0.25로 낮췄습니다.", "Extermate는 이제 더 넓은 히트박스를 가지며 배에 탈 수 없습니다.", "Lyvora 늑대는 Lyvorian 베리를 떨어뜨릴 때 pickup 효과음을 재생합니다.", "모래는 이제 항상 블록을 떨어뜨리며, 모래 알갱이는 더 희귀해졌습니다.", "버그 또는 제안 사항을 신고하기 위해 Discord 서버에 참여하거나 모드 페이지를 열도록 유도하던 발전 과제 3개를 제거했습니다.", "보스 소환 인터페이스에서 플레이어가 갇힐 수 있던 버그를 수정했습니다.", "Extermate 투기장 구조물의 상자 전리품 표를 개편했습니다.", "보스 스포너를 이제 파괴할 수 없습니다.", "보스 Extermate의 투기장을 개편했습니다.", "몬스터 생성기는 이제 깨지지 않습니다."] }
+        ],
+        "pt-br": [
+          { "type": "info", "heading": "Observação:", "items": ["Problema conhecido: árvores Mintshade podem surgir flutuando sobre a vegetação ou os arbustos; estou trabalhando para reduzir ou corrigir esse problema.", "A função de arremessar o Mist Fowl Egg está temporariamente desativada. Vou tentar fazê-la funcionar corretamente em uma atualização futura.", "Problema conhecido: as animações de caminhada do modelo principal do Ondegel adulto e do Ondegel bebê estão dessincronizadas em relação à camada externa. Assim que encontrar a causa do problema, publicarei uma correção.", "Publicarei uma correção após o lançamento assim que encontrar soluções para os últimos bugs conhecidos."] },
+          { "type": "add", "heading": "Adicionado:", "items": ["Adicionados Othonite e suas variantes.", "Adicionados Arcanite e suas variantes.", "Adicionadas partículas de folhas caindo para todos os blocos de folhas.", "Adicionada Orange Berry Pie.", "Adicionada uma nova árvore: Mintshade.", "Adicionados Resinous Amber e suas variantes.", "Adicionado o bioma “Glimmering Glade”.", "Adicionado o bioma “Alabaster Plains”.", "Adicionado o bioma “Ashlands”.", "Adicionado Alabaster Bush.", "Adicionado Othonite Calyx.", "Adicionado Rift Obsidian.", "Adicionados Midler Cow e sua versão filhote (Midler Calf).", "Adicionada Midler Leather.", "Adicionado Midler Beef (cru e cozido).", "Adicionados Celestial Pig e sua versão filhote (Celestial Piglet).", "Adicionado Celestial Porkchop (cru e cozido).", "Adicionados Dreaming Sheep e sua versão filhote (Dreaming Lamb).", "Adicionado Celestial Porkchop (cru e cozido).", "Adicionada Dreaming Wool.", "Adicionados Mist Fowl e sua versão filhote (Baby Mist Fowl).", "Adicionado Mist Fowl Egg.", "Adicionado Mist Fowl (cru e cozido).", "Adicionados Grizzly Bear e sua versão filhote.", "Adicionados Etycola Fox e sua variante filhote.", "Adicionada Etycola Fox Claw.", "Adicionada Ashen Relic.", "Adicionados Charred Bush e Petrified Bush.", "Adicionado Primordial.", "Adicionados Arcane Crystal Block e Stabilized Arcane Crystal Block.", "Adicionada Arcane Geode.", "Adicionado o cofre-forte de redstone e suas variantes musgosa, de combate e dimensional.", "Adicionado o gerador do Primordial." ] },
+          { "type": "fix", "heading": "Alterações e correções:", "items": ["Corrigido o problema que impedia as folhas de Enderwood e Palm de desaparecerem corretamente quando separadas dos troncos.", "Reequilibradas e reorganizadas as chances de obtenção de todos os blocos de folhas.", "Agora é possível usar compostagem em todas as folhas.", "Adicionadas receitas de composteira que faltavam usando lajes de Palm, noctacacia e luminapin.", "Corrigido o problema que impedia mudas Opaline de serem obtidas quando as folhas desapareciam naturalmente.", { "text": "Reorganização do inventário criativo:", "childrenListType": "ordered", "children": ["Reorganizados os minérios na aba criativa.", "Reorganizados os blocos e itens diversos na aba criativa.", "Aba criativa renomeada para “Acatar: Blocks & Miscellaneous”."] }, "Texturas de Ender Wood totalmente reformuladas.", "Orange Berry Bush totalmente reformulado e otimizado (geração, mecânicas e equilíbrio).", "Acatar Book removido.", "Receita de Midler igniter alterada.", "Midler igniter agora tem apenas 2 usos no modo sobrevivência.", "Bloco do portal da dimensão Midler alterado.", "Texturas dos ovos geradores dos chefes Extermate e Colossum atualizadas para usar texturas personalizadas.", "Texturas dos ovos geradores de Lyvora, Wavegel e Cerulean Creeper atualizadas para usar texturas personalizadas.", "Nome exibido sobre a cabeça do chefe Extermate removido.", "Tabela de itens de Cerulean Creeper ajustada.", "Modelo 3D e textura de Baby Wavegel reformulados.", "Gerenciamento dos itens deixados por Lyvora otimizado.", "Vida de Wavegel reduzida de 30 para 20 HP.", "Volcano Flower agora pode ser colocada em todos os blocos de pedra do Nether, além de terra e outros blocos padrão.", "Volcano Flower não aparece mais nas planícies e agora é gerada somente no bioma Ashlands.", "Etycola Tree agora é gerada naturalmente no bioma Ashlands.", "Etycola Sapling agora pode ser plantada em blocos de pedra do Nether.", "Todas as receitas de ovos geradores agora aceitam qualquer tipo de ovo de galinha.", "Vida do chefe Extermate reduzida de 1024 para 800 HP.", "O cogumelo explosivo e o cogumelo fluorescente agora podem ser colocados em qualquer tipo de terra.", "Reformulada a estrutura do chefe Colossum.", "O chefe Colossum possui agora a hitbox de um golem de ferro do Minecraft vanilla, impedindo-o de entrar em botes.", "A velocidade de acompanhamento do chefe Colossum foi reduzida de 0.3 para 0.25.", "Extermate possui agora uma hitbox maior e não pode mais entrar em botes.", "O lobo Lyvora toca agora o som pickup ao deixar cair uma baga Lyvoriana.", "A areia agora sempre deixa cair o bloco, enquanto os grãos de areia ficaram mais raros.", "Removidos os três avanços que incentivavam a entrar no servidor do Discord ou abrir a página do mod para informar um bug ou uma sugestão.", "Corrigido um bug que podia deixar o jogador preso na interface de surgimento dos chefes.", "Reformulada a tabela de itens dos baús da estrutura da arena de Extermate.", "Os spawners de chefes agora são indestrutíveis.", "Reformulada a arena do chefe Extermate.", "Os geradores de monstros agora são inquebráveis."] }
+        ]
+      }
+    },
+    {
       "version": "1.0.3",
       "date": "2026-09-16",
       "loader": "NeoForge",

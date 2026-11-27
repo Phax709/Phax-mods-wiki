@@ -102,43 +102,9 @@ const modsRegistry = [
     page: 'acatar.html',
     cardDescKey: 'card.acatar.desc',
     wikiId: 'acatar',
-    status: 'development',
+    status: 'available',
     progress: 100.0,
-    features: [
-      {text: {
-        fr: 'Bateau et panneau des différents types de bois', 
-        en:'Boat and sign of the different types of wood'}, 
-        status: 'complete'},
-      {text: {
-        fr: 'Refonte dimensions Midler', 
-        en:'Midler dimensions redesign'}, 
-        status: 'complete'},
-      {text: {
-        fr: 'Refonte de la structure du boss (externe + colosse)', 
-        en:'Overhaul of the boss structure (external + colossus)'}, 
-        status: 'complete'},
-      {text: {
-        fr: 'Ajout de la génération de la baie orange', 
-        en:'Addition of the orange berry generation'}, 
-        status: 'complete'},
-      {text: {
-        fr: 'Donner plus d`utilisation et de moyens d`obtention à l`éclat d`arcane', 
-        en:'Give more use and means of obtaining to the arcane brilliance'}, 
-        status: 'complete'},
-      {text: {
-        fr: 'Nouvelles créatures ?', 
-        en:'New creatures?'}, 
-        status: 'complete'},
-      {text: {
-        fr: 'Résolution de bug et ajustements', 
-        en:'Bug resolution and adjustments'}, 
-        status: 'complete'},
-      {text: {
-        fr: 'Et plein d`autres', 
-        en:'And many other'}, 
-        status: 'complete'}
-
-    ],
+    features: [],
     links: {
       curseforge: 'https://www.curseforge.com/minecraft/mc-mods/acatar',
       modrinth: 'https://modrinth.com/mod/acatar'
